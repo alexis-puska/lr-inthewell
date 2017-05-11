@@ -29,6 +29,7 @@ endif
 OBJS += src/libretro/libretro.o
 OBJS += src/hammerfest/Hammerfest.o
 OBJS += src/hammerfest/MyWrapper.o
+OBJS += src/hammerfest/utils/Sound.o
 
 
 
