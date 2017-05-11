@@ -6,6 +6,25 @@ int main(int argc, char** argv) {
 
 }
 
+enum keyPad {
+	keyPadSelect = 1,
+	keyPadL3 = 2,
+	keyPadR3 = 4,
+	keyPadStart = 8,
+	keyPadUp = 16,
+	keyPadRight = 32,
+	keyPadDown = 64,
+	keyPadLeft = 128,
+	keyPadL2 = 256,
+	keyPadR2 = 512,
+	keyPadL1 = 1024,
+	keyPadR1 = 2048,
+	keyPadX = 4096,
+	keyPadA = 8192,
+	keyPadB = 16384,
+	keyPadY = 32768
+};
+
 Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro) {
 
 	Uint32 rmask, gmask, bmask, amask;
@@ -20,7 +39,6 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro) {
 	vout_buf = vout_bufLibretro;
 	SDL_FillRect(vout_buf, NULL, SDL_MapRGB(vout_buf->format, 255, 204, 0));
 	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
-
 }
 
 Hammerfest::~Hammerfest() {
@@ -41,7 +59,30 @@ void Hammerfest::copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest
 	SDL_BlitSurface(src, &srcRect, dest, &dstRect);
 }
 
-void Hammerfest::tick(unsigned short in_keystateLibretro[16]) {
+void Hammerfest::keyPressed() {
+	int index = 0;
+	anyPlayerkeychange = false;
+	for (int i = 0; i < 2; i++) {
+		if (previousPlayerKeystate[i] != in_keystate[index]) {
+			keychange[i] = true;
+			anyPlayerkeychange = true;
+			previousPlayerKeystate[i] = in_keystate[index];
+		} else {
+			keychange[i] = false;
+		}
+		index++;
+	}
+}
+
+void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 	SDL_FillRect(vout_buf, NULL, SDL_MapRGB(vout_buf->format, 255, 204, 0));
 	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+	for (int i = 0; i < 2; i++) {
+		in_keystate[i] = in_keystateLibretro[i];
+	}
+	keyPressed();
+	if (previousPlayerKeystate[0] & keyPadStart && keychange[0]) {
+		Sound::Instance().playSoundTuberculoz();
+
+	}
 }

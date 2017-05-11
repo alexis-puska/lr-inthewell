@@ -164,9 +164,11 @@ unsigned retro_get_region(void) {
 }
 
 void *retro_get_memory_data(unsigned id) {
+	return NULL;
 }
 
 size_t retro_get_memory_size(unsigned id) {
+	return 0;
 }
 
 void retro_reset(void) {
@@ -188,7 +190,6 @@ void retro_init(void) {
 	environ_cb(RETRO_ENVIRONMENT_SET_PERFORMANCE_LEVEL, &level);
 	environ_cb(RETRO_ENVIRONMENT_SET_SUPPORT_NO_GAME, &support_no_game);
 
-	char * dir;
 	if (environ_cb(RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY, &saveDir) && saveDir) {
 		fprintf(stderr, "save dir : %s\n", saveDir);
 		strcat(saveDir, "/lr_hammerfest_libretro.srm\n");
