@@ -1,10 +1,4 @@
 
 *.dylib
+
 *.o
-*.o
-
-src/hammerfest/MyWrapper.o
-
-src/hammerfest/Hammerfest.o
-
-src/libretro/libretro.o
