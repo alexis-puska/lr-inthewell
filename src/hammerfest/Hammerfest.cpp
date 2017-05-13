@@ -39,10 +39,12 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro) {
 	vout_buf = vout_bufLibretro;
 	SDL_FillRect(vout_buf, NULL, SDL_MapRGB(vout_buf->format, 255, 204, 0));
 	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+	Sound::Instance();
+	Sound::Instance().startMusicBoss();
 }
 
 Hammerfest::~Hammerfest() {
-
+	SDL_FreeSurface(screenBuffer);
 }
 
 void Hammerfest::copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y) {
@@ -79,10 +81,12 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 	for (int i = 0; i < 2; i++) {
 		in_keystate[i] = in_keystateLibretro[i];
+		//fprintf(stderr, "%i\n", in_keystate[i]);
 	}
+
 	keyPressed();
 	if (previousPlayerKeystate[0] & keyPadStart && keychange[0]) {
-		Sound::Instance().playSoundTuberculoz();
-
+		fprintf(stderr, "play sound\n");
+		Sound::Instance().playSoundBlackBombe();
 	}
 }

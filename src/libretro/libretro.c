@@ -47,7 +47,6 @@ char * saveDir;
 FILE* fichier;
 bool write = false;
 
-
 static const unsigned short retro_psx_map[] = { [RETRO_DEVICE_ID_JOYPAD_B] = 1 << DKEY_CROSS, [RETRO_DEVICE_ID_JOYPAD_Y] = 1 << DKEY_SQUARE, [RETRO_DEVICE_ID_JOYPAD_SELECT] = 1 << DKEY_SELECT,
 		[RETRO_DEVICE_ID_JOYPAD_START] = 1 << DKEY_START, [RETRO_DEVICE_ID_JOYPAD_UP] = 1 << DKEY_UP, [RETRO_DEVICE_ID_JOYPAD_DOWN] = 1 << DKEY_DOWN,
 		[RETRO_DEVICE_ID_JOYPAD_LEFT] = 1 << DKEY_LEFT, [RETRO_DEVICE_ID_JOYPAD_RIGHT] = 1 << DKEY_RIGHT, [RETRO_DEVICE_ID_JOYPAD_A] = 1 << DKEY_CIRCLE, [RETRO_DEVICE_ID_JOYPAD_X] = 1
@@ -191,8 +190,12 @@ void retro_init(void) {
 	environ_cb(RETRO_ENVIRONMENT_SET_SUPPORT_NO_GAME, &support_no_game);
 
 	if (environ_cb(RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY, &saveDir) && saveDir) {
+		if (strcmp(saveDir, "") == 0) {
+			fprintf(stderr, "Save directory not set in retroarch.cfg so use content directory !\n");
+			environ_cb(RETRO_ENVIRONMENT_GET_CONTENT_DIRECTORY, &saveDir);
+		}
+		strcat(saveDir, "/lr_hammerfest_libretro.srm");
 		fprintf(stderr, "save dir : %s\n", saveDir);
-		strcat(saveDir, "/lr_hammerfest_libretro.srm\n");
 		fichier = fopen(saveDir, "r");
 	}
 	fprintf(stderr, "Loaded game!\n");
@@ -220,7 +223,6 @@ void retro_run(void) {
 	hammerfest_tick(hammerfest, in_keystate);
 	video_cb(vout_buf->pixels, VOUT_WIDTH, VOUT_HEIGHT, VOUT_WIDTH * 4);
 
-
 	//rewind(fichier);
 	//fprintf(fichier,"%x",13211);
 
@@ -233,18 +235,17 @@ void retro_run(void) {
 //	write = true;
 //	}
 	/*
-	unsigned int read;
-	rewind(fichier);
-	for(int i = 0;i < 15;i++){
-		fscanf(fichier,"%x",&read);
-		fprintf(stderr,"%x",read);
-	}
-	fprintf(stderr,"\n");
-*/
+	 unsigned int read;
+	 rewind(fichier);
+	 for(int i = 0;i < 15;i++){
+	 fscanf(fichier,"%x",&read);
+	 fprintf(stderr,"%x",read);
+	 }
+	 fprintf(stderr,"\n");
+	 */
 	//char str[80];
 	//fscanf(fichier,"%s", str);
 	//rewind(fichier);
 	//fprintf(stderr, "%s\n", str);
 	//fprintf(stderr, "%s", content);
-
 }

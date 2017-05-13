@@ -2,3 +2,5 @@
 *.dylib
 
 *.o
+
+lr_hammerfest_libretro.so

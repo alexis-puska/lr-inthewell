@@ -28,7 +28,8 @@
 Sound Sound::m_instance = Sound();
 
 Sound::Sound() {
-	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 4096) == -1) {
+	fprintf(stderr, "InitSoundSystem\n");
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024) == -1) {
 		printf("%s", Mix_GetError());
 	}
 
@@ -36,26 +37,25 @@ Sound::Sound() {
 	musicHurryUp = Mix_LoadMUSType_RW(SDL_RWFromMem(music_hurry_up_mp3, music_hurry_up_mp3_len), MUS_MP3, 0);
 	music = Mix_LoadMUSType_RW(SDL_RWFromMem(music_music_mp3, music_music_mp3_len), MUS_MP3, 0);
 
-	soundBlackBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_black_bombe_mp3, sound_black_bombe_mp3_len), 0);
-	soundBlueBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_blue_bombe_mp3, sound_blue_bombe_mp3_len), 0);
-	soundChangeType = Mix_LoadWAV_RW(SDL_RWFromMem(sound_change_type_mp3, sound_change_type_mp3_len), 0);
-	soundCristal = Mix_LoadWAV_RW(SDL_RWFromMem(sound_cristal_mp3, sound_cristal_mp3_len), 0);
-	soundDead = Mix_LoadWAV_RW(SDL_RWFromMem(sound_dead_mp3, sound_dead_mp3_len), 0);
-	soundGreenBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_green_bombe_mp3, sound_green_bombe_mp3_len), 0);
-	soundHurryUp = Mix_LoadWAV_RW(SDL_RWFromMem(sound_hurry_up_mp3, sound_hurry_up_mp3_len), 0);
-	soundIgorFall = Mix_LoadWAV_RW(SDL_RWFromMem(sound_igor_fall_mp3, sound_igor_fall_mp3_len), 0);
-	soundIgorJump = Mix_LoadWAV_RW(SDL_RWFromMem(sound_igor_jump_mp3, sound_igor_jump_mp3_len), 0);
-	soundKickBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_kick_bombe_mp3, sound_kick_bombe_mp3_len), 0);
-	soundKillEnnemis = Mix_LoadWAV_RW(SDL_RWFromMem(sound_kill_ennemis_mp3, sound_kill_ennemis_mp3_len), 0);
-	soundLetterEffectObject = Mix_LoadWAV_RW(SDL_RWFromMem(sound_letter_effect_object_mp3, sound_letter_effect_object_mp3_len), 0);
-	soundNormalBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_normal_bombe_mp3, sound_normal_bombe_mp3_len), 0);
-	soundPop = Mix_LoadWAV_RW(SDL_RWFromMem(sound_pop_mp3, sound_pop_mp3_len), 0);
-	soundPutBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_put_bombe_mp3, sound_put_bombe_mp3_len), 0);
-	soundTakeObject = Mix_LoadWAV_RW(SDL_RWFromMem(sound_take_object_mp3, sound_take_object_mp3_len), 0);
-	soundTeleporter = Mix_LoadWAV_RW(SDL_RWFromMem(sound_teleporter_mp3, sound_teleporter_mp3_len), 0);
-	soundTuberculoz = Mix_LoadWAV_RW(SDL_RWFromMem(sound_tuberculoz_mp3, sound_tuberculoz_mp3_len), 0);
+	soundBlackBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_black_bombe_wav, sound_black_bombe_wav_len), 0);
+	soundBlueBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_blue_bombe_wav, sound_blue_bombe_wav_len), 0);
+	soundChangeType = Mix_LoadWAV_RW(SDL_RWFromMem(sound_change_type_wav, sound_change_type_wav_len), 0);
+	soundCristal = Mix_LoadWAV_RW(SDL_RWFromMem(sound_cristal_wav, sound_cristal_wav_len), 0);
+	soundDead = Mix_LoadWAV_RW(SDL_RWFromMem(sound_dead_wav, sound_dead_wav_len), 0);
+	soundGreenBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_green_bombe_wav, sound_green_bombe_wav_len), 0);
+	soundHurryUp = Mix_LoadWAV_RW(SDL_RWFromMem(sound_hurry_up_wav, sound_hurry_up_wav_len), 0);
+	soundIgorFall = Mix_LoadWAV_RW(SDL_RWFromMem(sound_igor_fall_wav, sound_igor_fall_wav_len), 0);
+	soundIgorJump = Mix_LoadWAV_RW(SDL_RWFromMem(sound_igor_jump_wav, sound_igor_jump_wav_len), 0);
+	soundKickBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_kick_bombe_wav, sound_kick_bombe_wav_len), 0);
+	soundKillEnnemis = Mix_LoadWAV_RW(SDL_RWFromMem(sound_kill_ennemis_wav, sound_kill_ennemis_wav_len), 0);
+	soundLetterEffectObject = Mix_LoadWAV_RW(SDL_RWFromMem(sound_letter_effect_object_wav, sound_letter_effect_object_wav_len), 0);
+	soundNormalBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_normal_bombe_wav, sound_normal_bombe_wav_len), 0);
+	soundPop = Mix_LoadWAV_RW(SDL_RWFromMem(sound_pop_wav, sound_pop_wav_len), 0);
+	soundPutBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_put_bombe_wav, sound_put_bombe_wav_len), 0);
+	soundTakeObject = Mix_LoadWAV_RW(SDL_RWFromMem(sound_take_object_wav, sound_take_object_wav_len), 0);
+	soundTeleporter = Mix_LoadWAV_RW(SDL_RWFromMem(sound_teleporter_wav, sound_teleporter_wav_len), 0);
+	soundTuberculoz = Mix_LoadWAV_RW(SDL_RWFromMem(sound_tuberculoz_wav, sound_tuberculoz_wav_len), 0);
 
-	Mix_PlayMusic(musicBoss, -1);
 	Mix_VolumeMusic (MIX_MAX_VOLUME);
 	Mix_AllocateChannels(nbChannelSound);
 }
