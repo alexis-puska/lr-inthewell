@@ -55,11 +55,9 @@ Sound::Sound() {
 	soundTeleporter = Mix_LoadWAV_RW(SDL_RWFromMem(sound_teleporter_mp3, sound_teleporter_mp3_len), 0);
 	soundTuberculoz = Mix_LoadWAV_RW(SDL_RWFromMem(sound_tuberculoz_mp3, sound_tuberculoz_mp3_len), 0);
 
-	//Mix_PlayMusic(music, -1);
+	Mix_PlayMusic(musicBoss, -1);
 	Mix_VolumeMusic (MIX_MAX_VOLUME);
 	Mix_AllocateChannels(nbChannelSound);
-
-			playSoundTuberculoz();
 }
 
 Sound::~Sound() {
