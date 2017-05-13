@@ -15,6 +15,7 @@
 #include "libretro.h"
 #include "../hammerfest/MyWrapper.h"
 #include <SDL2/SDL.h>
+#include <unistd.h>
 #ifndef IS_OSX
 #include <SDL2/SDL_image.h>
 #else
@@ -43,9 +44,10 @@ static struct Hammerfest* hammerfest;
 static unsigned short in_keystate[2];
 static SDL_Surface * vout_buf;
 
-char * saveDir;
+char * savePath;
+char saveFilePath[255];
 FILE* fichier;
-bool write = false;
+bool writeInFile = false;
 
 static const unsigned short retro_psx_map[] = { [RETRO_DEVICE_ID_JOYPAD_B] = 1 << DKEY_CROSS, [RETRO_DEVICE_ID_JOYPAD_Y] = 1 << DKEY_SQUARE, [RETRO_DEVICE_ID_JOYPAD_SELECT] = 1 << DKEY_SELECT,
 		[RETRO_DEVICE_ID_JOYPAD_START] = 1 << DKEY_START, [RETRO_DEVICE_ID_JOYPAD_UP] = 1 << DKEY_UP, [RETRO_DEVICE_ID_JOYPAD_DOWN] = 1 << DKEY_DOWN,
@@ -189,14 +191,22 @@ void retro_init(void) {
 	environ_cb(RETRO_ENVIRONMENT_SET_PERFORMANCE_LEVEL, &level);
 	environ_cb(RETRO_ENVIRONMENT_SET_SUPPORT_NO_GAME, &support_no_game);
 
-	if (environ_cb(RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY, &saveDir) && saveDir) {
-		if (strcmp(saveDir, "") == 0) {
+	if (environ_cb(RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY, &savePath) &&savePath) {
+		if (strcmp(savePath, "") == 0) {
 			fprintf(stderr, "Save directory not set in retroarch.cfg so use content directory !\n");
-			environ_cb(RETRO_ENVIRONMENT_GET_CONTENT_DIRECTORY, &saveDir);
+			environ_cb(RETRO_ENVIRONMENT_GET_CONTENT_DIRECTORY, &savePath);
 		}
-		strcat(saveDir, "/lr_hammerfest_libretro.srm");
-		fprintf(stderr, "save dir : %s\n", saveDir);
-		fichier = fopen(saveDir, "r");
+		strcpy(saveFilePath, savePath);
+		strcat(saveFilePath, "/lr_hammerfest_libretro.srm");
+		fprintf(stderr, "save dir : %s\n", saveFilePath);
+
+		if (access(saveFilePath, F_OK) != -1) {
+			fprintf(stderr, "saving file found : %s\n", saveFilePath);
+			fichier = fopen(saveFilePath, "r+");
+		} else {
+			fprintf(stderr, "saving file doesn't exist, create one\n");
+			fichier = fopen(saveFilePath, "w");
+		}
 	}
 	fprintf(stderr, "Loaded game!\n");
 }
@@ -223,17 +233,17 @@ void retro_run(void) {
 	hammerfest_tick(hammerfest, in_keystate);
 	video_cb(vout_buf->pixels, VOUT_WIDTH, VOUT_HEIGHT, VOUT_WIDTH * 4);
 
-	//rewind(fichier);
+	rewind(fichier);
 	//fprintf(fichier,"%x",13211);
 
-//	int len = 15;
-//	unsigned char test[15] = {0x99, 0x98, 0x97, 0x98, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x95};
-//	if(!write){
-//	for(int i = 0;i < 15;i++){
-//		fprintf(fichier,"%x",test[i]);
-//	}
-//	write = true;
-//	}
+	int len = 15;
+	unsigned char test[15] = {0x99, 0x98, 0x97, 0x98, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x95};
+	if(!writeInFile){
+	for(int i = 0;i < 15;i++){
+		fprintf(fichier,"%x",test[i]);
+	}
+	writeInFile = true;
+	}
 	/*
 	 unsigned int read;
 	 rewind(fichier);
