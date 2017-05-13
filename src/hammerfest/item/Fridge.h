@@ -1,7 +1,7 @@
 #ifndef __MYCLASS_FRIDGE
 #define __MYCLASS_FRIDGE
 
-#include <Map>
+#include <map>
 
 class Fridge {
 	public:

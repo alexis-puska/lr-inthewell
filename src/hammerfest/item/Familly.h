@@ -1,7 +1,7 @@
 #ifndef __MYCLASS_FAMILLY
 #define __MYCLASS_FAMILLY
 
-#include <Vector>
+#include <vector>
 #include <string.h>
 
 class Familly {

@@ -2,8 +2,8 @@
 #define __MYCLASS_QUEST
 
 #include "Item.h"
-#include <Vector>
-#include <Map>
+#include <vector>
+#include <map>
 
 class Quest {
 	public:
