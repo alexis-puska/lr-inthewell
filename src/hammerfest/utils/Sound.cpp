@@ -92,7 +92,7 @@ Sound& Sound::Instance() {
 }
 
 void Sound::startMusicBoss() {
-	Mix_VolumeMusic(MIX_MAX_VOLUME / 3);
+	Mix_VolumeMusic(MIX_MAX_VOLUME);
 	Mix_PlayMusic(musicBoss, -1);
 }
 

@@ -25,7 +25,7 @@ enum keyPad {
 	keyPadY = 32768
 };
 
-Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro) {
+Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool newSaveFile) {
 
 	Uint32 rmask, gmask, bmask, amask;
 	rmask = 0x00ff0000;
@@ -41,6 +41,7 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro) {
 	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 	Sound::Instance();
 	Sound::Instance().startMusicBoss();
+	ItemFileSystem::Instance().init(saveFilePath, newSaveFile);
 }
 
 Hammerfest::~Hammerfest() {
@@ -89,4 +90,6 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 		fprintf(stderr, "play sound\n");
 		Sound::Instance().playSoundBlackBombe();
 	}
+
+	ItemFileSystem::Instance().loadAccount(0);
 }

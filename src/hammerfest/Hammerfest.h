@@ -7,13 +7,14 @@
 
 #include <stdio.h>
 #include "utils/Sound.h"
+#include "item/ItemFileSystem.h"
 
 #ifndef __MYCLASS_HAMMERFEST
 #define __MYCLASS_HAMMERFEST
 class Hammerfest {
 
 	public:
-		Hammerfest(SDL_Surface * vout_bufLibretro);
+		Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool newSaveFile);
 		~Hammerfest();
 		void tick(unsigned short in_keystateLibretro[16]);
 	private:

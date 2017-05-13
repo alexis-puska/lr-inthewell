@@ -14,7 +14,7 @@ extern "C" {
 
 typedef struct Hammerfest Hammerfest;
 
-Hammerfest* newHammerfest(SDL_Surface * vout_buf);
+Hammerfest* newHammerfest(SDL_Surface * vout_buf, char * saveFilePath, bool newSaveFile);
 void hammerfest_tick(Hammerfest *v, unsigned short in_keystate[16]);
 
 //SDL_Surface * hammerfest_getScreen(Hammerfest* v);

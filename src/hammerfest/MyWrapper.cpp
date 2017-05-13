@@ -2,8 +2,8 @@
 #include "Hammerfest.h"
 
 extern "C" {
-Hammerfest* newHammerfest(SDL_Surface * vout_buf) {
-	return new Hammerfest(vout_buf);
+Hammerfest* newHammerfest(SDL_Surface * vout_buf, char * saveFilePath, bool newSaveFile) {
+	return new Hammerfest(vout_buf, saveFilePath, newSaveFile);
 }
 
 void deleteHammerfest(Hammerfest* v) {
