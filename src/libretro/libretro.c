@@ -239,7 +239,7 @@ void retro_run(void) {
 	int len = 15;
 	unsigned char test[15] = {0x99, 0x98, 0x97, 0x98, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x99, 0x95};
 	if(!writeInFile){
-	for(int i = 0;i < 15;i++){
+	for(i = 0;i < 15;i++){
 		fprintf(fichier,"%x",test[i]);
 	}
 	writeInFile = true;
