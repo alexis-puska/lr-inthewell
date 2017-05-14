@@ -1,7 +1,5 @@
 #include "Hammerfest.h"
 
-#include <time.h>
-
 int main(int argc, char** argv) {
 
 }
@@ -42,6 +40,8 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool
 	Sound::Instance();
 	Sound::Instance().startMusicBoss();
 	ItemFileSystem::Instance().init(saveFilePath, newSaveFile);
+	//TODO a degager
+	ItemFileSystem::Instance().loadAccount(0);
 }
 
 Hammerfest::~Hammerfest() {
@@ -90,5 +90,6 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 	}
 
 	//ItemFileSystem::Instance().loadAccount(0);
+	ItemFileSystem::Instance().simulateGame();
 	//ItemFileSystem::Instance().save(4400000, true, 110);
 }

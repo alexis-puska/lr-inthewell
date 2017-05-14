@@ -15,7 +15,7 @@ Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disgui
 	this->id = id;
 	this->giveOption = giveOption;
 	this->giveOption = giveMode;
-	this->giveOption = removeFamilly;
+	this->removeFamilly = removeFamilly;
 	giveFamilly.push_back(famillyId);
 }
 Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, const char * titre, const char * description) {
@@ -24,7 +24,7 @@ Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disgui
 	this->id = id;
 	this->giveOption = giveOption;
 	this->giveOption = giveMode;
-	this->giveOption = removeFamilly;
+	this->removeFamilly = removeFamilly;
 }
 
 char * Quest::getDescription() {

@@ -2,6 +2,7 @@
 #define __MYCLASS_QUEST
 
 #include "Item.h"
+#include <stdio.h>
 #include <vector>
 #include <map>
 

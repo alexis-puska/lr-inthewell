@@ -17,6 +17,10 @@ void Family::addItem(int itemId) {
 	items.push_back(itemId);
 }
 
+std::vector<int> Family::getItems(){
+	return items;
+}
+
 void Family::printName() {
 	fprintf(stderr, "%i - %s\n", id, name);
 }
