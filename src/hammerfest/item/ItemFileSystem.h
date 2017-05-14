@@ -5,7 +5,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include <map>
 
+// Score + nb of game + level reached + 353 item
+#define nbOfValueInFile 357
 
 class ItemFileSystem {
 	public:
@@ -15,7 +18,7 @@ class ItemFileSystem {
 		~ItemFileSystem();
 		void init(char * saveFile, bool newSaveFile);
 		void loadAccount(int accountId);
-		int saveAccount();
+		void save(int score, bool gamePlayed, int level);
 		int getItemId();
 	private:
 
@@ -26,7 +29,13 @@ class ItemFileSystem {
 		int accountId;
 		char saveFilePath[255];
 		FILE* saveFile;
-		bool writeInFile;
+
+		int accountLoaded;
+		int scoreMax;
+		int scoreLastGame;
+		int nbGame;
+		int levelReached;
+		std::map<int, int> fridge;
 };
 #endif
 

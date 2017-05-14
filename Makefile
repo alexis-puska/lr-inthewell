@@ -30,7 +30,6 @@ OBJS += src/libretro/libretro.o
 OBJS += src/hammerfest/item/Item.o
 OBJS += src/hammerfest/item/Familly.o
 OBJS += src/hammerfest/item/Quest.o
-OBJS += src/hammerfest/item/Fridge.o
 OBJS += src/hammerfest/item/ItemFileSystem.o
 OBJS += src/hammerfest/Hammerfest.o
 OBJS += src/hammerfest/MyWrapper.o

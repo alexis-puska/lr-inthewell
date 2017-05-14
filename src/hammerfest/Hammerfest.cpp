@@ -82,14 +82,13 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 	for (int i = 0; i < 2; i++) {
 		in_keystate[i] = in_keystateLibretro[i];
-		//fprintf(stderr, "%i\n", in_keystate[i]);
 	}
-
 	keyPressed();
 	if (previousPlayerKeystate[0] & keyPadStart && keychange[0]) {
 		fprintf(stderr, "play sound\n");
 		Sound::Instance().playSoundBlackBombe();
 	}
 
-	ItemFileSystem::Instance().loadAccount(0);
+	//ItemFileSystem::Instance().loadAccount(0);
+	//ItemFileSystem::Instance().save(4400000, true, 110);
 }
