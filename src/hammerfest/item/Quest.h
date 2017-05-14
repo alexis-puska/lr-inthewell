@@ -9,8 +9,8 @@ class Quest {
 	public:
 		Quest();
 		~Quest();
-		Quest(char * titre,char * description, int giveOption, int giveMode, int removeFamilly, int giveFamilly);
-		Quest(char * titre,char * description, int giveOption, int giveMode, int removeFamilly);
+		Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, int giveFamilly, const char * titre, const char * description);
+		Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, const char * titre, const char * description);
 		char * getTitre();
 		char * getDescription();
 		int getGiveOption();
@@ -20,8 +20,10 @@ class Quest {
 		std::map<int, int> getRequireItemId();
 		void addRequireItemId(int itemId, int quantity);
 		void addGiveFamilly(int famillyId);
+		void printName();
 	private:
 		std::map<int, int> requireItemId;
+		int id;
 		char titre[40];
 		char description[512];
 		int giveOption;

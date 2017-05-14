@@ -1,15 +1,16 @@
-#ifndef __MYCLASS_FAMILLY
-#define __MYCLASS_FAMILLY
+#ifndef __MYCLASS_FAMILY
+#define __MYCLASS_FAMILY
 
 #include <vector>
 #include <string.h>
 
-class Familly {
+class Family {
 	public:
-		Familly();
-		~Familly();
-		Familly(int id, char * name);
+		Family();
+		~Family();
+		Family(int id, const char * name);
 		void addItem(int itemId);
+		void printName();
 	private:
 		int id;
 		char name[50];
