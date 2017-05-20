@@ -131,9 +131,12 @@ int ItemFileSystem::loadAccount(int accountId) {
 		}
 	}
 
-	//for (int i = 0; i < nbOfValueInFile - 4; i++) {
-	//	fprintf(stderr, "%i - %i\n", i, fridge[i]);
-	//}
+	fprintf(stderr,"\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
+
+	for (int i = 0; i < nbOfValueInFile - 4; i++) {
+		fprintf(stderr, "%i - %6i;\t", i, fridge[i]);
+	}
+	fprintf(stderr,"\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
 
 	fclose(saveFile);
 	loadDefaultAvailableItem();
@@ -146,7 +149,19 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 	std::vector<int> familyToRemove;
 	//add default familly 0 for effect, 20 for point.
 	familyAvailable.push_back(0);
+	familyAvailable.push_back(7);
+	familyAvailable.push_back(13);
 	familyAvailable.push_back(20);
+	familyAvailable.push_back(48);
+
+	//fridge[304]=1;
+	//fridge[308]=1;
+	//fridge[310]=1;
+	//fridge[312]=1;
+	//fridge[315]=1;
+	//diamant
+	//fridge[126]=30;
+	//fridge[118]=60;
 
 	/********************
 	 *  validate quest
@@ -187,7 +202,7 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 	}
 
 	for (int i = 0; i < familyAvailable.size(); i++) {
-		//fprintf(stderr, "family id available: %i\n", familyAvailable.at(i));
+		familys.at(familyAvailable.at(i))->printName();
 	}
 
 	//fprintf(stderr, "\n\n\n\n\n");
@@ -1207,7 +1222,7 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 332, "Agrafeuse du Chaos", 5, 100000, -1));
 	items.push_back(new Item(surface, 333, "Miroir bancal", 0, 69, -1));
 	items.push_back(new Item(surface, 334, "Etoile du Diable", 0, 666, -1));
-	items.push_back(new Item(surface, 334, "Poudre de plage magique", 1, 700, 5));
+	items.push_back(new Item(surface, 335, "Poudre de plage magique", 1, 700, 5));
 	items.push_back(new Item(surface, 336, "Matériel d\'architecte", 1, 600, 10));
 	items.push_back(new Item(surface, 337, "Maquette en sable", 2, 1200, 5));
 	items.push_back(new Item(surface, 338, "Winkel", 2, 900, 3));
@@ -1793,9 +1808,13 @@ void ItemFileSystem::buildDatabase() {
 void ItemFileSystem::simulateGame() {
 
 	for (int i = 0; i < 103; i++) {
-		fprintf(stderr, "level %i - effect %i - point %i\n", i, getEffectItemId(), getPointItemId());
+		int point = getEffectItemId();
+		int effect = getPointItemId();
+
+		fridge[point] = fridge[point] + 1;
+		fridge[effect] = fridge[effect] + 1;
+		fprintf(stderr, "level %i - effect %i - point %i\n", i, effect, point);
 	}
-//}
 }
 
 int ItemFileSystem::getEffectItemId() {

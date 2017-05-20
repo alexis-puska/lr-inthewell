@@ -89,7 +89,7 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 		Sound::Instance().playSoundBlackBombe();
 	}
 
-	//ItemFileSystem::Instance().loadAccount(0);
+	ItemFileSystem::Instance().loadAccount(0);
 	ItemFileSystem::Instance().simulateGame();
-	//ItemFileSystem::Instance().save(4400000, true, 110);
+	ItemFileSystem::Instance().save(4400000, true, 110);
 }
