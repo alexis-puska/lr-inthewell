@@ -1,0 +1,211 @@
+cd /mnt/hgfs/workspaceGame/trie/
+find -name 'out*.png' -exec rm {} \;
+
+
+cd animation\ ennimie\ meurt && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd animation\ marteau && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd background\ effect && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/blanc && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/blanc/DefineSprite_1673 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/blanc/DefineSprite_1676 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/blanc/DefineSprite_1679 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/bleu && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/bleu/DefineSprite_1562 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/bleu/DefineSprite_1570 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/kiwi && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/kiwi/DefineSprite_1632 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/kiwi/DefineSprite_1642 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/noir && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/noir/DefineSprite_724_\ Yan_ && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/rouge && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/rouge/DefineSprite_1485 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/vert && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/vert/DefineSprite_1524 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/vert/DefineSprite_1527 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd bombes/vert/DefineSprite_1536 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd boulette\ feu && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd champs\ force && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd changement\ type\ bombe && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd cristale && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd cristale/DefineSprite_1994_(IwKV && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd cristaux && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd disparition\ objet && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/abricot && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/abricot/DefineSprite_2205 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/abricot/DefineSprite_2209 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/abricot/DefineSprite_2217 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/abricot/DefineSprite_2218 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/abricot/DefineSprite_2221 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/abricot/DefineSprite_2229 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/annanas && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/annanas/DefineSprite_2238 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/annanas/DefineSprite_2241 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/annanas/DefineSprite_2243 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/annanas/DefineSprite_2247 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/annanas/DefineSprite_2248 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/annanas/DefineSprite_2253 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/annanas/DefineSprite_2278 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/annanas/DefineSprite_2279 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/annanas/DefineSprite_2284 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/banane && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/banane/DefineSprite_2315 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/banane/DefineSprite_2325 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/banane/DefineSprite_2327 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/banane/DefineSprite_2339 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/banane/DefineSprite_2344 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/banane/DefineSprite_2355 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/banane/DefineSprite_2363 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/blob && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/blob/DefineSprite_664 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/blob/DefineSprite_665 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/blob/DefineSprite_667 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/blob/DefineSprite_681 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/bombinos && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/bombinos/DefineSprite_2147 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/bombinos/DefineSprite_2152 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/bombinos/DefineSprite_2153 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/bombinos/DefineSprite_2154 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/cerise && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/cerise/DefineSprite_3670 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/cerise/DefineSprite_3692 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/cerise/DefineSprite_3694 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/cerise/DefineSprite_3722 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/cerise/DefineSprite_3730 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/citron && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/citron/DefineSprite_1686_1,n4l && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/citron/DefineSprite_2017 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/citron/DefineSprite_2030 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/citron/DefineSprite_2035 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/citron/DefineSprite_2048 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/citron/DefineSprite_2055 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/citron/DefineSprite_2058 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/citron/DefineSprite_2059 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/feu && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/feu/DefineSprite_2296 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/feu/DefineSprite_2304 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/fraise && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/fraise/DefineSprite_2062_\ VqQl && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/fraise/DefineSprite_2073 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/fraise/DefineSprite_2076 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/fraise/DefineSprite_2080 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/fraise/DefineSprite_2085 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/fraise/DefineSprite_2099 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/fraise/DefineSprite_2100 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/fraise/DefineSprite_2106 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/fraise/DefineSprite_2110 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_419 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_424 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_427 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_429 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_432 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_433 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_434 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_441 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_446 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_449 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_450 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/framboise/DefineSprite_461 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/fruit_tuberculoz && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/kiwi && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/kiwi/DefineSprite_1838 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/kiwi/DefineSprite_1844 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/kiwi/DefineSprite_1846 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/kiwi/DefineSprite_1852 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/kiwi/DefineSprite_1879 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/kiwi/DefineSprite_1888 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/kiwi/DefineSprite_1892 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1258 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1279 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1281 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1282 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1294 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1295 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1296_7;jC3( && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1299 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1314 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1321 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1323 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1325 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1327 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1328 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1329 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1335 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/litchi/DefineSprite_1336_1+%2AWP && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/orange && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/orange/DefineSprite_2987 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/orange/DefineSprite_2996 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/orange/DefineSprite_2998 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/orange/DefineSprite_3005 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/orange/DefineSprite_3021 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pasteque && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pasteque/DefineSprite_1156 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pasteque/DefineSprite_1162 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pasteque/DefineSprite_1165 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pasteque/DefineSprite_1167 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pasteque/DefineSprite_1168_;+8u- && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire/DefineSprite_1819_()8H3( && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire/DefineSprite_2164 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire/DefineSprite_2169 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire/DefineSprite_2171 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire/DefineSprite_2176 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire/DefineSprite_2178 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire/DefineSprite_2188 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire/DefineSprite_2193 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire/DefineSprite_2194 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire/DefineSprite_2195 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/poire/DefineSprite_2197 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_1695_]0ir[ && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_3561 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_3578 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_3581 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_3587 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_3588 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_3592 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_3607 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_3625 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_3630 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_3635 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/pomme/DefineSprite_3640 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/scie && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd enemies/scie/DefineSprite_598_24zcJ && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd fantome\ effet && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd fantome\ effet/DefineSprite_1668_\ d;oL && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd fleche && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd fleche/DefineSprite_1225 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd fleche/DefineSprite_1226_9SSxC && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd fleche/DefineSprite_1691_}7Zih && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd glaçon && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd glaçon/DefineSprite_1977_7{4dJ && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd joyaux && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd lettre\ score && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd level && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd level/background && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd map && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd objet && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd objet/DefineSprite_3465_]xUh6 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd objet\ autre && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/1 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/10 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/11 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/12 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/13 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/14 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/15 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/2 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/3 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/4 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/5 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/6 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/7 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/8 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd personnage\ animation/9 && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd porte && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd torche\ animation && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
+cd vortex && for a in [0-9]*.png; do mv $a `printf %04d.%s ${a%.*} ${a##*.}`; done; && convert -append -background none *.png out.png && cd /mnt/hgfs/workspaceGame/trie/
