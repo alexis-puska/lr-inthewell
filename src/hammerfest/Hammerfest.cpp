@@ -33,7 +33,7 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool
 
 	//init all surface
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	screenBuffer = SDL_LoadBMP("background.bmp");
+	screenBuffer = SDL_LoadBMP("menu.bmp");
 	vout_buf = vout_bufLibretro;
 	SDL_FillRect(vout_buf, NULL, SDL_MapRGB(vout_buf->format, 255, 204, 0));
 	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
