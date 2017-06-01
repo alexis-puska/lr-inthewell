@@ -23,7 +23,7 @@ sudo dnf install SDL2_mixer-devel
 sudo dnf install SDL2_ttf-devel
 sudo dnf install SDL2_image-devel
 sudo dnf install SDL2_net-devel
-sudo dnf install liblua5.3-dev
+sudo dnf install lua-devel
 ```
 
 
