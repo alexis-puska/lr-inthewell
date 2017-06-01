@@ -14,7 +14,8 @@ sudo apt-get install -y make libsdl2-dev
 sudo apt-get install -y make libsdl2-image-dev 
 sudo apt-get install -y make libsdl2-ttf-dev 
 sudo apt-get install -y make libsdl2-mixer-dev 
-sudo apt-get install -y make libsdl2-net-dev 
+sudo apt-get install -y make libsdl2-net-dev
+sudo apt-get install -y make liblua5.3-dev
 
 - Linux / Fedora (with RPM Fusion)
 sudo dnf install SDL2-devel
@@ -22,6 +23,7 @@ sudo dnf install SDL2_mixer-devel
 sudo dnf install SDL2_ttf-devel
 sudo dnf install SDL2_image-devel
 sudo dnf install SDL2_net-devel
+sudo dnf install liblua5.3-dev
 ```
 
 
@@ -33,7 +35,7 @@ reset ssh token : ssh-keygen -R "ip";
 
 reset smb password : smbpasswd -a pi
 sudo apt-get update
-sudo apt-get install -y make libsdl2-dev libsdl2-image-dev libsdl2-net-dev libsdl2-ttf-dev libsdl2-mixer-dev libXinerama-dev libXi-dev libXrandr-dev libXss-dev libXCursor-dev
+sudo apt-get install -y make libsdl2-dev libsdl2-image-dev libsdl2-net-dev libsdl2-ttf-dev libsdl2-mixer-dev libXinerama-dev libXi-dev libXrandr-dev libXss-dev libXCursor-dev liblua5.3-dev
 ```
 
 

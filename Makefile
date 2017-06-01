@@ -34,13 +34,12 @@ OBJS += src/hammerfest/item/ItemFileSystem.o
 OBJS += src/hammerfest/Hammerfest.o
 OBJS += src/hammerfest/MyWrapper.o
 OBJS += src/hammerfest/utils/Sound.o
-
-
+OBJS += src/hammerfest/utils/GameConfig.o
 
 
 #COMPILATION
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) $(CFLAGS) -c -o $@ $<
+	$(CXX) $(CXXFLAGS) $(LIBLUA) $(CFLAGS) -c -o $@ $<
 
 
 target_: $(TARGET)

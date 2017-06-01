@@ -9,6 +9,12 @@
 #include "utils/Sound.h"
 #include "item/ItemFileSystem.h"
 
+extern "C" {
+#include <lua.h>
+#include <lauxlib.h>
+#include <lualib.h>
+}
+
 #ifndef __MYCLASS_HAMMERFEST
 #define __MYCLASS_HAMMERFEST
 class Hammerfest {
@@ -18,19 +24,31 @@ class Hammerfest {
 		~Hammerfest();
 		void tick(unsigned short in_keystateLibretro[16]);
 	private:
-
+		//get key pressed on gamepad
 		void keyPressed();
-		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y);
+
+		//draw screen
+		void drawSplashScreen();
+		void drawSaveGameMenu();
+		void drawGameModeMenu();
+		void drawGameOptionMenu();
+		void drawFridgeMenu();
+		void drawQuestMenu();
 
 		//buffer for draw
 		SDL_Surface *screenBuffer;
 		SDL_Surface * vout_buf;
 
-		unsigned short in_keystate[16];
+		//what menu to draw
+		int drawMenu;
 
+		//keystate
+		unsigned short in_keystate[16];
 		bool keychange[16];
 		bool anyPlayerkeychange;
 		unsigned short previousPlayerKeystate[16];
 
+		//utils
+		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y);
 };
 #endif

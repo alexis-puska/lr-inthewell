@@ -23,6 +23,10 @@ enum keyPad {
 	keyPadY = 32768
 };
 
+enum menuStep {
+	splashMenu = 0, saveMenu, modeMenu, optionMenu
+};
+
 Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool newSaveFile) {
 
 	Uint32 rmask, gmask, bmask, amask;
@@ -33,15 +37,12 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool
 
 	//init all surface
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	screenBuffer = SDL_LoadBMP("menu.bmp");
 	vout_buf = vout_bufLibretro;
 	SDL_FillRect(vout_buf, NULL, SDL_MapRGB(vout_buf->format, 255, 204, 0));
-	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+	drawMenu = 0;
 	Sound::Instance();
 	Sound::Instance().startMusicBoss();
 	ItemFileSystem::Instance().init(saveFilePath, newSaveFile);
-	//TODO a degager
-	ItemFileSystem::Instance().loadAccount(0);
 }
 
 Hammerfest::~Hammerfest() {
@@ -88,8 +89,57 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 		fprintf(stderr, "play sound\n");
 		Sound::Instance().playSoundBlackBombe();
 	}
+	switch (drawMenu) {
+		case splashMenu:
+			if (previousPlayerKeystate[0] & keyPadA && keychange[0]) {
+				drawMenu = saveMenu;
+			}
+			drawSplashScreen();
+			break;
+		case saveMenu:
+			if (previousPlayerKeystate[0] & keyPadB && keychange[0]) {
+				drawMenu = splashMenu;
+			}
+			drawSaveGameMenu();
+			break;
+		case modeMenu:
+			drawGameModeMenu();
+			break;
+		case optionMenu:
+			drawGameOptionMenu();
+			break;
+	}
 
-	ItemFileSystem::Instance().loadAccount(0);
-	ItemFileSystem::Instance().simulateGame();
-	ItemFileSystem::Instance().save(4400000, true, 110);
 }
+
+void Hammerfest::drawSplashScreen() {
+	SDL_FreeSurface(screenBuffer);
+	screenBuffer = SDL_LoadBMP("background.bmp");
+	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+}
+
+void Hammerfest::drawSaveGameMenu() {
+	SDL_FreeSurface(screenBuffer);
+	screenBuffer = SDL_LoadBMP("menu.bmp");
+	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+}
+
+void Hammerfest::drawGameModeMenu() {
+
+}
+
+void Hammerfest::drawGameOptionMenu() {
+
+}
+
+void Hammerfest::drawFridgeMenu() {
+
+}
+
+void Hammerfest::drawQuestMenu() {
+
+}
+
+//ItemFileSystem::Instance().loadAccount(0);
+//ItemFileSystem::Instance().simulateGame();
+//ItemFileSystem::Instance().save(4400000, true, 110);

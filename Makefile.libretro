@@ -20,6 +20,7 @@ CXX ?= g++
 AS ?= as
 CC_AS ?= $(CC)
 CFLAGS ?=
+LIBLUA ?=
 
 
 TARGET_NAME := lr_hammerfest
@@ -47,7 +48,8 @@ ifeq ($(platform), unix)
 	TARGET := $(TARGET_NAME)_libretro.so
 	fpic := -fPIC
 	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -g `sdl2-config --static-libs` 
-	CFLAGS += `sdl2-config --cflags`
+	LIBLUA = -I/usr/include/lua5.3/
+	CFLAGS += `sdl2-config --cflags` -llua
 	SHARED := -shared -Wl,--version-script=libretro/link.T
 	
 	
@@ -66,10 +68,11 @@ else ifeq ($(platform), linux-portable)
 else ifeq ($(platform), osx)
 	TARGET := $(TARGET_NAME)_libretro.dylib
 	fpic := -fPIC
+	LIBLUA += -I/usr/local/include/
 	CFLAGS += -I/Library/Frameworks/SDL2.framework/Headers/ -I/Library/Frameworks/SDL2_image.framework/Headers/ -I/Library/Frameworks/SDL2_ttf.framework/Headers/ -I/Library/Frameworks/SDL2_mixer.framework/Headers/ -I/Library/Frameworks/SDL2_net.framework/Headers/ -F/Library/Frameworks/ 
 	CFLAGS += -DIS_OSX
 	SHARED := -dynamiclib
-	LIBS := -F/Library/Frameworks -framework SDL2 -framework SDL2_image -framework SDL2_ttf -framework SDL2_mixer -framework SDL2_net
+	LIBS := -F/Library/Frameworks -framework SDL2 -framework SDL2_image -framework SDL2_ttf -framework SDL2_mixer -framework SDL2_net -llua
 	OSXVER = `sw_vers -productVersion | cut -d. -f 2`
 	OSX_LT_MAVERICKS = `(( $(OSXVER) <= 9)) && echo "YES"`
 	fpic += -mmacosx-version-min=10.7 -stdlib=libc++
@@ -83,7 +86,8 @@ else ifeq ($(platform), rpi2)
 	CFLAGS += -marm -mcpu=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard
 	ASFLAGS += -mcpu=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard
 	LDFLAGS = -I/usr/include/SDL2  -lm
-	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -g `sdl2-config --static-libs` 
+	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -g `sdl2-config --static-libs` -llua
+	LIBLUA = -I/usr/include/lua5.3/ 
 	CFLAGS += `sdl2-config --cflags`
 	HAVE_NEON = 1
 	ARCH = arm
@@ -99,7 +103,8 @@ else ifeq ($(platform), rpi3)
 	CFLAGS += -marm -mcpu=cortex-a53 -mfpu=neon-fp-armv8 -mfloat-abi=hard
 	ASFLAGS += -mcpu=cortex-a53 -mfpu=neon-fp-armv8 -mfloat-abi=hard
 	LDFLAGS = -lm
-	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -g `sdl2-config --static-libs` 
+	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -g `sdl2-config --static-libs` -llua
+	LIBLUA = -I/usr/include/lua5.3/ 
 	CFLAGS += `sdl2-config --cflags`
 	#HAVE_NEON = 1
 	#ARCH = arm
