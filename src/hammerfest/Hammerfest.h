@@ -4,16 +4,10 @@
 #else
 #include <SDL2_image/SDL_image.h>
 #endif
-
 #include <stdio.h>
 #include "utils/Sound.h"
 #include "item/ItemFileSystem.h"
 
-extern "C" {
-#include <lua.h>
-#include <lauxlib.h>
-#include <lualib.h>
-}
 
 #ifndef __MYCLASS_HAMMERFEST
 #define __MYCLASS_HAMMERFEST

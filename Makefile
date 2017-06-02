@@ -39,7 +39,7 @@ OBJS += src/hammerfest/utils/GameConfig.o
 
 #COMPILATION
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) $(LIBLUA) $(CFLAGS) -c -o $@ $<
+	$(CXX) $(CXXFLAGS) $(CFLAGS) -c -o $@ $<
 
 
 target_: $(TARGET)
