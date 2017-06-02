@@ -28,7 +28,6 @@ enum menuStep {
 };
 
 Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool newSaveFile) {
-
 	Uint32 rmask, gmask, bmask, amask;
 	rmask = 0x00ff0000;
 	gmask = 0x0000ff00;
@@ -40,6 +39,7 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool
 	vout_buf = vout_bufLibretro;
 	SDL_FillRect(vout_buf, NULL, SDL_MapRGB(vout_buf->format, 255, 204, 0));
 	drawMenu = 0;
+	Sprite::Instance();
 	Sound::Instance();
 	Sound::Instance().startMusicBoss();
 	ItemFileSystem::Instance().init(saveFilePath, newSaveFile);

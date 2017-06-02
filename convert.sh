@@ -27,4 +27,10 @@ xxd -i -c 64 sound_take_object.wav ../../src/hammerfest/utils/resources/sound_ta
 xxd -i -c 64 sound_teleporter.wav ../../src/hammerfest/utils/resources/sound_teleporter.h
 xxd -i -c 64 sound_tuberculoz.wav ../../src/hammerfest/utils/resources/sound_tuberculoz.h
 
-	
+#image
+cd ../../resources/image
+xxd -i -c 64 light.png ../../src/hammerfest/utils/resources/light.h
+
+#json
+cd ../../resources/json
+xxd -i -c 64 image_parser.json ../../src/hammerfest/utils/resources/image_parser.h

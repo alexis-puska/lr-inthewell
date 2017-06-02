@@ -5,8 +5,11 @@
 #include <SDL2_image/SDL_image.h>
 #endif
 #include <stdio.h>
+
 #include "utils/Sound.h"
+#include "utils/Sprite.h"
 #include "item/ItemFileSystem.h"
+
 
 
 #ifndef __MYCLASS_HAMMERFEST
