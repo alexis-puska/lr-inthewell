@@ -1,0 +1,73 @@
+[
+	{
+		"file": "image_menu",
+		"area": [
+			{"x": 0,   "y": 0,   "nx": 1, "ny": 1, "n": 1, "sx": 128, "sy": 520, "animation": "menu_background_1"},
+			{"x": 128, "y": 0,   "nx": 1, "ny": 1, "n": 1, "sx": 250, "sy": 190, "animation": "menu_background_2"},
+			{"x": 378, "y": 0,   "nx": 1, "ny": 1, "n": 1, "sx": 360, "sy": 72,  "animation": "menu_title"},
+			{"x": 128, "y": 190, "nx": 1, "ny": 1, "n": 1, "sx": 114, "sy": 109, "animation": "menu_image_1"},
+			{"x": 128, "y": 299, "nx": 2, "ny": 2, "n": 4, "sx": 64,  "sy": 64,  "animation": "menu_ice"},
+			{"x": 244, "y": 190, "nx": 2, "ny": 1, "n": 2, "sx": 78,  "sy": 78,  "animation": "menu_player"}
+		]
+	},{
+		"file": "sprite_animation",
+		"area": [
+			{"x": 0, "y": 0, "nx": 40, "ny": 1, "n": 40, "sx": 64, "sy": 64, "animation": "vortex"},
+			{"x": 0, "y": 64, "nx": 12, "ny": 1, "n": 12, "sx": 120, "sy": 119, "animation": "apparition"},
+			{"x": 0, "y": 183, "nx": 6, "ny": 1, "n": 6, "sx": 54, "sy": 70, "animation": "disparition"},
+			{"x": 0, "y": 253, "nx": 13, "ny": 1, "n": 13, "sx": 161, "sy": 566, "animation": "mort"}
+		]
+	},{
+		"file": "sprite_arrow",
+		"area": [
+			{"x": 0, "y": 0, "nx": 1, "ny": 1, "n": 1, "sx": 46, "sy": 16, "animation": "arrow1"},
+			{"x": 0, "y": 16, "nx": 20, "ny": 1, "n": 20, "sx": 46, "sy": 23, "animation": "arrow2"},
+			{"x": 0, "y": 39, "nx": 9, "ny": 1, "n": 9, "sx": 31, "sy": 11, "animation": "arrow3"}
+		]
+	},{
+		"file": "sprite_background_effect",
+		"area": [
+			{"x": 0, "y": 0, "nx": 7, "ny": 1, "n": 7, "sx": 410, "sy": 500, "animation": "backgroundEffect"}
+		]
+	},{
+		"file": "sprite_big_crystal",
+		"area": [
+			{"x": 0, "y": 0, "nx": 9, "ny": 1, "n": 9, "sx": 133, "sy": 130, "animation": "bigCristal"}
+		]
+	},{
+		"file": "sprite_light",
+		"area": [
+			{"x": 0, "y": 0, "nx": 7, "ny": 1, "n": 7, "sx": 118, "sy": 118, "animation": "light"}
+		]
+	},{
+		"file": "sprite_map",
+		"area": [
+			{"x": 0, "y": 0, "nx": 1, "ny": 1, "n": 1, "sx": 420, "sy": 500, "animation": "map"}
+		]
+	},{
+		"file": "sprite_objets",
+		"area": [
+			{"x": 0, "y": 0, "nx": 10, "ny": 36, "n": 353, "sx": 61, "sy": 63, "animation": "objects"}
+		]
+	},{
+		"file": "sprite_player",
+		"area": [
+			{"x": 0, "y": 0, "nx": 7, "ny": 1, "n": 7, "sx": 118, "sy": 118, "animation": "animation"}
+		]
+	},{
+		"file": "sprite_bombe",
+		"area": [
+			{"x": 0, "y": 0, "nx": 7, "ny": 1, "n": 7, "sx": 118, "sy": 118, "animation": "animation"}
+		]
+	},{
+		"file": "sprite_ennemies",
+		"area": [
+			{"x": 0, "y": 0, "nx": 7, "ny": 1, "n": 7, "sx": 118, "sy": 118, "animation": "animation"}
+		]	
+	},{
+		"file": "sprite_level",
+		"area": [
+			{"x": 0, "y": 0, "nx": 7, "ny": 1, "n": 7, "sx": 118, "sy": 118, "animation": "animation"}
+		]
+	}
+]

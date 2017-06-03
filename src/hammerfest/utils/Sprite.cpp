@@ -1,10 +1,5 @@
 #include "Sprite.h"
 
-#include "resources/image_parser.h"
-#include "resources/light.h"
-
-#include <vector>
-
 Sprite Sprite::m_instance = Sprite();
 
 Sprite::Sprite() {
@@ -13,23 +8,27 @@ Sprite::Sprite() {
 	IMG_Init (IMG_INIT_PNG);
 	fprintf(stderr, "Init sprite system\n");
 
-	fprintf(stderr, "%s", image_parser_json);
+	fprintf(stderr, "%s", json_image_parser_json);
 
 	Json::Reader reader;
 	Json::Value root;
 
-	std::string jsonString(image_parser_json, image_parser_json + sizeof image_parser_json / sizeof image_parser_json[0]);
+	SDL_Surface * backgroundSurface = IMG_LoadPNG_RW(SDL_RWFromMem(sprite_player_png, sprite_player_png_len));
+
+	std::string jsonString(json_image_parser_json, json_image_parser_json + sizeof json_image_parser_json / sizeof json_image_parser_json[0]);
 	reader.parse(jsonString, root);
 	for (int i = 0; i < root.size(); i++) {
 		fprintf(stderr, "test json : %i %i %s\n", root.size(), i, root[i]["file"].asCString());
-		for (int j = 0; j < root[i]["area"].size(); j++) {
 		fprintf(stderr, "nb area : %i\n", root[i]["area"].size());
-		fprintf(stderr, "area : %i %i %i %i %i %i\n", root[i]["area"][j]["x"].asUInt(),
+		for (int j = 0; j < root[i]["area"].size(); j++) {
+		fprintf(stderr, "area : %i %i %i %i %i %i %i %s\n", root[i]["area"][j]["x"].asUInt(),
 				root[i]["area"][j]["y"].asUInt(),
 				root[i]["area"][j]["nx"].asUInt(),
 				root[i]["area"][j]["ny"].asUInt(),
+				root[i]["area"][j]["n"].asUInt(),
 				root[i]["area"][j]["sx"].asUInt(),
-				root[i]["area"][j]["sy"].asUInt()
+				root[i]["area"][j]["sy"].asUInt(),
+				root[i]["area"][j]["animation"].asCString()
 		);
 	}
 }

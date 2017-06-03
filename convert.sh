@@ -27,10 +27,24 @@ xxd -i -c 64 sound_take_object.wav ../../src/hammerfest/utils/resources/sound_ta
 xxd -i -c 64 sound_teleporter.wav ../../src/hammerfest/utils/resources/sound_teleporter.h
 xxd -i -c 64 sound_tuberculoz.wav ../../src/hammerfest/utils/resources/sound_tuberculoz.h
 
-#image
+#sprite
+cd ../../resources/sprite
+xxd -i -c 64 sprite_animation.png ../../src/hammerfest/utils/resources/sprite_animation.h
+xxd -i -c 64 sprite_arrow.png ../../src/hammerfest/utils/resources/sprite_arrow.h
+xxd -i -c 64 sprite_background_effect.png ../../src/hammerfest/utils/resources/sprite_background_effect.h
+xxd -i -c 64 sprite_big_crystal.png ../../src/hammerfest/utils/resources/sprite_big_crystal.h
+xxd -i -c 64 sprite_bombe.png ../../src/hammerfest/utils/resources/sprite_bombe.h
+xxd -i -c 64 sprite_ennemies.png ../../src/hammerfest/utils/resources/sprite_ennemies.h
+xxd -i -c 64 sprite_level.png ../../src/hammerfest/utils/resources/sprite_level.h
+xxd -i -c 64 sprite_light.png ../../src/hammerfest/utils/resources/sprite_light.h
+xxd -i -c 64 sprite_map.png ../../src/hammerfest/utils/resources/sprite_map.h
+xxd -i -c 64 sprite_objets.png ../../src/hammerfest/utils/resources/sprite_objets.h
+xxd -i -c 64 sprite_player.png ../../src/hammerfest/utils/resources/sprite_player.h
+
+#sprite
 cd ../../resources/image
-xxd -i -c 64 light.png ../../src/hammerfest/utils/resources/light.h
+xxd -i -c 64 image_menu.png ../../src/hammerfest/utils/resources/image_menu.h
 
 #json
 cd ../../resources/json
-xxd -i -c 64 image_parser.json ../../src/hammerfest/utils/resources/image_parser.h
+xxd -i -c 64 json_image_parser.json ../../src/hammerfest/utils/resources/json_image_parser.h

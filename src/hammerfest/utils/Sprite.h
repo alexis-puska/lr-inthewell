@@ -9,10 +9,31 @@
 
 #include <iostream>
 #include <fstream>
-
+#include <stdio.h>
+#include <vector>
 
 #include "json/json.h"
-#include <stdio.h>
+
+//sprite
+#include "resources/sprite_animation.h"
+#include "resources/sprite_arrow.h"
+#include "resources/sprite_background_effect.h"
+#include "resources/sprite_big_crystal.h"
+#include "resources/sprite_bombe.h"
+#include "resources/sprite_ennemies.h"
+#include "resources/sprite_level.h"
+#include "resources/sprite_light.h"
+#include "resources/sprite_map.h"
+#include "resources/sprite_objets.h"
+#include "resources/sprite_player.h"
+
+//image
+#include "resources/image_menu.h"
+
+//json descriptor
+#include "resources/json_image_parser.h"
+
+
 
 #ifndef __MYCLASS_SPRITE
 #define __MYCLASS_SPRITE
