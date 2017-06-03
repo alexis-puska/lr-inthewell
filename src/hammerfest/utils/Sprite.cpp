@@ -1,5 +1,24 @@
 #include "Sprite.h"
 
+//sprite
+#include "resources/sprite_animation.h"
+#include "resources/sprite_arrow.h"
+#include "resources/sprite_background_effect.h"
+#include "resources/sprite_big_crystal.h"
+#include "resources/sprite_bombe.h"
+#include "resources/sprite_ennemies.h"
+#include "resources/sprite_level.h"
+#include "resources/sprite_light.h"
+#include "resources/sprite_map.h"
+#include "resources/sprite_objets.h"
+#include "resources/sprite_player.h"
+
+//image
+#include "resources/image_menu.h"
+
+//json descriptor
+#include "resources/json_image_parser.h"
+
 Sprite Sprite::m_instance = Sprite();
 
 Sprite::Sprite() {
@@ -21,13 +40,14 @@ Sprite::Sprite() {
 		fprintf(stderr, "test json : %i %i %s\n", root.size(), i, root[i]["file"].asCString());
 		fprintf(stderr, "nb area : %i\n", root[i]["area"].size());
 		for (int j = 0; j < root[i]["area"].size(); j++) {
-		fprintf(stderr, "area : %i %i %i %i %i %i %i %s\n", root[i]["area"][j]["x"].asUInt(),
+		fprintf(stderr, "area : %i %i %i %i %i %i %i %s %s\n", root[i]["area"][j]["x"].asUInt(),
 				root[i]["area"][j]["y"].asUInt(),
 				root[i]["area"][j]["nx"].asUInt(),
 				root[i]["area"][j]["ny"].asUInt(),
 				root[i]["area"][j]["n"].asUInt(),
 				root[i]["area"][j]["sx"].asUInt(),
 				root[i]["area"][j]["sy"].asUInt(),
+				root[i]["area"][j]["r"].asBool() ? "true" : "false",
 				root[i]["area"][j]["animation"].asCString()
 		);
 	}
