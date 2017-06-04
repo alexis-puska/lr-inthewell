@@ -115,6 +115,7 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 void Hammerfest::drawSplashScreen() {
 	SDL_FreeSurface(screenBuffer);
 	screenBuffer = SDL_LoadBMP("background.bmp");
+	copySurfaceToBackRenderer(Sprite::Instance().getLight(), screenBuffer, 0, 0);
 	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 }
 

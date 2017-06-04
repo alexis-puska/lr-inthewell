@@ -11,13 +11,12 @@
 #include <fstream>
 #include <stdio.h>
 #include <vector>
+#include <map>
 
 #ifndef __MYCLASS_SPRITE
 #define __MYCLASS_SPRITE
 
 #include "json/json.h"
-
-
 
 class Sprite {
 
@@ -25,9 +24,23 @@ class Sprite {
 		static Sprite& Instance();
 		Sprite();
 		~Sprite();
+		SDL_Surface * getLight();
 	private:
 		Sprite& operator=(const Sprite&);
 		Sprite(const Sprite&);
 		static Sprite m_instance;
+
+		/***********************
+		 * VARIABLES
+		 ***********************/
+		SDL_Surface * surfaceToParse;
+		std::map<std::string, SDL_Surface **> sprites;
+
+		/***********************
+		 * FUNCTIONS
+		 ***********************/
+		void parseJsonFile();
+		void releaseSurfaceToParse();
+		void loadSurfaceToSprite(std::string name);
 };
 #endif
