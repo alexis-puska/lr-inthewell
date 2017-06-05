@@ -34,6 +34,7 @@ class Sprite {
 		 * VARIABLES
 		 ***********************/
 		SDL_Surface * surfaceToParse;
+		int aa,zz;
 		std::map<std::string, SDL_Surface **> sprites;
 
 		/***********************

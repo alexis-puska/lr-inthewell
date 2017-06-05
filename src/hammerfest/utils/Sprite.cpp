@@ -38,6 +38,7 @@ Sprite& Sprite::Instance() {
 }
 
 void Sprite::parseJsonFile() {
+	aa=-1;zz=0;
 	Json::Reader reader;
 	Json::Value root;
 	Json::Value element;
@@ -139,7 +140,15 @@ void Sprite::loadSurfaceToSprite(std::string name) {
 }
 
 SDL_Surface * Sprite::getLight(){
-	return sprites["igor_right_fall"][0];
+	if(aa>2){
+		aa=0;
+		zz++;
+		if(zz>=169){
+			zz=0;
+		}
+	}
+	aa++;
+	return sprites["igor_right_chewinggum"][zz];
 }
 
 
