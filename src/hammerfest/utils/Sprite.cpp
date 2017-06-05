@@ -145,12 +145,12 @@ SDL_Surface * Sprite::getLight(){
 	if(aa>2){
 		aa=0;
 		zz++;
-		if(zz>=14){
+		if(zz>=13){
 			zz=0;
 		}
 	}
 	aa++;
-	return sprites["igor_right_walk"][zz];
+	return sprites["animation113"][zz];
 }
 
 
