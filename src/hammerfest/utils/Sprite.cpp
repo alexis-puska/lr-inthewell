@@ -59,12 +59,12 @@ void Sprite::parseJsonFile() {
 		if (currentFileParse.empty()) {
 			currentFileParse = root[i]["file"].asString();
 			loadSurfaceToSprite(root[i]["file"].asString());
-			fprintf(stderr, "load surface : %s\n", currentFileParse.c_str());
+			//fprintf(stderr, "load surface : %s\n", currentFileParse.c_str());
 		} else if (currentFileParse.compare(root[i]["file"].asString()) != 0) {
-			fprintf(stderr, "release surface : %s\n", currentFileParse.c_str());
+			//fprintf(stderr, "release surface : %s\n", currentFileParse.c_str());
 			currentFileParse = root[i]["file"].asString();
 			releaseSurfaceToParse();
-			fprintf(stderr, "load surface : %s\n", currentFileParse.c_str());
+			//fprintf(stderr, "load surface : %s\n", currentFileParse.c_str());
 			loadSurfaceToSprite(root[i]["file"].asString());
 		}
 		for (int j = 0; j < root[i]["area"].size(); j++) {
@@ -79,7 +79,6 @@ void Sprite::parseJsonFile() {
 			bool r = element[j]["r"].asBool();
 			std::string anim = element[j]["animation"].asString();
 			idx = 0;
-			//SDL_Surface ** temp = new SDL_Surface * [n];
 			SDL_Rect srcTextureRect;
 			SDL_Rect destTextureRect;
 			destTextureRect.x = 0;
@@ -87,7 +86,7 @@ void Sprite::parseJsonFile() {
 			destTextureRect.w = sx;
 			destTextureRect.h = sy;
 			sprites[anim] = new SDL_Surface * [n];
-			fprintf(stderr, "begin parse file : %s, area: %i %i %i %i %i %i %i %s %s \n", currentFileParse.c_str(), x, y, nx, ny, n, sx, sy, r ? "true" : "false", anim.c_str());
+			//fprintf(stderr, "begin parse file : %s, area: %i %i %i %i %i %i %i %s %s \n", currentFileParse.c_str(), x, y, nx, ny, n, sx, sy, r ? "true" : "false", anim.c_str());
 			for (int l = 0; l < ny; l++) {
 				for (int k = 0; k < nx; k++) {
 					srcTextureRect.x = x + (k * sx);
@@ -143,12 +142,12 @@ SDL_Surface * Sprite::getLight(){
 	if(aa>2){
 		aa=0;
 		zz++;
-		if(zz>=169){
+		if(zz>=62){
 			zz=0;
 		}
 	}
 	aa++;
-	return sprites["igor_right_chewinggum"][zz];
+	return sprites["platform"][zz];
 }
 
 
