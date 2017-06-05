@@ -138,16 +138,19 @@ void Sprite::loadSurfaceToSprite(std::string name) {
 	}
 }
 
+//SDL_surface
+
+
 SDL_Surface * Sprite::getLight(){
 	if(aa>2){
 		aa=0;
 		zz++;
-		if(zz>=62){
+		if(zz>=14){
 			zz=0;
 		}
 	}
 	aa++;
-	return sprites["platform"][zz];
+	return sprites["igor_right_walk"][zz];
 }
 
 
