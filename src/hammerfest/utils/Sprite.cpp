@@ -145,12 +145,12 @@ SDL_Surface * Sprite::getLight(){
 	if(aa>2){
 		aa=0;
 		zz++;
-		if(zz>=13){
+		if(zz>=10){
 			zz=0;
 		}
 	}
 	aa++;
-	return sprites["animation113"][zz];
+	return sprites["black_bombe_explosion"][zz];
 }
 
 

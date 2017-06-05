@@ -112,9 +112,9 @@
 			{"x": 0, "y": 524,  "nx": 10, "ny": 2, "n": 12, "sx": 291, "sy": 237,   "r": false, "animation": "white_bombe_explosion"},
 			{"x": 0, "y": 998,  "nx": 10, "ny": 2, "n": 12, "sx": 291, "sy": 237,   "r": false, "animation": "blue_bombe_explosion"},
 			{"x": 0, "y": 1472, "nx": 10, "ny": 1, "n": 10, "sx": 43,  "sy": 22,    "r": false, "animation": "kiwi_bombe_explosion"},
-			{"x": 0, "y": 1494, "nx": 10, "ny": 1, "n": 10, "sx": 98,  "sy": 107,   "r": false, "animation": "black_bombe_explosion"},
-			{"x": 0, "y": 1815, "nx": 10, "ny": 2, "n": 12, "sx": 291, "sy": 237,   "r": false, "animation": "red_bombe_explosion"},
-			{"x": 0, "y": 2289, "nx": 10, "ny": 2, "n": 12, "sx": 291, "sy": 237,   "r": false, "animation": "green_bombe_explosion"}
+			{"x": 0, "y": 1494, "nx": 10, "ny": 1, "n": 10, "sx": 37,  "sy": 60,    "r": false, "animation": "black_bombe_explosion"},
+			{"x": 0, "y": 1554, "nx": 10, "ny": 2, "n": 12, "sx": 291, "sy": 237,   "r": false, "animation": "red_bombe_explosion"},
+			{"x": 0, "y": 2028, "nx": 10, "ny": 2, "n": 12, "sx": 291, "sy": 237,   "r": false, "animation": "green_bombe_explosion"}
 		]
 	},{
 		"file": "sprite_level",
