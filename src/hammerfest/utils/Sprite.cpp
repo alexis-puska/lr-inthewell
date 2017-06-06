@@ -38,7 +38,6 @@ Sprite& Sprite::Instance() {
 }
 
 void Sprite::parseJsonFile() {
-	aa=-1;zz=0;
 	Json::Reader reader;
 	Json::Value root;
 	Json::Value element;
@@ -52,8 +51,6 @@ void Sprite::parseJsonFile() {
 	std::string jsonString(json_image_parser_json, json_image_parser_json + sizeof json_image_parser_json / sizeof json_image_parser_json[0]);
 	reader.parse(jsonString, root);
 	int idx = 0;
-	int idx2 = 0;
-
 
 	for (int i = 0; i < root.size(); i++) {
 		if (currentFileParse.empty()) {
@@ -85,7 +82,7 @@ void Sprite::parseJsonFile() {
 			destTextureRect.y = 0;
 			destTextureRect.w = sx;
 			destTextureRect.h = sy;
-			sprites[anim] = new SDL_Surface * [n];
+			sprites[anim] = new SDL_Surface *[n];
 			//fprintf(stderr, "begin parse file : %s, area: %i %i %i %i %i %i %i %s %s \n", currentFileParse.c_str(), x, y, nx, ny, n, sx, sy, r ? "true" : "false", anim.c_str());
 			for (int l = 0; l < ny; l++) {
 				for (int k = 0; k < nx; k++) {
@@ -96,7 +93,7 @@ void Sprite::parseJsonFile() {
 					sprites[anim][idx] = SDL_CreateRGBSurface(0, sx, sy, 32, rmask, gmask, bmask, amask);
 					SDL_BlitSurface(surfaceToParse, &srcTextureRect, sprites[anim][idx], &destTextureRect);
 					idx++;
-					if(idx>=n){
+					if (idx >= n) {
 						break;
 					}
 				}
@@ -140,19 +137,9 @@ void Sprite::loadSurfaceToSprite(std::string name) {
 
 //SDL_surface
 
-
-SDL_Surface * Sprite::getLight(){
-	if(aa>2){
-		aa=0;
-		zz++;
-		if(zz>=10){
-			zz=0;
-		}
-	}
-	aa++;
-	return sprites["black_bombe_explosion"][zz];
+SDL_Surface * Sprite::getAnimation(std::string name, int index) {
+	return sprites[name][index];
 }
-
 
 /*
  SDL_Surface* Sprite::replaceColor(SDL_Surface* surface, unsigned int src, unsigned int dest) {

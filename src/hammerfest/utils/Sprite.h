@@ -24,7 +24,7 @@ class Sprite {
 		static Sprite& Instance();
 		Sprite();
 		~Sprite();
-		SDL_Surface * getLight();
+		SDL_Surface * getAnimation(std::string name, int index);
 	private:
 		Sprite& operator=(const Sprite&);
 		Sprite(const Sprite&);
@@ -34,7 +34,6 @@ class Sprite {
 		 * VARIABLES
 		 ***********************/
 		SDL_Surface * surfaceToParse;
-		int aa,zz;
 		std::map<std::string, SDL_Surface **> sprites;
 
 		/***********************

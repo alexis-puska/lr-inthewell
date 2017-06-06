@@ -38,6 +38,8 @@ class Hammerfest {
 
 		//what menu to draw
 		int drawMenu;
+		bool redrawMenu;
+		Uint32 rmask, gmask, bmask, amask;
 
 		//keystate
 		unsigned short in_keystate[16];
@@ -47,5 +49,6 @@ class Hammerfest {
 
 		//utils
 		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y);
+		void fillScreenBufferWithSurface(std::string name, int index);
 };
 #endif
