@@ -15,7 +15,7 @@ sudo apt-get install -y make libsdl2-image-dev
 sudo apt-get install -y make libsdl2-ttf-dev 
 sudo apt-get install -y make libsdl2-mixer-dev 
 sudo apt-get install -y make libsdl2-net-dev
-sudo apt-get install -y make liblua5.3-dev
+sudo apt-get install -y make libsdl2-gfx-dev
 
 - Linux / Fedora (with RPM Fusion)
 sudo dnf install SDL2-devel
@@ -23,7 +23,7 @@ sudo dnf install SDL2_mixer-devel
 sudo dnf install SDL2_ttf-devel
 sudo dnf install SDL2_image-devel
 sudo dnf install SDL2_net-devel
-sudo dnf install lua-devel
+sudo dnf install SDL2_gfx-devel
 ```
 
 
@@ -35,7 +35,7 @@ reset ssh token : ssh-keygen -R "ip";
 
 reset smb password : smbpasswd -a pi
 sudo apt-get update
-sudo apt-get install -y make libsdl2-dev libsdl2-image-dev libsdl2-net-dev libsdl2-ttf-dev libsdl2-mixer-dev libXinerama-dev libXi-dev libXrandr-dev libXss-dev libXCursor-dev liblua5.3-dev
+sudo apt-get install -y make libsdl2-dev libsdl2-image-dev libsdl2-net-dev libsdl2-ttf-dev libsdl2-mixer-dev libsdl2-gfx-dev libXinerama-dev libXi-dev libXrandr-dev libXss-dev libXCursor-dev 
 ```
 
 
@@ -48,7 +48,12 @@ https://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.1.dmg
 https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.1.dmg
 https://www.libsdl.org/projects/SDL_net/release/SDL2_net-2.0.1.dmg
 unzip and install the SDL2_image.framework, SDL2_ttf.framework, SDL2.framework inside the folder : /Library/Frameworks/
+
+for SDL_2GFX : 
+download source at : http://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/
+unzip the code, open the unzipped folder, unzip xcode.zip archive inside build it with xcode on release target and install it inse /Library/Frameworks
 ```
+
 
 
 

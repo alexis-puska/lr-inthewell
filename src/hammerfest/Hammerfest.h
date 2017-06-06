@@ -1,8 +1,10 @@
 #include <SDL2/SDL.h>
 #ifndef IS_OSX
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL2_rotozoom.h>
 #else
 #include <SDL2_image/SDL_image.h>
+#include <SDL2_gfx/SDL2_rotozoom.h>
 #endif
 #include <stdio.h>
 

@@ -46,7 +46,7 @@ endif
 ifeq ($(platform), unix)
 	TARGET := $(TARGET_NAME)_libretro.so
 	fpic := -fPIC
-	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -g `sdl2-config --static-libs`
+	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -lSDL2_gfx -g `sdl2-config --static-libs`
 	LIBLUA = -I/usr/include/lua5.3/
 	CFLAGS += `sdl2-config --cflags`
 	SHARED := -shared -Wl,--version-script=libretro/link.T
@@ -67,10 +67,10 @@ else ifeq ($(platform), linux-portable)
 else ifeq ($(platform), osx)
 	TARGET := $(TARGET_NAME)_libretro.dylib
 	fpic := -fPIC
-	CFLAGS += -I/Library/Frameworks/SDL2.framework/Headers/ -I/Library/Frameworks/SDL2_image.framework/Headers/ -I/Library/Frameworks/SDL2_ttf.framework/Headers/ -I/Library/Frameworks/SDL2_mixer.framework/Headers/ -I/Library/Frameworks/SDL2_net.framework/Headers/ -F/Library/Frameworks/ 
+	CFLAGS += -I/Library/Frameworks/SDL2.framework/Headers/ -I/Library/Frameworks/SDL2_image.framework/Headers/ -I/Library/Frameworks/SDL2_ttf.framework/Headers/ -I/Library/Frameworks/SDL2_mixer.framework/Headers/ -I/Library/Frameworks/SDL2_net.framework/Headers/ -I/Library/Frameworks/SDL2_gfx.framework/Headers/ -F/Library/Frameworks/ 
 	CFLAGS += -DIS_OSX
 	SHARED := -dynamiclib
-	LIBS := -F/Library/Frameworks -framework SDL2 -framework SDL2_image -framework SDL2_ttf -framework SDL2_mixer -framework SDL2_net
+	LIBS := -F/Library/Frameworks -framework SDL2 -framework SDL2_image -framework SDL2_ttf -framework SDL2_mixer -framework SDL2_net -framework SDL2_gfx
 	OSXVER = `sw_vers -productVersion | cut -d. -f 2`
 	OSX_LT_MAVERICKS = `(( $(OSXVER) <= 9)) && echo "YES"`
 	fpic += -mmacosx-version-min=10.7 -stdlib=libc++
@@ -84,7 +84,7 @@ else ifeq ($(platform), rpi2)
 	CFLAGS += -marm -mcpu=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard
 	ASFLAGS += -mcpu=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard
 	LDFLAGS = -I/usr/include/SDL2  -lm
-	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -g `sdl2-config --static-libs`
+	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -lSDL2_gfx -g `sdl2-config --static-libs`
 	CFLAGS += `sdl2-config --cflags`
 	HAVE_NEON = 1
 	ARCH = arm
@@ -100,7 +100,7 @@ else ifeq ($(platform), rpi3)
 	CFLAGS += -marm -mcpu=cortex-a53 -mfpu=neon-fp-armv8 -mfloat-abi=hard
 	ASFLAGS += -mcpu=cortex-a53 -mfpu=neon-fp-armv8 -mfloat-abi=hard
 	LDFLAGS = -lm
-	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -g `sdl2-config --static-libs`
+	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -lSDL2_gfx -g `sdl2-config --static-libs`
 	CFLAGS += `sdl2-config --cflags`
 	#HAVE_NEON = 1
 	#ARCH = arm
@@ -112,7 +112,7 @@ else
 	fpic := -fPIC
 	LD_FLAGS := -fPIC
 	SHARED := -shared -static-libgcc -static-libstdc++ -s -Wl,--version-script=libretro/link.T
-	LIBS = -IC:\MinGW\include\SDL2 -LC:\MinGW\lib -lmingw32 -lSDL2main -lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -w -Wl,-subsystem,windows
+	LIBS = -IC:\MinGW\include\SDL2 -LC:\MinGW\lib -lmingw32 -lSDL2main -lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -lSDL2_gfx -w -Wl,-subsystem,windows
 	CFLAGS += -D__WIN32__ -D__WIN32_LIBRETRO__ `sdl2-config --cflags`
 	MMAP_WIN32=1
 endif

@@ -151,6 +151,9 @@ void Hammerfest::drawSplashScreen() {
 void Hammerfest::drawSaveGameMenu() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_1", 0);
+		SDL_Surface * temp = Sprite::Instance().getAnimation("menu_ice", 0);
+		copySurfaceToBackRenderer(temp, screenBuffer, (420 - temp->w) / 2, (520 - temp->h) / 2);
+				copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}
 }
