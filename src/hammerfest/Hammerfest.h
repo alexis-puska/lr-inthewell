@@ -43,6 +43,8 @@ class Hammerfest {
 		bool redrawMenu;
 		Uint32 rmask, gmask, bmask, amask;
 
+		int selectedSavedGame;
+
 		//keystate
 		unsigned short in_keystate[16];
 		bool keychange[16];

@@ -13,6 +13,18 @@
 #include "resources/sprite_player.h"
 #include "resources/image_menu.h"
 #include "resources/json_image_parser.h"
+#include "resources/font_courier_new.h"
+#include "resources/font_franklin_gothic_heavy_all.h"
+#include "resources/font_franklin_gothic_heavy.h"
+#include "resources/font_impact.h"
+#include "resources/font_satans.h"
+#include "resources/font_verdana_10pt.h"
+#include "resources/font_verdana.h"
+
+const static SDL_Color greenColor = { 0, 255, 0 };
+const static SDL_Color redColor = { 255, 0, 0 };
+const static SDL_Color blueColor = { 0, 140, 255 };
+const static SDL_Color goldColor = { 255, 255, 0 };
 
 Sprite Sprite::m_instance = Sprite();
 
@@ -22,13 +34,14 @@ Sprite::Sprite() {
 	IMG_Init (IMG_INIT_PNG);
 	fprintf(stderr, "Init sprite system\n");
 	parseJsonFile();
-	fprintf(stderr, "\n\n\n\nEnd init sprite system\n");
+	fprintf(stderr, "init font text system\n");
+	font = TTF_OpenFontRW(SDL_RWFromMem(font_satans_ttf, font_satans_ttf_len),1, 24);
 }
 
 Sprite::~Sprite() {
 	fprintf(stderr, "close sprite system\n");
 	fprintf(stderr, "close font text system\n");
-	//TTF_CloseFont(font);‹‹
+	TTF_CloseFont(font);
 	IMG_Quit();
 	TTF_Quit();
 }
@@ -135,32 +148,50 @@ void Sprite::loadSurfaceToSprite(std::string name) {
 	}
 }
 
-//SDL_surface
-
 SDL_Surface * Sprite::getAnimation(std::string name, int index) {
 	return sprites[name][index];
 }
 
-/*
- SDL_Surface* Sprite::replaceColor(SDL_Surface* surface, unsigned int src, unsigned int dest) {
- //lock the surface for work on it
- if (SDL_MUSTLOCK(surface)) {
- SDL_LockSurface(surface);
- }
- //get pointer on the pixels table
- Uint32 *pixels = (Uint32 *) surface->pixels;
- for (int x = 0; x < surface->w; x++) {
- for (int y = 0; y < surface->h; y++) {
- if (pixels[y * surface->w + x] == src) {
- pixels[y * surface->w + x] = dest;
- }
- }
- }
- //unlock the surface after work
- if (SDL_MUSTLOCK(surface)) {
- SDL_UnlockSurface(surface);
- }
- return surface;
- }
- */
+/********************************************
+ *
+ *		DRAW TEXT FUNCTION
+ *
+ ********************************************/
+void Sprite::drawText(SDL_Surface* surfaceToDraw, int x, int y, const char* text, int color, bool alignCenter) {
+	SDL_Color colorSelected = getSDL_Color(color);
+	SDL_Surface *text_surface = text_surface = TTF_RenderText_Solid(font, text, colorSelected);
+	SDL_Rect srcRect;
+	srcRect.x = 0;
+	srcRect.y = 0;
+	srcRect.w = text_surface->w;
+	srcRect.h = text_surface->h;
+	SDL_Rect dstRect;
+	if (alignCenter) {
+		dstRect.x = x - (text_surface->w / 2);
+	} else {
+		dstRect.x = x;
+	}
+	dstRect.y = y;
+	dstRect.w = text_surface->w;
+	dstRect.h = text_surface->h;
+	SDL_BlitSurface(text_surface, &srcRect, surfaceToDraw, &dstRect);
+	SDL_FreeSurface(text_surface);
+}
 
+SDL_Color Sprite::getSDL_Color(int color) {
+	switch (color) {
+		case red:
+			return redColor;
+			break;
+		case blue:
+			return blueColor;
+			break;
+		case green:
+			return greenColor;
+			break;
+		case gold:
+			return goldColor;
+			break;
+	}
+	return greenColor;
+}

@@ -18,6 +18,10 @@
 
 #include "json/json.h"
 
+enum textColor {
+	red = 0, blue = 1, green = 2, gold = 3
+};
+
 class Sprite {
 
 	public:
@@ -25,6 +29,9 @@ class Sprite {
 		Sprite();
 		~Sprite();
 		SDL_Surface * getAnimation(std::string name, int index);
+		SDL_Color getSDL_Color(int color);
+		void drawText(SDL_Surface* surfaceToDraw, int x, int y, const char* text, int color, bool alignCenter);
+
 	private:
 		Sprite& operator=(const Sprite&);
 		Sprite(const Sprite&);
@@ -42,5 +49,10 @@ class Sprite {
 		void parseJsonFile();
 		void releaseSurfaceToParse();
 		void loadSurfaceToSprite(std::string name);
+
+		/*
+		 *	FONT
+		 */
+		TTF_Font* font;
 };
 #endif

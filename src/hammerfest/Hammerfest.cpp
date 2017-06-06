@@ -38,6 +38,7 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool
 	vout_buf = vout_bufLibretro;
 	SDL_FillRect(vout_buf, NULL, SDL_MapRGB(vout_buf->format, 255, 204, 0));
 	drawMenu = 0;
+	selectedSavedGame = 0;
 	redrawMenu = true;
 	Sprite::Instance();
 	Sound::Instance();
@@ -104,6 +105,9 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 		Sound::Instance().playSoundBlackBombe();
 	}
 
+	/**********************
+	 * MENU MOVE
+	 *********************/
 	switch (drawMenu) {
 		case splashMenu:
 			if (previousPlayerKeystate[0] & keyPadA && keychange[0]) {
@@ -115,13 +119,30 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 			if (previousPlayerKeystate[0] & keyPadB && keychange[0]) {
 				drawMenu = splashMenu;
 				redrawMenu = true;
+			} else if (previousPlayerKeystate[0] & keyPadA && keychange[0]) {
+				drawMenu = modeMenu;
+				redrawMenu = true;
+			} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
+				selectedSavedGame--;
+				redrawMenu = true;
+			} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
+				selectedSavedGame++;
+				redrawMenu = true;
 			}
 			break;
 		case modeMenu:
+			if (previousPlayerKeystate[0] & keyPadB && keychange[0]) {
+				drawMenu = saveMenu;
+				redrawMenu = true;
+			}
 			break;
 		case optionMenu:
 			break;
 	}
+
+	/**********************
+	 * DRAW PART
+	 *********************/
 	switch (drawMenu) {
 		case splashMenu:
 			drawSplashScreen();
@@ -138,6 +159,9 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 	}
 }
 
+/******************************
+ *      DRAW SPLASH SCREN
+ ******************************/
 void Hammerfest::drawSplashScreen() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_1", 0);
@@ -148,18 +172,40 @@ void Hammerfest::drawSplashScreen() {
 	}
 }
 
+/******************************
+ * DRAW LOADING SAVE GAME MENU
+ *****************************/
 void Hammerfest::drawSaveGameMenu() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_1", 0);
-		SDL_Surface * temp = Sprite::Instance().getAnimation("menu_ice", 0);
-		copySurfaceToBackRenderer(temp, screenBuffer, (420 - temp->w) / 2, (520 - temp->h) / 2);
-				copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+		for (int i = 0; i < 4; i++) {
+			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_player", i), screenBuffer, 67, 147 + (90 * i));
+			if (i != selectedSavedGame) {
+				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_ice", 0), screenBuffer, 60, 140 + (90 * i));
+			}
+		}
+		Sprite::Instance().drawText(screenBuffer, 210, 30, "Chargez votre", red, true);
+		Sprite::Instance().drawText(screenBuffer, 210, 60, "sauvegarde", red, true);
+		Sprite::Instance().drawText(screenBuffer, 150, 167, "IGOR", red, false);
+		Sprite::Instance().drawText(screenBuffer, 150, 257, "SANDY", red, false);
+		Sprite::Instance().drawText(screenBuffer, 150, 347, "TUBERCULOZ", red, false);
+		Sprite::Instance().drawText(screenBuffer, 150, 437, "WANDA", red, false);
+		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}
 }
 
+/**************************
+ *    DRAW GAME MODE MENU
+ *************************/
 void Hammerfest::drawGameModeMenu() {
-
+	if (redrawMenu) {
+		fillScreenBufferWithSurface("menu_background_1", 0);
+		SDL_Surface * temp = Sprite::Instance().getAnimation("menu_title", 0);
+		copySurfaceToBackRenderer(temp, screenBuffer, (420 - temp->w) / 2, (520 - temp->h) / 2);
+		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+		redrawMenu = false;
+	}
 }
 
 void Hammerfest::drawGameOptionMenu() {
