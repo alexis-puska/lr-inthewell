@@ -19,7 +19,7 @@
 #include "json/json.h"
 
 enum textColor {
-	red = 0, blue = 1, green = 2, gold = 3
+	red = 0, blue = 1, green = 2, gold = 3, white = 4
 };
 
 class Sprite {
@@ -31,6 +31,7 @@ class Sprite {
 		SDL_Surface * getAnimation(std::string name, int index);
 		SDL_Color getSDL_Color(int color);
 		void drawText(SDL_Surface* surfaceToDraw, int x, int y, const char* text, int color, bool alignCenter);
+		void drawTextVerdana(SDL_Surface* surfaceToDraw, int x, int y, const char* text, int color, bool alignCenter);
 
 	private:
 		Sprite& operator=(const Sprite&);
@@ -38,21 +39,23 @@ class Sprite {
 		static Sprite m_instance;
 
 		/***********************
-		 * VARIABLES
+		 *      VARIABLES
 		 ***********************/
 		SDL_Surface * surfaceToParse;
 		std::map<std::string, SDL_Surface **> sprites;
 
 		/***********************
-		 * FUNCTIONS
+		 *      FUNCTIONS
 		 ***********************/
 		void parseJsonFile();
 		void releaseSurfaceToParse();
 		void loadSurfaceToSprite(std::string name);
 
-		/*
-		 *	FONT
-		 */
-		TTF_Font* font;
+		/***********************
+		 *        FONT
+		 ***********************/
+		TTF_Font * font;
+		TTF_Font * fontVerdana10pt;
+		//std::map<std::string, TTF_Font **> fonts;
 };
 #endif

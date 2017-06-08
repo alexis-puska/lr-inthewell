@@ -76,7 +76,7 @@ CONF_SWAPSIZE=100
 ```
 change to 
 ```
-CONF_SWAPSIZE=200
+CONF_SWAPSIZE=800
 ```
 
 - edit the file : Makefile.libretro

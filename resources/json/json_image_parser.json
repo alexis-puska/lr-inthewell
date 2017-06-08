@@ -7,7 +7,11 @@
 			{"x": 378, "y": 0,   "nx": 1, "ny": 1, "n": 1, "sx": 360, "sy": 72,  "r": false, "animation": "menu_title"},
 			{"x": 128, "y": 190, "nx": 1, "ny": 1, "n": 1, "sx": 114, "sy": 109, "r": false, "animation": "menu_image_1"},
 			{"x": 128, "y": 299, "nx": 2, "ny": 2, "n": 4, "sx": 64,  "sy": 64,  "r": false, "animation": "menu_player"},
-			{"x": 244, "y": 190, "nx": 2, "ny": 1, "n": 2, "sx": 78,  "sy": 78,  "r": false, "animation": "menu_ice"}
+			{"x": 244, "y": 190, "nx": 2, "ny": 1, "n": 2, "sx": 78,  "sy": 78,  "r": false, "animation": "menu_ice"},
+			{"x": 128, "y": 430, "nx": 1, "ny": 1, "n": 1, "sx": 19,  "sy": 19,  "r": false, "animation": "menu_cursor"},
+			{"x": 260, "y": 280, "nx": 3, "ny": 1, "n": 3, "sx": 64,  "sy": 64,  "r": false, "animation": "menu_game"},
+			{"x": 260, "y": 344, "nx": 5, "ny": 1, "n": 5, "sx": 24,  "sy": 24,  "r": false, "animation": "menu_game_option"},
+			{"x": 380, "y": 344, "nx": 2, "ny": 1, "n": 2, "sx": 24,  "sy": 24,  "r": false, "animation": "menu_game_checkbox"}
 		]
 	},{
 		"file": "sprite_animation",
@@ -47,7 +51,7 @@
 	},{
 		"file": "sprite_objets",
 		"area": [
-			{"x": 0, "y": 0, "nx": 10, "ny": 36, "n": 353, "sx": 61, "sy": 63, "r": false, "animation": "objects"}
+			{"x": 0, "y": 0, "nx": 10, "ny": 36, "n": 354, "sx": 61, "sy": 63, "r": false, "animation": "objects"}
 		]
 	},{
 		"file": "sprite_player",

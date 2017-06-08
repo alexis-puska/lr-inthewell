@@ -455,7 +455,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(17);
 	familys.push_back(family);
 
-	family = new Family(4, "Cartes à jouer");
+	family = new Family(4, "Cartes a jouer");
 	family->addItem(32);
 	family->addItem(33);
 	family->addItem(34);
@@ -504,7 +504,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(105);
 	familys.push_back(family);
 
-	family = new Family(10, "Trésor des pirates");
+	family = new Family(10, "Tresor des pirates");
 	family->addItem(20);
 	family->addItem(78);
 	family->addItem(79);
@@ -520,7 +520,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(108);
 	familys.push_back(family);
 
-	family = new Family(12, "Armement norvégien expérimental");
+	family = new Family(12, "Armement norvegien experimental");
 	family->addItem(29);
 	family->addItem(37);
 	family->addItem(67);
@@ -612,7 +612,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(164);
 	familys.push_back(family);
 
-	family = new Family(23, "Pierres précieuses");
+	family = new Family(23, "Pierres precieuses");
 	family->addItem(127);
 	family->addItem(128);
 	family->addItem(129);
@@ -644,7 +644,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(285);
 	familys.push_back(family);
 
-	family = new Family(26, "Apéritifs");
+	family = new Family(26, "Aperitifs");
 	family->addItem(147);
 	family->addItem(148);
 	family->addItem(149);
@@ -664,7 +664,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(172);
 	familys.push_back(family);
 
-	family = new Family(28, "Trophées de Grand Prédateur");
+	family = new Family(28, "Trophees de Grand Predateur");
 	family->addItem(209);
 	family->addItem(210);
 	family->addItem(211);
@@ -676,7 +676,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(217);
 	familys.push_back(family);
 
-	family = new Family(29, "Délices de Harry 'le beau'");
+	family = new Family(29, "Delices de Harry 'le beau'");
 	family->addItem(181);
 	family->addItem(182);
 	family->addItem(183);
@@ -715,7 +715,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(286);
 	familys.push_back(family);
 
-	family = new Family(33, "Légumes");
+	family = new Family(33, "Legumes");
 	family->addItem(230);
 	family->addItem(231);
 	family->addItem(232);
@@ -743,7 +743,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(254);
 	familys.push_back(family);
 
-	family = new Family(34, "Délices MT");
+	family = new Family(34, "Delices MT");
 	family->addItem(259);
 	family->addItem(261);
 	familys.push_back(family);
@@ -771,7 +771,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(278);
 	familys.push_back(family);
 
-	family = new Family(37, "Garçon patissier");
+	family = new Family(37, "Garcon patissier");
 	family->addItem(176);
 	family->addItem(177);
 	family->addItem(190);
@@ -792,7 +792,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(295);
 	familys.push_back(family);
 
-	family = new Family(39, "Trophées de baroudeur");
+	family = new Family(39, "Trophees de baroudeur");
 	family->addItem(296);
 	family->addItem(297);
 	family->addItem(298);
@@ -802,7 +802,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(302);
 	familys.push_back(family);
 
-	family = new Family(40, "Clés des Glaces");
+	family = new Family(40, "Cles des Glaces");
 	family->addItem(304);
 	family->addItem(305);
 	family->addItem(308);
@@ -812,7 +812,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(314);
 	familys.push_back(family);
 
-	family = new Family(41, "Clé avinée");
+	family = new Family(41, "Cle avinee");
 	family->addItem(307);
 	familys.push_back(family);
 
@@ -820,7 +820,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(310);
 	familys.push_back(family);
 
-	family = new Family(43, "Clés perdues");
+	family = new Family(43, "Cles perdues");
 	family->addItem(306);
 	family->addItem(309);
 	familys.push_back(family);
@@ -844,7 +844,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(327);
 	familys.push_back(family);
 
-	family = new Family(46, "Matériel administratif d'El Papah");
+	family = new Family(46, "Materiel administratif d'El Papah");
 	family->addItem(328);
 	family->addItem(329);
 	family->addItem(330);
@@ -868,7 +868,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(338);
 	familys.push_back(family);
 
-	family = new Family(49, "Récompenses du Ninjutsu");
+	family = new Family(49, "Recompenses du Ninjutsu");
 	family->addItem(342);
 	family->addItem(350);
 	familys.push_back(family);
@@ -889,27 +889,27 @@ void ItemFileSystem::buildDatabase() {
 
 	items.push_back(new Item(surface, 0, "Alphabet Cristallin", 0, -1, -1));
 	items.push_back(new Item(surface, 1, "Bouclidur en or", 1, -1, -1));
-	items.push_back(new Item(surface, 2, "Bouclidur argenté", 3, -1, -1));
+	items.push_back(new Item(surface, 2, "Bouclidur argente", 3, -1, -1));
 	items.push_back(new Item(surface, 3, "Ballon de banquise", 2, -1, -1));
-	items.push_back(new Item(surface, 4, "Lampe Fétvoveu", 1, -1, -1));
-	items.push_back(new Item(surface, 5, "Lampe Léveussonfé", 2, -1, -1));
-	items.push_back(new Item(surface, 6, "Paix intérieure", 1, -1, -1));
+	items.push_back(new Item(surface, 4, "Lampe Fetvoveu", 1, -1, -1));
+	items.push_back(new Item(surface, 5, "Lampe Leveussonfe", 2, -1, -1));
+	items.push_back(new Item(surface, 6, "Paix interieure", 1, -1, -1));
 	items.push_back(new Item(surface, 7, "Basket IcePump", 1, -1, -1));
 	items.push_back(new Item(surface, 8, "Etoile des neiges", 2, -1, -1));
 	items.push_back(new Item(surface, 9, "Mauvais-oeil", 3, -1, -1));
-	items.push_back(new Item(surface, 10, "Téléphone-phone-phone", 1, -1, -1));
+	items.push_back(new Item(surface, 10, "Telephone-phone-phone", 1, -1, -1));
 	items.push_back(new Item(surface, 11, "Parapluie rouge", 1, -1, -1));
 	items.push_back(new Item(surface, 12, "Parapluie bleu", 2, -1, -1));
 	items.push_back(new Item(surface, 13, "Cass-Tet", 1, -1, -1));
-	items.push_back(new Item(surface, 14, "Délice hallucinogène bleu", 2, -1, -1));
+	items.push_back(new Item(surface, 14, "Delice hallucinogene bleu", 2, -1, -1));
 	items.push_back(new Item(surface, 15, "Champignon rigolo rouge", 4, -1, -1));
-	items.push_back(new Item(surface, 16, "Figonassée grimpante", 5, -1, -1));
+	items.push_back(new Item(surface, 16, "Figonassee grimpante", 5, -1, -1));
 	items.push_back(new Item(surface, 17, "Petit Waoulalu des bois", 6, -1, -1));
 	items.push_back(new Item(surface, 18, "Pissenlit tropical", 2, -1, -1));
 	items.push_back(new Item(surface, 19, "Tournelune", 3, -1, -1));
 	items.push_back(new Item(surface, 20, "Coffre d\'Anarchipel", 1, -1, -1));
 	items.push_back(new Item(surface, 21, "Enceinte Bessel-Son", 2, -1, -1));
-	items.push_back(new Item(surface, 22, "Vieille chaussure trouée", 2, -1, -1));
+	items.push_back(new Item(surface, 22, "Vieille chaussure trouee", 2, -1, -1));
 	items.push_back(new Item(surface, 23, "Boule cristalline", 1, -1, -1));
 	items.push_back(new Item(surface, 24, "Hippo-flocon", 3, -1, -1));
 	items.push_back(new Item(surface, 25, "Flamme froide", 3, -1, -1));
@@ -920,23 +920,23 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 30, "Lunettes tournantes bleues", 2, -1, -1));
 	items.push_back(new Item(surface, 31, "Lunettes renversantes rouges", 2, -1, -1));
 	items.push_back(new Item(surface, 32, "As de pique", 1, -1, -1));
-	items.push_back(new Item(surface, 33, "As de trêfle", 2, -1, -1));
+	items.push_back(new Item(surface, 33, "As de trefle", 2, -1, -1));
 	items.push_back(new Item(surface, 34, "As de carreau", 5, -1, -1));
 	items.push_back(new Item(surface, 35, "As de coeur", 6, -1, -1));
 	items.push_back(new Item(surface, 36, "Ig\'or", 3, -1, -1));
-	items.push_back(new Item(surface, 37, "Collier rafraîchissant", 2, -1, -1));
+	items.push_back(new Item(surface, 37, "Collier rafraichissant", 2, -1, -1));
 	items.push_back(new Item(surface, 38, "Totem des dinoz", 3, -1, -1));
-	items.push_back(new Item(surface, 39, "Tête de granit lestée de plomb", 3, -1, -1));
+	items.push_back(new Item(surface, 39, "Tete de granit lestee de plomb", 3, -1, -1));
 	items.push_back(new Item(surface, 40, "Sagittaire", 3, -1, 1));
 	items.push_back(new Item(surface, 41, "Capricorne", 3, -1, 1));
 	items.push_back(new Item(surface, 42, "Lion", 3, -1, 1));
 	items.push_back(new Item(surface, 43, "Taureau", 3, -1, 1));
 	items.push_back(new Item(surface, 44, "Balance", 3, -1, 1));
-	items.push_back(new Item(surface, 45, "Bélier", 3, -1, 1));
+	items.push_back(new Item(surface, 45, "Belier", 3, -1, 1));
 	items.push_back(new Item(surface, 46, "Scorpion", 3, -1, 1));
 	items.push_back(new Item(surface, 47, "Cancer", 3, -1, 1));
 	items.push_back(new Item(surface, 48, "Verseau", 3, -1, 1));
-	items.push_back(new Item(surface, 49, "Gémeaux", 3, -1, 1));
+	items.push_back(new Item(surface, 49, "Gemeaux", 3, -1, 1));
 	items.push_back(new Item(surface, 50, "Poisson", 3, -1, 1));
 	items.push_back(new Item(surface, 51, "Vierge", 3, -1, 1));
 	items.push_back(new Item(surface, 52, "Elixir du Sagittaire", 3, -1, 1));
@@ -944,38 +944,38 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 54, "Elixir du Lion", 3, -1, 1));
 	items.push_back(new Item(surface, 55, "Elixir du Taureau", 3, -1, 1));
 	items.push_back(new Item(surface, 56, "Elixir de la Balance", 3, -1, 1));
-	items.push_back(new Item(surface, 57, "Elixir du Bélier", 3, -1, 1));
+	items.push_back(new Item(surface, 57, "Elixir du Belier", 3, -1, 1));
 	items.push_back(new Item(surface, 58, "Elixir du Scorpion", 3, -1, 1));
 	items.push_back(new Item(surface, 59, "Elixir du Cancer", 3, -1, 1));
 	items.push_back(new Item(surface, 60, "Elixir du Verseau", 3, -1, 1));
-	items.push_back(new Item(surface, 61, "Elixir des Gémeaux", 3, -1, 1));
+	items.push_back(new Item(surface, 61, "Elixir des Gemeaux", 3, -1, 1));
 	items.push_back(new Item(surface, 62, "Elixir du Poisson", 3, -1, 1));
 	items.push_back(new Item(surface, 63, "Elixir de la Vierge", 3, -1, 1));
 	items.push_back(new Item(surface, 64, "Arc-en-miel", 2, -1, -1));
-	items.push_back(new Item(surface, 65, "Bouée canard", 2, -1, -1));
+	items.push_back(new Item(surface, 65, "Bouee canard", 2, -1, -1));
 	items.push_back(new Item(surface, 66, "Branche de Kipik", 3, -1, -1));
 	items.push_back(new Item(surface, 67, "Anneau de Guillaume Tell", 2, -1, -1));
 	items.push_back(new Item(surface, 68, "Bougie", 2, -1, -1));
-	items.push_back(new Item(surface, 69, "Koulraoule des îles", 2, -1, -1));
-	items.push_back(new Item(surface, 70, "Trêfle commun", 1, -1, -1));
+	items.push_back(new Item(surface, 69, "Koulraoule des iles", 2, -1, -1));
+	items.push_back(new Item(surface, 70, "Trefle commun", 1, -1, -1));
 	items.push_back(new Item(surface, 71, "Chaud devant !", 1, -1, -1));
 	items.push_back(new Item(surface, 72, "Chapeau de Mage-Gris", 3, -1, -1));
-	items.push_back(new Item(surface, 73, "Feuille de sinopée", 2, -1, -1));
+	items.push_back(new Item(surface, 73, "Feuille de sinopee", 2, -1, -1));
 	items.push_back(new Item(surface, 74, "Esprit de l\'orange", 1, -1, -1));
 	items.push_back(new Item(surface, 75, "Esprit de la pluie", 2, -1, -1));
 	items.push_back(new Item(surface, 76, "Esprit des arbres", 3, -1, -1));
-	items.push_back(new Item(surface, 77, "Lucidjané à crête bleue", 2, -1, -1));
+	items.push_back(new Item(surface, 77, "Lucidjane a crete bleue", 2, -1, -1));
 	items.push_back(new Item(surface, 78, "Filandreux rougeoyant", 2, -1, -1));
 	items.push_back(new Item(surface, 79, "Poisson empereur", 3, -1, -1));
-	items.push_back(new Item(surface, 80, "Escargot Poussépa", 1, -1, -1));
-	items.push_back(new Item(surface, 81, "Perle nacrée des murlocs", 2, -1, -1));
+	items.push_back(new Item(surface, 80, "Escargot Poussepa", 1, -1, -1));
+	items.push_back(new Item(surface, 81, "Perle nacree des murlocs", 2, -1, -1));
 	items.push_back(new Item(surface, 82, "Jugement avant-dernier", 2, -1, -1));
 	items.push_back(new Item(surface, 83, "Jugement dernier", 3, -1, -1));
 	items.push_back(new Item(surface, 84, "Talisman scorpide", 3, -1, -1));
 	items.push_back(new Item(surface, 85, "Baton tonnerre", 3, -1, -1));
 	items.push_back(new Item(surface, 86, "Surprise de paille", 4, -1, -1));
 	items.push_back(new Item(surface, 87, "Larve d\'oenopterius", 1, -1, -1));
-	items.push_back(new Item(surface, 88, "Pokuté", 3, -1, -1));
+	items.push_back(new Item(surface, 88, "Pokute", 3, -1, -1));
 	items.push_back(new Item(surface, 89, "Oeuf de Tzongre", 3, -1, -1));
 	items.push_back(new Item(surface, 90, "Fulguro pieds-en-mousse", 3, -1, -1));
 	items.push_back(new Item(surface, 91, "Couvre-chef de Luffy", 3, -1, -1));
@@ -985,16 +985,16 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 95, "Cagnotte de Tuberculoz", 5, -1, -1));
 	items.push_back(new Item(surface, 96, "Perle flamboyante", 4, -1, -1));
 	items.push_back(new Item(surface, 97, "Perle vertillante", 5, -1, -1));
-	items.push_back(new Item(surface, 98, "Grosse pé-perle ", 6, -1, -1));
+	items.push_back(new Item(surface, 98, "Grosse pe-perle ", 6, -1, -1));
 	items.push_back(new Item(surface, 99, "Poils de Chourou", 5, -1, -1));
 	items.push_back(new Item(surface, 100, "Pocket-Guu", 4, -1, -1));
 	items.push_back(new Item(surface, 101, "Colis surprise", 0, -1, -1));
 	items.push_back(new Item(surface, 102, "La Carotte d\'Igor", 0, -1, 1));
 	items.push_back(new Item(surface, 103, "Vie palpitante", 1, -1, 1));
 	items.push_back(new Item(surface, 104, "Vie aventureuse", 1, -1, 1));
-	items.push_back(new Item(surface, 105, "Vie épique", 3, -1, 1));
+	items.push_back(new Item(surface, 105, "Vie epique", 3, -1, 1));
 	items.push_back(new Item(surface, 106, "Livre des champignons", 5, -1, -1));
-	items.push_back(new Item(surface, 107, "Livre des étoiles", 5, -1, -1));
+	items.push_back(new Item(surface, 107, "Livre des etoiles", 5, -1, -1));
 	items.push_back(new Item(surface, 108, "Parapluie Frutiparc", 2, -1, -1));
 	items.push_back(new Item(surface, 109, "Flocon simple", 3, -1, 1));
 	items.push_back(new Item(surface, 110, "Flocon bizarre", 4, -1, 1));
@@ -1004,9 +1004,9 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 114, "Mode Mario", 4, -1, -1));
 	items.push_back(new Item(surface, 115, "Casque de Volleyfest", 0, -1, -1));
 	items.push_back(new Item(surface, 116, "Joyau d\'Ankhel", 0, -1, -1));
-	items.push_back(new Item(surface, 117, "Clé de Gordon", 0, -1, -1));
+	items.push_back(new Item(surface, 117, "Cle de Gordon", 0, -1, -1));
 	items.push_back(new Item(surface, 118, "Cristaux d\'Hammerfest", 0, -2, -1));
-	items.push_back(new Item(surface, 119, "Pain à la viande", 1, 1000, -1));
+	items.push_back(new Item(surface, 119, "Pain a la viande", 1, 1000, -1));
 	items.push_back(new Item(surface, 120, "Canne de Bobble", 7, 100000, -1));
 	items.push_back(new Item(surface, 121, "Bonbon Berlinmauve", 1, 500, -1));
 	items.push_back(new Item(surface, 122, "Bonbon Chamagros", 1, 1000, -1));
@@ -1019,54 +1019,54 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 129, "Reflet-de-lune", 3, 25000, -1));
 	items.push_back(new Item(surface, 130, "Surprise de Cerises", 1, 800, -1));
 	items.push_back(new Item(surface, 131, "Muffin aux cailloux", 1, 300, -1));
-	items.push_back(new Item(surface, 132, "Gelée des bois", 1, 1700, -1));
-	items.push_back(new Item(surface, 133, "Suprême aux framboises", 3, 12000, -1));
-	items.push_back(new Item(surface, 134, "Petit pétillant", 3, 8000, -1));
+	items.push_back(new Item(surface, 132, "Gelee des bois", 1, 1700, -1));
+	items.push_back(new Item(surface, 133, "Supreme aux framboises", 3, 12000, -1));
+	items.push_back(new Item(surface, 134, "Petit petillant", 3, 8000, -1));
 	items.push_back(new Item(surface, 135, "Pierres du Changement", 0, -2, -1));
 	items.push_back(new Item(surface, 136, "Glace Fraise", 2, 1200, -1));
-	items.push_back(new Item(surface, 137, "Coupe Glacée", 2, 3500, -1));
+	items.push_back(new Item(surface, 137, "Coupe Glacee", 2, 3500, -1));
 	items.push_back(new Item(surface, 138, "Noodles", 2, 5600, -1));
-	items.push_back(new Item(surface, 139, "Poulet Surgelé", 1, 10, -1));
+	items.push_back(new Item(surface, 139, "Poulet Surgele", 1, 10, -1));
 	items.push_back(new Item(surface, 140, "Liquide bizarre", 3, 10000, -1));
-	items.push_back(new Item(surface, 141, "Gros acidulé", 2, 5000, -1));
-	items.push_back(new Item(surface, 142, "Liquide étrange", 3, 20000, -1));
+	items.push_back(new Item(surface, 141, "Gros acidule", 2, 5000, -1));
+	items.push_back(new Item(surface, 142, "Liquide etrange", 3, 20000, -1));
 	items.push_back(new Item(surface, 143, "Oeuf cru", 1, 500, -1));
 	items.push_back(new Item(surface, 144, "Gland gnan-gnan", 1, 1300, -1));
-	items.push_back(new Item(surface, 145, "Réglisse rouge", 1, 600, -1));
+	items.push_back(new Item(surface, 145, "Reglisse rouge", 1, 600, -1));
 	items.push_back(new Item(surface, 146, "Oeuf Au Plat", 1, 1000, -1));
-	items.push_back(new Item(surface, 147, "Saucisse piquée", 1, 300, -1));
-	items.push_back(new Item(surface, 148, "Cerise-apéro confite", 1, 400, -1));
-	items.push_back(new Item(surface, 149, "Fromage piqué", 1, 600, -1));
+	items.push_back(new Item(surface, 147, "Saucisse piquee", 1, 300, -1));
+	items.push_back(new Item(surface, 148, "Cerise-apero confite", 1, 400, -1));
+	items.push_back(new Item(surface, 149, "Fromage pique", 1, 600, -1));
 	items.push_back(new Item(surface, 150, "Olive pas mûre", 1, 1000, -1));
 	items.push_back(new Item(surface, 151, "Olive noire", 2, 1500, -1));
 	items.push_back(new Item(surface, 152, "Oeil de pomme", 2, 2000, -1));
 	items.push_back(new Item(surface, 153, "Blob intrusif", 2, 2500, -1));
 	items.push_back(new Item(surface, 154, "Gouda mou", 3, 5000, -1));
-	items.push_back(new Item(surface, 155, "Poulpi empalé", 3, 10000, -1));
-	items.push_back(new Item(surface, 156, "Olive oubliée", 4, 50000, -1));
+	items.push_back(new Item(surface, 155, "Poulpi empale", 3, 10000, -1));
+	items.push_back(new Item(surface, 156, "Olive oubliee", 4, 50000, -1));
 	items.push_back(new Item(surface, 157, "Monsieur radis", 4, 50000, -1));
 	items.push_back(new Item(surface, 158, "Sushi thon", 3, 9000, -1));
-	items.push_back(new Item(surface, 159, "Sucette acidulée", 1, 750, -1));
-	items.push_back(new Item(surface, 160, "Délice d\'Aralé", 5, 1, -1));
+	items.push_back(new Item(surface, 159, "Sucette acidulee", 1, 750, -1));
+	items.push_back(new Item(surface, 160, "Delice d\'Arale", 5, 1, -1));
 	items.push_back(new Item(surface, 161, "Sorbet au plastique", 1, 900, -1));
 	items.push_back(new Item(surface, 162, "Manda", 5, 60000, -1));
-	items.push_back(new Item(surface, 163, "Pétale mystérieuse", 2, 3000, -1));
+	items.push_back(new Item(surface, 163, "Petale mysterieuse", 2, 3000, -1));
 	items.push_back(new Item(surface, 164, "Gump", 4, 35000, -1));
 	items.push_back(new Item(surface, 165, "Bleuet", 0, 5, -1));
 	items.push_back(new Item(surface, 166, "Rougeoyant", 0, 10, -1));
 	items.push_back(new Item(surface, 167, "Verdifiant", 0, 15, -1));
 	items.push_back(new Item(surface, 168, "KassDent", 0, 25, -1));
-	items.push_back(new Item(surface, 169, "Pièce d\'or secrète", 0, 2500, -1));
+	items.push_back(new Item(surface, 169, "Piece d\'or secrete", 0, 2500, -1));
 	items.push_back(new Item(surface, 170, "Sou d\'argent", 1, 5000, -1));
 	items.push_back(new Item(surface, 171, "Sou d\'or", 3, 25000, -1));
 	items.push_back(new Item(surface, 172, "Gros tas de sous", 4, 75000, -1));
 	items.push_back(new Item(surface, 173, "Boisson kipik", 1, 1200, -1));
 	items.push_back(new Item(surface, 174, "Doigts-de-tuberculoz", 1, 900, -1));
 	items.push_back(new Item(surface, 175, "Pizza de Donatello", 1, 1400, -1));
-	items.push_back(new Item(surface, 176, "Canelé du sud-ouest", 3, 15500, -1));
+	items.push_back(new Item(surface, 176, "Canele du sud-ouest", 3, 15500, -1));
 	items.push_back(new Item(surface, 177, "Eclair noisette choco caramel et sucre", 3, 18500, -1));
 	items.push_back(new Item(surface, 178, "Bleuette rouge", 3, 10000, -1));
-	items.push_back(new Item(surface, 179, "Perroquet décapité en sauce", 4, 45000, -1));
+	items.push_back(new Item(surface, 179, "Perroquet decapite en sauce", 4, 45000, -1));
 	items.push_back(new Item(surface, 180, "Morvo-morphe", 4, 70000, -1));
 	items.push_back(new Item(surface, 181, "Fraise Tagada", 1, 1000, -1));
 	items.push_back(new Item(surface, 182, "Car-En-Sac", 1, 1400, -1));
@@ -1074,37 +1074,37 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 184, "Krokodile", 2, 12250, -1));
 	items.push_back(new Item(surface, 185, "Demi Cocobats", 1, 1800, -1));
 	items.push_back(new Item(surface, 186, "Happy Cola", 1, 1750, -1));
-	items.push_back(new Item(surface, 187, "Cacahuete secrète", 2, 50, -1));
+	items.push_back(new Item(surface, 187, "Cacahuete secrete", 2, 50, -1));
 	items.push_back(new Item(surface, 188, "P\'tit fantome", 2, 2500, -1));
-	items.push_back(new Item(surface, 189, "Cookie deshydraté", 2, 1800, -1));
+	items.push_back(new Item(surface, 189, "Cookie deshydrate", 2, 1800, -1));
 	items.push_back(new Item(surface, 190, "Arbuche de noël", 3, 8000, -1));
 	items.push_back(new Item(surface, 191, "Piment farceur", 4, 12000, -1));
 	items.push_back(new Item(surface, 192, "Soja Max IceCream", 2, 2250, -1));
 	items.push_back(new Item(surface, 193, "Bouquet de steack", 4, 7777, -1));
-	items.push_back(new Item(surface, 194, "Daruma-Pastèque", 5, 60000, -1));
+	items.push_back(new Item(surface, 194, "Daruma-Pasteque", 5, 60000, -1));
 	items.push_back(new Item(surface, 195, "Graine de tournesol", 3, 5, -1));
 	items.push_back(new Item(surface, 196, "Croissant confit", 5, 1500, -1));
 	items.push_back(new Item(surface, 197, "Haricot paresseux", 1, 800, -1));
 	items.push_back(new Item(surface, 198, "Lapin-choco", 3, 1200, -1));
 	items.push_back(new Item(surface, 199, "Biloo", 1, 900, -1));
-	items.push_back(new Item(surface, 200, "Graine de pechume en gelée", 2, 3000, -1));
+	items.push_back(new Item(surface, 200, "Graine de pechume en gelee", 2, 3000, -1));
 	items.push_back(new Item(surface, 201, "Sombrino aux amandes", 3, 1650, -1));
 	items.push_back(new Item(surface, 202, "Emi-Praline", 3, 1500, -1));
 	items.push_back(new Item(surface, 203, "Frogmaliet aux pepites de chocolat", 3, 1600, -1));
-	items.push_back(new Item(surface, 204, "Yumi au café", 3, 1800, -1));
-	items.push_back(new Item(surface, 205, "Bouchée mielleuse nappée au gel de Vodka", 3, 1700, -1));
-	items.push_back(new Item(surface, 206, "Escargot au chocolat persillé", 3, 1750, -1));
-	items.push_back(new Item(surface, 207, "Fossile de cacao marbré au fois gras", 3, 1550, -1));
-	items.push_back(new Item(surface, 208, "Cerisot mariné a la bière", 3, 3000, -1));
+	items.push_back(new Item(surface, 204, "Yumi au cafe", 3, 1800, -1));
+	items.push_back(new Item(surface, 205, "Bouchee mielleuse nappee au gel de Vodka", 3, 1700, -1));
+	items.push_back(new Item(surface, 206, "Escargot au chocolat persille", 3, 1750, -1));
+	items.push_back(new Item(surface, 207, "Fossile de cacao marbre au fois gras", 3, 1550, -1));
+	items.push_back(new Item(surface, 208, "Cerisot marine a la biere", 3, 3000, -1));
 	items.push_back(new Item(surface, 209, "Jambon de Bayonne", 2, 12000, -1));
-	items.push_back(new Item(surface, 210, "Saucisson entamé", 2, 6000, -1));
+	items.push_back(new Item(surface, 210, "Saucisson entame", 2, 6000, -1));
 	items.push_back(new Item(surface, 211, "Raide red reste", 1, 800, -1));
-	items.push_back(new Item(surface, 212, "Torchon madrangeais au sirop d\'érable", 1, 500, -1));
+	items.push_back(new Item(surface, 212, "Torchon madrangeais au sirop d\'erable", 1, 500, -1));
 	items.push_back(new Item(surface, 213, "Saucisson de marcassin sauvage", 2, 4000, -1));
 	items.push_back(new Item(surface, 214, "Tranches de Jaret de Kangourou", 1, 1200, -1));
 	items.push_back(new Item(surface, 215, "Saucissaille de St-Morgelet", 1, 1600, -1));
-	items.push_back(new Item(surface, 216, "Paté d\'ongles au truffes", 3, 400, -1));
-	items.push_back(new Item(surface, 217, "Saucisson maudit scellé", 4, 16000, -1));
+	items.push_back(new Item(surface, 216, "Pate d\'ongles au truffes", 3, 400, -1));
+	items.push_back(new Item(surface, 217, "Saucisson maudit scelle", 4, 16000, -1));
 	items.push_back(new Item(surface, 218, "Manquereau-sauce-au-citron", 4, 2500, -1));
 	items.push_back(new Item(surface, 219, "Mini-saucisses en boite", 2, 575, -1));
 	items.push_back(new Item(surface, 220, "Haricots blanc", 2, 575, -1));
@@ -1115,11 +1115,11 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 225, "Emmental", 1, 75, -1));
 	items.push_back(new Item(surface, 226, "Fromage verni", 2, 225, -1));
 	items.push_back(new Item(surface, 227, "Roquefort", 2, 250, -1));
-	items.push_back(new Item(surface, 228, "Fromage frais vigné", 2, 400, -1));
-	items.push_back(new Item(surface, 229, "Pâte dessert fromagée", 2, 325, -1));
+	items.push_back(new Item(surface, 228, "Fromage frais vigne", 2, 400, -1));
+	items.push_back(new Item(surface, 229, "Pâte dessert fromagee", 2, 325, -1));
 	items.push_back(new Item(surface, 230, "Saladou", 2, 700, -1));
 	items.push_back(new Item(surface, 231, "Poire d\'eau", 2, 800, -1));
-	items.push_back(new Item(surface, 232, "Cacahuète mauve et juteuse", 4, 3700, -1));
+	items.push_back(new Item(surface, 232, "Cacahuete mauve et juteuse", 4, 3700, -1));
 	items.push_back(new Item(surface, 233, "Pommes de pierre", 2, 200, -1));
 	items.push_back(new Item(surface, 234, "Patates douces", 2, 400, -1));
 	items.push_back(new Item(surface, 235, "Matraque bio", 3, 700, -1));
@@ -1133,7 +1133,7 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 243, "Poivron vert", 3, 3500, -1));
 	items.push_back(new Item(surface, 244, "Poivron jaune", 4, 15000, -1));
 	items.push_back(new Item(surface, 245, "Poivron rouge", 1, 700, -1));
-	items.push_back(new Item(surface, 246, "Brocolis digérés", 3, 3, -1));
+	items.push_back(new Item(surface, 246, "Brocolis digeres", 3, 3, -1));
 	items.push_back(new Item(surface, 247, "Grappe de Radix", 3, 6000, -1));
 	items.push_back(new Item(surface, 248, "Lance-poix", 3, 7000, -1));
 	items.push_back(new Item(surface, 249, "Haricots blancs", 5, 35000, -1));
@@ -1144,10 +1144,10 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 254, "Pom pom pom..", 1, 350, -1));
 	items.push_back(new Item(surface, 255, "Hollandais", 2, 1250, -1));
 	items.push_back(new Item(surface, 256, "Fondant XXL au choco-beurre", 2, 1250, -1));
-	items.push_back(new Item(surface, 257, "Pétillante", 3, 2500, -1));
+	items.push_back(new Item(surface, 257, "Petillante", 3, 2500, -1));
 	items.push_back(new Item(surface, 258, "Warpoquiche", 2, 1250, -1));
-	items.push_back(new Item(surface, 259, "Brioche dorée", 6, 150000, -1));
-	items.push_back(new Item(surface, 260, "Café de fin de projet", 1, 600, -1));
+	items.push_back(new Item(surface, 259, "Brioche doree", 6, 150000, -1));
+	items.push_back(new Item(surface, 260, "Cafe de fin de projet", 1, 600, -1));
 	items.push_back(new Item(surface, 261, "Laxatif aux amandes", 5, 150000, -1));
 	items.push_back(new Item(surface, 262, "Smiley croquant", 2, 900, -1));
 	items.push_back(new Item(surface, 263, "Barquette de lave", 1, 400, -1));
@@ -1157,18 +1157,18 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 267, "Noodles crus", 1, 550, -1));
 	items.push_back(new Item(surface, 268, "Brioche vapeur", 4, 21000, -1));
 	items.push_back(new Item(surface, 269, "Tartine chocolat-noisette", 1, 650, -1));
-	items.push_back(new Item(surface, 270, "Tartine hémoglobine", 2, 1650, -1));
-	items.push_back(new Item(surface, 271, "Tartine à l\'orange collante", 3, 5800, -1));
+	items.push_back(new Item(surface, 270, "Tartine hemoglobine", 2, 1650, -1));
+	items.push_back(new Item(surface, 271, "Tartine a l\'orange collante", 3, 5800, -1));
 	items.push_back(new Item(surface, 272, "Tartine au miel", 2, 1650, -1));
 	items.push_back(new Item(surface, 273, "Lombric nature", 4, 15, -1));
 	items.push_back(new Item(surface, 274, "Grenade de chantilly", 2, 5000, -1));
-	items.push_back(new Item(surface, 275, "Profies très drôles", 4, 35000, -1));
+	items.push_back(new Item(surface, 275, "Profies tres drôles", 4, 35000, -1));
 	items.push_back(new Item(surface, 276, "Chouchocos", 4, 35000, -1));
-	items.push_back(new Item(surface, 277, "Blob périmé", 6, 250000, -1));
-	items.push_back(new Item(surface, 278, "Bonbon Hélène-fraiche", 3, 200, -1));
+	items.push_back(new Item(surface, 277, "Blob perime", 6, 250000, -1));
+	items.push_back(new Item(surface, 278, "Bonbon Helene-fraiche", 3, 200, -1));
 	items.push_back(new Item(surface, 279, "Nem aux anchois", 3, 9000, -1));
 	items.push_back(new Item(surface, 280, "Surimi pamplemousse", 2, 150, -1));
-	items.push_back(new Item(surface, 281, "Poulpi à l\'encre", 5, 80000, -1));
+	items.push_back(new Item(surface, 281, "Poulpi a l\'encre", 5, 80000, -1));
 	items.push_back(new Item(surface, 282, "Curly", 5, 70000, -1));
 	items.push_back(new Item(surface, 283, "Tartelette framboise", 1, 2500, -1));
 	items.push_back(new Item(surface, 284, "Oeuf de Poire", 6, 57000, -1));
@@ -1190,55 +1190,55 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 300, "Statue: Sapeur-kiwi", 0, 15000, -1));
 	items.push_back(new Item(surface, 301, "Statue: Bondissante", 0, 20000, -1));
 	items.push_back(new Item(surface, 302, "Statue: Ananargeddon", 0, 25000, -1));
-	items.push_back(new Item(surface, 303, "Anneau hérissé", 0, 250, -1));
+	items.push_back(new Item(surface, 303, "Anneau herisse", 0, 250, -1));
 	items.push_back(new Item(surface, 304, "Passe-partout en bois", 6, 10000, -1));
-	items.push_back(new Item(surface, 305, "Clé de Rigor Dangerous", 6, 10000, -1));
-	items.push_back(new Item(surface, 306, "Méluzzine", 5, 10000, -1));
-	items.push_back(new Item(surface, 307, "Clé du Bourru", 1, 10000, 1));
+	items.push_back(new Item(surface, 305, "Cle de Rigor Dangerous", 6, 10000, -1));
+	items.push_back(new Item(surface, 306, "Meluzzine", 5, 10000, -1));
+	items.push_back(new Item(surface, 307, "Cle du Bourru", 1, 10000, 1));
 	items.push_back(new Item(surface, 308, "Furtok Glaciale", 6, 10000, -1));
-	items.push_back(new Item(surface, 309, "Vieille clé rouillée", 4, 10000, -1));
+	items.push_back(new Item(surface, 309, "Vieille cle rouillee", 4, 10000, -1));
 	items.push_back(new Item(surface, 310, "Autorisation du Bois-Joli", 1, 10000, 1));
-	items.push_back(new Item(surface, 311, "Clé des Mondes Ardus", 6, 10000, -1));
-	items.push_back(new Item(surface, 312, "Clé piquante", 6, 10000, -1));
+	items.push_back(new Item(surface, 311, "Cle des Mondes Ardus", 6, 10000, -1));
+	items.push_back(new Item(surface, 312, "Cle piquante", 6, 10000, -1));
 	items.push_back(new Item(surface, 313, "Passe-partout de Tuberculoz", 6, 10000, -1));
-	items.push_back(new Item(surface, 314, "Clé des cauchemars", 6, 10000, -1));
+	items.push_back(new Item(surface, 314, "Cle des cauchemars", 6, 10000, -1));
 	items.push_back(new Item(surface, 315, "Pad Sounie", 6, 17000, -1));
 	items.push_back(new Item(surface, 316, "Pad Frusion 64", 6, 100000, -1));
 	items.push_back(new Item(surface, 317, "Pad Game-Pyramid", 6, 17000, -1));
 	items.push_back(new Item(surface, 318, "Pad Sey-Ga", 6, 17000, -1));
 	items.push_back(new Item(surface, 319, "Pad Super Frusion", 6, 17000, -1));
-	items.push_back(new Item(surface, 320, "Pad du Système Maitre", 6, 17000, -1));
+	items.push_back(new Item(surface, 320, "Pad du Systeme Maitre", 6, 17000, -1));
 	items.push_back(new Item(surface, 321, "Pad Frusion Entertainment System", 6, 17000, -1));
-	items.push_back(new Item(surface, 322, "Manette S-Téhéf", 6, 20000, -1));
+	items.push_back(new Item(surface, 322, "Manette S-Tehef", 6, 20000, -1));
 	items.push_back(new Item(surface, 323, "Canette Express", 1, 500, -1));
 	items.push_back(new Item(surface, 324, "Bouteille aux 2064 bulles", 2, 1200, -1));
 	items.push_back(new Item(surface, 325, "Mousse volante", 3, 3000, -1));
 	items.push_back(new Item(surface, 326, "Vin Merveilleux", 4, 20000, -1));
-	items.push_back(new Item(surface, 327, "Liqueur maléfique", 5, 100000, -1));
+	items.push_back(new Item(surface, 327, "Liqueur malefique", 5, 100000, -1));
 	items.push_back(new Item(surface, 328, "Tampon MT", 1, 2000, -1));
 	items.push_back(new Item(surface, 329, "Facture gratuite", 2, 10, -1));
-	items.push_back(new Item(surface, 330, "Post-It de François", 3, 3000, -1));
-	items.push_back(new Item(surface, 331, "Pot à crayon solitaire", 4, 5500, -1));
+	items.push_back(new Item(surface, 330, "Post-It de Francois", 3, 3000, -1));
+	items.push_back(new Item(surface, 331, "Pot a crayon solitaire", 4, 5500, -1));
 	items.push_back(new Item(surface, 332, "Agrafeuse du Chaos", 5, 100000, -1));
 	items.push_back(new Item(surface, 333, "Miroir bancal", 0, 69, -1));
 	items.push_back(new Item(surface, 334, "Etoile du Diable", 0, 666, -1));
 	items.push_back(new Item(surface, 335, "Poudre de plage magique", 1, 700, 5));
-	items.push_back(new Item(surface, 336, "Matériel d\'architecte", 1, 600, 10));
+	items.push_back(new Item(surface, 336, "Materiel d\'architecte", 1, 600, 10));
 	items.push_back(new Item(surface, 337, "Maquette en sable", 2, 1200, 5));
 	items.push_back(new Item(surface, 338, "Winkel", 2, 900, 3));
 	items.push_back(new Item(surface, 339, "Miroir des Sables", 0, 69, -1));
 	items.push_back(new Item(surface, 340, "Etoile des Diables Jumeaux", 0, 666, -1));
-	items.push_back(new Item(surface, 341, "Sceau d\'amitié", 0, 100, -1));
+	items.push_back(new Item(surface, 341, "Sceau d\'amitie", 0, 100, -1));
 	items.push_back(new Item(surface, 342, "Insigne de l\'ordre des Ninjas", 0, 900, -1));
 	items.push_back(new Item(surface, 343, "Couteau suisse japonais", 2, 1200, -1));
 	items.push_back(new Item(surface, 344, "Shuriken de second rang", 3, 1600, -1));
-	items.push_back(new Item(surface, 345, "Shuriken d\'entraînement", 1, 250, -1));
+	items.push_back(new Item(surface, 345, "Shuriken d\'entrainement", 1, 250, -1));
 	items.push_back(new Item(surface, 346, "Najinata", 2, 600, -1));
-	items.push_back(new Item(surface, 347, "Lance-boulettes de Précision", 4, 5000, -1));
+	items.push_back(new Item(surface, 347, "Lance-boulettes de Precision", 4, 5000, -1));
 	items.push_back(new Item(surface, 348, "Ocarina chantant", 4, 6500, -1));
 	items.push_back(new Item(surface, 349, "Armure de la nuit", 4, 10000, -1));
-	items.push_back(new Item(surface, 350, "Insigne du Mérite", 0, 10000, -1));
-	items.push_back(new Item(surface, 351, "Neige-o-glycérine", 0, 150000, -1));
+	items.push_back(new Item(surface, 350, "Insigne du Merite", 0, 10000, -1));
+	items.push_back(new Item(surface, 351, "Neige-o-glycerine", 0, 150000, -1));
 	items.push_back(new Item(surface, 352, "Pass-Pyramide", 0, 30000, -1));
 
 //	for (unsigned int i = 0; i < items.size(); i++) {
@@ -1246,7 +1246,7 @@ void ItemFileSystem::buildDatabase() {
 //	}
 
 	Quest * quest = new Quest(0, true, false, false, false, -1, -1, -1, -1, 5, "Les constellations",
-			"Igor peut maintenant poser 2 bombes au lieu d&apos;une seule à la fois, et ce,\n\t\t\tde manière permanente !");
+			"Igor peut maintenant poser 2 bombes au lieu d&apos;une seule a la fois, et ce,\n\t\t\tde maniere permanente !");
 	quest->addRequireItemId(40, 1);
 	quest->addRequireItemId(41, 1);
 	quest->addRequireItemId(42, 1);
@@ -1263,7 +1263,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(1, false, true, false, false, -1, -1, -1, -1, 6, "Mixtures du zodiaque",
-			"Igor sait désormais envoyer ses bombes à l&apos;étage supérieur ! Maintenez BAS enfoncé\n\t\t\tpendant que vous tapez dans une bombe posée.");
+			"Igor sait desormais envoyer ses bombes a l&apos;etage superieur ! Maintenez BAS enfonce\n\t\t\tpendant que vous tapez dans une bombe posee.");
 	quest->addRequireItemId(53, 1);
 	quest->addRequireItemId(54, 1);
 	quest->addRequireItemId(55, 1);
@@ -1277,24 +1277,24 @@ void ItemFileSystem::buildDatabase() {
 	quest->addRequireItemId(63, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(2, false, false, true, false, -1, -1, -1, -1, 7, "Premiers pas", "Igor débutera désormais la partie avec une vie supplémentaire.");
+	quest = new Quest(2, false, false, true, false, -1, -1, -1, -1, 7, "Premiers pas", "Igor debutera desormais la partie avec une vie supplementaire.");
 	quest->addRequireItemId(103, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(3, false, false, true, false, -1, -1, -1, -1, 8, "L\'aventure commence", "Igor débutera désormais la partie avec une autre vie supplémentaire.");
+	quest = new Quest(3, false, false, true, false, -1, -1, -1, -1, 8, "L\'aventure commence", "Igor debutera desormais la partie avec une autre vie supplementaire.");
 	quest->addRequireItemId(104, 1);
 	quest->addGiveFamilly(9);
 	quests.push_back(quest);
 
-	quest = new Quest(4, false, false, true, false, -1, -1, -1, -1, 9, "Une destinée épique", "Igor débutera désormais la partie avec encore une vie supplémentaire !");
+	quest = new Quest(4, false, false, true, false, -1, -1, -1, -1, 9, "Une destinee epique", "Igor debutera desormais la partie avec encore une vie supplementaire !");
 	quest->addRequireItemId(105, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(5, false, false, true, false, -1, -1, -1, -1, -1, "Persévérance", "Igor débutera désormais la partie avec une vie supplémentaire.");
+	quest = new Quest(5, false, false, true, false, -1, -1, -1, -1, -1, "Perseverance", "Igor debutera desormais la partie avec une vie supplementaire.");
 	quest->addRequireItemId(36, 5);
 	quests.push_back(quest);
 
-	quest = new Quest(6, false, false, false, false, -1, -1, -1, -1, -1, "Gourmandise", "De nouveaux aliments (plus sains) apparaîtront désormais en jeu !");
+	quest = new Quest(6, false, false, false, false, -1, -1, -1, -1, -1, "Gourmandise", "De nouveaux aliments (plus sains) apparaitront desormais en jeu !");
 	quest->addRequireItemId(118, 5);
 	quest->addRequireItemId(121, 1);
 	quest->addRequireItemId(131, 1);
@@ -1304,7 +1304,7 @@ void ItemFileSystem::buildDatabase() {
 	quest->addGiveFamilly(21);
 	quests.push_back(quest);
 
-	quest = new Quest(7, false, false, false, false, -1, -1, -1, -1, -1, "Du sucre !", "Igor veut encore plus de sucre ! Des délicieuses friandises apparaîtront\n\t\t\tdésormais en jeu.");
+	quest = new Quest(7, false, false, false, false, -1, -1, -1, -1, -1, "Du sucre !", "Igor veut encore plus de sucre ! Des delicieuses friandises apparaitront\n\t\t\tdesormais en jeu.");
 	quest->addRequireItemId(121, 10);
 	quest->addRequireItemId(145, 10);
 	quest->addRequireItemId(159, 10);
@@ -1314,7 +1314,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(8, false, false, false, false, -1, -1, -1, -1, -1, "Malnutrition",
-			"Le goût d&apos;Igor pour les aliments peu équilibrés lui permettra de trouver\n\t\t\tdes aliments encore plus... &quot;douteux&quot; en jeu.");
+			"Le goût d&apos;Igor pour les aliments peu equilibres lui permettra de trouver\n\t\t\tdes aliments encore plus... &quot;douteux&quot; en jeu.");
 	quest->addRequireItemId(140, 5);
 	quest->addRequireItemId(142, 5);
 	quest->addRequireItemId(146, 20);
@@ -1322,14 +1322,14 @@ void ItemFileSystem::buildDatabase() {
 	quest->addGiveFamilly(24);
 	quests.push_back(quest);
 
-	quest = new Quest(9, false, false, false, false, -1, -1, -1, -1, -1, "Goût raffiné", "Le régime bizarre d&apos;Igor a amené de nouveaux aliments exotiques en jeu !");
+	quest = new Quest(9, false, false, false, false, -1, -1, -1, -1, -1, "Goût raffine", "Le regime bizarre d&apos;Igor a amene de nouveaux aliments exotiques en jeu !");
 	quest->addRequireItemId(120, 1);
 	quest->addRequireItemId(164, 2);
 	quest->addRequireItemId(158, 10);
 	quest->addGiveFamilly(25);
 	quests.push_back(quest);
 
-	quest = new Quest(10, false, false, false, false, -1, -1, -1, -1, -1, "Avancée technologique",
+	quest = new Quest(10, false, false, false, false, -1, -1, -1, -1, -1, "Avancee technologique",
 			"Pour vous aider dans votre aventure, tout un tas d&apos;objets aux effets bizarres\n\t\t\tfont leur apparition en jeu !");
 	quest->addRequireItemId(4, 1);
 	quest->addRequireItemId(7, 1);
@@ -1341,24 +1341,24 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(11, false, false, false, false, -1, -1, -1, -1, -1, "Le petit guide des Champignons",
-			"Igor a découvert un étrange ouvrage, une sorte de livre de cuisine traitant\n\t\t\tdes champignons hallucinogènes. Il pourra désormais en trouver lors de ses\n\t\t\texplorations.");
+			"Igor a decouvert un etrange ouvrage, une sorte de livre de cuisine traitant\n\t\t\tdes champignons hallucinogenes. Il pourra desormais en trouver lors de ses\n\t\t\texplorations.");
 	quest->addRequireItemId(106, 1);
 	quest->addGiveFamilly(3);
 	quests.push_back(quest);
 
-	quest = new Quest(12, false, false, false, false, -1, -1, -1, -1, -1, "Trouver les pièces d\'or secrètes !",
-			"Des richesses supplémentaires de très grande valeur apparaitront maintenant\n\t\t\ten jeu !");
+	quest = new Quest(12, false, false, false, false, -1, -1, -1, -1, -1, "Trouver les pieces d\'or secretes !",
+			"Des richesses supplementaires de tres grande valeur apparaitront maintenant\n\t\t\ten jeu !");
 	quest->addRequireItemId(169, 150);
 	quest->addGiveFamilly(27);
 	quests.push_back(quest);
 
 	quest = new Quest(13, false, false, false, false, -1, -1, -1, -1, -1, "Le grimoire des Etoiles",
-			"Cet ouvrage mystérieux en dit long sur les 12 constellations du Zodiaque.\n\t\t\tVous pourrez désormais les collectionner en jeu !");
+			"Cet ouvrage mysterieux en dit long sur les 12 constellations du Zodiaque.\n\t\t\tVous pourrez desormais les collectionner en jeu !");
 	quest->addRequireItemId(107, 1);
 	quest->addGiveFamilly(5);
 	quests.push_back(quest);
 
-	quest = new Quest(14, false, false, false, false, -1, -1, -1, -1, -1, "Armageddon", "Des objets aux effets ravageurs vont maintenant apparaître en jeu !");
+	quest = new Quest(14, false, false, false, false, -1, -1, -1, -1, -1, "Armageddon", "Des objets aux effets ravageurs vont maintenant apparaitre en jeu !");
 	quest->addRequireItemId(1, 10);
 	quest->addRequireItemId(5, 5);
 	quest->addRequireItemId(11, 5);
@@ -1373,8 +1373,8 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest =
-			new Quest(15, false, false, false, false, -1, -1, -1, -1, -1, "Régime MotionTwin",
-					"A force de manger n&apos;importe quoi, Igor a acquis la maîtrise des jeux ! Il\n\t\t\tpourra collectionner des objets rarissimes pendant son exploration et\n\t\t\ttrouver\tdes aliments d&apos;exception !");
+			new Quest(15, false, false, false, false, -1, -1, -1, -1, -1, "Regime MotionTwin",
+					"A force de manger n&apos;importe quoi, Igor a acquis la maitrise des jeux ! Il\n\t\t\tpourra collectionner des objets rarissimes pendant son exploration et\n\t\t\ttrouver\tdes aliments d&apos;exception !");
 	quest->addRequireItemId(175, 11);
 	quest->addRequireItemId(192, 11);
 	quest->addRequireItemId(255, 11);
@@ -1389,35 +1389,35 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest =
-			new Quest(16, false, false, false, false, -1, -1, -1, -1, -1, "Créateur de jeu en devenir",
-					"Igor semble apprécier les aliments basiques, une belle carrière dans le monde\n\t\t\tdu jeu vidéo pourrait s&apos;offrir à lui ! Des aliments adaptés lui seront\n\t\t\tdorénavant proposés et quelques cartes à jouer pour se faire la main.");
+			new Quest(16, false, false, false, false, -1, -1, -1, -1, -1, "Createur de jeu en devenir",
+					"Igor semble apprecier les aliments basiques, une belle carriere dans le monde\n\t\t\tdu jeu video pourrait s&apos;offrir a lui ! Des aliments adaptes lui seront\n\t\t\tdorenavant proposes et quelques cartes a jouer pour se faire la main.");
 	quest->addRequireItemId(260, 20);
 	quest->addGiveFamilly(4);
 	quest->addGiveFamilly(35);
 	quests.push_back(quest);
 
-	quest = new Quest(17, false, false, false, false, -1, -1, -1, -1, -1, "La vie est une boîte de chocolats", "De délicieux chocolats sont maintenant distribués en Hammerfest !");
+	quest = new Quest(17, false, false, false, false, -1, -1, -1, -1, -1, "La vie est une boite de chocolats", "De delicieux chocolats sont maintenant distribues en Hammerfest !");
 	quest->addRequireItemId(164, 5);
 	quest->addGiveFamilly(30);
 	quests.push_back(quest);
 
 	quest =
-			new Quest(18, false, false, false, false, -1, -1, -1, -1, -1, "Le trésor Oune-difaïned",
-					"A force de ramasser des diamants apparus on ne sait comment, Igor a acquis\n\t\t\tla faculté de repérer des pierres précieuses rares ! Il en trouvera au cours\n\t\t\tde ses explorations.");
+			new Quest(18, false, false, false, false, -1, -1, -1, -1, -1, "Le tresor Oune-difaïned",
+					"A force de ramasser des diamants apparus on ne sait comment, Igor a acquis\n\t\t\tla faculte de reperer des pierres precieuses rares ! Il en trouvera au cours\n\t\t\tde ses explorations.");
 	quest->addRequireItemId(126, 30);
 	quest->addGiveFamilly(23);
 	quests.push_back(quest);
 
 	quest = new Quest(19, false, false, false, false, -1, -1, -1, -1, -1, "Super size me !",
-			"Toujours plus loin dans la malnutrition, Igor a découvert qu&apos;il pouvait aussi\n\t\t\tse nourrir de produits en boite.");
+			"Toujours plus loin dans la malnutrition, Igor a decouvert qu&apos;il pouvait aussi\n\t\t\tse nourrir de produits en boite.");
 	quest->addRequireItemId(119, 20);
 	quest->addRequireItemId(173, 20);
 	quest->addRequireItemId(174, 20);
 	quest->addGiveFamilly(32);
 	quests.push_back(quest);
 
-	quest = new Quest(20, false, false, false, false, -1, -1, -1, -1, -1, "Maître joaillier",
-			"Igor est devenu un véritable expert en pierres précieuses. Il pourra maintenant\n\t\t\tdécouvrir de puissants bijoux magiques au fil de ses explorations !");
+	quest = new Quest(20, false, false, false, false, -1, -1, -1, -1, -1, "Maitre joaillier",
+			"Igor est devenu un veritable expert en pierres precieuses. Il pourra maintenant\n\t\t\tdecouvrir de puissants bijoux magiques au fil de ses explorations !");
 	quest->addRequireItemId(127, 10);
 	quest->addRequireItemId(128, 5);
 	quest->addRequireItemId(129, 1);
@@ -1425,8 +1425,8 @@ void ItemFileSystem::buildDatabase() {
 	quest->addGiveFamilly(12);
 	quests.push_back(quest);
 
-	quest = new Quest(21, false, false, false, false, -1, -1, -1, -1, -1, "Grand prédateur",
-			"Igor en a plus qu&apos;assez de chasser des choses sucrées ! Désormais devenu un prédateur\n\t\t\tsans pitié, il pourra traquer et dévorer toute sorte de charcuteries.");
+	quest = new Quest(21, false, false, false, false, -1, -1, -1, -1, -1, "Grand predateur",
+			"Igor en a plus qu&apos;assez de chasser des choses sucrees ! Desormais devenu un predateur\n\t\t\tsans pitie, il pourra traquer et devorer toute sorte de charcuteries.");
 	quest->addRequireItemId(119, 20);
 	quest->addRequireItemId(139, 10);
 	quest->addRequireItemId(143, 20);
@@ -1437,7 +1437,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(22, false, false, false, false, -1, -1, -1, -1, -1, "Expert en salades et potages",
-					"On raconte partout qu&apos;Igor serait la réincarnation de Saladou, le maître mondialement\n\t\t\treconnu de la salade. Fort de ce don, il pourra à l&apos;avenir cueillir une très grande variété\n\t\t\tde légumes !");
+					"On raconte partout qu&apos;Igor serait la reincarnation de Saladou, le maitre mondialement\n\t\t\treconnu de la salade. Fort de ce don, il pourra a l&apos;avenir cueillir une tres grande variete\n\t\t\tde legumes !");
 	quest->addRequireItemId(138, 15);
 	quest->addRequireItemId(157, 1);
 	quest->addRequireItemId(178, 2);
@@ -1447,7 +1447,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(23, false, false, false, false, -1, -1, -1, -1, -1, "Festin d\'Hammerfest",
-			"Avec un repas aussi complet, Igor est fin prêt pour avoir accès aux patisseries les\n\t\t\tplus raffinées qui existent.");
+			"Avec un repas aussi complet, Igor est fin pret pour avoir acces aux patisseries les\n\t\t\tplus raffinees qui existent.");
 	quest->addRequireItemId(209, 1);
 	quest->addRequireItemId(230, 1);
 	quest->addRequireItemId(244, 1);
@@ -1459,7 +1459,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(24, false, false, false, false, -1, -1, -1, -1, -1, "Goûter d\'anniversaire",
-			"Igor a trouvé tous les éléments pour assurer à son prochain goûter d&apos;anniversaire !\n\t\t\tIl trouvera maintenant pleins de petits en-cas pour patienter jusque là.");
+			"Igor a trouve tous les elements pour assurer a son prochain goûter d&apos;anniversaire !\n\t\t\tIl trouvera maintenant pleins de petits en-cas pour patienter jusque la.");
 	quest->addRequireItemId(68, 1);
 	quest->addRequireItemId(122, 10);
 	quest->addRequireItemId(123, 10);
@@ -1474,7 +1474,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(25, false, false, false, false, -1, -1, -1, -1, -1, "Bon vivant",
-			"Un bon repas ne peu se concevoir sans des petits trucs à grignotter à l&apos;apéritif.\n\t\t\tIgor le sait, maintenant, et il pourra trouver ce qu&apos;il faut en jeu.");
+			"Un bon repas ne peu se concevoir sans des petits trucs a grignotter a l&apos;aperitif.\n\t\t\tIgor le sait, maintenant, et il pourra trouver ce qu&apos;il faut en jeu.");
 	quest->addRequireItemId(187, 10);
 	quest->addRequireItemId(199, 10);
 	quest->addRequireItemId(212, 10);
@@ -1482,8 +1482,8 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest =
-			new Quest(26, false, false, false, false, -1, -1, -1, -1, -1, "Fondue norvégienne",
-					"Les odeurs qui émanent de la tanière d&apos;Igor ne laissent aucun doute là-dessus:\n\t\t\til est devenu un grand amateur de fromages. De nouveaux produits laitiers\n\t\t\tapparaîtront dans les cavernes.");
+			new Quest(26, false, false, false, false, -1, -1, -1, -1, -1, "Fondue norvegienne",
+					"Les odeurs qui emanent de la taniere d&apos;Igor ne laissent aucun doute la-dessus:\n\t\t\til est devenu un grand amateur de fromages. De nouveaux produits laitiers\n\t\t\tapparaitront dans les cavernes.");
 	quest->addRequireItemId(149, 10);
 	quest->addRequireItemId(175, 10);
 	quest->addRequireItemId(255, 1);
@@ -1491,8 +1491,8 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest =
-			new Quest(27, false, false, false, false, -1, -1, -1, -1, -1, "Mystère de Guu",
-					"Cette quête n&apos;a aucun intérêt, à part vous conseiller de découvrir au plus vite\n\t\t\tl&apos;excellent dessin animé &quot;Haré + Guu&quot; disponible en DVD dans toutes les bonnes\n\t\t\tboutiques ! Banyaaaaaïï. ^^");
+			new Quest(27, false, false, false, false, -1, -1, -1, -1, -1, "Mystere de Guu",
+					"Cette quete n&apos;a aucun interet, a part vous conseiller de decouvrir au plus vite\n\t\t\tl&apos;excellent dessin anime &quot;Hare + Guu&quot; disponible en DVD dans toutes les bonnes\n\t\t\tboutiques ! Banyaaaaaïï. ^^");
 	quest->addRequireItemId(88, 1);
 	quest->addRequireItemId(99, 1);
 	quest->addRequireItemId(100, 1);
@@ -1501,7 +1501,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(28, false, false, false, false, -1, -1, -1, -1, -1, "Friandises divines",
-					"Les sucreries n&apos;ont plus aucun secret pour Igor. Il saura, à compter de ce jour,\n\t\t\tdébusquer les délices légendaires de Harry &quot;le beau&quot; disséminés à travers tout\n\t\t\tHammerfest.");
+					"Les sucreries n&apos;ont plus aucun secret pour Igor. Il saura, a compter de ce jour,\n\t\t\tdebusquer les delices legendaires de Harry &quot;le beau&quot; dissemines a travers tout\n\t\t\tHammerfest.");
 	quest->addRequireItemId(177, 2);
 	quest->addRequireItemId(202, 2);
 	quest->addRequireItemId(206, 2);
@@ -1514,7 +1514,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(29, false, false, false, false, -1, -1, -1, -1, -1, "Igor et Cortex",
-			"Igor a entrepris la fabrication de gadgets mystérieux... Attendez-vous à\n\t\t\tcollectionner des machines étranges en jeu !");
+			"Igor a entrepris la fabrication de gadgets mysterieux... Attendez-vous a\n\t\t\tcollectionner des machines etranges en jeu !");
 	quest->addRequireItemId(21, 10);
 	quest->addRequireItemId(26, 10);
 	quest->addRequireItemId(31, 10);
@@ -1523,40 +1523,40 @@ void ItemFileSystem::buildDatabase() {
 	quest->addGiveFamilly(38);
 	quests.push_back(quest);
 
-	quest = new Quest(30, false, false, false, true, -1, -1, -1, -1, 13, "Affronter l\'obscurité",
-			"Igor sait maintenant s&apos;éclairer ! Il pensera maintenant à apporter avec lui une\n\t\t\ttorche pour ne pas trop se perdre dans l&apos;obscurité des niveaux avancés !");
+	quest = new Quest(30, false, false, false, true, -1, -1, -1, -1, 13, "Affronter l\'obscurite",
+			"Igor sait maintenant s&apos;eclairer ! Il pensera maintenant a apporter avec lui une\n\t\t\ttorche pour ne pas trop se perdre dans l&apos;obscurite des niveaux avances !");
 	quest->addRequireItemId(68, 10);
 	quest->addGiveFamilly(14);
 	quests.push_back(quest);
 
-	quest = new Quest(31, false, false, false, true, -1, -1, -1, -1, 14, "Et la lumière fût !",
-			"Préparé à tous les dangers, le courageux Igor ne craint plus du tout\n\t\t\tl&apos;obscurité dans les niveaux avancés !");
+	quest = new Quest(31, false, false, false, true, -1, -1, -1, -1, 14, "Et la lumiere fût !",
+			"Prepare a tous les dangers, le courageux Igor ne craint plus du tout\n\t\t\tl&apos;obscurite dans les niveaux avances !");
 	quest->addRequireItemId(26, 10);
 	quests.push_back(quest);
 
-	quest = new Quest(32, false, false, false, false, -1, -1, -1, -1, 15, "Noël sur Hammerfest !", "Vous avez gagné 5 parties supplémentaires.");
+	quest = new Quest(32, false, false, false, false, -1, -1, -1, -1, 15, "Noël sur Hammerfest !", "Vous avez gagne 5 parties supplementaires.");
 	quest->addRequireItemId(109, 1);
 	quest->addGiveFamilly(16);
 	quests.push_back(quest);
 
-	quest = new Quest(33, false, false, false, false, -1, -1, -1, -1, 16, "Joyeux anniversaire Igor", "Vous avez gagné 10 parties supplémentaires !");
+	quest = new Quest(33, false, false, false, false, -1, -1, -1, -1, 16, "Joyeux anniversaire Igor", "Vous avez gagne 10 parties supplementaires !");
 	quest->addRequireItemId(110, 2);
 	quest->addGiveFamilly(17);
 	quests.push_back(quest);
 
-	quest = new Quest(34, false, false, false, false, -1, -1, -1, -1, 17, "Cadeau céleste", "Vous avez gagné 20 parties supplémentaires !");
+	quest = new Quest(34, false, false, false, false, -1, -1, -1, -1, 17, "Cadeau celeste", "Vous avez gagne 20 parties supplementaires !");
 	quest->addRequireItemId(111, 2);
 	quests.push_back(quest);
 
-	quest = new Quest(35, false, false, false, false, -1, -1, -1, -1, 18, "Achat de parties amélioré", "Vos appels dans la boutique vous rapporteront dorénavant plus de flocons !");
+	quest = new Quest(35, false, false, false, false, -1, -1, -1, -1, 18, "Achat de parties ameliore", "Vos appels dans la boutique vous rapporteront dorenavant plus de flocons !");
 	quest->addRequireItemId(10, 5);
 	quests.push_back(quest);
 
-	quest = new Quest(36, false, false, false, false, -1, -1, -1, -1, -1, "Exterminateur de Sorbex", "Vous avez pressé sans pitié les Citrons Sorbex !");
+	quest = new Quest(36, false, false, false, false, -1, -1, -1, -1, -1, "Exterminateur de Sorbex", "Vous avez presse sans pitie les Citrons Sorbex !");
 	quest->addRequireItemId(296, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(37, false, false, false, false, -1, -1, -1, -1, -1, "Désamorceur de Bombinos", "Vous avez survécu aux explosions des Bombinos !");
+	quest = new Quest(37, false, false, false, false, -1, -1, -1, -1, -1, "Desamorceur de Bombinos", "Vous avez survecu aux explosions des Bombinos !");
 	quest->addRequireItemId(297, 1);
 	quests.push_back(quest);
 
@@ -1564,39 +1564,39 @@ void ItemFileSystem::buildDatabase() {
 	quest->addRequireItemId(298, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(39, false, false, false, false, -1, -1, -1, -1, -1, "Mixeur de Tagadas", "Vous n&apos;avez fait qu&apos;une bouchée des Fraises-Tagada !");
+	quest = new Quest(39, false, false, false, false, -1, -1, -1, -1, -1, "Mixeur de Tagadas", "Vous n&apos;avez fait qu&apos;une bouchee des Fraises-Tagada !");
 	quest->addRequireItemId(299, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(40, false, false, false, false, -1, -1, -1, -1, -1, "Kiwi frotte s\'y pique", "Vous avez su éviter tous les pièges des Sapeur-kiwis !");
+	quest = new Quest(40, false, false, false, false, -1, -1, -1, -1, -1, "Kiwi frotte s\'y pique", "Vous avez su eviter tous les pieges des Sapeur-kiwis !");
 	quest->addRequireItemId(300, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(41, false, false, false, false, -1, -1, -1, -1, -1, "Chasseur de Bondissantes", "Vous ne vous êtes pas laissé impressionner par la meute de Bondissantes !");
+	quest = new Quest(41, false, false, false, false, -1, -1, -1, -1, -1, "Chasseur de Bondissantes", "Vous ne vous etes pas laisse impressionner par la meute de Bondissantes !");
 	quest->addRequireItemId(301, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(42, false, false, false, false, -1, -1, -1, -1, -1, "Tronçonneur d\'Ananargeddons", "Vous êtes venu à bout d&apos;un groupe d&apos;Ananargeddons surentraînés !");
+	quest = new Quest(42, false, false, false, false, -1, -1, -1, -1, -1, "Tronconneur d\'Ananargeddons", "Vous etes venu a bout d&apos;un groupe d&apos;Ananargeddons surentraines !");
 	quest->addRequireItemId(302, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(43, false, false, false, false, carotte, -1, -1, -1, -1, "Roi de Hammerfest",
-					"Votre persévérance et votre ténacité ont eu raison du sorcier Tuberculoz:\n\t\t\tvous avez retrouvé la carotte de Igor ! Vous débuterez vos prochaines parties\n\t\t\tavec une vie supplémentaire et Igor portera fièrement sa carotte préférée.");
+					"Votre perseverance et votre tenacite ont eu raison du sorcier Tuberculoz:\n\t\t\tvous avez retrouve la carotte de Igor ! Vous debuterez vos prochaines parties\n\t\t\tavec une vie supplementaire et Igor portera fierement sa carotte preferee.");
 	quest->addRequireItemId(102, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(44, false, false, false, false, chapeaux, -1, -1, -1, -1, "Chapelier fou",
-					"Igor s&apos;est découvert une passion nouvelle pour les coiffes. Vous pourrez\n\t\t\tmaintenant appuyer sur la touche &quot;D&quot; pendant la partie pour changer de\n\t\t\tdéguisement !");
+					"Igor s&apos;est decouvert une passion nouvelle pour les coiffes. Vous pourrez\n\t\t\tmaintenant appuyer sur la touche &quot;D&quot; pendant la partie pour changer de\n\t\t\tdeguisement !");
 	quest->addRequireItemId(72, 5);
 	quest->addRequireItemId(91, 5);
 	quest->addRequireItemId(92, 10);
 	quests.push_back(quest);
 
 	quest =
-			new Quest(45, false, false, false, false, poney, -1, -1, -1, -1, "Poney éco-terroriste",
-					"Igor a accumulé suffisament de richesses pour financer ses activités\n\t\t\tlouches en Hammerfest. Il peut maintenant se déguiser en appuyant sur la\n\t\t\ttouche &quot;D&quot; pendant la partie ! Et sinon, si ca n&apos;est pas déjà fait, avez-vous\n\t\t\tdéjà visité www.dinoparc.com ?");
+			new Quest(45, false, false, false, false, poney, -1, -1, -1, -1, "Poney eco-terroriste",
+					"Igor a accumule suffisament de richesses pour financer ses activites\n\t\t\tlouches en Hammerfest. Il peut maintenant se deguiser en appuyant sur la\n\t\t\ttouche &quot;D&quot; pendant la partie ! Et sinon, si ca n&apos;est pas deja fait, avez-vous\n\t\t\tdeja visite www.dinoparc.com ?");
 	quest->addRequireItemId(171, 10);
 	quest->addRequireItemId(172, 10);
 	quest->addRequireItemId(95, 3);
@@ -1604,13 +1604,13 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(46, false, false, false, false, pioupiou, -1, -1, -1, -1, "Le Pioupiouz est en toi",
-					"Il fallait s&apos;y attendre: à force de ramasser n&apos;importe quoi, Igor s&apos;est\n\t\t\tfait gober par un Pioupiou ! Appuyez sur la touche &quot;D&quot; pendant la partie\n\t\t\tpour changer de déguisement (au fait, vous connaissiez le site\n\t\t\twww.pioupiouz.com ?)");
+					"Il fallait s&apos;y attendre: a force de ramasser n&apos;importe quoi, Igor s&apos;est\n\t\t\tfait gober par un Pioupiou ! Appuyez sur la touche &quot;D&quot; pendant la partie\n\t\t\tpour changer de deguisement (au fait, vous connaissiez le site\n\t\t\twww.pioupiouz.com ?)");
 	quest->addRequireItemId(112, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(47, false, false, false, false, champignon, -1, -1, -1, -1, "Chasseur de champignons",
-					"Comme son homologue italien (plombier de son état), Igor a une passion\n\t\t\tbizarre pour les champignons. Il pourra désormais se déguiser\n\t\t\ten appuyant sur la touche &quot;D&quot; pendant la partie !");
+					"Comme son homologue italien (plombier de son etat), Igor a une passion\n\t\t\tbizarre pour les champignons. Il pourra desormais se deguiser\n\t\t\ten appuyant sur la touche &quot;D&quot; pendant la partie !");
 	quest->addRequireItemId(14, 1);
 	quest->addRequireItemId(15, 1);
 	quest->addRequireItemId(16, 1);
@@ -1620,12 +1620,12 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(48, false, false, false, false, cape, -1, -1, -1, -1, "Successeur de Tuberculoz",
-					"Igor semble avoir... changé.. Son regard est maintenant plus froid. Il\n\t\t\taffiche une mine sombre et se cache maintenant sous une grande cape\n\t\t\tpourpre. Petit à petit, il devient ce qu&apos;il a combattu... Vous pouvez\n\t\t\tmaintenant revêtir l&apos;apparence du sorcier Tuberculoz en appuyant sur &quot;D&quot;\n\t\t\tpendant la partie !");
+					"Igor semble avoir... change.. Son regard est maintenant plus froid. Il\n\t\t\taffiche une mine sombre et se cache maintenant sous une grande cape\n\t\t\tpourpre. Petit a petit, il devient ce qu&apos;il a combattu... Vous pouvez\n\t\t\tmaintenant revetir l&apos;apparence du sorcier Tuberculoz en appuyant sur &quot;D&quot;\n\t\t\tpendant la partie !");
 	quest->addRequireItemId(113, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(49, false, false, false, false, -1, passepartout, -1, -1, -1, "La première clé !",
-			"Igor a trouvé une sorte de Passe-partout en Bois. Nul doute qu&apos;il ouvre\n\t\t\tune porte quelque part dans les cavernes...");
+	quest = new Quest(49, false, false, false, false, -1, passepartout, -1, -1, -1, "La premiere cle !",
+			"Igor a trouve une sorte de Passe-partout en Bois. Nul doute qu&apos;il ouvre\n\t\t\tune porte quelque part dans les cavernes...");
 	quest->addRequireItemId(304, 1);
 	quest->addGiveFamilly(43);
 	quest->addGiveFamilly(45);
@@ -1634,59 +1634,59 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(50, false, false, false, false, -1, rigordangerous, -1, -1, -1, "Rigor Dangerous",
-					"Vous avez découvert dans votre aventure une vieille clé rouillée\n\t\t\tmystérieuse ! Elle comporte une petite mention gravée: &quot;Rick&quot;. Sans\n\t\t\tdoute son ancien propriétaire...");
+					"Vous avez decouvert dans votre aventure une vieille cle rouillee\n\t\t\tmysterieuse ! Elle comporte une petite mention gravee: &quot;Rick&quot;. Sans\n\t\t\tdoute son ancien proprietaire...");
 	quest->addRequireItemId(305, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(51, false, false, false, false, -1, meluzzine, -1, -1, -1, "La Méluzzine perdue",
-			"La Méluzzine, clé légendaire sortie des vieux contes hammerfestiens,\n\t\t\touvre à ce qu&apos;on raconte la porte de grandes richesses. Reste à savoir où ?");
+	quest = new Quest(51, false, false, false, false, -1, meluzzine, -1, -1, -1, "La Meluzzine perdue",
+			"La Meluzzine, cle legendaire sortie des vieux contes hammerfestiens,\n\t\t\touvre a ce qu&apos;on raconte la porte de grandes richesses. Reste a savoir où ?");
 	quest->addRequireItemId(306, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(52, false, false, false, false, -1, bourru, -1, -1, 41, "Enfin le Bourru !", "Cette étrange petite clé sent le vin.");
+	quest = new Quest(52, false, false, false, false, -1, bourru, -1, -1, 41, "Enfin le Bourru !", "Cette etrange petite cle sent le vin.");
 	quest->addRequireItemId(307, 1);
 	quests.push_back(quest);
 
 	quest =
-			new Quest(53, false, false, false, false, -1, furtok, -1, -1, -1, "Congélation",
-					"Bien qu&apos;étant un bonhomme de neige, Igor lui-même a du mal à garder cette clé\n\t\t\ten main, tant le froid qu&apos;elle dégage est intense. La porte qu&apos;elle ouvre\n\t\t\tdonne sûrement sur les endroits les plus reculés de Hammerfest.");
+			new Quest(53, false, false, false, false, -1, furtok, -1, -1, -1, "Congelation",
+					"Bien qu&apos;etant un bonhomme de neige, Igor lui-meme a du mal a garder cette cle\n\t\t\ten main, tant le froid qu&apos;elle degage est intense. La porte qu&apos;elle ouvre\n\t\t\tdonne sûrement sur les endroits les plus recules de Hammerfest.");
 	quest->addRequireItemId(308, 1);
 	quests.push_back(quest);
 
 	quest =
-			new Quest(54, false, false, false, false, -1, rouille, -1, -1, -1, "Une clé rouillée",
-					"Ce petit bout de ferraille difforme n&apos;a pas l&apos;air d&apos;avoir une grande valeur.\n\t\t\tMais il faut parfois ce méfier des apparences ! Qui peut savoir quel genre d&apos;aventure\n\t\t\tse cache au delà de la porte qu&apos;elle ouvre ?");
+			new Quest(54, false, false, false, false, -1, rouille, -1, -1, -1, "Une cle rouillee",
+					"Ce petit bout de ferraille difforme n&apos;a pas l&apos;air d&apos;avoir une grande valeur.\n\t\t\tMais il faut parfois ce mefier des apparences ! Qui peut savoir quel genre d&apos;aventure\n\t\t\tse cache au dela de la porte qu&apos;elle ouvre ?");
 	quest->addRequireItemId(309, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(55, false, false, false, false, -1, boisjoli, -1, -1, 42, "Laissez passer !",
-			"Votre toute puissance administrative sera dorénavant appuyée par le formulaire\n\t\t\td&apos;Autorisation du Bois-Joli BJ22a.");
+			"Votre toute puissance administrative sera dorenavant appuyee par le formulaire\n\t\t\td&apos;Autorisation du Bois-Joli BJ22a.");
 	quest->addRequireItemId(310, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(56, false, false, false, false, -1, mondeardus, -1, -1, -1, "Les mondes ardus",
-			"Pour avoir atteint le niveau 50 en mode Cauchemar, vous avez gagné la Clé\n\t\t\tdes Mondes Ardus.");
+			"Pour avoir atteint le niveau 50 en mode Cauchemar, vous avez gagne la Cle\n\t\t\tdes Mondes Ardus.");
 	quest->addRequireItemId(311, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(57, false, false, false, false, -1, piquante, -1, -1, -1, "Viiiite !",
-			"Sans trop savoir pourquoi, la Clé Piquante que vous avez trouvé vous donne une\n\t\t\tfolle envie de courir partout et de vous rouler en boule.");
+			"Sans trop savoir pourquoi, la Cle Piquante que vous avez trouve vous donne une\n\t\t\tfolle envie de courir partout et de vous rouler en boule.");
 	quest->addRequireItemId(312, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(58, false, false, false, false, -1, passetuberculoz, -1, -1, -1, "Faire les poches à Tubz", "Tuberculoz, le vilain sorcier, portait sur lui une clé...");
+	quest = new Quest(58, false, false, false, false, -1, passetuberculoz, -1, -1, -1, "Faire les poches a Tubz", "Tuberculoz, le vilain sorcier, portait sur lui une cle...");
 	quest->addRequireItemId(313, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(59, false, false, false, false, -1, chauchemar, -1, -1, -1, "Tuberculoz, seigneur des enfers",
-					"Votre toute puissance et votre maîtrise absolue des techniques de combat de\n\t\t\tHammerfest vous ont permi de gagner une clé unique en terrassant Tuberculoz\n\t\t\ten mode Cauchemar !");
+					"Votre toute puissance et votre maitrise absolue des techniques de combat de\n\t\t\tHammerfest vous ont permi de gagner une cle unique en terrassant Tuberculoz\n\t\t\ten mode Cauchemar !");
 	quest->addRequireItemId(314, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(60, false, false, false, false, -1, -1, -1, -1, -1, "L\'eau ferrigineuneuse",
-					"Votre excès dans la consommation de boissons alcoolisées vous a permis de\n\t\t\tdébloquer la Clé du Bourru ! Vous aurez maintenant de bonnes chances de la\n\t\t\ttrouver au cours de vos explorations.");
+					"Votre exces dans la consommation de boissons alcoolisees vous a permis de\n\t\t\tdebloquer la Cle du Bourru ! Vous aurez maintenant de bonnes chances de la\n\t\t\ttrouver au cours de vos explorations.");
 	quest->addRequireItemId(323, 20);
 	quest->addRequireItemId(324, 10);
 	quest->addRequireItemId(325, 5);
@@ -1697,7 +1697,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(61, false, false, false, false, -1, -1, -1, -1, -1, "Paperasse administrative",
-					"Igor est un maître dans l&apos;art de remplir des formulaires administratifs.\n\t\t\tIl trouvera donc sans problème bientôt l&apos;Autorisation du Bois-Joli dans\n\t\t\tles dédales des cavernes...");
+					"Igor est un maitre dans l&apos;art de remplir des formulaires administratifs.\n\t\t\tIl trouvera donc sans probleme bientôt l&apos;Autorisation du Bois-Joli dans\n\t\t\tles dedales des cavernes...");
 	quest->addRequireItemId(328, 10);
 	quest->addRequireItemId(329, 15);
 	quest->addRequireItemId(330, 3);
@@ -1708,7 +1708,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(62, false, false, false, false, -1, -1, boost, -1, -1, "Meilleur joueur",
-					"Le meilleur joueur du net, c&apos;est vous, plus personne n&apos;a de doute là dessus !\n\t\t\tVotre collection de manettes de jeu fera sans nul doute des envieux ^^\n\t\t\tIgor dispose maintenant de l&apos;option Tornade qui procure un boost de vitesse\n\t\t\tau début de chaque partie, quelques soient les options choisies !");
+					"Le meilleur joueur du net, c&apos;est vous, plus personne n&apos;a de doute la dessus !\n\t\t\tVotre collection de manettes de jeu fera sans nul doute des envieux ^^\n\t\t\tIgor dispose maintenant de l&apos;option Tornade qui procure un boost de vitesse\n\t\t\tau debut de chaque partie, quelques soient les options choisies !");
 	quest->addRequireItemId(315, 1);
 	quest->addRequireItemId(316, 1);
 	quest->addRequireItemId(317, 1);
@@ -1720,29 +1720,29 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(63, false, false, false, false, -1, -1, mirror, -1, -1, "Miroir, mon beau miroir",
-			"Le Miroir Bancal que vous avez trouvé en jeu vous permet maintenant de voir les choses\n\t\t\tsous un angle nouveau. L&apos;option de jeu &quot;Miroir&quot; a été débloquée !");
+			"Le Miroir Bancal que vous avez trouve en jeu vous permet maintenant de voir les choses\n\t\t\tsous un angle nouveau. L&apos;option de jeu &quot;Miroir&quot; a ete debloquee !");
 	quest->addRequireItemId(333, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(64, false, false, false, false, -1, -1, nightmare, -1, -1, "Mode cauchemar",
-			"Vous êtes doué. Surement très doué même... Mais saurez-vous aider Igor en mode Cauchemar ?\n\t\t\tCette option a été débloquée !");
+			"Vous etes doue. Surement tres doue meme... Mais saurez-vous aider Igor en mode Cauchemar ?\n\t\t\tCette option a ete debloquee !");
 	quest->addRequireItemId(334, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(65, false, false, false, false, -1, gordon, -1, -1, -1, "L\'aventure continue !",
-			"Le conseil des Carotteux vous a choisi pour explorer plus en avant les cavernes de Hammerfest.\n\t\t\tLa Clé de Gordon est une première étape dans cette nouvelle mission.");
+			"Le conseil des Carotteux vous a choisi pour explorer plus en avant les cavernes de Hammerfest.\n\t\t\tLa Cle de Gordon est une premiere etape dans cette nouvelle mission.");
 	quest->addRequireItemId(117, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(66, false, false, false, false, -1, -1, kickcontrol, -1, -1, "Joyau d\'Ankhel",
-					"Vous avez fait preuve d&apos;une dextérité et d&apos;une perspicacité sans égal en retrouvant le Joyau\n\t\t\td&apos;Ankhel. L&apos;option Controle du Ballon a été débloquée pour le mode SoccerFest !");
+					"Vous avez fait preuve d&apos;une dexterite et d&apos;une perspicacite sans egal en retrouvant le Joyau\n\t\t\td&apos;Ankhel. L&apos;option Controle du Ballon a ete debloquee pour le mode SoccerFest !");
 	quest->addRequireItemId(116, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(67, false, false, false, false, -1, -1, -1, multicoop, 48, "Sandy commence l\'aventure !",
-					"Tous les éléments sont réunis pour donner naissance à Sandy, le bonhomme de sable !\n\t\t\tCe nouveau personnage pourra se joindre à vous dans le mode Multi Coopératif,\n\t\t\tjouable à deux sur le même ordinateur. Re-découvrez la grande aventure avec un ami !");
+					"Tous les elements sont reunis pour donner naissance a Sandy, le bonhomme de sable !\n\t\t\tCe nouveau personnage pourra se joindre a vous dans le mode Multi Cooperatif,\n\t\t\tjouable a deux sur le meme ordinateur. Re-decouvrez la grande aventure avec un ami !");
 	quest->addRequireItemId(334, 5);
 	quest->addRequireItemId(336, 10);
 	quest->addRequireItemId(337, 5);
@@ -1751,30 +1751,30 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(68, false, false, false, false, -1, -1, mirrormulti, -1, -1, "Miroir, NOTRE beau miroir",
-					"Avec le Miroir des Sables, vous pouvez maintenant voir les choses sous un angle nouveau\n\t\t\tmais à deux ! L&apos;option de jeu &quot;Miroir&quot; a été débloquée pour le mode Multi Coopératif !");
+					"Avec le Miroir des Sables, vous pouvez maintenant voir les choses sous un angle nouveau\n\t\t\tmais a deux ! L&apos;option de jeu &quot;Miroir&quot; a ete debloquee pour le mode Multi Cooperatif !");
 	quest->addRequireItemId(339, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(69, false, false, false, false, -1, -1, nightmaremulti, -1, -1, "Mode double cauchemar",
-			"De toute évidence, vous êtes capables de grandes choses à deux ! L&apos;option de jeu &quot;Cauchemar&quot;\n\t\t\ta été débloquée pour le mode Multi Coopératif !");
+			"De toute evidence, vous etes capables de grandes choses a deux ! L&apos;option de jeu &quot;Cauchemar&quot;\n\t\t\ta ete debloquee pour le mode Multi Cooperatif !");
 	quest->addRequireItemId(340, 1);
 	quests.push_back(quest);
 
 	quest =
-			new Quest(70, false, false, false, false, -1, -1, lifesharing, -1, -1, "Une grande Amitié",
-					"Mieux vaut tard que jamais ! Igor et Sandy ont enfin compris qu&apos;il valait mieux s&apos;entraider\n\t\t\ts&apos;ils voulaient survivre à deux dans les Cavernes de Hammerfest. L&apos;option de jeu &quot;Partage de vies&quot;\n\t\t\ta été débloquée pour le mode Multi Coopératif ! Si cette option est activée, lorsqu&apos;un joueur\n\t\t\tperd sa dernière vie, il en prend une au second joueur et peut ainsi continuer la partie !");
+			new Quest(70, false, false, false, false, -1, -1, lifesharing, -1, -1, "Une grande Amitie",
+					"Mieux vaut tard que jamais ! Igor et Sandy ont enfin compris qu&apos;il valait mieux s&apos;entraider\n\t\t\ts&apos;ils voulaient survivre a deux dans les Cavernes de Hammerfest. L&apos;option de jeu &quot;Partage de vies&quot;\n\t\t\ta ete debloquee pour le mode Multi Cooperatif ! Si cette option est activee, lorsqu&apos;un joueur\n\t\t\tperd sa derniere vie, il en prend une au second joueur et peut ainsi continuer la partie !");
 	quest->addRequireItemId(341, 2);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(71, false, false, false, false, -1, -1, -1, -1, -1, "Apprentissage des canifs volants",
-					"A toujours sauter partout, Igor a fini par acquérir une souplesse digne d&apos;un ninja et une\n\t\t\tdextérité hors du commun ! Mais pour prouver sa valeur, il doit maintenant collecter les\n\t\t\tartefacts ninjas dispersés en Hammerfest !");
+					"A toujours sauter partout, Igor a fini par acquerir une souplesse digne d&apos;un ninja et une\n\t\t\tdexterite hors du commun ! Mais pour prouver sa valeur, il doit maintenant collecter les\n\t\t\tartefacts ninjas disperses en Hammerfest !");
 	quest->addRequireItemId(342, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(72, false, false, false, false, -1, -1, ninja, -1, -1, "Shinobi do !",
-					"Igor a rempli sa quêté initiatique et maîtrise maintenant à la perfection un grand\n\t\t\tnombre d&apos;armes du Ninjutsu ! Mais comme son nouveau de l&apos;honneur le lui interdit, il ne\n\t\t\tpourra pas s&apos;en servir. Toutefois, il pourra mettre à l&apos;épreuve ses compétences grâce\n\t\t\tà l&apos;option de jeu &quot;Ninjutsu&quot; qu&apos;il vient de débloquer pour le mode Aventure !");
+					"Igor a rempli sa quete initiatique et maitrise maintenant a la perfection un grand\n\t\t\tnombre d&apos;armes du Ninjutsu ! Mais comme son nouveau de l&apos;honneur le lui interdit, il ne\n\t\t\tpourra pas s&apos;en servir. Toutefois, il pourra mettre a l&apos;epreuve ses competences grâce\n\t\t\ta l&apos;option de jeu &quot;Ninjutsu&quot; qu&apos;il vient de debloquer pour le mode Aventure !");
 	quest->addRequireItemId(343, 5);
 	quest->addRequireItemId(344, 2);
 	quest->addRequireItemId(345, 7);
@@ -1785,18 +1785,18 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest =
-			new Quest(73, false, false, false, false, -1, -1, set_ta_0, timeattack, -1, "Rapide comme l\'éclair !",
-					"Igor est imbattable dès lors qu&apos;il s&apos;agit de viser juste et se déplacer avec précision...\n\t\t\tIl faut maintenant le prouver aux autres ! Le mode TIME ATTACK est débloqué et vous ouvre\n\t\t\ten plus l&apos;accès à un nouveau classement sur le site. Soyez le bonhomme de neige le\n\t\t\tplus rapide de tout Hammerfest !");
+			new Quest(73, false, false, false, false, -1, -1, set_ta_0, timeattack, -1, "Rapide comme l\'eclair !",
+					"Igor est imbattable des lors qu&apos;il s&apos;agit de viser juste et se deplacer avec precision...\n\t\t\tIl faut maintenant le prouver aux autres ! Le mode TIME ATTACK est debloque et vous ouvre\n\t\t\ten plus l&apos;acces a un nouveau classement sur le site. Soyez le bonhomme de neige le\n\t\t\tplus rapide de tout Hammerfest !");
 	quest->addRequireItemId(350, 100);
 	quests.push_back(quest);
 
 	quest =
-			new Quest(74, false, false, false, false, -1, -1, bombexpert, -1, -1, "Maître des Bombes",
-					"Vous êtes l&apos;expert réputé dans tout Hammerfest en matière d&apos;explosifs. Et pour montrer\n\t\t\tqu&apos;on ne vous ne la fait pas, à vous, l&apos;option &quot;Explosifs instables&quot; a été débloquée\n\t\t\tpour le mode Aventure ! Gare à TOUT ce qui explose en jeu ! De plus, vous pouvez pousser\n\t\t\ttoutes vos bombes plus loin en avançant en même temps que vous la frappez.");
+			new Quest(74, false, false, false, false, -1, -1, bombexpert, -1, -1, "Maitre des Bombes",
+					"Vous etes l&apos;expert repute dans tout Hammerfest en matiere d&apos;explosifs. Et pour montrer\n\t\t\tqu&apos;on ne vous ne la fait pas, a vous, l&apos;option &quot;Explosifs instables&quot; a ete debloquee\n\t\t\tpour le mode Aventure ! Gare a TOUT ce qui explose en jeu ! De plus, vous pouvez pousser\n\t\t\ttoutes vos bombes plus loin en avancant en meme temps que vous la frappez.");
 	quest->addRequireItemId(351, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(75, false, false, false, false, -1, passpyramide, -1, -1, -1, "Tombeau de Tuberculoz", "Vous avez découvert une étrange pyramide de poche dans le tombeau de Tuberculoz.");
+	quest = new Quest(75, false, false, false, false, -1, passpyramide, -1, -1, -1, "Tombeau de Tuberculoz", "Vous avez decouvert une etrange pyramide de poche dans le tombeau de Tuberculoz.");
 	quest->addRequireItemId(352, 1);
 	quests.push_back(quest);
 
@@ -1890,4 +1890,13 @@ int ItemFileSystem::getPointItemId() {
 
 int ItemFileSystem::random(int max) {
 	return (rand() % (max) + 1);
+}
+
+
+
+Item * ItemFileSystem::getItem(int index){
+	return items.at(index);
+}
+int ItemFileSystem::getQuantity(int index){
+	return fridge[index];
 }

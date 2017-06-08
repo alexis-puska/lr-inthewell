@@ -33,6 +33,8 @@ class ItemFileSystem {
 		void init(char * saveFile, bool newSaveFile);
 		int loadAccount(int accountId);
 		void save(int score, bool gamePlayed, int level);
+		Item * getItem(int index);
+		int getQuantity(int index);
 		int getEffectItemId();
 		int getPointItemId();
 		void simulateGame();

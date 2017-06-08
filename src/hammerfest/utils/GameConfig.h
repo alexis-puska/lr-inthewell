@@ -8,6 +8,10 @@
 #ifndef __MYCLASS_GAMECONFIG
 #define __MYCLASS_GAMECONFIG
 
+enum gameMdeEnum {
+	solo = 0, apprentissage = 1, timeAttack = 2, multicoop = 3, soccer = 4
+};
+
 class GameConfig {
 
 	public:
@@ -15,17 +19,21 @@ class GameConfig {
 		~GameConfig();
 		static GameConfig& Instance();
 
-
-		void getGameLoaded(int i);
+		void incGameLoaded();
+		void decGameLoaded();
 		int getGameLoaded();
+
+		void incGameMode();
+		void decGameMode();
+		int getGameMode();
 
 	private:
 		GameConfig& operator=(const GameConfig&);
 		GameConfig(const GameConfig&);
 		static GameConfig m_instance;
 
-
 		int gameLoaded;
+		int gameMode;
 
 };
 #endif

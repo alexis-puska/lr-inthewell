@@ -21,6 +21,7 @@
 #include "resources/font_verdana_10pt.h"
 #include "resources/font_verdana.h"
 
+const static SDL_Color whiteColor = { 255, 255, 255 };
 const static SDL_Color greenColor = { 0, 255, 0 };
 const static SDL_Color redColor = { 255, 0, 0 };
 const static SDL_Color blueColor = { 0, 140, 255 };
@@ -36,12 +37,14 @@ Sprite::Sprite() {
 	parseJsonFile();
 	fprintf(stderr, "init font text system\n");
 	font = TTF_OpenFontRW(SDL_RWFromMem(font_satans_ttf, font_satans_ttf_len),1, 24);
+	fontVerdana10pt = TTF_OpenFontRW(SDL_RWFromMem(font_verdana_10pt_ttf, font_verdana_10pt_ttf_len),1, 10);
 }
 
 Sprite::~Sprite() {
 	fprintf(stderr, "close sprite system\n");
 	fprintf(stderr, "close font text system\n");
 	TTF_CloseFont(font);
+	TTF_CloseFont(fontVerdana10pt);
 	IMG_Quit();
 	TTF_Quit();
 }
@@ -157,6 +160,27 @@ SDL_Surface * Sprite::getAnimation(std::string name, int index) {
  *		DRAW TEXT FUNCTION
  *
  ********************************************/
+void Sprite::drawTextVerdana(SDL_Surface* surfaceToDraw, int x, int y, const char* text, int color, bool alignCenter) {
+	SDL_Color colorSelected = getSDL_Color(color);
+	SDL_Surface *text_surface = text_surface = TTF_RenderText_Solid(fontVerdana10pt, text, colorSelected);
+	SDL_Rect srcRect;
+	srcRect.x = 0;
+	srcRect.y = 0;
+	srcRect.w = text_surface->w;
+	srcRect.h = text_surface->h;
+	SDL_Rect dstRect;
+	if (alignCenter) {
+		dstRect.x = x - (text_surface->w / 2);
+	} else {
+		dstRect.x = x;
+	}
+	dstRect.y = y;
+	dstRect.w = text_surface->w;
+	dstRect.h = text_surface->h;
+	SDL_BlitSurface(text_surface, &srcRect, surfaceToDraw, &dstRect);
+	SDL_FreeSurface(text_surface);
+}
+
 void Sprite::drawText(SDL_Surface* surfaceToDraw, int x, int y, const char* text, int color, bool alignCenter) {
 	SDL_Color colorSelected = getSDL_Color(color);
 	SDL_Surface *text_surface = text_surface = TTF_RenderText_Solid(font, text, colorSelected);
@@ -180,6 +204,9 @@ void Sprite::drawText(SDL_Surface* surfaceToDraw, int x, int y, const char* text
 
 SDL_Color Sprite::getSDL_Color(int color) {
 	switch (color) {
+		case white:
+			return whiteColor;
+			break;
 		case red:
 			return redColor;
 			break;

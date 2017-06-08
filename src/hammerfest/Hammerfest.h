@@ -10,9 +10,8 @@
 
 #include "utils/Sound.h"
 #include "utils/Sprite.h"
+#include "utils/GameConfig.h"
 #include "item/ItemFileSystem.h"
-
-
 
 #ifndef __MYCLASS_HAMMERFEST
 #define __MYCLASS_HAMMERFEST
@@ -29,6 +28,7 @@ class Hammerfest {
 		//draw screen
 		void drawSplashScreen();
 		void drawSaveGameMenu();
+		void drawMainMenu();
 		void drawGameModeMenu();
 		void drawGameOptionMenu();
 		void drawFridgeMenu();
@@ -40,10 +40,14 @@ class Hammerfest {
 
 		//what menu to draw
 		int drawMenu;
+		int drawNextMenu;
 		bool redrawMenu;
-		Uint32 rmask, gmask, bmask, amask;
 
-		int selectedSavedGame;
+		int fridgeItemPosition;
+		int fridgeFirstItemView;
+
+		//color mask
+		Uint32 rmask, gmask, bmask, amask;
 
 		//keystate
 		unsigned short in_keystate[16];
