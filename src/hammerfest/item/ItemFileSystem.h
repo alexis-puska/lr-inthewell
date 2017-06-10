@@ -23,7 +23,6 @@
 #define probaCoef6 3411
 #define probaCoef7 3471
 
-
 class ItemFileSystem {
 	public:
 		static ItemFileSystem& Instance();
@@ -33,6 +32,9 @@ class ItemFileSystem {
 		void init(char * saveFile, bool newSaveFile);
 		int loadAccount(int accountId);
 		void save(int score, bool gamePlayed, int level);
+		Quest * getQuest(int index);
+		std::map<int, Quest *> getQuestStarted();
+		std::map<int, Quest *> getQuestCompleted();
 		Item * getItem(int index);
 		int getQuantity(int index);
 		int getEffectItemId();
@@ -61,6 +63,9 @@ class ItemFileSystem {
 		std::vector<Family *> familys;
 		std::vector<Quest *> quests;
 		std::vector<Item *> items;
+
+		std::map<int, Quest *> questStarted;
+		std::map<int, Quest *> questCompleted;
 
 		std::vector<int> availableItemEffect0;
 		std::vector<int> availableItemEffect1;

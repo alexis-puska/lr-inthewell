@@ -9,9 +9,9 @@ Item::~Item() {
 	delete sprite;
 }
 
-Item::Item(SDL_Surface * items, int id, const char * name, int rarity, int value, int unlock){
+Item::Item(SDL_Surface * items, int id, std::string name, int rarity, int value, int unlock){
 	this->id = id;
-	strcpy(this->name, name);
+	this->name = name;
 	this->value = value;
 	this->rarity = rarity;
 	this->unlock = unlock;
@@ -28,7 +28,7 @@ int Item::getId() {
 	return id;
 }
 
-char* Item::getName() {
+std::string Item::getName() {
 	return name;
 }
 
@@ -49,5 +49,5 @@ SDL_Surface * Item::getSprite(){
 }
 
 void Item::printName() {
-	fprintf(stderr, "%i - %s\n", id, name);
+	fprintf(stderr, "%i - %s\n", id, name.c_str());
 }

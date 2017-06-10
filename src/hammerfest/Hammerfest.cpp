@@ -42,6 +42,8 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool
 	redrawMenu = true;
 	fridgeItemPosition = 0;
 	fridgeFirstItemView = 0;
+	questSelect = 0;
+	firstQuestView = 0;
 	Sprite::Instance();
 	Sound::Instance();
 	Sound::Instance().startMusicBoss();
@@ -191,15 +193,12 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 				fridgeItemPosition -= 6;
 				redrawMenu = true;
 			} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
-				GameConfig::Instance().incGameMode();
 				fridgeItemPosition += 6;
 				redrawMenu = true;
 			} else if (previousPlayerKeystate[0] & keyPadLeft && keychange[0]) {
-				GameConfig::Instance().decGameMode();
 				fridgeItemPosition -= 1;
 				redrawMenu = true;
 			} else if (previousPlayerKeystate[0] & keyPadRight && keychange[0]) {
-				GameConfig::Instance().incGameMode();
 				fridgeItemPosition += 1;
 				redrawMenu = true;
 			} else if (previousPlayerKeystate[0] & keyPadL1 && keychange[0]) {
@@ -207,7 +206,6 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 				fridgeFirstItemView -= 42;
 				redrawMenu = true;
 			} else if (previousPlayerKeystate[0] & keyPadR1 && keychange[0]) {
-				GameConfig::Instance().incGameMode();
 				fridgeItemPosition += 42;
 				fridgeFirstItemView += 42;
 				redrawMenu = true;
@@ -216,6 +214,21 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 		case questMenu:
 			if (previousPlayerKeystate[0] & keyPadSelect && keychange[0]) {
 				drawMenu = mainMenu;
+				redrawMenu = true;
+			} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
+				questSelect -= 1;
+				redrawMenu = true;
+			} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
+				GameConfig::Instance().incGameMode();
+				questSelect += 1;
+				redrawMenu = true;
+			} else if (previousPlayerKeystate[0] & keyPadL1 && keychange[0]) {
+				questSelect -= 10;
+				firstQuestView -= 10;
+				redrawMenu = true;
+			} else if (previousPlayerKeystate[0] & keyPadR1 && keychange[0]) {
+				questSelect += 10;
+				firstQuestView += 10;
 				redrawMenu = true;
 			}
 			break;
@@ -235,7 +248,23 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 			drawGameModeMenu();
 			break;
 		case optionMenu:
-			drawGameOptionMenu();
+			switch (GameConfig::Instance().getGameMode()) {
+				case solo:
+					drawGameOptionSoloMenu();
+					break;
+				case apprentissage:
+					//drawGameModeMenu();
+					break;
+				case timeAttack:
+					drawGameOptionTimeAttackMenu();
+					break;
+				case multicoop:
+					drawGameOptionMultiMenu();
+					break;
+				case soccer:
+					drawGameOptionSoccerMenu();
+					break;
+			}
 			break;
 		case mainMenu:
 			drawMainMenu();
@@ -345,27 +374,13 @@ void Hammerfest::drawGameModeMenu() {
 }
 
 /**************************
- *    DRAW GAME OPTION MENU
- *************************/
-void Hammerfest::drawGameOptionMenu() {
-	if (redrawMenu) {
-		fillScreenBufferWithSurface("menu_background_2", 0);
-		SDL_Surface * temp = Sprite::Instance().getAnimation("menu_title", 0);
-		copySurfaceToBackRenderer(temp, screenBuffer, (420 - temp->w) / 2, (520 - temp->h) / 2);
-		Sprite::Instance().drawText(screenBuffer, 210, 30, "GAME OPTION", red, true);
-		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
-		redrawMenu = false;
-	}
-}
-
-/**************************
  *    DRAW FRIDGE MENU
  *************************/
 void Hammerfest::drawFridgeMenu() {
 	if (redrawMenu) {
 		char tmp[50];
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		Sprite::Instance().drawText(screenBuffer, 210, 0, "CONTENU DU FRIGO", red, true);
+		Sprite::Instance().drawText(screenBuffer, 210, 0, "Contenu du frigo", red, true);
 		//navigate thiw object, 42 object dislpayed (6 columns x 7 lines)
 		if (fridgeItemPosition < 0) {
 			fridgeItemPosition = 0;
@@ -383,9 +398,9 @@ void Hammerfest::drawFridgeMenu() {
 		} else if (fridgeFirstItemView > 312) {
 			fridgeFirstItemView = 312;
 		}
-		fprintf(stderr, "cursor : %i %i\n", fridgeItemPosition, fridgeFirstItemView);
 		int index = fridgeFirstItemView;
 		int qty = 0;
+		//draw item with quantity
 		for (int y = 0; y < 7; y++) {
 			for (int x = 0; x < 6; x++) {
 				if (index > 352) {
@@ -402,15 +417,19 @@ void Hammerfest::drawFridgeMenu() {
 				index++;
 			}
 		}
+		//draw item name
 		if (ItemFileSystem::Instance().getQuantity(fridgeItemPosition) > 0) {
-			sprintf(tmp, "%s", ItemFileSystem::Instance().getItem(fridgeItemPosition)->getName());
+			Sprite::Instance().drawTextVerdana(screenBuffer, 210, 500, ItemFileSystem::Instance().getItem(fridgeItemPosition)->getName().c_str(), white, true);
 		} else {
-			sprintf(tmp, "???????");
+			Sprite::Instance().drawTextVerdana(screenBuffer, 210, 500, "???????", white, true);
 		}
-		Sprite::Instance().drawTextVerdana(screenBuffer, 210, 500, tmp, white, true);
+
+		//draw item position
+		sprintf(tmp, "%i / 353", fridgeItemPosition + 1);
+		Sprite::Instance().drawTextVerdana(screenBuffer, 210, 480, tmp, white, true);
+		//draw cursor
 		int pos = fridgeItemPosition - fridgeFirstItemView;
 		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 10 + (pos % 6) * 63, 50 + (floor(pos / 6)) * 61);
-		fprintf(stderr, "cursor : %i %i\n", fridgeItemPosition, fridgeFirstItemView);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}
@@ -421,10 +440,205 @@ void Hammerfest::drawFridgeMenu() {
  *************************/
 void Hammerfest::drawQuestMenu() {
 	if (redrawMenu) {
+		if (questSelect < 0) {
+			questSelect = 0;
+			firstQuestView = 0;
+		} else if (questSelect > 75) {
+			questSelect = 75;
+			firstQuestView = 66;
+		}
+		if (questSelect < firstQuestView) {
+			firstQuestView = questSelect;
+		} else if (questSelect > firstQuestView + 9) {
+			firstQuestView = questSelect - 9;
+		}
+		if (firstQuestView < 0) {
+			questSelect = 0;
+			firstQuestView = 0;
+		}
+		fillScreenBufferWithSurface("menu_background_2", 0);
+		Sprite::Instance().drawText(screenBuffer, 210, 0, "Les quetes", red, true);
+
+		//draw list of quest
+		int index = firstQuestView;
+		std::map<int, Quest *> questsStarted = ItemFileSystem::Instance().getQuestStarted();
+		std::map<int, Quest *> questsCompleted = ItemFileSystem::Instance().getQuestCompleted();
+		std::stringstream ss;
+		for (int i = 0; i < 10; i++) {
+			ss.str(std::string());
+			if (questsStarted[index] != NULL) {
+				ss << index << " / 75 - " << questsStarted[index]->getTitre();
+				Sprite::Instance().drawTextVerdana(screenBuffer, 40, i * 12 + 30, ss.str().c_str(), gold, false);
+			} else if (questsCompleted[index] != NULL) {
+				ss << index << " / 75 - " << questsCompleted[index]->getTitre();
+				Sprite::Instance().drawTextVerdana(screenBuffer, 40, i * 12 + 30, ss.str().c_str(), green, false);
+			} else {
+				ss << index << " / 75 - ??????????";
+				Sprite::Instance().drawTextVerdana(screenBuffer, 40, i * 12 + 30, ss.str().c_str(), red, false);
+			}
+			index++;
+		}
+		//draw cursor
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 10, (12 * (questSelect - firstQuestView)) + 24);
+
+		//draw content of quest
+		//item
+
+		Quest * quest = ItemFileSystem::Instance().getQuest(questSelect);
+		if (questsStarted[questSelect] != NULL || questsCompleted[questSelect] != NULL) {
+			std::map<int, int> requiredItem = quest->getRequireItemId();
+			int x = 0;
+			int y = 0;
+			int offsetX = 21;
+			int offsetX2 = 52;
+
+			switch (requiredItem.size()) {
+				case 1:
+					offsetX = 178;
+					offsetX2 = 21;
+					break;
+				case 2:
+					offsetX = 147;
+					offsetX2 = 21;
+					break;
+				case 3:
+					offsetX = 115;
+					offsetX2 = 21;
+					break;
+				case 4:
+					offsetX = 84;
+					offsetX2 = 21;
+					break;
+				case 5:
+					offsetX = 52;
+					offsetX2 = 21;
+					break;
+				case 6:
+					offsetX = 21;
+					offsetX2 = 21;
+					break;
+				case 7:
+					offsetX = 21;
+					offsetX2 = 178;
+					break;
+				case 8:
+					offsetX = 21;
+					offsetX2 = 147;
+					break;
+				case 9:
+					offsetX = 21;
+					offsetX2 = 115;
+					break;
+				case 10:
+					offsetX = 21;
+					offsetX2 = 84;
+					break;
+				case 11:
+					offsetX = 21;
+					offsetX2 = 52;
+					break;
+				case 12:
+					offsetX = 21;
+					offsetX2 = 21;
+					break;
+			}
+
+			for (std::map<int, int>::iterator it = requiredItem.begin(); it != requiredItem.end(); ++it) {
+				if (y == 0) {
+					copySurfaceToBackRenderer(Sprite::Instance().getAnimation("objects", it->first), screenBuffer, offsetX + (x * 63), 200 + (61 * y));
+					ss.str(std::string());
+					ss << ItemFileSystem::Instance().getQuantity(it->first) << "/" << it->second;
+					Sprite::Instance().drawTextVerdana(screenBuffer, offsetX + 31 + (x * 63), 263 + (61 * y), ss.str().c_str(), white, true);
+				} else {
+					copySurfaceToBackRenderer(Sprite::Instance().getAnimation("objects", it->first), screenBuffer, offsetX2 + (x * 63), 200 + (61 * y));
+					ss.str(std::string());
+					ss << ItemFileSystem::Instance().getQuantity(it->first) << "/" << it->second;
+					Sprite::Instance().drawTextVerdana(screenBuffer, offsetX2 + 31 + (x * 63), 263 + (61 * y), ss.str().c_str(), white, true);
+				}
+				x++;
+				if (x >= 6) {
+					x = 0;
+					y++;
+				}
+			}
+		} else {
+			Sprite::Instance().drawTextVerdana(screenBuffer, 210, 200, "???", white, true);
+		}
+
+		//description
+		if (questsStarted[questSelect] != NULL) {
+			Sprite::Instance().drawTextVerdana(screenBuffer, 210, 352, "???", white, true);
+		} else if (questsCompleted[questSelect] != NULL) {
+			int idx = 0;
+			int offsetY = 0;
+			int lastSpace = 0;
+			while (true) {
+				if (idx >= quest->getDescription().size() - 1) {
+					Sprite::Instance().drawTextVerdana(screenBuffer, 210, 352 + offsetY * 12, quest->getDescription().substr(lastSpace, idx - lastSpace).c_str(), white, true);
+					break;
+				} else if (quest->getDescription().at(idx) == ' ') {
+					if (idx - lastSpace > 55) {
+						Sprite::Instance().drawTextVerdana(screenBuffer, 210, 352 + offsetY * 12, quest->getDescription().substr(lastSpace, idx - lastSpace).c_str(), white, true);
+						lastSpace = idx;
+						offsetY++;
+
+					}
+				}
+				idx++;
+			}
+		} else {
+			Sprite::Instance().drawTextVerdana(screenBuffer, 210, 352, "???", white, true);
+		}
+
+		//copy screen
+		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+		redrawMenu = false;
+	}
+
+}
+
+/**************************
+ *    DRAW GAME OPTION MENU
+ *************************/
+void Hammerfest::drawGameOptionSoloMenu() {
+	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_2", 0);
 		SDL_Surface * temp = Sprite::Instance().getAnimation("menu_title", 0);
 		copySurfaceToBackRenderer(temp, screenBuffer, (420 - temp->w) / 2, (520 - temp->h) / 2);
-		Sprite::Instance().drawText(screenBuffer, 210, 30, "QUEST", red, true);
+		Sprite::Instance().drawText(screenBuffer, 210, 30, "GAME OPTION SOLO", red, true);
+		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+		redrawMenu = false;
+	}
+}
+
+void Hammerfest::drawGameOptionMultiMenu() {
+	if (redrawMenu) {
+		fillScreenBufferWithSurface("menu_background_2", 0);
+		SDL_Surface * temp = Sprite::Instance().getAnimation("menu_title", 0);
+		copySurfaceToBackRenderer(temp, screenBuffer, (420 - temp->w) / 2, (520 - temp->h) / 2);
+		Sprite::Instance().drawText(screenBuffer, 210, 30, "GAME OPTION MULTI", red, true);
+		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+		redrawMenu = false;
+	}
+}
+
+void Hammerfest::drawGameOptionTimeAttackMenu() {
+	if (redrawMenu) {
+		fillScreenBufferWithSurface("menu_background_2", 0);
+		SDL_Surface * temp = Sprite::Instance().getAnimation("menu_title", 0);
+		copySurfaceToBackRenderer(temp, screenBuffer, (420 - temp->w) / 2, (520 - temp->h) / 2);
+		Sprite::Instance().drawText(screenBuffer, 210, 30, "GAME OPTION TIME ATTACK", red, true);
+		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+		redrawMenu = false;
+	}
+}
+
+void Hammerfest::drawGameOptionSoccerMenu() {
+	if (redrawMenu) {
+		fillScreenBufferWithSurface("menu_background_2", 0);
+		SDL_Surface * temp = Sprite::Instance().getAnimation("menu_title", 0);
+		copySurfaceToBackRenderer(temp, screenBuffer, (420 - temp->w) / 2, (520 - temp->h) / 2);
+		Sprite::Instance().drawText(screenBuffer, 210, 30, "GAME OPTION SOCCER", red, true);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}

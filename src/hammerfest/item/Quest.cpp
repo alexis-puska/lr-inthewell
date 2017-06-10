@@ -9,26 +9,34 @@ Quest::~Quest() {
 	requireItemId.clear();
 }
 
-Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, int famillyId, const char * titre, const char * description) {
-	strcpy(this->titre, titre);
-	strcpy(this->description, description);
+Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, int famillyId, std::string titre, std::string) {
+	this->titre = titre;
+	this->description =  description;
 	this->id = id;
 	this->giveOption = giveOption;
 	this->giveOption = giveMode;
 	this->removeFamilly = removeFamilly;
 	giveFamilly.push_back(famillyId);
 }
-Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, const char * titre, const char * description) {
-	strcpy(this->titre, titre);
-	strcpy(this->description, description);
+Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, std::string titre, std::string description) {
+	this->titre = titre;
+	this->description = description;
 	this->id = id;
 	this->giveOption = giveOption;
 	this->giveOption = giveMode;
 	this->removeFamilly = removeFamilly;
 }
 
-char * Quest::getDescription() {
+int Quest::getId() {
+	return id;
+}
+
+std::string Quest::getDescription() {
 	return description;
+}
+
+std::string Quest::getTitre() {
+	return titre;
 }
 
 int Quest::getGiveOption() {
@@ -60,5 +68,5 @@ void Quest::addGiveFamilly(int famillyId) {
 }
 
 void Quest::printName() {
-	fprintf(stderr, "%i - %s - %s\n", id, titre, description);
+	fprintf(stderr, "%i - %s - %s\n", id, titre.c_str(), description.c_str());
 }

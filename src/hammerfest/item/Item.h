@@ -7,7 +7,7 @@
 #include <SDL2_image/SDL_image.h>
 #endif
 
-#include <string.h>
+#include <string>
 
 #define sizeX 32
 #define sizeY 32
@@ -16,9 +16,9 @@ class Item {
 	public:
 		Item();
 		~Item();
-		Item(SDL_Surface * items, int id, const char * name, int rarity, int value, int unlock);
+		Item(SDL_Surface * items, int id, std::string name, int rarity, int value, int unlock);
 		int getId();
-		char* getName();
+		std::string getName();
 		int getRarity();
 		int getUnlock();
 		int getValue();
@@ -26,7 +26,7 @@ class Item {
 		void printName();
 	private:
 		int id;
-		char name[50];
+		std::string name;
 		int value;
 		int rarity;
 		int unlock;

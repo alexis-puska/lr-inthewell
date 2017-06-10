@@ -131,12 +131,12 @@ int ItemFileSystem::loadAccount(int accountId) {
 		}
 	}
 
-	fprintf(stderr,"\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
+	fprintf(stderr, "\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
 
 	for (int i = 0; i < nbOfValueInFile - 4; i++) {
 		fprintf(stderr, "%i - %6i;\t", i, fridge[i]);
 	}
-	fprintf(stderr,"\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
+	fprintf(stderr, "\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
 
 	fclose(saveFile);
 	loadDefaultAvailableItem();
@@ -166,17 +166,25 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 	/********************
 	 *  validate quest
 	 ********************/
+	questCompleted.clear();
+	questStarted.clear();
+
 	for (int i = 0; i < quests.size(); i++) {
 		//fprintf(stderr, "validate quest %i\n", i);
 		Quest * tested = quests.at(i);
 		std::map<int, int> requiredItem = tested->getRequireItemId();
 		bool valide = true;
+		bool started = false;
 		for (std::map<int, int>::iterator it = requiredItem.begin(); it != requiredItem.end(); ++it) {
 			//fprintf(stderr, "%i %i %i\n", i, fridge[it->first], it->second);
 			if (fridge[it->first] < it->second) {
 				valide = false;
 				break;
 			}
+			if (fridge[it->first] > 0) {
+				started = true;
+			}
+
 		}
 		if (valide) {
 			//fprintf(stderr, "quest valide %i %i!!!\n", tested->getGiveFamilly().size(), tested->getRemoveFamilly());
@@ -188,7 +196,12 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 			if (tested->getRemoveFamilly() != -1) {
 				familyToRemove.push_back(tested->getRemoveFamilly());
 			}
+			questCompleted[tested->getId()] = tested;
 		}
+		if (started && !valide) {
+			questStarted[tested->getId()] = tested;
+		}
+
 	}
 	for (unsigned int i = 0; i < familyToRemove.size(); i++) {
 		for (unsigned int j = 0; j < familyAvailable.size(); j++) {
@@ -755,7 +768,7 @@ void ItemFileSystem::buildDatabase() {
 	family->addItem(258);
 	familys.push_back(family);
 
-	family = new Family(36, "L'heure du goûter");
+	family = new Family(36, "L'heure du gouter");
 	family->addItem(262);
 	family->addItem(263);
 	family->addItem(264);
@@ -1013,7 +1026,7 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 123, "Bonbon rosamelle-praline", 2, 2500, -1));
 	items.push_back(new Item(surface, 124, "Sucette aux fruits bleus", 2, 5000, -1));
 	items.push_back(new Item(surface, 125, "Sucette chlorophylle", 3, 15000, -1));
-	items.push_back(new Item(surface, 126, "Diamant Oune-difaïned", 0, -2, -1));
+	items.push_back(new Item(surface, 126, "Diamant Oune-difained", 0, -2, -1));
 	items.push_back(new Item(surface, 127, "Oeil de tigre", 1, 5000, -1));
 	items.push_back(new Item(surface, 128, "Jade de 12kg", 2, 15000, -1));
 	items.push_back(new Item(surface, 129, "Reflet-de-lune", 3, 25000, -1));
@@ -1037,7 +1050,7 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 147, "Saucisse piquee", 1, 300, -1));
 	items.push_back(new Item(surface, 148, "Cerise-apero confite", 1, 400, -1));
 	items.push_back(new Item(surface, 149, "Fromage pique", 1, 600, -1));
-	items.push_back(new Item(surface, 150, "Olive pas mûre", 1, 1000, -1));
+	items.push_back(new Item(surface, 150, "Olive pas mure", 1, 1000, -1));
 	items.push_back(new Item(surface, 151, "Olive noire", 2, 1500, -1));
 	items.push_back(new Item(surface, 152, "Oeil de pomme", 2, 2000, -1));
 	items.push_back(new Item(surface, 153, "Blob intrusif", 2, 2500, -1));
@@ -1077,7 +1090,7 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 187, "Cacahuete secrete", 2, 50, -1));
 	items.push_back(new Item(surface, 188, "P\'tit fantome", 2, 2500, -1));
 	items.push_back(new Item(surface, 189, "Cookie deshydrate", 2, 1800, -1));
-	items.push_back(new Item(surface, 190, "Arbuche de noël", 3, 8000, -1));
+	items.push_back(new Item(surface, 190, "Arbuche de noel", 3, 8000, -1));
 	items.push_back(new Item(surface, 191, "Piment farceur", 4, 12000, -1));
 	items.push_back(new Item(surface, 192, "Soja Max IceCream", 2, 2250, -1));
 	items.push_back(new Item(surface, 193, "Bouquet de steack", 4, 7777, -1));
@@ -1172,7 +1185,7 @@ void ItemFileSystem::buildDatabase() {
 	items.push_back(new Item(surface, 282, "Curly", 5, 70000, -1));
 	items.push_back(new Item(surface, 283, "Tartelette framboise", 1, 2500, -1));
 	items.push_back(new Item(surface, 284, "Oeuf de Poire", 6, 57000, -1));
-	items.push_back(new Item(surface, 285, "Truffe collante sans goût", 6, 300000, -1));
+	items.push_back(new Item(surface, 285, "Truffe collante sans gout", 6, 300000, -1));
 	items.push_back(new Item(surface, 286, "Sardines", 3, 6000, -1));
 	items.push_back(new Item(surface, 287, "Etoile Toulaho", 0, 1500, -1));
 	items.push_back(new Item(surface, 288, "Transformer en sucre", 3, 25000, -1));
@@ -1246,7 +1259,7 @@ void ItemFileSystem::buildDatabase() {
 //	}
 
 	Quest * quest = new Quest(0, true, false, false, false, -1, -1, -1, -1, 5, "Les constellations",
-			"Igor peut maintenant poser 2 bombes au lieu d&apos;une seule a la fois, et ce,\n\t\t\tde maniere permanente !");
+			"Igor peut maintenant poser 2 bombes au lieu d\'une seule a la fois, et ce, de maniere permanente !");
 	quest->addRequireItemId(40, 1);
 	quest->addRequireItemId(41, 1);
 	quest->addRequireItemId(42, 1);
@@ -1263,7 +1276,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(1, false, true, false, false, -1, -1, -1, -1, 6, "Mixtures du zodiaque",
-			"Igor sait desormais envoyer ses bombes a l&apos;etage superieur ! Maintenez BAS enfonce\n\t\t\tpendant que vous tapez dans une bombe posee.");
+			"Igor sait desormais envoyer ses bombes a l\'etage superieur ! Maintenez BAS enfonce pendant que vous tapez dans une bombe posee.");
 	quest->addRequireItemId(53, 1);
 	quest->addRequireItemId(54, 1);
 	quest->addRequireItemId(55, 1);
@@ -1304,7 +1317,7 @@ void ItemFileSystem::buildDatabase() {
 	quest->addGiveFamilly(21);
 	quests.push_back(quest);
 
-	quest = new Quest(7, false, false, false, false, -1, -1, -1, -1, -1, "Du sucre !", "Igor veut encore plus de sucre ! Des delicieuses friandises apparaitront\n\t\t\tdesormais en jeu.");
+	quest = new Quest(7, false, false, false, false, -1, -1, -1, -1, -1, "Du sucre !", "Igor veut encore plus de sucre ! Des delicieuses friandises apparaitront desormais en jeu.");
 	quest->addRequireItemId(121, 10);
 	quest->addRequireItemId(145, 10);
 	quest->addRequireItemId(159, 10);
@@ -1314,7 +1327,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(8, false, false, false, false, -1, -1, -1, -1, -1, "Malnutrition",
-			"Le goût d&apos;Igor pour les aliments peu equilibres lui permettra de trouver\n\t\t\tdes aliments encore plus... &quot;douteux&quot; en jeu.");
+			"Le gout d\'Igor pour les aliments peu equilibres lui permettra de trouver des aliments encore plus... \"douteux\" en jeu.");
 	quest->addRequireItemId(140, 5);
 	quest->addRequireItemId(142, 5);
 	quest->addRequireItemId(146, 20);
@@ -1322,7 +1335,7 @@ void ItemFileSystem::buildDatabase() {
 	quest->addGiveFamilly(24);
 	quests.push_back(quest);
 
-	quest = new Quest(9, false, false, false, false, -1, -1, -1, -1, -1, "Goût raffine", "Le regime bizarre d&apos;Igor a amene de nouveaux aliments exotiques en jeu !");
+	quest = new Quest(9, false, false, false, false, -1, -1, -1, -1, -1, "Gout raffine", "Le regime bizarre d\'Igor a amene de nouveaux aliments exotiques en jeu !");
 	quest->addRequireItemId(120, 1);
 	quest->addRequireItemId(164, 2);
 	quest->addRequireItemId(158, 10);
@@ -1330,7 +1343,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(10, false, false, false, false, -1, -1, -1, -1, -1, "Avancee technologique",
-			"Pour vous aider dans votre aventure, tout un tas d&apos;objets aux effets bizarres\n\t\t\tfont leur apparition en jeu !");
+			"Pour vous aider dans votre aventure, tout un tas d\'objets aux effets bizarres font leur apparition en jeu !");
 	quest->addRequireItemId(4, 1);
 	quest->addRequireItemId(7, 1);
 	quest->addRequireItemId(13, 1);
@@ -1341,19 +1354,19 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(11, false, false, false, false, -1, -1, -1, -1, -1, "Le petit guide des Champignons",
-			"Igor a decouvert un etrange ouvrage, une sorte de livre de cuisine traitant\n\t\t\tdes champignons hallucinogenes. Il pourra desormais en trouver lors de ses\n\t\t\texplorations.");
+			"Igor a decouvert un etrange ouvrage, une sorte de livre de cuisine traitant des champignons hallucinogenes. Il pourra desormais en trouver lors de ses explorations.");
 	quest->addRequireItemId(106, 1);
 	quest->addGiveFamilly(3);
 	quests.push_back(quest);
 
 	quest = new Quest(12, false, false, false, false, -1, -1, -1, -1, -1, "Trouver les pieces d\'or secretes !",
-			"Des richesses supplementaires de tres grande valeur apparaitront maintenant\n\t\t\ten jeu !");
+			"Des richesses supplementaires de tres grande valeur apparaitront maintenant en jeu !");
 	quest->addRequireItemId(169, 150);
 	quest->addGiveFamilly(27);
 	quests.push_back(quest);
 
 	quest = new Quest(13, false, false, false, false, -1, -1, -1, -1, -1, "Le grimoire des Etoiles",
-			"Cet ouvrage mysterieux en dit long sur les 12 constellations du Zodiaque.\n\t\t\tVous pourrez desormais les collectionner en jeu !");
+			"Cet ouvrage mysterieux en dit long sur les 12 constellations du Zodiaque. Vous pourrez desormais les collectionner en jeu !");
 	quest->addRequireItemId(107, 1);
 	quest->addGiveFamilly(5);
 	quests.push_back(quest);
@@ -1374,7 +1387,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(15, false, false, false, false, -1, -1, -1, -1, -1, "Regime MotionTwin",
-					"A force de manger n&apos;importe quoi, Igor a acquis la maitrise des jeux ! Il\n\t\t\tpourra collectionner des objets rarissimes pendant son exploration et\n\t\t\ttrouver\tdes aliments d&apos;exception !");
+					"A force de manger n\'importe quoi, Igor a acquis la maitrise des jeux ! Il pourra collectionner des objets rarissimes pendant son exploration et trouver des aliments d\'exception !");
 	quest->addRequireItemId(175, 11);
 	quest->addRequireItemId(192, 11);
 	quest->addRequireItemId(255, 11);
@@ -1390,7 +1403,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(16, false, false, false, false, -1, -1, -1, -1, -1, "Createur de jeu en devenir",
-					"Igor semble apprecier les aliments basiques, une belle carriere dans le monde\n\t\t\tdu jeu video pourrait s&apos;offrir a lui ! Des aliments adaptes lui seront\n\t\t\tdorenavant proposes et quelques cartes a jouer pour se faire la main.");
+					"Igor semble apprecier les aliments basiques, une belle carriere dans le monde du jeu video pourrait s\'offrir a lui ! Des aliments adaptes lui seront dorenavant proposes et quelques cartes a jouer pour se faire la main.");
 	quest->addRequireItemId(260, 20);
 	quest->addGiveFamilly(4);
 	quest->addGiveFamilly(35);
@@ -1401,15 +1414,14 @@ void ItemFileSystem::buildDatabase() {
 	quest->addGiveFamilly(30);
 	quests.push_back(quest);
 
-	quest =
-			new Quest(18, false, false, false, false, -1, -1, -1, -1, -1, "Le tresor Oune-difaïned",
-					"A force de ramasser des diamants apparus on ne sait comment, Igor a acquis\n\t\t\tla faculte de reperer des pierres precieuses rares ! Il en trouvera au cours\n\t\t\tde ses explorations.");
+	quest = new Quest(18, false, false, false, false, -1, -1, -1, -1, -1, "Le tresor Oune-difained",
+			"A force de ramasser des diamants apparus on ne sait comment, Igor a acquis la faculte de reperer des pierres precieuses rares ! Il en trouvera au cours de ses explorations.");
 	quest->addRequireItemId(126, 30);
 	quest->addGiveFamilly(23);
 	quests.push_back(quest);
 
 	quest = new Quest(19, false, false, false, false, -1, -1, -1, -1, -1, "Super size me !",
-			"Toujours plus loin dans la malnutrition, Igor a decouvert qu&apos;il pouvait aussi\n\t\t\tse nourrir de produits en boite.");
+			"Toujours plus loin dans la malnutrition, Igor a decouvert qu\'il pouvait aussi se nourrir de produits en boite.");
 	quest->addRequireItemId(119, 20);
 	quest->addRequireItemId(173, 20);
 	quest->addRequireItemId(174, 20);
@@ -1417,7 +1429,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(20, false, false, false, false, -1, -1, -1, -1, -1, "Maitre joaillier",
-			"Igor est devenu un veritable expert en pierres precieuses. Il pourra maintenant\n\t\t\tdecouvrir de puissants bijoux magiques au fil de ses explorations !");
+			"Igor est devenu un veritable expert en pierres precieuses. Il pourra maintenant decouvrir de puissants bijoux magiques au fil de ses explorations !");
 	quest->addRequireItemId(127, 10);
 	quest->addRequireItemId(128, 5);
 	quest->addRequireItemId(129, 1);
@@ -1426,7 +1438,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(21, false, false, false, false, -1, -1, -1, -1, -1, "Grand predateur",
-			"Igor en a plus qu&apos;assez de chasser des choses sucrees ! Desormais devenu un predateur\n\t\t\tsans pitie, il pourra traquer et devorer toute sorte de charcuteries.");
+			"Igor en a plus qu\'assez de chasser des choses sucrees ! Desormais devenu un predateur sans pitie, il pourra traquer et devorer toute sorte de charcuteries.");
 	quest->addRequireItemId(119, 20);
 	quest->addRequireItemId(139, 10);
 	quest->addRequireItemId(143, 20);
@@ -1437,7 +1449,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(22, false, false, false, false, -1, -1, -1, -1, -1, "Expert en salades et potages",
-					"On raconte partout qu&apos;Igor serait la reincarnation de Saladou, le maitre mondialement\n\t\t\treconnu de la salade. Fort de ce don, il pourra a l&apos;avenir cueillir une tres grande variete\n\t\t\tde legumes !");
+					"On raconte partout qu\'Igor serait la reincarnation de Saladou, le maitre mondialement reconnu de la salade. Fort de ce don, il pourra a l\'avenir cueillir une tres grande variete de legumes !");
 	quest->addRequireItemId(138, 15);
 	quest->addRequireItemId(157, 1);
 	quest->addRequireItemId(178, 2);
@@ -1447,7 +1459,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(23, false, false, false, false, -1, -1, -1, -1, -1, "Festin d\'Hammerfest",
-			"Avec un repas aussi complet, Igor est fin pret pour avoir acces aux patisseries les\n\t\t\tplus raffinees qui existent.");
+			"Avec un repas aussi complet, Igor est fin pret pour avoir acces aux patisseries les plus raffinees qui existent.");
 	quest->addRequireItemId(209, 1);
 	quest->addRequireItemId(230, 1);
 	quest->addRequireItemId(244, 1);
@@ -1458,8 +1470,8 @@ void ItemFileSystem::buildDatabase() {
 	quest->addGiveFamilly(37);
 	quests.push_back(quest);
 
-	quest = new Quest(24, false, false, false, false, -1, -1, -1, -1, -1, "Goûter d\'anniversaire",
-			"Igor a trouve tous les elements pour assurer a son prochain goûter d&apos;anniversaire !\n\t\t\tIl trouvera maintenant pleins de petits en-cas pour patienter jusque la.");
+	quest = new Quest(24, false, false, false, false, -1, -1, -1, -1, -1, "Gouter d\'anniversaire",
+			"Igor a trouve tous les elements pour assurer a son prochain gouter d\'anniversaire ! Il trouvera maintenant pleins de petits en-cas pour patienter jusque la.");
 	quest->addRequireItemId(68, 1);
 	quest->addRequireItemId(122, 10);
 	quest->addRequireItemId(123, 10);
@@ -1474,7 +1486,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(25, false, false, false, false, -1, -1, -1, -1, -1, "Bon vivant",
-			"Un bon repas ne peu se concevoir sans des petits trucs a grignotter a l&apos;aperitif.\n\t\t\tIgor le sait, maintenant, et il pourra trouver ce qu&apos;il faut en jeu.");
+			"Un bon repas ne peu se concevoir sans des petits trucs a grignotter a l\'aperitif. Igor le sait, maintenant, et il pourra trouver ce qu\'il faut en jeu.");
 	quest->addRequireItemId(187, 10);
 	quest->addRequireItemId(199, 10);
 	quest->addRequireItemId(212, 10);
@@ -1483,7 +1495,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(26, false, false, false, false, -1, -1, -1, -1, -1, "Fondue norvegienne",
-					"Les odeurs qui emanent de la taniere d&apos;Igor ne laissent aucun doute la-dessus:\n\t\t\til est devenu un grand amateur de fromages. De nouveaux produits laitiers\n\t\t\tapparaitront dans les cavernes.");
+					"Les odeurs qui emanent de la taniere d\'Igor ne laissent aucun doute la-dessus: il est devenu un grand amateur de fromages. De nouveaux produits laitiers apparaitront dans les cavernes.");
 	quest->addRequireItemId(149, 10);
 	quest->addRequireItemId(175, 10);
 	quest->addRequireItemId(255, 1);
@@ -1492,16 +1504,15 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(27, false, false, false, false, -1, -1, -1, -1, -1, "Mystere de Guu",
-					"Cette quete n&apos;a aucun interet, a part vous conseiller de decouvrir au plus vite\n\t\t\tl&apos;excellent dessin anime &quot;Hare + Guu&quot; disponible en DVD dans toutes les bonnes\n\t\t\tboutiques ! Banyaaaaaïï. ^^");
+					"Cette quete n\'a aucun interet, a part vous conseiller de decouvrir au plus vite l\'excellent dessin anime \"Hare + Guu\" disponible en DVD dans toutes les bonnes boutiques ! Banyaaaaaii. ^^");
 	quest->addRequireItemId(88, 1);
 	quest->addRequireItemId(99, 1);
 	quest->addRequireItemId(100, 1);
 	quest->addRequireItemId(162, 1);
 	quests.push_back(quest);
 
-	quest =
-			new Quest(28, false, false, false, false, -1, -1, -1, -1, -1, "Friandises divines",
-					"Les sucreries n&apos;ont plus aucun secret pour Igor. Il saura, a compter de ce jour,\n\t\t\tdebusquer les delices legendaires de Harry &quot;le beau&quot; dissemines a travers tout\n\t\t\tHammerfest.");
+	quest = new Quest(28, false, false, false, false, -1, -1, -1, -1, -1, "Friandises divines",
+			"Les sucreries n\'ont plus aucun secret pour Igor. Il saura, a compter de ce jour, debusquer les delices legendaires de Harry \"le beau\" dissemines a travers tout Hammerfest.");
 	quest->addRequireItemId(177, 2);
 	quest->addRequireItemId(202, 2);
 	quest->addRequireItemId(206, 2);
@@ -1514,7 +1525,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(29, false, false, false, false, -1, -1, -1, -1, -1, "Igor et Cortex",
-			"Igor a entrepris la fabrication de gadgets mysterieux... Attendez-vous a\n\t\t\tcollectionner des machines etranges en jeu !");
+			"Igor a entrepris la fabrication de gadgets mysterieux... Attendez-vous a collectionner des machines etranges en jeu !");
 	quest->addRequireItemId(21, 10);
 	quest->addRequireItemId(26, 10);
 	quest->addRequireItemId(31, 10);
@@ -1524,17 +1535,17 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(30, false, false, false, true, -1, -1, -1, -1, 13, "Affronter l\'obscurite",
-			"Igor sait maintenant s&apos;eclairer ! Il pensera maintenant a apporter avec lui une\n\t\t\ttorche pour ne pas trop se perdre dans l&apos;obscurite des niveaux avances !");
+			"Igor sait maintenant s\'eclairer ! Il pensera maintenant a apporter avec lui une torche pour ne pas trop se perdre dans l\'obscurite des niveaux avances !");
 	quest->addRequireItemId(68, 10);
 	quest->addGiveFamilly(14);
 	quests.push_back(quest);
 
-	quest = new Quest(31, false, false, false, true, -1, -1, -1, -1, 14, "Et la lumiere fût !",
-			"Prepare a tous les dangers, le courageux Igor ne craint plus du tout\n\t\t\tl&apos;obscurite dans les niveaux avances !");
+	quest = new Quest(31, false, false, false, true, -1, -1, -1, -1, 14, "Et la lumiere fut !",
+			"Prepare a tous les dangers, le courageux Igor ne craint plus du tout l\'obscurite dans les niveaux avances !");
 	quest->addRequireItemId(26, 10);
 	quests.push_back(quest);
 
-	quest = new Quest(32, false, false, false, false, -1, -1, -1, -1, 15, "Noël sur Hammerfest !", "Vous avez gagne 5 parties supplementaires.");
+	quest = new Quest(32, false, false, false, false, -1, -1, -1, -1, 15, "Noel sur Hammerfest !", "Vous avez gagne 5 parties supplementaires.");
 	quest->addRequireItemId(109, 1);
 	quest->addGiveFamilly(16);
 	quests.push_back(quest);
@@ -1564,7 +1575,7 @@ void ItemFileSystem::buildDatabase() {
 	quest->addRequireItemId(298, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(39, false, false, false, false, -1, -1, -1, -1, -1, "Mixeur de Tagadas", "Vous n&apos;avez fait qu&apos;une bouchee des Fraises-Tagada !");
+	quest = new Quest(39, false, false, false, false, -1, -1, -1, -1, -1, "Mixeur de Tagadas", "Vous n\'avez fait qu\'une bouchee des Fraises-Tagada !");
 	quest->addRequireItemId(299, 1);
 	quests.push_back(quest);
 
@@ -1576,19 +1587,18 @@ void ItemFileSystem::buildDatabase() {
 	quest->addRequireItemId(301, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(42, false, false, false, false, -1, -1, -1, -1, -1, "Tronconneur d\'Ananargeddons", "Vous etes venu a bout d&apos;un groupe d&apos;Ananargeddons surentraines !");
+	quest = new Quest(42, false, false, false, false, -1, -1, -1, -1, -1, "Tronconneur d\'Ananargeddons", "Vous etes venu a bout d\'un groupe d\'Ananargeddons surentraines !");
 	quest->addRequireItemId(302, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(43, false, false, false, false, carotte, -1, -1, -1, -1, "Roi de Hammerfest",
-					"Votre perseverance et votre tenacite ont eu raison du sorcier Tuberculoz:\n\t\t\tvous avez retrouve la carotte de Igor ! Vous debuterez vos prochaines parties\n\t\t\tavec une vie supplementaire et Igor portera fierement sa carotte preferee.");
+					"Votre perseverance et votre tenacite ont eu raison du sorcier Tuberculoz: vous avez retrouve la carotte de Igor ! Vous debuterez vos prochaines parties avec une vie supplementaire et Igor portera fierement sa carotte preferee.");
 	quest->addRequireItemId(102, 1);
 	quests.push_back(quest);
 
-	quest =
-			new Quest(44, false, false, false, false, chapeaux, -1, -1, -1, -1, "Chapelier fou",
-					"Igor s&apos;est decouvert une passion nouvelle pour les coiffes. Vous pourrez\n\t\t\tmaintenant appuyer sur la touche &quot;D&quot; pendant la partie pour changer de\n\t\t\tdeguisement !");
+	quest = new Quest(44, false, false, false, false, chapeaux, -1, -1, -1, -1, "Chapelier fou",
+			"Igor s\'est decouvert une passion nouvelle pour les coiffes. Vous pourrez maintenant appuyer sur la touche \"D\" pendant la partie pour changer de deguisement !");
 	quest->addRequireItemId(72, 5);
 	quest->addRequireItemId(91, 5);
 	quest->addRequireItemId(92, 10);
@@ -1596,7 +1606,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(45, false, false, false, false, poney, -1, -1, -1, -1, "Poney eco-terroriste",
-					"Igor a accumule suffisament de richesses pour financer ses activites\n\t\t\tlouches en Hammerfest. Il peut maintenant se deguiser en appuyant sur la\n\t\t\ttouche &quot;D&quot; pendant la partie ! Et sinon, si ca n&apos;est pas deja fait, avez-vous\n\t\t\tdeja visite www.dinoparc.com ?");
+					"Igor a accumule suffisament de richesses pour financer ses activites louches en Hammerfest. Il peut maintenant se deguiser en appuyant sur la touche \"D\" pendant la partie ! Et sinon, si ca n\'est pas deja fait, avez-vous deja visite www.dinoparc.com ?");
 	quest->addRequireItemId(171, 10);
 	quest->addRequireItemId(172, 10);
 	quest->addRequireItemId(95, 3);
@@ -1604,13 +1614,13 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(46, false, false, false, false, pioupiou, -1, -1, -1, -1, "Le Pioupiouz est en toi",
-					"Il fallait s&apos;y attendre: a force de ramasser n&apos;importe quoi, Igor s&apos;est\n\t\t\tfait gober par un Pioupiou ! Appuyez sur la touche &quot;D&quot; pendant la partie\n\t\t\tpour changer de deguisement (au fait, vous connaissiez le site\n\t\t\twww.pioupiouz.com ?)");
+					"Il fallait s\'y attendre: a force de ramasser n\'importe quoi, Igor s\'est fait gober par un Pioupiou ! Appuyez sur la touche \"D\" pendant la partie pour changer de deguisement (au fait, vous connaissiez le site www.pioupiouz.com ?)");
 	quest->addRequireItemId(112, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(47, false, false, false, false, champignon, -1, -1, -1, -1, "Chasseur de champignons",
-					"Comme son homologue italien (plombier de son etat), Igor a une passion\n\t\t\tbizarre pour les champignons. Il pourra desormais se deguiser\n\t\t\ten appuyant sur la touche &quot;D&quot; pendant la partie !");
+					"Comme son homologue italien (plombier de son etat), Igor a une passion bizarre pour les champignons. Il pourra desormais se deguiser en appuyant sur la touche \"D\" pendant la partie !");
 	quest->addRequireItemId(14, 1);
 	quest->addRequireItemId(15, 1);
 	quest->addRequireItemId(16, 1);
@@ -1620,26 +1630,25 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(48, false, false, false, false, cape, -1, -1, -1, -1, "Successeur de Tuberculoz",
-					"Igor semble avoir... change.. Son regard est maintenant plus froid. Il\n\t\t\taffiche une mine sombre et se cache maintenant sous une grande cape\n\t\t\tpourpre. Petit a petit, il devient ce qu&apos;il a combattu... Vous pouvez\n\t\t\tmaintenant revetir l&apos;apparence du sorcier Tuberculoz en appuyant sur &quot;D&quot;\n\t\t\tpendant la partie !");
+					"Igor semble avoir... change.. Son regard est maintenant plus froid. Il affiche une mine sombre et se cache maintenant sous une grande cape pourpre. Petit a petit, il devient ce qu\'il a combattu... Vous pouvez maintenant revetir l\'apparence du sorcier Tuberculoz en appuyant sur \"D\" pendant la partie !");
 	quest->addRequireItemId(113, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(49, false, false, false, false, -1, passepartout, -1, -1, -1, "La premiere cle !",
-			"Igor a trouve une sorte de Passe-partout en Bois. Nul doute qu&apos;il ouvre\n\t\t\tune porte quelque part dans les cavernes...");
+			"Igor a trouve une sorte de Passe-partout en Bois. Nul doute qu\'il ouvre une porte quelque part dans les cavernes...");
 	quest->addRequireItemId(304, 1);
 	quest->addGiveFamilly(43);
 	quest->addGiveFamilly(45);
 	quest->addGiveFamilly(46);
 	quests.push_back(quest);
 
-	quest =
-			new Quest(50, false, false, false, false, -1, rigordangerous, -1, -1, -1, "Rigor Dangerous",
-					"Vous avez decouvert dans votre aventure une vieille cle rouillee\n\t\t\tmysterieuse ! Elle comporte une petite mention gravee: &quot;Rick&quot;. Sans\n\t\t\tdoute son ancien proprietaire...");
+	quest = new Quest(50, false, false, false, false, -1, rigordangerous, -1, -1, -1, "Rigor Dangerous",
+			"Vous avez decouvert dans votre aventure une vieille cle rouillee mysterieuse ! Elle comporte une petite mention gravee: \"Rick\". Sans doute son ancien proprietaire...");
 	quest->addRequireItemId(305, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(51, false, false, false, false, -1, meluzzine, -1, -1, -1, "La Meluzzine perdue",
-			"La Meluzzine, cle legendaire sortie des vieux contes hammerfestiens,\n\t\t\touvre a ce qu&apos;on raconte la porte de grandes richesses. Reste a savoir où ?");
+			"La Meluzzine, cle legendaire sortie des vieux contes hammerfestiens, ouvre a ce qu\'on raconte la porte de grandes richesses. Reste a savoir où ?");
 	quest->addRequireItemId(306, 1);
 	quests.push_back(quest);
 
@@ -1649,28 +1658,27 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(53, false, false, false, false, -1, furtok, -1, -1, -1, "Congelation",
-					"Bien qu&apos;etant un bonhomme de neige, Igor lui-meme a du mal a garder cette cle\n\t\t\ten main, tant le froid qu&apos;elle degage est intense. La porte qu&apos;elle ouvre\n\t\t\tdonne sûrement sur les endroits les plus recules de Hammerfest.");
+					"Bien qu\'etant un bonhomme de neige, Igor lui-meme a du mal a garder cette cle en main, tant le froid qu\'elle degage est intense. La porte qu\'elle ouvre donne surement sur les endroits les plus recules de Hammerfest.");
 	quest->addRequireItemId(308, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(54, false, false, false, false, -1, rouille, -1, -1, -1, "Une cle rouillee",
-					"Ce petit bout de ferraille difforme n&apos;a pas l&apos;air d&apos;avoir une grande valeur.\n\t\t\tMais il faut parfois ce mefier des apparences ! Qui peut savoir quel genre d&apos;aventure\n\t\t\tse cache au dela de la porte qu&apos;elle ouvre ?");
+					"Ce petit bout de ferraille difforme n\'a pas l\'air d\'avoir une grande valeur. Mais il faut parfois ce mefier des apparences ! Qui peut savoir quel genre d\'aventure se cache au dela de la porte qu\'elle ouvre ?");
 	quest->addRequireItemId(309, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(55, false, false, false, false, -1, boisjoli, -1, -1, 42, "Laissez passer !",
-			"Votre toute puissance administrative sera dorenavant appuyee par le formulaire\n\t\t\td&apos;Autorisation du Bois-Joli BJ22a.");
+			"Votre toute puissance administrative sera dorenavant appuyee par le formulaire d\'Autorisation du Bois-Joli BJ22a.");
 	quest->addRequireItemId(310, 1);
 	quests.push_back(quest);
 
-	quest = new Quest(56, false, false, false, false, -1, mondeardus, -1, -1, -1, "Les mondes ardus",
-			"Pour avoir atteint le niveau 50 en mode Cauchemar, vous avez gagne la Cle\n\t\t\tdes Mondes Ardus.");
+	quest = new Quest(56, false, false, false, false, -1, mondeardus, -1, -1, -1, "Les mondes ardus", "Pour avoir atteint le niveau 50 en mode Cauchemar, vous avez gagne la Cle des Mondes Ardus.");
 	quest->addRequireItemId(311, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(57, false, false, false, false, -1, piquante, -1, -1, -1, "Viiiite !",
-			"Sans trop savoir pourquoi, la Cle Piquante que vous avez trouve vous donne une\n\t\t\tfolle envie de courir partout et de vous rouler en boule.");
+			"Sans trop savoir pourquoi, la Cle Piquante que vous avez trouve vous donne une folle envie de courir partout et de vous rouler en boule.");
 	quest->addRequireItemId(312, 1);
 	quests.push_back(quest);
 
@@ -1678,15 +1686,14 @@ void ItemFileSystem::buildDatabase() {
 	quest->addRequireItemId(313, 1);
 	quests.push_back(quest);
 
-	quest =
-			new Quest(59, false, false, false, false, -1, chauchemar, -1, -1, -1, "Tuberculoz, seigneur des enfers",
-					"Votre toute puissance et votre maitrise absolue des techniques de combat de\n\t\t\tHammerfest vous ont permi de gagner une cle unique en terrassant Tuberculoz\n\t\t\ten mode Cauchemar !");
+	quest = new Quest(59, false, false, false, false, -1, chauchemar, -1, -1, -1, "Tuberculoz, seigneur des enfers",
+			"Votre toute puissance et votre maitrise absolue des techniques de combat de Hammerfest vous ont permi de gagner une cle unique en terrassant Tuberculoz en mode Cauchemar !");
 	quest->addRequireItemId(314, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(60, false, false, false, false, -1, -1, -1, -1, -1, "L\'eau ferrigineuneuse",
-					"Votre exces dans la consommation de boissons alcoolisees vous a permis de\n\t\t\tdebloquer la Cle du Bourru ! Vous aurez maintenant de bonnes chances de la\n\t\t\ttrouver au cours de vos explorations.");
+					"Votre exces dans la consommation de boissons alcoolisees vous a permis de debloquer la Cle du Bourru ! Vous aurez maintenant de bonnes chances de la trouver au cours de vos explorations.");
 	quest->addRequireItemId(323, 20);
 	quest->addRequireItemId(324, 10);
 	quest->addRequireItemId(325, 5);
@@ -1695,9 +1702,8 @@ void ItemFileSystem::buildDatabase() {
 	quest->addGiveFamilly(41);
 	quests.push_back(quest);
 
-	quest =
-			new Quest(61, false, false, false, false, -1, -1, -1, -1, -1, "Paperasse administrative",
-					"Igor est un maitre dans l&apos;art de remplir des formulaires administratifs.\n\t\t\tIl trouvera donc sans probleme bientôt l&apos;Autorisation du Bois-Joli dans\n\t\t\tles dedales des cavernes...");
+	quest = new Quest(61, false, false, false, false, -1, -1, -1, -1, -1, "Paperasse administrative",
+			"Igor est un maitre dans l\'art de remplir des formulaires administratifs. Il trouvera donc sans probleme bientôt l\'Autorisation du Bois-Joli dans les dedales des cavernes...");
 	quest->addRequireItemId(328, 10);
 	quest->addRequireItemId(329, 15);
 	quest->addRequireItemId(330, 3);
@@ -1708,7 +1714,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(62, false, false, false, false, -1, -1, boost, -1, -1, "Meilleur joueur",
-					"Le meilleur joueur du net, c&apos;est vous, plus personne n&apos;a de doute la dessus !\n\t\t\tVotre collection de manettes de jeu fera sans nul doute des envieux ^^\n\t\t\tIgor dispose maintenant de l&apos;option Tornade qui procure un boost de vitesse\n\t\t\tau debut de chaque partie, quelques soient les options choisies !");
+					"Le meilleur joueur du net, c\'est vous, plus personne n\'a de doute la dessus ! Votre collection de manettes de jeu fera sans nul doute des envieux ^^ Igor dispose maintenant de l\'option Tornade qui procure un boost de vitesse au debut de chaque partie, quelques soient les options choisies !");
 	quest->addRequireItemId(315, 1);
 	quest->addRequireItemId(316, 1);
 	quest->addRequireItemId(317, 1);
@@ -1720,61 +1726,59 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(63, false, false, false, false, -1, -1, mirror, -1, -1, "Miroir, mon beau miroir",
-			"Le Miroir Bancal que vous avez trouve en jeu vous permet maintenant de voir les choses\n\t\t\tsous un angle nouveau. L&apos;option de jeu &quot;Miroir&quot; a ete debloquee !");
+			"Le Miroir Bancal que vous avez trouve en jeu vous permet maintenant de voir les choses sous un angle nouveau. L\'option de jeu \"Miroir\" a ete debloquee !");
 	quest->addRequireItemId(333, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(64, false, false, false, false, -1, -1, nightmare, -1, -1, "Mode cauchemar",
-			"Vous etes doue. Surement tres doue meme... Mais saurez-vous aider Igor en mode Cauchemar ?\n\t\t\tCette option a ete debloquee !");
+			"Vous etes doue. Surement tres doue meme... Mais saurez-vous aider Igor en mode Cauchemar ? Cette option a ete debloquee !");
 	quest->addRequireItemId(334, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(65, false, false, false, false, -1, gordon, -1, -1, -1, "L\'aventure continue !",
-			"Le conseil des Carotteux vous a choisi pour explorer plus en avant les cavernes de Hammerfest.\n\t\t\tLa Cle de Gordon est une premiere etape dans cette nouvelle mission.");
+			"Le conseil des Carotteux vous a choisi pour explorer plus en avant les cavernes de Hammerfest. La Cle de Gordon est une premiere etape dans cette nouvelle mission.");
 	quest->addRequireItemId(117, 1);
 	quests.push_back(quest);
 
-	quest =
-			new Quest(66, false, false, false, false, -1, -1, kickcontrol, -1, -1, "Joyau d\'Ankhel",
-					"Vous avez fait preuve d&apos;une dexterite et d&apos;une perspicacite sans egal en retrouvant le Joyau\n\t\t\td&apos;Ankhel. L&apos;option Controle du Ballon a ete debloquee pour le mode SoccerFest !");
+	quest = new Quest(66, false, false, false, false, -1, -1, kickcontrol, -1, -1, "Joyau d\'Ankhel",
+			"Vous avez fait preuve d\'une dexterite et d\'une perspicacite sans egal en retrouvant le Joyau d\'Ankhel. L\'option Controle du Ballon a ete debloquee pour le mode SoccerFest !");
 	quest->addRequireItemId(116, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(67, false, false, false, false, -1, -1, -1, multicoop, 48, "Sandy commence l\'aventure !",
-					"Tous les elements sont reunis pour donner naissance a Sandy, le bonhomme de sable !\n\t\t\tCe nouveau personnage pourra se joindre a vous dans le mode Multi Cooperatif,\n\t\t\tjouable a deux sur le meme ordinateur. Re-decouvrez la grande aventure avec un ami !");
+					"Tous les elements sont reunis pour donner naissance a Sandy, le bonhomme de sable ! Ce nouveau personnage pourra se joindre a vous dans le mode Multi Cooperatif, jouable a deux sur le meme ordinateur. Re-decouvrez la grande aventure avec un ami !");
 	quest->addRequireItemId(334, 5);
 	quest->addRequireItemId(336, 10);
 	quest->addRequireItemId(337, 5);
 	quest->addRequireItemId(338, 3);
 	quests.push_back(quest);
 
-	quest =
-			new Quest(68, false, false, false, false, -1, -1, mirrormulti, -1, -1, "Miroir, NOTRE beau miroir",
-					"Avec le Miroir des Sables, vous pouvez maintenant voir les choses sous un angle nouveau\n\t\t\tmais a deux ! L&apos;option de jeu &quot;Miroir&quot; a ete debloquee pour le mode Multi Cooperatif !");
+	quest = new Quest(68, false, false, false, false, -1, -1, mirrormulti, -1, -1, "Miroir, NOTRE beau miroir",
+			"Avec le Miroir des Sables, vous pouvez maintenant voir les choses sous un angle nouveau mais a deux ! L\'option de jeu \"Miroir\" a ete debloquee pour le mode Multi Cooperatif !");
 	quest->addRequireItemId(339, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(69, false, false, false, false, -1, -1, nightmaremulti, -1, -1, "Mode double cauchemar",
-			"De toute evidence, vous etes capables de grandes choses a deux ! L&apos;option de jeu &quot;Cauchemar&quot;\n\t\t\ta ete debloquee pour le mode Multi Cooperatif !");
+			"De toute evidence, vous etes capables de grandes choses a deux ! L\'option de jeu \"Cauchemar\" a ete debloquee pour le mode Multi Cooperatif !");
 	quest->addRequireItemId(340, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(70, false, false, false, false, -1, -1, lifesharing, -1, -1, "Une grande Amitie",
-					"Mieux vaut tard que jamais ! Igor et Sandy ont enfin compris qu&apos;il valait mieux s&apos;entraider\n\t\t\ts&apos;ils voulaient survivre a deux dans les Cavernes de Hammerfest. L&apos;option de jeu &quot;Partage de vies&quot;\n\t\t\ta ete debloquee pour le mode Multi Cooperatif ! Si cette option est activee, lorsqu&apos;un joueur\n\t\t\tperd sa derniere vie, il en prend une au second joueur et peut ainsi continuer la partie !");
+					"Mieux vaut tard que jamais ! Igor et Sandy ont enfin compris qu\'il valait mieux s\'entraider s\'ils voulaient survivre a deux dans les Cavernes de Hammerfest. L\'option de jeu \"Partage de vies\" a ete debloquee pour le mode Multi Cooperatif ! Si cette option est activee, lorsqu\'un joueur perd sa derniere vie, il en prend une au second joueur et peut ainsi continuer la partie !");
 	quest->addRequireItemId(341, 2);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(71, false, false, false, false, -1, -1, -1, -1, -1, "Apprentissage des canifs volants",
-					"A toujours sauter partout, Igor a fini par acquerir une souplesse digne d&apos;un ninja et une\n\t\t\tdexterite hors du commun ! Mais pour prouver sa valeur, il doit maintenant collecter les\n\t\t\tartefacts ninjas disperses en Hammerfest !");
+					"A toujours sauter partout, Igor a fini par acquerir une souplesse digne d\'un ninja et une dexterite hors du commun ! Mais pour prouver sa valeur, il doit maintenant collecter les artefacts ninjas disperses en Hammerfest !");
 	quest->addRequireItemId(342, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(72, false, false, false, false, -1, -1, ninja, -1, -1, "Shinobi do !",
-					"Igor a rempli sa quete initiatique et maitrise maintenant a la perfection un grand\n\t\t\tnombre d&apos;armes du Ninjutsu ! Mais comme son nouveau de l&apos;honneur le lui interdit, il ne\n\t\t\tpourra pas s&apos;en servir. Toutefois, il pourra mettre a l&apos;epreuve ses competences grâce\n\t\t\ta l&apos;option de jeu &quot;Ninjutsu&quot; qu&apos;il vient de debloquer pour le mode Aventure !");
+					"Igor a rempli sa quete initiatique et maitrise maintenant a la perfection un grand nombre d\'armes du Ninjutsu ! Mais comme son nouveau de l\'honneur le lui interdit, il ne pourra pas s\'en servir. Toutefois, il pourra mettre a l\'epreuve ses competences grâce a l\'option de jeu \"Ninjutsu\" qu\'il vient de debloquer pour le mode Aventure !");
 	quest->addRequireItemId(343, 5);
 	quest->addRequireItemId(344, 2);
 	quest->addRequireItemId(345, 7);
@@ -1786,13 +1790,13 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(73, false, false, false, false, -1, -1, set_ta_0, timeattack, -1, "Rapide comme l\'eclair !",
-					"Igor est imbattable des lors qu&apos;il s&apos;agit de viser juste et se deplacer avec precision...\n\t\t\tIl faut maintenant le prouver aux autres ! Le mode TIME ATTACK est debloque et vous ouvre\n\t\t\ten plus l&apos;acces a un nouveau classement sur le site. Soyez le bonhomme de neige le\n\t\t\tplus rapide de tout Hammerfest !");
+					"Igor est imbattable des lors qu\'il s\'agit de viser juste et se deplacer avec precision... Il faut maintenant le prouver aux autres ! Le mode TIME ATTACK est debloque et vous ouvre en plus l\'acces a un nouveau classement sur le site. Soyez le bonhomme de neige le plus rapide de tout Hammerfest !");
 	quest->addRequireItemId(350, 100);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(74, false, false, false, false, -1, -1, bombexpert, -1, -1, "Maitre des Bombes",
-					"Vous etes l&apos;expert repute dans tout Hammerfest en matiere d&apos;explosifs. Et pour montrer\n\t\t\tqu&apos;on ne vous ne la fait pas, a vous, l&apos;option &quot;Explosifs instables&quot; a ete debloquee\n\t\t\tpour le mode Aventure ! Gare a TOUT ce qui explose en jeu ! De plus, vous pouvez pousser\n\t\t\ttoutes vos bombes plus loin en avancant en meme temps que vous la frappez.");
+					"Vous etes l\'expert repute dans tout Hammerfest en matiere d\'explosifs. Et pour montrer qu\'on ne vous ne la fait pas, a vous, l\'option \"Explosifs instables\" a ete debloquee pour le mode Aventure ! Gare a TOUT ce qui explose en jeu ! De plus, vous pouvez pousser toutes vos bombes plus loin en avancant en meme temps que vous la frappez.");
 	quest->addRequireItemId(351, 1);
 	quests.push_back(quest);
 
@@ -1892,11 +1896,19 @@ int ItemFileSystem::random(int max) {
 	return (rand() % (max) + 1);
 }
 
-
-
-Item * ItemFileSystem::getItem(int index){
+Item * ItemFileSystem::getItem(int index) {
 	return items.at(index);
 }
-int ItemFileSystem::getQuantity(int index){
+int ItemFileSystem::getQuantity(int index) {
 	return fridge[index];
+}
+Quest * ItemFileSystem::getQuest(int index) {
+	return quests.at(index);
+}
+
+std::map<int, Quest *> ItemFileSystem::getQuestStarted() {
+	return questStarted;
+}
+std::map<int, Quest *> ItemFileSystem::getQuestCompleted() {
+	return questCompleted;
 }

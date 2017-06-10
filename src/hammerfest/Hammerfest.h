@@ -7,6 +7,7 @@
 #include <SDL2_gfx/SDL2_rotozoom.h>
 #endif
 #include <stdio.h>
+#include <sstream>
 
 #include "utils/Sound.h"
 #include "utils/Sprite.h"
@@ -30,9 +31,12 @@ class Hammerfest {
 		void drawSaveGameMenu();
 		void drawMainMenu();
 		void drawGameModeMenu();
-		void drawGameOptionMenu();
 		void drawFridgeMenu();
 		void drawQuestMenu();
+		void drawGameOptionSoloMenu();
+		void drawGameOptionMultiMenu();
+		void drawGameOptionTimeAttackMenu();
+		void drawGameOptionSoccerMenu();
 
 		//buffer for draw
 		SDL_Surface *screenBuffer;
@@ -45,6 +49,9 @@ class Hammerfest {
 
 		int fridgeItemPosition;
 		int fridgeFirstItemView;
+
+		int questSelect;
+		int firstQuestView;
 
 		//color mask
 		Uint32 rmask, gmask, bmask, amask;

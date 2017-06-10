@@ -5,15 +5,17 @@
 #include <stdio.h>
 #include <vector>
 #include <map>
+#include <string>
 
 class Quest {
 	public:
 		Quest();
 		~Quest();
-		Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, int giveFamilly, const char * titre, const char * description);
-		Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, const char * titre, const char * description);
-		char * getTitre();
-		char * getDescription();
+		Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, int giveFamilly, std::string titre, std::string description);
+		Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, std::string titre, std::string description);
+		std::string getTitre();
+		std::string getDescription();
+		int getId();
 		int getGiveOption();
 		int getGiveMode();
 		int getRemoveFamilly();
@@ -25,8 +27,8 @@ class Quest {
 	private:
 		std::map<int, int> requireItemId;
 		int id;
-		char titre[40];
-		char description[512];
+		std::string titre;
+		std::string description;
 		int giveOption;
 		int giveMode;
 		int removeFamilly;
