@@ -53,8 +53,8 @@ xxd -i -c 64 json_image_parser.json ../../src/hammerfest/utils/resources/json_im
 cd ../../resources/font
 xxd -i -c 64 font_courier_new.ttf ../../src/hammerfest/utils/resources/font_courier_new.h
 xxd -i -c 64 font_franklin_gothic_heavy_all.ttf ../../src/hammerfest/utils/resources/font_franklin_gothic_heavy_all.h
-xxd -i -c 64 font_franklin_gothic_heavy.ttf ../../src/hammerfest/utils/resources/font_franklin_gothic_heavy.h
 xxd -i -c 64 font_impact.ttf ../../src/hammerfest/utils/resources/font_impact.h
 xxd -i -c 64 font_satans.ttf ../../src/hammerfest/utils/resources/font_satans.h
 xxd -i -c 64 font_verdana_10pt.ttf ../../src/hammerfest/utils/resources/font_verdana_10pt.h
 xxd -i -c 64 font_verdana.ttf ../../src/hammerfest/utils/resources/font_verdana.h
+xxd -i -c 64 font_verdana_bold.ttf ../../src/hammerfest/utils/resources/font_verdana_bold.h

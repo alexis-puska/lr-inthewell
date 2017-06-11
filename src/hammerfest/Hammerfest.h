@@ -11,6 +11,7 @@
 
 #include "utils/Sound.h"
 #include "utils/Sprite.h"
+#include "utils/Text.h"
 #include "utils/GameConfig.h"
 #include "item/ItemFileSystem.h"
 
@@ -52,6 +53,8 @@ class Hammerfest {
 
 		int questSelect;
 		int firstQuestView;
+
+		int cursorPosition;
 
 		//color mask
 		Uint32 rmask, gmask, bmask, amask;

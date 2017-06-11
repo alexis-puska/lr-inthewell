@@ -11,7 +11,8 @@
 			{"x": 128, "y": 430, "nx": 1, "ny": 1, "n": 1, "sx": 19,  "sy": 19,  "r": false, "animation": "menu_cursor"},
 			{"x": 260, "y": 280, "nx": 3, "ny": 1, "n": 3, "sx": 64,  "sy": 64,  "r": false, "animation": "menu_game"},
 			{"x": 260, "y": 344, "nx": 5, "ny": 1, "n": 5, "sx": 24,  "sy": 24,  "r": false, "animation": "menu_game_option"},
-			{"x": 380, "y": 344, "nx": 2, "ny": 1, "n": 2, "sx": 24,  "sy": 24,  "r": false, "animation": "menu_game_checkbox"}
+			{"x": 380, "y": 344, "nx": 3, "ny": 1, "n": 3, "sx": 24,  "sy": 24,  "r": false, "animation": "menu_game_checkbox"},
+			{"x": 452, "y": 344, "nx": 2, "ny": 1, "n": 2, "sx": 24,  "sy": 24,  "r": false, "animation": "menu_game_radio"}
 		]
 	},{
 		"file": "sprite_animation",

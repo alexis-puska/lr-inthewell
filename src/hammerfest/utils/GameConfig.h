@@ -2,6 +2,7 @@
 #include <time.h>
 #include <sys/time.h>
 #include <vector>
+#include <string>
 #include <algorithm>
 #include <math.h>
 
@@ -34,6 +35,12 @@ class GameConfig {
 
 		int gameLoaded;
 		int gameMode;
+
+		bool soloOption;
+		int timeAttackLevel;
+		bool multiOption;
+		bool soccerOption;
+		std::string soccerLevel;
 
 };
 #endif

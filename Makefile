@@ -27,6 +27,7 @@ endif
 
 #OBJECT TO COMPILE
 OBJS += src/libretro/libretro.o
+OBJS += src/hammerfest/utils/Text.o
 OBJS += src/hammerfest/Hammerfest.o
 OBJS += src/hammerfest/MyWrapper.o
 OBJS += src/hammerfest/item/Item.o
