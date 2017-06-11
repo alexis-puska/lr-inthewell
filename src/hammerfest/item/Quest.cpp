@@ -11,20 +11,24 @@ Quest::~Quest() {
 
 Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, int famillyId, std::string titre, std::string) {
 	this->titre = titre;
-	this->description =  description;
+	this->description = description;
 	this->id = id;
 	this->giveOption = giveOption;
-	this->giveOption = giveMode;
+	this->giveMode = giveMode;
 	this->removeFamilly = removeFamilly;
 	giveFamilly.push_back(famillyId);
+	this->life = life;
+	this->light = light;
 }
 Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, std::string titre, std::string description) {
 	this->titre = titre;
 	this->description = description;
 	this->id = id;
 	this->giveOption = giveOption;
-	this->giveOption = giveMode;
+	this->giveMode = giveMode;
 	this->removeFamilly = removeFamilly;
+	this->life = life;
+	this->light = light;
 }
 
 int Quest::getId() {
@@ -69,4 +73,12 @@ void Quest::addGiveFamilly(int famillyId) {
 
 void Quest::printName() {
 	fprintf(stderr, "%i - %s - %s\n", id, titre.c_str(), description.c_str());
+}
+
+bool Quest::giveLife(){
+	return life;
+}
+
+bool Quest::turnLightOn(){
+	return light;
 }

@@ -11,6 +11,7 @@
 #include "Family.h"
 #include "Quest.h"
 #include "Item.h"
+#include "../utils/GameConfig.h"
 
 // Score + nb of game + level reached + 353 item
 #define nbOfValueInFile 357
@@ -48,6 +49,7 @@ class ItemFileSystem {
 		void buildDatabase();
 		void loadDefaultAvailableItem();
 		int random(int max);
+		void unlockSomething(Quest * tested);
 
 		int accountId;
 		char saveFilePath[255];

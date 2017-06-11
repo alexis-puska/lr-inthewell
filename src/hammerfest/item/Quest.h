@@ -24,6 +24,8 @@ class Quest {
 		void addRequireItemId(int itemId, int quantity);
 		void addGiveFamilly(int famillyId);
 		void printName();
+		bool giveLife();
+		bool turnLightOn();
 	private:
 		std::map<int, int> requireItemId;
 		int id;
@@ -32,6 +34,8 @@ class Quest {
 		int giveOption;
 		int giveMode;
 		int removeFamilly;
+		bool life;
+		bool light;
 		std::vector<int> giveFamilly;
 };
 #endif

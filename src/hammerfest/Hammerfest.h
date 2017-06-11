@@ -35,6 +35,7 @@ class Hammerfest {
 		void drawFridgeMenu();
 		void drawQuestMenu();
 		void drawGameOptionSoloMenu();
+		void drawGameOptionLearningMenu();
 		void drawGameOptionMultiMenu();
 		void drawGameOptionTimeAttackMenu();
 		void drawGameOptionSoccerMenu();

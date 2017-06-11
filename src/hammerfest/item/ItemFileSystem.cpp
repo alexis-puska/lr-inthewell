@@ -83,6 +83,8 @@ int ItemFileSystem::loadAccount(int accountId) {
 //read some value
 	this->accountLoaded = accountId;
 
+	GameConfig::Instance().InitConfiguration();
+
 	availableItemEffect0.clear();
 	availableItemEffect1.clear();
 	availableItemEffect2.clear();
@@ -125,7 +127,7 @@ int ItemFileSystem::loadAccount(int accountId) {
 	}
 	for (int i = 4; i < nbOfValueInFile; i++) {
 		fseek(saveFile, (nbOfValueInFile * 8) * accountId + i * 8, SEEK_SET);
-		if (fscanf(saveFile, "%08x", &fridge[i - 3]) <= 0) {
+		if (fscanf(saveFile, "%08x", &fridge[i - 4]) <= 0) {
 			fprintf(stderr, "error read file");
 			return -1;
 		}
@@ -197,6 +199,7 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 				familyToRemove.push_back(tested->getRemoveFamilly());
 			}
 			questCompleted[tested->getId()] = tested;
+			unlockSomething(tested);
 		}
 		if (started && !valide) {
 			questStarted[tested->getId()] = tested;
@@ -376,7 +379,7 @@ void ItemFileSystem::save(int score, bool gamePlayed, int level) {
 	}
 	fprintf(saveFile, "%08x", levelReached);
 	for (int i = 4; i < nbOfValueInFile; i++) {
-		fprintf(saveFile, "%08x", fridge[i - 3]);
+		fprintf(saveFile, "%08x", fridge[i - 4]);
 	}
 	fclose(saveFile);
 }
@@ -1912,3 +1915,50 @@ std::map<int, Quest *> ItemFileSystem::getQuestStarted() {
 std::map<int, Quest *> ItemFileSystem::getQuestCompleted() {
 	return questCompleted;
 }
+
+void ItemFileSystem::unlockSomething(Quest * tested) {
+	switch (tested->getGiveMode()) {
+		case timeattack:
+			GameConfig::Instance().unlockTimeAttackMode();
+			break;
+		case multicoop:
+			GameConfig::Instance().unlockMulticoopMode();
+			break;
+	}
+	switch (tested->getGiveOption()) {
+		case mirror:
+			GameConfig::Instance().unlockSoloOption(0);
+			break;
+		case nightmare:
+			GameConfig::Instance().unlockSoloOption(1);
+			break;
+		case ninja:
+			GameConfig::Instance().unlockSoloOption(2);
+			break;
+		case bombexpert:
+			GameConfig::Instance().unlockSoloOption(3);
+			break;
+		case boost:
+			GameConfig::Instance().unlockSoloOption(4);
+			break;
+		case mirrormulti:
+			GameConfig::Instance().unlockMultiOption(0);
+			break;
+		case nightmaremulti:
+			GameConfig::Instance().unlockMultiOption(1);
+			break;
+		case lifesharing:
+			GameConfig::Instance().unlockMultiOption(2);
+			break;
+		case kickcontrol:
+			GameConfig::Instance().unlockKickcontrol();
+	}
+	if (tested->giveLife()) {
+		GameConfig::Instance().incLife();
+	}
+	if (tested->turnLightOn()) {
+		GameConfig::Instance().setLightOn();
+	}
+
+}
+

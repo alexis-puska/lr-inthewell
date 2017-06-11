@@ -170,10 +170,12 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 				redrawMenu = true;
 			} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
 				GameConfig::Instance().decGameMode();
+				fprintf(stderr, "game mode : %i \n", GameConfig::Instance().getGameMode());
 				cursorPosition = 0;
 				redrawMenu = true;
 			} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
 				GameConfig::Instance().incGameMode();
+				fprintf(stderr, "game mode : %i \n", GameConfig::Instance().getGameMode());
 				cursorPosition = 0;
 				redrawMenu = true;
 			}
@@ -186,6 +188,73 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 				drawMenu = modeMenu;
 				redrawMenu = true;
 			}
+			switch (GameConfig::Instance().getGameMode()) {
+				case soloMode:
+					if (previousPlayerKeystate[0] & keyPadA && keychange[0]) {
+						GameConfig::Instance().toogleSoloOption(cursorPosition);
+						redrawMenu = true;
+					} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
+						cursorPosition--;
+						if (cursorPosition < 0) {
+							cursorPosition = 4;
+						}
+						redrawMenu = true;
+					} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
+						cursorPosition++;
+						if (cursorPosition > 4) {
+							cursorPosition = 0;
+						}
+						redrawMenu = true;
+					}
+					break;
+				case learningMode:
+					//drawGameModeMenu();
+					break;
+				case timeAttackMode:
+					//drawGameOptionTimeAttackMenu();
+					break;
+				case multicoopMode:
+					if (previousPlayerKeystate[0] & keyPadA && keychange[0]) {
+						GameConfig::Instance().toogleMultiOption(cursorPosition);
+						redrawMenu = true;
+					} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
+						cursorPosition--;
+						if (cursorPosition < 0) {
+							cursorPosition = 2;
+						}
+						redrawMenu = true;
+					} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
+						cursorPosition++;
+						if (cursorPosition > 2) {
+							cursorPosition = 0;
+						}
+						redrawMenu = true;
+					}
+					break;
+				case soccerMode:
+					if (previousPlayerKeystate[0] & keyPadA && keychange[0]) {
+						if (cursorPosition < 2) {
+							GameConfig::Instance().toogleSoccerOption(cursorPosition);
+						} else {
+							GameConfig::Instance().setSoccerMap(cursorPosition - 2);
+						}
+						redrawMenu = true;
+					} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
+						cursorPosition--;
+						if (cursorPosition < 0) {
+							cursorPosition = 5;
+						}
+						redrawMenu = true;
+					} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
+						cursorPosition++;
+						if (cursorPosition > 5) {
+							cursorPosition = 0;
+						}
+						redrawMenu = true;
+					}
+					break;
+			}
+
 			break;
 
 		case fridgeMenu:
@@ -251,19 +320,19 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 			break;
 		case optionMenu:
 			switch (GameConfig::Instance().getGameMode()) {
-				case solo:
+				case soloMode:
 					drawGameOptionSoloMenu();
 					break;
-				case apprentissage:
-					//drawGameModeMenu();
+				case learningMode:
+					drawGameOptionLearningMenu();
 					break;
-				case timeAttack:
+				case timeAttackMode:
 					drawGameOptionTimeAttackMenu();
 					break;
-				case multicoop:
+				case multicoopMode:
 					drawGameOptionMultiMenu();
 					break;
-				case soccer:
+				case soccerMode:
 					drawGameOptionSoccerMenu();
 					break;
 			}
@@ -305,17 +374,6 @@ void Hammerfest::drawSaveGameMenu() {
 				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_ice", 0), screenBuffer, 60, 140 + (90 * i));
 			}
 		}
-
-		/*
-		 * verdanaBold20
-		 gothic24
-		 impact24
-		 verdana24
-		 verdanaBold20
-		courrier24
-		 verdana10pt10
-		 */
-
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "Chargez votre", red, true);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 60, "sauvegarde", red, true);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 150, 167, "IGOR", red, false);
@@ -352,18 +410,6 @@ void Hammerfest::drawMainMenu() {
 	}
 }
 
-/*
- *menu_background_1"},
- menu_background_2"},
- menu_title"},
- menu_image_1"},
- menu_player"},
- menu_ice"},
- menu_cursor"},
- menu_game"},
- menu_game_option"},
- menu_game_checkbox"}
- */
 
 /**************************
  *    DRAW GAME MODE MENU
@@ -377,8 +423,8 @@ void Hammerfest::drawGameModeMenu() {
 		}
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 147, "SOLO", red, false);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 207, "APPRENTISAGE", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 267, "TIMEATTACK", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 327, "MULTI", red, false);
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 267, GameConfig::Instance().isTimeAttackUnlock() ? "TIMEATTACK" : "???", red, false);
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 327, GameConfig::Instance().isMulticoopUnlock() ? "MULTI" : "???", red, false);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 387, "SOCCER", red, false);
 		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 75, 147 + GameConfig::Instance().getGameMode() * 60);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
@@ -617,51 +663,59 @@ void Hammerfest::drawGameOptionSoloMenu() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_2", 0);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "GAME OPTION SOLO", red, true);
+		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 70, "Jouez la vraie Aventure ! Liberez les fruits !", white, true);
 		for (int i = 0; i < 5; i++) {
-			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 0), screenBuffer, 107, 147 + (60 * i));
+			if (GameConfig::Instance().getSoloOptionUnlock(i)) {
+				if (GameConfig::Instance().getSoloOption(i)) {
+					copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 1), screenBuffer, 107, 147 + (60 * i));
+				} else {
+					copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 0), screenBuffer, 107, 147 + (60 * i));
+				}
+			} else {
+				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 2), screenBuffer, 107, 147 + (60 * i));
+			}
 		}
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 147, "Miroir", red, false);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 207, "Cauchemar", red, false);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 267, "Ninjutsu", red, false);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 327, "Explosifs instables", red, false);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 387, "Tornade", red, false);
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 75, 147 + GameConfig::Instance().getGameMode() * 60);
-
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 75, 147 + cursorPosition * 60);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
-		/*menu_game_checkbox
-		 ouez la vraie Aventure ! Libérez les fruits ! (inclus: l'extension Dimensions Parallèles)
+		redrawMenu = false;
+	}
+}
 
-		 OPTIONS SUPPLEMENTAIRES :
-		 Miroir
-		 Cauchemar
-		 Ninjutsu
-		 Explosifs instables
-		 Tornade
-		 Commencer
-
-		 Ce mode coûte 1
-
-
-		 */
+void Hammerfest::drawGameOptionLearningMenu() {
+	if (redrawMenu) {
+		fillScreenBufferWithSurface("menu_background_2", 0);
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "GAME OPTION APRENTISSAGE", red, true);
+		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 70, "Apprenez a jouer en quelques minutes !", white, true);
+		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}
 }
 
 void Hammerfest::drawGameOptionMultiMenu() {
-	/*
-	 * Le mode Aventure pour 2 joueurs ! Jouez avec un ami !
-
-	 OPTIONS SUPPLEMENTAIRES :
-	 Miroir
-	 Cauchemar
-	 Partage de vies
-	 Bombotopia!
-	 */
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		SDL_Surface * temp = Sprite::Instance().getAnimation("menu_title", 0);
-		copySurfaceToBackRenderer(temp, screenBuffer, (420 - temp->w) / 2, (520 - temp->h) / 2);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "GAME OPTION MULTI", red, true);
+		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 70, "Le mode Aventure pour 2 joueurs ! Jouez avec un ami !", white, true);
+		for (int i = 0; i < 3; i++) {
+			if (GameConfig::Instance().getMultiOptionUnlock(i)) {
+				if (GameConfig::Instance().getMultiOption(i)) {
+					copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 1), screenBuffer, 107, 147 + (60 * i));
+				} else {
+					copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 0), screenBuffer, 107, 147 + (60 * i));
+				}
+			} else {
+				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 2), screenBuffer, 107, 147 + (60 * i));
+			}
+		}
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 147, "Miroir", red, false);
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 207, "Cauchemar", red, false);
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 267, "Partage de vies", red, false);
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 75, 147 + cursorPosition * 60);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}
@@ -669,16 +723,11 @@ void Hammerfest::drawGameOptionMultiMenu() {
 
 void Hammerfest::drawGameOptionTimeAttackMenu() {
 	if (redrawMenu) {
-
-		//Affrontez le défi du temps ! Finissez le 6 niveaux dans le moins de temps possible et rentrez dans le classement !
-
-		//Ici, pas de place au hasard ! Tout doit être calculé au millimètre près pour assurer un chrono imbattable.
-
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		SDL_Surface * temp = Sprite::Instance().getAnimation("menu_title", 0);
-		copySurfaceToBackRenderer(temp, screenBuffer, (420 - temp->w) / 2, (520 - temp->h) / 2);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "GAME OPTION TIME ATTACK", red, true);
-
+		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 70, "Affrontez le defi du temps ! Finissez le 6 niveaux dans le moins", white, true);
+		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 85, "de temps possible. Ici, pas de place au hasard ! Tout doit etre", white, true);
+		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 100, "calcule au millimetre pres pour assurer un chrono imbattable.", white, true);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}
@@ -686,24 +735,42 @@ void Hammerfest::drawGameOptionTimeAttackMenu() {
 
 void Hammerfest::drawGameOptionSoccerMenu() {
 	if (redrawMenu) {
-		/*
-		 * Ce mode est pour 2 joueurs. Jouez au foot contre un ami ! Choississez le niveau :
-
-		 OPTIONS SUPPLEMENTAIRES :
-		 Contrôlé avancé du ballon
-		 Bombes
-
-		 gazon maudit
-		 temple du ballon
-		 volleyfest
-		 maitrise aerienne
-
-		 Le niveau où le SoccerFest a été inventé. Indémodable.
-		 */
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		SDL_Surface * temp = Sprite::Instance().getAnimation("menu_title", 0);
-		copySurfaceToBackRenderer(temp, screenBuffer, (420 - temp->w) / 2, (520 - temp->h) / 2);
 		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "GAME OPTION SOCCER", red, true);
+		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 70, "Ce mode est pour 2 joueurs. Jouez au foot contre un ami !", white, true);
+		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 85, "Choississez le niveau :", white, true);
+
+		//controle avancé
+		if (GameConfig::Instance().isKickcontrolUnlock()) {
+			if (GameConfig::Instance().getSoccerOption(0)) {
+				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 1), screenBuffer, 107, 147);
+			} else {
+				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 0), screenBuffer, 107, 147);
+			}
+		} else {
+			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 2), screenBuffer, 107, 147);
+		}
+		//bombes
+		if (GameConfig::Instance().getSoccerOption(1)) {
+			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 1), screenBuffer, 107, 207);
+		} else {
+			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 0), screenBuffer, 107, 207);
+		}
+
+		for (int i = 0; i < 4; i++) {
+			if (GameConfig::Instance().getSoccerMap() == i) {
+				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_radio", 0), screenBuffer, 107, 267 + (60 * i));
+			} else {
+				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_radio", 1), screenBuffer, 107, 267 + (60 * i));
+			}
+		}
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 147, "Controles avances", red, false);
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 207, "Bombes", red, false);
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 267, "gazon maudit", red, false);
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 327, "temple du ballon", red, false);
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 387, "volleyfest", red, false);
+		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 447, "maitrise aerienne", red, false);
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 75, 147 + cursorPosition * 60);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}
