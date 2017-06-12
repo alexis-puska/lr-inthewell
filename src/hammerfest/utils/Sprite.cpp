@@ -46,7 +46,7 @@ void Sprite::parseJsonFile() {
 	reader.parse(jsonString, root);
 	int idx = 0;
 
-	for (int i = 0; i < root.size(); i++) {
+	for (unsigned int i = 0; i < root.size(); i++) {
 		if (currentFileParse.empty()) {
 			currentFileParse = root[i]["file"].asString();
 			loadSurfaceToSprite(root[i]["file"].asString());
@@ -58,7 +58,7 @@ void Sprite::parseJsonFile() {
 			//fprintf(stderr, "load surface : %s\n", currentFileParse.c_str());
 			loadSurfaceToSprite(root[i]["file"].asString());
 		}
-		for (int j = 0; j < root[i]["area"].size(); j++) {
+		for (unsigned int j = 0; j < root[i]["area"].size(); j++) {
 			element = root[i]["area"];
 			int x = element[j]["x"].asUInt();
 			int y = element[j]["y"].asUInt();
@@ -81,7 +81,6 @@ void Sprite::parseJsonFile() {
 			destTextureRect.h = sy;
 			sprites[anim] = new SDL_Surface *[n];
 			if(r){
-				fprintf(stderr,"create flipped : %s", anim_flip.c_str());
 				sprites[anim_flip] = new SDL_Surface *[n];
 			}
 			//fprintf(stderr, "begin parse file : %s, area: %i %i %i %i %i %i %i %s %s \n", currentFileParse.c_str(), x, y, nx, ny, n, sx, sy, r ? "true" : "false", anim.c_str());

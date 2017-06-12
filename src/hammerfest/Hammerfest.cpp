@@ -4,27 +4,8 @@ int main(int argc, char** argv) {
 
 }
 
-enum keyPad {
-	keyPadSelect = 1,
-	keyPadL3 = 2,
-	keyPadR3 = 4,
-	keyPadStart = 8,
-	keyPadUp = 16,
-	keyPadRight = 32,
-	keyPadDown = 64,
-	keyPadLeft = 128,
-	keyPadL2 = 256,
-	keyPadR2 = 512,
-	keyPadL1 = 1024,
-	keyPadR1 = 2048,
-	keyPadX = 4096,
-	keyPadA = 8192,
-	keyPadB = 16384,
-	keyPadY = 32768
-};
-
 enum menuStep {
-	splashMenu = 0, saveMenu, modeMenu, optionMenu, mainMenu, fridgeMenu, questMenu
+	splashMenu = 0, saveMenu, modeMenu, optionMenu, mainMenu, fridgeMenu, questMenu, gameStep
 };
 
 Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool newSaveFile) {
@@ -40,6 +21,7 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool
 	drawMenu = 0;
 	drawNextMenu = modeMenu;
 	redrawMenu = true;
+	game = NULL;
 	fridgeItemPosition = 0;
 	fridgeFirstItemView = 0;
 	questSelect = 0;
@@ -52,6 +34,14 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool
 }
 
 Hammerfest::~Hammerfest() {
+	if (game) {
+		if (game->isConfigured()) {
+			if (game->isAlive()) {
+				game->exitGame();
+			}
+		}
+		delete game;
+	}
 	SDL_FreeSurface(screenBuffer);
 }
 
@@ -99,253 +89,302 @@ void Hammerfest::keyPressed() {
 }
 
 void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
-	SDL_FillRect(vout_buf, NULL, SDL_MapRGB(vout_buf->format, 255, 204, 0));
-	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 	for (int i = 0; i < 2; i++) {
 		in_keystate[i] = in_keystateLibretro[i];
 	}
 	keyPressed();
-
 	/**********************
 	 * MENU MOVE
 	 *********************/
-	switch (drawMenu) {
-		case splashMenu:
-			if (previousPlayerKeystate[0] & keyPadStart && keychange[0]) {
-				drawMenu = saveMenu;
-				redrawMenu = true;
+	/**********************
+	 * PRESS SELECT
+	 *********************/
+	if (drawMenu != gameStep) {
+		if (previousPlayerKeystate[0] & keyPadSelect && keychange[0]) {
+			switch (drawMenu) {
+				case saveMenu:
+					drawMenu = splashMenu;
+					break;
+				case modeMenu:
+					drawMenu = mainMenu;
+					break;
+				case optionMenu:
+					drawMenu = modeMenu;
+					break;
+				case mainMenu:
+					drawMenu = saveMenu;
+					break;
+				case fridgeMenu:
+					drawMenu = mainMenu;
+					break;
+				case questMenu:
+					drawMenu = mainMenu;
+					break;
 			}
-			break;
-		case saveMenu:
-			if (previousPlayerKeystate[0] & keyPadSelect && keychange[0]) {
-				drawMenu = splashMenu;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadStart && keychange[0]) {
-				ItemFileSystem::Instance().loadAccount(GameConfig::Instance().getGameLoaded());
-				drawMenu = mainMenu;
-				drawNextMenu = modeMenu;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
-				GameConfig::Instance().decGameLoaded();
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
-				GameConfig::Instance().incGameLoaded();
-				redrawMenu = true;
-			}
-			break;
-		case mainMenu:
-			if (previousPlayerKeystate[0] & keyPadSelect && keychange[0]) {
-				drawMenu = saveMenu;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadStart && keychange[0]) {
-				drawMenu = drawNextMenu;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
-				if (drawNextMenu == modeMenu) {
-					drawNextMenu = questMenu;
-				} else if (drawNextMenu == fridgeMenu) {
+			redrawMenu = true;
+		}
+		/**********************
+		 * PRESS START
+		 *********************/
+		if (previousPlayerKeystate[0] & keyPadStart && keychange[0]) {
+			switch (drawMenu) {
+				case splashMenu:
+					drawMenu = saveMenu;
+					break;
+				case saveMenu:
+					ItemFileSystem::Instance().loadAccount(GameConfig::Instance().getGameLoaded());
+					drawMenu = mainMenu;
 					drawNextMenu = modeMenu;
-				} else if (drawNextMenu == questMenu) {
-					drawNextMenu = fridgeMenu;
-				}
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
-				if (drawNextMenu == modeMenu) {
-					drawNextMenu = fridgeMenu;
-				} else if (drawNextMenu == fridgeMenu) {
-					drawNextMenu = questMenu;
-				} else if (drawNextMenu == questMenu) {
-					drawNextMenu = modeMenu;
-				}
+					break;
+				case modeMenu:
+					drawMenu = optionMenu;
+					break;
+				case optionMenu:
+					/*******************
+					 *    START GAME
+					 *******************/
+					drawMenu = gameStep;
+					game = new Game(vout_buf, in_keystate);
+					break;
+				case mainMenu:
+					drawMenu = drawNextMenu;
+					break;
+			}
+			redrawMenu = true;
+		}
+		/**********************
+		 * PRESS UP
+		 *********************/
+		if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
+			switch (drawMenu) {
+				case saveMenu:
+					GameConfig::Instance().decGameLoaded();
+				case mainMenu:
+					if (drawNextMenu == modeMenu) {
+						drawNextMenu = questMenu;
+					} else if (drawNextMenu == fridgeMenu) {
+						drawNextMenu = modeMenu;
+					} else if (drawNextMenu == questMenu) {
+						drawNextMenu = fridgeMenu;
+					}
+					break;
+				case modeMenu:
+					GameConfig::Instance().decGameMode();
+					cursorPosition = 0;
+					break;
+				case optionMenu:
+					switch (GameConfig::Instance().getGameMode()) {
+						case soloMode:
+							cursorPosition--;
+							if (cursorPosition < 0) {
+								cursorPosition = 4;
+							}
+							break;
+						case multicoopMode:
+							cursorPosition--;
+							if (cursorPosition < 0) {
+								cursorPosition = 2;
+							}
+							break;
+						case soccerMode:
+							cursorPosition--;
+							if (cursorPosition < 0) {
+								cursorPosition = 5;
+							}
+							break;
+					}
+					break;
+				case fridgeMenu:
+					fridgeItemPosition -= 6;
+					break;
+				case questMenu:
+					questSelect -= 1;
+					break;
+			}
+			redrawMenu = true;
+		}
+		/**********************
+		 * PRESS DOWN
+		 *********************/
+		if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
+			switch (drawMenu) {
+				case saveMenu:
+					GameConfig::Instance().incGameLoaded();
+					redrawMenu = true;
+					break;
+				case mainMenu:
+					if (drawNextMenu == modeMenu) {
+						drawNextMenu = fridgeMenu;
+					} else if (drawNextMenu == fridgeMenu) {
+						drawNextMenu = questMenu;
+					} else if (drawNextMenu == questMenu) {
+						drawNextMenu = modeMenu;
+					}
+					break;
+				case modeMenu:
+					GameConfig::Instance().incGameMode();
+					cursorPosition = 0;
+					break;
+				case optionMenu:
+					switch (GameConfig::Instance().getGameMode()) {
+						case soloMode:
+							cursorPosition++;
+							if (cursorPosition > 4) {
+								cursorPosition = 0;
+							}
+							break;
+						case learningMode:
+							break;
+						case timeAttackMode:
+							break;
+						case multicoopMode:
+							cursorPosition++;
+							if (cursorPosition > 2) {
+								cursorPosition = 0;
+							}
+							break;
+						case soccerMode:
+							cursorPosition++;
+							if (cursorPosition > 5) {
+								cursorPosition = 0;
+							}
+							break;
+					}
+					break;
+				case fridgeMenu:
+					fridgeItemPosition += 6;
+					break;
+				case questMenu:
+					questSelect += 1;
+					break;
+			}
+			redrawMenu = true;
+		}
+		/**********************
+		 * PRESS LEFT
+		 *********************/
+		if (previousPlayerKeystate[0] & keyPadLeft && keychange[0]) {
+			if (drawMenu == fridgeMenu) {
+				fridgeItemPosition -= 1;
 				redrawMenu = true;
 			}
-			break;
-
-		case modeMenu:
-			if (previousPlayerKeystate[0] & keyPadSelect && keychange[0]) {
-				drawMenu = mainMenu;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadStart && keychange[0]) {
-				drawMenu = optionMenu;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
-				GameConfig::Instance().decGameMode();
-				fprintf(stderr, "game mode : %i \n", GameConfig::Instance().getGameMode());
-				cursorPosition = 0;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
-				GameConfig::Instance().incGameMode();
-				fprintf(stderr, "game mode : %i \n", GameConfig::Instance().getGameMode());
-				cursorPosition = 0;
+		}
+		/**********************
+		 * PRESS RIGHT
+		 *********************/
+		if (previousPlayerKeystate[0] & keyPadRight && keychange[0]) {
+			if (drawMenu == fridgeMenu) {
+				fridgeItemPosition += 1;
 				redrawMenu = true;
 			}
-			break;
-		case optionMenu:
-			if (previousPlayerKeystate[0] & keyPadSelect && keychange[0]) {
-				drawMenu = modeMenu;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadStart && keychange[0]) {
-				drawMenu = modeMenu;
-				redrawMenu = true;
+		}
+		/**********************
+		 * PRESS L1
+		 *********************/
+		if (previousPlayerKeystate[0] & keyPadL1 && keychange[0]) {
+			switch (drawMenu) {
+				case fridgeMenu:
+					fridgeItemPosition -= 42;
+					fridgeFirstItemView -= 42;
+					break;
+				case questMenu:
+					questSelect -= 10;
+					firstQuestView -= 10;
+					break;
 			}
-			switch (GameConfig::Instance().getGameMode()) {
-				case soloMode:
-					if (previousPlayerKeystate[0] & keyPadA && keychange[0]) {
+			redrawMenu = true;
+		}
+		/**********************
+		 * PRESS R1
+		 **********************/
+		if (previousPlayerKeystate[0] & keyPadR1 && keychange[0]) {
+			switch (drawMenu) {
+				case fridgeMenu:
+					fridgeItemPosition += 42;
+					fridgeFirstItemView += 42;
+					break;
+				case questMenu:
+					questSelect += 10;
+					firstQuestView += 10;
+					break;
+			}
+			redrawMenu = true;
+		}
+		/**********************
+		 * PRESS A
+		 *********************/
+		if (previousPlayerKeystate[0] & keyPadA && keychange[0]) {
+			if (drawMenu == optionMenu) {
+				switch (GameConfig::Instance().getGameMode()) {
+					case soloMode:
 						GameConfig::Instance().toogleSoloOption(cursorPosition);
-						redrawMenu = true;
-					} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
-						cursorPosition--;
-						if (cursorPosition < 0) {
-							cursorPosition = 4;
-						}
-						redrawMenu = true;
-					} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
-						cursorPosition++;
-						if (cursorPosition > 4) {
-							cursorPosition = 0;
-						}
-						redrawMenu = true;
-					}
-					break;
-				case learningMode:
-					//drawGameModeMenu();
-					break;
-				case timeAttackMode:
-					//drawGameOptionTimeAttackMenu();
-					break;
-				case multicoopMode:
-					if (previousPlayerKeystate[0] & keyPadA && keychange[0]) {
+
+						break;
+					case multicoopMode:
 						GameConfig::Instance().toogleMultiOption(cursorPosition);
-						redrawMenu = true;
-					} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
-						cursorPosition--;
-						if (cursorPosition < 0) {
-							cursorPosition = 2;
-						}
-						redrawMenu = true;
-					} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
-						cursorPosition++;
-						if (cursorPosition > 2) {
-							cursorPosition = 0;
-						}
-						redrawMenu = true;
-					}
-					break;
-				case soccerMode:
-					if (previousPlayerKeystate[0] & keyPadA && keychange[0]) {
+						break;
+					case soccerMode:
 						if (cursorPosition < 2) {
 							GameConfig::Instance().toogleSoccerOption(cursorPosition);
 						} else {
 							GameConfig::Instance().setSoccerMap(cursorPosition - 2);
 						}
-						redrawMenu = true;
-					} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
-						cursorPosition--;
-						if (cursorPosition < 0) {
-							cursorPosition = 5;
-						}
-						redrawMenu = true;
-					} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
-						cursorPosition++;
-						if (cursorPosition > 5) {
-							cursorPosition = 0;
-						}
-						redrawMenu = true;
-					}
-					break;
+						break;
+				}
+				redrawMenu = true;
 			}
+		}
 
-			break;
-
-		case fridgeMenu:
-			if (previousPlayerKeystate[0] & keyPadSelect && keychange[0]) {
-				drawMenu = mainMenu;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
-				fridgeItemPosition -= 6;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
-				fridgeItemPosition += 6;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadLeft && keychange[0]) {
-				fridgeItemPosition -= 1;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadRight && keychange[0]) {
-				fridgeItemPosition += 1;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadL1 && keychange[0]) {
-				fridgeItemPosition -= 42;
-				fridgeFirstItemView -= 42;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadR1 && keychange[0]) {
-				fridgeItemPosition += 42;
-				fridgeFirstItemView += 42;
-				redrawMenu = true;
-			}
-			break;
-		case questMenu:
-			if (previousPlayerKeystate[0] & keyPadSelect && keychange[0]) {
-				drawMenu = mainMenu;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
-				questSelect -= 1;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
-				questSelect += 1;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadL1 && keychange[0]) {
-				questSelect -= 10;
-				firstQuestView -= 10;
-				redrawMenu = true;
-			} else if (previousPlayerKeystate[0] & keyPadR1 && keychange[0]) {
-				questSelect += 10;
-				firstQuestView += 10;
-				redrawMenu = true;
-			}
-			break;
-	}
-
-	/**********************
-	 * DRAW PART
-	 *********************/
-	switch (drawMenu) {
-		case splashMenu:
-			drawSplashScreen();
-			break;
-		case saveMenu:
-			drawSaveGameMenu();
-			break;
-		case modeMenu:
-			drawGameModeMenu();
-			break;
-		case optionMenu:
-			switch (GameConfig::Instance().getGameMode()) {
-				case soloMode:
-					drawGameOptionSoloMenu();
-					break;
-				case learningMode:
-					drawGameOptionLearningMenu();
-					break;
-				case timeAttackMode:
-					drawGameOptionTimeAttackMenu();
-					break;
-				case multicoopMode:
-					drawGameOptionMultiMenu();
-					break;
-				case soccerMode:
-					drawGameOptionSoccerMenu();
-					break;
-			}
-			break;
-		case mainMenu:
-			drawMainMenu();
-			break;
-		case fridgeMenu:
-			drawFridgeMenu();
-			break;
-		case questMenu:
-			drawQuestMenu();
-			break;
+		/**********************
+		 * DRAW PART
+		 *********************/
+		switch (drawMenu) {
+			case splashMenu:
+				drawSplashScreen();
+				break;
+			case saveMenu:
+				drawSaveGameMenu();
+				break;
+			case modeMenu:
+				drawGameModeMenu();
+				break;
+			case optionMenu:
+				switch (GameConfig::Instance().getGameMode()) {
+					case soloMode:
+						drawGameOptionSoloMenu();
+						break;
+					case learningMode:
+						drawGameOptionLearningMenu();
+						break;
+					case timeAttackMode:
+						drawGameOptionTimeAttackMenu();
+						break;
+					case multicoopMode:
+						drawGameOptionMultiMenu();
+						break;
+					case soccerMode:
+						drawGameOptionSoccerMenu();
+						break;
+				}
+				break;
+			case mainMenu:
+				drawMainMenu();
+				break;
+			case fridgeMenu:
+				drawFridgeMenu();
+				break;
+			case questMenu:
+				drawQuestMenu();
+				break;
+		}
+	} else {
+		if (game->isRequestStopGame()) {
+			previousPlayerKeystate[0] = in_keystate[0];
+			game->exitGame();
+			delete game;
+			game = NULL;
+			drawMenu = optionMenu;
+		}
 	}
 }
 
@@ -409,7 +448,6 @@ void Hammerfest::drawMainMenu() {
 		redrawMenu = false;
 	}
 }
-
 
 /**************************
  *    DRAW GAME MODE MENU
@@ -632,7 +670,7 @@ void Hammerfest::drawQuestMenu() {
 			int offsetY = 0;
 			int lastSpace = 0;
 			while (true) {
-				if (idx >= quest->getDescription().size() - 1) {
+				if ((unsigned)idx >= quest->getDescription().size() - 1) {
 					Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 352 + offsetY * 12, quest->getDescription().substr(lastSpace, idx - lastSpace).c_str(), white, true);
 					break;
 				} else if (quest->getDescription().at(idx) == ' ') {

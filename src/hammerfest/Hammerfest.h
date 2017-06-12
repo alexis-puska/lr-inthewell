@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <sstream>
 
+#include "game/Game.h"
 #include "utils/Sound.h"
 #include "utils/Sprite.h"
 #include "utils/Text.h"
@@ -43,6 +44,9 @@ class Hammerfest {
 		//buffer for draw
 		SDL_Surface *screenBuffer;
 		SDL_Surface * vout_buf;
+
+		//Game
+		Game * game;
 
 		//what menu to draw
 		int drawMenu;

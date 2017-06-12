@@ -27,17 +27,18 @@ endif
 
 #OBJECT TO COMPILE
 OBJS += src/libretro/libretro.o
-OBJS += src/hammerfest/utils/Text.o
 OBJS += src/hammerfest/Hammerfest.o
 OBJS += src/hammerfest/MyWrapper.o
+OBJS += src/hammerfest/game/Game.o
+OBJS += src/hammerfest/item/Family.o
 OBJS += src/hammerfest/item/Item.o
 OBJS += src/hammerfest/item/ItemFileSystem.o
-OBJS += src/hammerfest/item/Family.o
 OBJS += src/hammerfest/item/Quest.o
-OBJS += src/hammerfest/utils/Jsoncpp.o
 OBJS += src/hammerfest/utils/GameConfig.o
+OBJS += src/hammerfest/utils/Jsoncpp.o
 OBJS += src/hammerfest/utils/Sound.o
 OBJS += src/hammerfest/utils/Sprite.o
+OBJS += src/hammerfest/utils/Text.o
 
 
 #COMPILATION

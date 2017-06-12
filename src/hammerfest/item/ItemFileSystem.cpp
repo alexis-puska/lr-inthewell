@@ -171,7 +171,7 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 	questCompleted.clear();
 	questStarted.clear();
 
-	for (int i = 0; i < quests.size(); i++) {
+	for (unsigned int i = 0; i < quests.size(); i++) {
 		//fprintf(stderr, "validate quest %i\n", i);
 		Quest * tested = quests.at(i);
 		std::map<int, int> requiredItem = tested->getRequireItemId();
@@ -191,7 +191,7 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 		if (valide) {
 			//fprintf(stderr, "quest valide %i %i!!!\n", tested->getGiveFamilly().size(), tested->getRemoveFamilly());
 			std::vector<int> givedFamilly = tested->getGiveFamilly();
-			for (int j = 0; j < givedFamilly.size(); j++) {
+			for (unsigned int j = 0; j < givedFamilly.size(); j++) {
 				//fprintf(stderr, "add family : %i !!!\n", givedFamilly.at(j));
 				familyAvailable.push_back(givedFamilly.at(j));
 			}
@@ -217,7 +217,7 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 		}
 	}
 
-	for (int i = 0; i < familyAvailable.size(); i++) {
+	for (unsigned int i = 0; i < familyAvailable.size(); i++) {
 		familys.at(familyAvailable.at(i))->printName();
 	}
 
@@ -227,7 +227,7 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 	 *  fill available object
 	 *  with unlocked familly
 	 **************************/
-	for (int i = 0; i < familyAvailable.size(); i++) {
+	for (unsigned int i = 0; i < familyAvailable.size(); i++) {
 		//fprintf(stderr, "traitment of family id : %i\n", familyAvailable.at(i));
 
 		Family * tested = familys.at(familyAvailable.at(i));
