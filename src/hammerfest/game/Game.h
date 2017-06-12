@@ -10,6 +10,7 @@
 #include <vector>
 #include <algorithm>
 
+#include "../utils/Sound.h"
 #include "../utils/Sprite.h"
 
 #ifndef __MYCLASS_GAME
@@ -54,27 +55,28 @@ class Game {
 		void exitGame();
 		void stopGame();
 	private:
-		//variable
-		SDL_Thread * mainThread;
-
-		//pointer in the libretro buffer
-		SDL_Surface * vout_buf;
-
-
+		/************************
+		 * VARIABLES FOR THREAD
+		 ************************/
+		//Thread variable
 		bool configured;
 		bool isThreadAlive;
 		bool requestStopGame;
+		SDL_Thread * mainThread;
+		//pointer in the libretro buffer
+		SDL_Surface * vout_buf;
 		int gameState;
 		Uint32 rmask, gmask, bmask, amask;
-
-
-
 		//keystate of player
 		unsigned short * in_keystate;
-
 		SDL_Surface * screenBuffer;
 
-		//function
+
+		int count,idx;
+
+		/************************
+		 * FUNCTION
+		 ************************/
 		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y);
 		void fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination);
 		void mergeScreen();

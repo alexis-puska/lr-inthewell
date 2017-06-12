@@ -64,6 +64,8 @@ amask	= 0xff000000;
 	configured = true;
 	requestStopGame = false;
 	startGame();
+	count = 0;
+	idx = 0;
 }
 
 /**********************************************
@@ -93,6 +95,9 @@ void Game::copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int 
 	SDL_BlitSurface(src, &srcRect, dest, &dstRect);
 }
 
+/*******************************************
+ * fill surface with another surface
+ *******************************************/
 void Game::fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination) {
 	SDL_Surface * temp2 = Sprite::Instance().getAnimation(name, index);
 	int x = 0;
@@ -139,14 +144,21 @@ void Game::mergeScreen() {
  * function that initialise totaly a game
  *******************************************/
 void Game::startGame() {
+	Sound::Instance().stopMusique();
+	Sound::Instance().startMusic();
 	if (!isThreadAlive) {
 		isThreadAlive = true;
 		mainThread = SDL_CreateThread(metronome, "mainThread", this);
 	}
 }
 
+/*******************************************
+ * function to kill the main thread
+ *******************************************/
 void Game::stopGame() {
 	if (isThreadAlive) {
+		Sound::Instance().stopMusique();
+		Sound::Instance().startMusicBoss();
 		isThreadAlive = false;
 		configured = false;
 		requestStopGame = false;
@@ -156,6 +168,9 @@ void Game::stopGame() {
 	}
 }
 
+/*******************************************
+ * function to exit Game
+ *******************************************/
 void Game::exitGame() {
 	stopGame();
 }
@@ -167,6 +182,14 @@ void Game::tick() {
 	if (in_keystate[0] & keyPadSelect && !requestStopGame) {
 		requestStopGame = true;
 	}
-	fillScreenBufferWithSurface("level_background", 0, screenBuffer);
+	fillScreenBufferWithSurface("level_background", idx, screenBuffer);
+	if (count > 20) {
+		idx++;
+		count = 0;
+	}
+	count++;
+	if (idx == 27) {
+		idx = 0;
+	}
 	mergeScreen();
 }
