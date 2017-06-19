@@ -26,6 +26,7 @@ class Sprite {
 		Sprite();
 		~Sprite();
 		SDL_Surface * getAnimation(std::string name, int index);
+		std::vector <SDL_Surface *> getAnimation(std::string name);
 		SDL_Color getSDL_Color(int color);
 
 	private:
@@ -37,8 +38,7 @@ class Sprite {
 		 *      VARIABLES
 		 ***********************/
 		SDL_Surface * surfaceToParse;
-		std::map<std::string, SDL_Surface **> sprites;
-
+		std::map<std::string, std::vector<SDL_Surface *> > sprites;
 		/***********************
 		 *      FUNCTIONS
 		 ***********************/

@@ -79,10 +79,10 @@ void Sprite::parseJsonFile() {
 			destTextureRect.y = 0;
 			destTextureRect.w = sx;
 			destTextureRect.h = sy;
-			sprites[anim] = new SDL_Surface *[n];
-			if(r){
-				sprites[anim_flip] = new SDL_Surface *[n];
-			}
+//			sprites[anim] = new SDL_Surface *[n];
+//			if(r){
+//				sprites[anim_flip] = new SDL_Surface *[n];
+//			}
 			//fprintf(stderr, "begin parse file : %s, area: %i %i %i %i %i %i %i %s %s \n", currentFileParse.c_str(), x, y, nx, ny, n, sx, sy, r ? "true" : "false", anim.c_str());
 			for (int l = 0; l < ny; l++) {
 				for (int k = 0; k < nx; k++) {
@@ -90,12 +90,21 @@ void Sprite::parseJsonFile() {
 					srcTextureRect.y = y + (l * sy);
 					srcTextureRect.w = sx;
 					srcTextureRect.h = sy;
-					sprites[anim][idx] = SDL_CreateRGBSurface(0, sx, sy, 32, rmask, gmask, bmask, amask);
-					SDL_BlitSurface(surfaceToParse, &srcTextureRect, sprites[anim][idx], &destTextureRect);
+//					sprites[anim][idx] = SDL_CreateRGBSurface(0, sx, sy, 32, rmask, gmask, bmask, amask);
+//					SDL_BlitSurface(surfaceToParse, &srcTextureRect, sprites[anim][idx], &destTextureRect);
+//					if(r){
+//						sprites[anim_flip][idx] = SDL_CreateRGBSurface(0, sx, sy, 32, rmask, gmask, bmask, amask);
+//						SDL_BlitSurface(surfaceToParse, &srcTextureRect, sprites[anim_flip][idx], &destTextureRect);
+//						sprites[anim_flip][idx] = rotozoomSurfaceXY(sprites[anim_flip][idx], 0, -1, 1, 0);
+//					}
+					SDL_Surface * temp = SDL_CreateRGBSurface(0, sx, sy, 32, rmask, gmask, bmask, amask);
+					SDL_BlitSurface(surfaceToParse, &srcTextureRect, temp, &destTextureRect);
+					sprites[anim].push_back(temp);
 					if(r){
-						sprites[anim_flip][idx] = SDL_CreateRGBSurface(0, sx, sy, 32, rmask, gmask, bmask, amask);
-						SDL_BlitSurface(surfaceToParse, &srcTextureRect, sprites[anim_flip][idx], &destTextureRect);
-						sprites[anim_flip][idx] = rotozoomSurfaceXY(sprites[anim_flip][idx], 0, -1, 1, 0);
+						temp = SDL_CreateRGBSurface(0, sx, sy, 32, rmask, gmask, bmask, amask);
+						SDL_BlitSurface(surfaceToParse, &srcTextureRect, temp, &destTextureRect);
+						temp = rotozoomSurfaceXY(temp, 0, -1, 1, 0);
+						sprites[anim_flip].push_back(temp);
 					}
 					idx++;
 					if (idx >= n) {
@@ -142,4 +151,8 @@ void Sprite::loadSurfaceToSprite(std::string name) {
 
 SDL_Surface * Sprite::getAnimation(std::string name, int index) {
 	return sprites[name][index];
+}
+
+std::vector <SDL_Surface *> Sprite::getAnimation(std::string name) {
+	return sprites[name];
 }

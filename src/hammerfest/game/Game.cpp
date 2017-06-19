@@ -45,15 +45,14 @@ Game::Game() {
 	isThreadAlive = false;
 	configured = false;
 	requestStopGame = false;
+	count = 0;
 }
 
 /**********************************************
  *                 Constructor
  **********************************************/
 Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
-	srand (time(NULL));
-
-amask	= 0xff000000;
+	srand (time(NULL));amask = 0xff000000;
 	rmask = 0x00ff0000;
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
@@ -66,6 +65,8 @@ amask	= 0xff000000;
 	startGame();
 	count = 0;
 	idx = 0;
+	vortex = new Vortex(1,32,64,0.5,1,true,5);
+	platform = new Platform(10,10,true,true,4 ,51);
 }
 
 /**********************************************
@@ -75,6 +76,8 @@ Game::~Game() {
 	exitGame();
 	in_keystate = NULL;
 	vout_buf = NULL;
+	delete vortex;
+	delete platform;
 	SDL_FreeSurface(screenBuffer);
 }
 
@@ -102,7 +105,7 @@ void Game::fillScreenBufferWithSurface(std::string name, int index, SDL_Surface 
 	SDL_Surface * temp2 = Sprite::Instance().getAnimation(name, index);
 	int x = 0;
 	int y = 0;
-	while (y < 520) {
+	while (y < 500) {
 		while (x < 420) {
 			copySurfaceToBackRenderer(temp2, destination, x, y);
 			x += temp2->w;
@@ -150,6 +153,7 @@ void Game::startGame() {
 		isThreadAlive = true;
 		mainThread = SDL_CreateThread(metronome, "mainThread", this);
 	}
+
 }
 
 /*******************************************
@@ -182,6 +186,11 @@ void Game::tick() {
 	if (in_keystate[0] & keyPadSelect && !requestStopGame) {
 		requestStopGame = true;
 	}
+
+	if (screenBuffer == NULL) {
+		screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	}
+
 	fillScreenBufferWithSurface("level_background", idx, screenBuffer);
 	if (count > 20) {
 		idx++;
@@ -191,5 +200,88 @@ void Game::tick() {
 	if (idx == 27) {
 		idx = 0;
 	}
+	vortex->drawHimself(screenBuffer);
+	platform->drawHimself(screenBuffer);
 	mergeScreen();
 }
+
+/*
+ {
+	"levels": [{
+		"id": 3,
+		"showPlatform": true,
+		"backgroundId": 2,
+		"foregroundId": 1,
+		"plateformVerticalId": 1,
+		"plateformHorizontalId": 1,
+		"platforms": [{
+			"x": 20,
+			"y": 10,
+			"vertical": false,
+			"length": 10
+		}],
+		"events": [{
+			"x": 20,
+			"y": 10,
+			"byBombe": false,
+			"byPlayer": false,
+			"AllEnemiKilled": true,
+			"objectId": 1,
+			"vortex": 1,
+			"animation": 2,
+			"piece": {
+				"x": 1,
+				"y": 1
+			}
+		}],
+		"door": [{
+			"x": 20,
+			"y": 10,
+			"locked": false,
+			"toLevel": 1,
+			"lock": {
+				"x": 1,
+				"y": 1,
+
+				"key": 1
+			}
+		}],
+		"vortex": [{
+			"x": 20,
+			"y": 10,
+			"enable": false,
+			"sx": 1,
+			"sy": 1,
+			"toLevel": 1
+		}],
+		"startPlayer": [{
+			"x": 20,
+			"y": 1
+		}],
+		"startObject": [{
+			"x": 20,
+			"y": 1,
+			"type": 1
+		}],
+		"ennemies": [{
+			"x": 20,
+			"y": 1,
+			"type": "fraise"
+		}],
+		"teleporter": [{
+			"id": 1,
+			"toId": 2,
+			"x": 1,
+			"y": 1,
+			"length": 1
+		}],
+		"rayon": [{
+			"x": 1,
+			"y": 1,
+			"length": 1,
+			"giveBombeType": "type"
+		}]
+	}]
+}
+ */
+

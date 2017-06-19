@@ -12,6 +12,8 @@
 
 #include "../utils/Sound.h"
 #include "../utils/Sprite.h"
+#include "../level/Vortex.h"
+#include "../level/Platform.h"
 
 #ifndef __MYCLASS_GAME
 #define __MYCLASS_GAME
@@ -70,6 +72,9 @@ class Game {
 		//keystate of player
 		unsigned short * in_keystate;
 		SDL_Surface * screenBuffer;
+
+		Vortex * vortex;
+		Platform * platform;
 
 
 		int count,idx;
