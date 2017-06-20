@@ -7,10 +7,12 @@
 
 #include "Door.h"
 #include "Event.h"
+#include "Ennemie.h"
 #include "Vortex.h"
 #include "Platform.h"
 #include "Rayon.h"
 #include "Teleporter.h"
+#include "../definition/Position.h"
 
 class Level {
 	public:
@@ -28,6 +30,11 @@ class Level {
 		std::vector<Vortex *> vortex;
 		std::vector<Teleporter *> teleporters;
 		std::vector<Rayon *> rayons;
+		std::vector<Position *> startPlayer;
+		std::vector<Position *> startEffectObjet;
+		std::vector<Position *> startPointObjet;
+		std::vector<Ennemie *> ennemies;
+
 };
 
 #endif

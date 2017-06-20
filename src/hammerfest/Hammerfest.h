@@ -15,6 +15,7 @@
 #include "utils/Text.h"
 #include "utils/GameConfig.h"
 #include "item/ItemFileSystem.h"
+#include "utils/LevelService.h"
 
 #ifndef __MYCLASS_HAMMERFEST
 #define __MYCLASS_HAMMERFEST

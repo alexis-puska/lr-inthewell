@@ -41,6 +41,7 @@ OBJS += src/hammerfest/level/Rayon.o
 OBJS += src/hammerfest/level/Teleporter.o
 OBJS += src/hammerfest/level/Vortex.o
 OBJS += src/hammerfest/level/Level.o
+OBJS += src/hammerfest/utils/LevelService.o
 OBJS += src/hammerfest/game/Game.o
 OBJS += src/hammerfest/item/Family.o
 OBJS += src/hammerfest/item/Item.o

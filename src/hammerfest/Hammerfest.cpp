@@ -28,6 +28,7 @@ Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool
 	firstQuestView = 0;
 	cursorPosition = 0;
 	Sprite::Instance();
+	LevelService::Instance();
 	Sound::Instance();
 	Sound::Instance().startMusicBoss();
 	ItemFileSystem::Instance().init(saveFilePath, newSaveFile);

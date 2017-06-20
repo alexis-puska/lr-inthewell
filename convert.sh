@@ -48,6 +48,7 @@ xxd -i -c 64 image_menu.png ../../src/hammerfest/utils/resources/image_menu.h
 #json
 cd ../../resources/json
 xxd -i -c 64 json_image_parser.json ../../src/hammerfest/utils/resources/json_image_parser.h
+xxd -i -c 64 json_level_parser.json ../../src/hammerfest/utils/resources/json_level_parser.h
 
 #font
 cd ../../resources/font
