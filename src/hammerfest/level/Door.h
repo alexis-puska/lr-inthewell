@@ -5,7 +5,9 @@
 #include "../definition/Drawable.h"
 #include "Lock.h"
 
-class Door: public Position, Drawable {
+#define doorHitboxBorder 5
+
+class Door: public Position, Drawable, HitBox {
 	public:
 		Door(int x, int y, int type, bool locked, int toLevel, int requieredKey, Lock * lock);
 		~Door();

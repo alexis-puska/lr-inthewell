@@ -146,7 +146,24 @@
 			{"x": 39,  "y": 802  ,"nx": 7, "ny": 1,  "n": 7,  "sx": 22,  "sy": 22,  "r": false, "animation": "lettreGame"},
 			{"x": 39,  "y": 824  ,"nx": 4, "ny": 1,  "n": 4,  "sx": 32,  "sy": 31,  "r": false, "animation": "fire"},
 			{"x": 39,  "y": 855  ,"nx": 5, "ny": 1,  "n": 5,  "sx": 20,  "sy": 11,  "r": false, "animation": "mapEvent"},
-			{"x": 39,  "y": 866  ,"nx": 5, "ny": 2,  "n": 10, "sx": 43,  "sy": 42,  "r": false, "animation": "cristals"}
+			{"x": 39,  "y": 866  ,"nx": 5, "ny": 2,  "n": 10, "sx": 43,  "sy": 42,  "r": false, "animation": "cristals"},
+			
+			{"x": 1332,"y": 660  ,"nx": 1, "ny": 1,  "n": 1,  "sx": 84,  "sy": 94,  "r": false, "animation": "canne"},
+			{"x": 1416,"y": 660  ,"nx": 1, "ny": 1,  "n": 1,  "sx": 80,  "sy": 104  "r": false, "animation": "mirror"},
+			{"x": 1496,"y": 660  ,"nx": 2, "ny": 1,  "n": 1,  "sx": 58,  "sy": 126, "r": false, "animation": "doors"},
+			
+			
+			
+			{"x": 39,  "y": 1060 ,"nx": 2, "ny": 1,  "n": 2,  "sx": 21,  "sy": 10,  "r": false, "animation": "button"},
+			{"x": 81,  "y": 1060 ,"nx": 1, "ny": 1,  "n": 1,  "sx": 26,  "sy": 26,  "r": false, "animation": "discuss"},
+			{"x": 107, "y": 1060 ,"nx": 2, "ny": 1,  "n": 2,  "sx": 43,  "sy": 31,  "r": false, "animation": "serrure"},
+			{"x": 193, "y": 1060 ,"nx": 1, "ny": 1,  "n": 1,  "sx": 40,  "sy": 40,  "r": false, "animation": "block"},
+			{"x": 233, "y": 1060 ,"nx": 1, "ny": 1,  "n": 1,  "sx": 45,  "sy": 29,  "r": false, "animation": "bed"},
+			{"x": 278, "y": 1060 ,"nx": 1, "ny": 1,  "n": 1,  "sx": 39,  "sy": 29,  "r": false, "animation": "bed"},
+			{"x": 0,   "y": 1120 ,"nx": 1, "ny": 1,  "n": 1,  "sx": 44,  "sy": 48,  "r": false, "animation": "doors"},
+			{"x": 44,  "y": 1120 ,"nx": 2, "ny": 1,  "n": 2,  "sx": 97,  "sy": 92,  "r": false, "animation": "doors"},
+			{"x": 260, "y": 1092 ,"nx": 1, "ny": 1,  "n": 1,  "sx": 160, "sy": 148, "r": false, "animation": "carotteux"}
+			
 		]
 	},{
 		"file": "sprite_ennemies",

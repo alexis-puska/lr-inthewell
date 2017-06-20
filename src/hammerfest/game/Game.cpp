@@ -67,6 +67,7 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	idx = 0;
 	vortex = new Vortex(1,32,64,0.5,1,true,5);
 	platform = new Platform(10,10,true,true,4 ,51);
+	door = new Door(90,90,3, true, 1, 1, NULL);
 }
 
 /**********************************************
@@ -78,6 +79,7 @@ Game::~Game() {
 	vout_buf = NULL;
 	delete vortex;
 	delete platform;
+	delete door;
 	SDL_FreeSurface(screenBuffer);
 }
 
@@ -202,6 +204,7 @@ void Game::tick() {
 	}
 	vortex->drawHimself(screenBuffer);
 	platform->drawHimself(screenBuffer);
+	door->drawHimself(screenBuffer);
 	mergeScreen();
 }
 

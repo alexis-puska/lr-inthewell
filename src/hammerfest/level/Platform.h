@@ -4,6 +4,8 @@
 #include "../definition/Drawable.h"
 #include "../definition/Position.h"
 
+#define gridSize 20
+
 class Platform : public Drawable, Position{
 	public:
 		Platform(int x, int y, bool vertical, bool visible, int lenght, int surfaceId);

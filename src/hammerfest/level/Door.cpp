@@ -1,12 +1,15 @@
 #include "Door.h"
 
 Door::Door(int x, int y, int type, bool locked, int toLevel, int requieredKey, Lock * lock) :
-		Position(x, y),Drawable() {
+		Position(x, y),Drawable(), HitBox() {
 	this->type = type;
 	this->locked = true;
 	this->toLevel = toLevel;
 	this->requieredKey = requieredKey;
 	this->lock = lock;
+	this->height = 64;
+	this->width = 52;
+	initHitBox(x, y, width - doorHitboxBorder, height - doorHitboxBorder);
 }
 
 Door::~Door() {
@@ -34,17 +37,23 @@ int Door::getDestination() {
 }
 
 void Door::drawHimself(SDL_Surface * dest) {
+	SDL_Surface * tmp;
 	if (type == 0) {
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("doors", 0), dest, (x * gridSize), (y * gridSize));
+		tmp = Sprite::Instance().getAnimation("doors", 0);
+		copySurfaceToBackRenderer(tmp, dest, x - (tmp->w / 2), y - tmp->h);
 	} else if (type == 1) {
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("doors", 1), dest, (x * gridSize), (y * gridSize));
+		tmp = Sprite::Instance().getAnimation("doors", 1);
+		copySurfaceToBackRenderer(tmp, dest, x - (tmp->w / 2), y - tmp->h);
 	} else if (type == 2) {
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("doors", 2), dest, (x * gridSize), (y * gridSize));
+		tmp = Sprite::Instance().getAnimation("doors", 2);
+		copySurfaceToBackRenderer(tmp, dest, x - (tmp->w / 2), y - tmp->h);
 	} else if (type == 3) {
 		if (locked) {
-			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("doors", 3), dest, (x * gridSize), (y * gridSize));
+			tmp = Sprite::Instance().getAnimation("doors", 3);
+			copySurfaceToBackRenderer(tmp, dest, x - (tmp->w / 2), y - tmp->h);
 		} else {
-			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("doors", 4), dest, (x * gridSize), (y * gridSize));
+			tmp = Sprite::Instance().getAnimation("doors", 4);
+			copySurfaceToBackRenderer(tmp, dest, x - (tmp->w / 2), y - tmp->h);
 		}
 	}
 }

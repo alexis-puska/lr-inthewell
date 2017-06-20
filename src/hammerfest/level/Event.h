@@ -3,6 +3,7 @@
 
 #include "../definition/Position.h"
 #include "Door.h"
+#include "Vortex.h"
 
 class Event : public Position{
 	public:
@@ -12,8 +13,8 @@ class Event : public Position{
 		bool byPlayer;
 		bool afterAllEnemiesKilled;
 		int objectId;
-		int vortex;
-		int animation;
+		Vortex * vortex;
+		std::string animation;
 		Door * doorToUnlock;
 		Position * piece;
 };

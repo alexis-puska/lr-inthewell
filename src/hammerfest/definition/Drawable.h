@@ -11,8 +11,6 @@
 #ifndef __MYCLASS_DRAWABLE
 #define __MYCLASS_DRAWABLE
 
-#define gridSize 20
-
 class Drawable{
 	public:
 		Drawable();
