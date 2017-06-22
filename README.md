@@ -127,3 +127,21 @@ After this step lr-hammerfest is installed, compile, and integrated in emulation
 
 
 
+|Task				|Waiting|In progress|Done|
+|:------------------|:-----:|:---------:|:--:|
+|Class Level		|   	|X 			|	 |
+|Class Event		|   	|X 			|	 |
+|Level Parser		|   	|X 			|	 |
+|Json Level			|X   	| 			|	 |
+|Class Game			|X   	| 			|	 |
+|Player movement	|X   	| 			|	 |
+|Ennemis movement	|X   	| 			|	 |
+|Effect object		|X   	| 			|	 |
+|Tuberculoz battle	|X   	| 			|	 |
+|Game mode classique|X   	| 			|	 |
+|Game mode multi	|X   	| 			|	 |
+|Soccer mode		|X   	| 			|	 |
+|Learning mode		|X   	| 			|	 |
+|Time Attack		|X   	| 			|	 |
+|Net Client/server	|X   	| 			|	 |
+|Net server central	|X   	| 			|	 |
