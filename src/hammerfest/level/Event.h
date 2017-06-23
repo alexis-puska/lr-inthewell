@@ -2,21 +2,36 @@
 #define __MYCLASS_EVENT
 
 #include "../definition/Position.h"
-#include "Door.h"
-#include "Vortex.h"
+#include "../game/Game.h"
 
-class Event : public Position{
+enum eventTriggerTypeEnum{
+	triggerByBombe = 0,
+	triggerByPlayer,
+	triggerWhenNoEnnemies
+};
+
+
+class Event: public Position {
 	public:
-
+		Event(int x, int y, bool triggered, int type, int objectId, int vortexId, std::string animation, int doorsId, int plateformToRemove,
+				int plateformToMove, int movePlateformX, int movePlateformY);
+		~Event();
+		void doSomething(Game * game);
 	private:
-		bool byBombe;
-		bool byPlayer;
-		bool afterAllEnemiesKilled;
+		bool triggered;
+		int type;
 		int objectId;
-		Vortex * vortex;
+		int vortexId;
 		std::string animation;
-		Door * doorToUnlock;
-		Position * piece;
+		int doorsId;
+		int plateformToRemove;
+		int plateformToMove;
+		int movePlateformX;
+		int movePlateformY;
+
+		void CheckBombes() ;
+		void CheckPlayerPosition();
+		void CheckEnnemiesKilled();
 };
 
 #endif
