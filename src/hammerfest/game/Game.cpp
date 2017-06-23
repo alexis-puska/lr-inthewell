@@ -66,8 +66,8 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	count = 0;
 	idx = 0;
 	vortex = new Vortex(1,32,64,0.5,1,true,5);
-	platform = new Platform(10,10,true,true,4 ,51);
-	door = new Door(90,90,3, true, 1, 1, NULL);
+	platform = new Platform(1,10,10,true,true,4 ,51);
+	door = new Door(1,90,90,3, true, 1, 1, NULL);
 }
 
 /**********************************************

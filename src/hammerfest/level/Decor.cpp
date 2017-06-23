@@ -1,8 +1,7 @@
 #include "Decor.h"
 
 Decor::Decor(int id, int x, int y, bool displayed, bool background, std::string animation, int indexAnimation) :
-		Drawable(), Position(x, y) {
-	this->id = id;
+		Drawable(), Position(x, y), IdElement(id) {
 	this->displayed = displayed;
 	this->background = background;
 	this->animation = animation;
@@ -10,6 +9,7 @@ Decor::Decor(int id, int x, int y, bool displayed, bool background, std::string 
 }
 
 Decor::~Decor() {
+
 }
 
 void Decor::display() {

@@ -1,7 +1,7 @@
 #include "Platform.h"
 
-Platform::Platform(int x, int y, bool vertical, bool visible, int lenght, int surfaceId) :
-		Drawable(), Position(x,y) {
+Platform::Platform(int id, int x, int y, bool vertical, bool visible, int lenght, int surfaceId) :
+		Drawable(), Position(x,y), IdElement(id) {
 	this->vertical = vertical;
 	this->visible = visible;
 	this->lenght = lenght;

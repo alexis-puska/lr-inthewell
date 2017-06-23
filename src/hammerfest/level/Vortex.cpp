@@ -1,8 +1,7 @@
 #include "Vortex.h"
 
 Vortex::Vortex(int id, int x, int y, double zoomX, double zoomY, bool enable, int destination) :
-		Drawable(), Position(x, y), HitBox() {
-	this->id = id;
+		Drawable(), Position(x, y), HitBox(), IdElement(id) {
 	this->zoomX = zoomX;
 	this->zoomY = zoomY;
 	this->enable = enable;

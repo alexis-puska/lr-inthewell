@@ -8,7 +8,16 @@
 #define __MYCLASS_LEVEL_SERVICE
 
 #include "json/json.h"
+
 #include "../level/Level.h"
+#include "../level/Door.h"
+#include "../level/Event.h"
+#include "../level/Ennemie.h"
+#include "../level/Vortex.h"
+#include "../level/Platform.h"
+#include "../level/Rayon.h"
+#include "../level/Teleporter.h"
+#include "../definition/Position.h"
 
 class LevelService {
 

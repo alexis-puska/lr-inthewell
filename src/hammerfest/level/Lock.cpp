@@ -1,7 +1,7 @@
 #include "Lock.h"
 
-Lock::Lock(int x, int y, int requieredKeyId) :
-		Drawable(), Position(x, y), HitBox() {
+Lock::Lock(int id, int x, int y, int requieredKeyId) :
+		Drawable(), Position(x, y), HitBox(), IdElement(id) {
 	this->locked = true;
 	this->requieredKey = requieredKeyId;
 	this->height = 35;

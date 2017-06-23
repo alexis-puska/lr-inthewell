@@ -13,7 +13,7 @@ enum bombeTypeEnum{
 	kiwiBombe
 };
 
-class Bombe: public Position, Drawable {
+class Bombe: public Position, public Drawable {
 	public:
 		Bombe(int x, int y, int type);
 		~Bombe();

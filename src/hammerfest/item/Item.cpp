@@ -1,16 +1,6 @@
 #include "Item.h"
 
-Item::Item() {
-
-}
-
-Item::~Item() {
-	SDL_FreeSurface(sprite);
-	delete sprite;
-}
-
-Item::Item(SDL_Surface * items, int id, std::string name, int rarity, int value, int unlock){
-	this->id = id;
+Item::Item(SDL_Surface * items, int id, std::string name, int rarity, int value, int unlock): IdElement(id){
 	this->name = name;
 	this->value = value;
 	this->rarity = rarity;
@@ -21,11 +11,11 @@ Item::Item(SDL_Surface * items, int id, std::string name, int rarity, int value,
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	sprite = SDL_CreateRGBSurface(0, sizeX, sizeY, 32, rmask, gmask, bmask, amask);
-	//TODO crop image
 }
 
-int Item::getId() {
-	return id;
+Item::~Item() {
+	SDL_FreeSurface(sprite);
+	delete sprite;
 }
 
 std::string Item::getName() {

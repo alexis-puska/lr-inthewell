@@ -3,12 +3,13 @@
 
 #include "../definition/Drawable.h"
 #include "../definition/Position.h"
+#include "../definition/IdElement.h"
 
 #define gridSize 20
 
-class Platform : public Drawable, Position{
+class Platform : public Drawable, public Position, public IdElement{
 	public:
-		Platform(int x, int y, bool vertical, bool visible, int lenght, int surfaceId);
+		Platform(int id, int x, int y, bool vertical, bool visible, int lenght, int surfaceId);
 		~Platform();
 		void drawHimself(SDL_Surface * surface);
 	private:

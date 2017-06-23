@@ -1,18 +1,14 @@
 #include "Quest.h"
 
-Quest::Quest() {
-
-}
-
 Quest::~Quest() {
 	giveFamilly.clear();
 	requireItemId.clear();
 }
 
-Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, int famillyId, std::string titre, std::string) {
+Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, int famillyId, std::string titre, std::string) :
+		IdElement(id) {
 	this->titre = titre;
 	this->description = description;
-	this->id = id;
 	this->giveOption = giveOption;
 	this->giveMode = giveMode;
 	this->removeFamilly = removeFamilly;
@@ -20,19 +16,15 @@ Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disgui
 	this->life = life;
 	this->light = light;
 }
-Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, std::string titre, std::string description) {
+Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, std::string titre, std::string description) :
+		IdElement(id) {
 	this->titre = titre;
 	this->description = description;
-	this->id = id;
 	this->giveOption = giveOption;
 	this->giveMode = giveMode;
 	this->removeFamilly = removeFamilly;
 	this->life = life;
 	this->light = light;
-}
-
-int Quest::getId() {
-	return id;
 }
 
 std::string Quest::getDescription() {
@@ -75,10 +67,10 @@ void Quest::printName() {
 	fprintf(stderr, "%i - %s - %s\n", id, titre.c_str(), description.c_str());
 }
 
-bool Quest::giveLife(){
+bool Quest::giveLife() {
 	return life;
 }
 
-bool Quest::turnLightOn(){
+bool Quest::turnLightOn() {
 	return light;
 }

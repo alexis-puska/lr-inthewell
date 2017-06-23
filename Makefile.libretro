@@ -47,7 +47,6 @@ ifeq ($(platform), unix)
 	TARGET := $(TARGET_NAME)_libretro.so
 	fpic := -fPIC
 	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -lSDL2_gfx -g `sdl2-config --static-libs`
-	LIBLUA = -I/usr/include/lua5.3/
 	CFLAGS += `sdl2-config --cflags`
 	SHARED := -shared -Wl,--version-script=libretro/link.T
 	

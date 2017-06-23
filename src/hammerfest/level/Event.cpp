@@ -1,7 +1,7 @@
 #include "Event.h"
 
-Event::Event(int x, int y, bool triggered, int type, int objectId, int vortexId, std::string animation, int doorsId, int plateformToRemove, int plateformToMove, int movePlateformX, int movePlateformY) :
-		Position(x, y) {
+Event::Event(int id, int x, int y, bool triggered, int type, int objectId, int vortexId, std::string animation, int doorsId, int plateformToRemove, int plateformToMove, int movePlateformX, int movePlateformY) :
+		Position(x, y), IdElement(id) {
 	this->triggered = triggered;
 	this->type = type;
 	this->objectId = objectId;

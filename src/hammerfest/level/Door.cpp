@@ -1,7 +1,7 @@
 #include "Door.h"
 
-Door::Door(int x, int y, int type, bool locked, int toLevel, int requieredKey, Lock * lock) :
-		Position(x, y),Drawable(), HitBox() {
+Door::Door(int id, int x, int y, int type, bool locked, int toLevel, int requieredKey, Lock * lock) :
+		Position(x, y),Drawable(), HitBox(), IdElement(id) {
 	this->type = type;
 	this->locked = true;
 	this->toLevel = toLevel;

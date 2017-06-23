@@ -8,16 +8,15 @@
 #endif
 
 #include <string>
+#include "../definition/IdElement.h"
 
 #define sizeX 32
 #define sizeY 32
 
-class Item {
+class Item : public IdElement{
 	public:
-		Item();
 		~Item();
 		Item(SDL_Surface * items, int id, std::string name, int rarity, int value, int unlock);
-		int getId();
 		std::string getName();
 		int getRarity();
 		int getUnlock();
@@ -25,7 +24,6 @@ class Item {
 		SDL_Surface * getSprite();
 		void printName();
 	private:
-		int id;
 		std::string name;
 		int value;
 		int rarity;

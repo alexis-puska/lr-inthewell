@@ -1,14 +1,4 @@
 #include "LevelService.h"
-
-
-#include "../level/Door.h"
-#include "../level/Event.h"
-#include "../level/Ennemie.h"
-#include "../level/Vortex.h"
-#include "../level/Platform.h"
-#include "../level/Rayon.h"
-#include "../level/Teleporter.h"
-#include "../definition/Position.h"
 #include "resources/json_level_parser.h"
 
 LevelService LevelService::m_instance = LevelService();
@@ -35,23 +25,26 @@ LevelService& LevelService::Instance() {
 void LevelService::parseJsonFile() {
 	Json::Reader reader;
 	Json::Value root;
+	fprintf(stderr, "init string\n");
 	std::string jsonString(json_level_parser_json, json_level_parser_json + sizeof json_level_parser_json / sizeof json_level_parser_json[0]);
+	fprintf(stderr, "parse string : %s\n", jsonString.c_str());
 	reader.parse(jsonString, root);
-	int idx = 0;
+	fprintf(stderr, "file map\n");
 	for (unsigned int i = 0; i < root.size(); i++) {
 		values[root[i]["id"].asInt()] = root[i];
 	}
+	fprintf(stderr, "end init\n");
 }
 
 /*********************************************
  * Get Level function
  * Parse the JSON Element and build level
  *********************************************/
-Level * LevelService::getLevel(int id){
-	if(currentLevel == NULL || currentLevel->getId() != id){
+Level * LevelService::getLevel(int id) {
+	if (currentLevel == NULL || currentLevel->getId() != id) {
 		currentLevelId = id;
 		Json::Value Element = values[id];
-		currentLevel = new Level(Element["id"].asInt(),true,0,0,0);
+		currentLevel = new Level(Element["id"].asInt(), true, 0, 0, 0);
 		//BUILD LEVEL
 		//TODO
 	}

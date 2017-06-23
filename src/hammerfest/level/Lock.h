@@ -9,9 +9,9 @@
 
 #define lockHitboxBorder 5
 
-class Lock : public Drawable, Position, HitBox{
+class Lock : public Drawable, public Position, public HitBox, public IdElement{
 	public:
-		Lock(int x, int y, int requieredKeyId);
+		Lock(int id, int x, int y, int requieredKeyId);
 		~Lock();
 		bool isLocked();
 		void checkToUnlock(/*PlayerPosition TODO*/);

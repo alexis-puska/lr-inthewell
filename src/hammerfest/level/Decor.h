@@ -2,9 +2,10 @@
 #define __MYCLASS_DECOR
 
 #include "../definition/Drawable.h"
+#include "../definition/IdElement.h"
 #include "../definition/Position.h"
 
-class Decor: public Drawable, Position {
+class Decor: public Drawable, public Position, public IdElement {
 	public:
 		Decor(int id, int x, int y, bool displayed, bool background, std::string animation, int indexAnimation);
 		~Decor();
@@ -12,7 +13,6 @@ class Decor: public Drawable, Position {
 		bool isOnBackground();
 		void drawHimself(SDL_Surface * destination);
 	private:
-		int id;
 		bool displayed;
 		bool background;
 		std::string animation;

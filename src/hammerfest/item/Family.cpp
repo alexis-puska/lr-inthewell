@@ -1,15 +1,11 @@
 #include "Family.h"
 
-Family::Family() {
-
-}
-
 Family::~Family() {
 	items.clear();
 }
 
-Family::Family(int id, const char * name) {
-	this->id = id;
+Family::Family(int id, const char * name) :
+		IdElement(id) {
 	strcpy(this->name, name);
 }
 
@@ -17,7 +13,7 @@ void Family::addItem(int itemId) {
 	items.push_back(itemId);
 }
 
-std::vector<int> Family::getItems(){
+std::vector<int> Family::getItems() {
 	return items;
 }
 
