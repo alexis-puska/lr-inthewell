@@ -9,7 +9,6 @@ Platform::Platform(int id, int x, int y, bool vertical, bool visible, int lenght
 }
 
 Platform::~Platform() {
-
 }
 
 void Platform::drawHimself(SDL_Surface * dest) {

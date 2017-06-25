@@ -23,6 +23,15 @@
 			{"x": 0, "y": 253, "nx": 13, "ny": 1, "n": 13, "sx": 161, "sy": 566, "r": false, "animation": "mort"}
 		]
 	},{
+		"file": "sprite_rayon_teleporter",
+		"area": [
+			{"x": 0, "y": 0, "nx": 1, "ny": 1, "n": 1, "sx": 20, "sy": 94, "r": false, "animation": "teleporter"},
+			{"x": 20, "y": 0, "nx": 2, "ny": 9, "n": 18, "sx": 20, "sy": 20, "r": false, "animation": "rayon"},
+			{"x": 0, "y": 100, "nx": 1, "ny": 1, "n": 1, "sx": 8, "sy": 11, "r": false, "animation": "base_rayon"},
+			{"x": 0, "y": 126, "nx": 1, "ny": 1, "n": 1, "sx": 24, "sy": 20, "r": false, "animation": "pick"},
+			{"x": 0, "y": 160, "nx": 1, "ny": 1, "n": 1, "sx": 20, "sy": 20, "r": false, "animation": "pick"}
+		]
+	},{
 		"file": "sprite_arrow",
 		"area": [
 			{"x": 0, "y": 0, "nx": 1, "ny": 1, "n": 1, "sx": 46, "sy": 16, "r": false, "animation": "arrow1"},

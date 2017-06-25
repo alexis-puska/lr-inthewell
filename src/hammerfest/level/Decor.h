@@ -11,7 +11,7 @@ class Decor: public Drawable, public Position, public IdElement {
 		~Decor();
 		void display();
 		bool isOnBackground();
-		void drawHimself(SDL_Surface * destination);
+		void drawHimself(SDL_Surface * dest);
 	private:
 		bool displayed;
 		bool background;

@@ -11,6 +11,7 @@
 #include "resources/sprite_map.h"
 #include "resources/sprite_objets.h"
 #include "resources/sprite_player.h"
+#include "resources/sprite_rayon_teleporter.h"
 #include "resources/image_menu.h"
 #include "resources/json_image_parser.h"
 
@@ -144,6 +145,8 @@ void Sprite::loadSurfaceToSprite(std::string name) {
 		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(sprite_objets_png, sprite_objets_png_len));
 	} else if (name.compare("sprite_player") == 0) {
 		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(sprite_player_png, sprite_player_png_len));
+	} else if (name.compare("sprite_rayon_teleporter") == 0) {
+		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(sprite_rayon_teleporter_png, sprite_rayon_teleporter_png_len));
 	} else if (name.compare("image_menu") == 0) {
 		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(image_menu_png, image_menu_png_len));
 	}

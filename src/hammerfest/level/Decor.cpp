@@ -9,7 +9,6 @@ Decor::Decor(int id, int x, int y, bool displayed, bool background, std::string 
 }
 
 Decor::~Decor() {
-
 }
 
 void Decor::display() {
@@ -22,9 +21,7 @@ bool Decor::isOnBackground() {
 
 void Decor::drawHimself(SDL_Surface * dest) {
 	if (this->displayed) {
-
 		SDL_Surface * tmp = Sprite::Instance().getAnimation(animation,indexAnimation);
-
 		copySurfaceToBackRenderer(tmp, dest, x - (tmp->w / 2), y - tmp->h);
 	}
 }

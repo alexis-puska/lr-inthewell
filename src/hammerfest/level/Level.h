@@ -49,15 +49,15 @@ class Level: public IdElement {
 		int platformVerticalId;
 		int platformHorizontalId;
 		std::map<int, Decor *> decors;
-		std::vector<Platform*> platforms;
-		std::vector<Event*> events;
-		std::vector<Door *> doors;
-		std::vector<Vortex *> vortex;
-		std::vector<Teleporter *> teleporters;
+		std::map<int, Platform*> platforms;
+		std::map<int, Event*> events;
+		std::map<int, Door *> doors;
+		std::map<int, Vortex *> vortexs;
+		std::map<int, Teleporter *> teleporters;
 		std::vector<Rayon *> rayons;
-		std::vector<Position *> startPlayer;
-		std::vector<Position *> startEffectObjet;
-		std::vector<Position *> startPointObjet;
+		std::vector<Position *> startPlayers;
+		std::vector<Position *> startEffectObjets;
+		std::vector<Position *> startPointObjets;
 		std::vector<Ennemie *> ennemies;
 };
 
