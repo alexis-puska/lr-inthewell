@@ -54,7 +54,6 @@ Game::Game() {
  *                 Constructor
  **********************************************/
 Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
-	fprintf(stderr, "constructor game !!!!\n");
 	srand (time(NULL));amask
 	= 0xff000000;
 	rmask = 0x00ff0000;
@@ -115,9 +114,6 @@ void Game::copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int 
  *******************************************/
 void Game::fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination) {
 	SDL_Surface * temp2 = Sprite::Instance().getAnimation(name, index);
-	if (temp2 == NULL) {
-		fprintf(stderr, "ca va planter");
-	}
 	int x = 0;
 	int y = 0;
 	while (y < 500) {
@@ -217,18 +213,18 @@ void Game::tick() {
 		idx = 0;
 	}
 
-	fprintf(stderr,"vortex\n");
+	//fprintf(stderr,"vortex\n");
 	vortex->drawHimself(screenBuffer);
-	fprintf(stderr,"platform\n");
+	//fprintf(stderr,"platform\n");
 	platform->drawHimself(screenBuffer);
-	fprintf(stderr,"door\n");
+	//fprintf(stderr,"door\n");
 	door->drawHimself(screenBuffer);
-	fprintf(stderr,"pick\n");
+	//fprintf(stderr,"pick\n");
 	pick->drawHimself(screenBuffer);
-	fprintf(stderr,"rayon\n");
+	//fprintf(stderr,"rayon\n");
 	rayon->drawHimself(screenBuffer);
-	fprintf(stderr,"teleporter\n");
+	//fprintf(stderr,"teleporter\n");
 	teleporter->drawHimself(screenBuffer);
-	fprintf(stderr,"merge\n");
+	//fprintf(stderr,"merge\n");
 	mergeScreen();
 }
