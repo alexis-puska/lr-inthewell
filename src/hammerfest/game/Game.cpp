@@ -66,7 +66,6 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	isThreadAlive = false;
 	configured = true;
 	requestStopGame = false;
-	startGame();
 	count = 0;
 	idx = 0;
 	vortex = new Vortex(1, 32, 64, 0.5, 1, true, 5);
@@ -75,6 +74,7 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	pick = new Pick(1, 11, 11, true, pickToRight);
 	rayon = new Rayon(12, 12, 5, 6, false);
 	teleporter = new Teleporter(1, 13, 13, 5, false, 1);
+	startGame();
 }
 
 /**********************************************
@@ -87,6 +87,9 @@ Game::~Game() {
 	delete vortex;
 	delete platform;
 	delete door;
+	delete pick;
+	delete rayon;
+	delete teleporter;
 	SDL_FreeSurface(screenBuffer);
 }
 
