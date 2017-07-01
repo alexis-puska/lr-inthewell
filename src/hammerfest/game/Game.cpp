@@ -37,22 +37,26 @@ static int metronome(void* data) {
  *             Default constructor
  ***********************************************/
 Game::Game() {
-	amask = 0xff000000;
+	srand (time(NULL));amask = 0xff000000;
 	rmask = 0x00ff0000;
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
+	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	gameState = gameStart;
 	isThreadAlive = false;
 	configured = false;
 	requestStopGame = false;
 	count = 0;
+	idx = 0;
 }
 
 /**********************************************
  *                 Constructor
  **********************************************/
 Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
-	srand (time(NULL));amask = 0xff000000;
+	fprintf(stderr, "constructor game !!!!\n");
+	srand (time(NULL));amask
+	= 0xff000000;
 	rmask = 0x00ff0000;
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
@@ -65,9 +69,12 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	startGame();
 	count = 0;
 	idx = 0;
-	vortex = new Vortex(1,32,64,0.5,1,true,5);
-	platform = new Platform(1,10,10,true,true,4 ,51);
-	door = new Door(1,90,90,3, true, 1, 1, NULL);
+	vortex = new Vortex(1, 32, 64, 0.5, 1, true, 5);
+	platform = new Platform(1, 10, 10, true, true, 4, 51);
+	door = new Door(1, 90, 90, 3, true, 1, 1, NULL);
+	pick = new Pick(1, 11, 11, true, pickToRight);
+	rayon = new Rayon(12, 12, 5, 6, false);
+	teleporter = new Teleporter(1, 13, 13, 5, false, 1);
 }
 
 /**********************************************
@@ -105,6 +112,9 @@ void Game::copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int 
  *******************************************/
 void Game::fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination) {
 	SDL_Surface * temp2 = Sprite::Instance().getAnimation(name, index);
+	if (temp2 == NULL) {
+		fprintf(stderr, "ca va planter");
+	}
 	int x = 0;
 	int y = 0;
 	while (y < 500) {
@@ -153,6 +163,7 @@ void Game::startGame() {
 	Sound::Instance().startMusic();
 	if (!isThreadAlive) {
 		isThreadAlive = true;
+		idx = 0;
 		mainThread = SDL_CreateThread(metronome, "mainThread", this);
 	}
 
@@ -194,16 +205,21 @@ void Game::tick() {
 	}
 
 	fillScreenBufferWithSurface("level_background", idx, screenBuffer);
+	count++;
 	if (count > 20) {
 		idx++;
 		count = 0;
 	}
-	count++;
-	if (idx == 27) {
+	if (idx >= 27) {
 		idx = 0;
 	}
+
+
 	vortex->drawHimself(screenBuffer);
 	platform->drawHimself(screenBuffer);
 	door->drawHimself(screenBuffer);
+	pick->drawHimself(screenBuffer);
+	rayon->drawHimself(screenBuffer);
+	teleporter->drawHimself(screenBuffer);
 	mergeScreen();
 }

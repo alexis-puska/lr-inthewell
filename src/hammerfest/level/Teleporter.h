@@ -6,6 +6,10 @@
 #include "../definition/Drawable.h"
 #include "../definition/HitBox.h"
 
+#define gridSize 20
+#define teleporterSpriteSize 94
+#define bufferSize 7
+
 class Teleporter: public Drawable, public Position, public HitBox, public IdElement {
 	public:
 		Teleporter(int id, int x, int y, int length, bool vertical, int toId);
@@ -15,5 +19,8 @@ class Teleporter: public Drawable, public Position, public HitBox, public IdElem
 		int length;
 		bool vertical;
 		int toId;
+
+		SDL_Surface * buffer;
+		int offsetAnimation;
 };
 #endif

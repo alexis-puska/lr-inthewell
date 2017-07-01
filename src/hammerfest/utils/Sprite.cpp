@@ -41,6 +41,7 @@ void Sprite::parseJsonFile() {
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	amask = 0xff000000;
+	SDL_Surface * temp = NULL;
 
 	std::string currentFileParse;
 	std::string jsonString(json_image_parser_json, json_image_parser_json + sizeof json_image_parser_json / sizeof json_image_parser_json[0]);
@@ -98,7 +99,7 @@ void Sprite::parseJsonFile() {
 //						SDL_BlitSurface(surfaceToParse, &srcTextureRect, sprites[anim_flip][idx], &destTextureRect);
 //						sprites[anim_flip][idx] = rotozoomSurfaceXY(sprites[anim_flip][idx], 0, -1, 1, 0);
 //					}
-					SDL_Surface * temp = SDL_CreateRGBSurface(0, sx, sy, 32, rmask, gmask, bmask, amask);
+					temp = SDL_CreateRGBSurface(0, sx, sy, 32, rmask, gmask, bmask, amask);
 					SDL_BlitSurface(surfaceToParse, &srcTextureRect, temp, &destTextureRect);
 					sprites[anim].push_back(temp);
 					if(r){
@@ -111,6 +112,7 @@ void Sprite::parseJsonFile() {
 					if (idx >= n) {
 						break;
 					}
+					temp = NULL;
 				}
 			}
 		}
@@ -153,9 +155,11 @@ void Sprite::loadSurfaceToSprite(std::string name) {
 }
 
 SDL_Surface * Sprite::getAnimation(std::string name, int index) {
+	fprintf(stderr,"getAnimation %s %i \n", name.c_str(), index);
 	return sprites[name][index];
 }
 
 std::vector <SDL_Surface *> Sprite::getAnimation(std::string name) {
+	fprintf(stderr,"getAnimation %s \n", name.c_str());
 	return sprites[name];
 }

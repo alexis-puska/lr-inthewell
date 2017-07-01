@@ -15,6 +15,9 @@
 #include "../level/Vortex.h"
 #include "../level/Platform.h"
 #include "../level/Door.h"
+#include "../level/Pick.h"
+#include "../level/Rayon.h"
+#include "../level/Teleporter.h"
 
 #ifndef __MYCLASS_GAME
 #define __MYCLASS_GAME
@@ -77,6 +80,9 @@ class Game {
 		Vortex * vortex;
 		Platform * platform;
 		Door * door;
+		Pick * pick;
+		Rayon * rayon;
+		Teleporter * teleporter;
 
 
 		int count,idx;
