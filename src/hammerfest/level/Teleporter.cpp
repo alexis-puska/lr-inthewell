@@ -29,18 +29,26 @@ Teleporter::~Teleporter() {
 }
 
 void Teleporter::drawHimself(SDL_Surface * dest) {
+	fprintf(stderr,"start draw teleporter\n");
 	offsetAnimation++;
 	if ((offsetAnimation + (length * gridSize)) > teleporterSpriteSize * bufferSize) {
 		offsetAnimation = 0;
 	}
+
 	if (vertical) {
+		fprintf(stderr,"start draw teleporter vertical\nbase\n");
 		copySurfaceToBackRenderer(rotozoomSurface(Sprite::Instance().getAnimation("base_teleporter", 0), 90, 1, 0), buffer, x * gridSize + 4, y * gridSize);
+		fprintf(stderr,"start draw teleporter vertical\nbase\n");
 		copySurfaceToBackRenderer(rotozoomSurface(Sprite::Instance().getAnimation("base_teleporter", 0), 270, 1, 0), buffer, x * gridSize + 4, y * gridSize + gridSize * length - 8);
+		fprintf(stderr,"start draw teleporter vertical\nflux\n");
 		copySurfaceToBackRenderer(buffer, dest, x * gridSize, (y * gridSize) + 11, 20, (length * gridSize) - 22);
 
 	} else {
+		fprintf(stderr,"start draw teleporter horizontal\nbase\n");
 		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("base_teleporter", 0), buffer, x * gridSize, y * gridSize + 4);
+		fprintf(stderr,"start draw teleporter horizontal\nbase\n");
 		copySurfaceToBackRenderer(rotozoomSurface(Sprite::Instance().getAnimation("base_teleporter", 0), 180, 1, 0), buffer, x * gridSize + gridSize * length - 8, y * gridSize + 4);
+		fprintf(stderr,"start draw teleporter horizontal\nflux\n");
 		copySurfaceToBackRenderer(buffer, dest, (x * gridSize) + 8, y * gridSize, (length * gridSize) - 16, 20);
 	}
 }
