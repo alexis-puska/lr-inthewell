@@ -11,6 +11,10 @@ HitBox::HitBox() {
 
 void HitBox::initHitBox(int x, int y, int hitBoxWidth, int hitBoxHeight) {
 	fprintf(stderr, "init hitbox : %i %i %i %i\n", x, y, hitBoxWidth, hitBoxHeight);
+	this->yMax = 0;
+	this->yMin = 0;
+	this->xMax = 0;
+	this->xMin = 0;
 	this->hitBoxWidth = hitBoxWidth;
 	this->hitBoxHeight = hitBoxHeight;
 	updateHitBox(x, y);
