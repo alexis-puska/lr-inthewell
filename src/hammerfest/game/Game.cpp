@@ -214,12 +214,18 @@ void Game::tick() {
 		idx = 0;
 	}
 
-
+	fprintf(stderr,"vortex\n");
 	vortex->drawHimself(screenBuffer);
+	fprintf(stderr,"platform\n");
 	platform->drawHimself(screenBuffer);
+	fprintf(stderr,"door\n");
 	door->drawHimself(screenBuffer);
+	fprintf(stderr,"pick\n");
 	pick->drawHimself(screenBuffer);
+	fprintf(stderr,"rayon\n");
 	rayon->drawHimself(screenBuffer);
+	fprintf(stderr,"teleporter\n");
 	teleporter->drawHimself(screenBuffer);
+	fprintf(stderr,"merge\n");
 	mergeScreen();
 }
