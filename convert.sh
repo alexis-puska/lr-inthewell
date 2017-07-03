@@ -41,6 +41,7 @@ xxd -i -c 64 sprite_map.png ../../src/hammerfest/utils/resources/sprite_map.h
 xxd -i -c 64 sprite_objets.png ../../src/hammerfest/utils/resources/sprite_objets.h
 xxd -i -c 64 sprite_player.png ../../src/hammerfest/utils/resources/sprite_player.h
 xxd -i -c 64 sprite_rayon_teleporter.png ../../src/hammerfest/utils/resources/sprite_rayon_teleporter.h
+xxd -i -c 64 sprite_flag.png ../../src/hammerfest/utils/resources/sprite_flag.h
 
 #sprite
 cd ../../resources/image
@@ -50,6 +51,7 @@ xxd -i -c 64 image_menu.png ../../src/hammerfest/utils/resources/image_menu.h
 cd ../../resources/json
 xxd -i -c 64 json_image_parser.json ../../src/hammerfest/utils/resources/json_image_parser.h
 xxd -i -c 64 json_level_parser.json ../../src/hammerfest/utils/resources/json_level_parser.h
+xxd -i -c 64 json_text_parser.json ../../src/hammerfest/utils/resources/json_text_parser.h
 
 #font
 cd ../../resources/font

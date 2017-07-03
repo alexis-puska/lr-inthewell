@@ -5,7 +5,7 @@ int main(int argc, char** argv) {
 }
 
 enum menuStep {
-	splashMenu = 0, saveMenu, modeMenu, optionMenu, mainMenu, fridgeMenu, questMenu, gameStep
+	splashMenu = 0, langMenu, saveMenu, modeMenu, optionMenu, mainMenu, fridgeMenu, questMenu, gameStep
 };
 
 Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool newSaveFile) {
@@ -102,8 +102,11 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 	if (drawMenu != gameStep) {
 		if (previousPlayerKeystate[0] & keyPadSelect && keychange[0]) {
 			switch (drawMenu) {
-				case saveMenu:
+				case langMenu:
 					drawMenu = splashMenu;
+					break;
+				case saveMenu:
+					drawMenu = langMenu;
 					break;
 				case modeMenu:
 					drawMenu = mainMenu;
@@ -129,6 +132,9 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 		if (previousPlayerKeystate[0] & keyPadStart && keychange[0]) {
 			switch (drawMenu) {
 				case splashMenu:
+					drawMenu = langMenu;
+					break;
+				case langMenu:
 					drawMenu = saveMenu;
 					break;
 				case saveMenu:
@@ -157,8 +163,12 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 		 *********************/
 		if (previousPlayerKeystate[0] & keyPadUp && keychange[0]) {
 			switch (drawMenu) {
+				case langMenu:
+					GameConfig::Instance().decLang();
+					break;
 				case saveMenu:
 					GameConfig::Instance().decGameLoaded();
+					break;
 				case mainMenu:
 					if (drawNextMenu == modeMenu) {
 						drawNextMenu = questMenu;
@@ -208,9 +218,11 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 		 *********************/
 		if (previousPlayerKeystate[0] & keyPadDown && keychange[0]) {
 			switch (drawMenu) {
+				case langMenu:
+					GameConfig::Instance().incLang();
+					break;
 				case saveMenu:
 					GameConfig::Instance().incGameLoaded();
-					redrawMenu = true;
 					break;
 				case mainMenu:
 					if (drawNextMenu == modeMenu) {
@@ -342,6 +354,9 @@ void Hammerfest::tick(unsigned short in_keystateLibretro[2]) {
 			case splashMenu:
 				drawSplashScreen();
 				break;
+			case langMenu:
+				drawlangMenu();
+				break;
 			case saveMenu:
 				drawSaveGameMenu();
 				break;
@@ -402,6 +417,32 @@ void Hammerfest::drawSplashScreen() {
 }
 
 /******************************
+ *      DRAW LANG MENU
+ ******************************/
+void Hammerfest::drawlangMenu() {
+	if (redrawMenu) {
+		fillScreenBufferWithSurface("menu_background_2", 0);
+		for (int i = 0; i < 3; i++) {
+			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("flag", i), screenBuffer, (420 - 120) / 2, 70 + (i * 150));
+		}
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 40, "menu.lang.title", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 154, "menu.lang.lang1", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 304, "menu.lang.lang2", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 454, "menu.lang.lang3", red, true);
+
+		if (GameConfig::Instance().getLang().compare("fr") == 0) {
+			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 110, 100);
+		} else if (GameConfig::Instance().getLang().compare("en") == 0) {
+			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 110, 250);
+		} else if (GameConfig::Instance().getLang().compare("es") == 0) {
+			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 110, 400);
+		}
+		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+		redrawMenu = false;
+	}
+}
+
+/******************************
  * DRAW LOADING SAVE GAME MENU
  *****************************/
 void Hammerfest::drawSaveGameMenu() {
@@ -413,12 +454,12 @@ void Hammerfest::drawSaveGameMenu() {
 				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_ice", 0), screenBuffer, 60, 140 + (90 * i));
 			}
 		}
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "Chargez votre", red, true);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 60, "sauvegarde", red, true);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 150, 167, "IGOR", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 150, 257, "SANDY", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 150, 347, "TUBERCULOZ", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 150, 437, "WANDA", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 30, "menu.save.title1", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 60, "menu.save.title2", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 150, 167, "menu.save.name1", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 150, 257, "menu.save.name2", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 150, 347, "menu.save.name3", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 150, 437, "menu.save.name4", red, false);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}
@@ -430,13 +471,13 @@ void Hammerfest::drawSaveGameMenu() {
 void Hammerfest::drawMainMenu() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "MAIN", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 30, "menu.main.title", red, true);
 		for (int i = 0; i < 3; i++) {
 			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game", i), screenBuffer, 127, 147 + (90 * i));
 		}
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 167, "JOUER", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 257, "FRIGO", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 347, "QUETES", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 167, "menu.main.play", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 257, "menu.main.fridge", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 347, "menu.main.quests", red, false);
 		if (drawNextMenu == modeMenu) {
 			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 110, 167);
 		} else if (drawNextMenu == fridgeMenu) {
@@ -455,15 +496,15 @@ void Hammerfest::drawMainMenu() {
 void Hammerfest::drawGameModeMenu() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "GAME MODE", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 30, "menu.mode.title", red, true);
 		for (int i = 0; i < 5; i++) {
 			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_option", i), screenBuffer, 107, 147 + (60 * i));
 		}
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 147, "SOLO", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 207, "APPRENTISAGE", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 267, GameConfig::Instance().isTimeAttackUnlock() ? "TIMEATTACK" : "???", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 327, GameConfig::Instance().isMulticoopUnlock() ? "MULTI" : "???", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 387, "SOCCER", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 147, "menu.mode.solo", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 207, "menu.main.tutorial", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 267, GameConfig::Instance().isTimeAttackUnlock() ? "menu.main.timeAttack" : "noTranslation", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 327, GameConfig::Instance().isMulticoopUnlock() ? "menu.main.multi" : "noTranslation", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 387, "menu.main.soccer", red, false);
 		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 75, 147 + GameConfig::Instance().getGameMode() * 60);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
@@ -477,7 +518,7 @@ void Hammerfest::drawFridgeMenu() {
 	if (redrawMenu) {
 		char tmp[50];
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 0, "Contenu du frigo", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 0, "menu.fridge.title", red, true);
 		//navigate thiw object, 42 object dislpayed (6 columns x 7 lines)
 		if (fridgeItemPosition < 0) {
 			fridgeItemPosition = 0;
@@ -518,7 +559,7 @@ void Hammerfest::drawFridgeMenu() {
 		if (ItemFileSystem::Instance().getQuantity(fridgeItemPosition) > 0) {
 			Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 500, ItemFileSystem::Instance().getItem(fridgeItemPosition)->getName().c_str(), white, true);
 		} else {
-			Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 500, "???????", white, true);
+			Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 500, "noTranslation", white, true);
 		}
 
 		//draw item position
@@ -554,7 +595,7 @@ void Hammerfest::drawQuestMenu() {
 			firstQuestView = 0;
 		}
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 0, "Les quetes", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 0, "menu.quests.titles", red, true);
 
 		//draw list of quest
 		int index = firstQuestView;
@@ -659,18 +700,18 @@ void Hammerfest::drawQuestMenu() {
 				}
 			}
 		} else {
-			Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 200, "???", white, true);
+			Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 200, "noTranslation", white, true);
 		}
 
 		//description
 		if (questsStarted[questSelect] != NULL) {
-			Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 352, "???", white, true);
+			Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 352, "noTranslation", white, true);
 		} else if (questsCompleted[questSelect] != NULL) {
 			int idx = 0;
 			int offsetY = 0;
 			int lastSpace = 0;
 			while (true) {
-				if ((unsigned)idx >= quest->getDescription().size() - 1) {
+				if ((unsigned) idx >= quest->getDescription().size() - 1) {
 					Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 352 + offsetY * 12, quest->getDescription().substr(lastSpace, idx - lastSpace).c_str(), white, true);
 					break;
 				} else if (quest->getDescription().at(idx) == ' ') {
@@ -684,7 +725,7 @@ void Hammerfest::drawQuestMenu() {
 				idx++;
 			}
 		} else {
-			Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 352, "???", white, true);
+			Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 352, "noTranslation", white, true);
 		}
 
 		//copy screen
@@ -700,8 +741,8 @@ void Hammerfest::drawQuestMenu() {
 void Hammerfest::drawGameOptionSoloMenu() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "GAME OPTION SOLO", red, true);
-		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 70, "Jouez la vraie Aventure ! Liberez les fruits !", white, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 30, "menu.mode.solo.title1", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 70, "menu.mode.solo.title2", white, true);
 		for (int i = 0; i < 5; i++) {
 			if (GameConfig::Instance().getSoloOptionUnlock(i)) {
 				if (GameConfig::Instance().getSoloOption(i)) {
@@ -713,11 +754,11 @@ void Hammerfest::drawGameOptionSoloMenu() {
 				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 2), screenBuffer, 107, 147 + (60 * i));
 			}
 		}
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 147, "Miroir", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 207, "Cauchemar", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 267, "Ninjutsu", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 327, "Explosifs instables", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 387, "Tornade", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 147, "menu.main.solo.mirror", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 207, "menu.main.solo.nightmare", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 267, "menu.main.solo.ninjutsu", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 327, "menu.main.solo.explode", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 387, "menu.main.solo.tornade", red, false);
 		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 75, 147 + cursorPosition * 60);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
@@ -727,8 +768,8 @@ void Hammerfest::drawGameOptionSoloMenu() {
 void Hammerfest::drawGameOptionLearningMenu() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "GAME OPTION APRENTISSAGE", red, true);
-		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 70, "Apprenez a jouer en quelques minutes !", white, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 30, "menu.main.tutorial.title", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 70, "menu.main.tutorial.description", white, true);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}
@@ -737,8 +778,8 @@ void Hammerfest::drawGameOptionLearningMenu() {
 void Hammerfest::drawGameOptionMultiMenu() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "GAME OPTION MULTI", red, true);
-		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 70, "Le mode Aventure pour 2 joueurs ! Jouez avec un ami !", white, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 30, "main.menu.multi.title", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 70, "menu.main.multi.description", white, true);
 		for (int i = 0; i < 3; i++) {
 			if (GameConfig::Instance().getMultiOptionUnlock(i)) {
 				if (GameConfig::Instance().getMultiOption(i)) {
@@ -750,9 +791,9 @@ void Hammerfest::drawGameOptionMultiMenu() {
 				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_checkbox", 2), screenBuffer, 107, 147 + (60 * i));
 			}
 		}
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 147, "Miroir", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 207, "Cauchemar", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 267, "Partage de vies", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 147, "menu.main.multi.mirror", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 207, "menu.main.multi.nightmare", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 267, "menu.main.multi.share", red, false);
 		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 75, 147 + cursorPosition * 60);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
@@ -762,10 +803,10 @@ void Hammerfest::drawGameOptionMultiMenu() {
 void Hammerfest::drawGameOptionTimeAttackMenu() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "GAME OPTION TIME ATTACK", red, true);
-		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 70, "Affrontez le defi du temps ! Finissez le 6 niveaux dans le moins", white, true);
-		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 85, "de temps possible. Ici, pas de place au hasard ! Tout doit etre", white, true);
-		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 100, "calcule au millimetre pres pour assurer un chrono imbattable.", white, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 30, "menu.main.timeAttack.title", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 70, "menu.main.timeAttack.description1", white, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 85, "menu.main.timeAttack.description2", white, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 100, "menu.main.timeAttack.description3", white, true);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}
@@ -774,9 +815,9 @@ void Hammerfest::drawGameOptionTimeAttackMenu() {
 void Hammerfest::drawGameOptionSoccerMenu() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 210, 30, "GAME OPTION SOCCER", red, true);
-		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 70, "Ce mode est pour 2 joueurs. Jouez au foot contre un ami !", white, true);
-		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 85, "Choississez le niveau :", white, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 30, "menu.main.soccer.title", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 70, "menu.main.soccer.description1", white, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 85, "menu.main.soccer.description2 :", white, true);
 
 		//controle avancé
 		if (GameConfig::Instance().isKickcontrolUnlock()) {
@@ -802,12 +843,12 @@ void Hammerfest::drawGameOptionSoccerMenu() {
 				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_game_radio", 1), screenBuffer, 107, 267 + (60 * i));
 			}
 		}
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 147, "Controles avances", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 207, "Bombes", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 267, "gazon maudit", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 327, "temple du ballon", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 387, "volleyfest", red, false);
-		Text::Instance().drawText(screenBuffer, "verdanaBold20", 170, 447, "maitrise aerienne", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 147, "menu.main.soccer.advanceControl", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 207, "menu.main.soccer.bombe", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 267, "menu.main.soccer.map1", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 327, "menu.main.soccer.map2", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 387, "menu.main.soccer.map3", red, false);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 170, 447, "menu.main.soccer.map4", red, false);
 		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 75, 147 + cursorPosition * 60);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;

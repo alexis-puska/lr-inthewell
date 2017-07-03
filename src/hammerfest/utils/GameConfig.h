@@ -84,6 +84,11 @@ class GameConfig {
 		bool getLight();
 		void setLightOn();
 
+		std::string getLang();
+		void setLang(std::string lang);
+		void incLang();
+		void decLang();
+
 	private:
 		GameConfig& operator=(const GameConfig&);
 		GameConfig(const GameConfig&);
@@ -94,6 +99,8 @@ class GameConfig {
 
 		bool timeAttack;
 		bool multi;
+
+		std::string lang;
 
 		/*
 		 * 0 - miroir

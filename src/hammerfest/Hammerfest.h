@@ -31,6 +31,7 @@ class Hammerfest {
 
 		//draw screen
 		void drawSplashScreen();
+		void drawlangMenu();
 		void drawSaveGameMenu();
 		void drawMainMenu();
 		void drawGameModeMenu();

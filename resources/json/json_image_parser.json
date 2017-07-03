@@ -39,6 +39,11 @@
 			{"x": 0, "y": 39, "nx": 9, "ny": 1, "n": 9, "sx": 31, "sy": 11, "r": false, "animation": "arrow3"}
 		]
 	},{
+		"file": "sprite_flag",
+		"area": [
+			{"x": 0, "y": 0, "nx": 1, "ny": 3, "n": 3, "sx": 120, "sy": 80, "r": false, "animation": "flag"}
+		]
+	},{
 		"file": "sprite_background_effect",
 		"area": [
 			{"x": 0, "y": 0, "nx": 7, "ny": 1, "n": 7, "sx": 410, "sy": 500, "r": false, "animation": "backgroundEffect"}
@@ -158,7 +163,7 @@
 			{"x": 39,  "y": 866  ,"nx": 5, "ny": 2,  "n": 10, "sx": 43,  "sy": 42,  "r": false, "animation": "cristals"},
 			
 			{"x": 1332,"y": 660  ,"nx": 1, "ny": 1,  "n": 1,  "sx": 84,  "sy": 94,  "r": false, "animation": "canne"},
-			{"x": 1416,"y": 660  ,"nx": 1, "ny": 1,  "n": 1,  "sx": 80,  "sy": 104  "r": false, "animation": "mirror"},
+			{"x": 1416,"y": 660  ,"nx": 1, "ny": 1,  "n": 1,  "sx": 80,  "sy": 104,  "r": false, "animation": "mirror"},
 			{"x": 1496,"y": 660  ,"nx": 2, "ny": 1,  "n": 2,  "sx": 58,  "sy": 126, "r": false, "animation": "doors"},
 			
 			

@@ -6,6 +6,7 @@
 #include "resources/sprite_big_crystal.h"
 #include "resources/sprite_bombe.h"
 #include "resources/sprite_ennemies.h"
+#include "resources/sprite_flag.h"
 #include "resources/sprite_level.h"
 #include "resources/sprite_light.h"
 #include "resources/sprite_map.h"
@@ -151,6 +152,8 @@ void Sprite::loadSurfaceToSprite(std::string name) {
 		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(sprite_rayon_teleporter_png, sprite_rayon_teleporter_png_len));
 	} else if (name.compare("image_menu") == 0) {
 		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(image_menu_png, image_menu_png_len));
+	} else if (name.compare("sprite_flag") == 0) {
+		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(sprite_flag_png, sprite_flag_png_len));
 	}
 }
 

@@ -35,11 +35,11 @@ void GameConfig::decGameLoaded() {
 void GameConfig::incGameMode() {
 	this->gameMode++;
 	if (this->gameMode == timeAttackMode && !timeAttack) {
-		fprintf(stderr,"switch time attack\n");
+		fprintf(stderr, "switch time attack\n");
 		this->gameMode++;
 	}
 	if (this->gameMode == multicoopMode && !multi) {
-		fprintf(stderr,"switch multi\n");
+		fprintf(stderr, "switch multi\n");
 		this->gameMode++;
 	}
 	if (this->gameMode > soccerMode) {
@@ -50,11 +50,11 @@ void GameConfig::incGameMode() {
 void GameConfig::decGameMode() {
 	this->gameMode--;
 	if (this->gameMode == multicoopMode && !isMulticoopUnlock()) {
-		fprintf(stderr,"switch multi\n");
+		fprintf(stderr, "switch multi\n");
 		this->gameMode--;
 	}
 	if (this->gameMode == timeAttackMode && !isTimeAttackUnlock()) {
-		fprintf(stderr,"switch time attack\n");
+		fprintf(stderr, "switch time attack\n");
 		this->gameMode--;
 	}
 	if (this->gameMode < soloMode) {
@@ -229,4 +229,34 @@ bool GameConfig::getLight() {
 }
 void GameConfig::setLightOn() {
 	light = true;
+}
+
+std::string GameConfig::getLang() {
+	if (lang.empty()) {
+		lang = "fr";
+	}
+	return lang;
+}
+void GameConfig::setLang(std::string lang) {
+	lang = lang;
+}
+
+void GameConfig::incLang() {
+	if (lang.compare("fr") == 0) {
+		lang = "en";
+	} else if (lang.compare("en") == 0) {
+		lang = "es";
+	} else if (lang.compare("es") == 0) {
+		lang = "fr";
+	}
+}
+
+void GameConfig::decLang() {
+	if (lang.compare("fr") == 0) {
+		lang = "es";
+	} else if (lang.compare("en") == 0) {
+		lang = "fr";
+	} else if (lang.compare("es") == 0) {
+		lang = "en";
+	}
 }
