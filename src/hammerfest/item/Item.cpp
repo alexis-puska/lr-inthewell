@@ -41,3 +41,9 @@ SDL_Surface * Item::getSprite(){
 void Item::printName() {
 	fprintf(stderr, "%i - %s\n", id, name.c_str());
 }
+
+void Item::printJson() {
+	fprintf(stderr, "{\"id\":%i,\"name\":[{\"fr\":\"%s\"},{\"en\":\"%s\"},{\"es\":\"%s\"}],", id, name.c_str(), name.c_str(), name.c_str());
+	fprintf(stderr, "\"rarity\":%i,\"value\":%i,\"unlock\":%i}\n,", rarity, value, unlock);
+
+}

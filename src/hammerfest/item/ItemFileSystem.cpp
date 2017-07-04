@@ -1,5 +1,9 @@
 #include "ItemFileSystem.h"
 
+#include "../utils/resources/json_family_parser.h"
+#include "../utils/resources/json_item_parser.h"
+#include "../utils/resources/json_quest_parser.h"
+
 enum key {
 	gordon = 0,
 	passepartout = 1,
@@ -1330,7 +1334,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(8, false, false, false, false, -1, -1, -1, -1, -1, "Malnutrition",
-			"Le gout d\'Igor pour les aliments peu equilibres lui permettra de trouver des aliments encore plus... \"douteux\" en jeu.");
+			"Le gout d\'Igor pour les aliments peu equilibres lui permettra de trouver des aliments encore plus... douteux en jeu.");
 	quest->addRequireItemId(140, 5);
 	quest->addRequireItemId(142, 5);
 	quest->addRequireItemId(146, 20);
@@ -1507,7 +1511,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(27, false, false, false, false, -1, -1, -1, -1, -1, "Mystere de Guu",
-					"Cette quete n\'a aucun interet, a part vous conseiller de decouvrir au plus vite l\'excellent dessin anime \"Hare + Guu\" disponible en DVD dans toutes les bonnes boutiques ! Banyaaaaaii. ^^");
+					"Cette quete n\'a aucun interet, a part vous conseiller de decouvrir au plus vite l\'excellent dessin anime \'Hare + Guu\' disponible en DVD dans toutes les bonnes boutiques ! Banyaaaaaii. ^^");
 	quest->addRequireItemId(88, 1);
 	quest->addRequireItemId(99, 1);
 	quest->addRequireItemId(100, 1);
@@ -1515,7 +1519,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(28, false, false, false, false, -1, -1, -1, -1, -1, "Friandises divines",
-			"Les sucreries n\'ont plus aucun secret pour Igor. Il saura, a compter de ce jour, debusquer les delices legendaires de Harry \"le beau\" dissemines a travers tout Hammerfest.");
+			"Les sucreries n\'ont plus aucun secret pour Igor. Il saura, a compter de ce jour, debusquer les delices legendaires de Harry \'le beau\' dissemines a travers tout Hammerfest.");
 	quest->addRequireItemId(177, 2);
 	quest->addRequireItemId(202, 2);
 	quest->addRequireItemId(206, 2);
@@ -1601,7 +1605,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(44, false, false, false, false, chapeaux, -1, -1, -1, -1, "Chapelier fou",
-			"Igor s\'est decouvert une passion nouvelle pour les coiffes. Vous pourrez maintenant appuyer sur la touche \"D\" pendant la partie pour changer de deguisement !");
+			"Igor s\'est decouvert une passion nouvelle pour les coiffes. Vous pourrez maintenant appuyer sur la touche \'D\' pendant la partie pour changer de deguisement !");
 	quest->addRequireItemId(72, 5);
 	quest->addRequireItemId(91, 5);
 	quest->addRequireItemId(92, 10);
@@ -1609,7 +1613,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(45, false, false, false, false, poney, -1, -1, -1, -1, "Poney eco-terroriste",
-					"Igor a accumule suffisament de richesses pour financer ses activites louches en Hammerfest. Il peut maintenant se deguiser en appuyant sur la touche \"D\" pendant la partie ! Et sinon, si ca n\'est pas deja fait, avez-vous deja visite www.dinoparc.com ?");
+					"Igor a accumule suffisament de richesses pour financer ses activites louches en Hammerfest. Il peut maintenant se deguiser en appuyant sur la touche \'D\' pendant la partie ! Et sinon, si ca n\'est pas deja fait, avez-vous deja visite www.dinoparc.com ?");
 	quest->addRequireItemId(171, 10);
 	quest->addRequireItemId(172, 10);
 	quest->addRequireItemId(95, 3);
@@ -1617,13 +1621,13 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(46, false, false, false, false, pioupiou, -1, -1, -1, -1, "Le Pioupiouz est en toi",
-					"Il fallait s\'y attendre: a force de ramasser n\'importe quoi, Igor s\'est fait gober par un Pioupiou ! Appuyez sur la touche \"D\" pendant la partie pour changer de deguisement (au fait, vous connaissiez le site www.pioupiouz.com ?)");
+					"Il fallait s\'y attendre: a force de ramasser n\'importe quoi, Igor s\'est fait gober par un Pioupiou ! Appuyez sur la touche \'D\' pendant la partie pour changer de deguisement (au fait, vous connaissiez le site www.pioupiouz.com ?)");
 	quest->addRequireItemId(112, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(47, false, false, false, false, champignon, -1, -1, -1, -1, "Chasseur de champignons",
-					"Comme son homologue italien (plombier de son etat), Igor a une passion bizarre pour les champignons. Il pourra desormais se deguiser en appuyant sur la touche \"D\" pendant la partie !");
+					"Comme son homologue italien (plombier de son etat), Igor a une passion bizarre pour les champignons. Il pourra desormais se deguiser en appuyant sur la touche \'D\' pendant la partie !");
 	quest->addRequireItemId(14, 1);
 	quest->addRequireItemId(15, 1);
 	quest->addRequireItemId(16, 1);
@@ -1633,7 +1637,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(48, false, false, false, false, cape, -1, -1, -1, -1, "Successeur de Tuberculoz",
-					"Igor semble avoir... change.. Son regard est maintenant plus froid. Il affiche une mine sombre et se cache maintenant sous une grande cape pourpre. Petit a petit, il devient ce qu\'il a combattu... Vous pouvez maintenant revetir l\'apparence du sorcier Tuberculoz en appuyant sur \"D\" pendant la partie !");
+					"Igor semble avoir... change.. Son regard est maintenant plus froid. Il affiche une mine sombre et se cache maintenant sous une grande cape pourpre. Petit a petit, il devient ce qu\'il a combattu... Vous pouvez maintenant revetir l\'apparence du sorcier Tuberculoz en appuyant sur \'D\' pendant la partie !");
 	quest->addRequireItemId(113, 1);
 	quests.push_back(quest);
 
@@ -1646,7 +1650,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(50, false, false, false, false, -1, rigordangerous, -1, -1, -1, "Rigor Dangerous",
-			"Vous avez decouvert dans votre aventure une vieille cle rouillee mysterieuse ! Elle comporte une petite mention gravee: \"Rick\". Sans doute son ancien proprietaire...");
+			"Vous avez decouvert dans votre aventure une vieille cle rouillee mysterieuse ! Elle comporte une petite mention gravee: \'Rick\'. Sans doute son ancien proprietaire...");
 	quest->addRequireItemId(305, 1);
 	quests.push_back(quest);
 
@@ -1729,7 +1733,7 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(63, false, false, false, false, -1, -1, mirror, -1, -1, "Miroir, mon beau miroir",
-			"Le Miroir Bancal que vous avez trouve en jeu vous permet maintenant de voir les choses sous un angle nouveau. L\'option de jeu \"Miroir\" a ete debloquee !");
+			"Le Miroir Bancal que vous avez trouve en jeu vous permet maintenant de voir les choses sous un angle nouveau. L\'option de jeu \'Miroir\' a ete debloquee !");
 	quest->addRequireItemId(333, 1);
 	quests.push_back(quest);
 
@@ -1758,18 +1762,18 @@ void ItemFileSystem::buildDatabase() {
 	quests.push_back(quest);
 
 	quest = new Quest(68, false, false, false, false, -1, -1, mirrormulti, -1, -1, "Miroir, NOTRE beau miroir",
-			"Avec le Miroir des Sables, vous pouvez maintenant voir les choses sous un angle nouveau mais a deux ! L\'option de jeu \"Miroir\" a ete debloquee pour le mode Multi Cooperatif !");
+			"Avec le Miroir des Sables, vous pouvez maintenant voir les choses sous un angle nouveau mais a deux ! L\'option de jeu \'Miroir\' a ete debloquee pour le mode Multi Cooperatif !");
 	quest->addRequireItemId(339, 1);
 	quests.push_back(quest);
 
 	quest = new Quest(69, false, false, false, false, -1, -1, nightmaremulti, -1, -1, "Mode double cauchemar",
-			"De toute evidence, vous etes capables de grandes choses a deux ! L\'option de jeu \"Cauchemar\" a ete debloquee pour le mode Multi Cooperatif !");
+			"De toute evidence, vous etes capables de grandes choses a deux ! L\'option de jeu \'Cauchemar\' a ete debloquee pour le mode Multi Cooperatif !");
 	quest->addRequireItemId(340, 1);
 	quests.push_back(quest);
 
 	quest =
 			new Quest(70, false, false, false, false, -1, -1, lifesharing, -1, -1, "Une grande Amitie",
-					"Mieux vaut tard que jamais ! Igor et Sandy ont enfin compris qu\'il valait mieux s\'entraider s\'ils voulaient survivre a deux dans les Cavernes de Hammerfest. L\'option de jeu \"Partage de vies\" a ete debloquee pour le mode Multi Cooperatif ! Si cette option est activee, lorsqu\'un joueur perd sa derniere vie, il en prend une au second joueur et peut ainsi continuer la partie !");
+					"Mieux vaut tard que jamais ! Igor et Sandy ont enfin compris qu\'il valait mieux s\'entraider s\'ils voulaient survivre a deux dans les Cavernes de Hammerfest. L\'option de jeu \'Partage de vies\' a ete debloquee pour le mode Multi Cooperatif ! Si cette option est activee, lorsqu\'un joueur perd sa derniere vie, il en prend une au second joueur et peut ainsi continuer la partie !");
 	quest->addRequireItemId(341, 2);
 	quests.push_back(quest);
 
@@ -1781,7 +1785,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(72, false, false, false, false, -1, -1, ninja, -1, -1, "Shinobi do !",
-					"Igor a rempli sa quete initiatique et maitrise maintenant a la perfection un grand nombre d\'armes du Ninjutsu ! Mais comme son nouveau de l\'honneur le lui interdit, il ne pourra pas s\'en servir. Toutefois, il pourra mettre a l\'epreuve ses competences grâce a l\'option de jeu \"Ninjutsu\" qu\'il vient de debloquer pour le mode Aventure !");
+					"Igor a rempli sa quete initiatique et maitrise maintenant a la perfection un grand nombre d\'armes du Ninjutsu ! Mais comme son nouveau de l\'honneur le lui interdit, il ne pourra pas s\'en servir. Toutefois, il pourra mettre a l\'epreuve ses competences grâce a l\'option de jeu \'Ninjutsu\' qu\'il vient de debloquer pour le mode Aventure !");
 	quest->addRequireItemId(343, 5);
 	quest->addRequireItemId(344, 2);
 	quest->addRequireItemId(345, 7);
@@ -1799,7 +1803,7 @@ void ItemFileSystem::buildDatabase() {
 
 	quest =
 			new Quest(74, false, false, false, false, -1, -1, bombexpert, -1, -1, "Maitre des Bombes",
-					"Vous etes l\'expert repute dans tout Hammerfest en matiere d\'explosifs. Et pour montrer qu\'on ne vous ne la fait pas, a vous, l\'option \"Explosifs instables\" a ete debloquee pour le mode Aventure ! Gare a TOUT ce qui explose en jeu ! De plus, vous pouvez pousser toutes vos bombes plus loin en avancant en meme temps que vous la frappez.");
+					"Vous etes l\'expert repute dans tout Hammerfest en matiere d\'explosifs. Et pour montrer qu\'on ne vous ne la fait pas, a vous, l\'option \'Explosifs instables\' a ete debloquee pour le mode Aventure ! Gare a TOUT ce qui explose en jeu ! De plus, vous pouvez pousser toutes vos bombes plus loin en avancant en meme temps que vous la frappez.");
 	quest->addRequireItemId(351, 1);
 	quests.push_back(quest);
 
@@ -1810,6 +1814,10 @@ void ItemFileSystem::buildDatabase() {
 	//for (unsigned int i = 0; i < quests.size(); i++) {
 	//	quests[i]->printName();
 	//}
+
+	for (unsigned int i = 0; i < quests.size(); i++) {
+		quests[i]->printJson();
+	}
 }
 
 void ItemFileSystem::simulateGame() {
@@ -1962,3 +1970,16 @@ void ItemFileSystem::unlockSomething(Quest * tested) {
 
 }
 
+
+
+void ItemFileSystem::parseFamilys(){
+
+}
+
+void ItemFileSystem::parseItems(){
+
+}
+
+void ItemFileSystem::parseQuests(){
+
+}

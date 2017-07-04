@@ -68,11 +68,11 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	count = 0;
 	idx = 0;
 	vortex = new Vortex(1, 32, 64, 0.5, 1, true, 5);
-	platform = new Platform(1, 10, 10, true, true, 4, 51);
+	platform = new Platform(1, 9, 13, false, true, 4, 3);
 	door = new Door(1, 90, 90, 3, true, 1, 1, NULL);
 	pick = new Pick(1, 11, 11, true, pickToRight);
-	rayon = new Rayon(12, 12, 5, 6, false);
-	teleporter = new Teleporter(1, 13, 13, 5, false, 1);
+	rayon = new Rayon(10, 12, 5, 4, false);
+	teleporter = new Teleporter(1, 13, 13, 3, true, 1);
 	startGame();
 }
 

@@ -23,6 +23,7 @@ class Quest : public IdElement {
 		void addRequireItemId(int itemId, int quantity);
 		void addGiveFamilly(int famillyId);
 		void printName();
+		void printJson();
 		bool giveLife();
 		bool turnLightOn();
 	private:

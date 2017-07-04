@@ -74,3 +74,44 @@ bool Quest::giveLife() {
 bool Quest::turnLightOn() {
 	return light;
 }
+
+void Quest::printJson() {
+	fprintf(stderr, "{\"id\":%i,", id);
+	fprintf(stderr, "\"light\":%s,", light ? "true" : "false");
+	fprintf(stderr, "\"life\":%s,", life ? "true" : "false");
+	fprintf(stderr, "\"titre\":[");
+	fprintf(stderr, "{\"fr\":\"%s\"},",titre.c_str());
+	fprintf(stderr, "{\"en\":\"%s\"},",titre.c_str());
+	fprintf(stderr, "{\"es\":\"%s\"}",titre.c_str());
+	fprintf(stderr, "],");
+	fprintf(stderr, "\"description\":[");
+	fprintf(stderr, "{\"fr\":\"%s\"},",description.c_str());
+	fprintf(stderr, "{\"en\":\"%s\"},",description.c_str());
+	fprintf(stderr, "{\"es\":\"%s\"}",description.c_str());
+	fprintf(stderr, "],");
+	fprintf(stderr, "\"option\":%i,", giveOption);
+	fprintf(stderr, "\"mode\":%i,", giveMode);
+	fprintf(stderr, "\"remove\":%i,", removeFamilly);
+	fprintf(stderr, "\"family\":[");
+	for (int i = 0; i < giveFamilly.size(); i++) {
+		if (i < giveFamilly.size() - 1) {
+			fprintf(stderr, "%i,", giveFamilly[i]);
+		} else {
+			fprintf(stderr, "%i", giveFamilly[i]);
+		}
+	}
+	fprintf(stderr, "],");
+	fprintf(stderr, "\"require\":[");
+	std::map<int, int>::iterator last;
+	last = requireItemId.end();
+	--last;
+	for (std::map<int, int>::iterator it = requireItemId.begin(); it != requireItemId.end(); ++it) {
+		if (it != last) {
+			fprintf(stderr, "{\"id\":%i,\"val\":%i},", it->first,  it->second);
+		} else {
+			fprintf(stderr, "{\"id\":%i,\"val\":%i}", it->first,  it->second);
+		}
+	}
+	fprintf(stderr, "]");
+	fprintf(stderr, "},\n");
+}

@@ -10,6 +10,10 @@
 #include <vector>
 #include <algorithm>
 
+
+#ifndef __MYCLASS_GAME
+#define __MYCLASS_GAME
+
 #include "../utils/Sound.h"
 #include "../utils/Sprite.h"
 #include "../level/Vortex.h"
@@ -18,9 +22,6 @@
 #include "../level/Pick.h"
 #include "../level/Rayon.h"
 #include "../level/Teleporter.h"
-
-#ifndef __MYCLASS_GAME
-#define __MYCLASS_GAME
 
 #define gameTick 25
 

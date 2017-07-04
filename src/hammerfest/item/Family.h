@@ -12,6 +12,7 @@ class Family : public IdElement{
 		Family(int id, const char * name);
 		void addItem(int itemId);
 		void printName();
+		void printJson();
 		std::vector<int> getItems();
 	private:
 		char name[50];

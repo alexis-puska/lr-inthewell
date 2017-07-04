@@ -23,6 +23,7 @@ class Item : public IdElement{
 		int getValue();
 		SDL_Surface * getSprite();
 		void printName();
+		void printJson();
 	private:
 		std::string name;
 		int value;

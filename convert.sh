@@ -52,6 +52,9 @@ cd ../../resources/json
 xxd -i -c 64 json_image_parser.json ../../src/hammerfest/utils/resources/json_image_parser.h
 xxd -i -c 64 json_level_parser.json ../../src/hammerfest/utils/resources/json_level_parser.h
 xxd -i -c 64 json_text_parser.json ../../src/hammerfest/utils/resources/json_text_parser.h
+xxd -i -c 64 json_family_parser.json ../../src/hammerfest/utils/resources/json_family_parser.h
+xxd -i -c 64 json_item_parser.json ../../src/hammerfest/utils/resources/json_item_parser.h
+xxd -i -c 64 json_quest_parser.json ../../src/hammerfest/utils/resources/json_quest_parser.h
 
 #font
 cd ../../resources/font

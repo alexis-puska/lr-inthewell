@@ -9,6 +9,11 @@
 #include <stdio.h>
 #include <sstream>
 
+
+
+#ifndef __MYCLASS_HAMMERFEST
+#define __MYCLASS_HAMMERFEST
+
 #include "game/Game.h"
 #include "utils/Sound.h"
 #include "utils/Sprite.h"
@@ -17,8 +22,6 @@
 #include "item/ItemFileSystem.h"
 #include "utils/LevelService.h"
 
-#ifndef __MYCLASS_HAMMERFEST
-#define __MYCLASS_HAMMERFEST
 class Hammerfest {
 
 	public:
