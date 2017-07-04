@@ -7,6 +7,10 @@ Quest::~Quest() {
 
 Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, int famillyId, std::string titre, std::string) :
 		IdElement(id) {
+	this->bombe = bombe;
+	this->bombeUp = bombeUp;
+	this->disguise = disguise;
+	this->key = key;
 	this->titre = titre;
 	this->description = description;
 	this->giveOption = giveOption;
@@ -18,6 +22,10 @@ Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disgui
 }
 Quest::Quest(int id, bool bombe, bool bombeUp, bool life, bool light, int disguise, int key, int giveOption, int giveMode, int removeFamilly, std::string titre, std::string description) :
 		IdElement(id) {
+	this->bombe = bombe;
+	this->bombeUp = bombeUp;
+	this->disguise = disguise;
+	this->key = key;
 	this->titre = titre;
 	this->description = description;
 	this->giveOption = giveOption;
@@ -92,8 +100,12 @@ void Quest::printJson() {
 	fprintf(stderr, "\"option\":%i,", giveOption);
 	fprintf(stderr, "\"mode\":%i,", giveMode);
 	fprintf(stderr, "\"remove\":%i,", removeFamilly);
+	fprintf(stderr, "\"bombe\":%s,", bombe ? "true" : "false");
+	fprintf(stderr, "\"bombeUp\":%s,", bombeUp ? "true" : "false");
+	fprintf(stderr, "\"disguise\":%i,", disguise);
+	fprintf(stderr, "\"key\":%i,", key);
 	fprintf(stderr, "\"family\":[");
-	for (int i = 0; i < giveFamilly.size(); i++) {
+	for (unsigned int i = 0; i < giveFamilly.size(); i++) {
 		if (i < giveFamilly.size() - 1) {
 			fprintf(stderr, "%i,", giveFamilly[i]);
 		} else {

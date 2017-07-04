@@ -33,6 +33,10 @@ class Quest : public IdElement {
 		int giveOption;
 		int giveMode;
 		int removeFamilly;
+		bool bombe;
+		bool bombeUp;
+		int disguise;
+		int key;
 		bool life;
 		bool light;
 		std::vector<int> giveFamilly;

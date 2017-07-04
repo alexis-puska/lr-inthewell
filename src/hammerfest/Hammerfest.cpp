@@ -778,7 +778,7 @@ void Hammerfest::drawGameOptionLearningMenu() {
 void Hammerfest::drawGameOptionMultiMenu() {
 	if (redrawMenu) {
 		fillScreenBufferWithSurface("menu_background_2", 0);
-		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 30, "main.menu.multi.title", red, true);
+		Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 30, "menu.main.multi.title", red, true);
 		Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 70, "menu.main.multi.description", white, true);
 		for (int i = 0; i < 3; i++) {
 			if (GameConfig::Instance().getMultiOptionUnlock(i)) {

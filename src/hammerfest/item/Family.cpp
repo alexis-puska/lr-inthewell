@@ -23,7 +23,7 @@ void Family::printName() {
 
 void Family::printJson() {
 	fprintf(stderr, "{\"id\":%i,\"name\":[\n{\"fr\":\"%s\"},\n{\"en\":\"%s\"},\n{\"es\":\"%s\"}\n],\"items\":[", id, name, name, name);
-	for(int i = 0;i < items.size();i++){
+	for(unsigned int i = 0;i < items.size();i++){
 		if(i < items.size() -1){
 			fprintf(stderr, "%i,",items[i]);
 		}else{
