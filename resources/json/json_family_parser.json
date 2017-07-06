@@ -19,7 +19,7 @@
 	"name": {
 		"fr": "Destruction massive",
 		"en": "Massive destruction",
-		"es": "Destrucción masiva"
+		"es": "Destruccion masiva"
 	},
 	"items": [2, 6, 9, 12, 19, 30, 31, 36, 70, 72, 73, 75, 76, 80, 81, 86, 87, 88, 89, 90, 93, 95, 96, 99, 101, 112]
 }, {
@@ -59,7 +59,7 @@
 	"name": {
 		"fr": "Coeur 1",
 		"en": "Heart 1",
-		"es": "Corazón 1"
+		"es": "Corazon 1"
 	},
 	"items": [103]
 }, {
@@ -67,7 +67,7 @@
 	"name": {
 		"fr": "Coeur 2",
 		"en": "Heart 2",
-		"es": "Corazón 2"
+		"es": "Corazon 2"
 	},
 	"items": [104]
 }, {
@@ -75,7 +75,7 @@
 	"name": {
 		"fr": "Coeur 3",
 		"en": "Heart 3",
-		"es": "Corazón 3"
+		"es": "Corazon 3"
 	},
 	"items": [105]
 }, {
@@ -163,7 +163,7 @@
 	"name": {
 		"fr": "Petites gâteries",
 		"en": "Little treats",
-		"es": "Pequeñas travesuras"
+		"es": "Pequenas travesuras"
 	},
 	"items": [118, 121, 126, 131, 135, 145, 159, 161, 165, 166, 167, 168, 169, 287, 303]
 }, {
@@ -171,7 +171,7 @@
 	"name": {
 		"fr": "Aliments classiques",
 		"en": "Classic food",
-		"es": "Alimentos clásicos"
+		"es": "Alimentos clasicos"
 	},
 	"items": [140, 142, 143, 144, 146, 158, 187, 188, 189, 191, 192, 193, 195, 196, 197, 198, 199, 200]
 }, {
@@ -307,7 +307,7 @@
 	"name": {
 		"fr": "Les lois de la robotique",
 		"en": "Laws of Robotics",
-		"es": "Las leyes de la robótica"
+		"es": "Las leyes de la robotica"
 	},
 	"items": [288, 289, 290, 291, 292, 293, 294, 295]
 }, {
@@ -315,7 +315,7 @@
 	"name": {
 		"fr": "Trophees de baroudeur",
 		"en": "Fighter's trophies",
-		"es": "Trofeos del peleón"
+		"es": "Trofeos del peleon"
 	},
 	"items": [296, 297, 298, 299, 300, 301, 302]
 }, {
@@ -371,7 +371,7 @@
 	"name": {
 		"fr": "Materiel administratif d'El Papah",
 		"en": "Daddy's administratrive material",
-		"es": "Material administrativo del Papá"
+		"es": "Material administrativo del Papa"
 	},
 	"items": [328, 329, 330, 331, 332]
 }, {

@@ -605,10 +605,10 @@ void Hammerfest::drawQuestMenu() {
 		for (int i = 0; i < 10; i++) {
 			ss.str(std::string());
 			if (questsStarted[index] != NULL) {
-				ss << index << " / 75 - " << questsStarted[index]->getTitre();
+				ss << index << " / 75 - " << Text::Instance().getQuestTitle(index);
 				Text::Instance().drawText(screenBuffer, "verdana10pt10", 40, i * 12 + 30, ss.str().c_str(), gold, false);
 			} else if (questsCompleted[index] != NULL) {
-				ss << index << " / 75 - " << questsCompleted[index]->getTitre();
+				ss << index << " / 75 - " << Text::Instance().getQuestTitle(index);
 				Text::Instance().drawText(screenBuffer, "verdana10pt10", 40, i * 12 + 30, ss.str().c_str(), green, false);
 			} else {
 				ss << index << " / 75 - ??????????";
@@ -710,13 +710,14 @@ void Hammerfest::drawQuestMenu() {
 			int idx = 0;
 			int offsetY = 0;
 			int lastSpace = 0;
+			std::string description = Text::Instance().getQuestDescription(quest->getId());
 			while (true) {
-				if ((unsigned) idx >= quest->getDescription().size() - 1) {
-					Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 352 + offsetY * 12, quest->getDescription().substr(lastSpace, idx - lastSpace).c_str(), white, true);
+				if ((unsigned) idx >= description.size() - 1) {
+					Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 352 + offsetY * 12, description.substr(lastSpace, idx - lastSpace).c_str(), white, true);
 					break;
-				} else if (quest->getDescription().at(idx) == ' ') {
+				} else if (description.at(idx) == ' ') {
 					if (idx - lastSpace > 55) {
-						Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 352 + offsetY * 12, quest->getDescription().substr(lastSpace, idx - lastSpace).c_str(), white, true);
+						Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 352 + offsetY * 12, description.substr(lastSpace, idx - lastSpace).c_str(), white, true);
 						lastSpace = idx;
 						offsetY++;
 

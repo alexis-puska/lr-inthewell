@@ -33,7 +33,7 @@
 	"name": {
 		"fr": "Ballon de banquise",
 		"en": "Beach Ball",
-		"es": "Balón de playa"
+		"es": "Balon de playa"
 	},
 	"rarity": 2,
 	"value": -1,
@@ -43,7 +43,7 @@
 	"name": {
 		"fr": "Lampe Fetvoveu",
 		"en": "Magic Lamp",
-		"es": "Lámpara Pidedeseo"
+		"es": "Lampara Pidedeseo"
 	},
 	"rarity": 1,
 	"value": -1,
@@ -53,7 +53,7 @@
 	"name": {
 		"fr": "Lampe Leveussonfe",
 		"en": "Black Magic Lamp",
-		"es": "Lámpara Negra"
+		"es": "Lampara Negra"
 	},
 	"rarity": 2,
 	"value": -1,
@@ -103,7 +103,7 @@
 	"name": {
 		"fr": "Telephone-phone-phone",
 		"en": "Telephone",
-		"es": "Teléfono-no-no"
+		"es": "Telefono-no-no"
 	},
 	"rarity": 1,
 	"value": -1,
@@ -143,7 +143,7 @@
 	"name": {
 		"fr": "Delice hallucinogene bleu",
 		"en": "Blue Hallucinogenic Mushroom",
-		"es": "Delicia alucinógena azul"
+		"es": "Delicia alucinogena azul"
 	},
 	"rarity": 2,
 	"value": -1,
@@ -163,7 +163,7 @@
 	"name": {
 		"fr": "Figonassee grimpante",
 		"en": "Green Beer Mushroom",
-		"es": "Pequeña Walalu de los bosques"
+		"es": "Pequena Walalu de los bosques"
 	},
 	"rarity": 5,
 	"value": -1,
@@ -203,7 +203,7 @@
 	"name": {
 		"fr": "Coffre d'Anarchipel",
 		"en": "Treasure Chest",
-		"es": "Cofre de Anarchipiélago"
+		"es": "Cofre de Anarchipielago"
 	},
 	"rarity": 1,
 	"value": -1,
@@ -213,7 +213,7 @@
 	"name": {
 		"fr": "Enceinte Bessel-Son",
 		"en": "Jukebox Igor",
-		"es": "Altavoz Bájaloya"
+		"es": "Altavoz Bajaloya"
 	},
 	"rarity": 2,
 	"value": -1,
@@ -333,7 +333,7 @@
 	"name": {
 		"fr": "As de trefle",
 		"en": "Ace of Clubs",
-		"es": "As de tréboles"
+		"es": "As de treboles"
 	},
 	"rarity": 2,
 	"value": -1,
@@ -383,7 +383,7 @@
 	"name": {
 		"fr": "Totem des dinoz",
 		"en": "Dino Totem Pole",
-		"es": "Tótem de los Dinos"
+		"es": "Totem de los Dinos"
 	},
 	"rarity": 3,
 	"value": -1,
@@ -463,7 +463,7 @@
 	"name": {
 		"fr": "Scorpion",
 		"en": "Scorpio",
-		"es": "Escorpión"
+		"es": "Escorpion"
 	},
 	"rarity": 3,
 	"value": -1,
@@ -583,7 +583,7 @@
 	"name": {
 		"fr": "Elixir du Scorpion",
 		"en": "Potion of Scorpio",
-		"es": "Elixir de Escorpión"
+		"es": "Elixir de Escorpion"
 	},
 	"rarity": 3,
 	"value": -1,
@@ -593,7 +593,7 @@
 	"name": {
 		"fr": "Elixir du Cancer",
 		"en": "Potion of Cancer",
-		"es": "Elixir de Cáncer"
+		"es": "Elixir de Cancer"
 	},
 	"rarity": 3,
 	"value": -1,
@@ -613,7 +613,7 @@
 	"name": {
 		"fr": "Elixir des Gemeaux",
 		"en": "Potion of Gemini",
-		"es": "Elixir de Géminis"
+		"es": "Elixir de Geminis"
 	},
 	"rarity": 3,
 	"value": -1,
@@ -703,7 +703,7 @@
 	"name": {
 		"fr": "Trefle commun",
 		"en": "Four-Leaf Clover",
-		"es": "Trébol común"
+		"es": "Trebol comun"
 	},
 	"rarity": 1,
 	"value": -1,
@@ -713,7 +713,7 @@
 	"name": {
 		"fr": "Chaud devant !",
 		"en": "Dragon's Breath",
-		"es": "¡Emana calor!"
+		"es": "Emana calor!"
 	},
 	"rarity": 1,
 	"value": -1,
@@ -733,7 +733,7 @@
 	"name": {
 		"fr": "Feuille de sinopee",
 		"en": "Leaf",
-		"es": "Hoja de árbol"
+		"es": "Hoja de arbol"
 	},
 	"rarity": 2,
 	"value": -1,
@@ -763,7 +763,7 @@
 	"name": {
 		"fr": "Esprit des arbres",
 		"en": "Spirit of Trees",
-		"es": "Espíritu de los árboles"
+		"es": "Espíritu de los arboles"
 	},
 	"rarity": 3,
 	"value": -1,
@@ -773,7 +773,7 @@
 	"name": {
 		"fr": "Lucidjane a crete bleue",
 		"en": "Blue Crested Fish",
-		"es": "Lucidjané con cresta azul"
+		"es": "Lucidjane con cresta azul"
 	},
 	"rarity": 2,
 	"value": -1,
@@ -813,7 +813,7 @@
 	"name": {
 		"fr": "Perle nacree des murlocs",
 		"en": "Murloc's Pearl",
-		"es": "Perla de nácar de los murlocs"
+		"es": "Perla de nacar de los murlocs"
 	},
 	"rarity": 2,
 	"value": -1,
@@ -823,7 +823,7 @@
 	"name": {
 		"fr": "Jugement avant-dernier",
 		"en": "Eye of Providence",
-		"es": "Juicio penúltimo"
+		"es": "Juicio penultimo"
 	},
 	"rarity": 2,
 	"value": -1,
@@ -843,7 +843,7 @@
 	"name": {
 		"fr": "Talisman scorpide",
 		"en": "Scorpion Talisman",
-		"es": "Talismán escorpión"
+		"es": "Talisman escorpion"
 	},
 	"rarity": 3,
 	"value": -1,
@@ -863,7 +863,7 @@
 	"name": {
 		"fr": "Surprise de paille",
 		"en": "Ghost Candy",
-		"es": "Sorpresa fantasmagórica"
+		"es": "Sorpresa fantasmagorica"
 	},
 	"rarity": 4,
 	"value": -1,
@@ -883,7 +883,7 @@
 	"name": {
 		"fr": "Pokute",
 		"en": "Hare Nochi Guuuuu!",
-		"es": "Pokuté"
+		"es": "Pokute"
 	},
 	"rarity": 3,
 	"value": -1,
@@ -933,7 +933,7 @@
 	"name": {
 		"fr": "Boit'a'messages",
 		"en": "Mail Box",
-		"es": "Buzón zon"
+		"es": "Buzon zon"
 	},
 	"rarity": 3,
 	"value": -1,
@@ -953,7 +953,7 @@
 	"name": {
 		"fr": "Cagnotte de Tuberculoz",
 		"en": "Tuber's Bag",
-		"es": "Saco de Tubérculo"
+		"es": "Saco de Tuberculo"
 	},
 	"rarity": 5,
 	"value": -1,
@@ -1053,7 +1053,7 @@
 	"name": {
 		"fr": "Vie epique",
 		"en": "Final Destiny",
-		"es": "Vida épica"
+		"es": "Vida epica"
 	},
 	"rarity": 3,
 	"value": -1,
@@ -1133,7 +1133,7 @@
 	"name": {
 		"fr": "Cape de Tuberculoz",
 		"en": "The Robe of Tuber",
-		"es": "Capa de Tubérculo"
+		"es": "Capa de Tuberculo"
 	},
 	"rarity": 0,
 	"value": -1,
@@ -1203,7 +1203,7 @@
 	"name": {
 		"fr": "Canne de Bobble",
 		"en": "Candy Cane",
-		"es": "Bastón de Bobble"
+		"es": "Baston de Bobble"
 	},
 	"rarity": 7,
 	"value": 100000,
@@ -1233,7 +1233,7 @@
 	"name": {
 		"fr": "Bonbon rosamelle-praline",
 		"en": "Cherry Candy",
-		"es": "Caramelo rosa-praliné"
+		"es": "Caramelo rosa-praline"
 	},
 	"rarity": 2,
 	"value": 2500,
@@ -1423,7 +1423,7 @@
 	"name": {
 		"fr": "Liquide etrange",
 		"en": "Strange Liquid",
-		"es": "Líquido extraño"
+		"es": "Líquido extrano"
 	},
 	"rarity": 3,
 	"value": 20000,
@@ -1443,7 +1443,7 @@
 	"name": {
 		"fr": "Gland gnan-gnan",
 		"en": "Potato",
-		"es": "Gran ñan-ñan"
+		"es": "Gran nan-nan"
 	},
 	"rarity": 1,
 	"value": 1300,
@@ -1533,7 +1533,7 @@
 	"name": {
 		"fr": "Blob intrusif",
 		"en": "Jello on a Stick",
-		"es": "Aperitivo de Blandiblú"
+		"es": "Aperitivo de Blandiblu"
 	},
 	"rarity": 2,
 	"value": 2500,
@@ -1543,7 +1543,7 @@
 	"name": {
 		"fr": "Gouda mou",
 		"en": "Gouda on a Stick",
-		"es": "Queso holandés blando"
+		"es": "Queso holandes blando"
 	},
 	"rarity": 3,
 	"value": 5000,
@@ -1573,7 +1573,7 @@
 	"name": {
 		"fr": "Monsieur radis",
 		"en": "Mr. Radish",
-		"es": "Señor rábano"
+		"es": "Senor rabano"
 	},
 	"rarity": 4,
 	"value": 50000,
@@ -1583,7 +1583,7 @@
 	"name": {
 		"fr": "Sushi thon",
 		"en": "Fish Sushi",
-		"es": "Sushi de atún"
+		"es": "Sushi de atun"
 	},
 	"rarity": 3,
 	"value": 9000,
@@ -1613,7 +1613,7 @@
 	"name": {
 		"fr": "Sorbet au plastique",
 		"en": "Plastic Sorbet",
-		"es": "Polo de plástico"
+		"es": "Polo de plastico"
 	},
 	"rarity": 1,
 	"value": 900,
@@ -1633,7 +1633,7 @@
 	"name": {
 		"fr": "Petale mysterieuse",
 		"en": "Cashew",
-		"es": "Pétalo misterioso"
+		"es": "Petalo misterioso"
 	},
 	"rarity": 2,
 	"value": 3000,
@@ -1723,7 +1723,7 @@
 	"name": {
 		"fr": "Gros tas de sous",
 		"en": "Big Unemployment",
-		"es": "Un montón de dinero"
+		"es": "Un monton de dinero"
 	},
 	"rarity": 4,
 	"value": 75000,
@@ -1743,7 +1743,7 @@
 	"name": {
 		"fr": "Doigts-de-tuberculoz",
 		"en": "French Fries",
-		"es": "Dedos-de-Tubérculo"
+		"es": "Dedos-de-Tuberculo"
 	},
 	"rarity": 1,
 	"value": 900,
@@ -1763,7 +1763,7 @@
 	"name": {
 		"fr": "Canele du sud-ouest",
 		"en": "Hazelnut Chocolate",
-		"es": "Canelé de Burdeos"
+		"es": "Canele de Burdeos"
 	},
 	"rarity": 3,
 	"value": 15500,
@@ -1962,8 +1962,8 @@
 	"id": 196,
 	"name": {
 		"fr": "Croissant confit",
-		"en": "",
-		"es": ""
+		"en": "Croissant",
+		"es": "Croissant confitado"
 	},
 	"rarity": 5,
 	"value": 1500,
@@ -1972,8 +1972,8 @@
 	"id": 197,
 	"name": {
 		"fr": "Haricot paresseux",
-		"en": "",
-		"es": ""
+		"en": "Beans",
+		"es": "Judía perezosa"
 	},
 	"rarity": 1,
 	"value": 800,
@@ -1982,8 +1982,8 @@
 	"id": 198,
 	"name": {
 		"fr": "Lapin-choco",
-		"en": "",
-		"es": ""
+		"en": "Chocolate Bunny",
+		"es": "Conejo de chocolate"
 	},
 	"rarity": 3,
 	"value": 1200,
@@ -1992,8 +1992,8 @@
 	"id": 199,
 	"name": {
 		"fr": "Biloo",
-		"en": "",
-		"es": ""
+		"en": "Beer",
+		"es": "Hidromiel de los Bosques"
 	},
 	"rarity": 1,
 	"value": 900,
@@ -2002,8 +2002,8 @@
 	"id": 200,
 	"name": {
 		"fr": "Graine de pechume en gelee",
-		"en": "",
-		"es": ""
+		"en": "Jelly with Corn",
+		"es": "Gota viscosa"
 	},
 	"rarity": 2,
 	"value": 3000,
@@ -2012,8 +2012,8 @@
 	"id": 201,
 	"name": {
 		"fr": "Sombrino aux amandes",
-		"en": "",
-		"es": ""
+		"en": "Chocolate with Almond",
+		"es": "Bombon de nueces"
 	},
 	"rarity": 3,
 	"value": 1650,
@@ -2022,8 +2022,8 @@
 	"id": 202,
 	"name": {
 		"fr": "Emi-Praline",
-		"en": "",
-		"es": ""
+		"en": "Dark Chocolate",
+		"es": "Emi-Praline"
 	},
 	"rarity": 3,
 	"value": 1500,
@@ -2032,8 +2032,8 @@
 	"id": 203,
 	"name": {
 		"fr": "Frogmaliet aux pepites de chocolat",
-		"en": "",
-		"es": ""
+		"en": "Belgium Chocolate",
+		"es": "Bombon con pepitas de chocolate"
 	},
 	"rarity": 3,
 	"value": 1600,
@@ -2042,8 +2042,8 @@
 	"id": 204,
 	"name": {
 		"fr": "Yumi au cafe",
-		"en": "",
-		"es": ""
+		"en": "White Chocolate with Coffee Bean",
+		"es": "Yumi de cafe"
 	},
 	"rarity": 3,
 	"value": 1800,
@@ -2052,8 +2052,8 @@
 	"id": 205,
 	"name": {
 		"fr": "Bouchee mielleuse nappee au gel de Vodka",
-		"en": "",
-		"es": ""
+		"en": "Vodka Chocolate",
+		"es": "Esponjita de gel de Vodka"
 	},
 	"rarity": 3,
 	"value": 1700,
@@ -2062,8 +2062,8 @@
 	"id": 206,
 	"name": {
 		"fr": "Escargot au chocolat persille",
-		"en": "",
-		"es": ""
+		"en": "Snail Chocolate",
+		"es": "Caracol de chocolate de pasta de queso"
 	},
 	"rarity": 3,
 	"value": 1750,
@@ -2072,8 +2072,8 @@
 	"id": 207,
 	"name": {
 		"fr": "Fossile de cacao marbre au fois gras",
-		"en": "",
-		"es": ""
+		"en": "Marble Chocolate",
+		"es": "Fosil de chocolate de marbol de foie gras"
 	},
 	"rarity": 3,
 	"value": 1550,
@@ -2082,8 +2082,8 @@
 	"id": 208,
 	"name": {
 		"fr": "Cerisot marine a la biere",
-		"en": "",
-		"es": ""
+		"en": "Cerisot Marinated in Beer",
+		"es": "Caramelo marinado a la cerveza"
 	},
 	"rarity": 3,
 	"value": 3000,
@@ -2092,8 +2092,8 @@
 	"id": 209,
 	"name": {
 		"fr": "Jambon de Bayonne",
-		"en": "",
-		"es": ""
+		"en": "Raw Ham",
+		"es": "Jamon"
 	},
 	"rarity": 2,
 	"value": 12000,
@@ -2102,8 +2102,8 @@
 	"id": 210,
 	"name": {
 		"fr": "Saucisson entame",
-		"en": "",
-		"es": ""
+		"en": "Sliced Sausage",
+		"es": "Lomo embuchado de jabugo"
 	},
 	"rarity": 2,
 	"value": 6000,
@@ -2112,8 +2112,8 @@
 	"id": 211,
 	"name": {
 		"fr": "Raide red reste",
-		"en": "",
-		"es": ""
+		"en": "Red Remains",
+		"es": "Mortadela torcida"
 	},
 	"rarity": 1,
 	"value": 800,
@@ -2122,8 +2122,8 @@
 	"id": 212,
 	"name": {
 		"fr": "Torchon madrangeais au sirop d'erable",
-		"en": "",
-		"es": ""
+		"en": "Maple Syrup Roll",
+		"es": "Bacon al sirope de fresa"
 	},
 	"rarity": 1,
 	"value": 500,
@@ -2132,8 +2132,8 @@
 	"id": 213,
 	"name": {
 		"fr": "Saucisson de marcassin sauvage",
-		"en": "",
-		"es": ""
+		"en": "Blood Sausage",
+		"es": "Salchichon de jabato salvaje"
 	},
 	"rarity": 2,
 	"value": 4000,
@@ -2142,8 +2142,8 @@
 	"id": 214,
 	"name": {
 		"fr": "Tranches de Jaret de Kangourou",
-		"en": "",
-		"es": ""
+		"en": "Kangaroo Liver",
+		"es": "Rebanada de Canguro"
 	},
 	"rarity": 1,
 	"value": 1200,
@@ -2152,8 +2152,8 @@
 	"id": 215,
 	"name": {
 		"fr": "Saucissaille de St-Morgelet",
-		"en": "",
-		"es": ""
+		"en": "Sausage of St.Morgelet",
+		"es": "Salchichon de la Sierra de Aracena"
 	},
 	"rarity": 1,
 	"value": 1600,
@@ -2162,8 +2162,8 @@
 	"id": 216,
 	"name": {
 		"fr": "Pate d'ongles au truffes",
-		"en": "",
-		"es": ""
+		"en": "Head Cheese",
+		"es": "Pavo trufado sin cabello de angel"
 	},
 	"rarity": 3,
 	"value": 400,
@@ -2172,8 +2172,8 @@
 	"id": 217,
 	"name": {
 		"fr": "Saucisson maudit scelle",
-		"en": "",
-		"es": ""
+		"en": "Squished Sausage",
+		"es": "Salchichon maldito"
 	},
 	"rarity": 4,
 	"value": 16000,
@@ -2182,8 +2182,8 @@
 	"id": 218,
 	"name": {
 		"fr": "Manquereau-sauce-au-citron",
-		"en": "",
-		"es": ""
+		"en": "Lemon Canned-Fish",
+		"es": "Lata de atun en aceite de oliva"
 	},
 	"rarity": 4,
 	"value": 2500,
@@ -2192,8 +2192,8 @@
 	"id": 219,
 	"name": {
 		"fr": "Mini-saucisses en boite",
-		"en": "",
-		"es": ""
+		"en": "Canned Sliced Sausages",
+		"es": "Minisalchichas en conserva"
 	},
 	"rarity": 2,
 	"value": 575,
@@ -2202,8 +2202,8 @@
 	"id": 220,
 	"name": {
 		"fr": "Haricots blanc",
-		"en": "",
-		"es": ""
+		"en": "White Beans",
+		"es": "Judías blancas"
 	},
 	"rarity": 2,
 	"value": 575,
@@ -2212,8 +2212,8 @@
 	"id": 221,
 	"name": {
 		"fr": "Lychees premier prix",
-		"en": "",
-		"es": ""
+		"en": "Canned Lychees",
+		"es": "Litchis incaducables"
 	},
 	"rarity": 2,
 	"value": 575,
@@ -2222,8 +2222,8 @@
 	"id": 222,
 	"name": {
 		"fr": "Zion's Calamar",
-		"en": "",
-		"es": ""
+		"en": "Zion's Cheese",
+		"es": "Fabada asturiana en conserva"
 	},
 	"rarity": 1,
 	"value": 175,
@@ -2232,8 +2232,8 @@
 	"id": 223,
 	"name": {
 		"fr": "Aubergines au sirop",
-		"en": "",
-		"es": ""
+		"en": "Pâte",
+		"es": "Conserva de lentejas madrilenas con chorizo"
 	},
 	"rarity": 1,
 	"value": 175,
@@ -2242,8 +2242,8 @@
 	"id": 224,
 	"name": {
 		"fr": "Camembert",
-		"en": "",
-		"es": ""
+		"en": "Mozzarella Cheese",
+		"es": "Camembert"
 	},
 	"rarity": 1,
 	"value": 25,
@@ -2252,8 +2252,8 @@
 	"id": 225,
 	"name": {
 		"fr": "Emmental",
-		"en": "",
-		"es": ""
+		"en": "Emmental Cheese",
+		"es": "Emmental"
 	},
 	"rarity": 1,
 	"value": 75,
@@ -2262,8 +2262,8 @@
 	"id": 226,
 	"name": {
 		"fr": "Fromage verni",
-		"en": "",
-		"es": ""
+		"en": "Edam Cheese",
+		"es": "Queso barnizado"
 	},
 	"rarity": 2,
 	"value": 225,
@@ -2272,8 +2272,8 @@
 	"id": 227,
 	"name": {
 		"fr": "Roquefort",
-		"en": "",
-		"es": ""
+		"en": "Blue Cheese",
+		"es": "Roquefort"
 	},
 	"rarity": 2,
 	"value": 250,
@@ -2282,8 +2282,8 @@
 	"id": 228,
 	"name": {
 		"fr": "Fromage frais vigne",
-		"en": "",
-		"es": ""
+		"en": "Swiss Cheese",
+		"es": "Queso fresco"
 	},
 	"rarity": 2,
 	"value": 400,
@@ -2292,8 +2292,8 @@
 	"id": 229,
 	"name": {
 		"fr": "Pâte dessert fromagee",
-		"en": "",
-		"es": ""
+		"en": "Cheesecake",
+		"es": "Quesito"
 	},
 	"rarity": 2,
 	"value": 325,
@@ -2302,8 +2302,8 @@
 	"id": 230,
 	"name": {
 		"fr": "Saladou",
-		"en": "",
-		"es": ""
+		"en": "Lettuce",
+		"es": "Ensalado"
 	},
 	"rarity": 2,
 	"value": 700,
@@ -2312,8 +2312,8 @@
 	"id": 231,
 	"name": {
 		"fr": "Poire d'eau",
-		"en": "",
-		"es": ""
+		"en": "Leek",
+		"es": "Puerro de agua"
 	},
 	"rarity": 2,
 	"value": 800,
@@ -2322,8 +2322,8 @@
 	"id": 232,
 	"name": {
 		"fr": "Cacahuete mauve et juteuse",
-		"en": "",
-		"es": ""
+		"en": "Eggplant",
+		"es": "Cacahuete aceitoso de malva"
 	},
 	"rarity": 4,
 	"value": 3700,
@@ -2332,8 +2332,8 @@
 	"id": 233,
 	"name": {
 		"fr": "Pommes de pierre",
-		"en": "",
-		"es": ""
+		"en": "Walnut",
+		"es": "Manzana de piedra"
 	},
 	"rarity": 2,
 	"value": 200,
@@ -2342,8 +2342,8 @@
 	"id": 234,
 	"name": {
 		"fr": "Patates douces",
-		"en": "",
-		"es": ""
+		"en": "Hazelnut",
+		"es": "Patatas dulces"
 	},
 	"rarity": 2,
 	"value": 400,
@@ -2352,8 +2352,8 @@
 	"id": 235,
 	"name": {
 		"fr": "Matraque bio",
-		"en": "",
-		"es": ""
+		"en": "Cucumber",
+		"es": "Porra bio"
 	},
 	"rarity": 3,
 	"value": 700,
@@ -2362,8 +2362,8 @@
 	"id": 236,
 	"name": {
 		"fr": "Tomate pacifique",
-		"en": "",
-		"es": ""
+		"en": "Tomato",
+		"es": "Tomate pacífico"
 	},
 	"rarity": 1,
 	"value": 500,
@@ -2372,8 +2372,8 @@
 	"id": 237,
 	"name": {
 		"fr": "Radix",
-		"en": "",
-		"es": ""
+		"en": "Radish",
+		"es": "Rabanox"
 	},
 	"rarity": 1,
 	"value": 600,
@@ -2382,8 +2382,8 @@
 	"id": 238,
 	"name": {
 		"fr": "Haricots verts",
-		"en": "",
-		"es": ""
+		"en": "Green Beans",
+		"es": "Judías verdes"
 	},
 	"rarity": 3,
 	"value": 15,
@@ -2392,8 +2392,8 @@
 	"id": 239,
 	"name": {
 		"fr": "Pomme Sapik",
-		"en": "",
-		"es": ""
+		"en": "Onion",
+		"es": "Cebolla Sapik"
 	},
 	"rarity": 3,
 	"value": 5500,
@@ -2402,8 +2402,8 @@
 	"id": 240,
 	"name": {
 		"fr": "Pomme Sapu",
-		"en": "",
-		"es": ""
+		"en": "Garlic",
+		"es": "Ajos Sapu"
 	},
 	"rarity": 4,
 	"value": 28000,
@@ -2412,8 +2412,8 @@
 	"id": 241,
 	"name": {
 		"fr": "Echalottes",
-		"en": "",
-		"es": ""
+		"en": "Shallots",
+		"es": "Chalote"
 	},
 	"rarity": 5,
 	"value": 70000,
@@ -2422,8 +2422,8 @@
 	"id": 242,
 	"name": {
 		"fr": "Sel rieur",
-		"en": "",
-		"es": ""
+		"en": "River Salt",
+		"es": "Sal que ríe"
 	},
 	"rarity": 3,
 	"value": 2600,
@@ -2432,8 +2432,8 @@
 	"id": 243,
 	"name": {
 		"fr": "Poivron vert",
-		"en": "",
-		"es": ""
+		"en": "Green Pepper",
+		"es": "Pimiento verde"
 	},
 	"rarity": 3,
 	"value": 3500,
@@ -2442,8 +2442,8 @@
 	"id": 244,
 	"name": {
 		"fr": "Poivron jaune",
-		"en": "",
-		"es": ""
+		"en": "Yellow Pepper",
+		"es": "Pimiento amarillo"
 	},
 	"rarity": 4,
 	"value": 15000,
@@ -2452,8 +2452,8 @@
 	"id": 245,
 	"name": {
 		"fr": "Poivron rouge",
-		"en": "",
-		"es": ""
+		"en": "Red Pepper",
+		"es": "Pimiento rojo"
 	},
 	"rarity": 1,
 	"value": 700,
@@ -2462,8 +2462,8 @@
 	"id": 246,
 	"name": {
 		"fr": "Brocolis digeres",
-		"en": "",
-		"es": ""
+		"en": "Digested Broccoli",
+		"es": "Brocolis digerido"
 	},
 	"rarity": 3,
 	"value": 3,
@@ -2472,8 +2472,8 @@
 	"id": 247,
 	"name": {
 		"fr": "Grappe de Radix",
-		"en": "",
-		"es": ""
+		"en": "Bitten Radish",
+		"es": "Racimo de Rabanox"
 	},
 	"rarity": 3,
 	"value": 6000,
@@ -2482,8 +2482,8 @@
 	"id": 248,
 	"name": {
 		"fr": "Lance-poix",
-		"en": "",
-		"es": ""
+		"en": "snow peas",
+		"es": "lanza-guisantes"
 	},
 	"rarity": 3,
 	"value": 7000,
@@ -2492,8 +2492,8 @@
 	"id": 249,
 	"name": {
 		"fr": "Haricots blancs",
-		"en": "",
-		"es": ""
+		"en": "White Beans",
+		"es": "Judías blancas"
 	},
 	"rarity": 5,
 	"value": 35000,
@@ -2502,8 +2502,8 @@
 	"id": 250,
 	"name": {
 		"fr": "Poires d'eau en grappe",
-		"en": "",
-		"es": ""
+		"en": "Blended Pears",
+		"es": "Punado de puerros de agua"
 	},
 	"rarity": 4,
 	"value": 9000,
@@ -2512,8 +2512,8 @@
 	"id": 251,
 	"name": {
 		"fr": "Artifroid",
-		"en": "",
-		"es": ""
+		"en": "Artichoke",
+		"es": "Alcachofa"
 	},
 	"rarity": 3,
 	"value": 700,
@@ -2522,8 +2522,8 @@
 	"id": 252,
 	"name": {
 		"fr": "Choux-flou",
-		"en": "",
-		"es": ""
+		"en": "Cauliflower",
+		"es": "Coliflor"
 	},
 	"rarity": 5,
 	"value": 90000,
@@ -2532,8 +2532,8 @@
 	"id": 253,
 	"name": {
 		"fr": "Chourou",
-		"en": "",
-		"es": ""
+		"en": "Purple Cabbage",
+		"es": "Lombarda"
 	},
 	"rarity": 3,
 	"value": 1400,
@@ -2542,8 +2542,8 @@
 	"id": 254,
 	"name": {
 		"fr": "Pom pom pom..",
-		"en": "",
-		"es": ""
+		"en": "Corn",
+		"es": "Disparador de Maíz"
 	},
 	"rarity": 1,
 	"value": 350,
@@ -2552,8 +2552,8 @@
 	"id": 255,
 	"name": {
 		"fr": "Hollandais",
-		"en": "",
-		"es": ""
+		"en": "Dutch Cake",
+		"es": "Sandwich tostado Holandes"
 	},
 	"rarity": 2,
 	"value": 1250,
@@ -2562,8 +2562,8 @@
 	"id": 256,
 	"name": {
 		"fr": "Fondant XXL au choco-beurre",
-		"en": "",
-		"es": ""
+		"en": "Chocolate Fudge Cake",
+		"es": "Pastel XXL de choco-mantequilla"
 	},
 	"rarity": 2,
 	"value": 1250,
@@ -2572,8 +2572,8 @@
 	"id": 257,
 	"name": {
 		"fr": "Petillante",
-		"en": "",
-		"es": ""
+		"en": "Sparkling Soda",
+		"es": "Gaseosa"
 	},
 	"rarity": 3,
 	"value": 2500,
@@ -2582,8 +2582,8 @@
 	"id": 258,
 	"name": {
 		"fr": "Warpoquiche",
-		"en": "",
-		"es": ""
+		"en": "Baked Cracker",
+		"es": "Tarta salada de queso"
 	},
 	"rarity": 2,
 	"value": 1250,
@@ -2592,8 +2592,8 @@
 	"id": 259,
 	"name": {
 		"fr": "Brioche doree",
-		"en": "",
-		"es": ""
+		"en": "Golden Pastry",
+		"es": "Magdalena brioche"
 	},
 	"rarity": 6,
 	"value": 150000,
@@ -2602,8 +2602,8 @@
 	"id": 260,
 	"name": {
 		"fr": "Cafe de fin de projet",
-		"en": "",
-		"es": ""
+		"en": "Project Finisher",
+		"es": "Cafe de fin de proyecto"
 	},
 	"rarity": 1,
 	"value": 600,
@@ -2612,8 +2612,8 @@
 	"id": 261,
 	"name": {
 		"fr": "Laxatif aux amandes",
-		"en": "",
-		"es": ""
+		"en": "Almond Laxative",
+		"es": "Laxante de almendras"
 	},
 	"rarity": 5,
 	"value": 150000,
@@ -2622,8 +2622,8 @@
 	"id": 262,
 	"name": {
 		"fr": "Smiley croquant",
-		"en": "",
-		"es": ""
+		"en": "Ghost Toast",
+		"es": "Smiley crujiente"
 	},
 	"rarity": 2,
 	"value": 900,
@@ -2632,8 +2632,8 @@
 	"id": 263,
 	"name": {
 		"fr": "Barquette de lave",
-		"en": "",
-		"es": ""
+		"en": "Flat Bread",
+		"es": "Barquillo de lava"
 	},
 	"rarity": 1,
 	"value": 400,
@@ -2642,8 +2642,8 @@
 	"id": 264,
 	"name": {
 		"fr": "Nonoix",
-		"en": "",
-		"es": ""
+		"en": "Cracked Nut",
+		"es": "Nonuez"
 	},
 	"rarity": 3,
 	"value": 3000,
@@ -2652,8 +2652,8 @@
 	"id": 265,
 	"name": {
 		"fr": "Amande croquante",
-		"en": "",
-		"es": ""
+		"en": "Crunchy Almond",
+		"es": "Almendra crujiente"
 	},
 	"rarity": 3,
 	"value": 3000,
@@ -2662,8 +2662,8 @@
 	"id": 266,
 	"name": {
 		"fr": "Noisette",
-		"en": "",
-		"es": ""
+		"en": "Chestnut",
+		"es": "Nuez"
 	},
 	"rarity": 3,
 	"value": 3000,
@@ -2672,8 +2672,8 @@
 	"id": 267,
 	"name": {
 		"fr": "Noodles crus",
-		"en": "",
-		"es": ""
+		"en": "Ramen Noodles",
+		"es": "Fideos chinos deshidratados"
 	},
 	"rarity": 1,
 	"value": 550,
@@ -2682,8 +2682,8 @@
 	"id": 268,
 	"name": {
 		"fr": "Brioche vapeur",
-		"en": "",
-		"es": ""
+		"en": "Steamed Brioche",
+		"es": "Brioche de vapor"
 	},
 	"rarity": 4,
 	"value": 21000,
@@ -2692,8 +2692,8 @@
 	"id": 269,
 	"name": {
 		"fr": "Tartine chocolat-noisette",
-		"en": "",
-		"es": ""
+		"en": "Slice of Chocolate Hazelnut Bread",
+		"es": "Tostada con crema de chocolate"
 	},
 	"rarity": 1,
 	"value": 650,
@@ -2702,8 +2702,8 @@
 	"id": 270,
 	"name": {
 		"fr": "Tartine hemoglobine",
-		"en": "",
-		"es": ""
+		"en": "Slice of Raspberry Hazelnut Bread",
+		"es": "Tostada con hemoglobina"
 	},
 	"rarity": 2,
 	"value": 1650,
@@ -2712,8 +2712,8 @@
 	"id": 271,
 	"name": {
 		"fr": "Tartine a l'orange collante",
-		"en": "",
-		"es": ""
+		"en": "Slice of Sticky Orange Bread",
+		"es": "Tostada de aceite"
 	},
 	"rarity": 3,
 	"value": 5800,
@@ -2722,8 +2722,8 @@
 	"id": 272,
 	"name": {
 		"fr": "Tartine au miel",
-		"en": "",
-		"es": ""
+		"en": "Slice of Hard Honey Bread",
+		"es": "Tostada de mermelada pegajosa"
 	},
 	"rarity": 2,
 	"value": 1650,
@@ -2732,8 +2732,8 @@
 	"id": 273,
 	"name": {
 		"fr": "Lombric nature",
-		"en": "",
-		"es": ""
+		"en": "Earthworm",
+		"es": "Lombriz al natural"
 	},
 	"rarity": 4,
 	"value": 15,
@@ -2742,8 +2742,8 @@
 	"id": 274,
 	"name": {
 		"fr": "Grenade de chantilly",
-		"en": "",
-		"es": ""
+		"en": "Cream Grenade",
+		"es": "Granada de crema"
 	},
 	"rarity": 2,
 	"value": 5000,
@@ -2752,8 +2752,8 @@
 	"id": 275,
 	"name": {
 		"fr": "Profies tres drôles",
-		"en": "",
-		"es": ""
+		"en": "Chocolate-Dipped Cream Puffs",
+		"es": "Profiteroles apetitosos"
 	},
 	"rarity": 4,
 	"value": 35000,
@@ -2762,8 +2762,8 @@
 	"id": 276,
 	"name": {
 		"fr": "Chouchocos",
-		"en": "",
-		"es": ""
+		"en": "Profiteroles apetitosos",
+		"es": "Megaprofiterol"
 	},
 	"rarity": 4,
 	"value": 35000,
@@ -2772,8 +2772,8 @@
 	"id": 277,
 	"name": {
 		"fr": "Blob perime",
-		"en": "",
-		"es": ""
+		"en": "Shiny Mushroom",
+		"es": "Champinon podrido"
 	},
 	"rarity": 6,
 	"value": 250000,
@@ -2782,8 +2782,8 @@
 	"id": 278,
 	"name": {
 		"fr": "Bonbon Helene-fraiche",
-		"en": "",
-		"es": ""
+		"en": "Peppermint Candy",
+		"es": "Caramelo de reyes"
 	},
 	"rarity": 3,
 	"value": 200,
@@ -2792,8 +2792,8 @@
 	"id": 279,
 	"name": {
 		"fr": "Nem aux anchois",
-		"en": "",
-		"es": ""
+		"en": "Breaded Anchovies",
+		"es": "Nem de anchoas"
 	},
 	"rarity": 3,
 	"value": 9000,
@@ -2802,8 +2802,8 @@
 	"id": 280,
 	"name": {
 		"fr": "Surimi pamplemousse",
-		"en": "",
-		"es": ""
+		"en": "Grapefruit Sushi",
+		"es": "Surimi de pomelo"
 	},
 	"rarity": 2,
 	"value": 150,
@@ -2812,8 +2812,8 @@
 	"id": 281,
 	"name": {
 		"fr": "Poulpi a l'encre",
-		"en": "",
-		"es": ""
+		"en": "Octopus in Ink",
+		"es": "Calamar en su tinta"
 	},
 	"rarity": 5,
 	"value": 80000,
@@ -2822,8 +2822,8 @@
 	"id": 282,
 	"name": {
 		"fr": "Curly",
-		"en": "",
-		"es": ""
+		"en": "Curly",
+		"es": "Curly"
 	},
 	"rarity": 5,
 	"value": 70000,
@@ -2832,8 +2832,8 @@
 	"id": 283,
 	"name": {
 		"fr": "Tartelette framboise",
-		"en": "",
-		"es": ""
+		"en": "Strawberry Tart",
+		"es": "Tarta de frambuesa"
 	},
 	"rarity": 1,
 	"value": 2500,
@@ -2842,8 +2842,8 @@
 	"id": 284,
 	"name": {
 		"fr": "Oeuf de Poire",
-		"en": "",
-		"es": ""
+		"en": "Pear Egg",
+		"es": "Huevo de pera"
 	},
 	"rarity": 6,
 	"value": 57000,
@@ -2852,8 +2852,8 @@
 	"id": 285,
 	"name": {
 		"fr": "Truffe collante sans gout",
-		"en": "",
-		"es": ""
+		"en": "Tasteless Sticky Truffle",
+		"es": "Trufa pegajosa sin sabor"
 	},
 	"rarity": 6,
 	"value": 300000,
@@ -2862,8 +2862,8 @@
 	"id": 286,
 	"name": {
 		"fr": "Sardines",
-		"en": "",
-		"es": ""
+		"en": "Sardines",
+		"es": "Sardinas en lata"
 	},
 	"rarity": 3,
 	"value": 6000,
@@ -2872,8 +2872,8 @@
 	"id": 287,
 	"name": {
 		"fr": "Etoile Toulaho",
-		"en": "",
-		"es": ""
+		"en": "Starfish",
+		"es": "Estrella Toulaho"
 	},
 	"rarity": 0,
 	"value": 1500,
@@ -2882,8 +2882,8 @@
 	"id": 288,
 	"name": {
 		"fr": "Transformer en sucre",
-		"en": "",
-		"es": ""
+		"en": "Sugar Transformer",
+		"es": "Transformer de azucar"
 	},
 	"rarity": 3,
 	"value": 25000,
@@ -2892,8 +2892,8 @@
 	"id": 289,
 	"name": {
 		"fr": "Kitchissime",
-		"en": "",
-		"es": ""
+		"en": "Evil Robot",
+		"es": "Kitchisime"
 	},
 	"rarity": 3,
 	"value": 25000,
@@ -2902,8 +2902,8 @@
 	"id": 290,
 	"name": {
 		"fr": "Igorocop",
-		"en": "",
-		"es": ""
+		"en": "RoboCop",
+		"es": "Igorocop"
 	},
 	"rarity": 3,
 	"value": 25000,
@@ -2912,8 +2912,8 @@
 	"id": 291,
 	"name": {
 		"fr": "Tidouli didi",
-		"en": "",
-		"es": ""
+		"en": "R2D2",
+		"es": "Arto deedo"
 	},
 	"rarity": 3,
 	"value": 25000,
@@ -2922,8 +2922,8 @@
 	"id": 292,
 	"name": {
 		"fr": "Dalek ! Exterminate !",
-		"en": "",
-		"es": ""
+		"en": "Dalek ! Exterminate !",
+		"es": "Dalek, el Exterminador!"
 	},
 	"rarity": 3,
 	"value": 35000,
@@ -2932,8 +2932,8 @@
 	"id": 293,
 	"name": {
 		"fr": "Robo-malin",
-		"en": "",
-		"es": ""
+		"en": "Robo-Malin",
+		"es": "Robo-loco"
 	},
 	"rarity": 3,
 	"value": 25000,
@@ -2942,8 +2942,8 @@
 	"id": 294,
 	"name": {
 		"fr": "Johnny 6",
-		"en": "",
-		"es": ""
+		"en": "Johnny 6",
+		"es": "Johnny 6"
 	},
 	"rarity": 3,
 	"value": 25000,
@@ -2952,8 +2952,8 @@
 	"id": 295,
 	"name": {
 		"fr": "Biscuit Transformer",
-		"en": "",
-		"es": ""
+		"en": "Biscuit Transformer",
+		"es": "Galleta de Transformer"
 	},
 	"rarity": 4,
 	"value": 50000,
@@ -2962,8 +2962,8 @@
 	"id": 296,
 	"name": {
 		"fr": "Statue: Citron Sorbex",
-		"en": "",
-		"es": ""
+		"en": "Statue: Sorbex Lemon",
+		"es": "Estatua: Sorbetex de Limon"
 	},
 	"rarity": 0,
 	"value": 1000,
@@ -2972,8 +2972,8 @@
 	"id": 297,
 	"name": {
 		"fr": "Statue: Bombino",
-		"en": "",
-		"es": ""
+		"en": "Statue: Bombino",
+		"es": "Estatua: Bombino"
 	},
 	"rarity": 0,
 	"value": 4000,
@@ -2982,8 +2982,8 @@
 	"id": 298,
 	"name": {
 		"fr": "Statue: Poire Melbombe",
-		"en": "",
-		"es": ""
+		"en": "Statue: Baddybomb Pear",
+		"es": "Estatua: Pera Malabomba"
 	},
 	"rarity": 0,
 	"value": 8000,
@@ -2992,8 +2992,8 @@
 	"id": 299,
 	"name": {
 		"fr": "Statue: Tagada",
-		"en": "",
-		"es": ""
+		"en": "Statue: Tagada-Strawberry",
+		"es": "Estatua: Tagada"
 	},
 	"rarity": 0,
 	"value": 10000,
@@ -3002,8 +3002,8 @@
 	"id": 300,
 	"name": {
 		"fr": "Statue: Sapeur-kiwi",
-		"en": "",
-		"es": ""
+		"en": "Statue: Kiwi Sapper",
+		"es": "Estatua: Kiwi-Zapador"
 	},
 	"rarity": 0,
 	"value": 15000,
@@ -3012,8 +3012,8 @@
 	"id": 301,
 	"name": {
 		"fr": "Statue: Bondissante",
-		"en": "",
-		"es": ""
+		"en": "Statue: Leaper",
+		"es": "Estatua: Sandina"
 	},
 	"rarity": 0,
 	"value": 20000,
@@ -3022,8 +3022,8 @@
 	"id": 302,
 	"name": {
 		"fr": "Statue: Ananargeddon",
-		"en": "",
-		"es": ""
+		"en": "Statue: Armaggedon-Pineapple",
+		"es": "Estatua: Pinaguedon"
 	},
 	"rarity": 0,
 	"value": 25000,
@@ -3032,8 +3032,8 @@
 	"id": 303,
 	"name": {
 		"fr": "Anneau herisse",
-		"en": "",
-		"es": ""
+		"en": "Bristling Ring",
+		"es": "Anillo de erizo azul"
 	},
 	"rarity": 0,
 	"value": 250,
@@ -3042,8 +3042,8 @@
 	"id": 304,
 	"name": {
 		"fr": "Passe-partout en bois",
-		"en": "",
-		"es": ""
+		"en": "Wooden Master Key",
+		"es": "Llave Maestra de Madera"
 	},
 	"rarity": 6,
 	"value": 10000,
@@ -3052,8 +3052,8 @@
 	"id": 305,
 	"name": {
 		"fr": "Cle de Rigor Dangerous",
-		"en": "",
-		"es": ""
+		"en": "Rigor Dangerous Key",
+		"es": "Llave de Rigor Dangerous"
 	},
 	"rarity": 6,
 	"value": 10000,
@@ -3062,8 +3062,8 @@
 	"id": 306,
 	"name": {
 		"fr": "Meluzzine",
-		"en": "",
-		"es": ""
+		"en": "Meluzzine Key",
+		"es": "Meluzina"
 	},
 	"rarity": 5,
 	"value": 10000,
@@ -3072,8 +3072,8 @@
 	"id": 307,
 	"name": {
 		"fr": "Cle du Bourru",
-		"en": "",
-		"es": ""
+		"en": "Wine Key",
+		"es": "Llave del Bruto"
 	},
 	"rarity": 1,
 	"value": 10000,
@@ -3082,8 +3082,8 @@
 	"id": 308,
 	"name": {
 		"fr": "Furtok Glaciale",
-		"en": "",
-		"es": ""
+		"en": "Frozen Key",
+		"es": "Furtok Glacial"
 	},
 	"rarity": 6,
 	"value": 10000,
@@ -3092,8 +3092,8 @@
 	"id": 309,
 	"name": {
 		"fr": "Vieille cle rouillee",
-		"en": "",
-		"es": ""
+		"en": "Old Rusty Key",
+		"es": "Vieja Llave Oxidada"
 	},
 	"rarity": 4,
 	"value": 10000,
@@ -3102,8 +3102,8 @@
 	"id": 310,
 	"name": {
 		"fr": "Autorisation du Bois-Joli",
-		"en": "",
-		"es": ""
+		"en": "Authorization of Bois-Joli",
+		"es": "Autorizacion Madera-Bonita"
 	},
 	"rarity": 1,
 	"value": 10000,
@@ -3112,8 +3112,8 @@
 	"id": 311,
 	"name": {
 		"fr": "Cle des Mondes Ardus",
-		"en": "",
-		"es": ""
+		"en": "Key of Difficult Worlds",
+		"es": "Llave de los Mundos Arduos"
 	},
 	"rarity": 6,
 	"value": 10000,
@@ -3122,8 +3122,8 @@
 	"id": 312,
 	"name": {
 		"fr": "Cle piquante",
-		"en": "",
-		"es": ""
+		"en": "Pungent Key",
+		"es": "Llave Que Rasca"
 	},
 	"rarity": 6,
 	"value": 10000,
@@ -3132,8 +3132,8 @@
 	"id": 313,
 	"name": {
 		"fr": "Passe-partout de Tuberculoz",
-		"en": "",
-		"es": ""
+		"en": "Tuber's Key",
+		"es": "Llave Maestra de Tuberculo"
 	},
 	"rarity": 6,
 	"value": 10000,
@@ -3142,8 +3142,8 @@
 	"id": 314,
 	"name": {
 		"fr": "Cle des cauchemars",
-		"en": "",
-		"es": ""
+		"en": "Nightmare Key",
+		"es": "Llave de las Pesadillas"
 	},
 	"rarity": 6,
 	"value": 10000,
@@ -3152,8 +3152,8 @@
 	"id": 315,
 	"name": {
 		"fr": "Pad Sounie",
-		"en": "",
-		"es": ""
+		"en": "Sony Controller",
+		"es": "Mando Suni"
 	},
 	"rarity": 6,
 	"value": 17000,
@@ -3162,8 +3162,8 @@
 	"id": 316,
 	"name": {
 		"fr": "Pad Frusion 64",
-		"en": "",
-		"es": ""
+		"en": "Nintendo 64 Controller",
+		"es": "Mando Nientiendo 64"
 	},
 	"rarity": 6,
 	"value": 100000,
@@ -3172,8 +3172,8 @@
 	"id": 317,
 	"name": {
 		"fr": "Pad Game-Pyramid",
-		"en": "",
-		"es": ""
+		"en": "Game-Cube Controller",
+		"es": "Mando Game-Piramide"
 	},
 	"rarity": 6,
 	"value": 17000,
@@ -3182,8 +3182,8 @@
 	"id": 318,
 	"name": {
 		"fr": "Pad Sey-Ga",
-		"en": "",
-		"es": ""
+		"en": "Genesis Controller",
+		"es": "Mando Sey-Ga"
 	},
 	"rarity": 6,
 	"value": 17000,
@@ -3192,8 +3192,8 @@
 	"id": 319,
 	"name": {
 		"fr": "Pad Super Frusion",
-		"en": "",
-		"es": ""
+		"en": "SNES Controller",
+		"es": "Mando Super Nientiendo"
 	},
 	"rarity": 6,
 	"value": 17000,
@@ -3202,8 +3202,8 @@
 	"id": 320,
 	"name": {
 		"fr": "Pad du Systeme Maitre",
-		"en": "",
-		"es": ""
+		"en": "NES Controller",
+		"es": "Mando del Sistema Maestro"
 	},
 	"rarity": 6,
 	"value": 17000,
@@ -3212,8 +3212,8 @@
 	"id": 321,
 	"name": {
 		"fr": "Pad Frusion Entertainment System",
-		"en": "",
-		"es": ""
+		"en": "Master System Controller",
+		"es": "Mando Nientiendo Entertainment System"
 	},
 	"rarity": 6,
 	"value": 17000,
@@ -3222,8 +3222,8 @@
 	"id": 322,
 	"name": {
 		"fr": "Manette S-Tehef",
-		"en": "",
-		"es": ""
+		"en": "Joystick",
+		"es": "Mando S-Tehef"
 	},
 	"rarity": 6,
 	"value": 20000,
@@ -3232,8 +3232,8 @@
 	"id": 323,
 	"name": {
 		"fr": "Canette Express",
-		"en": "",
-		"es": ""
+		"en": "Can Beer",
+		"es": "Lata Express"
 	},
 	"rarity": 1,
 	"value": 500,
@@ -3242,8 +3242,8 @@
 	"id": 324,
 	"name": {
 		"fr": "Bouteille aux 2064 bulles",
-		"en": "",
-		"es": ""
+		"en": "Sealed Beer",
+		"es": "Cerveza de las fiestas en Bordeaux"
 	},
 	"rarity": 2,
 	"value": 1200,
@@ -3252,8 +3252,8 @@
 	"id": 325,
 	"name": {
 		"fr": "Mousse volante",
-		"en": "",
-		"es": ""
+		"en": "Draft Beer",
+		"es": "Espuma voladora"
 	},
 	"rarity": 3,
 	"value": 3000,
@@ -3262,8 +3262,8 @@
 	"id": 326,
 	"name": {
 		"fr": "Vin Merveilleux",
-		"en": "",
-		"es": ""
+		"en": "Wonderful Wine",
+		"es": "Vino burgues del Gran Teatro"
 	},
 	"rarity": 4,
 	"value": 20000,
@@ -3272,8 +3272,8 @@
 	"id": 327,
 	"name": {
 		"fr": "Liqueur malefique",
-		"en": "",
-		"es": ""
+		"en": "Evil Liquor",
+		"es": "Licor malefico"
 	},
 	"rarity": 5,
 	"value": 100000,
@@ -3282,8 +3282,8 @@
 	"id": 328,
 	"name": {
 		"fr": "Tampon MT",
-		"en": "",
-		"es": ""
+		"en": "MT Stamp",
+		"es": "Sello MotionTwin"
 	},
 	"rarity": 1,
 	"value": 2000,
@@ -3292,8 +3292,8 @@
 	"id": 329,
 	"name": {
 		"fr": "Facture gratuite",
-		"en": "",
-		"es": ""
+		"en": "Free Bill",
+		"es": "Factura gratis"
 	},
 	"rarity": 2,
 	"value": 10,
@@ -3302,8 +3302,8 @@
 	"id": 330,
 	"name": {
 		"fr": "Post-It de Francois",
-		"en": "",
-		"es": ""
+		"en": "Sticky Notes",
+		"es": "Post-It de François, no entiendo tu letra"
 	},
 	"rarity": 3,
 	"value": 3000,
@@ -3312,8 +3312,8 @@
 	"id": 331,
 	"name": {
 		"fr": "Pot a crayon solitaire",
-		"en": "",
-		"es": ""
+		"en": "Pencil Container",
+		"es": "Lapicero solitario sin pegatina de perro"
 	},
 	"rarity": 4,
 	"value": 5500,
@@ -3322,8 +3322,8 @@
 	"id": 332,
 	"name": {
 		"fr": "Agrafeuse du Chaos",
-		"en": "",
-		"es": ""
+		"en": "Chaos Stapler",
+		"es": "Grapadora del Caos"
 	},
 	"rarity": 5,
 	"value": 100000,
@@ -3332,8 +3332,8 @@
 	"id": 333,
 	"name": {
 		"fr": "Miroir bancal",
-		"en": "",
-		"es": ""
+		"en": "Mirror of Bancal",
+		"es": "Espejo de la cabala"
 	},
 	"rarity": 0,
 	"value": 69,
@@ -3342,8 +3342,8 @@
 	"id": 334,
 	"name": {
 		"fr": "Etoile du Diable",
-		"en": "",
-		"es": ""
+		"en": "Star of the Devil",
+		"es": "Estrella demoníaca"
 	},
 	"rarity": 0,
 	"value": 666,
@@ -3352,8 +3352,8 @@
 	"id": 335,
 	"name": {
 		"fr": "Poudre de plage magique",
-		"en": "",
-		"es": ""
+		"en": "Shovel",
+		"es": "Polvo de playa magica"
 	},
 	"rarity": 1,
 	"value": 700,
@@ -3362,8 +3362,8 @@
 	"id": 336,
 	"name": {
 		"fr": "Materiel d'architecte",
-		"en": "",
-		"es": ""
+		"en": "Bucket of Sand",
+		"es": "Material de arquitecto"
 	},
 	"rarity": 1,
 	"value": 600,
@@ -3372,8 +3372,8 @@
 	"id": 337,
 	"name": {
 		"fr": "Maquette en sable",
-		"en": "",
-		"es": ""
+		"en": "Sand Castle",
+		"es": "Maqueta de arena"
 	},
 	"rarity": 2,
 	"value": 1200,
@@ -3382,8 +3382,8 @@
 	"id": 338,
 	"name": {
 		"fr": "Winkel",
-		"en": "",
-		"es": ""
+		"en": "Winkel O'Riely",
+		"es": "Wink"
 	},
 	"rarity": 2,
 	"value": 900,
@@ -3392,8 +3392,8 @@
 	"id": 339,
 	"name": {
 		"fr": "Miroir des Sables",
-		"en": "",
-		"es": ""
+		"en": "Mirror of Sables",
+		"es": "Espejo de las Arenas"
 	},
 	"rarity": 0,
 	"value": 69,
@@ -3402,8 +3402,8 @@
 	"id": 340,
 	"name": {
 		"fr": "Etoile des Diables Jumeaux",
-		"en": "",
-		"es": ""
+		"en": "Star of the Devil's Twins",
+		"es": "Estrella de los Diablos Gemelos"
 	},
 	"rarity": 0,
 	"value": 666,
@@ -3412,8 +3412,8 @@
 	"id": 341,
 	"name": {
 		"fr": "Sceau d'amitie",
-		"en": "",
-		"es": ""
+		"en": "Mixed Heart",
+		"es": "Sello de amistad"
 	},
 	"rarity": 0,
 	"value": 100,
@@ -3422,8 +3422,8 @@
 	"id": 342,
 	"name": {
 		"fr": "Insigne de l'ordre des Ninjas",
-		"en": "",
-		"es": ""
+		"en": "Symbol of the Ninjas",
+		"es": "Insignia de la orden de los Ninjas"
 	},
 	"rarity": 0,
 	"value": 900,
@@ -3432,8 +3432,8 @@
 	"id": 343,
 	"name": {
 		"fr": "Couteau suisse japonais",
-		"en": "",
-		"es": ""
+		"en": "Magic Katana",
+		"es": "Cuchillo suizo japones"
 	},
 	"rarity": 2,
 	"value": 1200,
@@ -3442,8 +3442,8 @@
 	"id": 344,
 	"name": {
 		"fr": "Shuriken de second rang",
-		"en": "",
-		"es": ""
+		"en": "Fūma Shuriken",
+		"es": "Shuriken de segundo rango"
 	},
 	"rarity": 3,
 	"value": 1600,
@@ -3452,8 +3452,8 @@
 	"id": 345,
 	"name": {
 		"fr": "Shuriken d'entrainement",
-		"en": "",
-		"es": ""
+		"en": "Shuriken",
+		"es": "Shuriken de entrenamiento"
 	},
 	"rarity": 1,
 	"value": 250,
@@ -3462,8 +3462,8 @@
 	"id": 346,
 	"name": {
 		"fr": "Najinata",
-		"en": "",
-		"es": ""
+		"en": "Kunai",
+		"es": "Najinata"
 	},
 	"rarity": 2,
 	"value": 600,
@@ -3472,8 +3472,8 @@
 	"id": 347,
 	"name": {
 		"fr": "Lance-boulettes de Precision",
-		"en": "",
-		"es": ""
+		"en": "Blowgun of Precision",
+		"es": "Lanza-bolitas de Precision"
 	},
 	"rarity": 4,
 	"value": 5000,
@@ -3482,8 +3482,8 @@
 	"id": 348,
 	"name": {
 		"fr": "Ocarina chantant",
-		"en": "",
-		"es": ""
+		"en": "Singing Ocarina",
+		"es": "Ocarina cantante"
 	},
 	"rarity": 4,
 	"value": 6500,
@@ -3492,8 +3492,8 @@
 	"id": 349,
 	"name": {
 		"fr": "Armure de la nuit",
-		"en": "",
-		"es": ""
+		"en": "Armor of the Night",
+		"es": "Casco samurai"
 	},
 	"rarity": 4,
 	"value": 10000,
@@ -3502,8 +3502,8 @@
 	"id": 350,
 	"name": {
 		"fr": "Insigne du Merite",
-		"en": "",
-		"es": ""
+		"en": "Award of Merit",
+		"es": "Insignia del Merito"
 	},
 	"rarity": 0,
 	"value": 10000,
@@ -3512,8 +3512,8 @@
 	"id": 351,
 	"name": {
 		"fr": "Neige-o-glycerine",
-		"en": "",
-		"es": ""
+		"en": "Snow Bomb",
+		"es": "Nieve a la glicerina"
 	},
 	"rarity": 0,
 	"value": 150000,
@@ -3522,8 +3522,8 @@
 	"id": 352,
 	"name": {
 		"fr": "Pass-Pyramide",
-		"en": "",
-		"es": ""
+		"en": "Pyramid Pass",
+		"es": "Pase VIP Piramide"
 	},
 	"rarity": 0,
 	"value": 30000,

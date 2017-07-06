@@ -35,6 +35,8 @@ class Text {
 		void addTraduction(std::string lang, std::string key, std::string value);
 		std::string getTraduction(std::string key);
 		std::string getItemsTranslationKey(int id);
+		std::string getQuestTitle(int id);
+		std::string getQuestDescription(int id);
 	private:
 		Text& operator=(const Text&);
 		Text(const Text&);

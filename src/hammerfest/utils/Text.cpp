@@ -139,3 +139,17 @@ std::string Text::getItemsTranslationKey(int id) {
 	ss << "item." << id << ".name";
 	return ss.str();
 }
+
+std::string Text::getQuestTitle(int id) {
+	std::stringstream ss;
+	ss << "quest." << id << ".title";
+	return texts[GameConfig::Instance().getLang()][ss.str()];
+}
+
+std::string Text::getQuestDescription(int id) {
+	fprintf(stderr,"get description %i\n", id);
+	std::stringstream ss;
+	ss << "quest." << id << ".description";
+	return texts[GameConfig::Instance().getLang()][ss.str()];
+	fprintf(stderr,"fin get description %i\n", id);
+}
