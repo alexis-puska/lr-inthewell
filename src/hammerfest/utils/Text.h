@@ -31,6 +31,10 @@ class Text {
 		SDL_Color getSDL_Color(int color);
 		void drawText(SDL_Surface* surfaceToDraw, std::string fontName, int x, int y, const char* text, int color, bool alignCenter);
 		void drawTextTranslated(SDL_Surface* surfaceToDraw, std::string fontName, int x, int y, std::string key, int color, bool alignCenter);
+
+		void addTraduction(std::string lang, std::string key, std::string value);
+		std::string getTraduction(std::string key);
+		std::string getItemsTranslationKey(int id);
 	private:
 		Text& operator=(const Text&);
 		Text(const Text&);

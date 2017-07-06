@@ -89,7 +89,7 @@ SDL_Color Text::getSDL_Color(int color) {
 void Text::drawTextTranslated(SDL_Surface* surfaceToDraw, std::string fontName, int x, int y, std::string key, int color, bool alignCenter) {
 	SDL_Color colorSelected = getSDL_Color(color);
 	std::string translation = texts[GameConfig::Instance().getLang()][key];
-	SDL_Surface *text_surface = text_surface = TTF_RenderText_Solid(fonts[fontName], translation.empty() ? "translation not found": translation.c_str(), colorSelected);
+	SDL_Surface *text_surface = text_surface = TTF_RenderText_Solid(fonts[fontName], translation.empty() ? "translation not found" : translation.c_str(), colorSelected);
 	SDL_Rect srcRect;
 	srcRect.x = 0;
 	srcRect.y = 0;
@@ -121,7 +121,21 @@ void Text::parseJsonFile() {
 		std::string lang = langElement["lang"].asString();
 		for (unsigned int j = 0; j < langElement["texts"].size(); j++) {
 			traduction = langElement["texts"][j];
-			texts[lang][traduction["key"].asString()] =  traduction["value"].asString();
+			texts[lang][traduction["key"].asString()] = traduction["value"].asString();
 		}
 	}
+}
+
+void Text::addTraduction(std::string lang, std::string key, std::string value) {
+	texts[lang][key] = value;
+}
+
+std::string Text::getTraduction(std::string key) {
+	return texts[GameConfig::Instance().getLang()][key];
+}
+
+std::string Text::getItemsTranslationKey(int id) {
+	std::stringstream ss;
+	ss << "item." << id << ".name";
+	return ss.str();
 }

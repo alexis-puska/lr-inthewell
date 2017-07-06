@@ -137,12 +137,12 @@ int ItemFileSystem::loadAccount(int accountId) {
 		}
 	}
 
-	fprintf(stderr, "\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
+	//fprintf(stderr, "\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
 
-	for (int i = 0; i < nbOfValueInFile - 4; i++) {
-		fprintf(stderr, "%i - %6i;\t", i, fridge[i]);
-	}
-	fprintf(stderr, "\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
+	//for (int i = 0; i < nbOfValueInFile - 4; i++) {
+	//	fprintf(stderr, "%i - %6i;\t", i, fridge[i]);
+	//}
+	//fprintf(stderr, "\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
 
 	fclose(saveFile);
 	loadDefaultAvailableItem();
@@ -225,7 +225,6 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 		familys.at(familyAvailable.at(i))->printName();
 	}
 
-	//fprintf(stderr, "\n\n\n\n\n");
 
 	/**************************
 	 *  fill available object
@@ -1818,7 +1817,6 @@ void ItemFileSystem::buildDatabase() {
 	//	quests[i]->printName();
 	//}
 
-
 }
 
 void ItemFileSystem::simulateGame() {
@@ -1977,16 +1975,35 @@ void ItemFileSystem::parseFamilys() {
 	Family * family;
 	std::string jsonString(json_family_parser_json, json_family_parser_json + sizeof json_family_parser_json / sizeof json_family_parser_json[0]);
 	reader.parse(jsonString, root);
+
+	std::stringstream ss;
 	for (unsigned int i = 0; i < root.size(); i++) {
 		Json::Value idValue = root[i]["id"];
 		Json::Value nameValue = root[i]["name"];
-		Json::Value frNameValue = nameValue[0]["fr"];
+		Json::Value frNameValue = nameValue["fr"];
+		Json::Value enNameValue = nameValue["en"];
+		Json::Value esNameValue = nameValue["es"];
+
+		ss.str(std::string());
+		ss << "family." << idValue.asInt() << ".name";
+		Text::Instance().addTraduction("fr", ss.str(), frNameValue.asString());
+
+		ss.str(std::string());
+		ss << "family." << idValue.asInt() << ".name";
+		Text::Instance().addTraduction("en", ss.str(), enNameValue.asString());
+
+		ss.str(std::string());
+		ss << "family." << idValue.asInt() << ".name";
+		Text::Instance().addTraduction("es", ss.str(), esNameValue.asString());
+
+
 		family = new Family(idValue.asInt(), frNameValue.asString().c_str());
 		for (unsigned int j = 0; j < root[i]["items"].size(); j++) {
 			family->addItem(root[i]["items"][j].asInt());
 		}
 		familys.push_back(family);
 	}
+
 }
 
 void ItemFileSystem::parseItems() {
@@ -1995,10 +2012,26 @@ void ItemFileSystem::parseItems() {
 	Item * item;
 	std::string jsonString(json_item_parser_json, json_item_parser_json + sizeof json_item_parser_json / sizeof json_item_parser_json[0]);
 	reader.parse(jsonString, root);
+	std::stringstream ss;
 	for (unsigned int i = 0; i < root.size(); i++) {
 		Json::Value idValue = root[i]["id"];
 		Json::Value nameValue = root[i]["name"];
-		Json::Value frNameValue = nameValue[0]["fr"];
+		Json::Value frNameValue = nameValue["fr"];
+		Json::Value enNameValue = nameValue["en"];
+		Json::Value esNameValue = nameValue["es"];
+		ss.str(std::string());
+		ss << "item." << idValue.asInt() << ".name";
+		Text::Instance().addTraduction("fr", ss.str(), frNameValue.asString());
+
+		ss.str(std::string());
+		ss << "item." << idValue.asInt() << ".name";
+		Text::Instance().addTraduction("en", ss.str(), enNameValue.asString());
+
+		ss.str(std::string());
+		ss << "item." << idValue.asInt() << ".name";
+		Text::Instance().addTraduction("es", ss.str(), esNameValue.asString());
+
+
 		Json::Value rarityValue = root[i]["rarity"];
 		Json::Value valueValue = root[i]["value"];
 		Json::Value unlockValue = root[i]["unlock"];
@@ -2013,14 +2046,42 @@ void ItemFileSystem::parseQuests() {
 	Quest * quest;
 	std::string jsonString(json_quest_parser_json, json_quest_parser_json + sizeof json_quest_parser_json / sizeof json_quest_parser_json[0]);
 	reader.parse(jsonString, root);
+	std::stringstream ss;
 	for (unsigned int i = 0; i < root.size(); i++) {
 		Json::Value idValue = root[i]["id"];
 		Json::Value lightValue = root[i]["light"];
 		Json::Value lifeValue = root[i]["life"];
 		Json::Value titreValue = root[i]["titre"];
-		Json::Value frTitreValue = titreValue[0]["fr"];
+		Json::Value frTitreValue = titreValue["fr"];
+		Json::Value enTitreValue = titreValue["en"];
+		Json::Value esTitreValue = titreValue["es"];
+		ss.str(std::string());
+		ss << "quest." << idValue.asInt() << ".title";
+		Text::Instance().addTraduction("fr", ss.str(), frTitreValue.asString());
+
+		ss.str(std::string());
+		ss << "quest." << idValue.asInt() << ".title";
+		Text::Instance().addTraduction("en", ss.str(), enTitreValue.asString());
+
+		ss.str(std::string());
+		ss << "quest." << idValue.asInt() << ".title";
+		Text::Instance().addTraduction("es", ss.str(), esTitreValue.asString());
+
+
 		Json::Value descriptionValue = root[i]["description"];
-		Json::Value frDescriptionValue = descriptionValue[0]["fr"];
+		Json::Value frDescriptionValue = descriptionValue["fr"];
+		Json::Value enDescriptionValue = descriptionValue["en"];
+		Json::Value esDescriptionValue = descriptionValue["es"];
+		ss.str(std::string());
+		ss << "quest." << idValue.asInt() << ".description";
+		Text::Instance().addTraduction("fr", ss.str(), frDescriptionValue.asString());
+		ss.str(std::string());
+		ss << "quest." << idValue.asInt() << ".description";
+		Text::Instance().addTraduction("en", ss.str(), enDescriptionValue.asString());
+		ss.str(std::string());
+		ss << "quest." << idValue.asInt() << ".description";
+		Text::Instance().addTraduction("es", ss.str(), esDescriptionValue.asString());
+
 		Json::Value optionValue = root[i]["option"];
 		Json::Value modeValue = root[i]["mode"];
 		Json::Value bombeValue = root[i]["bombe"];
@@ -2028,20 +2089,8 @@ void ItemFileSystem::parseQuests() {
 		Json::Value disguiseValue = root[i]["disguise"];
 		Json::Value keyValue = root[i]["key"];
 		Json::Value removeValue = root[i]["remove"];
-		quest = new Quest(
-				idValue.asInt(),
-				bombeValue.asBool(),
-				bombeUpValue.asBool(),
-				lifeValue.asBool(),
-				lightValue.asBool(),
-				disguiseValue.asInt(),
-				keyValue.asInt(),
-				optionValue.asInt(),
-				modeValue.asInt(),
-				removeValue.asInt(),
-				frTitreValue.asString(),
-				frDescriptionValue.asString()
-		);
+		quest = new Quest(idValue.asInt(), bombeValue.asBool(), bombeUpValue.asBool(), lifeValue.asBool(), lightValue.asBool(), disguiseValue.asInt(), keyValue.asInt(), optionValue.asInt(),
+				modeValue.asInt(), removeValue.asInt(), frTitreValue.asString(), frDescriptionValue.asString());
 		Json::Value familyValue = root[i]["family"];
 		for (unsigned int j = 0; j < familyValue.size(); j++) {
 			quest->addGiveFamilly(familyValue[j].asInt());

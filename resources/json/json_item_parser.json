@@ -1,4236 +1,3530 @@
 [{
 	"id": 0,
-	"name": [{
-		"fr": "Alphabet Cristallin"
-	}, {
-		"en": "Alphabet Cristallin"
-	}, {
-		"es": "Alphabet Cristallin"
-	}],
+	"name": {
+		"fr": "Alphabet Cristallin",
+		"en": "Cristal Alphabet",
+		"es": "Alfabeto Cristalino"
+	},
 	"rarity": 0,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 1,
-	"name": [{
-		"fr": "Bouclidur en or"
-	}, {
-		"en": "Bouclidur en or"
-	}, {
-		"es": "Bouclidur en or"
-	}],
+	"name": {
+		"fr": "Bouclidur en or",
+		"en": "Golden Shield",
+		"es": "Escudo de madera y oro"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 2,
-	"name": [{
-		"fr": "Bouclidur argente"
-	}, {
-		"en": "Bouclidur argente"
-	}, {
-		"es": "Bouclidur argente"
-	}],
+	"name": {
+		"fr": "Bouclidur argente",
+		"en": "Silver Shield",
+		"es": "Silver Shield"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 3,
-	"name": [{
-		"fr": "Ballon de banquise"
-	}, {
-		"en": "Ballon de banquise"
-	}, {
-		"es": "Ballon de banquise"
-	}],
+	"name": {
+		"fr": "Ballon de banquise",
+		"en": "Beach Ball",
+		"es": "Balón de playa"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 4,
-	"name": [{
-		"fr": "Lampe Fetvoveu"
-	}, {
-		"en": "Lampe Fetvoveu"
-	}, {
-		"es": "Lampe Fetvoveu"
-	}],
+	"name": {
+		"fr": "Lampe Fetvoveu",
+		"en": "Magic Lamp",
+		"es": "Lámpara Pidedeseo"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 5,
-	"name": [{
-		"fr": "Lampe Leveussonfe"
-	}, {
-		"en": "Lampe Leveussonfe"
-	}, {
-		"es": "Lampe Leveussonfe"
-	}],
+	"name": {
+		"fr": "Lampe Leveussonfe",
+		"en": "Black Magic Lamp",
+		"es": "Lámpara Negra"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 6,
-	"name": [{
-		"fr": "Paix interieure"
-	}, {
-		"en": "Paix interieure"
-	}, {
-		"es": "Paix interieure"
-	}],
+	"name": {
+		"fr": "Paix interieure",
+		"en": "Inner Peace",
+		"es": "Paz interior"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 7,
-	"name": [{
-		"fr": "Basket IcePump"
-	}, {
-		"en": "Basket IcePump"
-	}, {
-		"es": "Basket IcePump"
-	}],
+	"name": {
+		"fr": "Basket IcePump",
+		"en": "Running Shoes",
+		"es": "Botín IcePump"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 8,
-	"name": [{
-		"fr": "Etoile des neiges"
-	}, {
-		"en": "Etoile des neiges"
-	}, {
-		"es": "Etoile des neiges"
-	}],
+	"name": {
+		"fr": "Etoile des neiges",
+		"en": "Gold Star",
+		"es": "Estrella de las nieves"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 9,
-	"name": [{
-		"fr": "Mauvais-oeil"
-	}, {
-		"en": "Mauvais-oeil"
-	}, {
-		"es": "Mauvais-oeil"
-	}],
+	"name": {
+		"fr": "Mauvais-oeil",
+		"en": "Bad eye",
+		"es": "Ojo malo"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 10,
-	"name": [{
-		"fr": "Telephone-phone-phone"
-	}, {
-		"en": "Telephone-phone-phone"
-	}, {
-		"es": "Telephone-phone-phone"
-	}],
+	"name": {
+		"fr": "Telephone-phone-phone",
+		"en": "Telephone",
+		"es": "Teléfono-no-no"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 11,
-	"name": [{
-		"fr": "Parapluie rouge"
-	}, {
-		"en": "Parapluie rouge"
-	}, {
-		"es": "Parapluie rouge"
-	}],
+	"name": {
+		"fr": "Parapluie rouge",
+		"en": "Red Umbrella",
+		"es": "Paraguas rojo"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 12,
-	"name": [{
-		"fr": "Parapluie bleu"
-	}, {
-		"en": "Parapluie bleu"
-	}, {
-		"es": "Parapluie bleu"
-	}],
+	"name": {
+		"fr": "Parapluie bleu",
+		"en": "Blue Umbrella",
+		"es": "Paraguas azul"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 13,
-	"name": [{
-		"fr": "Cass-Tet"
-	}, {
-		"en": "Cass-Tet"
-	}, {
-		"es": "Cass-Tet"
-	}],
+	"name": {
+		"fr": "Cass-Tet",
+		"en": "Biker Helmet",
+		"es": "Casco"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 14,
-	"name": [{
-		"fr": "Delice hallucinogene bleu"
-	}, {
-		"en": "Delice hallucinogene bleu"
-	}, {
-		"es": "Delice hallucinogene bleu"
-	}],
+	"name": {
+		"fr": "Delice hallucinogene bleu",
+		"en": "Blue Hallucinogenic Mushroom",
+		"es": "Delicia alucinógena azul"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 15,
-	"name": [{
-		"fr": "Champignon rigolo rouge"
-	}, {
-		"en": "Champignon rigolo rouge"
-	}, {
-		"es": "Champignon rigolo rouge"
-	}],
+	"name": {
+		"fr": "Champignon rigolo rouge",
+		"en": "Red Delight Mushroom",
+		"es": "Seta chuli y roja"
+	},
 	"rarity": 4,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 16,
-	"name": [{
-		"fr": "Figonassee grimpante"
-	}, {
-		"en": "Figonassee grimpante"
-	}, {
-		"es": "Figonassee grimpante"
-	}],
+	"name": {
+		"fr": "Figonassee grimpante",
+		"en": "Green Beer Mushroom",
+		"es": "Pequeña Walalu de los bosques"
+	},
 	"rarity": 5,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 17,
-	"name": [{
-		"fr": "Petit Waoulalu des bois"
-	}, {
-		"en": "Petit Waoulalu des bois"
-	}, {
-		"es": "Petit Waoulalu des bois"
-	}],
+	"name": {
+		"fr": "Petit Waoulalu des bois",
+		"en": "Golded Mushroom",
+		"es": "Seta dorada trepadora"
+	},
 	"rarity": 6,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 18,
-	"name": [{
-		"fr": "Pissenlit tropical"
-	}, {
-		"en": "Pissenlit tropical"
-	}, {
-		"es": "Pissenlit tropical"
-	}],
+	"name": {
+		"fr": "Pissenlit tropical",
+		"en": "Tropical Dandelion",
+		"es": "Flor tropical"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 19,
-	"name": [{
-		"fr": "Tournelune"
-	}, {
-		"en": "Tournelune"
-	}, {
-		"es": "Tournelune"
-	}],
+	"name": {
+		"fr": "Tournelune",
+		"en": "Explosive Sunflower",
+		"es": "Giraluna"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 20,
-	"name": [{
-		"fr": "Coffre d'Anarchipel"
-	}, {
-		"en": "Coffre d'Anarchipel"
-	}, {
-		"es": "Coffre d'Anarchipel"
-	}],
+	"name": {
+		"fr": "Coffre d'Anarchipel",
+		"en": "Treasure Chest",
+		"es": "Cofre de Anarchipiélago"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 21,
-	"name": [{
-		"fr": "Enceinte Bessel-Son"
-	}, {
-		"en": "Enceinte Bessel-Son"
-	}, {
-		"es": "Enceinte Bessel-Son"
-	}],
+	"name": {
+		"fr": "Enceinte Bessel-Son",
+		"en": "Jukebox Igor",
+		"es": "Altavoz Bájaloya"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 22,
-	"name": [{
-		"fr": "Vieille chaussure trouee"
-	}, {
-		"en": "Vieille chaussure trouee"
-	}, {
-		"es": "Vieille chaussure trouee"
-	}],
+	"name": {
+		"fr": "Vieille chaussure trouee",
+		"en": "Heavy Weight Boots",
+		"es": "Zapato viejo con agujeros"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 23,
-	"name": [{
-		"fr": "Boule cristalline"
-	}, {
-		"en": "Boule cristalline"
-	}, {
-		"es": "Boule cristalline"
-	}],
+	"name": {
+		"fr": "Boule cristalline",
+		"en": "Orb of Ice",
+		"es": "Bola cristalina"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 24,
-	"name": [{
-		"fr": "Hippo-flocon"
-	}, {
-		"en": "Hippo-flocon"
-	}, {
-		"es": "Hippo-flocon"
-	}],
+	"name": {
+		"fr": "Hippo-flocon",
+		"en": "Iceberg Shower",
+		"es": "Pedrusco de los montes"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 25,
-	"name": [{
-		"fr": "Flamme froide"
-	}, {
-		"en": "Flamme froide"
-	}, {
-		"es": "Flamme froide"
-	}],
+	"name": {
+		"fr": "Flamme froide",
+		"en": "Snow Flame",
+		"es": "Llama fría"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 26,
-	"name": [{
-		"fr": "Ampoule 30 watts"
-	}, {
-		"en": "Ampoule 30 watts"
-	}, {
-		"es": "Ampoule 30 watts"
-	}],
+	"name": {
+		"fr": "Ampoule 30 watts",
+		"en": "Light Bulb",
+		"es": "Bombilla 30 watios"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 27,
-	"name": [{
-		"fr": "Porte-grenouilles"
-	}, {
-		"en": "Porte-grenouilles"
-	}, {
-		"es": "Porte-grenouilles"
-	}],
+	"name": {
+		"fr": "Porte-grenouilles",
+		"en": "Special Lilypad",
+		"es": "Posa-ranas"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 28,
-	"name": [{
-		"fr": "Bibelot en argent"
-	}, {
-		"en": "Bibelot en argent"
-	}, {
-		"es": "Bibelot en argent"
-	}],
+	"name": {
+		"fr": "Bibelot en argent",
+		"en": "Silver Trophy",
+		"es": "Baratija de plata"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 29,
-	"name": [{
-		"fr": "Bague 'Thermostat 8'"
-	}, {
-		"en": "Bague 'Thermostat 8'"
-	}, {
-		"es": "Bague 'Thermostat 8'"
-	}],
+	"name": {
+		"fr": "Bague 'Thermostat 8'",
+		"en": "Ring of Fire",
+		"es": "Anillo 'Termostato 8'"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 30,
-	"name": [{
-		"fr": "Lunettes tournantes bleues"
-	}, {
-		"en": "Lunettes tournantes bleues"
-	}, {
-		"es": "Lunettes tournantes bleues"
-	}],
+	"name": {
+		"fr": "Lunettes tournantes bleues",
+		"en": "Blue Shades",
+		"es": "Gafas volteadoras azules"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 31,
-	"name": [{
-		"fr": "Lunettes renversantes rouges"
-	}, {
-		"en": "Lunettes renversantes rouges"
-	}, {
-		"es": "Lunettes renversantes rouges"
-	}],
+	"name": {
+		"fr": "Lunettes renversantes rouges",
+		"en": "Red Shades",
+		"es": "Gafas revolteadoras rojas"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 32,
-	"name": [{
-		"fr": "As de pique"
-	}, {
-		"en": "As de pique"
-	}, {
-		"es": "As de pique"
-	}],
+	"name": {
+		"fr": "As de pique",
+		"en": "Ace of Spades",
+		"es": "As de picas"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 33,
-	"name": [{
-		"fr": "As de trefle"
-	}, {
-		"en": "As de trefle"
-	}, {
-		"es": "As de trefle"
-	}],
+	"name": {
+		"fr": "As de trefle",
+		"en": "Ace of Clubs",
+		"es": "As de tréboles"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 34,
-	"name": [{
-		"fr": "As de carreau"
-	}, {
-		"en": "As de carreau"
-	}, {
-		"es": "As de carreau"
-	}],
+	"name": {
+		"fr": "As de carreau",
+		"en": "Ace of Diamonds",
+		"es": "As de diamantes"
+	},
 	"rarity": 5,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 35,
-	"name": [{
-		"fr": "As de coeur"
-	}, {
-		"en": "As de coeur"
-	}, {
-		"es": "As de coeur"
-	}],
+	"name": {
+		"fr": "As de coeur",
+		"en": "Ace of Hearts",
+		"es": "As de corazones"
+	},
 	"rarity": 6,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 36,
-	"name": [{
-		"fr": "Ig'or"
-	}, {
-		"en": "Ig'or"
-	}, {
-		"es": "Ig'or"
-	}],
+	"name": {
+		"fr": "Ig'or",
+		"en": "Golden Igor",
+		"es": "Igoro"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 37,
-	"name": [{
-		"fr": "Collier rafraichissant"
-	}, {
-		"en": "Collier rafraichissant"
-	}, {
-		"es": "Collier rafraichissant"
-	}],
+	"name": {
+		"fr": "Collier rafraichissant",
+		"en": "Necklace of Frost",
+		"es": "Collar refrescante"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 38,
-	"name": [{
-		"fr": "Totem des dinoz"
-	}, {
-		"en": "Totem des dinoz"
-	}, {
-		"es": "Totem des dinoz"
-	}],
+	"name": {
+		"fr": "Totem des dinoz",
+		"en": "Dino Totem Pole",
+		"es": "Tótem de los Dinos"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 39,
-	"name": [{
-		"fr": "Tete de granit lestee de plomb"
-	}, {
-		"en": "Tete de granit lestee de plomb"
-	}, {
-		"es": "Tete de granit lestee de plomb"
-	}],
+	"name": {
+		"fr": "Tete de granit lestee de plomb",
+		"en": "Granite Easter Island",
+		"es": "Cabeza de granito"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 40,
-	"name": [{
-		"fr": "Sagittaire"
-	}, {
-		"en": "Sagittaire"
-	}, {
-		"es": "Sagittaire"
-	}],
+	"name": {
+		"fr": "Sagittaire",
+		"en": "Sagittarius",
+		"es": "Sagitario"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 41,
-	"name": [{
-		"fr": "Capricorne"
-	}, {
-		"en": "Capricorne"
-	}, {
-		"es": "Capricorne"
-	}],
+	"name": {
+		"fr": "Capricorne",
+		"en": "Capricorn",
+		"es": "Capricornio"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 42,
-	"name": [{
-		"fr": "Lion"
-	}, {
-		"en": "Lion"
-	}, {
-		"es": "Lion"
-	}],
+	"name": {
+		"fr": "Lion",
+		"en": "Leo",
+		"es": "Leo"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 43,
-	"name": [{
-		"fr": "Taureau"
-	}, {
-		"en": "Taureau"
-	}, {
-		"es": "Taureau"
-	}],
+	"name": {
+		"fr": "Taureau",
+		"en": "Taurus",
+		"es": "Tauro"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 44,
-	"name": [{
-		"fr": "Balance"
-	}, {
-		"en": "Balance"
-	}, {
-		"es": "Balance"
-	}],
+	"name": {
+		"fr": "Balance",
+		"en": "Libra",
+		"es": "Libra"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 45,
-	"name": [{
-		"fr": "Belier"
-	}, {
-		"en": "Belier"
-	}, {
-		"es": "Belier"
-	}],
+	"name": {
+		"fr": "Belier",
+		"en": "Aries",
+		"es": "Aries"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 46,
-	"name": [{
-		"fr": "Scorpion"
-	}, {
-		"en": "Scorpion"
-	}, {
-		"es": "Scorpion"
-	}],
+	"name": {
+		"fr": "Scorpion",
+		"en": "Scorpio",
+		"es": "Escorpión"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 47,
-	"name": [{
-		"fr": "Cancer"
-	}, {
-		"en": "Cancer"
-	}, {
+	"name": {
+		"fr": "Cancer",
+		"en": "Cancer",
 		"es": "Cancer"
-	}],
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 48,
-	"name": [{
-		"fr": "Verseau"
-	}, {
-		"en": "Verseau"
-	}, {
-		"es": "Verseau"
-	}],
+	"name": {
+		"fr": "Verseau",
+		"en": "Aquarius",
+		"es": "Acuario"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 49,
-	"name": [{
-		"fr": "Gemeaux"
-	}, {
-		"en": "Gemeaux"
-	}, {
-		"es": "Gemeaux"
-	}],
+	"name": {
+		"fr": "Gemeaux",
+		"en": "Gemini",
+		"es": "Geminis"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 50,
-	"name": [{
-		"fr": "Poisson"
-	}, {
-		"en": "Poisson"
-	}, {
-		"es": "Poisson"
-	}],
+	"name": {
+		"fr": "Poisson",
+		"en": "Pisces",
+		"es": "Piscis"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 51,
-	"name": [{
-		"fr": "Vierge"
-	}, {
-		"en": "Vierge"
-	}, {
-		"es": "Vierge"
-	}],
+	"name": {
+		"fr": "Vierge",
+		"en": "Virgo",
+		"es": "Virgo"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 52,
-	"name": [{
-		"fr": "Elixir du Sagittaire"
-	}, {
-		"en": "Elixir du Sagittaire"
-	}, {
-		"es": "Elixir du Sagittaire"
-	}],
+	"name": {
+		"fr": "Elixir du Sagittaire",
+		"en": "Potion of Sagitarius",
+		"es": "Elixir de Sagitario"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 53,
-	"name": [{
-		"fr": "Elixir du Capricorne"
-	}, {
-		"en": "Elixir du Capricorne"
-	}, {
-		"es": "Elixir du Capricorne"
-	}],
+	"name": {
+		"fr": "Elixir du Capricorne",
+		"en": "Potion of Capricorn",
+		"es": "Elixir de Capricornio"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 54,
-	"name": [{
-		"fr": "Elixir du Lion"
-	}, {
-		"en": "Elixir du Lion"
-	}, {
-		"es": "Elixir du Lion"
-	}],
+	"name": {
+		"fr": "Elixir du Lion",
+		"en": "Potion of Leo",
+		"es": "Elixir de Leo"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 55,
-	"name": [{
-		"fr": "Elixir du Taureau"
-	}, {
-		"en": "Elixir du Taureau"
-	}, {
-		"es": "Elixir du Taureau"
-	}],
+	"name": {
+		"fr": "Elixir du Taureau",
+		"en": "Potion of Taurus",
+		"es": "Elixir de Tauro"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 56,
-	"name": [{
-		"fr": "Elixir de la Balance"
-	}, {
-		"en": "Elixir de la Balance"
-	}, {
-		"es": "Elixir de la Balance"
-	}],
+	"name": {
+		"fr": "Elixir de la Balance",
+		"en": "Potion of Libra",
+		"es": "Elixir de Libra"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 57,
-	"name": [{
-		"fr": "Elixir du Belier"
-	}, {
-		"en": "Elixir du Belier"
-	}, {
-		"es": "Elixir du Belier"
-	}],
+	"name": {
+		"fr": "Elixir du Belier",
+		"en": "Potion of Aries",
+		"es": "Elixir de Aries"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 58,
-	"name": [{
-		"fr": "Elixir du Scorpion"
-	}, {
-		"en": "Elixir du Scorpion"
-	}, {
-		"es": "Elixir du Scorpion"
-	}],
+	"name": {
+		"fr": "Elixir du Scorpion",
+		"en": "Potion of Scorpio",
+		"es": "Elixir de Escorpión"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 59,
-	"name": [{
-		"fr": "Elixir du Cancer"
-	}, {
-		"en": "Elixir du Cancer"
-	}, {
-		"es": "Elixir du Cancer"
-	}],
+	"name": {
+		"fr": "Elixir du Cancer",
+		"en": "Potion of Cancer",
+		"es": "Elixir de Cáncer"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 60,
-	"name": [{
-		"fr": "Elixir du Verseau"
-	}, {
-		"en": "Elixir du Verseau"
-	}, {
-		"es": "Elixir du Verseau"
-	}],
+	"name": {
+		"fr": "Elixir du Verseau",
+		"en": "Potion of Aquarius",
+		"es": "Elixir de Acuario"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 61,
-	"name": [{
-		"fr": "Elixir des Gemeaux"
-	}, {
-		"en": "Elixir des Gemeaux"
-	}, {
-		"es": "Elixir des Gemeaux"
-	}],
+	"name": {
+		"fr": "Elixir des Gemeaux",
+		"en": "Potion of Gemini",
+		"es": "Elixir de Géminis"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 62,
-	"name": [{
-		"fr": "Elixir du Poisson"
-	}, {
-		"en": "Elixir du Poisson"
-	}, {
-		"es": "Elixir du Poisson"
-	}],
+	"name": {
+		"fr": "Elixir du Poisson",
+		"en": "Potion of Pisces",
+		"es": "Elixir de Acuario"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 63,
-	"name": [{
-		"fr": "Elixir de la Vierge"
-	}, {
-		"en": "Elixir de la Vierge"
-	}, {
-		"es": "Elixir de la Vierge"
-	}],
+	"name": {
+		"fr": "Elixir de la Vierge",
+		"en": "Potion of Virgo",
+		"es": "Elixir de Virgo"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 64,
-	"name": [{
-		"fr": "Arc-en-miel"
-	}, {
-		"en": "Arc-en-miel"
-	}, {
-		"es": "Arc-en-miel"
-	}],
+	"name": {
+		"fr": "Arc-en-miel",
+		"en": "Honey Rainbow",
+		"es": "Arcomiel"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 65,
-	"name": [{
-		"fr": "Bouee canard"
-	}, {
-		"en": "Bouee canard"
-	}, {
-		"es": "Bouee canard"
-	}],
+	"name": {
+		"fr": "Bouee canard",
+		"en": "Rubber Ducky",
+		"es": "Flotador de pato"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 66,
-	"name": [{
-		"fr": "Branche de Kipik"
-	}, {
-		"en": "Branche de Kipik"
-	}, {
-		"es": "Branche de Kipik"
-	}],
+	"name": {
+		"fr": "Branche de Kipik",
+		"en": "Magical Cactus",
+		"es": "Rama de Kipik"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 67,
-	"name": [{
-		"fr": "Anneau de Guillaume Tell"
-	}, {
-		"en": "Anneau de Guillaume Tell"
-	}, {
-		"es": "Anneau de Guillaume Tell"
-	}],
+	"name": {
+		"fr": "Anneau de Guillaume Tell",
+		"en": "Ring of William Tell",
+		"es": "Anillo de Omaíta"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 68,
-	"name": [{
-		"fr": "Bougie"
-	}, {
-		"en": "Bougie"
-	}, {
-		"es": "Bougie"
-	}],
+	"name": {
+		"fr": "Bougie",
+		"en": "Candle of Light",
+		"es": "Vela"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 69,
-	"name": [{
-		"fr": "Koulraoule des iles"
-	}, {
-		"en": "Koulraoule des iles"
-	}, {
-		"es": "Koulraoule des iles"
-	}],
+	"name": {
+		"fr": "Koulraoule des iles",
+		"en": "Turtle Islands",
+		"es": "Tortuga de las islas"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 70,
-	"name": [{
-		"fr": "Trefle commun"
-	}, {
-		"en": "Trefle commun"
-	}, {
-		"es": "Trefle commun"
-	}],
+	"name": {
+		"fr": "Trefle commun",
+		"en": "Four-Leaf Clover",
+		"es": "Trébol común"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 71,
-	"name": [{
-		"fr": "Chaud devant !"
-	}, {
-		"en": "Chaud devant !"
-	}, {
-		"es": "Chaud devant !"
-	}],
+	"name": {
+		"fr": "Chaud devant !",
+		"en": "Dragon's Breath",
+		"es": "¡Emana calor!"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 72,
-	"name": [{
-		"fr": "Chapeau de Mage-Gris"
-	}, {
-		"en": "Chapeau de Mage-Gris"
-	}, {
-		"es": "Chapeau de Mage-Gris"
-	}],
+	"name": {
+		"fr": "Chapeau de Mage-Gris",
+		"en": "Magician's Hat",
+		"es": "Sombrero de Mago Gris"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 73,
-	"name": [{
-		"fr": "Feuille de sinopee"
-	}, {
-		"en": "Feuille de sinopee"
-	}, {
-		"es": "Feuille de sinopee"
-	}],
+	"name": {
+		"fr": "Feuille de sinopee",
+		"en": "Leaf",
+		"es": "Hoja de árbol"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 74,
-	"name": [{
-		"fr": "Esprit de l'orange"
-	}, {
-		"en": "Esprit de l'orange"
-	}, {
-		"es": "Esprit de l'orange"
-	}],
+	"name": {
+		"fr": "Esprit de l'orange",
+		"en": "Spirit of Orange",
+		"es": "Espíritu de la naranja"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 75,
-	"name": [{
-		"fr": "Esprit de la pluie"
-	}, {
-		"en": "Esprit de la pluie"
-	}, {
-		"es": "Esprit de la pluie"
-	}],
+	"name": {
+		"fr": "Esprit de la pluie",
+		"en": "Spirit of Rain",
+		"es": "Espíritu de la lluvia"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 76,
-	"name": [{
-		"fr": "Esprit des arbres"
-	}, {
-		"en": "Esprit des arbres"
-	}, {
-		"es": "Esprit des arbres"
-	}],
+	"name": {
+		"fr": "Esprit des arbres",
+		"en": "Spirit of Trees",
+		"es": "Espíritu de los árboles"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 77,
-	"name": [{
-		"fr": "Lucidjane a crete bleue"
-	}, {
-		"en": "Lucidjane a crete bleue"
-	}, {
-		"es": "Lucidjane a crete bleue"
-	}],
+	"name": {
+		"fr": "Lucidjane a crete bleue",
+		"en": "Blue Crested Fish",
+		"es": "Lucidjané con cresta azul"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 78,
-	"name": [{
-		"fr": "Filandreux rougeoyant"
-	}, {
-		"en": "Filandreux rougeoyant"
-	}, {
-		"es": "Filandreux rougeoyant"
-	}],
+	"name": {
+		"fr": "Filandreux rougeoyant",
+		"en": "Flame Fish",
+		"es": "Fibroso rojito"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 79,
-	"name": [{
-		"fr": "Poisson empereur"
-	}, {
-		"en": "Poisson empereur"
-	}, {
-		"es": "Poisson empereur"
-	}],
+	"name": {
+		"fr": "Poisson empereur",
+		"en": "Fish Emperor",
+		"es": "Pez emperador"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 80,
-	"name": [{
-		"fr": "Escargot Poussepa"
-	}, {
-		"en": "Escargot Poussepa"
-	}, {
-		"es": "Escargot Poussepa"
-	}],
+	"name": {
+		"fr": "Escargot Poussepa",
+		"en": "Snail Speed",
+		"es": "Caracol Noempujes"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 81,
-	"name": [{
-		"fr": "Perle nacree des murlocs"
-	}, {
-		"en": "Perle nacree des murlocs"
-	}, {
-		"es": "Perle nacree des murlocs"
-	}],
+	"name": {
+		"fr": "Perle nacree des murlocs",
+		"en": "Murloc's Pearl",
+		"es": "Perla de nácar de los murlocs"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 82,
-	"name": [{
-		"fr": "Jugement avant-dernier"
-	}, {
-		"en": "Jugement avant-dernier"
-	}, {
-		"es": "Jugement avant-dernier"
-	}],
+	"name": {
+		"fr": "Jugement avant-dernier",
+		"en": "Eye of Providence",
+		"es": "Juicio penúltimo"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 83,
-	"name": [{
-		"fr": "Jugement dernier"
-	}, {
-		"en": "Jugement dernier"
-	}, {
-		"es": "Jugement dernier"
-	}],
+	"name": {
+		"fr": "Jugement dernier",
+		"en": "Final Judgment",
+		"es": "Juicio final"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 84,
-	"name": [{
-		"fr": "Talisman scorpide"
-	}, {
-		"en": "Talisman scorpide"
-	}, {
-		"es": "Talisman scorpide"
-	}],
+	"name": {
+		"fr": "Talisman scorpide",
+		"en": "Scorpion Talisman",
+		"es": "Talismán escorpión"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 85,
-	"name": [{
-		"fr": "Baton tonnerre"
-	}, {
-		"en": "Baton tonnerre"
-	}, {
-		"es": "Baton tonnerre"
-	}],
+	"name": {
+		"fr": "Baton tonnerre",
+		"en": "Hammer Time 3000",
+		"es": "Martillo"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 86,
-	"name": [{
-		"fr": "Surprise de paille"
-	}, {
-		"en": "Surprise de paille"
-	}, {
-		"es": "Surprise de paille"
-	}],
+	"name": {
+		"fr": "Surprise de paille",
+		"en": "Ghost Candy",
+		"es": "Sorpresa fantasmagórica"
+	},
 	"rarity": 4,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 87,
-	"name": [{
-		"fr": "Larve d'oenopterius"
-	}, {
-		"en": "Larve d'oenopterius"
-	}, {
-		"es": "Larve d'oenopterius"
-	}],
+	"name": {
+		"fr": "Larve d'oenopterius",
+		"en": "King Larvae",
+		"es": "Larva de oenopterius"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 88,
-	"name": [{
-		"fr": "Pokute"
-	}, {
-		"en": "Pokute"
-	}, {
-		"es": "Pokute"
-	}],
+	"name": {
+		"fr": "Pokute",
+		"en": "Hare Nochi Guuuuu!",
+		"es": "Pokuté"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 89,
-	"name": [{
-		"fr": "Oeuf de Tzongre"
-	}, {
-		"en": "Oeuf de Tzongre"
-	}, {
-		"es": "Oeuf de Tzongre"
-	}],
+	"name": {
+		"fr": "Oeuf de Tzongre",
+		"en": "Dragon Egg",
+		"es": "Ojo de Tzongre"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 90,
-	"name": [{
-		"fr": "Fulguro pieds-en-mousse"
-	}, {
-		"en": "Fulguro pieds-en-mousse"
-	}, {
-		"es": "Fulguro pieds-en-mousse"
-	}],
+	"name": {
+		"fr": "Fulguro pieds-en-mousse",
+		"en": "Slippery Bananas",
+		"es": "Fulguro pies-pesados"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 91,
-	"name": [{
-		"fr": "Couvre-chef de Luffy"
-	}, {
-		"en": "Couvre-chef de Luffy"
-	}, {
-		"es": "Couvre-chef de Luffy"
-	}],
+	"name": {
+		"fr": "Couvre-chef de Luffy",
+		"en": "Luffy's Hat",
+		"es": "Sombrero de paja de Luffy"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 92,
-	"name": [{
-		"fr": "Chapeau violin"
-	}, {
-		"en": "Chapeau violin"
-	}, {
-		"es": "Chapeau violin"
-	}],
+	"name": {
+		"fr": "Chapeau violin",
+		"en": "Chopper's Hat",
+		"es": "Sombrero de Tony Tony Chopper"
+	},
 	"rarity": 4,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 93,
-	"name": [{
-		"fr": "Boit'a'messages"
-	}, {
-		"en": "Boit'a'messages"
-	}, {
-		"es": "Boit'a'messages"
-	}],
+	"name": {
+		"fr": "Boit'a'messages",
+		"en": "Mail Box",
+		"es": "Buzón zon"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 94,
-	"name": [{
-		"fr": "Anneau Antok"
-	}, {
-		"en": "Anneau Antok"
-	}, {
-		"es": "Anneau Antok"
-	}],
+	"name": {
+		"fr": "Anneau Antok",
+		"en": "Antok Ring",
+		"es": "Anillo Antok"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 95,
-	"name": [{
-		"fr": "Cagnotte de Tuberculoz"
-	}, {
-		"en": "Cagnotte de Tuberculoz"
-	}, {
-		"es": "Cagnotte de Tuberculoz"
-	}],
+	"name": {
+		"fr": "Cagnotte de Tuberculoz",
+		"en": "Tuber's Bag",
+		"es": "Saco de Tubérculo"
+	},
 	"rarity": 5,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 96,
-	"name": [{
-		"fr": "Perle flamboyante"
-	}, {
-		"en": "Perle flamboyante"
-	}, {
-		"es": "Perle flamboyante"
-	}],
+	"name": {
+		"fr": "Perle flamboyante",
+		"en": "Flameberg Pearl",
+		"es": "Perla flameante"
+	},
 	"rarity": 4,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 97,
-	"name": [{
-		"fr": "Perle vertillante"
-	}, {
-		"en": "Perle vertillante"
-	}, {
-		"es": "Perle vertillante"
-	}],
+	"name": {
+		"fr": "Perle vertillante",
+		"en": "Green-Moss Pearl",
+		"es": "Perla verdeante"
+	},
 	"rarity": 5,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 98,
-	"name": [{
-		"fr": "Grosse pe-perle "
-	}, {
-		"en": "Grosse pe-perle "
-	}, {
-		"es": "Grosse pe-perle "
-	}],
+	"name": {
+		"fr": "Grosse pe-perle",
+		"en": "Super-Purple Pearl",
+		"es": "Gran pe-perla"
+	},
 	"rarity": 6,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 99,
-	"name": [{
-		"fr": "Poils de Chourou"
-	}, {
-		"en": "Poils de Chourou"
-	}, {
-		"es": "Poils de Chourou"
-	}],
+	"name": {
+		"fr": "Poils de Chourou",
+		"en": "Chourou's Hair",
+		"es": "Pelos de Chourou"
+	},
 	"rarity": 5,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 100,
-	"name": [{
-		"fr": "Pocket-Guu"
-	}, {
-		"en": "Pocket-Guu"
-	}, {
-		"es": "Pocket-Guu"
-	}],
+	"name": {
+		"fr": "Pocket-Guu",
+		"en": "Pocket-Guu",
+		"es": "Guu de bolsillo"
+	},
 	"rarity": 4,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 101,
-	"name": [{
-		"fr": "Colis surprise"
-	}, {
-		"en": "Colis surprise"
-	}, {
-		"es": "Colis surprise"
-	}],
+	"name": {
+		"fr": "Colis surprise",
+		"en": "Surprise Package",
+		"es": "Paquete sorpresa"
+	},
 	"rarity": 0,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 102,
-	"name": [{
-		"fr": "La Carotte d'Igor"
-	}, {
-		"en": "La Carotte d'Igor"
-	}, {
-		"es": "La Carotte d'Igor"
-	}],
+	"name": {
+		"fr": "La Carotte d'Igor",
+		"en": "Igor's Carrot",
+		"es": "La Zanahoria de Igor"
+	},
 	"rarity": 0,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 103,
-	"name": [{
-		"fr": "Vie palpitante"
-	}, {
-		"en": "Vie palpitante"
-	}, {
-		"es": "Vie palpitante"
-	}],
+	"name": {
+		"fr": "Vie palpitante",
+		"en": "Wonderful Life!",
+		"es": "Vida palpitante"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 104,
-	"name": [{
-		"fr": "Vie aventureuse"
-	}, {
-		"en": "Vie aventureuse"
-	}, {
-		"es": "Vie aventureuse"
-	}],
+	"name": {
+		"fr": "Vie aventureuse",
+		"en": "Heart of an Adventurer",
+		"es": "Vida aventurosa"
+	},
 	"rarity": 1,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 105,
-	"name": [{
-		"fr": "Vie epique"
-	}, {
-		"en": "Vie epique"
-	}, {
-		"es": "Vie epique"
-	}],
+	"name": {
+		"fr": "Vie epique",
+		"en": "Final Destiny",
+		"es": "Vida épica"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 106,
-	"name": [{
-		"fr": "Livre des champignons"
-	}, {
-		"en": "Livre des champignons"
-	}, {
-		"es": "Livre des champignons"
-	}],
+	"name": {
+		"fr": "Livre des champignons",
+		"en": "Book of Mushrooms",
+		"es": "Libro de los hongos"
+	},
 	"rarity": 5,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 107,
-	"name": [{
-		"fr": "Livre des etoiles"
-	}, {
-		"en": "Livre des etoiles"
-	}, {
-		"es": "Livre des etoiles"
-	}],
+	"name": {
+		"fr": "Livre des etoiles",
+		"en": "Book of Stars",
+		"es": "Libro de las estrellas"
+	},
 	"rarity": 5,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 108,
-	"name": [{
-		"fr": "Parapluie Frutiparc"
-	}, {
-		"en": "Parapluie Frutiparc"
-	}, {
-		"es": "Parapluie Frutiparc"
-	}],
+	"name": {
+		"fr": "Parapluie Frutiparc",
+		"en": "Green Umbrella",
+		"es": "Paraguas Frutiparc"
+	},
 	"rarity": 2,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 109,
-	"name": [{
-		"fr": "Flocon simple"
-	}, {
-		"en": "Flocon simple"
-	}, {
-		"es": "Flocon simple"
-	}],
+	"name": {
+		"fr": "Flocon simple",
+		"en": "Snowflake",
+		"es": "Copo de nieve simple"
+	},
 	"rarity": 3,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 110,
-	"name": [{
-		"fr": "Flocon bizarre"
-	}, {
-		"en": "Flocon bizarre"
-	}, {
-		"es": "Flocon bizarre"
-	}],
+	"name": {
+		"fr": "Flocon bizarre",
+		"en": "Glacier",
+		"es": "Copo de nieve raro"
+	},
 	"rarity": 4,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 111,
-	"name": [{
-		"fr": "Flocon ENORME !"
-	}, {
-		"en": "Flocon ENORME !"
-	}, {
-		"es": "Flocon ENORME !"
-	}],
+	"name": {
+		"fr": "Flocon ENORME !",
+		"en": "Gon Ga Jora",
+		"es": "Copo de nieve gigantesco"
+	},
 	"rarity": 5,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 112,
-	"name": [{
-		"fr": "Pioupiou carnivore"
-	}, {
-		"en": "Pioupiou carnivore"
-	}, {
-		"es": "Pioupiou carnivore"
-	}],
+	"name": {
+		"fr": "Pioupiou carnivore",
+		"en": "Carnivorous PiouPiou",
+		"es": "Píopío carnívoro"
+	},
 	"rarity": 6,
 	"value": -1,
 	"unlock": 1
 }, {
 	"id": 113,
-	"name": [{
-		"fr": "Cape de Tuberculoz"
-	}, {
-		"en": "Cape de Tuberculoz"
-	}, {
-		"es": "Cape de Tuberculoz"
-	}],
+	"name": {
+		"fr": "Cape de Tuberculoz",
+		"en": "The Robe of Tuber",
+		"es": "Capa de Tubérculo"
+	},
 	"rarity": 0,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 114,
-	"name": [{
-		"fr": "Mode Mario"
-	}, {
-		"en": "Mode Mario"
-	}, {
-		"es": "Mode Mario"
-	}],
+	"name": {
+		"fr": "Mode Mario",
+		"en": "Mario Mode!",
+		"es": "Modo Mario"
+	},
 	"rarity": 4,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 115,
-	"name": [{
-		"fr": "Casque de Volleyfest"
-	}, {
-		"en": "Casque de Volleyfest"
-	}, {
-		"es": "Casque de Volleyfest"
-	}],
+	"name": {
+		"fr": "Casque de Volleyfest",
+		"en": "The Helmet of Volleyfest",
+		"es": "Casco de Volleyfest"
+	},
 	"rarity": 0,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 116,
-	"name": [{
-		"fr": "Joyau d'Ankhel"
-	}, {
-		"en": "Joyau d'Ankhel"
-	}, {
-		"es": "Joyau d'Ankhel"
-	}],
+	"name": {
+		"fr": "Joyau d'Ankhel",
+		"en": "The Ankhel Jewel",
+		"es": "Joya de Ankhel"
+	},
 	"rarity": 0,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 117,
-	"name": [{
-		"fr": "Cle de Gordon"
-	}, {
-		"en": "Cle de Gordon"
-	}, {
-		"es": "Cle de Gordon"
-	}],
+	"name": {
+		"fr": "Cle de Gordon",
+		"en": "Gordon's Key",
+		"es": "Llave de Gordon"
+	},
 	"rarity": 0,
 	"value": -1,
 	"unlock": -1
 }, {
 	"id": 118,
-	"name": [{
-		"fr": "Cristaux d'Hammerfest"
-	}, {
-		"en": "Cristaux d'Hammerfest"
-	}, {
-		"es": "Cristaux d'Hammerfest"
-	}],
+	"name": {
+		"fr": "Cristaux d'Hammerfest",
+		"en": "Hammerfest Crystal",
+		"es": "Cristales de Hammerfest"
+	},
 	"rarity": 0,
 	"value": -2,
 	"unlock": -1
 }, {
 	"id": 119,
-	"name": [{
-		"fr": "Pain a la viande"
-	}, {
-		"en": "Pain a la viande"
-	}, {
-		"es": "Pain a la viande"
-	}],
+	"name": {
+		"fr": "Pain a la viande",
+		"en": "Hamburger",
+		"es": "Pan de carne"
+	},
 	"rarity": 1,
 	"value": 1000,
 	"unlock": -1
 }, {
 	"id": 120,
-	"name": [{
-		"fr": "Canne de Bobble"
-	}, {
-		"en": "Canne de Bobble"
-	}, {
-		"es": "Canne de Bobble"
-	}],
+	"name": {
+		"fr": "Canne de Bobble",
+		"en": "Candy Cane",
+		"es": "Bastón de Bobble"
+	},
 	"rarity": 7,
 	"value": 100000,
 	"unlock": -1
 }, {
 	"id": 121,
-	"name": [{
-		"fr": "Bonbon Berlinmauve"
-	}, {
-		"en": "Bonbon Berlinmauve"
-	}, {
-		"es": "Bonbon Berlinmauve"
-	}],
+	"name": {
+		"fr": "Bonbon Berlinmauve",
+		"en": "Seed Candy",
+		"es": "Caramelo Berlinmalva"
+	},
 	"rarity": 1,
 	"value": 500,
 	"unlock": -1
 }, {
 	"id": 122,
-	"name": [{
-		"fr": "Bonbon Chamagros"
-	}, {
-		"en": "Bonbon Chamagros"
-	}, {
-		"es": "Bonbon Chamagros"
-	}],
+	"name": {
+		"fr": "Bonbon Chamagros",
+		"en": "Raindrop Candy",
+		"es": "Caramelo Chamagros"
+	},
 	"rarity": 1,
 	"value": 1000,
 	"unlock": -1
 }, {
 	"id": 123,
-	"name": [{
-		"fr": "Bonbon rosamelle-praline"
-	}, {
-		"en": "Bonbon rosamelle-praline"
-	}, {
-		"es": "Bonbon rosamelle-praline"
-	}],
+	"name": {
+		"fr": "Bonbon rosamelle-praline",
+		"en": "Cherry Candy",
+		"es": "Caramelo rosa-praliné"
+	},
 	"rarity": 2,
 	"value": 2500,
 	"unlock": -1
 }, {
 	"id": 124,
-	"name": [{
-		"fr": "Sucette aux fruits bleus"
-	}, {
-		"en": "Sucette aux fruits bleus"
-	}, {
-		"es": "Sucette aux fruits bleus"
-	}],
+	"name": {
+		"fr": "Sucette aux fruits bleus",
+		"en": "Blue Raspberry Lollipop",
+		"es": "Chupakups de frutas azules"
+	},
 	"rarity": 2,
 	"value": 5000,
 	"unlock": -1
 }, {
 	"id": 125,
-	"name": [{
-		"fr": "Sucette chlorophylle"
-	}, {
-		"en": "Sucette chlorophylle"
-	}, {
-		"es": "Sucette chlorophylle"
-	}],
+	"name": {
+		"fr": "Sucette chlorophylle",
+		"en": "Green Apple Lollipop",
+		"es": "Chupakups de clorofila"
+	},
 	"rarity": 3,
 	"value": 15000,
 	"unlock": -1
 }, {
 	"id": 126,
-	"name": [{
-		"fr": "Diamant Oune-difained"
-	}, {
-		"en": "Diamant Oune-difained"
-	}, {
-		"es": "Diamant Oune-difained"
-	}],
+	"name": {
+		"fr": "Diamant Oune-difained",
+		"en": "Difaïned Diamond",
+		"es": "Diamante difaïned"
+	},
 	"rarity": 0,
 	"value": -2,
 	"unlock": -1
 }, {
 	"id": 127,
-	"name": [{
-		"fr": "Oeil de tigre"
-	}, {
-		"en": "Oeil de tigre"
-	}, {
-		"es": "Oeil de tigre"
-	}],
+	"name": {
+		"fr": "Oeil de tigre",
+		"en": "Eye of the Tiger",
+		"es": "Ojo del Tigre"
+	},
 	"rarity": 1,
 	"value": 5000,
 	"unlock": -1
 }, {
 	"id": 128,
-	"name": [{
-		"fr": "Jade de 12kg"
-	}, {
-		"en": "Jade de 12kg"
-	}, {
+	"name": {
+		"fr": "Jade de 12kg",
+		"en": "12kg Jade",
 		"es": "Jade de 12kg"
-	}],
+	},
 	"rarity": 2,
 	"value": 15000,
 	"unlock": -1
 }, {
 	"id": 129,
-	"name": [{
-		"fr": "Reflet-de-lune"
-	}, {
-		"en": "Reflet-de-lune"
-	}, {
-		"es": "Reflet-de-lune"
-	}],
+	"name": {
+		"fr": "Reflet-de-lune",
+		"en": "Moon Glade",
+		"es": "Reflejo-de-luna"
+	},
 	"rarity": 3,
 	"value": 25000,
 	"unlock": -1
 }, {
 	"id": 130,
-	"name": [{
-		"fr": "Surprise de Cerises"
-	}, {
-		"en": "Surprise de Cerises"
-	}, {
-		"es": "Surprise de Cerises"
-	}],
+	"name": {
+		"fr": "Surprise de Cerises",
+		"en": "Surprise Cake",
+		"es": "Sorpresa de Cerezas"
+	},
 	"rarity": 1,
 	"value": 800,
 	"unlock": -1
 }, {
 	"id": 131,
-	"name": [{
-		"fr": "Muffin aux cailloux"
-	}, {
-		"en": "Muffin aux cailloux"
-	}, {
-		"es": "Muffin aux cailloux"
-	}],
+	"name": {
+		"fr": "Muffin aux cailloux",
+		"en": "Muffin",
+		"es": "Magdalena de piedras"
+	},
 	"rarity": 1,
 	"value": 300,
 	"unlock": -1
 }, {
 	"id": 132,
-	"name": [{
-		"fr": "Gelee des bois"
-	}, {
-		"en": "Gelee des bois"
-	}, {
-		"es": "Gelee des bois"
-	}],
+	"name": {
+		"fr": "Gelee des bois",
+		"en": "Cake",
+		"es": "Pastel de madera"
+	},
 	"rarity": 1,
 	"value": 1700,
 	"unlock": -1
 }, {
 	"id": 133,
-	"name": [{
-		"fr": "Supreme aux framboises"
-	}, {
-		"en": "Supreme aux framboises"
-	}, {
-		"es": "Supreme aux framboises"
-	}],
+	"name": {
+		"fr": "Supreme aux framboises",
+		"en": "Wedding Cake",
+		"es": "Tarta suprema de frambuesas"
+	},
 	"rarity": 3,
 	"value": 12000,
 	"unlock": -1
 }, {
 	"id": 134,
-	"name": [{
-		"fr": "Petit petillant"
-	}, {
-		"en": "Petit petillant"
-	}, {
-		"es": "Petit petillant"
-	}],
+	"name": {
+		"fr": "Petit petillant",
+		"en": "Piece of Cake",
+		"es": "Tarta muy rica"
+	},
 	"rarity": 3,
 	"value": 8000,
 	"unlock": -1
 }, {
 	"id": 135,
-	"name": [{
-		"fr": "Pierres du Changement"
-	}, {
-		"en": "Pierres du Changement"
-	}, {
-		"es": "Pierres du Changement"
-	}],
+	"name": {
+		"fr": "Pierres du Changement",
+		"en": "Magical Stones",
+		"es": "Piedras del Cambio"
+	},
 	"rarity": 0,
 	"value": -2,
 	"unlock": -1
 }, {
 	"id": 136,
-	"name": [{
-		"fr": "Glace Fraise"
-	}, {
-		"en": "Glace Fraise"
-	}, {
-		"es": "Glace Fraise"
-	}],
+	"name": {
+		"fr": "Glace Fraise",
+		"en": "Strawberry Ice Cream",
+		"es": "Helado de fresa"
+	},
 	"rarity": 2,
 	"value": 1200,
 	"unlock": -1
 }, {
 	"id": 137,
-	"name": [{
-		"fr": "Coupe Glacee"
-	}, {
-		"en": "Coupe Glacee"
-	}, {
-		"es": "Coupe Glacee"
-	}],
+	"name": {
+		"fr": "Coupe Glacee",
+		"en": "Ice Cream Cup",
+		"es": "Copa helada"
+	},
 	"rarity": 2,
 	"value": 3500,
 	"unlock": -1
 }, {
 	"id": 138,
-	"name": [{
-		"fr": "Noodles"
-	}, {
-		"en": "Noodles"
-	}, {
-		"es": "Noodles"
-	}],
+	"name": {
+		"fr": "Noodles",
+		"en": "Noodles",
+		"es": "Fideos chinos"
+	},
 	"rarity": 2,
 	"value": 5600,
 	"unlock": -1
 }, {
 	"id": 139,
-	"name": [{
-		"fr": "Poulet Surgele"
-	}, {
-		"en": "Poulet Surgele"
-	}, {
-		"es": "Poulet Surgele"
-	}],
+	"name": {
+		"fr": "Poulet Surgele",
+		"en": "Frozen Chicken",
+		"es": "Pollo congelado"
+	},
 	"rarity": 1,
 	"value": 10,
 	"unlock": -1
 }, {
 	"id": 140,
-	"name": [{
-		"fr": "Liquide bizarre"
-	}, {
-		"en": "Liquide bizarre"
-	}, {
-		"es": "Liquide bizarre"
-	}],
+	"name": {
+		"fr": "Liquide bizarre",
+		"en": "Bizarre Liquid",
+		"es": "Líquido raro"
+	},
 	"rarity": 3,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 141,
-	"name": [{
-		"fr": "Gros acidule"
-	}, {
-		"en": "Gros acidule"
-	}, {
-		"es": "Gros acidule"
-	}],
+	"name": {
+		"fr": "Gros acidule",
+		"en": "Taffy",
+		"es": "Gran azucarado"
+	},
 	"rarity": 2,
 	"value": 5000,
 	"unlock": -1
 }, {
 	"id": 142,
-	"name": [{
-		"fr": "Liquide etrange"
-	}, {
-		"en": "Liquide etrange"
-	}, {
-		"es": "Liquide etrange"
-	}],
+	"name": {
+		"fr": "Liquide etrange",
+		"en": "Strange Liquid",
+		"es": "Líquido extraño"
+	},
 	"rarity": 3,
 	"value": 20000,
 	"unlock": -1
 }, {
 	"id": 143,
-	"name": [{
-		"fr": "Oeuf cru"
-	}, {
-		"en": "Oeuf cru"
-	}, {
-		"es": "Oeuf cru"
-	}],
+	"name": {
+		"fr": "Oeuf cru",
+		"en": "Raw Egg",
+		"es": "Huevo crudo"
+	},
 	"rarity": 1,
 	"value": 500,
 	"unlock": -1
 }, {
 	"id": 144,
-	"name": [{
-		"fr": "Gland gnan-gnan"
-	}, {
-		"en": "Gland gnan-gnan"
-	}, {
-		"es": "Gland gnan-gnan"
-	}],
+	"name": {
+		"fr": "Gland gnan-gnan",
+		"en": "Potato",
+		"es": "Gran ñan-ñan"
+	},
 	"rarity": 1,
 	"value": 1300,
 	"unlock": -1
 }, {
 	"id": 145,
-	"name": [{
-		"fr": "Reglisse rouge"
-	}, {
-		"en": "Reglisse rouge"
-	}, {
-		"es": "Reglisse rouge"
-	}],
+	"name": {
+		"fr": "Reglisse rouge",
+		"en": "Red Licorice",
+		"es": "Chuchería"
+	},
 	"rarity": 1,
 	"value": 600,
 	"unlock": -1
 }, {
 	"id": 146,
-	"name": [{
-		"fr": "Oeuf Au Plat"
-	}, {
-		"en": "Oeuf Au Plat"
-	}, {
-		"es": "Oeuf Au Plat"
-	}],
+	"name": {
+		"fr": "Oeuf Au Plat",
+		"en": "Plain Egg",
+		"es": "Huevo frito"
+	},
 	"rarity": 1,
 	"value": 1000,
 	"unlock": -1
 }, {
 	"id": 147,
-	"name": [{
-		"fr": "Saucisse piquee"
-	}, {
-		"en": "Saucisse piquee"
-	}, {
-		"es": "Saucisse piquee"
-	}],
+	"name": {
+		"fr": "Saucisse piquee",
+		"en": "Sausage on a Stick",
+		"es": "Salchica con palillo de dientes"
+	},
 	"rarity": 1,
 	"value": 300,
 	"unlock": -1
 }, {
 	"id": 148,
-	"name": [{
-		"fr": "Cerise-apero confite"
-	}, {
-		"en": "Cerise-apero confite"
-	}, {
-		"es": "Cerise-apero confite"
-	}],
+	"name": {
+		"fr": "Cerise-apero confite",
+		"en": "Cherry on a Stick",
+		"es": "Cereza con palillo de dientes"
+	},
 	"rarity": 1,
 	"value": 400,
 	"unlock": -1
 }, {
 	"id": 149,
-	"name": [{
-		"fr": "Fromage pique"
-	}, {
-		"en": "Fromage pique"
-	}, {
-		"es": "Fromage pique"
-	}],
+	"name": {
+		"fr": "Fromage pique",
+		"en": "Cheese on a Stick",
+		"es": "Queso con palillo de dientes"
+	},
 	"rarity": 1,
 	"value": 600,
 	"unlock": -1
 }, {
 	"id": 150,
-	"name": [{
-		"fr": "Olive pas mure"
-	}, {
-		"en": "Olive pas mure"
-	}, {
-		"es": "Olive pas mure"
-	}],
+	"name": {
+		"fr": "Olive pas mure",
+		"en": "Green Olive on a Stick",
+		"es": "Aceituna de Estepa"
+	},
 	"rarity": 1,
 	"value": 1000,
 	"unlock": -1
 }, {
 	"id": 151,
-	"name": [{
-		"fr": "Olive noire"
-	}, {
-		"en": "Olive noire"
-	}, {
-		"es": "Olive noire"
-	}],
+	"name": {
+		"fr": "Olive noire",
+		"en": "Black Olive on a Stick",
+		"es": "Aceituna negra de Estepa"
+	},
 	"rarity": 2,
 	"value": 1500,
 	"unlock": -1
 }, {
 	"id": 152,
-	"name": [{
-		"fr": "Oeil de pomme"
-	}, {
-		"en": "Oeil de pomme"
-	}, {
-		"es": "Oeil de pomme"
-	}],
+	"name": {
+		"fr": "Oeil de pomme",
+		"en": "Eyeball on a Stick",
+		"es": "Ojo del cochino"
+	},
 	"rarity": 2,
 	"value": 2000,
 	"unlock": -1
 }, {
 	"id": 153,
-	"name": [{
-		"fr": "Blob intrusif"
-	}, {
-		"en": "Blob intrusif"
-	}, {
-		"es": "Blob intrusif"
-	}],
+	"name": {
+		"fr": "Blob intrusif",
+		"en": "Jello on a Stick",
+		"es": "Aperitivo de Blandiblú"
+	},
 	"rarity": 2,
 	"value": 2500,
 	"unlock": -1
 }, {
 	"id": 154,
-	"name": [{
-		"fr": "Gouda mou"
-	}, {
-		"en": "Gouda mou"
-	}, {
-		"es": "Gouda mou"
-	}],
+	"name": {
+		"fr": "Gouda mou",
+		"en": "Gouda on a Stick",
+		"es": "Queso holandés blando"
+	},
 	"rarity": 3,
 	"value": 5000,
 	"unlock": -1
 }, {
 	"id": 155,
-	"name": [{
-		"fr": "Poulpi empale"
-	}, {
-		"en": "Poulpi empale"
-	}, {
-		"es": "Poulpi empale"
-	}],
+	"name": {
+		"fr": "Poulpi empale",
+		"en": "Fish on a Stick",
+		"es": "Tapa de calamar"
+	},
 	"rarity": 3,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 156,
-	"name": [{
-		"fr": "Olive oubliee"
-	}, {
-		"en": "Olive oubliee"
-	}, {
-		"es": "Olive oubliee"
-	}],
+	"name": {
+		"fr": "Olive oubliee",
+		"en": "Stuffed Olive on a Stick",
+		"es": "Aceituna olvidada"
+	},
 	"rarity": 4,
 	"value": 50000,
 	"unlock": -1
 }, {
 	"id": 157,
-	"name": [{
-		"fr": "Monsieur radis"
-	}, {
-		"en": "Monsieur radis"
-	}, {
-		"es": "Monsieur radis"
-	}],
+	"name": {
+		"fr": "Monsieur radis",
+		"en": "Mr. Radish",
+		"es": "Señor rábano"
+	},
 	"rarity": 4,
 	"value": 50000,
 	"unlock": -1
 }, {
 	"id": 158,
-	"name": [{
-		"fr": "Sushi thon"
-	}, {
-		"en": "Sushi thon"
-	}, {
-		"es": "Sushi thon"
-	}],
+	"name": {
+		"fr": "Sushi thon",
+		"en": "Fish Sushi",
+		"es": "Sushi de atún"
+	},
 	"rarity": 3,
 	"value": 9000,
 	"unlock": -1
 }, {
 	"id": 159,
-	"name": [{
-		"fr": "Sucette acidulee"
-	}, {
-		"en": "Sucette acidulee"
-	}, {
-		"es": "Sucette acidulee"
-	}],
+	"name": {
+		"fr": "Sucette acidulee",
+		"en": "Lollipop",
+		"es": "Piruleta"
+	},
 	"rarity": 1,
 	"value": 750,
 	"unlock": -1
 }, {
 	"id": 160,
-	"name": [{
-		"fr": "Delice d'Arale"
-	}, {
-		"en": "Delice d'Arale"
-	}, {
-		"es": "Delice d'Arale"
-	}],
+	"name": {
+		"fr": "Delice d'Arale",
+		"en": "Chocolate Mousse",
+		"es": "Delicia de Arale"
+	},
 	"rarity": 5,
 	"value": 1,
 	"unlock": -1
 }, {
 	"id": 161,
-	"name": [{
-		"fr": "Sorbet au plastique"
-	}, {
-		"en": "Sorbet au plastique"
-	}, {
-		"es": "Sorbet au plastique"
-	}],
+	"name": {
+		"fr": "Sorbet au plastique",
+		"en": "Plastic Sorbet",
+		"es": "Polo de plástico"
+	},
 	"rarity": 1,
 	"value": 900,
 	"unlock": -1
 }, {
 	"id": 162,
-	"name": [{
-		"fr": "Manda"
-	}, {
-		"en": "Manda"
-	}, {
+	"name": {
+		"fr": "Manda",
+		"en": "Manda",
 		"es": "Manda"
-	}],
+	},
 	"rarity": 5,
 	"value": 60000,
 	"unlock": -1
 }, {
 	"id": 163,
-	"name": [{
-		"fr": "Petale mysterieuse"
-	}, {
-		"en": "Petale mysterieuse"
-	}, {
-		"es": "Petale mysterieuse"
-	}],
+	"name": {
+		"fr": "Petale mysterieuse",
+		"en": "Cashew",
+		"es": "Pétalo misterioso"
+	},
 	"rarity": 2,
 	"value": 3000,
 	"unlock": -1
 }, {
 	"id": 164,
-	"name": [{
-		"fr": "Gump"
-	}, {
-		"en": "Gump"
-	}, {
+	"name": {
+		"fr": "Gump",
+		"en": "Gump",
 		"es": "Gump"
-	}],
+	},
 	"rarity": 4,
 	"value": 35000,
 	"unlock": -1
 }, {
 	"id": 165,
-	"name": [{
-		"fr": "Bleuet"
-	}, {
-		"en": "Bleuet"
-	}, {
-		"es": "Bleuet"
-	}],
+	"name": {
+		"fr": "Bleuet",
+		"en": "Sapphire Mushroom",
+		"es": "Seta azulada"
+	},
 	"rarity": 0,
 	"value": 5,
 	"unlock": -1
 }, {
 	"id": 166,
-	"name": [{
-		"fr": "Rougeoyant"
-	}, {
-		"en": "Rougeoyant"
-	}, {
-		"es": "Rougeoyant"
-	}],
+	"name": {
+		"fr": "Rougeoyant",
+		"en": "Ruby Mushroom",
+		"es": "Rojeante"
+	},
 	"rarity": 0,
 	"value": 10,
 	"unlock": -1
 }, {
 	"id": 167,
-	"name": [{
-		"fr": "Verdifiant"
-	}, {
-		"en": "Verdifiant"
-	}, {
-		"es": "Verdifiant"
-	}],
+	"name": {
+		"fr": "Verdifiant",
+		"en": "Emerald Mushroom",
+		"es": "Verdifiante"
+	},
 	"rarity": 0,
 	"value": 15,
 	"unlock": -1
 }, {
 	"id": 168,
-	"name": [{
-		"fr": "KassDent"
-	}, {
-		"en": "KassDent"
-	}, {
-		"es": "KassDent"
-	}],
+	"name": {
+		"fr": "KassDent",
+		"en": "Sliver Mushroom",
+		"es": "Rompedientes"
+	},
 	"rarity": 0,
 	"value": 25,
 	"unlock": -1
 }, {
 	"id": 169,
-	"name": [{
-		"fr": "Piece d'or secrete"
-	}, {
-		"en": "Piece d'or secrete"
-	}, {
-		"es": "Piece d'or secrete"
-	}],
+	"name": {
+		"fr": "Piece d'or secrete",
+		"en": "Secret Coin",
+		"es": "Moneda de oro secreta"
+	},
 	"rarity": 0,
 	"value": 2500,
 	"unlock": -1
 }, {
 	"id": 170,
-	"name": [{
-		"fr": "Sou d'argent"
-	}, {
-		"en": "Sou d'argent"
-	}, {
-		"es": "Sou d'argent"
-	}],
+	"name": {
+		"fr": "Sou d'argent",
+		"en": "Silver Coin",
+		"es": "Moneda de plata"
+	},
 	"rarity": 1,
 	"value": 5000,
 	"unlock": -1
 }, {
 	"id": 171,
-	"name": [{
-		"fr": "Sou d'or"
-	}, {
-		"en": "Sou d'or"
-	}, {
-		"es": "Sou d'or"
-	}],
+	"name": {
+		"fr": "Sou d'or",
+		"en": "Gold Coin",
+		"es": "Moneda de oro"
+	},
 	"rarity": 3,
 	"value": 25000,
 	"unlock": -1
 }, {
 	"id": 172,
-	"name": [{
-		"fr": "Gros tas de sous"
-	}, {
-		"en": "Gros tas de sous"
-	}, {
-		"es": "Gros tas de sous"
-	}],
+	"name": {
+		"fr": "Gros tas de sous",
+		"en": "Big Unemployment",
+		"es": "Un montón de dinero"
+	},
 	"rarity": 4,
 	"value": 75000,
 	"unlock": -1
 }, {
 	"id": 173,
-	"name": [{
-		"fr": "Boisson kipik"
-	}, {
-		"en": "Boisson kipik"
-	}, {
-		"es": "Boisson kipik"
-	}],
+	"name": {
+		"fr": "Boisson kipik",
+		"en": "Soda",
+		"es": "Bebida kipik"
+	},
 	"rarity": 1,
 	"value": 1200,
 	"unlock": -1
 }, {
 	"id": 174,
-	"name": [{
-		"fr": "Doigts-de-tuberculoz"
-	}, {
-		"en": "Doigts-de-tuberculoz"
-	}, {
-		"es": "Doigts-de-tuberculoz"
-	}],
+	"name": {
+		"fr": "Doigts-de-tuberculoz",
+		"en": "French Fries",
+		"es": "Dedos-de-Tubérculo"
+	},
 	"rarity": 1,
 	"value": 900,
 	"unlock": -1
 }, {
 	"id": 175,
-	"name": [{
-		"fr": "Pizza de Donatello"
-	}, {
-		"en": "Pizza de Donatello"
-	}, {
+	"name": {
+		"fr": "Pizza de Donatello",
+		"en": "Slice of Pizza",
 		"es": "Pizza de Donatello"
-	}],
+	},
 	"rarity": 1,
 	"value": 1400,
 	"unlock": -1
 }, {
 	"id": 176,
-	"name": [{
-		"fr": "Canele du sud-ouest"
-	}, {
-		"en": "Canele du sud-ouest"
-	}, {
-		"es": "Canele du sud-ouest"
-	}],
+	"name": {
+		"fr": "Canele du sud-ouest",
+		"en": "Hazelnut Chocolate",
+		"es": "Canelé de Burdeos"
+	},
 	"rarity": 3,
 	"value": 15500,
 	"unlock": -1
 }, {
 	"id": 177,
-	"name": [{
-		"fr": "Eclair noisette choco caramel et sucre"
-	}, {
-		"en": "Eclair noisette choco caramel et sucre"
-	}, {
-		"es": "Eclair noisette choco caramel et sucre"
-	}],
+	"name": {
+		"fr": "Eclair noisette choco caramel et sucre",
+		"en": "Chocolate Eclair",
+		"es": "Rebanada de pan con crema de cacao y avellana"
+	},
 	"rarity": 3,
 	"value": 18500,
 	"unlock": -1
 }, {
 	"id": 178,
-	"name": [{
-		"fr": "Bleuette rouge"
-	}, {
-		"en": "Bleuette rouge"
-	}, {
-		"es": "Bleuette rouge"
-	}],
+	"name": {
+		"fr": "Bleuette rouge",
+		"en": "Red PlantNadie sabe lo que es",
+		"es": "Nadie sabe lo que es"
+	},
 	"rarity": 3,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 179,
-	"name": [{
-		"fr": "Perroquet decapite en sauce"
-	}, {
-		"en": "Perroquet decapite en sauce"
-	}, {
-		"es": "Perroquet decapite en sauce"
-	}],
+	"name": {
+		"fr": "Perroquet decapite en sauce",
+		"en": "Parrot Head",
+		"es": "Loro decapitado en salsa"
+	},
 	"rarity": 4,
 	"value": 45000,
 	"unlock": -1
 }, {
 	"id": 180,
-	"name": [{
-		"fr": "Morvo-morphe"
-	}, {
-		"en": "Morvo-morphe"
-	}, {
-		"es": "Morvo-morphe"
-	}],
+	"name": {
+		"fr": "Morvo-morphe",
+		"en": "Alien Blob",
+		"es": "Morvo-morfo"
+	},
 	"rarity": 4,
 	"value": 70000,
 	"unlock": -1
 }, {
 	"id": 181,
-	"name": [{
-		"fr": "Fraise Tagada"
-	}, {
-		"en": "Fraise Tagada"
-	}, {
-		"es": "Fraise Tagada"
-	}],
+	"name": {
+		"fr": "Fraise Tagada",
+		"en": "Tagada-Strawberry",
+		"es": "Chuchería de fresa"
+	},
 	"rarity": 1,
 	"value": 1000,
 	"unlock": -1
 }, {
 	"id": 182,
-	"name": [{
-		"fr": "Car-En-Sac"
-	}, {
-		"en": "Car-En-Sac"
-	}, {
-		"es": "Car-En-Sac"
-	}],
+	"name": {
+		"fr": "Car-En-Sac",
+		"en": "Car-En-Sac",
+		"es": "Píldoras de mentira"
+	},
 	"rarity": 1,
 	"value": 1400,
 	"unlock": -1
 }, {
 	"id": 183,
-	"name": [{
-		"fr": "Dragibus"
-	}, {
-		"en": "Dragibus"
-	}, {
-		"es": "Dragibus"
-	}],
+	"name": {
+		"fr": "Dragibus",
+		"en": "Dragibus",
+		"es": "Bolitas de chuches"
+	},
 	"rarity": 1,
 	"value": 1600,
 	"unlock": -1
 }, {
 	"id": 184,
-	"name": [{
-		"fr": "Krokodile"
-	}, {
-		"en": "Krokodile"
-	}, {
-		"es": "Krokodile"
-	}],
+	"name": {
+		"fr": "Krokodile",
+		"en": "Crocodile",
+		"es": "Chuchería de cocodrilo"
+	},
 	"rarity": 2,
 	"value": 12250,
 	"unlock": -1
 }, {
 	"id": 185,
-	"name": [{
-		"fr": "Demi Cocobats"
-	}, {
-		"en": "Demi Cocobats"
-	}, {
-		"es": "Demi Cocobats"
-	}],
+	"name": {
+		"fr": "Demi Cocobats",
+		"en": "Half Cocobats",
+		"es": "Chuche de infancia irlandesa"
+	},
 	"rarity": 1,
 	"value": 1800,
 	"unlock": -1
 }, {
 	"id": 186,
-	"name": [{
-		"fr": "Happy Cola"
-	}, {
-		"en": "Happy Cola"
-	}, {
-		"es": "Happy Cola"
-	}],
+	"name": {
+		"fr": "Happy Cola",
+		"en": "Happy Cola",
+		"es": "Una botellita de cola"
+	},
 	"rarity": 1,
 	"value": 1750,
 	"unlock": -1
 }, {
 	"id": 187,
-	"name": [{
-		"fr": "Cacahuete secrete"
-	}, {
-		"en": "Cacahuete secrete"
-	}, {
-		"es": "Cacahuete secrete"
-	}],
+	"name": {
+		"fr": "Cacahuete secrete",
+		"en": "Peanut",
+		"es": "Cacahuete secreto"
+	},
 	"rarity": 2,
 	"value": 50,
 	"unlock": -1
 }, {
 	"id": 188,
-	"name": [{
-		"fr": "P'tit fantome"
-	}, {
-		"en": "P'tit fantome"
-	}, {
-		"es": "P'tit fantome"
-	}],
+	"name": {
+		"fr": "P'tit fantome",
+		"en": "Small Ghost",
+		"es": "Fantasmita"
+	},
 	"rarity": 2,
 	"value": 2500,
 	"unlock": -1
 }, {
 	"id": 189,
-	"name": [{
-		"fr": "Cookie deshydrate"
-	}, {
-		"en": "Cookie deshydrate"
-	}, {
-		"es": "Cookie deshydrate"
-	}],
+	"name": {
+		"fr": "Cookie deshydrate",
+		"en": "Hard Cookie",
+		"es": "Cookie deshidratada"
+	},
 	"rarity": 2,
 	"value": 1800,
 	"unlock": -1
 }, {
 	"id": 190,
-	"name": [{
-		"fr": "Arbuche de noel"
-	}, {
-		"en": "Arbuche de noel"
-	}, {
-		"es": "Arbuche de noel"
-	}],
+	"name": {
+		"fr": "Arbuche de noel",
+		"en": "Christmas Log",
+		"es": "Tronco de Navidad"
+	},
 	"rarity": 3,
 	"value": 8000,
 	"unlock": -1
 }, {
 	"id": 191,
-	"name": [{
-		"fr": "Piment farceur"
-	}, {
-		"en": "Piment farceur"
-	}, {
-		"es": "Piment farceur"
-	}],
+	"name": {
+		"fr": "Piment farceur",
+		"en": "Hot Pepper",
+		"es": "Pimiento del piquillo"
+	},
 	"rarity": 4,
 	"value": 12000,
 	"unlock": -1
 }, {
 	"id": 192,
-	"name": [{
-		"fr": "Soja Max IceCream"
-	}, {
-		"en": "Soja Max IceCream"
-	}, {
-		"es": "Soja Max IceCream"
-	}],
+	"name": {
+		"fr": "Soja Max IceCream",
+		"en": "Bread",
+		"es": "Helado de Soja Max"
+	},
 	"rarity": 2,
 	"value": 2250,
 	"unlock": -1
 }, {
 	"id": 193,
-	"name": [{
-		"fr": "Bouquet de steack"
-	}, {
-		"en": "Bouquet de steack"
-	}, {
-		"es": "Bouquet de steack"
-	}],
+	"name": {
+		"fr": "Bouquet de steack",
+		"en": "Bouquet",
+		"es": "Ramo de carne"
+	},
 	"rarity": 4,
 	"value": 7777,
 	"unlock": -1
 }, {
 	"id": 194,
-	"name": [{
-		"fr": "Daruma-Pasteque"
-	}, {
-		"en": "Daruma-Pasteque"
-	}, {
-		"es": "Daruma-Pasteque"
-	}],
+	"name": {
+		"fr": "Daruma-Pasteque",
+		"en": "Daruma Watermelon",
+		"es": "Daruma-Sandía"
+	},
 	"rarity": 5,
 	"value": 60000,
 	"unlock": -1
 }, {
 	"id": 195,
-	"name": [{
-		"fr": "Graine de tournesol"
-	}, {
-		"en": "Graine de tournesol"
-	}, {
-		"es": "Graine de tournesol"
-	}],
+	"name": {
+		"fr": "Graine de tournesol",
+		"en": "Grain",
+		"es": "Semilla de girasol"
+	},
 	"rarity": 3,
 	"value": 5,
 	"unlock": -1
 }, {
 	"id": 196,
-	"name": [{
-		"fr": "Croissant confit"
-	}, {
-		"en": "Croissant confit"
-	}, {
-		"es": "Croissant confit"
-	}],
+	"name": {
+		"fr": "Croissant confit",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 5,
 	"value": 1500,
 	"unlock": -1
 }, {
 	"id": 197,
-	"name": [{
-		"fr": "Haricot paresseux"
-	}, {
-		"en": "Haricot paresseux"
-	}, {
-		"es": "Haricot paresseux"
-	}],
+	"name": {
+		"fr": "Haricot paresseux",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 800,
 	"unlock": -1
 }, {
 	"id": 198,
-	"name": [{
-		"fr": "Lapin-choco"
-	}, {
-		"en": "Lapin-choco"
-	}, {
-		"es": "Lapin-choco"
-	}],
+	"name": {
+		"fr": "Lapin-choco",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 1200,
 	"unlock": -1
 }, {
 	"id": 199,
-	"name": [{
-		"fr": "Biloo"
-	}, {
-		"en": "Biloo"
-	}, {
-		"es": "Biloo"
-	}],
+	"name": {
+		"fr": "Biloo",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 900,
 	"unlock": -1
 }, {
 	"id": 200,
-	"name": [{
-		"fr": "Graine de pechume en gelee"
-	}, {
-		"en": "Graine de pechume en gelee"
-	}, {
-		"es": "Graine de pechume en gelee"
-	}],
+	"name": {
+		"fr": "Graine de pechume en gelee",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 3000,
 	"unlock": -1
 }, {
 	"id": 201,
-	"name": [{
-		"fr": "Sombrino aux amandes"
-	}, {
-		"en": "Sombrino aux amandes"
-	}, {
-		"es": "Sombrino aux amandes"
-	}],
+	"name": {
+		"fr": "Sombrino aux amandes",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 1650,
 	"unlock": -1
 }, {
 	"id": 202,
-	"name": [{
-		"fr": "Emi-Praline"
-	}, {
-		"en": "Emi-Praline"
-	}, {
-		"es": "Emi-Praline"
-	}],
+	"name": {
+		"fr": "Emi-Praline",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 1500,
 	"unlock": -1
 }, {
 	"id": 203,
-	"name": [{
-		"fr": "Frogmaliet aux pepites de chocolat"
-	}, {
-		"en": "Frogmaliet aux pepites de chocolat"
-	}, {
-		"es": "Frogmaliet aux pepites de chocolat"
-	}],
+	"name": {
+		"fr": "Frogmaliet aux pepites de chocolat",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 1600,
 	"unlock": -1
 }, {
 	"id": 204,
-	"name": [{
-		"fr": "Yumi au cafe"
-	}, {
-		"en": "Yumi au cafe"
-	}, {
-		"es": "Yumi au cafe"
-	}],
+	"name": {
+		"fr": "Yumi au cafe",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 1800,
 	"unlock": -1
 }, {
 	"id": 205,
-	"name": [{
-		"fr": "Bouchee mielleuse nappee au gel de Vodka"
-	}, {
-		"en": "Bouchee mielleuse nappee au gel de Vodka"
-	}, {
-		"es": "Bouchee mielleuse nappee au gel de Vodka"
-	}],
+	"name": {
+		"fr": "Bouchee mielleuse nappee au gel de Vodka",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 1700,
 	"unlock": -1
 }, {
 	"id": 206,
-	"name": [{
-		"fr": "Escargot au chocolat persille"
-	}, {
-		"en": "Escargot au chocolat persille"
-	}, {
-		"es": "Escargot au chocolat persille"
-	}],
+	"name": {
+		"fr": "Escargot au chocolat persille",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 1750,
 	"unlock": -1
 }, {
 	"id": 207,
-	"name": [{
-		"fr": "Fossile de cacao marbre au fois gras"
-	}, {
-		"en": "Fossile de cacao marbre au fois gras"
-	}, {
-		"es": "Fossile de cacao marbre au fois gras"
-	}],
+	"name": {
+		"fr": "Fossile de cacao marbre au fois gras",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 1550,
 	"unlock": -1
 }, {
 	"id": 208,
-	"name": [{
-		"fr": "Cerisot marine a la biere"
-	}, {
-		"en": "Cerisot marine a la biere"
-	}, {
-		"es": "Cerisot marine a la biere"
-	}],
+	"name": {
+		"fr": "Cerisot marine a la biere",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 3000,
 	"unlock": -1
 }, {
 	"id": 209,
-	"name": [{
-		"fr": "Jambon de Bayonne"
-	}, {
-		"en": "Jambon de Bayonne"
-	}, {
-		"es": "Jambon de Bayonne"
-	}],
+	"name": {
+		"fr": "Jambon de Bayonne",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 12000,
 	"unlock": -1
 }, {
 	"id": 210,
-	"name": [{
-		"fr": "Saucisson entame"
-	}, {
-		"en": "Saucisson entame"
-	}, {
-		"es": "Saucisson entame"
-	}],
+	"name": {
+		"fr": "Saucisson entame",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 6000,
 	"unlock": -1
 }, {
 	"id": 211,
-	"name": [{
-		"fr": "Raide red reste"
-	}, {
-		"en": "Raide red reste"
-	}, {
-		"es": "Raide red reste"
-	}],
+	"name": {
+		"fr": "Raide red reste",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 800,
 	"unlock": -1
 }, {
 	"id": 212,
-	"name": [{
-		"fr": "Torchon madrangeais au sirop d'erable"
-	}, {
-		"en": "Torchon madrangeais au sirop d'erable"
-	}, {
-		"es": "Torchon madrangeais au sirop d'erable"
-	}],
+	"name": {
+		"fr": "Torchon madrangeais au sirop d'erable",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 500,
 	"unlock": -1
 }, {
 	"id": 213,
-	"name": [{
-		"fr": "Saucisson de marcassin sauvage"
-	}, {
-		"en": "Saucisson de marcassin sauvage"
-	}, {
-		"es": "Saucisson de marcassin sauvage"
-	}],
+	"name": {
+		"fr": "Saucisson de marcassin sauvage",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 4000,
 	"unlock": -1
 }, {
 	"id": 214,
-	"name": [{
-		"fr": "Tranches de Jaret de Kangourou"
-	}, {
-		"en": "Tranches de Jaret de Kangourou"
-	}, {
-		"es": "Tranches de Jaret de Kangourou"
-	}],
+	"name": {
+		"fr": "Tranches de Jaret de Kangourou",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 1200,
 	"unlock": -1
 }, {
 	"id": 215,
-	"name": [{
-		"fr": "Saucissaille de St-Morgelet"
-	}, {
-		"en": "Saucissaille de St-Morgelet"
-	}, {
-		"es": "Saucissaille de St-Morgelet"
-	}],
+	"name": {
+		"fr": "Saucissaille de St-Morgelet",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 1600,
 	"unlock": -1
 }, {
 	"id": 216,
-	"name": [{
-		"fr": "Pate d'ongles au truffes"
-	}, {
-		"en": "Pate d'ongles au truffes"
-	}, {
-		"es": "Pate d'ongles au truffes"
-	}],
+	"name": {
+		"fr": "Pate d'ongles au truffes",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 400,
 	"unlock": -1
 }, {
 	"id": 217,
-	"name": [{
-		"fr": "Saucisson maudit scelle"
-	}, {
-		"en": "Saucisson maudit scelle"
-	}, {
-		"es": "Saucisson maudit scelle"
-	}],
+	"name": {
+		"fr": "Saucisson maudit scelle",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 16000,
 	"unlock": -1
 }, {
 	"id": 218,
-	"name": [{
-		"fr": "Manquereau-sauce-au-citron"
-	}, {
-		"en": "Manquereau-sauce-au-citron"
-	}, {
-		"es": "Manquereau-sauce-au-citron"
-	}],
+	"name": {
+		"fr": "Manquereau-sauce-au-citron",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 2500,
 	"unlock": -1
 }, {
 	"id": 219,
-	"name": [{
-		"fr": "Mini-saucisses en boite"
-	}, {
-		"en": "Mini-saucisses en boite"
-	}, {
-		"es": "Mini-saucisses en boite"
-	}],
+	"name": {
+		"fr": "Mini-saucisses en boite",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 575,
 	"unlock": -1
 }, {
 	"id": 220,
-	"name": [{
-		"fr": "Haricots blanc"
-	}, {
-		"en": "Haricots blanc"
-	}, {
-		"es": "Haricots blanc"
-	}],
+	"name": {
+		"fr": "Haricots blanc",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 575,
 	"unlock": -1
 }, {
 	"id": 221,
-	"name": [{
-		"fr": "Lychees premier prix"
-	}, {
-		"en": "Lychees premier prix"
-	}, {
-		"es": "Lychees premier prix"
-	}],
+	"name": {
+		"fr": "Lychees premier prix",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 575,
 	"unlock": -1
 }, {
 	"id": 222,
-	"name": [{
-		"fr": "Zion's Calamar"
-	}, {
-		"en": "Zion's Calamar"
-	}, {
-		"es": "Zion's Calamar"
-	}],
+	"name": {
+		"fr": "Zion's Calamar",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 175,
 	"unlock": -1
 }, {
 	"id": 223,
-	"name": [{
-		"fr": "Aubergines au sirop"
-	}, {
-		"en": "Aubergines au sirop"
-	}, {
-		"es": "Aubergines au sirop"
-	}],
+	"name": {
+		"fr": "Aubergines au sirop",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 175,
 	"unlock": -1
 }, {
 	"id": 224,
-	"name": [{
-		"fr": "Camembert"
-	}, {
-		"en": "Camembert"
-	}, {
-		"es": "Camembert"
-	}],
+	"name": {
+		"fr": "Camembert",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 25,
 	"unlock": -1
 }, {
 	"id": 225,
-	"name": [{
-		"fr": "Emmental"
-	}, {
-		"en": "Emmental"
-	}, {
-		"es": "Emmental"
-	}],
+	"name": {
+		"fr": "Emmental",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 75,
 	"unlock": -1
 }, {
 	"id": 226,
-	"name": [{
-		"fr": "Fromage verni"
-	}, {
-		"en": "Fromage verni"
-	}, {
-		"es": "Fromage verni"
-	}],
+	"name": {
+		"fr": "Fromage verni",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 225,
 	"unlock": -1
 }, {
 	"id": 227,
-	"name": [{
-		"fr": "Roquefort"
-	}, {
-		"en": "Roquefort"
-	}, {
-		"es": "Roquefort"
-	}],
+	"name": {
+		"fr": "Roquefort",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 250,
 	"unlock": -1
 }, {
 	"id": 228,
-	"name": [{
-		"fr": "Fromage frais vigne"
-	}, {
-		"en": "Fromage frais vigne"
-	}, {
-		"es": "Fromage frais vigne"
-	}],
+	"name": {
+		"fr": "Fromage frais vigne",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 400,
 	"unlock": -1
 }, {
 	"id": 229,
-	"name": [{
-		"fr": "Pâte dessert fromagee"
-	}, {
-		"en": "Pâte dessert fromagee"
-	}, {
-		"es": "Pâte dessert fromagee"
-	}],
+	"name": {
+		"fr": "Pâte dessert fromagee",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 325,
 	"unlock": -1
 }, {
 	"id": 230,
-	"name": [{
-		"fr": "Saladou"
-	}, {
-		"en": "Saladou"
-	}, {
-		"es": "Saladou"
-	}],
+	"name": {
+		"fr": "Saladou",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 700,
 	"unlock": -1
 }, {
 	"id": 231,
-	"name": [{
-		"fr": "Poire d'eau"
-	}, {
-		"en": "Poire d'eau"
-	}, {
-		"es": "Poire d'eau"
-	}],
+	"name": {
+		"fr": "Poire d'eau",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 800,
 	"unlock": -1
 }, {
 	"id": 232,
-	"name": [{
-		"fr": "Cacahuete mauve et juteuse"
-	}, {
-		"en": "Cacahuete mauve et juteuse"
-	}, {
-		"es": "Cacahuete mauve et juteuse"
-	}],
+	"name": {
+		"fr": "Cacahuete mauve et juteuse",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 3700,
 	"unlock": -1
 }, {
 	"id": 233,
-	"name": [{
-		"fr": "Pommes de pierre"
-	}, {
-		"en": "Pommes de pierre"
-	}, {
-		"es": "Pommes de pierre"
-	}],
+	"name": {
+		"fr": "Pommes de pierre",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 200,
 	"unlock": -1
 }, {
 	"id": 234,
-	"name": [{
-		"fr": "Patates douces"
-	}, {
-		"en": "Patates douces"
-	}, {
-		"es": "Patates douces"
-	}],
+	"name": {
+		"fr": "Patates douces",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 400,
 	"unlock": -1
 }, {
 	"id": 235,
-	"name": [{
-		"fr": "Matraque bio"
-	}, {
-		"en": "Matraque bio"
-	}, {
-		"es": "Matraque bio"
-	}],
+	"name": {
+		"fr": "Matraque bio",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 700,
 	"unlock": -1
 }, {
 	"id": 236,
-	"name": [{
-		"fr": "Tomate pacifique"
-	}, {
-		"en": "Tomate pacifique"
-	}, {
-		"es": "Tomate pacifique"
-	}],
+	"name": {
+		"fr": "Tomate pacifique",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 500,
 	"unlock": -1
 }, {
 	"id": 237,
-	"name": [{
-		"fr": "Radix"
-	}, {
-		"en": "Radix"
-	}, {
-		"es": "Radix"
-	}],
+	"name": {
+		"fr": "Radix",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 600,
 	"unlock": -1
 }, {
 	"id": 238,
-	"name": [{
-		"fr": "Haricots verts"
-	}, {
-		"en": "Haricots verts"
-	}, {
-		"es": "Haricots verts"
-	}],
+	"name": {
+		"fr": "Haricots verts",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 15,
 	"unlock": -1
 }, {
 	"id": 239,
-	"name": [{
-		"fr": "Pomme Sapik"
-	}, {
-		"en": "Pomme Sapik"
-	}, {
-		"es": "Pomme Sapik"
-	}],
+	"name": {
+		"fr": "Pomme Sapik",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 5500,
 	"unlock": -1
 }, {
 	"id": 240,
-	"name": [{
-		"fr": "Pomme Sapu"
-	}, {
-		"en": "Pomme Sapu"
-	}, {
-		"es": "Pomme Sapu"
-	}],
+	"name": {
+		"fr": "Pomme Sapu",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 28000,
 	"unlock": -1
 }, {
 	"id": 241,
-	"name": [{
-		"fr": "Echalottes"
-	}, {
-		"en": "Echalottes"
-	}, {
-		"es": "Echalottes"
-	}],
+	"name": {
+		"fr": "Echalottes",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 5,
 	"value": 70000,
 	"unlock": -1
 }, {
 	"id": 242,
-	"name": [{
-		"fr": "Sel rieur"
-	}, {
-		"en": "Sel rieur"
-	}, {
-		"es": "Sel rieur"
-	}],
+	"name": {
+		"fr": "Sel rieur",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 2600,
 	"unlock": -1
 }, {
 	"id": 243,
-	"name": [{
-		"fr": "Poivron vert"
-	}, {
-		"en": "Poivron vert"
-	}, {
-		"es": "Poivron vert"
-	}],
+	"name": {
+		"fr": "Poivron vert",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 3500,
 	"unlock": -1
 }, {
 	"id": 244,
-	"name": [{
-		"fr": "Poivron jaune"
-	}, {
-		"en": "Poivron jaune"
-	}, {
-		"es": "Poivron jaune"
-	}],
+	"name": {
+		"fr": "Poivron jaune",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 15000,
 	"unlock": -1
 }, {
 	"id": 245,
-	"name": [{
-		"fr": "Poivron rouge"
-	}, {
-		"en": "Poivron rouge"
-	}, {
-		"es": "Poivron rouge"
-	}],
+	"name": {
+		"fr": "Poivron rouge",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 700,
 	"unlock": -1
 }, {
 	"id": 246,
-	"name": [{
-		"fr": "Brocolis digeres"
-	}, {
-		"en": "Brocolis digeres"
-	}, {
-		"es": "Brocolis digeres"
-	}],
+	"name": {
+		"fr": "Brocolis digeres",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 3,
 	"unlock": -1
 }, {
 	"id": 247,
-	"name": [{
-		"fr": "Grappe de Radix"
-	}, {
-		"en": "Grappe de Radix"
-	}, {
-		"es": "Grappe de Radix"
-	}],
+	"name": {
+		"fr": "Grappe de Radix",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 6000,
 	"unlock": -1
 }, {
 	"id": 248,
-	"name": [{
-		"fr": "Lance-poix"
-	}, {
-		"en": "Lance-poix"
-	}, {
-		"es": "Lance-poix"
-	}],
+	"name": {
+		"fr": "Lance-poix",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 7000,
 	"unlock": -1
 }, {
 	"id": 249,
-	"name": [{
-		"fr": "Haricots blancs"
-	}, {
-		"en": "Haricots blancs"
-	}, {
-		"es": "Haricots blancs"
-	}],
+	"name": {
+		"fr": "Haricots blancs",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 5,
 	"value": 35000,
 	"unlock": -1
 }, {
 	"id": 250,
-	"name": [{
-		"fr": "Poires d'eau en grappe"
-	}, {
-		"en": "Poires d'eau en grappe"
-	}, {
-		"es": "Poires d'eau en grappe"
-	}],
+	"name": {
+		"fr": "Poires d'eau en grappe",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 9000,
 	"unlock": -1
 }, {
 	"id": 251,
-	"name": [{
-		"fr": "Artifroid"
-	}, {
-		"en": "Artifroid"
-	}, {
-		"es": "Artifroid"
-	}],
+	"name": {
+		"fr": "Artifroid",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 700,
 	"unlock": -1
 }, {
 	"id": 252,
-	"name": [{
-		"fr": "Choux-flou"
-	}, {
-		"en": "Choux-flou"
-	}, {
-		"es": "Choux-flou"
-	}],
+	"name": {
+		"fr": "Choux-flou",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 5,
 	"value": 90000,
 	"unlock": -1
 }, {
 	"id": 253,
-	"name": [{
-		"fr": "Chourou"
-	}, {
-		"en": "Chourou"
-	}, {
-		"es": "Chourou"
-	}],
+	"name": {
+		"fr": "Chourou",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 1400,
 	"unlock": -1
 }, {
 	"id": 254,
-	"name": [{
-		"fr": "Pom pom pom.."
-	}, {
-		"en": "Pom pom pom.."
-	}, {
-		"es": "Pom pom pom.."
-	}],
+	"name": {
+		"fr": "Pom pom pom..",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 350,
 	"unlock": -1
 }, {
 	"id": 255,
-	"name": [{
-		"fr": "Hollandais"
-	}, {
-		"en": "Hollandais"
-	}, {
-		"es": "Hollandais"
-	}],
+	"name": {
+		"fr": "Hollandais",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 1250,
 	"unlock": -1
 }, {
 	"id": 256,
-	"name": [{
-		"fr": "Fondant XXL au choco-beurre"
-	}, {
-		"en": "Fondant XXL au choco-beurre"
-	}, {
-		"es": "Fondant XXL au choco-beurre"
-	}],
+	"name": {
+		"fr": "Fondant XXL au choco-beurre",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 1250,
 	"unlock": -1
 }, {
 	"id": 257,
-	"name": [{
-		"fr": "Petillante"
-	}, {
-		"en": "Petillante"
-	}, {
-		"es": "Petillante"
-	}],
+	"name": {
+		"fr": "Petillante",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 2500,
 	"unlock": -1
 }, {
 	"id": 258,
-	"name": [{
-		"fr": "Warpoquiche"
-	}, {
-		"en": "Warpoquiche"
-	}, {
-		"es": "Warpoquiche"
-	}],
+	"name": {
+		"fr": "Warpoquiche",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 1250,
 	"unlock": -1
 }, {
 	"id": 259,
-	"name": [{
-		"fr": "Brioche doree"
-	}, {
-		"en": "Brioche doree"
-	}, {
-		"es": "Brioche doree"
-	}],
+	"name": {
+		"fr": "Brioche doree",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 150000,
 	"unlock": -1
 }, {
 	"id": 260,
-	"name": [{
-		"fr": "Cafe de fin de projet"
-	}, {
-		"en": "Cafe de fin de projet"
-	}, {
-		"es": "Cafe de fin de projet"
-	}],
+	"name": {
+		"fr": "Cafe de fin de projet",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 600,
 	"unlock": -1
 }, {
 	"id": 261,
-	"name": [{
-		"fr": "Laxatif aux amandes"
-	}, {
-		"en": "Laxatif aux amandes"
-	}, {
-		"es": "Laxatif aux amandes"
-	}],
+	"name": {
+		"fr": "Laxatif aux amandes",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 5,
 	"value": 150000,
 	"unlock": -1
 }, {
 	"id": 262,
-	"name": [{
-		"fr": "Smiley croquant"
-	}, {
-		"en": "Smiley croquant"
-	}, {
-		"es": "Smiley croquant"
-	}],
+	"name": {
+		"fr": "Smiley croquant",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 900,
 	"unlock": -1
 }, {
 	"id": 263,
-	"name": [{
-		"fr": "Barquette de lave"
-	}, {
-		"en": "Barquette de lave"
-	}, {
-		"es": "Barquette de lave"
-	}],
+	"name": {
+		"fr": "Barquette de lave",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 400,
 	"unlock": -1
 }, {
 	"id": 264,
-	"name": [{
-		"fr": "Nonoix"
-	}, {
-		"en": "Nonoix"
-	}, {
-		"es": "Nonoix"
-	}],
+	"name": {
+		"fr": "Nonoix",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 3000,
 	"unlock": -1
 }, {
 	"id": 265,
-	"name": [{
-		"fr": "Amande croquante"
-	}, {
-		"en": "Amande croquante"
-	}, {
-		"es": "Amande croquante"
-	}],
+	"name": {
+		"fr": "Amande croquante",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 3000,
 	"unlock": -1
 }, {
 	"id": 266,
-	"name": [{
-		"fr": "Noisette"
-	}, {
-		"en": "Noisette"
-	}, {
-		"es": "Noisette"
-	}],
+	"name": {
+		"fr": "Noisette",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 3000,
 	"unlock": -1
 }, {
 	"id": 267,
-	"name": [{
-		"fr": "Noodles crus"
-	}, {
-		"en": "Noodles crus"
-	}, {
-		"es": "Noodles crus"
-	}],
+	"name": {
+		"fr": "Noodles crus",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 550,
 	"unlock": -1
 }, {
 	"id": 268,
-	"name": [{
-		"fr": "Brioche vapeur"
-	}, {
-		"en": "Brioche vapeur"
-	}, {
-		"es": "Brioche vapeur"
-	}],
+	"name": {
+		"fr": "Brioche vapeur",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 21000,
 	"unlock": -1
 }, {
 	"id": 269,
-	"name": [{
-		"fr": "Tartine chocolat-noisette"
-	}, {
-		"en": "Tartine chocolat-noisette"
-	}, {
-		"es": "Tartine chocolat-noisette"
-	}],
+	"name": {
+		"fr": "Tartine chocolat-noisette",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 650,
 	"unlock": -1
 }, {
 	"id": 270,
-	"name": [{
-		"fr": "Tartine hemoglobine"
-	}, {
-		"en": "Tartine hemoglobine"
-	}, {
-		"es": "Tartine hemoglobine"
-	}],
+	"name": {
+		"fr": "Tartine hemoglobine",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 1650,
 	"unlock": -1
 }, {
 	"id": 271,
-	"name": [{
-		"fr": "Tartine a l'orange collante"
-	}, {
-		"en": "Tartine a l'orange collante"
-	}, {
-		"es": "Tartine a l'orange collante"
-	}],
+	"name": {
+		"fr": "Tartine a l'orange collante",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 5800,
 	"unlock": -1
 }, {
 	"id": 272,
-	"name": [{
-		"fr": "Tartine au miel"
-	}, {
-		"en": "Tartine au miel"
-	}, {
-		"es": "Tartine au miel"
-	}],
+	"name": {
+		"fr": "Tartine au miel",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 1650,
 	"unlock": -1
 }, {
 	"id": 273,
-	"name": [{
-		"fr": "Lombric nature"
-	}, {
-		"en": "Lombric nature"
-	}, {
-		"es": "Lombric nature"
-	}],
+	"name": {
+		"fr": "Lombric nature",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 15,
 	"unlock": -1
 }, {
 	"id": 274,
-	"name": [{
-		"fr": "Grenade de chantilly"
-	}, {
-		"en": "Grenade de chantilly"
-	}, {
-		"es": "Grenade de chantilly"
-	}],
+	"name": {
+		"fr": "Grenade de chantilly",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 5000,
 	"unlock": -1
 }, {
 	"id": 275,
-	"name": [{
-		"fr": "Profies tres drôles"
-	}, {
-		"en": "Profies tres drôles"
-	}, {
-		"es": "Profies tres drôles"
-	}],
+	"name": {
+		"fr": "Profies tres drôles",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 35000,
 	"unlock": -1
 }, {
 	"id": 276,
-	"name": [{
-		"fr": "Chouchocos"
-	}, {
-		"en": "Chouchocos"
-	}, {
-		"es": "Chouchocos"
-	}],
+	"name": {
+		"fr": "Chouchocos",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 35000,
 	"unlock": -1
 }, {
 	"id": 277,
-	"name": [{
-		"fr": "Blob perime"
-	}, {
-		"en": "Blob perime"
-	}, {
-		"es": "Blob perime"
-	}],
+	"name": {
+		"fr": "Blob perime",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 250000,
 	"unlock": -1
 }, {
 	"id": 278,
-	"name": [{
-		"fr": "Bonbon Helene-fraiche"
-	}, {
-		"en": "Bonbon Helene-fraiche"
-	}, {
-		"es": "Bonbon Helene-fraiche"
-	}],
+	"name": {
+		"fr": "Bonbon Helene-fraiche",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 200,
 	"unlock": -1
 }, {
 	"id": 279,
-	"name": [{
-		"fr": "Nem aux anchois"
-	}, {
-		"en": "Nem aux anchois"
-	}, {
-		"es": "Nem aux anchois"
-	}],
+	"name": {
+		"fr": "Nem aux anchois",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 9000,
 	"unlock": -1
 }, {
 	"id": 280,
-	"name": [{
-		"fr": "Surimi pamplemousse"
-	}, {
-		"en": "Surimi pamplemousse"
-	}, {
-		"es": "Surimi pamplemousse"
-	}],
+	"name": {
+		"fr": "Surimi pamplemousse",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 150,
 	"unlock": -1
 }, {
 	"id": 281,
-	"name": [{
-		"fr": "Poulpi a l'encre"
-	}, {
-		"en": "Poulpi a l'encre"
-	}, {
-		"es": "Poulpi a l'encre"
-	}],
+	"name": {
+		"fr": "Poulpi a l'encre",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 5,
 	"value": 80000,
 	"unlock": -1
 }, {
 	"id": 282,
-	"name": [{
-		"fr": "Curly"
-	}, {
-		"en": "Curly"
-	}, {
-		"es": "Curly"
-	}],
+	"name": {
+		"fr": "Curly",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 5,
 	"value": 70000,
 	"unlock": -1
 }, {
 	"id": 283,
-	"name": [{
-		"fr": "Tartelette framboise"
-	}, {
-		"en": "Tartelette framboise"
-	}, {
-		"es": "Tartelette framboise"
-	}],
+	"name": {
+		"fr": "Tartelette framboise",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 2500,
 	"unlock": -1
 }, {
 	"id": 284,
-	"name": [{
-		"fr": "Oeuf de Poire"
-	}, {
-		"en": "Oeuf de Poire"
-	}, {
-		"es": "Oeuf de Poire"
-	}],
+	"name": {
+		"fr": "Oeuf de Poire",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 57000,
 	"unlock": -1
 }, {
 	"id": 285,
-	"name": [{
-		"fr": "Truffe collante sans gout"
-	}, {
-		"en": "Truffe collante sans gout"
-	}, {
-		"es": "Truffe collante sans gout"
-	}],
+	"name": {
+		"fr": "Truffe collante sans gout",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 300000,
 	"unlock": -1
 }, {
 	"id": 286,
-	"name": [{
-		"fr": "Sardines"
-	}, {
-		"en": "Sardines"
-	}, {
-		"es": "Sardines"
-	}],
+	"name": {
+		"fr": "Sardines",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 6000,
 	"unlock": -1
 }, {
 	"id": 287,
-	"name": [{
-		"fr": "Etoile Toulaho"
-	}, {
-		"en": "Etoile Toulaho"
-	}, {
-		"es": "Etoile Toulaho"
-	}],
+	"name": {
+		"fr": "Etoile Toulaho",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 1500,
 	"unlock": -1
 }, {
 	"id": 288,
-	"name": [{
-		"fr": "Transformer en sucre"
-	}, {
-		"en": "Transformer en sucre"
-	}, {
-		"es": "Transformer en sucre"
-	}],
+	"name": {
+		"fr": "Transformer en sucre",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 25000,
 	"unlock": -1
 }, {
 	"id": 289,
-	"name": [{
-		"fr": "Kitchissime"
-	}, {
-		"en": "Kitchissime"
-	}, {
-		"es": "Kitchissime"
-	}],
+	"name": {
+		"fr": "Kitchissime",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 25000,
 	"unlock": -1
 }, {
 	"id": 290,
-	"name": [{
-		"fr": "Igorocop"
-	}, {
-		"en": "Igorocop"
-	}, {
-		"es": "Igorocop"
-	}],
+	"name": {
+		"fr": "Igorocop",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 25000,
 	"unlock": -1
 }, {
 	"id": 291,
-	"name": [{
-		"fr": "Tidouli didi"
-	}, {
-		"en": "Tidouli didi"
-	}, {
-		"es": "Tidouli didi"
-	}],
+	"name": {
+		"fr": "Tidouli didi",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 25000,
 	"unlock": -1
 }, {
 	"id": 292,
-	"name": [{
-		"fr": "Dalek ! Exterminate !"
-	}, {
-		"en": "Dalek ! Exterminate !"
-	}, {
-		"es": "Dalek ! Exterminate !"
-	}],
+	"name": {
+		"fr": "Dalek ! Exterminate !",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 35000,
 	"unlock": -1
 }, {
 	"id": 293,
-	"name": [{
-		"fr": "Robo-malin"
-	}, {
-		"en": "Robo-malin"
-	}, {
-		"es": "Robo-malin"
-	}],
+	"name": {
+		"fr": "Robo-malin",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 25000,
 	"unlock": -1
 }, {
 	"id": 294,
-	"name": [{
-		"fr": "Johnny 6"
-	}, {
-		"en": "Johnny 6"
-	}, {
-		"es": "Johnny 6"
-	}],
+	"name": {
+		"fr": "Johnny 6",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 25000,
 	"unlock": -1
 }, {
 	"id": 295,
-	"name": [{
-		"fr": "Biscuit Transformer"
-	}, {
-		"en": "Biscuit Transformer"
-	}, {
-		"es": "Biscuit Transformer"
-	}],
+	"name": {
+		"fr": "Biscuit Transformer",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 50000,
 	"unlock": -1
 }, {
 	"id": 296,
-	"name": [{
-		"fr": "Statue: Citron Sorbex"
-	}, {
-		"en": "Statue: Citron Sorbex"
-	}, {
-		"es": "Statue: Citron Sorbex"
-	}],
+	"name": {
+		"fr": "Statue: Citron Sorbex",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 1000,
 	"unlock": -1
 }, {
 	"id": 297,
-	"name": [{
-		"fr": "Statue: Bombino"
-	}, {
-		"en": "Statue: Bombino"
-	}, {
-		"es": "Statue: Bombino"
-	}],
+	"name": {
+		"fr": "Statue: Bombino",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 4000,
 	"unlock": -1
 }, {
 	"id": 298,
-	"name": [{
-		"fr": "Statue: Poire Melbombe"
-	}, {
-		"en": "Statue: Poire Melbombe"
-	}, {
-		"es": "Statue: Poire Melbombe"
-	}],
+	"name": {
+		"fr": "Statue: Poire Melbombe",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 8000,
 	"unlock": -1
 }, {
 	"id": 299,
-	"name": [{
-		"fr": "Statue: Tagada"
-	}, {
-		"en": "Statue: Tagada"
-	}, {
-		"es": "Statue: Tagada"
-	}],
+	"name": {
+		"fr": "Statue: Tagada",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 300,
-	"name": [{
-		"fr": "Statue: Sapeur-kiwi"
-	}, {
-		"en": "Statue: Sapeur-kiwi"
-	}, {
-		"es": "Statue: Sapeur-kiwi"
-	}],
+	"name": {
+		"fr": "Statue: Sapeur-kiwi",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 15000,
 	"unlock": -1
 }, {
 	"id": 301,
-	"name": [{
-		"fr": "Statue: Bondissante"
-	}, {
-		"en": "Statue: Bondissante"
-	}, {
-		"es": "Statue: Bondissante"
-	}],
+	"name": {
+		"fr": "Statue: Bondissante",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 20000,
 	"unlock": -1
 }, {
 	"id": 302,
-	"name": [{
-		"fr": "Statue: Ananargeddon"
-	}, {
-		"en": "Statue: Ananargeddon"
-	}, {
-		"es": "Statue: Ananargeddon"
-	}],
+	"name": {
+		"fr": "Statue: Ananargeddon",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 25000,
 	"unlock": -1
 }, {
 	"id": 303,
-	"name": [{
-		"fr": "Anneau herisse"
-	}, {
-		"en": "Anneau herisse"
-	}, {
-		"es": "Anneau herisse"
-	}],
+	"name": {
+		"fr": "Anneau herisse",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 250,
 	"unlock": -1
 }, {
 	"id": 304,
-	"name": [{
-		"fr": "Passe-partout en bois"
-	}, {
-		"en": "Passe-partout en bois"
-	}, {
-		"es": "Passe-partout en bois"
-	}],
+	"name": {
+		"fr": "Passe-partout en bois",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 305,
-	"name": [{
-		"fr": "Cle de Rigor Dangerous"
-	}, {
-		"en": "Cle de Rigor Dangerous"
-	}, {
-		"es": "Cle de Rigor Dangerous"
-	}],
+	"name": {
+		"fr": "Cle de Rigor Dangerous",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 306,
-	"name": [{
-		"fr": "Meluzzine"
-	}, {
-		"en": "Meluzzine"
-	}, {
-		"es": "Meluzzine"
-	}],
+	"name": {
+		"fr": "Meluzzine",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 5,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 307,
-	"name": [{
-		"fr": "Cle du Bourru"
-	}, {
-		"en": "Cle du Bourru"
-	}, {
-		"es": "Cle du Bourru"
-	}],
+	"name": {
+		"fr": "Cle du Bourru",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 10000,
 	"unlock": 1
 }, {
 	"id": 308,
-	"name": [{
-		"fr": "Furtok Glaciale"
-	}, {
-		"en": "Furtok Glaciale"
-	}, {
-		"es": "Furtok Glaciale"
-	}],
+	"name": {
+		"fr": "Furtok Glaciale",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 309,
-	"name": [{
-		"fr": "Vieille cle rouillee"
-	}, {
-		"en": "Vieille cle rouillee"
-	}, {
-		"es": "Vieille cle rouillee"
-	}],
+	"name": {
+		"fr": "Vieille cle rouillee",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 310,
-	"name": [{
-		"fr": "Autorisation du Bois-Joli"
-	}, {
-		"en": "Autorisation du Bois-Joli"
-	}, {
-		"es": "Autorisation du Bois-Joli"
-	}],
+	"name": {
+		"fr": "Autorisation du Bois-Joli",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 10000,
 	"unlock": 1
 }, {
 	"id": 311,
-	"name": [{
-		"fr": "Cle des Mondes Ardus"
-	}, {
-		"en": "Cle des Mondes Ardus"
-	}, {
-		"es": "Cle des Mondes Ardus"
-	}],
+	"name": {
+		"fr": "Cle des Mondes Ardus",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 312,
-	"name": [{
-		"fr": "Cle piquante"
-	}, {
-		"en": "Cle piquante"
-	}, {
-		"es": "Cle piquante"
-	}],
+	"name": {
+		"fr": "Cle piquante",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 313,
-	"name": [{
-		"fr": "Passe-partout de Tuberculoz"
-	}, {
-		"en": "Passe-partout de Tuberculoz"
-	}, {
-		"es": "Passe-partout de Tuberculoz"
-	}],
+	"name": {
+		"fr": "Passe-partout de Tuberculoz",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 314,
-	"name": [{
-		"fr": "Cle des cauchemars"
-	}, {
-		"en": "Cle des cauchemars"
-	}, {
-		"es": "Cle des cauchemars"
-	}],
+	"name": {
+		"fr": "Cle des cauchemars",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 315,
-	"name": [{
-		"fr": "Pad Sounie"
-	}, {
-		"en": "Pad Sounie"
-	}, {
-		"es": "Pad Sounie"
-	}],
+	"name": {
+		"fr": "Pad Sounie",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 17000,
 	"unlock": -1
 }, {
 	"id": 316,
-	"name": [{
-		"fr": "Pad Frusion 64"
-	}, {
-		"en": "Pad Frusion 64"
-	}, {
-		"es": "Pad Frusion 64"
-	}],
+	"name": {
+		"fr": "Pad Frusion 64",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 100000,
 	"unlock": -1
 }, {
 	"id": 317,
-	"name": [{
-		"fr": "Pad Game-Pyramid"
-	}, {
-		"en": "Pad Game-Pyramid"
-	}, {
-		"es": "Pad Game-Pyramid"
-	}],
+	"name": {
+		"fr": "Pad Game-Pyramid",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 17000,
 	"unlock": -1
 }, {
 	"id": 318,
-	"name": [{
-		"fr": "Pad Sey-Ga"
-	}, {
-		"en": "Pad Sey-Ga"
-	}, {
-		"es": "Pad Sey-Ga"
-	}],
+	"name": {
+		"fr": "Pad Sey-Ga",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 17000,
 	"unlock": -1
 }, {
 	"id": 319,
-	"name": [{
-		"fr": "Pad Super Frusion"
-	}, {
-		"en": "Pad Super Frusion"
-	}, {
-		"es": "Pad Super Frusion"
-	}],
+	"name": {
+		"fr": "Pad Super Frusion",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 17000,
 	"unlock": -1
 }, {
 	"id": 320,
-	"name": [{
-		"fr": "Pad du Systeme Maitre"
-	}, {
-		"en": "Pad du Systeme Maitre"
-	}, {
-		"es": "Pad du Systeme Maitre"
-	}],
+	"name": {
+		"fr": "Pad du Systeme Maitre",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 17000,
 	"unlock": -1
 }, {
 	"id": 321,
-	"name": [{
-		"fr": "Pad Frusion Entertainment System"
-	}, {
-		"en": "Pad Frusion Entertainment System"
-	}, {
-		"es": "Pad Frusion Entertainment System"
-	}],
+	"name": {
+		"fr": "Pad Frusion Entertainment System",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 17000,
 	"unlock": -1
 }, {
 	"id": 322,
-	"name": [{
-		"fr": "Manette S-Tehef"
-	}, {
-		"en": "Manette S-Tehef"
-	}, {
-		"es": "Manette S-Tehef"
-	}],
+	"name": {
+		"fr": "Manette S-Tehef",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 6,
 	"value": 20000,
 	"unlock": -1
 }, {
 	"id": 323,
-	"name": [{
-		"fr": "Canette Express"
-	}, {
-		"en": "Canette Express"
-	}, {
-		"es": "Canette Express"
-	}],
+	"name": {
+		"fr": "Canette Express",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 500,
 	"unlock": -1
 }, {
 	"id": 324,
-	"name": [{
-		"fr": "Bouteille aux 2064 bulles"
-	}, {
-		"en": "Bouteille aux 2064 bulles"
-	}, {
-		"es": "Bouteille aux 2064 bulles"
-	}],
+	"name": {
+		"fr": "Bouteille aux 2064 bulles",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 1200,
 	"unlock": -1
 }, {
 	"id": 325,
-	"name": [{
-		"fr": "Mousse volante"
-	}, {
-		"en": "Mousse volante"
-	}, {
-		"es": "Mousse volante"
-	}],
+	"name": {
+		"fr": "Mousse volante",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 3000,
 	"unlock": -1
 }, {
 	"id": 326,
-	"name": [{
-		"fr": "Vin Merveilleux"
-	}, {
-		"en": "Vin Merveilleux"
-	}, {
-		"es": "Vin Merveilleux"
-	}],
+	"name": {
+		"fr": "Vin Merveilleux",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 20000,
 	"unlock": -1
 }, {
 	"id": 327,
-	"name": [{
-		"fr": "Liqueur malefique"
-	}, {
-		"en": "Liqueur malefique"
-	}, {
-		"es": "Liqueur malefique"
-	}],
+	"name": {
+		"fr": "Liqueur malefique",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 5,
 	"value": 100000,
 	"unlock": -1
 }, {
 	"id": 328,
-	"name": [{
-		"fr": "Tampon MT"
-	}, {
-		"en": "Tampon MT"
-	}, {
-		"es": "Tampon MT"
-	}],
+	"name": {
+		"fr": "Tampon MT",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 2000,
 	"unlock": -1
 }, {
 	"id": 329,
-	"name": [{
-		"fr": "Facture gratuite"
-	}, {
-		"en": "Facture gratuite"
-	}, {
-		"es": "Facture gratuite"
-	}],
+	"name": {
+		"fr": "Facture gratuite",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 10,
 	"unlock": -1
 }, {
 	"id": 330,
-	"name": [{
-		"fr": "Post-It de Francois"
-	}, {
-		"en": "Post-It de Francois"
-	}, {
-		"es": "Post-It de Francois"
-	}],
+	"name": {
+		"fr": "Post-It de Francois",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 3000,
 	"unlock": -1
 }, {
 	"id": 331,
-	"name": [{
-		"fr": "Pot a crayon solitaire"
-	}, {
-		"en": "Pot a crayon solitaire"
-	}, {
-		"es": "Pot a crayon solitaire"
-	}],
+	"name": {
+		"fr": "Pot a crayon solitaire",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 5500,
 	"unlock": -1
 }, {
 	"id": 332,
-	"name": [{
-		"fr": "Agrafeuse du Chaos"
-	}, {
-		"en": "Agrafeuse du Chaos"
-	}, {
-		"es": "Agrafeuse du Chaos"
-	}],
+	"name": {
+		"fr": "Agrafeuse du Chaos",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 5,
 	"value": 100000,
 	"unlock": -1
 }, {
 	"id": 333,
-	"name": [{
-		"fr": "Miroir bancal"
-	}, {
-		"en": "Miroir bancal"
-	}, {
-		"es": "Miroir bancal"
-	}],
+	"name": {
+		"fr": "Miroir bancal",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 69,
 	"unlock": -1
 }, {
 	"id": 334,
-	"name": [{
-		"fr": "Etoile du Diable"
-	}, {
-		"en": "Etoile du Diable"
-	}, {
-		"es": "Etoile du Diable"
-	}],
+	"name": {
+		"fr": "Etoile du Diable",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 666,
 	"unlock": -1
 }, {
 	"id": 335,
-	"name": [{
-		"fr": "Poudre de plage magique"
-	}, {
-		"en": "Poudre de plage magique"
-	}, {
-		"es": "Poudre de plage magique"
-	}],
+	"name": {
+		"fr": "Poudre de plage magique",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 700,
 	"unlock": 5
 }, {
 	"id": 336,
-	"name": [{
-		"fr": "Materiel d'architecte"
-	}, {
-		"en": "Materiel d'architecte"
-	}, {
-		"es": "Materiel d'architecte"
-	}],
+	"name": {
+		"fr": "Materiel d'architecte",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 600,
 	"unlock": 10
 }, {
 	"id": 337,
-	"name": [{
-		"fr": "Maquette en sable"
-	}, {
-		"en": "Maquette en sable"
-	}, {
-		"es": "Maquette en sable"
-	}],
+	"name": {
+		"fr": "Maquette en sable",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 1200,
 	"unlock": 5
 }, {
 	"id": 338,
-	"name": [{
-		"fr": "Winkel"
-	}, {
-		"en": "Winkel"
-	}, {
-		"es": "Winkel"
-	}],
+	"name": {
+		"fr": "Winkel",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 900,
 	"unlock": 3
 }, {
 	"id": 339,
-	"name": [{
-		"fr": "Miroir des Sables"
-	}, {
-		"en": "Miroir des Sables"
-	}, {
-		"es": "Miroir des Sables"
-	}],
+	"name": {
+		"fr": "Miroir des Sables",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 69,
 	"unlock": -1
 }, {
 	"id": 340,
-	"name": [{
-		"fr": "Etoile des Diables Jumeaux"
-	}, {
-		"en": "Etoile des Diables Jumeaux"
-	}, {
-		"es": "Etoile des Diables Jumeaux"
-	}],
+	"name": {
+		"fr": "Etoile des Diables Jumeaux",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 666,
 	"unlock": -1
 }, {
 	"id": 341,
-	"name": [{
-		"fr": "Sceau d'amitie"
-	}, {
-		"en": "Sceau d'amitie"
-	}, {
-		"es": "Sceau d'amitie"
-	}],
+	"name": {
+		"fr": "Sceau d'amitie",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 100,
 	"unlock": -1
 }, {
 	"id": 342,
-	"name": [{
-		"fr": "Insigne de l'ordre des Ninjas"
-	}, {
-		"en": "Insigne de l'ordre des Ninjas"
-	}, {
-		"es": "Insigne de l'ordre des Ninjas"
-	}],
+	"name": {
+		"fr": "Insigne de l'ordre des Ninjas",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 900,
 	"unlock": -1
 }, {
 	"id": 343,
-	"name": [{
-		"fr": "Couteau suisse japonais"
-	}, {
-		"en": "Couteau suisse japonais"
-	}, {
-		"es": "Couteau suisse japonais"
-	}],
+	"name": {
+		"fr": "Couteau suisse japonais",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 1200,
 	"unlock": -1
 }, {
 	"id": 344,
-	"name": [{
-		"fr": "Shuriken de second rang"
-	}, {
-		"en": "Shuriken de second rang"
-	}, {
-		"es": "Shuriken de second rang"
-	}],
+	"name": {
+		"fr": "Shuriken de second rang",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 3,
 	"value": 1600,
 	"unlock": -1
 }, {
 	"id": 345,
-	"name": [{
-		"fr": "Shuriken d'entrainement"
-	}, {
-		"en": "Shuriken d'entrainement"
-	}, {
-		"es": "Shuriken d'entrainement"
-	}],
+	"name": {
+		"fr": "Shuriken d'entrainement",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 1,
 	"value": 250,
 	"unlock": -1
 }, {
 	"id": 346,
-	"name": [{
-		"fr": "Najinata"
-	}, {
-		"en": "Najinata"
-	}, {
-		"es": "Najinata"
-	}],
+	"name": {
+		"fr": "Najinata",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 2,
 	"value": 600,
 	"unlock": -1
 }, {
 	"id": 347,
-	"name": [{
-		"fr": "Lance-boulettes de Precision"
-	}, {
-		"en": "Lance-boulettes de Precision"
-	}, {
-		"es": "Lance-boulettes de Precision"
-	}],
+	"name": {
+		"fr": "Lance-boulettes de Precision",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 5000,
 	"unlock": -1
 }, {
 	"id": 348,
-	"name": [{
-		"fr": "Ocarina chantant"
-	}, {
-		"en": "Ocarina chantant"
-	}, {
-		"es": "Ocarina chantant"
-	}],
+	"name": {
+		"fr": "Ocarina chantant",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 6500,
 	"unlock": -1
 }, {
 	"id": 349,
-	"name": [{
-		"fr": "Armure de la nuit"
-	}, {
-		"en": "Armure de la nuit"
-	}, {
-		"es": "Armure de la nuit"
-	}],
+	"name": {
+		"fr": "Armure de la nuit",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 4,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 350,
-	"name": [{
-		"fr": "Insigne du Merite"
-	}, {
-		"en": "Insigne du Merite"
-	}, {
-		"es": "Insigne du Merite"
-	}],
+	"name": {
+		"fr": "Insigne du Merite",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 10000,
 	"unlock": -1
 }, {
 	"id": 351,
-	"name": [{
-		"fr": "Neige-o-glycerine"
-	}, {
-		"en": "Neige-o-glycerine"
-	}, {
-		"es": "Neige-o-glycerine"
-	}],
+	"name": {
+		"fr": "Neige-o-glycerine",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 150000,
 	"unlock": -1
 }, {
 	"id": 352,
-	"name": [{
-		"fr": "Pass-Pyramide"
-	}, {
-		"en": "Pass-Pyramide"
-	}, {
-		"es": "Pass-Pyramide"
-	}],
+	"name": {
+		"fr": "Pass-Pyramide",
+		"en": "",
+		"es": ""
+	},
 	"rarity": 0,
 	"value": 30000,
 	"unlock": -1

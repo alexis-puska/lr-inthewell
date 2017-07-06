@@ -14,6 +14,7 @@
 #include "Item.h"
 #include "../utils/GameConfig.h"
 #include "../utils/json/json.h"
+#include "../utils/Text.h"
 
 // Score + nb of game + level reached + 353 item
 #define nbOfValueInFile 357

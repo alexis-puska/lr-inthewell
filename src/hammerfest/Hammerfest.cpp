@@ -557,7 +557,7 @@ void Hammerfest::drawFridgeMenu() {
 		}
 		//draw item name
 		if (ItemFileSystem::Instance().getQuantity(fridgeItemPosition) > 0) {
-			Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 500, ItemFileSystem::Instance().getItem(fridgeItemPosition)->getName().c_str(), white, true);
+			Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 500, Text::Instance().getItemsTranslationKey(fridgeItemPosition), white, true);
 		} else {
 			Text::Instance().drawTextTranslated(screenBuffer, "verdana10pt10", 210, 500, "noTranslation", white, true);
 		}

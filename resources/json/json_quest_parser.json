@@ -2,20 +2,16 @@
 		"id": 0,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Les constellations"
-		}, {
-			"en": "Les constellations"
-		}, {
-			"es": "Les constellations"
-		}],
-		"description": [{
-			"fr": "Igor peut maintenant poser 2 bombes au lieu d'une seule a la fois, et ce, de maniere permanente !"
-		}, {
-			"en": "Igor peut maintenant poser 2 bombes au lieu d'une seule a la fois, et ce, de maniere permanente !"
-		}, {
-			"es": "Igor peut maintenant poser 2 bombes au lieu d'une seule a la fois, et ce, de maniere permanente !"
-		}],
+		"titre": {
+			"fr": "Les constellations",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor peut maintenant poser 2 bombes au lieu d'une seule a la fois, et ce, de maniere permanente !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 5,
@@ -66,20 +62,16 @@
 		"id": 1,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Mixtures du zodiaque"
-		}, {
-			"en": "Mixtures du zodiaque"
-		}, {
-			"es": "Mixtures du zodiaque"
-		}],
-		"description": [{
-			"fr": "Igor sait desormais envoyer ses bombes a l'etage superieur ! Maintenez BAS enfonce pendant que vous tapez dans une bombe posee."
-		}, {
-			"en": "Igor sait desormais envoyer ses bombes a l'etage superieur ! Maintenez BAS enfonce pendant que vous tapez dans une bombe posee."
-		}, {
-			"es": "Igor sait desormais envoyer ses bombes a l'etage superieur ! Maintenez BAS enfonce pendant que vous tapez dans une bombe posee."
-		}],
+		"titre": {
+			"fr": "Mixtures du zodiaque",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor sait desormais envoyer ses bombes a l'etage superieur ! Maintenez BAS enfonce pendant que vous tapez dans une bombe posee.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 6,
@@ -127,20 +119,16 @@
 		"id": 2,
 		"light": false,
 		"life": true,
-		"titre": [{
-			"fr": "Premiers pas"
-		}, {
-			"en": "Premiers pas"
-		}, {
-			"es": "Premiers pas"
-		}],
-		"description": [{
-			"fr": "Igor debutera desormais la partie avec une vie supplementaire."
-		}, {
-			"en": "Igor debutera desormais la partie avec une vie supplementaire."
-		}, {
-			"es": "Igor debutera desormais la partie avec une vie supplementaire."
-		}],
+		"titre": {
+			"fr": "Premiers pas",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor debutera desormais la partie avec une vie supplementaire.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 7,
@@ -158,20 +146,16 @@
 		"id": 3,
 		"light": false,
 		"life": true,
-		"titre": [{
-			"fr": "L'aventure commence"
-		}, {
-			"en": "L'aventure commence"
-		}, {
-			"es": "L'aventure commence"
-		}],
-		"description": [{
-			"fr": "Igor debutera desormais la partie avec une autre vie supplementaire."
-		}, {
-			"en": "Igor debutera desormais la partie avec une autre vie supplementaire."
-		}, {
-			"es": "Igor debutera desormais la partie avec une autre vie supplementaire."
-		}],
+		"titre": {
+			"fr": "L'aventure commence",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor debutera desormais la partie avec une autre vie supplementaire.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 8,
@@ -189,20 +173,16 @@
 		"id": 4,
 		"light": false,
 		"life": true,
-		"titre": [{
-			"fr": "Une destinee epique"
-		}, {
-			"en": "Une destinee epique"
-		}, {
-			"es": "Une destinee epique"
-		}],
-		"description": [{
-			"fr": "Igor debutera desormais la partie avec encore une vie supplementaire !"
-		}, {
-			"en": "Igor debutera desormais la partie avec encore une vie supplementaire !"
-		}, {
-			"es": "Igor debutera desormais la partie avec encore une vie supplementaire !"
-		}],
+		"titre": {
+			"fr": "Une destinee epique",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor debutera desormais la partie avec encore une vie supplementaire !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 9,
@@ -220,20 +200,16 @@
 		"id": 5,
 		"light": false,
 		"life": true,
-		"titre": [{
-			"fr": "Perseverance"
-		}, {
-			"en": "Perseverance"
-		}, {
-			"es": "Perseverance"
-		}],
-		"description": [{
-			"fr": "Igor debutera desormais la partie avec une vie supplementaire."
-		}, {
-			"en": "Igor debutera desormais la partie avec une vie supplementaire."
-		}, {
-			"es": "Igor debutera desormais la partie avec une vie supplementaire."
-		}],
+		"titre": {
+			"fr": "Perseverance",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor debutera desormais la partie avec une vie supplementaire.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -251,20 +227,16 @@
 		"id": 6,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Gourmandise"
-		}, {
-			"en": "Gourmandise"
-		}, {
-			"es": "Gourmandise"
-		}],
-		"description": [{
-			"fr": "De nouveaux aliments (plus sains) apparaitront desormais en jeu !"
-		}, {
-			"en": "De nouveaux aliments (plus sains) apparaitront desormais en jeu !"
-		}, {
-			"es": "De nouveaux aliments (plus sains) apparaitront desormais en jeu !"
-		}],
+		"titre": {
+			"fr": "Gourmandise",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "De nouveaux aliments (plus sains) apparaitront desormais en jeu !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -297,20 +269,16 @@
 		"id": 7,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Du sucre !"
-		}, {
-			"en": "Du sucre !"
-		}, {
-			"es": "Du sucre !"
-		}],
-		"description": [{
-			"fr": "Igor veut encore plus de sucre ! Des delicieuses friandises apparaitront desormais en jeu."
-		}, {
-			"en": "Igor veut encore plus de sucre ! Des delicieuses friandises apparaitront desormais en jeu."
-		}, {
-			"es": "Igor veut encore plus de sucre ! Des delicieuses friandises apparaitront desormais en jeu."
-		}],
+		"titre": {
+			"fr": "Du sucre !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor veut encore plus de sucre ! Des delicieuses friandises apparaitront desormais en jeu.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -340,20 +308,16 @@
 		"id": 8,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Malnutrition"
-		}, {
-			"en": "Malnutrition"
-		}, {
-			"es": "Malnutrition"
-		}],
-		"description": [{
-			"fr": "Le gout d'Igor pour les aliments peu equilibres lui permettra de trouver des aliments encore plus... douteux en jeu."
-		}, {
-			"en": "Le gout d'Igor pour les aliments peu equilibres lui permettra de trouver des aliments encore plus... douteux en jeu."
-		}, {
-			"es": "Le gout d'Igor pour les aliments peu equilibres lui permettra de trouver des aliments encore plus... douteux en jeu."
-		}],
+		"titre": {
+			"fr": "Malnutrition",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Le gout d'Igor pour les aliments peu equilibres lui permettra de trouver des aliments encore plus... douteux en jeu.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -380,20 +344,16 @@
 		"id": 9,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Gout raffine"
-		}, {
-			"en": "Gout raffine"
-		}, {
-			"es": "Gout raffine"
-		}],
-		"description": [{
-			"fr": "Le regime bizarre d'Igor a amene de nouveaux aliments exotiques en jeu !"
-		}, {
-			"en": "Le regime bizarre d'Igor a amene de nouveaux aliments exotiques en jeu !"
-		}, {
-			"es": "Le regime bizarre d'Igor a amene de nouveaux aliments exotiques en jeu !"
-		}],
+		"titre": {
+			"fr": "Gout raffine",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Le regime bizarre d'Igor a amene de nouveaux aliments exotiques en jeu !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -417,20 +377,16 @@
 		"id": 10,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Avancee technologique"
-		}, {
-			"en": "Avancee technologique"
-		}, {
-			"es": "Avancee technologique"
-		}],
-		"description": [{
-			"fr": "Pour vous aider dans votre aventure, tout un tas d'objets aux effets bizarres font leur apparition en jeu !"
-		}, {
-			"en": "Pour vous aider dans votre aventure, tout un tas d'objets aux effets bizarres font leur apparition en jeu !"
-		}, {
-			"es": "Pour vous aider dans votre aventure, tout un tas d'objets aux effets bizarres font leur apparition en jeu !"
-		}],
+		"titre": {
+			"fr": "Avancee technologique",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Pour vous aider dans votre aventure, tout un tas d'objets aux effets bizarres font leur apparition en jeu !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -454,20 +410,16 @@
 		"id": 11,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Le petit guide des Champignons"
-		}, {
-			"en": "Le petit guide des Champignons"
-		}, {
-			"es": "Le petit guide des Champignons"
-		}],
-		"description": [{
-			"fr": "Igor a decouvert un etrange ouvrage, une sorte de livre de cuisine traitant des champignons hallucinogenes. Il pourra desormais en trouver lors de ses explorations."
-		}, {
-			"en": "Igor a decouvert un etrange ouvrage, une sorte de livre de cuisine traitant des champignons hallucinogenes. Il pourra desormais en trouver lors de ses explorations."
-		}, {
-			"es": "Igor a decouvert un etrange ouvrage, une sorte de livre de cuisine traitant des champignons hallucinogenes. Il pourra desormais en trouver lors de ses explorations."
-		}],
+		"titre": {
+			"fr": "Le petit guide des Champignons",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor a decouvert un etrange ouvrage, une sorte de livre de cuisine traitant des champignons hallucinogenes. Il pourra desormais en trouver lors de ses explorations.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -485,20 +437,16 @@
 		"id": 12,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Trouver les pieces d'or secretes !"
-		}, {
-			"en": "Trouver les pieces d'or secretes !"
-		}, {
-			"es": "Trouver les pieces d'or secretes !"
-		}],
-		"description": [{
-			"fr": "Des richesses supplementaires de tres grande valeur apparaitront maintenant en jeu !"
-		}, {
-			"en": "Des richesses supplementaires de tres grande valeur apparaitront maintenant en jeu !"
-		}, {
-			"es": "Des richesses supplementaires de tres grande valeur apparaitront maintenant en jeu !"
-		}],
+		"titre": {
+			"fr": "Trouver les pieces d'or secretes !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Des richesses supplementaires de tres grande valeur apparaitront maintenant en jeu !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -516,20 +464,16 @@
 		"id": 13,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Le grimoire des Etoiles"
-		}, {
-			"en": "Le grimoire des Etoiles"
-		}, {
-			"es": "Le grimoire des Etoiles"
-		}],
-		"description": [{
-			"fr": "Cet ouvrage mysterieux en dit long sur les 12 constellations du Zodiaque. Vous pourrez desormais les collectionner en jeu !"
-		}, {
-			"en": "Cet ouvrage mysterieux en dit long sur les 12 constellations du Zodiaque. Vous pourrez desormais les collectionner en jeu !"
-		}, {
-			"es": "Cet ouvrage mysterieux en dit long sur les 12 constellations du Zodiaque. Vous pourrez desormais les collectionner en jeu !"
-		}],
+		"titre": {
+			"fr": "Le grimoire des Etoiles",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Cet ouvrage mysterieux en dit long sur les 12 constellations du Zodiaque. Vous pourrez desormais les collectionner en jeu !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -547,20 +491,16 @@
 		"id": 14,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Armageddon"
-		}, {
-			"en": "Armageddon"
-		}, {
-			"es": "Armageddon"
-		}],
-		"description": [{
-			"fr": "Des objets aux effets ravageurs vont maintenant apparaitre en jeu !"
-		}, {
-			"en": "Des objets aux effets ravageurs vont maintenant apparaitre en jeu !"
-		}, {
-			"es": "Des objets aux effets ravageurs vont maintenant apparaitre en jeu !"
-		}],
+		"titre": {
+			"fr": "Armageddon",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Des objets aux effets ravageurs vont maintenant apparaitre en jeu !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -605,20 +545,16 @@
 		"id": 15,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Regime MotionTwin"
-		}, {
-			"en": "Regime MotionTwin"
-		}, {
-			"es": "Regime MotionTwin"
-		}],
-		"description": [{
-			"fr": "A force de manger n'importe quoi, Igor a acquis la maitrise des jeux ! Il pourra collectionner des objets rarissimes pendant son exploration et trouver des aliments d'exception !"
-		}, {
-			"en": "A force de manger n'importe quoi, Igor a acquis la maitrise des jeux ! Il pourra collectionner des objets rarissimes pendant son exploration et trouver des aliments d'exception !"
-		}, {
-			"es": "A force de manger n'importe quoi, Igor a acquis la maitrise des jeux ! Il pourra collectionner des objets rarissimes pendant son exploration et trouver des aliments d'exception !"
-		}],
+		"titre": {
+			"fr": "Regime MotionTwin",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "A force de manger n'importe quoi, Igor a acquis la maitrise des jeux ! Il pourra collectionner des objets rarissimes pendant son exploration et trouver des aliments d'exception !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -660,20 +596,16 @@
 		"id": 16,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Createur de jeu en devenir"
-		}, {
-			"en": "Createur de jeu en devenir"
-		}, {
-			"es": "Createur de jeu en devenir"
-		}],
-		"description": [{
-			"fr": "Igor semble apprecier les aliments basiques, une belle carriere dans le monde du jeu video pourrait s'offrir a lui ! Des aliments adaptes lui seront dorenavant proposes et quelques cartes a jouer pour se faire la main."
-		}, {
-			"en": "Igor semble apprecier les aliments basiques, une belle carriere dans le monde du jeu video pourrait s'offrir a lui ! Des aliments adaptes lui seront dorenavant proposes et quelques cartes a jouer pour se faire la main."
-		}, {
-			"es": "Igor semble apprecier les aliments basiques, une belle carriere dans le monde du jeu video pourrait s'offrir a lui ! Des aliments adaptes lui seront dorenavant proposes et quelques cartes a jouer pour se faire la main."
-		}],
+		"titre": {
+			"fr": "Createur de jeu en devenir",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor semble apprecier les aliments basiques, une belle carriere dans le monde du jeu video pourrait s'offrir a lui ! Des aliments adaptes lui seront dorenavant proposes et quelques cartes a jouer pour se faire la main.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -691,20 +623,16 @@
 		"id": 17,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "La vie est une boite de chocolats"
-		}, {
-			"en": "La vie est une boite de chocolats"
-		}, {
-			"es": "La vie est une boite de chocolats"
-		}],
-		"description": [{
-			"fr": "De delicieux chocolats sont maintenant distribues en Hammerfest !"
-		}, {
-			"en": "De delicieux chocolats sont maintenant distribues en Hammerfest !"
-		}, {
-			"es": "De delicieux chocolats sont maintenant distribues en Hammerfest !"
-		}],
+		"titre": {
+			"fr": "La vie est une boite de chocolats",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "De delicieux chocolats sont maintenant distribues en Hammerfest !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -722,20 +650,16 @@
 		"id": 18,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Le tresor Oune-difained"
-		}, {
-			"en": "Le tresor Oune-difained"
-		}, {
-			"es": "Le tresor Oune-difained"
-		}],
-		"description": [{
-			"fr": "A force de ramasser des diamants apparus on ne sait comment, Igor a acquis la faculte de reperer des pierres precieuses rares ! Il en trouvera au cours de ses explorations."
-		}, {
-			"en": "A force de ramasser des diamants apparus on ne sait comment, Igor a acquis la faculte de reperer des pierres precieuses rares ! Il en trouvera au cours de ses explorations."
-		}, {
-			"es": "A force de ramasser des diamants apparus on ne sait comment, Igor a acquis la faculte de reperer des pierres precieuses rares ! Il en trouvera au cours de ses explorations."
-		}],
+		"titre": {
+			"fr": "Le tresor Oune-difained",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "A force de ramasser des diamants apparus on ne sait comment, Igor a acquis la faculte de reperer des pierres precieuses rares ! Il en trouvera au cours de ses explorations.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -753,20 +677,16 @@
 		"id": 19,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Super size me !"
-		}, {
-			"en": "Super size me !"
-		}, {
-			"es": "Super size me !"
-		}],
-		"description": [{
-			"fr": "Toujours plus loin dans la malnutrition, Igor a decouvert qu'il pouvait aussi se nourrir de produits en boite."
-		}, {
-			"en": "Toujours plus loin dans la malnutrition, Igor a decouvert qu'il pouvait aussi se nourrir de produits en boite."
-		}, {
-			"es": "Toujours plus loin dans la malnutrition, Igor a decouvert qu'il pouvait aussi se nourrir de produits en boite."
-		}],
+		"titre": {
+			"fr": "Super size me !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Toujours plus loin dans la malnutrition, Igor a decouvert qu'il pouvait aussi se nourrir de produits en boite.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -790,20 +710,16 @@
 		"id": 20,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Maitre joaillier"
-		}, {
-			"en": "Maitre joaillier"
-		}, {
-			"es": "Maitre joaillier"
-		}],
-		"description": [{
-			"fr": "Igor est devenu un veritable expert en pierres precieuses. Il pourra maintenant decouvrir de puissants bijoux magiques au fil de ses explorations !"
-		}, {
-			"en": "Igor est devenu un veritable expert en pierres precieuses. Il pourra maintenant decouvrir de puissants bijoux magiques au fil de ses explorations !"
-		}, {
-			"es": "Igor est devenu un veritable expert en pierres precieuses. Il pourra maintenant decouvrir de puissants bijoux magiques au fil de ses explorations !"
-		}],
+		"titre": {
+			"fr": "Maitre joaillier",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor est devenu un veritable expert en pierres precieuses. Il pourra maintenant decouvrir de puissants bijoux magiques au fil de ses explorations !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -827,20 +743,16 @@
 		"id": 21,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Grand predateur"
-		}, {
-			"en": "Grand predateur"
-		}, {
-			"es": "Grand predateur"
-		}],
-		"description": [{
-			"fr": "Igor en a plus qu'assez de chasser des choses sucrees ! Desormais devenu un predateur sans pitie, il pourra traquer et devorer toute sorte de charcuteries."
-		}, {
-			"en": "Igor en a plus qu'assez de chasser des choses sucrees ! Desormais devenu un predateur sans pitie, il pourra traquer et devorer toute sorte de charcuteries."
-		}, {
-			"es": "Igor en a plus qu'assez de chasser des choses sucrees ! Desormais devenu un predateur sans pitie, il pourra traquer et devorer toute sorte de charcuteries."
-		}],
+		"titre": {
+			"fr": "Grand predateur",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor en a plus qu'assez de chasser des choses sucrees ! Desormais devenu un predateur sans pitie, il pourra traquer et devorer toute sorte de charcuteries.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -870,20 +782,16 @@
 		"id": 22,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Expert en salades et potages"
-		}, {
-			"en": "Expert en salades et potages"
-		}, {
-			"es": "Expert en salades et potages"
-		}],
-		"description": [{
-			"fr": "On raconte partout qu'Igor serait la reincarnation de Saladou, le maitre mondialement reconnu de la salade. Fort de ce don, il pourra a l'avenir cueillir une tres grande variete de legumes !"
-		}, {
-			"en": "On raconte partout qu'Igor serait la reincarnation de Saladou, le maitre mondialement reconnu de la salade. Fort de ce don, il pourra a l'avenir cueillir une tres grande variete de legumes !"
-		}, {
-			"es": "On raconte partout qu'Igor serait la reincarnation de Saladou, le maitre mondialement reconnu de la salade. Fort de ce don, il pourra a l'avenir cueillir une tres grande variete de legumes !"
-		}],
+		"titre": {
+			"fr": "Expert en salades et potages",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "On raconte partout qu'Igor serait la reincarnation de Saladou, le maitre mondialement reconnu de la salade. Fort de ce don, il pourra a l'avenir cueillir une tres grande variete de legumes !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -913,20 +821,16 @@
 		"id": 23,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Festin d'Hammerfest"
-		}, {
-			"en": "Festin d'Hammerfest"
-		}, {
-			"es": "Festin d'Hammerfest"
-		}],
-		"description": [{
-			"fr": "Avec un repas aussi complet, Igor est fin pret pour avoir acces aux patisseries les plus raffinees qui existent."
-		}, {
-			"en": "Avec un repas aussi complet, Igor est fin pret pour avoir acces aux patisseries les plus raffinees qui existent."
-		}, {
-			"es": "Avec un repas aussi complet, Igor est fin pret pour avoir acces aux patisseries les plus raffinees qui existent."
-		}],
+		"titre": {
+			"fr": "Festin d'Hammerfest",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Avec un repas aussi complet, Igor est fin pret pour avoir acces aux patisseries les plus raffinees qui existent.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -962,20 +866,16 @@
 		"id": 24,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Gouter d'anniversaire"
-		}, {
-			"en": "Gouter d'anniversaire"
-		}, {
-			"es": "Gouter d'anniversaire"
-		}],
-		"description": [{
-			"fr": "Igor a trouve tous les elements pour assurer a son prochain gouter d'anniversaire ! Il trouvera maintenant pleins de petits en-cas pour patienter jusque la."
-		}, {
-			"en": "Igor a trouve tous les elements pour assurer a son prochain gouter d'anniversaire ! Il trouvera maintenant pleins de petits en-cas pour patienter jusque la."
-		}, {
-			"es": "Igor a trouve tous les elements pour assurer a son prochain gouter d'anniversaire ! Il trouvera maintenant pleins de petits en-cas pour patienter jusque la."
-		}],
+		"titre": {
+			"fr": "Gouter d'anniversaire",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor a trouve tous les elements pour assurer a son prochain gouter d'anniversaire ! Il trouvera maintenant pleins de petits en-cas pour patienter jusque la.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1020,20 +920,16 @@
 		"id": 25,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Bon vivant"
-		}, {
-			"en": "Bon vivant"
-		}, {
-			"es": "Bon vivant"
-		}],
-		"description": [{
-			"fr": "Un bon repas ne peu se concevoir sans des petits trucs a grignotter a l'aperitif. Igor le sait, maintenant, et il pourra trouver ce qu'il faut en jeu."
-		}, {
-			"en": "Un bon repas ne peu se concevoir sans des petits trucs a grignotter a l'aperitif. Igor le sait, maintenant, et il pourra trouver ce qu'il faut en jeu."
-		}, {
-			"es": "Un bon repas ne peu se concevoir sans des petits trucs a grignotter a l'aperitif. Igor le sait, maintenant, et il pourra trouver ce qu'il faut en jeu."
-		}],
+		"titre": {
+			"fr": "Bon vivant",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Un bon repas ne peu se concevoir sans des petits trucs a grignotter a l'aperitif. Igor le sait, maintenant, et il pourra trouver ce qu'il faut en jeu.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1057,20 +953,16 @@
 		"id": 26,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Fondue norvegienne"
-		}, {
-			"en": "Fondue norvegienne"
-		}, {
-			"es": "Fondue norvegienne"
-		}],
-		"description": [{
-			"fr": "Les odeurs qui emanent de la taniere d'Igor ne laissent aucun doute la-dessus: il est devenu un grand amateur de fromages. De nouveaux produits laitiers apparaitront dans les cavernes."
-		}, {
-			"en": "Les odeurs qui emanent de la taniere d'Igor ne laissent aucun doute la-dessus: il est devenu un grand amateur de fromages. De nouveaux produits laitiers apparaitront dans les cavernes."
-		}, {
-			"es": "Les odeurs qui emanent de la taniere d'Igor ne laissent aucun doute la-dessus: il est devenu un grand amateur de fromages. De nouveaux produits laitiers apparaitront dans les cavernes."
-		}],
+		"titre": {
+			"fr": "Fondue norvegienne",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Les odeurs qui emanent de la taniere d'Igor ne laissent aucun doute la-dessus: il est devenu un grand amateur de fromages. De nouveaux produits laitiers apparaitront dans les cavernes.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1094,20 +986,16 @@
 		"id": 27,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Mystere de Guu"
-		}, {
-			"en": "Mystere de Guu"
-		}, {
-			"es": "Mystere de Guu"
-		}],
-		"description": [{
-			"fr": "Cette quete n'a aucun interet, a part vous conseiller de decouvrir au plus vite l'excellent dessin anime 'Hare + Guu' disponible en DVD dans toutes les bonnes boutiques ! Banyaaaaaii. ^^"
-		}, {
-			"en": "Cette quete n'a aucun interet, a part vous conseiller de decouvrir au plus vite l'excellent dessin anime 'Hare + Guu' disponible en DVD dans toutes les bonnes boutiques ! Banyaaaaaii. ^^"
-		}, {
-			"es": "Cette quete n'a aucun interet, a part vous conseiller de decouvrir au plus vite l'excellent dessin anime 'Hare + Guu' disponible en DVD dans toutes les bonnes boutiques ! Banyaaaaaii. ^^"
-		}],
+		"titre": {
+			"fr": "Mystere de Guu",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Cette quete n'a aucun interet, a part vous conseiller de decouvrir au plus vite l'excellent dessin anime 'Hare + Guu' disponible en DVD dans toutes les bonnes boutiques ! Banyaaaaaii. ^^",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1134,20 +1022,16 @@
 		"id": 28,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Friandises divines"
-		}, {
-			"en": "Friandises divines"
-		}, {
-			"es": "Friandises divines"
-		}],
-		"description": [{
-			"fr": "Les sucreries n'ont plus aucun secret pour Igor. Il saura, a compter de ce jour, debusquer les delices legendaires de Harry 'le beau' dissemines a travers tout Hammerfest."
-		}, {
-			"en": "Les sucreries n'ont plus aucun secret pour Igor. Il saura, a compter de ce jour, debusquer les delices legendaires de Harry 'le beau' dissemines a travers tout Hammerfest."
-		}, {
-			"es": "Les sucreries n'ont plus aucun secret pour Igor. Il saura, a compter de ce jour, debusquer les delices legendaires de Harry 'le beau' dissemines a travers tout Hammerfest."
-		}],
+		"titre": {
+			"fr": "Friandises divines",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Les sucreries n'ont plus aucun secret pour Igor. Il saura, a compter de ce jour, debusquer les delices legendaires de Harry 'le beau' dissemines a travers tout Hammerfest.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1186,20 +1070,16 @@
 		"id": 29,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Igor et Cortex"
-		}, {
-			"en": "Igor et Cortex"
-		}, {
-			"es": "Igor et Cortex"
-		}],
-		"description": [{
-			"fr": "Igor a entrepris la fabrication de gadgets mysterieux... Attendez-vous a collectionner des machines etranges en jeu !"
-		}, {
-			"en": "Igor a entrepris la fabrication de gadgets mysterieux... Attendez-vous a collectionner des machines etranges en jeu !"
-		}, {
-			"es": "Igor a entrepris la fabrication de gadgets mysterieux... Attendez-vous a collectionner des machines etranges en jeu !"
-		}],
+		"titre": {
+			"fr": "Igor et Cortex",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor a entrepris la fabrication de gadgets mysterieux... Attendez-vous a collectionner des machines etranges en jeu !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1229,20 +1109,16 @@
 		"id": 30,
 		"light": true,
 		"life": false,
-		"titre": [{
-			"fr": "Affronter l'obscurite"
-		}, {
-			"en": "Affronter l'obscurite"
-		}, {
-			"es": "Affronter l'obscurite"
-		}],
-		"description": [{
-			"fr": "Igor sait maintenant s'eclairer ! Il pensera maintenant a apporter avec lui une torche pour ne pas trop se perdre dans l'obscurite des niveaux avances !"
-		}, {
-			"en": "Igor sait maintenant s'eclairer ! Il pensera maintenant a apporter avec lui une torche pour ne pas trop se perdre dans l'obscurite des niveaux avances !"
-		}, {
-			"es": "Igor sait maintenant s'eclairer ! Il pensera maintenant a apporter avec lui une torche pour ne pas trop se perdre dans l'obscurite des niveaux avances !"
-		}],
+		"titre": {
+			"fr": "Affronter l'obscurite",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor sait maintenant s'eclairer ! Il pensera maintenant a apporter avec lui une torche pour ne pas trop se perdre dans l'obscurite des niveaux avances !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 13,
@@ -1260,20 +1136,16 @@
 		"id": 31,
 		"light": true,
 		"life": false,
-		"titre": [{
-			"fr": "Et la lumiere fut !"
-		}, {
-			"en": "Et la lumiere fut !"
-		}, {
-			"es": "Et la lumiere fut !"
-		}],
-		"description": [{
-			"fr": "Prepare a tous les dangers, le courageux Igor ne craint plus du tout l'obscurite dans les niveaux avances !"
-		}, {
-			"en": "Prepare a tous les dangers, le courageux Igor ne craint plus du tout l'obscurite dans les niveaux avances !"
-		}, {
-			"es": "Prepare a tous les dangers, le courageux Igor ne craint plus du tout l'obscurite dans les niveaux avances !"
-		}],
+		"titre": {
+			"fr": "Et la lumiere fut !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Prepare a tous les dangers, le courageux Igor ne craint plus du tout l'obscurite dans les niveaux avances !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 14,
@@ -1291,20 +1163,16 @@
 		"id": 32,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Noel sur Hammerfest !"
-		}, {
-			"en": "Noel sur Hammerfest !"
-		}, {
-			"es": "Noel sur Hammerfest !"
-		}],
-		"description": [{
-			"fr": "Vous avez gagne 5 parties supplementaires."
-		}, {
-			"en": "Vous avez gagne 5 parties supplementaires."
-		}, {
-			"es": "Vous avez gagne 5 parties supplementaires."
-		}],
+		"titre": {
+			"fr": "Noel sur Hammerfest !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous avez gagne 5 parties supplementaires.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 15,
@@ -1322,20 +1190,16 @@
 		"id": 33,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Joyeux anniversaire Igor"
-		}, {
-			"en": "Joyeux anniversaire Igor"
-		}, {
-			"es": "Joyeux anniversaire Igor"
-		}],
-		"description": [{
-			"fr": "Vous avez gagne 10 parties supplementaires !"
-		}, {
-			"en": "Vous avez gagne 10 parties supplementaires !"
-		}, {
-			"es": "Vous avez gagne 10 parties supplementaires !"
-		}],
+		"titre": {
+			"fr": "Joyeux anniversaire Igor",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous avez gagne 10 parties supplementaires !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 16,
@@ -1353,20 +1217,16 @@
 		"id": 34,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Cadeau celeste"
-		}, {
-			"en": "Cadeau celeste"
-		}, {
-			"es": "Cadeau celeste"
-		}],
-		"description": [{
-			"fr": "Vous avez gagne 20 parties supplementaires !"
-		}, {
-			"en": "Vous avez gagne 20 parties supplementaires !"
-		}, {
-			"es": "Vous avez gagne 20 parties supplementaires !"
-		}],
+		"titre": {
+			"fr": "Cadeau celeste",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous avez gagne 20 parties supplementaires !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 17,
@@ -1384,20 +1244,16 @@
 		"id": 35,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Achat de parties ameliore"
-		}, {
-			"en": "Achat de parties ameliore"
-		}, {
-			"es": "Achat de parties ameliore"
-		}],
-		"description": [{
-			"fr": "Vos appels dans la boutique vous rapporteront dorenavant plus de flocons !"
-		}, {
-			"en": "Vos appels dans la boutique vous rapporteront dorenavant plus de flocons !"
-		}, {
-			"es": "Vos appels dans la boutique vous rapporteront dorenavant plus de flocons !"
-		}],
+		"titre": {
+			"fr": "Achat de parties ameliore",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vos appels dans la boutique vous rapporteront dorenavant plus de flocons !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 18,
@@ -1415,20 +1271,16 @@
 		"id": 36,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Exterminateur de Sorbex"
-		}, {
-			"en": "Exterminateur de Sorbex"
-		}, {
-			"es": "Exterminateur de Sorbex"
-		}],
-		"description": [{
-			"fr": "Vous avez presse sans pitie les Citrons Sorbex !"
-		}, {
-			"en": "Vous avez presse sans pitie les Citrons Sorbex !"
-		}, {
-			"es": "Vous avez presse sans pitie les Citrons Sorbex !"
-		}],
+		"titre": {
+			"fr": "Exterminateur de Sorbex",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous avez presse sans pitie les Citrons Sorbex !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1446,20 +1298,16 @@
 		"id": 37,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Desamorceur de Bombinos"
-		}, {
-			"en": "Desamorceur de Bombinos"
-		}, {
-			"es": "Desamorceur de Bombinos"
-		}],
-		"description": [{
-			"fr": "Vous avez survecu aux explosions des Bombinos !"
-		}, {
-			"en": "Vous avez survecu aux explosions des Bombinos !"
-		}, {
-			"es": "Vous avez survecu aux explosions des Bombinos !"
-		}],
+		"titre": {
+			"fr": "Desamorceur de Bombinos",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous avez survecu aux explosions des Bombinos !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1477,20 +1325,16 @@
 		"id": 38,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Tueur de poires"
-		}, {
-			"en": "Tueur de poires"
-		}, {
-			"es": "Tueur de poires"
-		}],
-		"description": [{
-			"fr": "Vous avez vaincu un nouveau boss: les Poires-Melbombes !"
-		}, {
-			"en": "Vous avez vaincu un nouveau boss: les Poires-Melbombes !"
-		}, {
-			"es": "Vous avez vaincu un nouveau boss: les Poires-Melbombes !"
-		}],
+		"titre": {
+			"fr": "Tueur de poires",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous avez vaincu un nouveau boss: les Poires-Melbombes !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1508,20 +1352,16 @@
 		"id": 39,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Mixeur de Tagadas"
-		}, {
-			"en": "Mixeur de Tagadas"
-		}, {
-			"es": "Mixeur de Tagadas"
-		}],
-		"description": [{
-			"fr": "Vous n'avez fait qu'une bouchee des Fraises-Tagada !"
-		}, {
-			"en": "Vous n'avez fait qu'une bouchee des Fraises-Tagada !"
-		}, {
-			"es": "Vous n'avez fait qu'une bouchee des Fraises-Tagada !"
-		}],
+		"titre": {
+			"fr": "Mixeur de Tagadas",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous n'avez fait qu'une bouchee des Fraises-Tagada !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1539,20 +1379,16 @@
 		"id": 40,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Kiwi frotte s'y pique"
-		}, {
-			"en": "Kiwi frotte s'y pique"
-		}, {
-			"es": "Kiwi frotte s'y pique"
-		}],
-		"description": [{
-			"fr": "Vous avez su eviter tous les pieges des Sapeur-kiwis !"
-		}, {
-			"en": "Vous avez su eviter tous les pieges des Sapeur-kiwis !"
-		}, {
-			"es": "Vous avez su eviter tous les pieges des Sapeur-kiwis !"
-		}],
+		"titre": {
+			"fr": "Kiwi frotte s'y pique",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous avez su eviter tous les pieges des Sapeur-kiwis !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1570,20 +1406,16 @@
 		"id": 41,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Chasseur de Bondissantes"
-		}, {
-			"en": "Chasseur de Bondissantes"
-		}, {
-			"es": "Chasseur de Bondissantes"
-		}],
-		"description": [{
-			"fr": "Vous ne vous etes pas laisse impressionner par la meute de Bondissantes !"
-		}, {
-			"en": "Vous ne vous etes pas laisse impressionner par la meute de Bondissantes !"
-		}, {
-			"es": "Vous ne vous etes pas laisse impressionner par la meute de Bondissantes !"
-		}],
+		"titre": {
+			"fr": "Chasseur de Bondissantes",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous ne vous etes pas laisse impressionner par la meute de Bondissantes !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1601,20 +1433,16 @@
 		"id": 42,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Tronconneur d'Ananargeddons"
-		}, {
-			"en": "Tronconneur d'Ananargeddons"
-		}, {
-			"es": "Tronconneur d'Ananargeddons"
-		}],
-		"description": [{
-			"fr": "Vous etes venu a bout d'un groupe d'Ananargeddons surentraines !"
-		}, {
-			"en": "Vous etes venu a bout d'un groupe d'Ananargeddons surentraines !"
-		}, {
-			"es": "Vous etes venu a bout d'un groupe d'Ananargeddons surentraines !"
-		}],
+		"titre": {
+			"fr": "Tronconneur d'Ananargeddons",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous etes venu a bout d'un groupe d'Ananargeddons surentraines !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1632,20 +1460,16 @@
 		"id": 43,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Roi de Hammerfest"
-		}, {
-			"en": "Roi de Hammerfest"
-		}, {
-			"es": "Roi de Hammerfest"
-		}],
-		"description": [{
-			"fr": "Votre perseverance et votre tenacite ont eu raison du sorcier Tuberculoz: vous avez retrouve la carotte de Igor ! Vous debuterez vos prochaines parties avec une vie supplementaire et Igor portera fierement sa carotte preferee."
-		}, {
-			"en": "Votre perseverance et votre tenacite ont eu raison du sorcier Tuberculoz: vous avez retrouve la carotte de Igor ! Vous debuterez vos prochaines parties avec une vie supplementaire et Igor portera fierement sa carotte preferee."
-		}, {
-			"es": "Votre perseverance et votre tenacite ont eu raison du sorcier Tuberculoz: vous avez retrouve la carotte de Igor ! Vous debuterez vos prochaines parties avec une vie supplementaire et Igor portera fierement sa carotte preferee."
-		}],
+		"titre": {
+			"fr": "Roi de Hammerfest",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Votre perseverance et votre tenacite ont eu raison du sorcier Tuberculoz: vous avez retrouve la carotte de Igor ! Vous debuterez vos prochaines parties avec une vie supplementaire et Igor portera fierement sa carotte preferee.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1663,20 +1487,16 @@
 		"id": 44,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Chapelier fou"
-		}, {
-			"en": "Chapelier fou"
-		}, {
-			"es": "Chapelier fou"
-		}],
-		"description": [{
-			"fr": "Igor s'est decouvert une passion nouvelle pour les coiffes. Vous pourrez maintenant appuyer sur la touche 'D' pendant la partie pour changer de deguisement !"
-		}, {
-			"en": "Igor s'est decouvert une passion nouvelle pour les coiffes. Vous pourrez maintenant appuyer sur la touche 'D' pendant la partie pour changer de deguisement !"
-		}, {
-			"es": "Igor s'est decouvert une passion nouvelle pour les coiffes. Vous pourrez maintenant appuyer sur la touche 'D' pendant la partie pour changer de deguisement !"
-		}],
+		"titre": {
+			"fr": "Chapelier fou",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor s'est decouvert une passion nouvelle pour les coiffes. Vous pourrez maintenant appuyer sur la touche 'D' pendant la partie pour changer de deguisement !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1700,20 +1520,16 @@
 		"id": 45,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Poney eco-terroriste"
-		}, {
-			"en": "Poney eco-terroriste"
-		}, {
-			"es": "Poney eco-terroriste"
-		}],
-		"description": [{
-			"fr": "Igor a accumule suffisament de richesses pour financer ses activites louches en Hammerfest. Il peut maintenant se deguiser en appuyant sur la touche 'D' pendant la partie ! Et sinon, si ca n'est pas deja fait, avez-vous deja visite www.dinoparc.com ?"
-		}, {
-			"en": "Igor a accumule suffisament de richesses pour financer ses activites louches en Hammerfest. Il peut maintenant se deguiser en appuyant sur la touche 'D' pendant la partie ! Et sinon, si ca n'est pas deja fait, avez-vous deja visite www.dinoparc.com ?"
-		}, {
-			"es": "Igor a accumule suffisament de richesses pour financer ses activites louches en Hammerfest. Il peut maintenant se deguiser en appuyant sur la touche 'D' pendant la partie ! Et sinon, si ca n'est pas deja fait, avez-vous deja visite www.dinoparc.com ?"
-		}],
+		"titre": {
+			"fr": "Poney eco-terroriste",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor a accumule suffisament de richesses pour financer ses activites louches en Hammerfest. Il peut maintenant se deguiser en appuyant sur la touche 'D' pendant la partie ! Et sinon, si ca n'est pas deja fait, avez-vous deja visite www.dinoparc.com ?",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1737,20 +1553,16 @@
 		"id": 46,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Le Pioupiouz est en toi"
-		}, {
-			"en": "Le Pioupiouz est en toi"
-		}, {
-			"es": "Le Pioupiouz est en toi"
-		}],
-		"description": [{
-			"fr": "Il fallait s'y attendre: a force de ramasser n'importe quoi, Igor s'est fait gober par un Pioupiou ! Appuyez sur la touche 'D' pendant la partie pour changer de deguisement (au fait, vous connaissiez le site www.pioupiouz.com ?)"
-		}, {
-			"en": "Il fallait s'y attendre: a force de ramasser n'importe quoi, Igor s'est fait gober par un Pioupiou ! Appuyez sur la touche 'D' pendant la partie pour changer de deguisement (au fait, vous connaissiez le site www.pioupiouz.com ?)"
-		}, {
-			"es": "Il fallait s'y attendre: a force de ramasser n'importe quoi, Igor s'est fait gober par un Pioupiou ! Appuyez sur la touche 'D' pendant la partie pour changer de deguisement (au fait, vous connaissiez le site www.pioupiouz.com ?)"
-		}],
+		"titre": {
+			"fr": "Le Pioupiouz est en toi",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Il fallait s'y attendre: a force de ramasser n'importe quoi, Igor s'est fait gober par un Pioupiou ! Appuyez sur la touche 'D' pendant la partie pour changer de deguisement (au fait, vous connaissiez le site www.pioupiouz.com ?)",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1768,20 +1580,16 @@
 		"id": 47,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Chasseur de champignons"
-		}, {
-			"en": "Chasseur de champignons"
-		}, {
-			"es": "Chasseur de champignons"
-		}],
-		"description": [{
-			"fr": "Comme son homologue italien (plombier de son etat), Igor a une passion bizarre pour les champignons. Il pourra desormais se deguiser en appuyant sur la touche 'D' pendant la partie !"
-		}, {
-			"en": "Comme son homologue italien (plombier de son etat), Igor a une passion bizarre pour les champignons. Il pourra desormais se deguiser en appuyant sur la touche 'D' pendant la partie !"
-		}, {
-			"es": "Comme son homologue italien (plombier de son etat), Igor a une passion bizarre pour les champignons. Il pourra desormais se deguiser en appuyant sur la touche 'D' pendant la partie !"
-		}],
+		"titre": {
+			"fr": "Chasseur de champignons",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Comme son homologue italien (plombier de son etat), Igor a une passion bizarre pour les champignons. Il pourra desormais se deguiser en appuyant sur la touche 'D' pendant la partie !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1808,20 +1616,16 @@
 		"id": 48,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Successeur de Tuberculoz"
-		}, {
-			"en": "Successeur de Tuberculoz"
-		}, {
-			"es": "Successeur de Tuberculoz"
-		}],
-		"description": [{
-			"fr": "Igor semble avoir... change.. Son regard est maintenant plus froid. Il affiche une mine sombre et se cache maintenant sous une grande cape pourpre. Petit a petit, il devient ce qu'il a combattu... Vous pouvez maintenant revetir l'apparence du sorcier Tuberculoz en appuyant sur 'D' pendant la partie !"
-		}, {
-			"en": "Igor semble avoir... change.. Son regard est maintenant plus froid. Il affiche une mine sombre et se cache maintenant sous une grande cape pourpre. Petit a petit, il devient ce qu'il a combattu... Vous pouvez maintenant revetir l'apparence du sorcier Tuberculoz en appuyant sur 'D' pendant la partie !"
-		}, {
-			"es": "Igor semble avoir... change.. Son regard est maintenant plus froid. Il affiche une mine sombre et se cache maintenant sous une grande cape pourpre. Petit a petit, il devient ce qu'il a combattu... Vous pouvez maintenant revetir l'apparence du sorcier Tuberculoz en appuyant sur 'D' pendant la partie !"
-		}],
+		"titre": {
+			"fr": "Successeur de Tuberculoz",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor semble avoir... change.. Son regard est maintenant plus froid. Il affiche une mine sombre et se cache maintenant sous une grande cape pourpre. Petit a petit, il devient ce qu'il a combattu... Vous pouvez maintenant revetir l'apparence du sorcier Tuberculoz en appuyant sur 'D' pendant la partie !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1839,20 +1643,16 @@
 		"id": 49,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "La premiere cle !"
-		}, {
-			"en": "La premiere cle !"
-		}, {
-			"es": "La premiere cle !"
-		}],
-		"description": [{
-			"fr": "Igor a trouve une sorte de Passe-partout en Bois. Nul doute qu'il ouvre une porte quelque part dans les cavernes..."
-		}, {
-			"en": "Igor a trouve une sorte de Passe-partout en Bois. Nul doute qu'il ouvre une porte quelque part dans les cavernes..."
-		}, {
-			"es": "Igor a trouve une sorte de Passe-partout en Bois. Nul doute qu'il ouvre une porte quelque part dans les cavernes..."
-		}],
+		"titre": {
+			"fr": "La premiere cle !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor a trouve une sorte de Passe-partout en Bois. Nul doute qu'il ouvre une porte quelque part dans les cavernes...",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1870,20 +1670,16 @@
 		"id": 50,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Rigor Dangerous"
-		}, {
-			"en": "Rigor Dangerous"
-		}, {
-			"es": "Rigor Dangerous"
-		}],
-		"description": [{
-			"fr": "Vous avez decouvert dans votre aventure une vieille cle rouillee mysterieuse ! Elle comporte une petite mention gravee: 'Rick'. Sans doute son ancien proprietaire..."
-		}, {
-			"en": "Vous avez decouvert dans votre aventure une vieille cle rouillee mysterieuse ! Elle comporte une petite mention gravee: 'Rick'. Sans doute son ancien proprietaire..."
-		}, {
-			"es": "Vous avez decouvert dans votre aventure une vieille cle rouillee mysterieuse ! Elle comporte une petite mention gravee: 'Rick'. Sans doute son ancien proprietaire..."
-		}],
+		"titre": {
+			"fr": "Rigor Dangerous",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous avez decouvert dans votre aventure une vieille cle rouillee mysterieuse ! Elle comporte une petite mention gravee: 'Rick'. Sans doute son ancien proprietaire...",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1901,20 +1697,16 @@
 		"id": 51,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "La Meluzzine perdue"
-		}, {
-			"en": "La Meluzzine perdue"
-		}, {
-			"es": "La Meluzzine perdue"
-		}],
-		"description": [{
-			"fr": "La Meluzzine, cle legendaire sortie des vieux contes hammerfestiens, ouvre a ce qu'on raconte la porte de grandes richesses. Reste a savoir où ?"
-		}, {
-			"en": "La Meluzzine, cle legendaire sortie des vieux contes hammerfestiens, ouvre a ce qu'on raconte la porte de grandes richesses. Reste a savoir où ?"
-		}, {
-			"es": "La Meluzzine, cle legendaire sortie des vieux contes hammerfestiens, ouvre a ce qu'on raconte la porte de grandes richesses. Reste a savoir où ?"
-		}],
+		"titre": {
+			"fr": "La Meluzzine perdue",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "La Meluzzine, cle legendaire sortie des vieux contes hammerfestiens, ouvre a ce qu'on raconte la porte de grandes richesses. Reste a savoir où ?",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1932,20 +1724,16 @@
 		"id": 52,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Enfin le Bourru !"
-		}, {
-			"en": "Enfin le Bourru !"
-		}, {
-			"es": "Enfin le Bourru !"
-		}],
-		"description": [{
-			"fr": "Cette etrange petite cle sent le vin."
-		}, {
-			"en": "Cette etrange petite cle sent le vin."
-		}, {
-			"es": "Cette etrange petite cle sent le vin."
-		}],
+		"titre": {
+			"fr": "Enfin le Bourru !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Cette etrange petite cle sent le vin.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 41,
@@ -1963,20 +1751,16 @@
 		"id": 53,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Congelation"
-		}, {
-			"en": "Congelation"
-		}, {
-			"es": "Congelation"
-		}],
-		"description": [{
-			"fr": "Bien qu'etant un bonhomme de neige, Igor lui-meme a du mal a garder cette cle en main, tant le froid qu'elle degage est intense. La porte qu'elle ouvre donne surement sur les endroits les plus recules de Hammerfest."
-		}, {
-			"en": "Bien qu'etant un bonhomme de neige, Igor lui-meme a du mal a garder cette cle en main, tant le froid qu'elle degage est intense. La porte qu'elle ouvre donne surement sur les endroits les plus recules de Hammerfest."
-		}, {
-			"es": "Bien qu'etant un bonhomme de neige, Igor lui-meme a du mal a garder cette cle en main, tant le froid qu'elle degage est intense. La porte qu'elle ouvre donne surement sur les endroits les plus recules de Hammerfest."
-		}],
+		"titre": {
+			"fr": "Congelation",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Bien qu'etant un bonhomme de neige, Igor lui-meme a du mal a garder cette cle en main, tant le froid qu'elle degage est intense. La porte qu'elle ouvre donne surement sur les endroits les plus recules de Hammerfest.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -1994,20 +1778,16 @@
 		"id": 54,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Une cle rouillee"
-		}, {
-			"en": "Une cle rouillee"
-		}, {
-			"es": "Une cle rouillee"
-		}],
-		"description": [{
-			"fr": "Ce petit bout de ferraille difforme n'a pas l'air d'avoir une grande valeur. Mais il faut parfois ce mefier des apparences ! Qui peut savoir quel genre d'aventure se cache au dela de la porte qu'elle ouvre ?"
-		}, {
-			"en": "Ce petit bout de ferraille difforme n'a pas l'air d'avoir une grande valeur. Mais il faut parfois ce mefier des apparences ! Qui peut savoir quel genre d'aventure se cache au dela de la porte qu'elle ouvre ?"
-		}, {
-			"es": "Ce petit bout de ferraille difforme n'a pas l'air d'avoir une grande valeur. Mais il faut parfois ce mefier des apparences ! Qui peut savoir quel genre d'aventure se cache au dela de la porte qu'elle ouvre ?"
-		}],
+		"titre": {
+			"fr": "Une cle rouillee",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Ce petit bout de ferraille difforme n'a pas l'air d'avoir une grande valeur. Mais il faut parfois ce mefier des apparences ! Qui peut savoir quel genre d'aventure se cache au dela de la porte qu'elle ouvre ?",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -2025,20 +1805,16 @@
 		"id": 55,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Laissez passer !"
-		}, {
-			"en": "Laissez passer !"
-		}, {
-			"es": "Laissez passer !"
-		}],
-		"description": [{
-			"fr": "Votre toute puissance administrative sera dorenavant appuyee par le formulaire d'Autorisation du Bois-Joli BJ22a."
-		}, {
-			"en": "Votre toute puissance administrative sera dorenavant appuyee par le formulaire d'Autorisation du Bois-Joli BJ22a."
-		}, {
-			"es": "Votre toute puissance administrative sera dorenavant appuyee par le formulaire d'Autorisation du Bois-Joli BJ22a."
-		}],
+		"titre": {
+			"fr": "Laissez passer !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Votre toute puissance administrative sera dorenavant appuyee par le formulaire d'Autorisation du Bois-Joli BJ22a.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": 42,
@@ -2056,20 +1832,16 @@
 		"id": 56,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Les mondes ardus"
-		}, {
-			"en": "Les mondes ardus"
-		}, {
-			"es": "Les mondes ardus"
-		}],
-		"description": [{
-			"fr": "Pour avoir atteint le niveau 50 en mode Cauchemar, vous avez gagne la Cle des Mondes Ardus."
-		}, {
-			"en": "Pour avoir atteint le niveau 50 en mode Cauchemar, vous avez gagne la Cle des Mondes Ardus."
-		}, {
-			"es": "Pour avoir atteint le niveau 50 en mode Cauchemar, vous avez gagne la Cle des Mondes Ardus."
-		}],
+		"titre": {
+			"fr": "Les mondes ardus",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Pour avoir atteint le niveau 50 en mode Cauchemar, vous avez gagne la Cle des Mondes Ardus.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -2087,20 +1859,16 @@
 		"id": 57,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Viiiite !"
-		}, {
-			"en": "Viiiite !"
-		}, {
-			"es": "Viiiite !"
-		}],
-		"description": [{
-			"fr": "Sans trop savoir pourquoi, la Cle Piquante que vous avez trouve vous donne une folle envie de courir partout et de vous rouler en boule."
-		}, {
-			"en": "Sans trop savoir pourquoi, la Cle Piquante que vous avez trouve vous donne une folle envie de courir partout et de vous rouler en boule."
-		}, {
-			"es": "Sans trop savoir pourquoi, la Cle Piquante que vous avez trouve vous donne une folle envie de courir partout et de vous rouler en boule."
-		}],
+		"titre": {
+			"fr": "Viiiite !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Sans trop savoir pourquoi, la Cle Piquante que vous avez trouve vous donne une folle envie de courir partout et de vous rouler en boule.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -2118,20 +1886,16 @@
 		"id": 58,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Faire les poches a Tubz"
-		}, {
-			"en": "Faire les poches a Tubz"
-		}, {
-			"es": "Faire les poches a Tubz"
-		}],
-		"description": [{
-			"fr": "Tuberculoz, le vilain sorcier, portait sur lui une cle..."
-		}, {
-			"en": "Tuberculoz, le vilain sorcier, portait sur lui une cle..."
-		}, {
-			"es": "Tuberculoz, le vilain sorcier, portait sur lui une cle..."
-		}],
+		"titre": {
+			"fr": "Faire les poches a Tubz",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Tuberculoz, le vilain sorcier, portait sur lui une cle...",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -2149,20 +1913,16 @@
 		"id": 59,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Tuberculoz, seigneur des enfers"
-		}, {
-			"en": "Tuberculoz, seigneur des enfers"
-		}, {
-			"es": "Tuberculoz, seigneur des enfers"
-		}],
-		"description": [{
-			"fr": "Votre toute puissance et votre maitrise absolue des techniques de combat de Hammerfest vous ont permi de gagner une cle unique en terrassant Tuberculoz en mode Cauchemar !"
-		}, {
-			"en": "Votre toute puissance et votre maitrise absolue des techniques de combat de Hammerfest vous ont permi de gagner une cle unique en terrassant Tuberculoz en mode Cauchemar !"
-		}, {
-			"es": "Votre toute puissance et votre maitrise absolue des techniques de combat de Hammerfest vous ont permi de gagner une cle unique en terrassant Tuberculoz en mode Cauchemar !"
-		}],
+		"titre": {
+			"fr": "Tuberculoz, seigneur des enfers",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Votre toute puissance et votre maitrise absolue des techniques de combat de Hammerfest vous ont permi de gagner une cle unique en terrassant Tuberculoz en mode Cauchemar !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -2180,20 +1940,16 @@
 		"id": 60,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "L'eau ferrigineuneuse"
-		}, {
-			"en": "L'eau ferrigineuneuse"
-		}, {
-			"es": "L'eau ferrigineuneuse"
-		}],
-		"description": [{
-			"fr": "Votre exces dans la consommation de boissons alcoolisees vous a permis de debloquer la Cle du Bourru ! Vous aurez maintenant de bonnes chances de la trouver au cours de vos explorations."
-		}, {
-			"en": "Votre exces dans la consommation de boissons alcoolisees vous a permis de debloquer la Cle du Bourru ! Vous aurez maintenant de bonnes chances de la trouver au cours de vos explorations."
-		}, {
-			"es": "Votre exces dans la consommation de boissons alcoolisees vous a permis de debloquer la Cle du Bourru ! Vous aurez maintenant de bonnes chances de la trouver au cours de vos explorations."
-		}],
+		"titre": {
+			"fr": "L'eau ferrigineuneuse",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Votre exces dans la consommation de boissons alcoolisees vous a permis de debloquer la Cle du Bourru ! Vous aurez maintenant de bonnes chances de la trouver au cours de vos explorations.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -2223,20 +1979,16 @@
 		"id": 61,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Paperasse administrative"
-		}, {
-			"en": "Paperasse administrative"
-		}, {
-			"es": "Paperasse administrative"
-		}],
-		"description": [{
-			"fr": "Igor est un maitre dans l'art de remplir des formulaires administratifs. Il trouvera donc sans probleme bientôt l'Autorisation du Bois-Joli dans les dedales des cavernes..."
-		}, {
-			"en": "Igor est un maitre dans l'art de remplir des formulaires administratifs. Il trouvera donc sans probleme bientôt l'Autorisation du Bois-Joli dans les dedales des cavernes..."
-		}, {
-			"es": "Igor est un maitre dans l'art de remplir des formulaires administratifs. Il trouvera donc sans probleme bientôt l'Autorisation du Bois-Joli dans les dedales des cavernes..."
-		}],
+		"titre": {
+			"fr": "Paperasse administrative",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor est un maitre dans l'art de remplir des formulaires administratifs. Il trouvera donc sans probleme bientôt l'Autorisation du Bois-Joli dans les dedales des cavernes...",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -2266,20 +2018,16 @@
 		"id": 62,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Meilleur joueur"
-		}, {
-			"en": "Meilleur joueur"
-		}, {
-			"es": "Meilleur joueur"
-		}],
-		"description": [{
-			"fr": "Le meilleur joueur du net, c'est vous, plus personne n'a de doute la dessus ! Votre collection de manettes de jeu fera sans nul doute des envieux ^^ Igor dispose maintenant de l'option Tornade qui procure un boost de vitesse au debut de chaque partie, quelques soient les options choisies !"
-		}, {
-			"en": "Le meilleur joueur du net, c'est vous, plus personne n'a de doute la dessus ! Votre collection de manettes de jeu fera sans nul doute des envieux ^^ Igor dispose maintenant de l'option Tornade qui procure un boost de vitesse au debut de chaque partie, quelques soient les options choisies !"
-		}, {
-			"es": "Le meilleur joueur du net, c'est vous, plus personne n'a de doute la dessus ! Votre collection de manettes de jeu fera sans nul doute des envieux ^^ Igor dispose maintenant de l'option Tornade qui procure un boost de vitesse au debut de chaque partie, quelques soient les options choisies !"
-		}],
+		"titre": {
+			"fr": "Meilleur joueur",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Le meilleur joueur du net, c'est vous, plus personne n'a de doute la dessus ! Votre collection de manettes de jeu fera sans nul doute des envieux ^^ Igor dispose maintenant de l'option Tornade qui procure un boost de vitesse au debut de chaque partie, quelques soient les options choisies !",
+			"en": "",
+			"es": ""
+		},
 		"option": 0,
 		"mode": -1,
 		"remove": -1,
@@ -2318,20 +2066,16 @@
 		"id": 63,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Miroir, mon beau miroir"
-		}, {
-			"en": "Miroir, mon beau miroir"
-		}, {
-			"es": "Miroir, mon beau miroir"
-		}],
-		"description": [{
-			"fr": "Le Miroir Bancal que vous avez trouve en jeu vous permet maintenant de voir les choses sous un angle nouveau. L'option de jeu 'Miroir' a ete debloquee !"
-		}, {
-			"en": "Le Miroir Bancal que vous avez trouve en jeu vous permet maintenant de voir les choses sous un angle nouveau. L'option de jeu 'Miroir' a ete debloquee !"
-		}, {
-			"es": "Le Miroir Bancal que vous avez trouve en jeu vous permet maintenant de voir les choses sous un angle nouveau. L'option de jeu 'Miroir' a ete debloquee !"
-		}],
+		"titre": {
+			"fr": "Miroir, mon beau miroir",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Le Miroir Bancal que vous avez trouve en jeu vous permet maintenant de voir les choses sous un angle nouveau. L'option de jeu 'Miroir' a ete debloquee !",
+			"en": "",
+			"es": ""
+		},
 		"option": 1,
 		"mode": -1,
 		"remove": -1,
@@ -2349,20 +2093,16 @@
 		"id": 64,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Mode cauchemar"
-		}, {
-			"en": "Mode cauchemar"
-		}, {
-			"es": "Mode cauchemar"
-		}],
-		"description": [{
-			"fr": "Vous etes doue. Surement tres doue meme... Mais saurez-vous aider Igor en mode Cauchemar ? Cette option a ete debloquee !"
-		}, {
-			"en": "Vous etes doue. Surement tres doue meme... Mais saurez-vous aider Igor en mode Cauchemar ? Cette option a ete debloquee !"
-		}, {
-			"es": "Vous etes doue. Surement tres doue meme... Mais saurez-vous aider Igor en mode Cauchemar ? Cette option a ete debloquee !"
-		}],
+		"titre": {
+			"fr": "Mode cauchemar",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous etes doue. Surement tres doue meme... Mais saurez-vous aider Igor en mode Cauchemar ? Cette option a ete debloquee !",
+			"en": "",
+			"es": ""
+		},
 		"option": 2,
 		"mode": -1,
 		"remove": -1,
@@ -2380,20 +2120,16 @@
 		"id": 65,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "L'aventure continue !"
-		}, {
-			"en": "L'aventure continue !"
-		}, {
-			"es": "L'aventure continue !"
-		}],
-		"description": [{
-			"fr": "Le conseil des Carotteux vous a choisi pour explorer plus en avant les cavernes de Hammerfest. La Cle de Gordon est une premiere etape dans cette nouvelle mission."
-		}, {
-			"en": "Le conseil des Carotteux vous a choisi pour explorer plus en avant les cavernes de Hammerfest. La Cle de Gordon est une premiere etape dans cette nouvelle mission."
-		}, {
-			"es": "Le conseil des Carotteux vous a choisi pour explorer plus en avant les cavernes de Hammerfest. La Cle de Gordon est une premiere etape dans cette nouvelle mission."
-		}],
+		"titre": {
+			"fr": "L'aventure continue !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Le conseil des Carotteux vous a choisi pour explorer plus en avant les cavernes de Hammerfest. La Cle de Gordon est une premiere etape dans cette nouvelle mission.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -2411,20 +2147,16 @@
 		"id": 66,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Joyau d'Ankhel"
-		}, {
-			"en": "Joyau d'Ankhel"
-		}, {
-			"es": "Joyau d'Ankhel"
-		}],
-		"description": [{
-			"fr": "Vous avez fait preuve d'une dexterite et d'une perspicacite sans egal en retrouvant le Joyau d'Ankhel. L'option Controle du Ballon a ete debloquee pour le mode SoccerFest !"
-		}, {
-			"en": "Vous avez fait preuve d'une dexterite et d'une perspicacite sans egal en retrouvant le Joyau d'Ankhel. L'option Controle du Ballon a ete debloquee pour le mode SoccerFest !"
-		}, {
-			"es": "Vous avez fait preuve d'une dexterite et d'une perspicacite sans egal en retrouvant le Joyau d'Ankhel. L'option Controle du Ballon a ete debloquee pour le mode SoccerFest !"
-		}],
+		"titre": {
+			"fr": "Joyau d'Ankhel",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous avez fait preuve d'une dexterite et d'une perspicacite sans egal en retrouvant le Joyau d'Ankhel. L'option Controle du Ballon a ete debloquee pour le mode SoccerFest !",
+			"en": "",
+			"es": ""
+		},
 		"option": 3,
 		"mode": -1,
 		"remove": -1,
@@ -2442,20 +2174,16 @@
 		"id": 67,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Sandy commence l'aventure !"
-		}, {
-			"en": "Sandy commence l'aventure !"
-		}, {
-			"es": "Sandy commence l'aventure !"
-		}],
-		"description": [{
-			"fr": "Tous les elements sont reunis pour donner naissance a Sandy, le bonhomme de sable ! Ce nouveau personnage pourra se joindre a vous dans le mode Multi Cooperatif, jouable a deux sur le meme ordinateur. Re-decouvrez la grande aventure avec un ami !"
-		}, {
-			"en": "Tous les elements sont reunis pour donner naissance a Sandy, le bonhomme de sable ! Ce nouveau personnage pourra se joindre a vous dans le mode Multi Cooperatif, jouable a deux sur le meme ordinateur. Re-decouvrez la grande aventure avec un ami !"
-		}, {
-			"es": "Tous les elements sont reunis pour donner naissance a Sandy, le bonhomme de sable ! Ce nouveau personnage pourra se joindre a vous dans le mode Multi Cooperatif, jouable a deux sur le meme ordinateur. Re-decouvrez la grande aventure avec un ami !"
-		}],
+		"titre": {
+			"fr": "Sandy commence l'aventure !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Tous les elements sont reunis pour donner naissance a Sandy, le bonhomme de sable ! Ce nouveau personnage pourra se joindre a vous dans le mode Multi Cooperatif, jouable a deux sur le meme ordinateur. Re-decouvrez la grande aventure avec un ami !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": 1,
 		"remove": 48,
@@ -2482,20 +2210,16 @@
 		"id": 68,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Miroir, NOTRE beau miroir"
-		}, {
-			"en": "Miroir, NOTRE beau miroir"
-		}, {
-			"es": "Miroir, NOTRE beau miroir"
-		}],
-		"description": [{
-			"fr": "Avec le Miroir des Sables, vous pouvez maintenant voir les choses sous un angle nouveau mais a deux ! L'option de jeu 'Miroir' a ete debloquee pour le mode Multi Cooperatif !"
-		}, {
-			"en": "Avec le Miroir des Sables, vous pouvez maintenant voir les choses sous un angle nouveau mais a deux ! L'option de jeu 'Miroir' a ete debloquee pour le mode Multi Cooperatif !"
-		}, {
-			"es": "Avec le Miroir des Sables, vous pouvez maintenant voir les choses sous un angle nouveau mais a deux ! L'option de jeu 'Miroir' a ete debloquee pour le mode Multi Cooperatif !"
-		}],
+		"titre": {
+			"fr": "Miroir, NOTRE beau miroir",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Avec le Miroir des Sables, vous pouvez maintenant voir les choses sous un angle nouveau mais a deux ! L'option de jeu 'Miroir' a ete debloquee pour le mode Multi Cooperatif !",
+			"en": "",
+			"es": ""
+		},
 		"option": 4,
 		"mode": -1,
 		"remove": -1,
@@ -2513,20 +2237,16 @@
 		"id": 69,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Mode double cauchemar"
-		}, {
-			"en": "Mode double cauchemar"
-		}, {
-			"es": "Mode double cauchemar"
-		}],
-		"description": [{
-			"fr": "De toute evidence, vous etes capables de grandes choses a deux ! L'option de jeu 'Cauchemar' a ete debloquee pour le mode Multi Cooperatif !"
-		}, {
-			"en": "De toute evidence, vous etes capables de grandes choses a deux ! L'option de jeu 'Cauchemar' a ete debloquee pour le mode Multi Cooperatif !"
-		}, {
-			"es": "De toute evidence, vous etes capables de grandes choses a deux ! L'option de jeu 'Cauchemar' a ete debloquee pour le mode Multi Cooperatif !"
-		}],
+		"titre": {
+			"fr": "Mode double cauchemar",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "De toute evidence, vous etes capables de grandes choses a deux ! L'option de jeu 'Cauchemar' a ete debloquee pour le mode Multi Cooperatif !",
+			"en": "",
+			"es": ""
+		},
 		"option": 5,
 		"mode": -1,
 		"remove": -1,
@@ -2544,20 +2264,16 @@
 		"id": 70,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Une grande Amitie"
-		}, {
-			"en": "Une grande Amitie"
-		}, {
-			"es": "Une grande Amitie"
-		}],
-		"description": [{
-			"fr": "Mieux vaut tard que jamais ! Igor et Sandy ont enfin compris qu'il valait mieux s'entraider s'ils voulaient survivre a deux dans les Cavernes de Hammerfest. L'option de jeu 'Partage de vies' a ete debloquee pour le mode Multi Cooperatif ! Si cette option est activee, lorsqu'un joueur perd sa derniere vie, il en prend une au second joueur et peut ainsi continuer la partie !"
-		}, {
-			"en": "Mieux vaut tard que jamais ! Igor et Sandy ont enfin compris qu'il valait mieux s'entraider s'ils voulaient survivre a deux dans les Cavernes de Hammerfest. L'option de jeu 'Partage de vies' a ete debloquee pour le mode Multi Cooperatif ! Si cette option est activee, lorsqu'un joueur perd sa derniere vie, il en prend une au second joueur et peut ainsi continuer la partie !"
-		}, {
-			"es": "Mieux vaut tard que jamais ! Igor et Sandy ont enfin compris qu'il valait mieux s'entraider s'ils voulaient survivre a deux dans les Cavernes de Hammerfest. L'option de jeu 'Partage de vies' a ete debloquee pour le mode Multi Cooperatif ! Si cette option est activee, lorsqu'un joueur perd sa derniere vie, il en prend une au second joueur et peut ainsi continuer la partie !"
-		}],
+		"titre": {
+			"fr": "Une grande Amitie",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Mieux vaut tard que jamais ! Igor et Sandy ont enfin compris qu'il valait mieux s'entraider s'ils voulaient survivre a deux dans les Cavernes de Hammerfest. L'option de jeu 'Partage de vies' a ete debloquee pour le mode Multi Cooperatif ! Si cette option est activee, lorsqu'un joueur perd sa derniere vie, il en prend une au second joueur et peut ainsi continuer la partie !",
+			"en": "",
+			"es": ""
+		},
 		"option": 6,
 		"mode": -1,
 		"remove": -1,
@@ -2575,20 +2291,16 @@
 		"id": 71,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Apprentissage des canifs volants"
-		}, {
-			"en": "Apprentissage des canifs volants"
-		}, {
-			"es": "Apprentissage des canifs volants"
-		}],
-		"description": [{
-			"fr": "A toujours sauter partout, Igor a fini par acquerir une souplesse digne d'un ninja et une dexterite hors du commun ! Mais pour prouver sa valeur, il doit maintenant collecter les artefacts ninjas disperses en Hammerfest !"
-		}, {
-			"en": "A toujours sauter partout, Igor a fini par acquerir une souplesse digne d'un ninja et une dexterite hors du commun ! Mais pour prouver sa valeur, il doit maintenant collecter les artefacts ninjas disperses en Hammerfest !"
-		}, {
-			"es": "A toujours sauter partout, Igor a fini par acquerir une souplesse digne d'un ninja et une dexterite hors du commun ! Mais pour prouver sa valeur, il doit maintenant collecter les artefacts ninjas disperses en Hammerfest !"
-		}],
+		"titre": {
+			"fr": "Apprentissage des canifs volants",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "A toujours sauter partout, Igor a fini par acquerir une souplesse digne d'un ninja et une dexterite hors du commun ! Mais pour prouver sa valeur, il doit maintenant collecter les artefacts ninjas disperses en Hammerfest !",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
@@ -2606,20 +2318,16 @@
 		"id": 72,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Shinobi do !"
-		}, {
-			"en": "Shinobi do !"
-		}, {
-			"es": "Shinobi do !"
-		}],
-		"description": [{
-			"fr": "Igor a rempli sa quete initiatique et maitrise maintenant a la perfection un grand nombre d'armes du Ninjutsu ! Mais comme son nouveau de l'honneur le lui interdit, il ne pourra pas s'en servir. Toutefois, il pourra mettre a l'epreuve ses competences grâce a l'option de jeu 'Ninjutsu' qu'il vient de debloquer pour le mode Aventure !"
-		}, {
-			"en": "Igor a rempli sa quete initiatique et maitrise maintenant a la perfection un grand nombre d'armes du Ninjutsu ! Mais comme son nouveau de l'honneur le lui interdit, il ne pourra pas s'en servir. Toutefois, il pourra mettre a l'epreuve ses competences grâce a l'option de jeu 'Ninjutsu' qu'il vient de debloquer pour le mode Aventure !"
-		}, {
-			"es": "Igor a rempli sa quete initiatique et maitrise maintenant a la perfection un grand nombre d'armes du Ninjutsu ! Mais comme son nouveau de l'honneur le lui interdit, il ne pourra pas s'en servir. Toutefois, il pourra mettre a l'epreuve ses competences grâce a l'option de jeu 'Ninjutsu' qu'il vient de debloquer pour le mode Aventure !"
-		}],
+		"titre": {
+			"fr": "Shinobi do !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor a rempli sa quete initiatique et maitrise maintenant a la perfection un grand nombre d'armes du Ninjutsu ! Mais comme son nouveau de l'honneur le lui interdit, il ne pourra pas s'en servir. Toutefois, il pourra mettre a l'epreuve ses competences grâce a l'option de jeu 'Ninjutsu' qu'il vient de debloquer pour le mode Aventure !",
+			"en": "",
+			"es": ""
+		},
 		"option": 7,
 		"mode": -1,
 		"remove": -1,
@@ -2655,20 +2363,16 @@
 		"id": 73,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Rapide comme l'eclair !"
-		}, {
-			"en": "Rapide comme l'eclair !"
-		}, {
-			"es": "Rapide comme l'eclair !"
-		}],
-		"description": [{
-			"fr": "Igor est imbattable des lors qu'il s'agit de viser juste et se deplacer avec precision... Il faut maintenant le prouver aux autres ! Le mode TIME ATTACK est debloque et vous ouvre en plus l'acces a un nouveau classement sur le site. Soyez le bonhomme de neige le plus rapide de tout Hammerfest !"
-		}, {
-			"en": "Igor est imbattable des lors qu'il s'agit de viser juste et se deplacer avec precision... Il faut maintenant le prouver aux autres ! Le mode TIME ATTACK est debloque et vous ouvre en plus l'acces a un nouveau classement sur le site. Soyez le bonhomme de neige le plus rapide de tout Hammerfest !"
-		}, {
-			"es": "Igor est imbattable des lors qu'il s'agit de viser juste et se deplacer avec precision... Il faut maintenant le prouver aux autres ! Le mode TIME ATTACK est debloque et vous ouvre en plus l'acces a un nouveau classement sur le site. Soyez le bonhomme de neige le plus rapide de tout Hammerfest !"
-		}],
+		"titre": {
+			"fr": "Rapide comme l'eclair !",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Igor est imbattable des lors qu'il s'agit de viser juste et se deplacer avec precision... Il faut maintenant le prouver aux autres ! Le mode TIME ATTACK est debloque et vous ouvre en plus l'acces a un nouveau classement sur le site. Soyez le bonhomme de neige le plus rapide de tout Hammerfest !",
+			"en": "",
+			"es": ""
+		},
 		"option": 9,
 		"mode": 0,
 		"remove": -1,
@@ -2686,20 +2390,16 @@
 		"id": 74,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Maitre des Bombes"
-		}, {
-			"en": "Maitre des Bombes"
-		}, {
-			"es": "Maitre des Bombes"
-		}],
-		"description": [{
-			"fr": "Vous etes l'expert repute dans tout Hammerfest en matiere d'explosifs. Et pour montrer qu'on ne vous ne la fait pas, a vous, l'option 'Explosifs instables' a ete debloquee pour le mode Aventure ! Gare a TOUT ce qui explose en jeu ! De plus, vous pouvez pousser toutes vos bombes plus loin en avancant en meme temps que vous la frappez."
-		}, {
-			"en": "Vous etes l'expert repute dans tout Hammerfest en matiere d'explosifs. Et pour montrer qu'on ne vous ne la fait pas, a vous, l'option 'Explosifs instables' a ete debloquee pour le mode Aventure ! Gare a TOUT ce qui explose en jeu ! De plus, vous pouvez pousser toutes vos bombes plus loin en avancant en meme temps que vous la frappez."
-		}, {
-			"es": "Vous etes l'expert repute dans tout Hammerfest en matiere d'explosifs. Et pour montrer qu'on ne vous ne la fait pas, a vous, l'option 'Explosifs instables' a ete debloquee pour le mode Aventure ! Gare a TOUT ce qui explose en jeu ! De plus, vous pouvez pousser toutes vos bombes plus loin en avancant en meme temps que vous la frappez."
-		}],
+		"titre": {
+			"fr": "Maitre des Bombes",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous etes l'expert repute dans tout Hammerfest en matiere d'explosifs. Et pour montrer qu'on ne vous ne la fait pas, a vous, l'option 'Explosifs instables' a ete debloquee pour le mode Aventure ! Gare a TOUT ce qui explose en jeu ! De plus, vous pouvez pousser toutes vos bombes plus loin en avancant en meme temps que vous la frappez.",
+			"en": "",
+			"es": ""
+		},
 		"option": 8,
 		"mode": -1,
 		"remove": -1,
@@ -2717,20 +2417,16 @@
 		"id": 75,
 		"light": false,
 		"life": false,
-		"titre": [{
-			"fr": "Tombeau de Tuberculoz"
-		}, {
-			"en": "Tombeau de Tuberculoz"
-		}, {
-			"es": "Tombeau de Tuberculoz"
-		}],
-		"description": [{
-			"fr": "Vous avez decouvert une etrange pyramide de poche dans le tombeau de Tuberculoz."
-		}, {
-			"en": "Vous avez decouvert une etrange pyramide de poche dans le tombeau de Tuberculoz."
-		}, {
-			"es": "Vous avez decouvert une etrange pyramide de poche dans le tombeau de Tuberculoz."
-		}],
+		"titre": {
+			"fr": "Tombeau de Tuberculoz",
+			"en": "",
+			"es": ""
+		},
+		"description": {
+			"fr": "Vous avez decouvert une etrange pyramide de poche dans le tombeau de Tuberculoz.",
+			"en": "",
+			"es": ""
+		},
 		"option": -1,
 		"mode": -1,
 		"remove": -1,
