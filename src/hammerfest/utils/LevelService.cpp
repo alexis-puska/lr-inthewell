@@ -25,15 +25,11 @@ LevelService& LevelService::Instance() {
 void LevelService::parseJsonFile() {
 	Json::Reader reader;
 	Json::Value root;
-	fprintf(stderr, "init string\n");
 	std::string jsonString(json_level_parser_json, json_level_parser_json + sizeof json_level_parser_json / sizeof json_level_parser_json[0]);
-	fprintf(stderr, "parse string : %s\n", jsonString.c_str());
 	reader.parse(jsonString, root);
-	fprintf(stderr, "file map\n");
 	for (unsigned int i = 0; i < root.size(); i++) {
-		values[root[i]["id"].asInt()] = root[i];
+		levelJson[root[i]["id"].asInt()] = root[i];
 	}
-	fprintf(stderr, "end init\n");
 }
 
 /*********************************************
@@ -42,11 +38,22 @@ void LevelService::parseJsonFile() {
  *********************************************/
 Level * LevelService::getLevel(int id) {
 	if (currentLevel == NULL || currentLevel->getId() != id) {
+		if(currentLevel != NULL){
+			delete currentLevel;
+		}
 		currentLevelId = id;
-		Json::Value Element = values[id];
-		currentLevel = new Level(Element["id"].asInt(), true, 0, 0, 0);
+		Json::Value level = levelJson[id];
+		currentLevel = new Level(level["id"].asInt(), level["showPlatform"].asBool(), level["background"].asInt(),
+				level["verticalPlateform"].asInt(), level["horizontalPlateform"].asInt(), level["next"].asInt());
+
 		//BUILD LEVEL
-		//TODO
+		for (int i = 0; i < level["platform"].size(); i++) {
+			currentLevel->addPlatform(
+					new Platform(level["platform"][i]["id"].asInt(), level["platform"][i]["x"].asInt(), level["platform"][i]["y"].asInt(),
+							level["platform"][i]["vertical"].asBool(), level["showPlatform"].asBool(), level["platform"][i]["length"].asInt(),
+							level["platform"][i]["vertical"].asBool() ?
+									level["verticalPlateform"].asInt() : level["horizontalPlateform"].asInt()));
+		}
 	}
 	return currentLevel;
 }

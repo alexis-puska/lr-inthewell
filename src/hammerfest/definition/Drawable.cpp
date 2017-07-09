@@ -84,3 +84,18 @@ void Drawable::copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, 
 	srcRect.h = src->h;
 	SDL_BlitSurface(src, &srcRect, dest, &dstRect);
 }
+
+
+void Drawable::fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination) {
+	SDL_Surface * temp2 = Sprite::Instance().getAnimation(name, index);
+	int x = 0;
+	int y = 0;
+	while (y < 500) {
+		while (x < 420) {
+			copySurfaceToBackRenderer(temp2, destination, x, y);
+			x += temp2->w;
+		}
+		x = 0;
+		y += temp2->h;
+	}
+}

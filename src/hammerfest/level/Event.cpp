@@ -1,8 +1,7 @@
 #include "Event.h"
 
-Event::Event(int id, int x, int y, bool triggered, int type, int objectId, int vortexId, std::string animation, int doorsId, int plateformToRemove, int plateformToMove, int movePlateformX, int movePlateformY) :
+Event::Event(int id, int x, int y, int type, int objectId, int vortexId, std::string animation, int doorsId, int plateformToRemove, int plateformToMove, int movePlateformX, int movePlateformY) :
 		Position(x, y), IdElement(id) {
-	this->triggered = triggered;
 	this->type = type;
 	this->objectId = objectId;
 	this->vortexId = vortexId;
@@ -18,7 +17,7 @@ Event::~Event() {
 
 }
 
-void Event::doSomething(Game * game) {
+void Event::doSomething() {
 	if (!triggered) {
 		switch (type) {
 			case triggerByBombe:

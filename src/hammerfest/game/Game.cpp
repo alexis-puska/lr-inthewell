@@ -65,14 +65,9 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	isThreadAlive = false;
 	configured = true;
 	requestStopGame = false;
+	currentLevel = LevelService::Instance().getLevel(0);
 	count = 0;
 	idx = 0;
-	vortex = new Vortex(1, 32, 64, 0.5, 1, true, 5);
-	platform = new Platform(1, 9, 13, false, true, 4, 3);
-	door = new Door(1, 90, 90, 3, true, 1, 1, NULL);
-	pick = new Pick(1, 11, 11, true, pickToRight);
-	rayon = new Rayon(10, 12, 5, 4, false);
-	teleporter = new Teleporter(1, 13, 13, 3, true, 1);
 	startGame();
 }
 
@@ -83,12 +78,6 @@ Game::~Game() {
 	exitGame();
 	in_keystate = NULL;
 	vout_buf = NULL;
-	delete vortex;
-	delete platform;
-	delete door;
-	delete pick;
-	delete rayon;
-	delete teleporter;
 	SDL_FreeSurface(screenBuffer);
 }
 
@@ -197,34 +186,24 @@ void Game::exitGame() {
 void Game::tick() {
 	if (in_keystate[0] & keyPadSelect && !requestStopGame) {
 		requestStopGame = true;
+	} else if (in_keystate[0] & keyPadUp && !requestStopGame) {
+		idx--;
+		if (idx < 0) {
+			idx = 21;
+		}
+		currentLevel = LevelService::Instance().getLevel(idx);
+	} else if (in_keystate[0] & keyPadDown && !requestStopGame){
+		idx++;
+		if (idx >= 21) {
+			idx = 0;
+		}
+		currentLevel = LevelService::Instance().getLevel(idx);
 	}
 
 	if (screenBuffer == NULL) {
 		screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	}
 
-	fillScreenBufferWithSurface("level_background", idx, screenBuffer);
-	count++;
-	if (count > 20) {
-		idx++;
-		count = 0;
-	}
-	if (idx >= 27) {
-		idx = 0;
-	}
-
-	//fprintf(stderr,"vortex\n");
-	vortex->drawHimself(screenBuffer);
-	//fprintf(stderr,"platform\n");
-	platform->drawHimself(screenBuffer);
-	//fprintf(stderr,"door\n");
-	door->drawHimself(screenBuffer);
-	//fprintf(stderr,"pick\n");
-	pick->drawHimself(screenBuffer);
-	//fprintf(stderr,"rayon\n");
-	rayon->drawHimself(screenBuffer);
-	//fprintf(stderr,"teleporter\n");
-	teleporter->drawHimself(screenBuffer);
-	//fprintf(stderr,"merge\n");
+	currentLevel->drawHimself(screenBuffer);
 	mergeScreen();
 }

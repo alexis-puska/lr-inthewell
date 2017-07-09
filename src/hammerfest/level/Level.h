@@ -13,12 +13,12 @@
 #include "Platform.h"
 #include "Rayon.h"
 #include "Teleporter.h"
-#include "../definition/Position.h"
 #include "../definition/IdElement.h"
+#include "../definition/Drawable.h"
 
-class Level: public IdElement {
+class Level: public IdElement, Drawable {
 	public:
-		Level(int id, bool showPlatform, int backgroundId, int platformVerticalId, int platformHorizontalId);
+		Level(int id, bool showPlatform, int backgroundId, int platformVerticalId, int platformHorizontalId, int next);
 		~Level();
 
 		/*********************************
@@ -43,11 +43,14 @@ class Level: public IdElement {
 		void removePlatform(int id);
 		void removeDeco(int id);
 
+		void drawHimself(SDL_Surface * dest);
+
 	private:
 		bool showPlatform;
 		int backgroundId;
 		int platformVerticalId;
 		int platformHorizontalId;
+		int next;
 		std::map<int, Decor *> decors;
 		std::map<int, Platform*> platforms;
 		std::map<int, Event*> events;

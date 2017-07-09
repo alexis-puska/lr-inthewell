@@ -34,7 +34,7 @@ class LevelService {
 		/***********************
 		 *      VARIABLES
 		 ***********************/
-		std::map<int, Json::Value> values;
+		std::map<int, Json::Value> levelJson;
 		Level * currentLevel;
 		int currentLevelId;
 		/***********************

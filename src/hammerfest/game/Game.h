@@ -16,12 +16,8 @@
 
 #include "../utils/Sound.h"
 #include "../utils/Sprite.h"
-#include "../level/Vortex.h"
-#include "../level/Platform.h"
-#include "../level/Door.h"
-#include "../level/Pick.h"
-#include "../level/Rayon.h"
-#include "../level/Teleporter.h"
+#include "../utils/LevelService.h"
+#include "../level/Level.h"
 
 #define gameTick 25
 
@@ -78,13 +74,7 @@ class Game {
 		unsigned short * in_keystate;
 		SDL_Surface * screenBuffer;
 
-		Vortex * vortex;
-		Platform * platform;
-		Door * door;
-		Pick * pick;
-		Rayon * rayon;
-		Teleporter * teleporter;
-
+		Level * currentLevel;
 
 		int count,idx;
 

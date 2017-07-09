@@ -6,6 +6,8 @@
 #include <SDL2_gfx/SDL2_rotozoom.h>
 #endif
 
+#include <string>
+
 #include "../utils/Sprite.h"
 
 #ifndef __MYCLASS_DRAWABLE
@@ -22,6 +24,7 @@ class Drawable{
 		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y, int lengthX, int lengthY);
 		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y);
 		void copySurfaceToBackRendererWithStartOffset(SDL_Surface * src, SDL_Surface * dest, int x, int y, int lengthX, int lengthY, int offsetX, int offsetY);
+		void fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination);
 	private:
 };
 #endif

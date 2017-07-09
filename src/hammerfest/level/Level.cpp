@@ -1,14 +1,26 @@
 #include "Level.h"
 
-Level::Level(int id, bool showPlatform, int backgroundId, int platformVerticalId, int platformHorizontalId) : IdElement(id){
+Level::Level(int id, bool showPlatform, int backgroundId, int platformVerticalId, int platformHorizontalId, int next) :
+		IdElement(id) {
 	this->showPlatform = showPlatform;
 	this->backgroundId = backgroundId;
 	this->platformVerticalId = platformVerticalId;
 	this->platformHorizontalId = platformHorizontalId;
+	this->next = next;
 }
 
-Level::~Level(){
-
+Level::~Level() {
+	decors.clear();
+	platforms.clear();
+	events.clear();
+	doors.clear();
+	vortexs.clear();
+	teleporters.clear();
+	rayons.clear();
+	startPlayers.clear();
+	startEffectObjets.clear();
+	startPointObjets.clear();
+	ennemies.clear();
 }
 
 void Level::addDecor(Decor * decor) {
@@ -64,6 +76,14 @@ void Level::removePlatform(int id) {
 
 void Level::removeDeco(int id) {
 
+}
+
+void Level::drawHimself(SDL_Surface * dest) {
+	fprintf(stderr, "draw himself level : %i\n", id);
+	fillScreenBufferWithSurface("level_background", backgroundId, dest);
+	for (std::map<int, Platform*>::iterator it = platforms.begin(); it != platforms.end(); ++it) {
+		it->second->drawHimself(dest);
+	}
 }
 
 /*********************************

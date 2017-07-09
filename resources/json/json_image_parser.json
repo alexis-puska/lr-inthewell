@@ -166,6 +166,8 @@
 			{"x": 1332,"y": 660  ,"nx": 1, "ny": 1,  "n": 1,  "sx": 84,  "sy": 94,  "r": false, "animation": "canne"},
 			{"x": 1416,"y": 660  ,"nx": 1, "ny": 1,  "n": 1,  "sx": 80,  "sy": 104,  "r": false, "animation": "mirror"},
 			{"x": 1496,"y": 660  ,"nx": 2, "ny": 1,  "n": 2,  "sx": 58,  "sy": 126, "r": false, "animation": "doors"},
+			{"x": 1332,"y": 0  	 ,"nx": 1, "ny": 1,  "n": 1,  "sx": 420,  "sy": 500, "r": false, "animation": "level0"},
+			{"x": 1332,"y": 500  ,"nx": 1, "ny": 1,  "n": 1,  "sx": 420,  "sy": 145, "r": false, "animation": "level1"},
 			
 			
 			
