@@ -42,6 +42,10 @@ Game::Game() {
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	backgroundBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	animateBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	foregroundBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	shadowBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	gameState = gameStart;
 	isThreadAlive = false;
 	configured = false;
@@ -60,6 +64,10 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	backgroundBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	animateBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	foregroundBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	shadowBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	this->vout_buf = vout_buf;
 	this->in_keystate = in_keystate;
 	isThreadAlive = false;
@@ -79,6 +87,11 @@ Game::~Game() {
 	in_keystate = NULL;
 	vout_buf = NULL;
 	SDL_FreeSurface(screenBuffer);
+	SDL_FreeSurface(backgroundBuffer);
+	SDL_FreeSurface(animateBuffer);
+	SDL_FreeSurface(foregroundBuffer);
+	SDL_FreeSurface(shadowBuffer);
+
 }
 
 /**********************************************
@@ -140,6 +153,10 @@ void Game::mergeScreen() {
 //	mergeRect.w = 420;
 //	mergeRect.h = 520;
 	//SDL_BlitSurface(grid->getGroundLayer(), &mergeRect, screenBuffer, &mergeRect);
+	copySurfaceToBackRenderer(backgroundBuffer, vout_buf, 0, 0);
+	copySurfaceToBackRenderer(animateBuffer, vout_buf, 10, 0);
+	copySurfaceToBackRenderer(foregroundBuffer, vout_buf, 0, 0);
+	copySurfaceToBackRenderer(shadowBuffer, vout_buf, 0, 0);
 	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 }
 
@@ -192,16 +209,12 @@ void Game::tick() {
 			idx = 21;
 		}
 		currentLevel = LevelService::Instance().getLevel(idx);
-	} else if (in_keystate[0] & keyPadDown && !requestStopGame){
+	} else if (in_keystate[0] & keyPadDown && !requestStopGame) {
 		idx++;
 		if (idx >= 21) {
 			idx = 0;
 		}
 		currentLevel = LevelService::Instance().getLevel(idx);
-	}
-
-	if (screenBuffer == NULL) {
-		screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	}
 
 	currentLevel->drawHimself(screenBuffer);

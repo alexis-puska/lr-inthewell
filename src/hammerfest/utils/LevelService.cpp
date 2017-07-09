@@ -38,7 +38,7 @@ void LevelService::parseJsonFile() {
  *********************************************/
 Level * LevelService::getLevel(int id) {
 	if (currentLevel == NULL || currentLevel->getId() != id) {
-		if(currentLevel != NULL){
+		if (currentLevel != NULL) {
 			delete currentLevel;
 		}
 		currentLevelId = id;
@@ -47,12 +47,36 @@ Level * LevelService::getLevel(int id) {
 				level["verticalPlateform"].asInt(), level["horizontalPlateform"].asInt(), level["next"].asInt());
 
 		//BUILD LEVEL
+
 		for (int i = 0; i < level["platform"].size(); i++) {
 			currentLevel->addPlatform(
 					new Platform(level["platform"][i]["id"].asInt(), level["platform"][i]["x"].asInt(), level["platform"][i]["y"].asInt(),
-							level["platform"][i]["vertical"].asBool(), level["showPlatform"].asBool(), level["platform"][i]["length"].asInt(),
+							level["platform"][i]["vertical"].asBool(), level["showPlatform"].asBool(),
+							level["platform"][i]["length"].asInt(),
 							level["platform"][i]["vertical"].asBool() ?
 									level["verticalPlateform"].asInt() : level["horizontalPlateform"].asInt()));
+		}
+
+		for (int i = 0; i < level["rayon"].size(); i++) {
+			currentLevel->addRayons(
+					new Rayon(level["rayon"][i]["x"].asInt(), level["rayon"][i]["y"].asInt(), level["rayon"][i]["length"].asInt(),
+							level["rayon"][i]["type"].asInt(),
+
+							level["rayon"][i]["vertical"].asBool()));
+		}
+
+		for (int i = 0; i < level["teleporter"].size(); i++) {
+			currentLevel->AddTeleporter(
+					new Teleporter(level["teleporter"][i]["id"].asInt(), level["teleporter"][i]["x"].asInt(),
+							level["teleporter"][i]["y"].asInt(), level["teleporter"][i]["length"].asInt(),
+							level["teleporter"][i]["vertical"].asBool(), level["teleporter"][i]["toId"].asInt()));
+		}
+
+		for (int i = 0; i < level["decor"].size(); i++) {
+			currentLevel->addDecor(
+					new Decor(level["decor"][i]["id"].asInt(), level["decor"][i]["x"].asInt(), level["decor"][i]["y"].asInt(),
+							level["decor"][i]["display"].asBool(), level["decor"][i]["back"].asBool(),
+							level["decor"][i]["anim"].asString(), level["decor"][i]["toId"].asInt()));
 		}
 	}
 	return currentLevel;

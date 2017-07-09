@@ -73,6 +73,10 @@ class Game {
 		//keystate of player
 		unsigned short * in_keystate;
 		SDL_Surface * screenBuffer;
+		SDL_Surface * backgroundBuffer;
+		SDL_Surface * animateBuffer;
+		SDL_Surface * foregroundBuffer;
+		SDL_Surface * shadowBuffer;
 
 		Level * currentLevel;
 
