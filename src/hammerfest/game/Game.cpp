@@ -42,15 +42,14 @@ Game::Game() {
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	backgroundBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	animateBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	foregroundBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	shadowBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	backgroundBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
+	animateBuffer = SDL_CreateRGBSurface(0, 400, 500, 32, rmask, gmask, bmask, amask);
+	foregroundBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
+	shadowBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
 	gameState = gameStart;
 	isThreadAlive = false;
 	configured = false;
 	requestStopGame = false;
-	count = 0;
 	idx = 0;
 }
 
@@ -64,17 +63,16 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	backgroundBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	animateBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	foregroundBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	shadowBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	backgroundBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
+	animateBuffer = SDL_CreateRGBSurface(0, 400, 500, 32, rmask, gmask, bmask, amask);
+	foregroundBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
+	shadowBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
 	this->vout_buf = vout_buf;
 	this->in_keystate = in_keystate;
 	isThreadAlive = false;
 	configured = true;
 	requestStopGame = false;
 	currentLevel = LevelService::Instance().getLevel(0);
-	count = 0;
 	idx = 0;
 	startGame();
 }
@@ -147,17 +145,25 @@ bool Game::isRequestStopGame() {
  * - darkness and score
  *******************************************/
 void Game::mergeScreen() {
-//	SDL_Rect mergeRect;
-//	mergeRect.x = 0;
-//	mergeRect.y = 0;
-//	mergeRect.w = 420;
-//	mergeRect.h = 520;
-	//SDL_BlitSurface(grid->getGroundLayer(), &mergeRect, screenBuffer, &mergeRect);
-	copySurfaceToBackRenderer(backgroundBuffer, vout_buf, 0, 0);
-	copySurfaceToBackRenderer(animateBuffer, vout_buf, 10, 0);
-	copySurfaceToBackRenderer(foregroundBuffer, vout_buf, 0, 0);
-	copySurfaceToBackRenderer(shadowBuffer, vout_buf, 0, 0);
+	copySurfaceToBackRenderer(backgroundBuffer, screenBuffer, 0, 0);
+	copySurfaceToBackRenderer(animateBuffer, screenBuffer, 10, 0);
+	if (currentLevel->getId() != 0) {
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_left", 0), screenBuffer, 0, 0);
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_right", 0), screenBuffer, 404, 0);
+	}
+	copySurfaceToBackRenderer(foregroundBuffer, screenBuffer, 0, 0);
+	copySurfaceToBackRenderer(shadowBuffer, screenBuffer, 0, 0);
+	copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_score", 0), screenBuffer, 0, 500);
 	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+
+}
+
+void Game::clearBuffer() {
+	SDL_FillRect(backgroundBuffer, NULL, SDL_MapRGBA(backgroundBuffer->format, 0, 0, 0, 0));
+	SDL_FillRect(animateBuffer, NULL, SDL_MapRGBA(animateBuffer->format, 0, 0, 0, 0));
+	SDL_FillRect(foregroundBuffer, NULL, SDL_MapRGBA(foregroundBuffer->format, 0, 0, 0, 0));
+	SDL_FillRect(shadowBuffer, NULL, SDL_MapRGBA(shadowBuffer->format, 0, 0, 0, 0));
+	SDL_FillRect(screenBuffer, NULL, SDL_MapRGBA(screenBuffer->format, 0, 0, 0, 0));
 }
 
 /*******************************************
@@ -201,6 +207,9 @@ void Game::exitGame() {
  *           main function of game
  *******************************************/
 void Game::tick() {
+
+	clearBuffer();
+
 	if (in_keystate[0] & keyPadSelect && !requestStopGame) {
 		requestStopGame = true;
 	} else if (in_keystate[0] & keyPadUp && !requestStopGame) {
@@ -217,6 +226,7 @@ void Game::tick() {
 		currentLevel = LevelService::Instance().getLevel(idx);
 	}
 
-	currentLevel->drawHimself(screenBuffer);
+	currentLevel->drawHimself(backgroundBuffer, animateBuffer, foregroundBuffer, shadowBuffer);
 	mergeScreen();
+
 }

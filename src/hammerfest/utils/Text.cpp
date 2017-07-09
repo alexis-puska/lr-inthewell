@@ -46,7 +46,7 @@ Text& Text::Instance() {
  ********************************************/
 void Text::drawText(SDL_Surface* surfaceToDraw, std::string fontName, int x, int y, const char* text, int color, bool alignCenter) {
 	SDL_Color colorSelected = getSDL_Color(color);
-	SDL_Surface *text_surface = text_surface = TTF_RenderText_Solid(fonts[fontName], text, colorSelected);
+	SDL_Surface *text_surface = TTF_RenderText_Solid(fonts[fontName], text, colorSelected);
 	SDL_Rect srcRect;
 	srcRect.x = 0;
 	srcRect.y = 0;
@@ -89,7 +89,7 @@ SDL_Color Text::getSDL_Color(int color) {
 void Text::drawTextTranslated(SDL_Surface* surfaceToDraw, std::string fontName, int x, int y, std::string key, int color, bool alignCenter) {
 	SDL_Color colorSelected = getSDL_Color(color);
 	std::string translation = texts[GameConfig::Instance().getLang()][key];
-	SDL_Surface *text_surface = text_surface = TTF_RenderText_Solid(fonts[fontName], translation.empty() ? "translation not found" : translation.c_str(), colorSelected);
+	SDL_Surface *text_surface = TTF_RenderText_Solid(fonts[fontName], translation.empty() ? "translation not found" : translation.c_str(), colorSelected);
 	SDL_Rect srcRect;
 	srcRect.x = 0;
 	srcRect.y = 0;

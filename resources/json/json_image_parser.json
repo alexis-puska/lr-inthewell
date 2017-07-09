@@ -144,7 +144,7 @@
 			{"x": 0,   "y": 0    ,"nx": 1, "ny": 1,  "n": 1,  "sx": 419, "sy": 500, "r": false, "animation": "level_background"},
 			{"x": 820, "y": 0    ,"nx": 4, "ny": 7 , "n": 27, "sx": 128, "sy": 128, "r": false, "animation": "level_background"},
 			{"x": 0,   "y": 500  ,"nx": 1, "ny": 1,  "n": 1,  "sx": 16,  "sy": 500, "r": false, "animation": "border_right"},
-			{"x": 16,  "y": 500  ,"nx": 1, "ny": 1,  "n": 1,  "sx": 16,  "sy": 500, "r": false, "animation": "border_left"},
+			{"x": 10,  "y": 500  ,"nx": 1, "ny": 1,  "n": 1,  "sx": 20,  "sy": 500, "r": false, "animation": "border_left"},
 			{"x": 0,   "y": 1000 ,"nx": 1, "ny": 3,  "n": 3,  "sx": 420, "sy": 20,  "r": false, "animation": "border_score"},
 			{"x": 0,   "y": 1060 ,"nx": 1, "ny": 1,  "n": 1,  "sx": 13,  "sy": 13,  "r": false, "animation": "life+"},
 			{"x": 0,   "y": 1073 ,"nx": 1, "ny": 1,  "n": 1,  "sx": 27,  "sy": 30,  "r": false, "animation": "life"},

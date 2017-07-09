@@ -80,7 +80,7 @@ class Game {
 
 		Level * currentLevel;
 
-		int count,idx;
+		int idx;
 
 		/************************
 		 * FUNCTION
@@ -88,5 +88,6 @@ class Game {
 		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y);
 		void fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination);
 		void mergeScreen();
+		void clearBuffer();
 };
 #endif

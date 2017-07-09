@@ -78,21 +78,29 @@ void Level::removeDeco(int id) {
 
 }
 
-void Level::drawHimself(SDL_Surface * dest) {
+void Level::drawHimself(SDL_Surface * dest){
+
+}
+
+void Level::drawHimself(SDL_Surface * backgroundBuffer, SDL_Surface * animBuffer, SDL_Surface * foregroundBuffer, SDL_Surface * shadowBuffer) {
 	fprintf(stderr, "draw himself level : %i\n", id);
-	fillScreenBufferWithSurface("level_background", backgroundId, dest);
-	for (int i = 0; i < rayons.size(); i++) {
-		rayons[i]->drawHimself(dest);
+	fillScreenBufferWithSurface("level_background", backgroundId, backgroundBuffer);
+	for (unsigned int i = 0; i < rayons.size(); i++) {
+		rayons[i]->drawHimself(animBuffer);
 	}
 	for (std::map<int, Teleporter*>::iterator it = teleporters.begin(); it != teleporters.end(); ++it) {
-		it->second->drawHimself(dest);
+		it->second->drawHimself(animBuffer);
 	}
 	for (std::map<int, Decor*>::iterator it = decors.begin(); it != decors.end(); ++it) {
-		it->second->drawHimself(dest);
+		if(it->second->isOnBackground()){
+			it->second->drawHimself(backgroundBuffer);
+		}else{
+			it->second->drawHimself(foregroundBuffer);
+		}
 	}
 
 	for (std::map<int, Platform*>::iterator it = platforms.begin(); it != platforms.end(); ++it) {
-		it->second->drawHimself(dest);
+		it->second->drawHimself(animBuffer);
 	}
 
 

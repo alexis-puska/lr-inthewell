@@ -44,6 +44,7 @@ class Level: public IdElement, Drawable {
 		void removeDeco(int id);
 
 		void drawHimself(SDL_Surface * dest);
+		void drawHimself(SDL_Surface * backgroundBuffer, SDL_Surface * animBuffer, SDL_Surface * foregroundBuffer, SDL_Surface * shadowBuffer);
 
 	private:
 		bool showPlatform;
