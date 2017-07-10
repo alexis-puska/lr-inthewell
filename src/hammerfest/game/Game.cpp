@@ -24,6 +24,7 @@ static int metronome(void* data) {
 				warningCount++;
 				fprintf(stderr, "%i ms %li\n", (int) delay, warningCount);
 			}
+			fprintf(stderr,"d%i\n",delay);
 			SDL_Delay(delay);
 		} else {
 			warningCount++;
@@ -215,12 +216,12 @@ void Game::tick() {
 	} else if (in_keystate[0] & keyPadUp && !requestStopGame) {
 		idx--;
 		if (idx < 0) {
-			idx = 21;
+			idx = 103;
 		}
 		currentLevel = LevelService::Instance().getLevel(idx);
 	} else if (in_keystate[0] & keyPadDown && !requestStopGame) {
 		idx++;
-		if (idx >= 21) {
+		if (idx > 103) {
 			idx = 0;
 		}
 		currentLevel = LevelService::Instance().getLevel(idx);
