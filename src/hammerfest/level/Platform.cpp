@@ -22,7 +22,7 @@ void Platform::drawHimself(SDL_Surface * dest) {
 			SDL_Surface * temp = SDL_CreateRGBSurface(0, lenght * gridSize, gridSize, 32, rmask, gmask, bmask, amask);
 			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("platform", surfaceId), temp, 0, 0, ((lenght * gridSize) - 6), -1);
 			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("end_platform", surfaceId), temp, ((lenght * gridSize) - 6), 0, -1, -1);
-			temp = rotozoomSurface(temp,270,1,0);
+			temp = rotozoomSurfaceXY(temp,270,-1,-1,0);
 			copySurfaceToBackRenderer(temp, dest, (x * gridSize)- (temp->w%10), (y * gridSize) - ((temp->h%10)/2));
 			SDL_FreeSurface(temp);
 		} else {
