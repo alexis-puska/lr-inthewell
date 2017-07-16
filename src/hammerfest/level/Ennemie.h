@@ -22,6 +22,7 @@ enum ennemieType {
 	ananas	= 12,
 	blob		= 13,
 	framboise	= 14,
+	nainbricot	= 15,
 };
 
 class Ennemie : public Position, public Drawable, public HitBox, public IdElement {
