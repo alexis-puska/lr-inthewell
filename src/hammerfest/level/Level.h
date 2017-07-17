@@ -1,3 +1,9 @@
+#ifndef IS_OSX
+#include <SDL2/SDL_image.h>
+#else
+#include <SDL2_image/SDL_image.h>
+#endif
+
 #include <map>
 #include <vector>
 #include <stdio.h>
@@ -43,10 +49,18 @@ class Level: public IdElement, Drawable {
 		void removePlatform(int id);
 		void removeDeco(int id);
 
+		void deleteAreaInDarkness(SDL_Surface * darkness);
+		void drawForeGroundElement(SDL_Surface * dest);
+
+		void generateBackGround(int backgroundEffect);
+		SDL_Surface * getBackground();
+
 		void drawHimself(SDL_Surface * dest);
-		void drawHimself(SDL_Surface * backgroundBuffer, SDL_Surface * animBuffer, SDL_Surface * foregroundBuffer, SDL_Surface * shadowBuffer);
 
 	private:
+		Uint32 rmask, gmask, bmask, amask;
+		SDL_Surface * backgroundBuffer;
+
 		bool showPlatform;
 		int backgroundId;
 		int platformVerticalId;

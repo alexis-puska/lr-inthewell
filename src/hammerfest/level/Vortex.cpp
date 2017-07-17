@@ -31,7 +31,7 @@ int Vortex::getDestination() {
 
 void Vortex::drawHimself(SDL_Surface * dest) {
 	if (this->enable) {
-		copySurfaceToBackRenderer(rotozoomSurfaceXY(animation[animationPosition], 0, zoomX, zoomY, 0), dest, x - (width / 2), y - height);
+		copySurfaceToBackRenderer(rotozoomSurfaceXY(animation[animationPosition], 0, zoomX, zoomY, 0), dest, (x - (width / 2))+leftPadding, y - height);
 		this->animationPosition++;
 		if ((unsigned) this->animationPosition > animation.size() - 1) {
 			this->animationPosition = 0;

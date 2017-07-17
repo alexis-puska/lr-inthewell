@@ -23,11 +23,11 @@ void Platform::drawHimself(SDL_Surface * dest) {
 			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("platform", surfaceId), temp, 0, 0, ((lenght * gridSize) - 6), -1);
 			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("end_platform", surfaceId), temp, ((lenght * gridSize) - 6), 0, -1, -1);
 			temp = rotozoomSurfaceXY(temp,270,1,-1,0);
-			copySurfaceToBackRenderer(temp, dest, (x * gridSize)- (temp->w%10), (y * gridSize) - ((temp->h%10)/2));
+			copySurfaceToBackRenderer(temp, dest, ((x * gridSize)- (temp->w%10))+leftPadding, (y * gridSize) - ((temp->h%10)/2));
 			SDL_FreeSurface(temp);
 		} else {
-			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("platform", surfaceId), dest, (x * gridSize), (y * gridSize), ((lenght * gridSize) - 6), -1);
-			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("end_platform", surfaceId), dest, (((x * gridSize) + (lenght * gridSize)) - 6), (y * gridSize), -1, -1);
+			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("platform", surfaceId), dest, (x * gridSize)+leftPadding, (y * gridSize), ((lenght * gridSize) - 6), -1);
+			copySurfaceToBackRenderer(Sprite::Instance().getAnimation("end_platform", surfaceId), dest, (((x * gridSize) + (lenght * gridSize)) - 6)+leftPadding, (y * gridSize), -1, -1);
 		}
 	}
 }

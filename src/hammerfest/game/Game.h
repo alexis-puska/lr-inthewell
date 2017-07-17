@@ -73,11 +73,6 @@ class Game {
 		//keystate of player
 		unsigned short * in_keystate;
 		SDL_Surface * screenBuffer;
-		SDL_Surface * backgroundBuffer;
-		SDL_Surface * animateBuffer;
-		SDL_Surface * foregroundBuffer;
-		SDL_Surface * shadowBuffer;
-
 		Level * currentLevel;
 
 		int idx;
@@ -88,6 +83,5 @@ class Game {
 		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y);
 		void fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination);
 		void mergeScreen();
-		void clearBuffer();
 };
 #endif

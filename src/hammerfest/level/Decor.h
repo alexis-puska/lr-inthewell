@@ -11,6 +11,7 @@ class Decor: public Drawable, public Position, public IdElement {
 		~Decor();
 		void display();
 		bool isOnBackground();
+		std::string getAnimation();
 		void drawHimself(SDL_Surface * dest);
 	private:
 		bool displayed;

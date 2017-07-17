@@ -2129,7 +2129,7 @@
 			{"id": 15,"x":5 ,"y":15 ,"vertical":false,"length":3 },
 			{"id": 16,"x":7 ,"y":16 ,"vertical":false,"length":1 },
 			{"id": 17,"x":13 ,"y":16 ,"vertical":false,"length":6 },
-			{"id": 18,"x":6 ,"y":17 ,"vertical":false,"length":5 },
+			{"id": 18,"x":6 ,"y":17 ,"vertical":false,"length":2 },
 			{"id": 19,"x":6 ,"y":18 ,"vertical":false,"length":5 },
 			{"id": 20,"x":7 ,"y":19 ,"vertical":false,"length":2 },
 			{"id": 21,"x":10 ,"y":19 ,"vertical":false,"length":1 },
@@ -3304,7 +3304,10 @@
 			{"id": 19,"x":0 ,"y":21 ,"vertical":false,"length":8 },
 			{"id": 20,"x":12 ,"y":21 ,"vertical":false,"length":8 }
 		],
-		"rayon":[],
+		"rayon":[
+			{"id":0,"x":7 ,"y":15,"type":1,"length":1,"vertical":false},
+			{"id":1,"x":12,"y":15,"type":1,"length":1,"vertical":false}
+		],
 		"teleporter":[],
 		"vortex":[],
 		"ennemies": [

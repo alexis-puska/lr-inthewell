@@ -1,9 +1,11 @@
 #ifndef IS_OSX
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL2_rotozoom.h>
+#include <SDL2/SDL2_gfxPrimitives.h>
 #else
 #include <SDL2_image/SDL_image.h>
 #include <SDL2_gfx/SDL2_rotozoom.h>
+#include <SDL2_gfx/SDL2_gfxPrimitives.h>
 #endif
 
 #include <string>
@@ -12,6 +14,8 @@
 
 #ifndef __MYCLASS_DRAWABLE
 #define __MYCLASS_DRAWABLE
+
+#define leftPadding 10
 
 class Drawable{
 	public:

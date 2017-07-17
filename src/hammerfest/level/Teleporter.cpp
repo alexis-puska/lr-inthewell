@@ -37,14 +37,14 @@ void Teleporter::drawHimself(SDL_Surface * dest) {
 
 	// 8 X 11
 	if (vertical) {
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("base_teleporter", 2), dest, x * gridSize, y * gridSize);
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("base_teleporter", 3), dest, x * gridSize, (y + length-1) * gridSize);
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("base_teleporter", 2), dest, (x * gridSize)+leftPadding, y * gridSize);
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("base_teleporter", 3), dest, (x * gridSize)+leftPadding, (y + length-1) * gridSize);
 		//fprintf(stderr,"start draw teleporter vertical\nflux\n");
-		copySurfaceToBackRendererWithStartOffset(buffer, dest, x * gridSize, (y * gridSize) + 6, 20, (length * gridSize) - 10, 0, offsetAnimation);
+		copySurfaceToBackRendererWithStartOffset(buffer, dest, (x * gridSize)+leftPadding, (y * gridSize) + 6, 20, ((length * gridSize) - 10), 0, offsetAnimation);
 
 	} else {
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("base_teleporter", 0), dest, x * gridSize, y * gridSize);
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("base_teleporter", 1), dest, (x + length-1) * gridSize, y * gridSize);
-		copySurfaceToBackRendererWithStartOffset(buffer, dest, (x * gridSize) + 6, y * gridSize, (length * gridSize) -10, 20, offsetAnimation , 0);
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("base_teleporter", 0), dest, (x * gridSize)+leftPadding, y * gridSize);
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("base_teleporter", 1), dest, ((x + length-1) * gridSize)+leftPadding, y * gridSize);
+		copySurfaceToBackRendererWithStartOffset(buffer, dest, ((x * gridSize) + 6)+leftPadding, y * gridSize, (length * gridSize) -10, 20, offsetAnimation , 0);
 	}
 }

@@ -24,7 +24,7 @@ static int metronome(void* data) {
 				warningCount++;
 				fprintf(stderr, "%i ms %li\n", (int) delay, warningCount);
 			}
-			fprintf(stderr,"d%i\n",delay);
+			fprintf(stderr,"d%li\n",delay);
 			SDL_Delay(delay);
 		} else {
 			warningCount++;
@@ -43,10 +43,6 @@ Game::Game() {
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	backgroundBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
-	animateBuffer = SDL_CreateRGBSurface(0, 400, 500, 32, rmask, gmask, bmask, amask);
-	foregroundBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
-	shadowBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
 	gameState = gameStart;
 	isThreadAlive = false;
 	configured = false;
@@ -64,16 +60,13 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
-	backgroundBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
-	animateBuffer = SDL_CreateRGBSurface(0, 400, 500, 32, rmask, gmask, bmask, amask);
-	foregroundBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
-	shadowBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
 	this->vout_buf = vout_buf;
 	this->in_keystate = in_keystate;
 	isThreadAlive = false;
 	configured = true;
 	requestStopGame = false;
 	currentLevel = LevelService::Instance().getLevel(0);
+	currentLevel->generateBackGround(-1);
 	idx = 0;
 	startGame();
 }
@@ -86,11 +79,6 @@ Game::~Game() {
 	in_keystate = NULL;
 	vout_buf = NULL;
 	SDL_FreeSurface(screenBuffer);
-	SDL_FreeSurface(backgroundBuffer);
-	SDL_FreeSurface(animateBuffer);
-	SDL_FreeSurface(foregroundBuffer);
-	SDL_FreeSurface(shadowBuffer);
-
 }
 
 /**********************************************
@@ -146,25 +134,12 @@ bool Game::isRequestStopGame() {
  * - darkness and score
  *******************************************/
 void Game::mergeScreen() {
-	copySurfaceToBackRenderer(backgroundBuffer, screenBuffer, 0, 0);
-	copySurfaceToBackRenderer(animateBuffer, screenBuffer, 10, 0);
 	if (currentLevel->getId() != 0) {
 		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_left", 0), screenBuffer, 0, 0);
 		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_right", 0), screenBuffer, 404, 0);
 	}
-	copySurfaceToBackRenderer(foregroundBuffer, screenBuffer, 0, 0);
-	copySurfaceToBackRenderer(shadowBuffer, screenBuffer, 0, 0);
 	copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_score", 0), screenBuffer, 0, 500);
 	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
-
-}
-
-void Game::clearBuffer() {
-	SDL_FillRect(backgroundBuffer, NULL, SDL_MapRGBA(backgroundBuffer->format, 0, 0, 0, 0));
-	SDL_FillRect(animateBuffer, NULL, SDL_MapRGBA(animateBuffer->format, 0, 0, 0, 0));
-	SDL_FillRect(foregroundBuffer, NULL, SDL_MapRGBA(foregroundBuffer->format, 0, 0, 0, 0));
-	SDL_FillRect(shadowBuffer, NULL, SDL_MapRGBA(shadowBuffer->format, 0, 0, 0, 0));
-	SDL_FillRect(screenBuffer, NULL, SDL_MapRGBA(screenBuffer->format, 0, 0, 0, 0));
 }
 
 /*******************************************
@@ -209,8 +184,7 @@ void Game::exitGame() {
  *******************************************/
 void Game::tick() {
 
-	clearBuffer();
-
+	//START TEMPORARY LINE
 	if (in_keystate[0] & keyPadSelect && !requestStopGame) {
 		requestStopGame = true;
 	} else if (in_keystate[0] & keyPadUp && !requestStopGame) {
@@ -219,15 +193,32 @@ void Game::tick() {
 			idx = 103;
 		}
 		currentLevel = LevelService::Instance().getLevel(idx);
+		currentLevel->generateBackGround(-1);
 	} else if (in_keystate[0] & keyPadDown && !requestStopGame) {
 		idx++;
 		if (idx > 103) {
 			idx = 0;
 		}
 		currentLevel = LevelService::Instance().getLevel(idx);
+		currentLevel->generateBackGround(-1);
 	}
+	//END TEMPORARY LINE
 
-	currentLevel->drawHimself(backgroundBuffer, animateBuffer, foregroundBuffer, shadowBuffer);
+
+
+	//getBackGround
+	copySurfaceToBackRenderer(currentLevel->getBackground(), screenBuffer, 0, 0);
+
+	//draw all Element of the level. (Vortex, teleporter, rayon...)
+	currentLevel->drawHimself(screenBuffer);
+
+	//Draw Player
+
+	//Draw Ennemies
+
+	//Draw Foreground Decor
+	currentLevel->drawForeGroundElement(screenBuffer);
+
+	//Copy the generate image to the buffer to retroarch
 	mergeScreen();
-
 }

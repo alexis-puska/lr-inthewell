@@ -30,6 +30,7 @@ class Ennemie : public Position, public Drawable, public HitBox, public IdElemen
 		Ennemie(int id, int x, int y, int type);
 		~Ennemie();
 		void drawHimself(SDL_Surface * dest);
+		void doSomething();
 	private:
 		int type;
 };

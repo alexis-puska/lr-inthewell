@@ -15,6 +15,10 @@ void Decor::display() {
 	this->displayed = true;
 }
 
+std::string Decor::getAnimation(){
+	return this->animation;
+}
+
 bool Decor::isOnBackground() {
 	return background;
 }
