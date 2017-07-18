@@ -18,6 +18,7 @@
 #include "../utils/Sprite.h"
 #include "../utils/LevelService.h"
 #include "../level/Level.h"
+#include "Player.h"
 
 #define gameTick 25
 
@@ -73,7 +74,11 @@ class Game {
 		//keystate of player
 		unsigned short * in_keystate;
 		SDL_Surface * screenBuffer;
+		SDL_Surface * darknessBuffer;
 		Level * currentLevel;
+
+		std::vector<Player *> players;
+		std::vector<Ennemie *> ennemies;
 
 		int idx;
 
@@ -82,6 +87,7 @@ class Game {
 		 ************************/
 		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y);
 		void fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination);
-		void mergeScreen();
+		void mergeScoreAndBorder();
+		void generateDarkness();
 };
 #endif

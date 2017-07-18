@@ -42,6 +42,7 @@ xxd -i -c 64 sprite_objets.png ../../src/hammerfest/utils/resources/sprite_objet
 xxd -i -c 64 sprite_player.png ../../src/hammerfest/utils/resources/sprite_player.h
 xxd -i -c 64 sprite_rayon_teleporter.png ../../src/hammerfest/utils/resources/sprite_rayon_teleporter.h
 xxd -i -c 64 sprite_flag.png ../../src/hammerfest/utils/resources/sprite_flag.h
+xxd -i -c 64 sprite_shadow.png ../../src/hammerfest/utils/resources/sprite_shadow.h
 
 #sprite
 cd ../../resources/image

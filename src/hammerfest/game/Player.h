@@ -8,6 +8,7 @@ class Player: public Position, Drawable {
 	public:
 		Player(int x, int y, int type);
 		~Player();
+		void doSomething(SDL_Surface * dest);
 	private:
 		int type; //O - igor, 1 - Sandy
 };

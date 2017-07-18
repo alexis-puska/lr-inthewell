@@ -142,3 +142,7 @@ SDL_Surface * Level::getBackground() {
 /*********************************
  * 		GETTER FUNCTION
  *********************************/
+
+std::vector<Ennemie *> Level::getEnnemiesList(){
+	return ennemies;
+}

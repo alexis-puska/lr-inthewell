@@ -24,7 +24,7 @@ static int metronome(void* data) {
 				warningCount++;
 				fprintf(stderr, "%i ms %li\n", (int) delay, warningCount);
 			}
-			fprintf(stderr,"d%li\n",delay);
+			fprintf(stderr, "d%li\n", delay);
 			SDL_Delay(delay);
 		} else {
 			warningCount++;
@@ -43,6 +43,7 @@ Game::Game() {
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	darknessBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
 	gameState = gameStart;
 	isThreadAlive = false;
 	configured = false;
@@ -60,6 +61,7 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
+	darknessBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
 	this->vout_buf = vout_buf;
 	this->in_keystate = in_keystate;
 	isThreadAlive = false;
@@ -67,6 +69,8 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	requestStopGame = false;
 	currentLevel = LevelService::Instance().getLevel(0);
 	currentLevel->generateBackGround(-1);
+	ennemies = currentLevel->getEnnemiesList();
+	players.push_back(new Player(100,100,0));
 	idx = 0;
 	startGame();
 }
@@ -79,6 +83,7 @@ Game::~Game() {
 	in_keystate = NULL;
 	vout_buf = NULL;
 	SDL_FreeSurface(screenBuffer);
+	SDL_FreeSurface(darknessBuffer);
 }
 
 /**********************************************
@@ -125,21 +130,6 @@ bool Game::isAlive() {
 
 bool Game::isRequestStopGame() {
 	return requestStopGame;
-}
-
-/*******************************************
- * merge all surface of a screen
- * - background + platform
- * - ennemies + players
- * - darkness and score
- *******************************************/
-void Game::mergeScreen() {
-	if (currentLevel->getId() != 0) {
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_left", 0), screenBuffer, 0, 0);
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_right", 0), screenBuffer, 404, 0);
-	}
-	copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_score", 0), screenBuffer, 0, 500);
-	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 }
 
 /*******************************************
@@ -194,6 +184,7 @@ void Game::tick() {
 		}
 		currentLevel = LevelService::Instance().getLevel(idx);
 		currentLevel->generateBackGround(-1);
+		ennemies = currentLevel->getEnnemiesList();
 	} else if (in_keystate[0] & keyPadDown && !requestStopGame) {
 		idx++;
 		if (idx > 103) {
@@ -201,10 +192,9 @@ void Game::tick() {
 		}
 		currentLevel = LevelService::Instance().getLevel(idx);
 		currentLevel->generateBackGround(-1);
+		ennemies = currentLevel->getEnnemiesList();
 	}
 	//END TEMPORARY LINE
-
-
 
 	//getBackGround
 	copySurfaceToBackRenderer(currentLevel->getBackground(), screenBuffer, 0, 0);
@@ -212,13 +202,85 @@ void Game::tick() {
 	//draw all Element of the level. (Vortex, teleporter, rayon...)
 	currentLevel->drawHimself(screenBuffer);
 
+	//TODO
 	//Draw Player
+	for (unsigned int i = 0; i < players.size(); i++) {
+		players[i]->doSomething(screenBuffer);
+	}
 
+	//TODO
 	//Draw Ennemies
+	for (unsigned int i = 0; i < ennemies.size(); i++) {
+		ennemies[i]->doSomething(screenBuffer);
+	}
 
-	//Draw Foreground Decor
-	currentLevel->drawForeGroundElement(screenBuffer);
+	//merge score and left/right border before the foreground decor for level1
+	if (currentLevel->getId() == 1) {
+		mergeScoreAndBorder();
+		currentLevel->drawForeGroundElement(screenBuffer);
+	} else {
+		currentLevel->drawForeGroundElement(screenBuffer);
+		mergeScoreAndBorder();
+	}
+
+	if (currentLevel->getId() > 15) {
+		generateDarkness();
+		//merge darkness
+		copySurfaceToBackRenderer(darknessBuffer, screenBuffer, 0, 0);
+	}
+
 
 	//Copy the generate image to the buffer to retroarch
-	mergeScreen();
+	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+}
+
+/*******************************************
+ *   merge score and border
+ ******************************************/
+void Game::mergeScoreAndBorder() {
+	if (currentLevel->getId() != 0) {
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_left", 0), screenBuffer, 0, 0);
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_right", 0), screenBuffer, 404, 0);
+	}
+	copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_score", 0), screenBuffer, 0, 500);
+}
+
+void Game::generateDarkness() {
+	if (darknessBuffer != NULL) {
+		SDL_FreeSurface(darknessBuffer);
+	}
+	darknessBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
+
+	int darknessValue = ceil((float) (255 / 85) * (float) (currentLevel->getId() - 15));
+	if (darknessValue >= 255) {
+		darknessValue = 255;
+	}
+	SDL_FillRect(darknessBuffer, NULL, SDL_MapRGBA(darknessBuffer->format, 0, 0, 0, darknessValue));
+	SDL_Surface * temp = Sprite::Instance().getAnimation("shadow", 0);
+	if (SDL_MUSTLOCK(darknessBuffer)) {
+		SDL_LockSurface(darknessBuffer);
+	}
+	Uint32* tempPixels = (Uint32 *) temp->pixels;
+	Uint32* darknessPixels = (Uint32 *) darknessBuffer->pixels;
+	for (int x = 0; x < 128; x++) {
+		for (int y = 0; y < 128; y++) {
+
+			Uint32* tempPixel = tempPixels + (y * 128) + x;
+			Uint32* darknessPixel = darknessPixels + (y * 420) + x;
+
+			unsigned char* tempPixelAlpha = (unsigned char*) tempPixel + 3; // fetch alpha channel
+			unsigned char* darknessPixelAlpha = (unsigned char*) darknessPixel + 3; // fetch alpha channel
+
+			if (*darknessPixelAlpha > *tempPixelAlpha) {
+				//	*darknessPixelAlpha = *darknessPixelAlpha - *tempPixelAlpha;
+				//} else {
+				*darknessPixelAlpha = *tempPixelAlpha;
+			}
+		}
+	}
+	//unlock the surface after work
+	if (SDL_MUSTLOCK(darknessBuffer)) {
+		SDL_UnlockSurface(darknessBuffer);
+	}
+
 }

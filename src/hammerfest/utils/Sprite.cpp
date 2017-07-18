@@ -13,6 +13,7 @@
 #include "resources/sprite_objets.h"
 #include "resources/sprite_player.h"
 #include "resources/sprite_rayon_teleporter.h"
+#include "resources/sprite_shadow.h"
 #include "resources/image_menu.h"
 #include "resources/json_image_parser.h"
 
@@ -154,6 +155,8 @@ void Sprite::loadSurfaceToSprite(std::string name) {
 		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(image_menu_png, image_menu_png_len));
 	} else if (name.compare("sprite_flag") == 0) {
 		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(sprite_flag_png, sprite_flag_png_len));
+	} else if (name.compare("sprite_shadow") == 0) {
+		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(sprite_shadow_png, sprite_shadow_png_len));
 	}
 }
 

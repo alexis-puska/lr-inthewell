@@ -57,6 +57,8 @@ class Level: public IdElement, Drawable {
 
 		void drawHimself(SDL_Surface * dest);
 
+		std::vector<Ennemie *> getEnnemiesList();
+
 	private:
 		Uint32 rmask, gmask, bmask, amask;
 		SDL_Surface * backgroundBuffer;

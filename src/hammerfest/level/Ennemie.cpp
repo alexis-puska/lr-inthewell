@@ -9,11 +9,7 @@ Ennemie::~Ennemie() {
 
 }
 
-void Ennemie::drawHimself(SDL_Surface * dest) {
-
-}
-
-void Ennemie::doSomething() {
+void Ennemie::doSomething(SDL_Surface * dest) {
 	switch (type) {
 		case cerise:
 			break;
