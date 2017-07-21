@@ -86,7 +86,7 @@ void Level::removeDeco(int id) {
 }
 
 void Level::drawHimself(SDL_Surface * dest) {
-	fprintf(stderr, "draw himself level : %i\n", id);
+	fprintf(stderr, "level : %i - ", id);
 	for (unsigned int i = 0; i < rayons.size(); i++) {
 		rayons[i]->drawHimself(dest);
 	}
@@ -114,12 +114,9 @@ void Level::drawForeGroundElement(SDL_Surface * dest) {
 }
 
 void Level::generateBackGround(int backgroundEffect) {
-	fprintf(stderr, "init background\n");
 	if (backgroundEffect != -1) {
-		fprintf(stderr, "init background with effect %i\n", backgroundEffect);
 		fillScreenBufferWithSurface("backgroundEffect", backgroundEffect, backgroundBuffer);
 	} else {
-		fprintf(stderr, "init background with background id %i \n", backgroundId);
 		fillScreenBufferWithSurface("level_background", backgroundId, backgroundBuffer);
 	}
 	//draw platform on background (padding x=10 on the left)
@@ -135,7 +132,6 @@ void Level::generateBackGround(int backgroundEffect) {
 }
 
 SDL_Surface * Level::getBackground() {
-	fprintf(stderr, "get background\n");
 	return backgroundBuffer;
 }
 

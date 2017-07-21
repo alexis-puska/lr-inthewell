@@ -70,7 +70,7 @@ class Game {
 		//pointer in the libretro buffer
 		SDL_Surface * vout_buf;
 		int gameState;
-		Uint32 rmask, gmask, bmask, amask;
+
 		//keystate of player
 		unsigned short * in_keystate;
 		SDL_Surface * screenBuffer;
@@ -89,5 +89,6 @@ class Game {
 		void fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination);
 		void mergeScoreAndBorder();
 		void generateDarkness();
+		void excludeDarkness(int posX, int posY, double zoom);
 };
 #endif
