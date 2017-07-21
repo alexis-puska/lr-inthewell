@@ -22,7 +22,9 @@ Rayon::Rayon(int x, int y, int length, int type, bool vertical) :
 		for (int i = 0; i < 2; i++) {
 			buffer[i] = SDL_CreateRGBSurface(0, 20 * length, 20, 32, rmask, gmask, bmask, amask);
 			for (int j = 0; j < length; j++) {
-				copySurfaceToBackRenderer(rotozoomSurface(Sprite::Instance().getAnimation("rayon", i == 0 ? type * 2 : type * 2 + 1), 90, 1, 0), buffer[i], 20 * j, 0, gridSize, gridSize);
+				SDL_Surface * temp = rotozoomSurface(Sprite::Instance().getAnimation("rayon", i == 0 ? type * 2 : type * 2 + 1), 90, 1, 0);
+				copySurfaceToBackRenderer(temp, buffer[i], 20 * j, 0, gridSize, gridSize);
+				SDL_FreeSurface(temp);
 			}
 		}
 	}

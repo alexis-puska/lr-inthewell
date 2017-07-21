@@ -319,5 +319,7 @@ void Game::excludeDarkness(int in_X, int in_Y, double zoom) {
 			}
 		}
 		SDL_UnlockSurface(darknessBuffer);
+
+		SDL_FreeSurface(temp);
 	}
 }

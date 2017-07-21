@@ -18,7 +18,9 @@ Teleporter::Teleporter(int id, int x, int y, int length, bool vertical, int toId
 	} else {
 		buffer = SDL_CreateRGBSurface(0, bufferSize * teleporterSpriteSize, 20, 32, rmask, gmask, bmask, amask);
 		for (int j = 0; j < bufferSize; j++) {
-			copySurfaceToBackRenderer(rotozoomSurface(Sprite::Instance().getAnimation("teleporter", 1), 90, 1, 0), buffer, teleporterSpriteSize * j, 0);
+			SDL_Surface * temp = rotozoomSurface(Sprite::Instance().getAnimation("teleporter", 1), 90, 1, 0);
+			copySurfaceToBackRenderer(temp, buffer, teleporterSpriteSize * j, 0);
+			SDL_FreeSurface(temp);
 		}
 	}
 	offsetAnimation = 0;

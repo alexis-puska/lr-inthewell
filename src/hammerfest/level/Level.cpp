@@ -16,6 +16,7 @@ Level::Level(int id, bool showPlatform, int backgroundId, int platformVerticalId
 }
 
 Level::~Level() {
+	fprintf(stderr,"\n\n\ndestroy level %i\n\n\n", id);
 	decors.clear();
 	platforms.clear();
 	events.clear();
