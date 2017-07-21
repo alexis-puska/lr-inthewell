@@ -233,11 +233,7 @@ void Game::tick() {
 
 	//merge darkness
 	if (currentLevel->getId() > 15) {
-		excludeDarkness(0, 0, 1.0);
-		excludeDarkness(250, 250, 2.0);
-		excludeDarkness(420, 500, 0.5);
-		excludeDarkness(420, 0, 3.0);
-
+		excludeDarkness(250, 250, 1.0);
 		copySurfaceToBackRenderer(darknessBuffer, screenBuffer, 0, 0);
 	}
 	//Copy the generate image to the buffer to retroarch
