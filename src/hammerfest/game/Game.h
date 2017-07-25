@@ -22,27 +22,10 @@
 
 #define gameTick 25
 
-enum keyPad {
-	keyPadSelect = 1,
-	keyPadL3 = 2,
-	keyPadR3 = 4,
-	keyPadStart = 8,
-	keyPadUp = 16,
-	keyPadRight = 32,
-	keyPadDown = 64,
-	keyPadLeft = 128,
-	keyPadL2 = 256,
-	keyPadR2 = 512,
-	keyPadL1 = 1024,
-	keyPadR1 = 2048,
-	keyPadX = 4096,
-	keyPadA = 8192,
-	keyPadB = 16384,
-	keyPadY = 32768
-};
+
 
 enum gameStateEnum {
-	gameStart = 0, gamePause = 1, gameEnd = 2, gameShowMap = 3
+	gameStart = 0, gamePause = 1, gameEnd = 2, gameShowMap = 3, gameChangeLevel = 4
 };
 
 class Game {
@@ -75,12 +58,21 @@ class Game {
 		unsigned short * in_keystate;
 		SDL_Surface * screenBuffer;
 		SDL_Surface * darknessBuffer;
+
 		Level * currentLevel;
+
+
 
 		std::vector<Player *> players;
 		std::vector<Ennemie *> ennemies;
 
 		int idx;
+
+
+
+		int changeLevelAnimationPosition;
+		SDL_Surface * previousLevelBuffer;
+
 
 		/************************
 		 * FUNCTION
@@ -90,5 +82,6 @@ class Game {
 		void mergeScoreAndBorder();
 		void generateDarkness();
 		void excludeDarkness(int posX, int posY, double zoom);
+		void drawChangeLevel();
 };
 #endif

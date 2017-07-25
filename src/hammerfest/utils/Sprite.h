@@ -27,6 +27,7 @@ class Sprite {
 		~Sprite();
 		SDL_Surface * getAnimation(std::string name, int index);
 		std::vector <SDL_Surface *> getAnimation(std::string name);
+		int getAnimationSize(std::string name);
 		SDL_Color getSDL_Color(int color);
 
 	private:

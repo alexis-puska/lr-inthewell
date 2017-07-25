@@ -161,11 +161,13 @@ void Sprite::loadSurfaceToSprite(std::string name) {
 }
 
 SDL_Surface * Sprite::getAnimation(std::string name, int index) {
-	//fprintf(stderr,"getAnimation %s %i \n", name.c_str(), index);
 	return sprites[name][index];
 }
 
 std::vector <SDL_Surface *> Sprite::getAnimation(std::string name) {
-	//fprintf(stderr,"getAnimation %s \n", name.c_str());
 	return sprites[name];
+}
+
+int Sprite::getAnimationSize(std::string name) {
+	return sprites[name].size();
 }

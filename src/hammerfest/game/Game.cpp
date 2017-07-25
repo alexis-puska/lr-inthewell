@@ -45,10 +45,12 @@ Game::Game() {
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	darknessBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
+	previousLevelBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
 	gameState = gameStart;
 	isThreadAlive = false;
 	configured = false;
 	requestStopGame = false;
+	changeLevelAnimationPosition = 0;
 	idx = 0;
 }
 
@@ -63,6 +65,7 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	darknessBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
+	previousLevelBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
 	this->vout_buf = vout_buf;
 	this->in_keystate = in_keystate;
 	isThreadAlive = false;
@@ -71,8 +74,9 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	currentLevel = LevelService::Instance().getLevel(0);
 	currentLevel->generateBackGround(-1);
 	ennemies = currentLevel->getEnnemiesList();
-	players.push_back(new Player(100,100,0));
+	players.push_back(new Player(100,100,0,&in_keystate[0]));
 	idx = 0;
+	changeLevelAnimationPosition = 0;
 	startGame();
 }
 
@@ -181,7 +185,7 @@ void Game::tick() {
 		//TODO pause
 	} else if (in_keystate[0] & keyPadStart && !requestStopGame) {
 		//TODO Map
-	} else if (in_keystate[0] & keyPadUp && !requestStopGame) {
+	} else if (in_keystate[0] & keyPadL1 && !requestStopGame) {
 		idx--;
 		if (idx < 0) {
 			idx = 103;
@@ -189,7 +193,7 @@ void Game::tick() {
 		currentLevel = LevelService::Instance().getLevel(idx);
 		currentLevel->generateBackGround(-1);
 		ennemies = currentLevel->getEnnemiesList();
-	} else if (in_keystate[0] & keyPadDown && !requestStopGame) {
+	} else if (in_keystate[0] & keyPadR1 && !requestStopGame) {
 		idx++;
 		if (idx > 103) {
 			idx = 0;
@@ -255,9 +259,12 @@ void Game::mergeScoreAndBorder() {
 	copySurfaceToBackRenderer(Sprite::Instance().getAnimation("border_score", 0), screenBuffer, 0, 500);
 }
 
+/*******************************************
+ *
+ *   ----------DARKNESS----------
+ *
+ ******************************************/
 void Game::generateDarkness() {
-	//SDL_FillRect(darknessBuffer, NULL, SDL_MapRGBA(darknessBuffer->format, 0, 0, 0, 0));
-
 	int darknessValue = ceil((float) (255 / 85) * (float) (currentLevel->getId() - 15));
 	if (darknessValue >= 255) {
 		darknessValue = 255;
@@ -290,14 +297,14 @@ void Game::excludeDarkness(int in_X, int in_Y, double zoom) {
 		}
 
 		int xDistanceFromEdge = (destRect.x + destRect.w) - darknessBuffer->w;
-		if (xDistanceFromEdge > 0) // we're busting
-				{
+		if (xDistanceFromEdge > 0) {
+			// we're busting
 			sourceRect.w -= xDistanceFromEdge;
 			destRect.w -= xDistanceFromEdge;
 		}
 		int yDistanceFromEdge = (destRect.y + destRect.h) - darknessBuffer->h;
-		if (yDistanceFromEdge > 0) // we're busting
-				{
+		if (yDistanceFromEdge > 0) {
+			// we're busting
 			sourceRect.h -= yDistanceFromEdge;
 			destRect.h -= yDistanceFromEdge;
 		}
@@ -306,7 +313,6 @@ void Game::excludeDarkness(int in_X, int in_Y, double zoom) {
 
 		Uint32* destPixels = (Uint32*) darknessBuffer->pixels;
 		Uint32* srcPixels = (Uint32*) temp->pixels;
-
 		for (int x = 0; x < destRect.w; ++x) {
 			for (int y = 0; y < destRect.h; ++y) {
 				Uint32* destPixel = destPixels + (y + destRect.y) * darknessBuffer->w + destRect.x + x;
@@ -319,7 +325,15 @@ void Game::excludeDarkness(int in_X, int in_Y, double zoom) {
 			}
 		}
 		SDL_UnlockSurface(darknessBuffer);
-
 		SDL_FreeSurface(temp);
 	}
+}
+
+/*******************************************
+ *
+ * -------- LEVEL CHANGE ANIMATION --------
+ *
+ ******************************************/
+void Game::drawChangeLevel() {
+
 }
