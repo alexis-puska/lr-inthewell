@@ -47,7 +47,7 @@ enum playerState {
 };
 
 enum playerDirection {
-	playerGoRight = 0, playerGoLeft = 1
+	playerDontMove = 0, playerGoLeft = 1, playerGoRight = 2
 };
 
 class Player: public Position, Drawable {
@@ -58,11 +58,25 @@ class Player: public Position, Drawable {
 	private:
 		int type; //O - igor, 1 - Sandy
 		unsigned short * in_keystate;
+
+
 		int state;
 		bool playerCanRun;
-		int direction;
 
+
+		bool shotBombe;
+		bool shotBombeUpper;
+
+
+		int jumpCyclePosition;
+		int fallCyclePosition;
+		bool playerFalling;
+
+		int previousDirection;
+		int direction;
 		int animIdx;
 		int animIdxMax;
+
+		void changeState(int newState);
 };
 #endif
