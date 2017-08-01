@@ -4,18 +4,21 @@
 #include "../definition/Drawable.h"
 #include "../definition/Position.h"
 #include "../definition/IdElement.h"
+#include "../definition/HitBox.h"
 
 #define gridSize 20
 
-class Platform : public Drawable, public Position, public IdElement{
+class Platform : public Drawable, public Position, public IdElement, public HitBox{
 	public:
-		Platform(int id, int x, int y, bool vertical, bool visible, int lenght, int surfaceId);
+		Platform(int id, int x, int y, bool vertical, bool visible, int length, int surfaceId);
 		~Platform();
 		void drawHimself(SDL_Surface * surface);
+		bool isVertical();
+		int getLength();
 	private:
 		bool vertical;
 		bool visible;
-		int lenght;
+		int length;
 		int surfaceId;
 };
 #endif

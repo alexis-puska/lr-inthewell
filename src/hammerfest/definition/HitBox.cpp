@@ -1,71 +1,71 @@
 #include "HitBox.h"
 
 HitBox::HitBox() {
-	this->yMax = 0;
-	this->yMin = 0;
-	this->xMax = 0;
-	this->xMin = 0;
-	this->hitBoxWidth = 0;
-	this->hitBoxHeight = 0;
 }
 
 void HitBox::initHitBox(int x, int y, int hitBoxWidth, int hitBoxHeight) {
-	//fprintf(stderr, "init hitbox : %i %i %i %i\n", x, y, hitBoxWidth, hitBoxHeight);
-	this->yMax = 0;
-	this->yMin = 0;
-	this->xMax = 0;
-	this->xMin = 0;
 	this->hitBoxWidth = hitBoxWidth;
 	this->hitBoxHeight = hitBoxHeight;
 	updateHitBox(x, y);
-	//fprintf(stderr, "fin init hitbox : %i %i %i %i\n", xMin, xMax, yMin, yMax);
 }
 
 HitBox::~HitBox() {
 
 }
 
+SDL_Rect HitBox::getRect() {
+	return rect;
+}
+
 void HitBox::updateHitBox(int x, int y) {
-	xMin = x - (hitBoxWidth / 2);
-	xMax = x + (hitBoxWidth / 2);
-	yMin = y - hitBoxHeight;
-	yMax = y;
+	rect.x = x;
+	rect.y = y;
+	rect.w = hitBoxWidth;
+	rect.h = hitBoxHeight;
 }
 
-bool HitBox::hit(HitBox other) {
-	int oXMin = other.getXMin();
-	int oXMax = other.getXMax();
-	int oYMin = other.getYMin();
-	int oYMax = other.getYMax();
-	if (oXMin >= xMin && oXMin <= xMax) {
-		if (oYMin >= yMin && oYMin <= yMax) {
-			return true;
-		} else if (oYMax >= yMin && oYMax <= yMax) {
-			return true;
-		}
+bool HitBox::hit(SDL_Rect other) {
+	return SDL_HasIntersection(&rect, &other);
+}
 
-	} else if (oXMax >= xMin && oXMax <= xMax) {
-		if (oYMin >= yMin && oYMin <= yMax) {
-			return true;
-		} else if (oYMax >= yMin && oYMax <= yMax) {
-			return true;
-		}
+bool HitBox::hitByLeftSide(SDL_Rect other) {
+	int x1 = other.x + other.w;
+	int y1 = other.y;
+	int x2 = other.x + other.w;
+	int y2 = other.y + other.h;
+	return SDL_IntersectRectAndLine(&rect, &x1, &y1, &x2, &y2);
+}
+
+bool HitBox::hitByRightSide(SDL_Rect other) {
+	int x1 = other.x;
+	int y1 = other.y;
+	int x2 = other.x;
+	int y2 = other.y + other.h;
+	return SDL_IntersectRectAndLine(&rect, &x1, &y1, &x2, &y2);
+}
+
+bool HitBox::hitByBottonSide(SDL_Rect other) {
+	int x1 = other.x;
+	int y1 = other.y;
+	int x2 = other.x + other.w;
+	int y2 = other.y;
+	return SDL_IntersectRectAndLine(&rect, &x1, &y1, &x2, &y2);
+}
+
+bool HitBox::hitByTopSide(SDL_Rect other) {
+	int x1 = other.x;
+	int y1 = other.y + other.h;
+	int x2 = other.x + other.w;
+	int y2 = other.y + other.h;
+	return SDL_IntersectRectAndLine(&rect, &x1, &y1, &x2, &y2);
+}
+
+int HitBox::getIntersect(SDL_Rect other, bool horizontal) {
+	SDL_Rect result;
+	SDL_IntersectRect(&rect, &other, &result);
+	if (horizontal) {
+		return result.h;
+	} else {
+		return result.w;
 	}
-	return false;
-}
-
-int HitBox::getXMin() {
-	return xMin;
-}
-
-int HitBox::getXMax() {
-	return xMax;
-}
-
-int HitBox::getYMin() {
-	return yMin;
-}
-
-int HitBox::getYMax() {
-	return yMax;
 }

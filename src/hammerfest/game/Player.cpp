@@ -1,20 +1,24 @@
 #include "Player.h"
 
 Player::Player(int x, int y, int type, unsigned short * in_keystate) :
-		Position(x, y), Drawable() {
+		Position(x, y), Drawable(), HitBox() {
 	this->type = type;
 	this->state = playerWait;
 	this->in_keystate = in_keystate;
+	this->playerFalling = false;
 	animIdx = 0;
 	previousDirection = playerGoRight;
 	playerCanRun = false;
+	playerMove = false;
+	insidePlatform = false;
 	animIdxMax = Sprite::Instance().getAnimationSize("igor_right_wait");
+	initHitBox(x - floor(playerHitboxWidth / 2), y - playerHitboxHeight, playerHitboxWidth, playerHitboxHeight);
 }
 
 Player::~Player() {
 }
 
-void Player::doSomething(SDL_Surface * dest) {
+void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 
 	//acceleration -> -5exp(-0.5x)+5
 	//glaçon -> 50 exp(-0.02x)
@@ -76,22 +80,23 @@ void Player::doSomething(SDL_Surface * dest) {
 				case playerCry:
 					if (playerCanRun) {
 						changeState(playerRun);
-						x -= 10;
-
+						playerMove = true;
 					} else {
 						changeState(playerWalk);
-						x -= 5;
+						playerMove = true;
 					}
 					break;
 				case playerWalk:
-					x -= 5;
+					playerMove = true;
 					break;
 				case playerRun:
-					x -= 10;
+					playerMove = true;
 					break;
 				case playerStartFall:
 				case playerFall:
 				case playerJump:
+					playerMove = true;
+					break;
 				case playerDead:
 					break;
 			}
@@ -116,22 +121,23 @@ void Player::doSomething(SDL_Surface * dest) {
 				case playerCry:
 					if (playerCanRun) {
 						changeState(playerRun);
-						x += 10;
-
+						playerMove = true;
 					} else {
 						changeState(playerWalk);
-						x += 5;
+						playerMove = true;
 					}
 					break;
 				case playerWalk:
-					x += 5;
+					playerMove = true;
 					break;
 				case playerRun:
-					x += 10;
+					playerMove = true;
 					break;
 				case playerStartFall:
 				case playerFall:
 				case playerJump:
+					playerMove = true;
+					break;
 				case playerDead:
 					break;
 			}
@@ -182,11 +188,13 @@ void Player::doSomething(SDL_Surface * dest) {
 				case playerCry:
 				case playerStartFall:
 				case playerFall:
+					adjustPositionBottom();
 					changeState(playerShot);
 					shotBombeUpper = true;
 					break;
 				case playerDrop:
 					if (animIdx > 0) {
+						adjustPositionBottom();
 						changeState(playerShot);
 						shotBombeUpper = true;
 					}
@@ -204,6 +212,7 @@ void Player::doSomething(SDL_Surface * dest) {
 		 * BOUTON POSE / POUSSE BOMBE
 		 *******************************/
 		if (keystate & keyPadA) {
+			fprintf(stderr, "pousse pose\n");
 			switch (state) {
 				case playerWait:
 				case playerWalk:
@@ -219,6 +228,7 @@ void Player::doSomething(SDL_Surface * dest) {
 				case playerFall:
 					//TODO verifier la présence d'une bombe
 					changeState(playerDrop);
+					adjustPositionBottom();
 					shotBombeUpper = false;
 					break;
 				case playerDrop:
@@ -240,7 +250,6 @@ void Player::doSomething(SDL_Surface * dest) {
 	}
 
 	int acc = 0;
-
 	switch (state) {
 		case playerWait:
 			break;
@@ -249,14 +258,33 @@ void Player::doSomething(SDL_Surface * dest) {
 		case playerJump:
 			if (animIdx >= animIdxMax) {
 				changeState(playerStartFall);
+				playerFalling = true;
 			} else {
-				acc = floor(10 * exp(-0.2 * animIdx) + 1);
+				acc = round(10 * exp(-0.22 * animIdx) + 1);
 				y -= acc;
 			}
 			break;
 		case playerStartFall:
 			if (animIdx >= animIdxMax) {
 				changeState(playerFall);
+				playerFalling = true;
+			} else {
+				if (animIdx == 1) {
+					fprintf(stderr, " ICIICICIICICIC\n");
+					acc = 2;
+				} else if (animIdx == 2) {
+					if (y % 5 == 0) {
+						fprintf(stderr, " LILILILILILILILILILILI\n");
+						acc = 5;
+					} else {
+						fprintf(stderr, " LALALALALALALALLALA\n");
+						acc = 3;
+					}
+				} else {
+					acc = 5;
+				}
+				y += acc;
+
 			}
 			break;
 		case playerFall:
@@ -313,15 +341,96 @@ void Player::doSomething(SDL_Surface * dest) {
 			break;
 	}
 
+	fprintf(stderr, "x,y : %i %i\n", x, y);
+
+	updateHitBox(x - floor(playerHitboxWidth / 2), y - playerHitboxHeight);
+
+	/***********************************************************************
+	 * Gestion des colisions avec les platformes
+	 ***********************************************************************/
+
+	calcPoint(platformGrid);
+
+	if (!hitboxPoint[3] && state == playerFall && (y % 20 <= 4 || y % 20 >= 16)) {
+		adjustPositionBottom();
+	}
+
+	if (hitboxPoint[3] && y % 20 <= 3) {
+		y = y - (y % 20);
+	}
+
+	if (y % 20 == 0 && hitboxPoint[3]) {
+		if (state == playerStartFall || state == playerFall) {
+			changeState(playerLanding);
+		}
+		playerFalling = false;
+	}
+
+	if (((!hitboxPoint[2] && !hitboxPoint[3] && hitboxPoint[4]) || (hitboxPoint[2] && !hitboxPoint[3] && !hitboxPoint[4]))) {
+		changeState(playerStartFall);
+	}
+
+//	bool inPlatform;
+//	bool previousInPlatform;
+//	bool fallLeftFromPlatform;
+//	bool fallRightFromPlatform;
+
+	if (playerMove) {
+		if (direction == playerGoLeft) {
+
+			if (hitboxPoint[0] || hitboxPoint[1]) {
+				if (!hitboxPoint[5] && !hitboxPoint[6]) {
+					adjustPositionLeft();
+				}
+			} else {
+				if (playerCanRun) {
+					x -= playerSpeedRun;
+				} else {
+					x -= playerSpeed;
+				}
+			}
+			if (x <= playerHitboxWidth / 2) {
+				x = playerHitboxWidth / 2;
+			}
+
+		} else if (direction == playerGoRight) {
+			if (hitboxPoint[5] || hitboxPoint[6]) {
+				if (!hitboxPoint[0] && !hitboxPoint[1]) {
+					adjustPositionRight();
+				}
+			} else {
+				if (playerCanRun) {
+					x += playerSpeedRun;
+				} else {
+					x += playerSpeed;
+				}
+			}
+			if (x + (playerHitboxWidth / 2) >= 400 - playerHitboxWidth / 2) {
+				x = 400 - playerHitboxWidth / 2;
+			}
+
+		}
+	}
+	fprintf(stderr, "\n");
+
+	if (playerFalling && state != playerStartFall) {
+		y += 5;
+	}
+
 	if (animIdx >= animIdxMax) {
 		animIdx = 0;
 	}
 
-	/****************************
-	 *
-	 * ----- DRAWING PART -----
-	 *
-	 ****************************/
+	drawHimself(dest);
+}
+
+/****************************
+ *
+ * ----- DRAWING PART -----
+ *
+ ****************************/
+
+void Player::drawHimself(SDL_Surface * dest) {
 	SDL_Surface * t = NULL;
 	if (type == 0) {
 		/****************************
@@ -588,10 +697,10 @@ void Player::doSomething(SDL_Surface * dest) {
 				break;
 		}
 	}
-	if(state == playerShot){
-		copySurfaceToBackRenderer(t, dest, x - (t->w / 2), y - (t->h) + 17);
-	}else{
-		copySurfaceToBackRenderer(t, dest, x - (t->w / 2), y - (t->h));
+	if (state == playerShot) {
+		copySurfaceToBackRenderer(t, dest, (x - (t->w / 2)) + leftPadding, y - (t->h) + 17);
+	} else {
+		copySurfaceToBackRenderer(t, dest, (x - (t->w / 2)) + leftPadding, y - (t->h));
 	}
 
 	animIdx++;
@@ -600,6 +709,7 @@ void Player::doSomething(SDL_Surface * dest) {
 void Player::changeState(int newState) {
 	state = newState;
 	animIdx = 0;
+//fprintf(stderr, "change state : %i\n", newState);
 	switch (state) {
 		case playerWait:
 			animIdxMax = Sprite::Instance().getAnimationSize("igor_right_wait");
@@ -659,4 +769,94 @@ void Player::changeState(int newState) {
 			animIdxMax = Sprite::Instance().getAnimationSize("igor_right_cry");
 			break;
 	}
+}
+
+void Player::calcPoint(bool * platformGrid) {
+//reset point table
+	memset(hitboxPoint, false, 7);
+	int xx = x - playerHitboxWidth / 2;
+	int yy = y - playerHitboxHeight;
+	int xCalc = 0;
+	int yCalc = 0;
+
+	for (int i = 0; i < 7; i++) {
+		switch (i) {
+			case 0:
+				xCalc = xx;
+				yCalc = yy;
+				break;
+			case 1:
+				xCalc = xx;
+				yCalc = y - 4;
+				break;
+			case 2:
+				xCalc = x - 5;
+				yCalc = y;
+				break;
+			case 3:
+				xCalc = x;
+				yCalc = y;
+
+				break;
+			case 4:
+				xCalc = x + 5;
+				yCalc = y;
+				break;
+			case 5:
+				xCalc = xx + playerHitboxWidth;
+				yCalc = y - 4;
+				break;
+			case 6:
+				xCalc = xx + playerHitboxWidth;
+				yCalc = yy;
+				break;
+		}
+		xCalc = (xCalc - (xCalc % 20)) / 20;
+		yCalc = (yCalc - (yCalc % 20)) / 20;
+		if (xCalc < 0) {
+			xCalc = 0;
+		}
+		if (xCalc > 400) {
+			xCalc = 400;
+		}
+		if (yCalc < 0) {
+			yCalc = 0;
+		} else if (yCalc > 500) {
+			yCalc = 500;
+		}
+		hitboxPoint[i] = platformGrid[xCalc + 20 * yCalc];
+
+	}
+
+//	if (!bottomLeft && xCaseMin != 0) {
+//		if (platformGrid[(xCaseMin + 20 * yCaseMax) - 1]) {
+//			if (xMin % 20 == 0) {
+//				bottomLeft = true;
+//			}
+//		}
+//	}
+//	if (!topLeft && xCaseMin != 0) {
+//		if (platformGrid[(xCaseMin + 20 * yCaseMin) - 1]) {
+//			if (xMin % 20 == 0) {
+//				topLeft = true;
+//			}
+//		}
+//	}
+
+}
+
+void Player::adjustPositionLeft() {
+	int xcalc = x - playerHitboxWidth / 2;
+	if ((xcalc % 20) != 19) {
+		x = (((xcalc - (xcalc % 20)) + 20) + playerHitboxWidth / 2) - 1;
+	}
+}
+
+void Player::adjustPositionRight() {
+	int xcalc = x + playerHitboxWidth / 2;
+	x = ((xcalc - (xcalc % 20))) - playerHitboxWidth / 2;
+}
+
+void Player::adjustPositionBottom() {
+	y = y - (y % 5);
 }

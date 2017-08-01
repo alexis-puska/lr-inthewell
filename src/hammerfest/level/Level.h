@@ -59,11 +59,16 @@ class Level: public IdElement, Drawable {
 
 		std::vector<Ennemie *> getEnnemiesList();
 
+		bool isPlatform(int x, int y);
+		void printPlatformGrid();
+		bool * getPlatformGrid();
+
 	private:
 		Uint32 rmask, gmask, bmask, amask;
 		SDL_Surface * backgroundBuffer;
 
 		bool showPlatform;
+		bool platformGrid[500];
 		int backgroundId;
 		int platformVerticalId;
 		int platformHorizontalId;

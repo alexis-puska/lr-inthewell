@@ -1,9 +1,17 @@
 #ifndef __MYCLASS_PLAYER
 #define __MYCLASS_PLAYER
 
+#define playerHitboxWidth 14
+#define playerHitboxHeight 14
+#define playerSpeed 4
+#define playerSpeedRun 7
+
+
 #include "../definition/Position.h"
 #include "../definition/Drawable.h"
+#include "../definition/HitBox.h"
 #include "../utils/Sound.h"
+#include "../level/Platform.h"
 
 enum keyPad {
 	keyPadSelect = 1,
@@ -50,33 +58,47 @@ enum playerDirection {
 	playerDontMove = 0, playerGoLeft = 1, playerGoRight = 2
 };
 
-class Player: public Position, Drawable {
+class Player: public Position, Drawable, HitBox {
 	public:
 		Player(int x, int y, int type, unsigned short * in_keystate);
 		~Player();
-		void doSomething(SDL_Surface * dest);
+		void doSomething(SDL_Surface * dest, bool * platformGrid);
 	private:
 		int type; //O - igor, 1 - Sandy
 		unsigned short * in_keystate;
 
-
 		int state;
 		bool playerCanRun;
+		bool playerMove;
 
+		bool inPlatform;
+		bool previousInPlatform;
+		bool fallLeftFromPlatform;
+		bool fallRightFromPlatform;
+
+		bool hitboxPoint[7];
 
 		bool shotBombe;
 		bool shotBombeUpper;
 
-
 		int jumpCyclePosition;
 		int fallCyclePosition;
 		bool playerFalling;
+		bool insidePlatform;
 
 		int previousDirection;
 		int direction;
 		int animIdx;
 		int animIdxMax;
 
+
+
 		void changeState(int newState);
+		void drawHimself(SDL_Surface * dest);
+		void calcPoint(bool * platformGrid);
+		void adjustPositionLeft();
+		void adjustPositionRight();
+		void adjustPositionBottom();
+
 };
 #endif

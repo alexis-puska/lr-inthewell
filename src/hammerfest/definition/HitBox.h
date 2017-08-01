@@ -1,3 +1,9 @@
+#ifndef IS_OSX
+#include <SDL2/SDL_image.h>
+#else
+#include <SDL2_image/SDL_image.h>
+#endif
+
 #include <stdio.h>
 
 #ifndef __MYCLASS_HITBOX
@@ -9,16 +15,15 @@ class HitBox {
 		void initHitBox(int x, int y, int width, int height);
 		virtual ~HitBox();
 		void updateHitBox(int x, int y);
-		bool hit(HitBox other);
-		int getXMin();
-		int getXMax();
-		int getYMin();
-		int getYMax();
+		bool hit(SDL_Rect other);
+		bool hitByLeftSide(SDL_Rect other);
+		bool hitByRightSide(SDL_Rect other);
+		bool hitByBottonSide(SDL_Rect other);
+		bool hitByTopSide(SDL_Rect other);
+		int getIntersect(SDL_Rect other, bool horizontal);
+		SDL_Rect getRect();
 	private:
-		int yMax;
-		int yMin;
-		int xMax;
-		int xMin;
+		SDL_Rect rect;
 		int hitBoxWidth;
 		int hitBoxHeight;
 };

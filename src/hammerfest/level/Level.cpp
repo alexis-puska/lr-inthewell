@@ -13,10 +13,13 @@ Level::Level(int id, bool showPlatform, int backgroundId, int platformVerticalId
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	backgroundBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
+	for (int i = 0; i < 500; i++) {
+		platformGrid[i] = false;
+	}
 }
 
 Level::~Level() {
-	fprintf(stderr,"\n\n\ndestroy level %i\n\n\n", id);
+	fprintf(stderr, "\n\n\ndestroy level %i\n\n\n", id);
 	decors.clear();
 	platforms.clear();
 	events.clear();
@@ -37,6 +40,32 @@ void Level::addDecor(Decor * decor) {
 
 void Level::addPlatform(Platform * platform) {
 	platforms[platform->getId()] = platform;
+	if (platform->isVertical()) {
+		int x = platform->getX();
+		int start = platform->getY();
+		int stop = platform->getLength() + start;
+		for (int y = start; y < stop; y++) {
+			if (((y * 20) + x) > 499) {
+				fprintf(stderr, "\n\nerreur adresse v id:%i pos:%i x:%i y:%i start:%i stop:%i\n\n", platform->getId(), ((y * 20) + x), x, y,
+						start, stop);
+			} else {
+				platformGrid[y * 20 + x] = true;
+			}
+		}
+	} else {
+		int y = platform->getY();
+		int start = platform->getX();
+		int stop = platform->getLength() + start;
+		for (int x = start; x < stop; x++) {
+			if (((y * 20) + x) > 499) {
+				fprintf(stderr, "\n\nerreur adresse h id:%i pos:%i x:%i y:%i start:%i stop:%i\n\n", platform->getId(), ((y * 20) + x), x, y,
+						start, stop);
+			} else {
+				platformGrid[y * 20 + x] = true;
+			}
+		}
+	}
+
 }
 
 void Level::addDoor(Door * door) {
@@ -72,22 +101,22 @@ void Level::addStartPointObject(Position * startPointObjet) {
 }
 
 void Level::addEnnemie(int x, int y, int type) {
-	//ennemies
+//ennemies
 }
 
 /*********************************
  * 		UTIL FUNCTION
  *********************************/
 void Level::removePlatform(int id) {
-
+	platforms.erase(id);
 }
 
 void Level::removeDeco(int id) {
-
+	decors.erase(id);
 }
 
 void Level::drawHimself(SDL_Surface * dest) {
-	fprintf(stderr, "level : %i - ", id);
+	//fprintf(stderr, "level : %i - ", id);
 	for (unsigned int i = 0; i < rayons.size(); i++) {
 		rayons[i]->drawHimself(dest);
 	}
@@ -106,7 +135,7 @@ void Level::deleteAreaInDarkness(SDL_Surface * darkness) {
 }
 
 void Level::drawForeGroundElement(SDL_Surface * dest) {
-	//draw decor in foreground.
+//draw decor in foreground.
 	for (std::map<int, Decor*>::iterator it = decors.begin(); it != decors.end(); ++it) {
 		if (!it->second->isOnBackground()) {
 			it->second->drawHimself(dest);
@@ -120,11 +149,11 @@ void Level::generateBackGround(int backgroundEffect) {
 	} else {
 		fillScreenBufferWithSurface("level_background", backgroundId, backgroundBuffer);
 	}
-	//draw platform on background (padding x=10 on the left)
+//draw platform on background (padding x=10 on the left)
 	for (std::map<int, Platform*>::iterator it = platforms.begin(); it != platforms.end(); ++it) {
 		it->second->drawHimself(backgroundBuffer);
 	}
-	//draw decor on background (must be draw without padding, start a X = 0)
+//draw decor on background (must be draw without padding, start a X = 0)
 	for (std::map<int, Decor*>::iterator it = decors.begin(); it != decors.end(); ++it) {
 		if (it->second->isOnBackground()) {
 			it->second->drawHimself(backgroundBuffer);
@@ -132,14 +161,32 @@ void Level::generateBackGround(int backgroundEffect) {
 	}
 }
 
+/*********************************
+ * 		GETTER FUNCTION
+ *********************************/
+std::vector<Ennemie *> Level::getEnnemiesList() {
+	return ennemies;
+}
+
 SDL_Surface * Level::getBackground() {
 	return backgroundBuffer;
 }
 
-/*********************************
- * 		GETTER FUNCTION
- *********************************/
+bool Level::isPlatform(int x, int y) {
+	return platformGrid[y * 20 + x];
+}
 
-std::vector<Ennemie *> Level::getEnnemiesList(){
-	return ennemies;
+bool * Level::getPlatformGrid(){
+	return platformGrid;
+}
+
+
+void Level::printPlatformGrid() {
+	for (int y = 0; y < 25; y++) {
+		for (int x = 0; x < 20; x++) {
+			fprintf(stderr, "%i ", platformGrid[y * 20 + x] ? 1 : 0);
+		}
+		fprintf(stderr, "\n");
+	}
+	fprintf(stderr, "\n");
 }

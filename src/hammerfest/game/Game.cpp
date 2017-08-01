@@ -22,13 +22,13 @@ static int metronome(void* data) {
 		if (delay > 0) {
 			if (delay < 5) {
 				warningCount++;
-				fprintf(stderr, "%i ms %li\n", (int) delay, warningCount);
+				//fprintf(stderr, "%i ms %li\n", (int) delay, warningCount);
 			}
-			fprintf(stderr, "d%li\n", delay);
+			//fprintf(stderr, "d%li\n", delay);
 			SDL_Delay(delay);
 		} else {
 			warningCount++;
-			fprintf(stderr, "warning %li %li\n", warningCount, delay);
+			//fprintf(stderr, "warning %li %li\n", warningCount, delay);
 		}
 	}
 	return 0;
@@ -163,7 +163,7 @@ void Game::stopGame() {
 		requestStopGame = false;
 		int treadResult = 0;
 		SDL_WaitThread(mainThread, &treadResult);
-		fprintf(stderr, "result stop thread %i\n", treadResult);
+		//fprintf(stderr, "result stop thread %i\n", treadResult);
 	}
 }
 
@@ -217,7 +217,7 @@ void Game::tick() {
 	//TODO
 	//Draw Player
 	for (unsigned int i = 0; i < players.size(); i++) {
-		players[i]->doSomething(screenBuffer);
+		players[i]->doSomething(screenBuffer, currentLevel->getPlatformGrid());
 	}
 
 	//TODO
