@@ -11,6 +11,8 @@ Player::Player(int x, int y, int type, unsigned short * in_keystate) :
 	playerCanRun = false;
 	playerMove = false;
 	insidePlatform = false;
+	lockLeftDirection = false;
+	lockRightDirection = false;
 	animIdxMax = Sprite::Instance().getAnimationSize("igor_right_wait");
 	initHitBox(x - floor(playerHitboxWidth / 2), y - playerHitboxHeight, playerHitboxWidth, playerHitboxHeight);
 }
@@ -270,14 +272,11 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 				playerFalling = true;
 			} else {
 				if (animIdx == 1) {
-					fprintf(stderr, " ICIICICIICICIC\n");
 					acc = 2;
 				} else if (animIdx == 2) {
 					if (y % 5 == 0) {
-						fprintf(stderr, " LILILILILILILILILILILI\n");
 						acc = 5;
 					} else {
-						fprintf(stderr, " LALALALALALALALLALA\n");
 						acc = 3;
 					}
 				} else {
@@ -351,76 +350,90 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 
 	calcPoint(platformGrid);
 
-	if (!hitboxPoint[3] && state == playerFall && (y % 20 <= 4 || y % 20 >= 16)) {
-		adjustPositionBottom();
+	if (hitboxPoint[0] && hitboxPoint[1] && !lockLeftDirection && y > 0) {
+		adjustPositionLeft();
+		fprintf(stderr, "je cogne par la gauche\n");
+	}
+	if (hitboxPoint[6] && hitboxPoint[5] && !lockRightDirection && y > 0) {
+		adjustPositionRight();
+		fprintf(stderr, "je cogne par la droite\n");
 	}
 
-	if (hitboxPoint[3] && y % 20 <= 3) {
+	if ((hitboxPoint[0] || hitboxPoint[1]) && !lockLeftDirection) {
+		lockLeftDirection = true;
+	}
+
+	if (!hitboxPoint[0] && !hitboxPoint[1] && lockLeftDirection) {
+		lockLeftDirection = false;
+	}
+
+	if ((hitboxPoint[5] || hitboxPoint[6]) && !lockRightDirection) {
+		lockRightDirection = true;
+	}
+
+	if (!hitboxPoint[5] && !hitboxPoint[6] && lockRightDirection) {
+		lockRightDirection = false;
+	}
+
+	if (y <= 0) {
+		lockRightDirection = false;
+		lockLeftDirection = false;
+	}
+
+	if (((hitboxPoint[2] && hitboxPoint[3]) || (hitboxPoint[3] && hitboxPoint[4])) && y % 20 <= 4 && (playerFalling || state == playerStartFall)) {
 		y = y - (y % 20);
-	}
-
-	if (y % 20 == 0 && hitboxPoint[3]) {
-		if (state == playerStartFall || state == playerFall) {
-			changeState(playerLanding);
-		}
+		changeState(playerLanding);
 		playerFalling = false;
 	}
 
-	if (((!hitboxPoint[2] && !hitboxPoint[3] && hitboxPoint[4]) || (hitboxPoint[2] && !hitboxPoint[3] && !hitboxPoint[4]))) {
+	if (!hitboxPoint[2] && !hitboxPoint[3] && hitboxPoint[4] && state != playerStartFall && !playerFalling && state != playerJump) {
 		changeState(playerStartFall);
+		fprintf(stderr, "je tombe par la gauche\n");
 	}
 
-//	bool inPlatform;
-//	bool previousInPlatform;
-//	bool fallLeftFromPlatform;
-//	bool fallRightFromPlatform;
+	//on commance a tomber d'une platforme pas la droite, on ajustera pas la position du joueur par la gauche.
+	if (hitboxPoint[2] && !hitboxPoint[3] && !hitboxPoint[4] && state != playerStartFall && !playerFalling && state != playerJump) {
+		changeState(playerStartFall);
+		fprintf(stderr, "je tombe par la droite\n");
+	}
 
 	if (playerMove) {
-		if (direction == playerGoLeft) {
-
-			if (hitboxPoint[0] || hitboxPoint[1]) {
-				if (!hitboxPoint[5] && !hitboxPoint[6]) {
-					adjustPositionLeft();
-				}
+		if (direction == playerGoLeft && !lockLeftDirection) {
+			if (playerCanRun) {
+				x -= playerSpeedRun;
 			} else {
-				if (playerCanRun) {
-					x -= playerSpeedRun;
-				} else {
-					x -= playerSpeed;
-				}
+				x -= playerSpeed;
 			}
+			//bloquage gauche bord d'écran
 			if (x <= playerHitboxWidth / 2) {
+				fprintf(stderr, "je touche l'écran\n");
 				x = playerHitboxWidth / 2;
 			}
-
-		} else if (direction == playerGoRight) {
-			if (hitboxPoint[5] || hitboxPoint[6]) {
-				if (!hitboxPoint[0] && !hitboxPoint[1]) {
-					adjustPositionRight();
-				}
+		} else if (direction == playerGoRight && !lockRightDirection) {
+			if (playerCanRun) {
+				x += playerSpeedRun;
 			} else {
-				if (playerCanRun) {
-					x += playerSpeedRun;
-				} else {
-					x += playerSpeed;
-				}
+				x += playerSpeed;
 			}
+			//bloquage droit bord d'écran
 			if (x + (playerHitboxWidth / 2) >= 400 - playerHitboxWidth / 2) {
+				fprintf(stderr, "je touche l'ecran\n");
 				x = 400 - playerHitboxWidth / 2;
 			}
-
 		}
 	}
-	fprintf(stderr, "\n");
 
+	//chute du joueur
 	if (playerFalling && state != playerStartFall) {
-		y += 5;
+		y += playerFallSpeed;
 	}
 
+	//increment animation
 	if (animIdx >= animIdxMax) {
 		animIdx = 0;
 	}
 
+	//dessin joueur
 	drawHimself(dest);
 }
 

@@ -5,6 +5,7 @@
 #define playerHitboxHeight 14
 #define playerSpeed 4
 #define playerSpeedRun 7
+#define playerFallSpeed 6
 
 
 #include "../definition/Position.h"
@@ -71,10 +72,8 @@ class Player: public Position, Drawable, HitBox {
 		bool playerCanRun;
 		bool playerMove;
 
-		bool inPlatform;
-		bool previousInPlatform;
-		bool fallLeftFromPlatform;
-		bool fallRightFromPlatform;
+		bool lockLeftDirection;
+		bool lockRightDirection;
 
 		bool hitboxPoint[7];
 
