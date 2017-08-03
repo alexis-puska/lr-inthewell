@@ -35,13 +35,14 @@
 			{"id":18,"x":3, "y":23,"vertical":false,"length":6 },
 			{"id":19,"x":16,"y":0, "vertical":true, "length":1 },
 			{"id":20,"x":16,"y":3, "vertical":true, "length":12},
-			{"id":21,"x":9, "y":16,"vertical":true, "length":5 },
+			{"id":21,"x":9, "y":16,"vertical":true, "length":4 },
 			{"id":22,"x":13,"y":16,"vertical":true, "length":9 },
 			{"id":23,"x":7, "y":19,"vertical":true, "length":1 },
 			{"id":24,"x":15,"y":19,"vertical":true, "length":1 },
 			{"id":25,"x":1 ,"y":21,"vertical":true, "length":4 },
 			{"id":26,"x":9, "y":22,"vertical":true, "length":2 },
-			{"id":27,"x":3, "y":24,"vertical":true, "length":1 }
+			{"id":27,"x":3, "y":24,"vertical":true, "length":1 },
+			{"id":28,"x":11,"y":19,"vertical":false,"length":1 }
 		],
 		"rayon":[],
 		"teleporter":[],

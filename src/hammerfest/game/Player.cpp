@@ -381,9 +381,11 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 	}
 
 	if (((hitboxPoint[2] && hitboxPoint[3]) || (hitboxPoint[3] && hitboxPoint[4])) && y % 20 <= 4 && (playerFalling || state == playerStartFall)) {
-		y = y - (y % 20);
-		changeState(playerLanding);
-		playerFalling = false;
+		if (!hitboxPoint[7]) {
+			y = y - (y % 20);
+			changeState(playerLanding);
+			playerFalling = false;
+		}
 	}
 
 	if (!hitboxPoint[2] && !hitboxPoint[3] && hitboxPoint[4] && state != playerStartFall && !playerFalling && state != playerJump) {
@@ -786,13 +788,13 @@ void Player::changeState(int newState) {
 
 void Player::calcPoint(bool * platformGrid) {
 //reset point table
-	memset(hitboxPoint, false, 7);
+	memset(hitboxPoint, false, 8);
 	int xx = x - playerHitboxWidth / 2;
 	int yy = y - playerHitboxHeight;
 	int xCalc = 0;
 	int yCalc = 0;
 
-	for (int i = 0; i < 7; i++) {
+	for (int i = 0; i < 8; i++) {
 		switch (i) {
 			case 0:
 				xCalc = xx;
@@ -821,6 +823,10 @@ void Player::calcPoint(bool * platformGrid) {
 				break;
 			case 6:
 				xCalc = xx + playerHitboxWidth;
+				yCalc = yy;
+				break;
+			case 7:
+				xCalc = x;
 				yCalc = yy;
 				break;
 		}
