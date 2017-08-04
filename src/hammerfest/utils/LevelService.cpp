@@ -78,6 +78,12 @@ Level * LevelService::getLevel(int id) {
 							level["decor"][i]["display"].asBool(), level["decor"][i]["back"].asBool(),
 							level["decor"][i]["anim"].asString(), level["decor"][i]["toId"].asInt()));
 		}
+
+		for (unsigned int i = 0; i < level["ennemies"].size(); i++) {
+			currentLevel->addEnnemie(
+					new Ennemie(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt(),
+							level["ennemies"][i]["type"].asInt()));
+		}
 	}
 	return currentLevel;
 }

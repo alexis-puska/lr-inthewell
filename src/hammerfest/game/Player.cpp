@@ -340,7 +340,9 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 			break;
 	}
 
-	fprintf(stderr, "x,y : %i %i\n", x, y);
+	if (hitboxPoint[3]) {
+		fprintf(stderr, "x,y : %i %i %s %i\n", x, y, hitboxPoint[3] ? "true" : "false", y % 20);
+	}
 
 	updateHitBox(x - floor(playerHitboxWidth / 2), y - playerHitboxHeight);
 
@@ -380,7 +382,9 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 		lockLeftDirection = false;
 	}
 
-	if (((hitboxPoint[2] && hitboxPoint[3]) || (hitboxPoint[3] && hitboxPoint[4])) && y % 20 <= 4 && (playerFalling || state == playerStartFall)) {
+//Gestion de l'attérissage
+	if (((hitboxPoint[2] && hitboxPoint[3]) || (hitboxPoint[3] && hitboxPoint[4])) && (y % 20 <= 5 || y % 20 == 0)
+			&& (playerFalling || state == playerStartFall)) {
 		if (!hitboxPoint[7]) {
 			y = y - (y % 20);
 			changeState(playerLanding);
@@ -393,7 +397,7 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 		fprintf(stderr, "je tombe par la gauche\n");
 	}
 
-	//on commance a tomber d'une platforme pas la droite, on ajustera pas la position du joueur par la gauche.
+//on commance a tomber d'une platforme pas la droite, on ajustera pas la position du joueur par la gauche.
 	if (hitboxPoint[2] && !hitboxPoint[3] && !hitboxPoint[4] && state != playerStartFall && !playerFalling && state != playerJump) {
 		changeState(playerStartFall);
 		fprintf(stderr, "je tombe par la droite\n");
@@ -425,17 +429,17 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 		}
 	}
 
-	//chute du joueur
+//chute du joueur
 	if (playerFalling && state != playerStartFall) {
 		y += playerFallSpeed;
 	}
 
-	//increment animation
+//increment animation
 	if (animIdx >= animIdxMax) {
 		animIdx = 0;
 	}
 
-	//dessin joueur
+//dessin joueur
 	drawHimself(dest);
 }
 
@@ -805,7 +809,7 @@ void Player::calcPoint(bool * platformGrid) {
 				yCalc = y - 4;
 				break;
 			case 2:
-				xCalc = x - 5;
+				xCalc = x - 6;
 				yCalc = y;
 				break;
 			case 3:
@@ -814,7 +818,7 @@ void Player::calcPoint(bool * platformGrid) {
 
 				break;
 			case 4:
-				xCalc = x + 5;
+				xCalc = x + 6;
 				yCalc = y;
 				break;
 			case 5:
@@ -846,22 +850,6 @@ void Player::calcPoint(bool * platformGrid) {
 		hitboxPoint[i] = platformGrid[xCalc + 20 * yCalc];
 
 	}
-
-//	if (!bottomLeft && xCaseMin != 0) {
-//		if (platformGrid[(xCaseMin + 20 * yCaseMax) - 1]) {
-//			if (xMin % 20 == 0) {
-//				bottomLeft = true;
-//			}
-//		}
-//	}
-//	if (!topLeft && xCaseMin != 0) {
-//		if (platformGrid[(xCaseMin + 20 * yCaseMin) - 1]) {
-//			if (xMin % 20 == 0) {
-//				topLeft = true;
-//			}
-//		}
-//	}
-
 }
 
 void Player::adjustPositionLeft() {

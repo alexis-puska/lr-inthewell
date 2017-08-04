@@ -41,7 +41,7 @@ class Level: public IdElement, Drawable {
 		void addStartPlayer(Position * startPlayer);
 		void addStartEffectObject(Position * startEffectObjet);
 		void addStartPointObject(Position * startPointObjet);
-		void addEnnemie(int x, int y, int type);
+		void addEnnemie(Ennemie * ennemie);
 
 		/*********************************
 		 * 		UTIL FUNCTION

@@ -2206,7 +2206,7 @@
 			{"id":1,"x":7,"y":9,"type":4},
 			{"id":2,"x":11,"y":9,"type": 4},
 			{"id":3,"x":3,"y":3,"type": 4},
-			{"id":4,"x":10,"y":3,"type":43}
+			{"id":4,"x":10,"y":3,"type":4}
 		],
 		"startPlayers":[],
 		"startEffectObjets":[],

@@ -100,8 +100,8 @@ void Level::addStartPointObject(Position * startPointObjet) {
 	startPointObjets.push_back(startPointObjet);
 }
 
-void Level::addEnnemie(int x, int y, int type) {
-//ennemies
+void Level::addEnnemie(Ennemie * ennemie) {
+	ennemies.push_back(ennemie);
 }
 
 /*********************************
