@@ -340,9 +340,9 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 			break;
 	}
 
-	if (hitboxPoint[3]) {
-		fprintf(stderr, "x,y : %i %i %s %i\n", x, y, hitboxPoint[3] ? "true" : "false", y % 20);
-	}
+	//if (hitboxPoint[3]) {
+	//	fprintf(stderr, "x,y : %i %i %s %i\n", x, y, hitboxPoint[3] ? "true" : "false", y % 20);
+	//}
 
 	updateHitBox(x - floor(playerHitboxWidth / 2), y - playerHitboxHeight);
 

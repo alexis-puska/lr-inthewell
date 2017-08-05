@@ -149,11 +149,15 @@ void Level::generateBackGround(int backgroundEffect) {
 	} else {
 		fillScreenBufferWithSurface("level_background", backgroundId, backgroundBuffer);
 	}
-//draw platform on background (padding x=10 on the left)
+	//draw shadow platform on background (padding x=10 on the left)
 	for (std::map<int, Platform*>::iterator it = platforms.begin(); it != platforms.end(); ++it) {
-		it->second->drawHimself(backgroundBuffer);
+		it->second->drawHimself(backgroundBuffer, true);
 	}
-//draw decor on background (must be draw without padding, start a X = 0)
+	//draw platform on background (padding x=10 on the left)
+	for (std::map<int, Platform*>::iterator it = platforms.begin(); it != platforms.end(); ++it) {
+		it->second->drawHimself(backgroundBuffer, false);
+	}
+	//draw decor on background (must be draw without padding, start a X = 0)
 	for (std::map<int, Decor*>::iterator it = decors.begin(); it != decors.end(); ++it) {
 		if (it->second->isOnBackground()) {
 			it->second->drawHimself(backgroundBuffer);
@@ -176,10 +180,9 @@ bool Level::isPlatform(int x, int y) {
 	return platformGrid[y * 20 + x];
 }
 
-bool * Level::getPlatformGrid(){
+bool * Level::getPlatformGrid() {
 	return platformGrid;
 }
-
 
 void Level::printPlatformGrid() {
 	for (int y = 0; y < 25; y++) {
