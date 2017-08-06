@@ -50,6 +50,7 @@ Sound::Sound() {
 	soundKickBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_kick_bombe_wav, sound_kick_bombe_wav_len), 0);
 	soundKillEnnemis = Mix_LoadWAV_RW(SDL_RWFromMem(sound_kill_ennemis_wav, sound_kill_ennemis_wav_len), 0);
 	soundLetterEffectObject = Mix_LoadWAV_RW(SDL_RWFromMem(sound_letter_effect_object_wav, sound_letter_effect_object_wav_len), 0);
+	soundNextLevel = Mix_LoadWAV_RW(SDL_RWFromMem(sound_next_level_wav, sound_next_level_wav_len), 0);
 	soundNormalBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_normal_bombe_wav, sound_normal_bombe_wav_len), 0);
 	soundPop = Mix_LoadWAV_RW(SDL_RWFromMem(sound_pop_wav, sound_pop_wav_len), 0);
 	soundPutBombe = Mix_LoadWAV_RW(SDL_RWFromMem(sound_put_bombe_wav, sound_put_bombe_wav_len), 0);
@@ -79,6 +80,7 @@ Sound::~Sound() {
 	Mix_FreeChunk(soundKickBombe);
 	Mix_FreeChunk(soundKillEnnemis);
 	Mix_FreeChunk(soundLetterEffectObject);
+	Mix_FreeChunk(soundNextLevel);
 	Mix_FreeChunk(soundNormalBombe);
 	Mix_FreeChunk(soundPop);
 	Mix_FreeChunk(soundPutBombe);
@@ -93,7 +95,7 @@ Sound& Sound::Instance() {
 }
 
 void Sound::startMusicBoss() {
-	Mix_VolumeMusic(MIX_MAX_VOLUME);
+	Mix_VolumeMusic (MIX_MAX_VOLUME);
 	Mix_PlayMusic(musicBoss, -1);
 }
 
@@ -181,4 +183,8 @@ void Sound::playSoundTeleporter() {
 
 void Sound::playSoundTuberculoz() {
 	Mix_PlayChannel(17, soundTuberculoz, 0);
+}
+
+void Sound::playSoundNextLevel() {
+	Mix_PlayChannel(12, soundNextLevel, 0);
 }

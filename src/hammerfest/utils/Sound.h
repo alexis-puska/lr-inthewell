@@ -34,6 +34,7 @@ class Sound {
 		void playSoundKillEnnemis();
 		void playSoundLetterEffectObject();
 		void playSoundNormalBombe();
+		void playSoundNextLevel();
 		void playSoundPop();
 		void playSoundPutBombe();
 		void playSoundTakeObject();
@@ -63,6 +64,7 @@ class Sound {
 		Mix_Chunk *soundKillEnnemis;
 		Mix_Chunk *soundLetterEffectObject;
 		Mix_Chunk *soundNormalBombe;
+		Mix_Chunk *soundNextLevel;
 		Mix_Chunk *soundPop;
 		Mix_Chunk *soundPutBombe;
 		Mix_Chunk *soundTakeObject;

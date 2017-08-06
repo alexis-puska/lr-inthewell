@@ -45,12 +45,17 @@ Game::Game() {
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	darknessBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
-	changeLevelBufferAnimation = SDL_CreateRGBSurface(0, 420, 1000, 32, rmask, gmask, bmask, amask);
+	changeLevelBufferAnimationVertical = SDL_CreateRGBSurface(0, 420, 1000, 32, rmask, gmask, bmask, amask);
+	changeLevelBufferAnimationHorizontal = SDL_CreateRGBSurface(0, 840, 500, 32, rmask, gmask, bmask, amask);
+	pauseGameBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	gameState = gameStart;
 	isThreadAlive = false;
 	configured = false;
 	requestStopGame = false;
+	bossMusic = false;
+	releaseButton = false;
 	changeLevelAnimationPosition = 0;
+	changeLevelAnimationType = changeLevelNormal;
 	idx = 0;
 }
 
@@ -65,18 +70,23 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	darknessBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
-	changeLevelBufferAnimation = SDL_CreateRGBSurface(0, 420, 1000, 32, rmask, gmask, bmask, amask);
+	changeLevelBufferAnimationVertical = SDL_CreateRGBSurface(0, 420, 1000, 32, rmask, gmask, bmask, amask);
+	changeLevelBufferAnimationHorizontal = SDL_CreateRGBSurface(0, 840, 500, 32, rmask, gmask, bmask, amask);
+	pauseGameBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	this->vout_buf = vout_buf;
 	this->in_keystate = in_keystate;
 	isThreadAlive = false;
 	configured = true;
 	requestStopGame = false;
+	bossMusic = false;
+	releaseButton = false;
 	gameState = gameStart;
 	changeLevelAnimationPosition = 0;
 	currentLevel = LevelService::Instance().getLevel(0);
 	currentLevel->generateBackGround(-1);
 	ennemies = currentLevel->getEnnemiesList();
 	players.push_back(new Player(100,100,0,&in_keystate[0]));
+	changeLevelAnimationType = changeLevelNormal;
 	idx = 0;
 
 	startGame();
@@ -91,72 +101,9 @@ Game::~Game() {
 	vout_buf = NULL;
 	SDL_FreeSurface(screenBuffer);
 	SDL_FreeSurface(darknessBuffer);
-	SDL_FreeSurface(changeLevelBufferAnimation);
-}
-
-/**********************************************
- * function to copy a surface inside an other.
- **********************************************/
-void Game::copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y) {
-	SDL_Rect dstRect;
-	dstRect.x = x;
-	dstRect.y = y;
-	dstRect.w = src->w;
-	dstRect.h = src->h;
-	SDL_Rect srcRect;
-	srcRect.x = 0;
-	srcRect.y = 0;
-	srcRect.w = src->w;
-	srcRect.h = src->h;
-	SDL_BlitSurface(src, &srcRect, dest, &dstRect);
-}
-
-void Game::copySurfaceToBackRendererWithStartOffset(SDL_Surface * src, SDL_Surface * dest, int x, int y, int lengthX, int lengthY, int offsetX,
-		int offsetY) {
-	SDL_Rect dstRect;
-	dstRect.x = x;
-	dstRect.y = y;
-	if (lengthX == -1) {
-		dstRect.w = src->w;
-	} else {
-		dstRect.w = lengthX;
-	}
-	if (lengthY == -1) {
-		dstRect.h = src->h;
-	} else {
-		dstRect.h = lengthY;
-	}
-	SDL_Rect srcRect;
-	srcRect.x = offsetX;
-	srcRect.y = offsetY;
-	if (lengthX == -1) {
-		srcRect.w = src->w;
-	} else {
-		srcRect.w = lengthX;
-	}
-	if (lengthY == -1) {
-		srcRect.h = src->h;
-	} else {
-		srcRect.h = lengthY;
-	}
-	SDL_BlitSurface(src, &srcRect, dest, &dstRect);
-}
-
-/*******************************************
- * fill surface with another surface
- *******************************************/
-void Game::fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination) {
-	SDL_Surface * temp2 = Sprite::Instance().getAnimation(name, index);
-	int x = 0;
-	int y = 0;
-	while (y < 500) {
-		while (x < 420) {
-			copySurfaceToBackRenderer(temp2, destination, x, y);
-			x += temp2->w;
-		}
-		x = 0;
-		y += temp2->h;
-	}
+	SDL_FreeSurface(changeLevelBufferAnimationVertical);
+	SDL_FreeSurface(changeLevelBufferAnimationHorizontal);
+	SDL_FreeSurface(pauseGameBuffer);
 }
 
 bool Game::isConfigured() {
@@ -213,15 +160,22 @@ void Game::exitGame() {
  *******************************************/
 void Game::tick() {
 
-	switch (gameState) {
+	if (in_keystate[0] == 0) {
+		fprintf(stderr, "relache\n");
+		releaseButton = true;
+	}
 
+	switch (gameState) {
 		case gameStart:
 			//START TEMPORARY LINE
-			if (in_keystate[0] & keyPadSelect && !requestStopGame) {
-				requestStopGame = true;
-				//TODO pause
-			} else if (in_keystate[0] & keyPadStart && !requestStopGame) {
-				//TODO Map
+			if (in_keystate[0] & keyPadSelect && !requestStopGame && releaseButton) {
+				copySurfaceToBackRenderer(screenBuffer, pauseGameBuffer, 0, 0);
+				gameState = gamePause;
+				releaseButton = false;
+			} else if (in_keystate[0] & keyPadStart && !requestStopGame && releaseButton) {
+				copySurfaceToBackRenderer(screenBuffer, pauseGameBuffer, 0, 0);
+				gameState = gameShowMap;
+				releaseButton = false;
 			} else if (in_keystate[0] & keyPadL1 && !requestStopGame) {
 				idx--;
 				if (idx < 0) {
@@ -271,33 +225,100 @@ void Game::tick() {
 
 			//si on change de niveau et que l'on a pas sauvegarder l'état du précédent niveau on le savegarde dans un buffer (nécessaire à l'animation)
 			if (gameState == gameChangeLevel) {
+
 				for (int i = 0; i < players.size(); i++) {
 					players[i]->changeLevel();
 				}
-				changeLevelAnimationPosition = 0;
 				idx++;
-				Uint32 rmask, gmask, bmask, amask;
-				amask = 0xff000000;
-				rmask = 0x00ff0000;
-				gmask = 0x0000ff00;
-				bmask = 0x000000ff;
-				copySurfaceToBackRenderer(screenBuffer, changeLevelBufferAnimation, 0, 0);
+
+				if (idx == 2) {
+					Sound::Instance().playSoundTuberculoz();
+				}
+
+				//CHANGEMENT MUSIQUE POUR BOSS
+				if (!bossMusic && (idx == 30 || idx == 40 || idx == 50 || idx == 60 || idx == 70 || idx == 80 || idx == 90 || idx == 100)) {
+					Sound::Instance().stopMusique();
+					Sound::Instance().startMusicBoss();
+					bossMusic = true;
+				}
+
+				//Changement musique niveau normal
+				if (bossMusic) {
+					bool bossLevel = false;
+					if (idx == 30 || idx == 40 || idx == 50 || idx == 60 || idx == 70 || idx == 80 || idx == 90 || idx == 100 || idx == 101
+							|| idx == 102 || idx == 103) {
+						bossLevel = true;
+					}
+					if (!bossLevel) {
+						Sound::Instance().stopMusique();
+						Sound::Instance().startMusic();
+						bossMusic = false;
+					}
+				}
+
 				currentLevel = LevelService::Instance().getLevel(idx);
 				currentLevel->generateBackGround(-1);
 				ennemies = currentLevel->getEnnemiesList();
 
-				drawLevelBackground();
-				drawLevelForeground();
-				copySurfaceToBackRenderer(screenBuffer, changeLevelBufferAnimation, 0, 500);
+				Sound::Instance().playSoundNextLevel();
+				switch (changeLevelAnimationType) {
+					case changeLevelImmediat:
+						changeLevelAnimationPosition = 0;
+						break;
+					case changeLevelToRight:
+						changeLevelAnimationPosition = 0;
+						copySurfaceToBackRenderer(screenBuffer, changeLevelBufferAnimationHorizontal, 0, 0);
+						drawLevelBackground();
+						drawLevelForeground();
+						copySurfaceToBackRenderer(screenBuffer, changeLevelBufferAnimationHorizontal, 420, 0);
+						break;
+					case changeLevelToLeft:
+						changeLevelAnimationPosition = 420;
+						copySurfaceToBackRenderer(screenBuffer, changeLevelBufferAnimationHorizontal, 420, 0);
+						drawLevelBackground();
+						drawLevelForeground();
+						copySurfaceToBackRenderer(screenBuffer, changeLevelBufferAnimationHorizontal, 0, 0);
+						break;
+					case changeLevelNormal:
+						changeLevelAnimationPosition = 0;
+						copySurfaceToBackRenderer(screenBuffer, changeLevelBufferAnimationVertical, 0, 0);
+						drawLevelBackground();
+						drawLevelForeground();
+						copySurfaceToBackRenderer(screenBuffer, changeLevelBufferAnimationVertical, 0, 500);
+						break;
+				}
+
 			}
 			break;
 		case gameChangeLevel:
-
-			//changement de niveau
 			drawChangeLevel();
 			copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 			break;
-
+		case gamePause:
+			if (in_keystate[0] & keyPadSelect && !requestStopGame && releaseButton) {
+				gameState = gameStart;
+				releaseButton = false;
+			} else if (in_keystate[0] & keyPadStart && !requestStopGame && releaseButton) {
+				requestStopGame = true;
+				releaseButton = false;
+			}
+			drawPauseScreen();
+			copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+			break;
+		case gameEnd:
+			if (in_keystate[0] & keyPadStart && !requestStopGame && releaseButton) {
+				requestStopGame = true;
+				releaseButton = false;
+			}
+			break;
+		case gameShowMap:
+			if (in_keystate[0] & keyPadStart && !requestStopGame && releaseButton) {
+				gameState = gameStart;
+				releaseButton = false;
+			}
+			drawMapScreen();
+			copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+			break;
 	}
 }
 
@@ -434,11 +455,116 @@ void Game::excludeDarkness(int in_X, int in_Y, double zoom) {
  *
  ******************************************/
 void Game::drawChangeLevel() {
-	if (changeLevelAnimationPosition > 500) {
-		gameState = gameStart;
-		changeLevelAnimationPosition = 0;
+	switch (changeLevelAnimationType) {
+		case changeLevelImmediat:
+			gameState = gameStart;
+			changeLevelAnimationPosition = 0;
+			break;
+		case changeLevelToRight:
+			if (changeLevelAnimationPosition > 420) {
+				gameState = gameStart;
+				changeLevelAnimationPosition = 0;
+			} else {
+				copySurfaceToBackRendererWithStartOffset(changeLevelBufferAnimationHorizontal, screenBuffer, 0, 0, 420, 500,
+						changeLevelAnimationPosition, 0);
+				changeLevelAnimationPosition += 20;
+			}
+			break;
+		case changeLevelToLeft:
+			if (changeLevelAnimationPosition < 0) {
+				gameState = gameStart;
+				changeLevelAnimationPosition = 0;
+			} else {
+				copySurfaceToBackRendererWithStartOffset(changeLevelBufferAnimationHorizontal, screenBuffer, 0, 0, 420, 500,
+						changeLevelAnimationPosition, 0);
+				changeLevelAnimationPosition -= 20;
+			}
+			break;
+		case changeLevelNormal:
+			if (changeLevelAnimationPosition > 500) {
+				gameState = gameStart;
+				changeLevelAnimationPosition = 0;
+			} else {
+				copySurfaceToBackRendererWithStartOffset(changeLevelBufferAnimationVertical, screenBuffer, 0, 0, 420, 500, 0,
+						changeLevelAnimationPosition);
+				changeLevelAnimationPosition += 15;
+			}
+			break;
+	}
+}
+
+void Game::drawPauseScreen() {
+	copySurfaceToBackRenderer(pauseGameBuffer, screenBuffer, 0, 0);
+	copySurfaceToBackRenderer(Sprite::Instance().getAnimation("message2", 0), screenBuffer, 0, 0);
+	Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 40, "menu.lang.title", red, true);
+}
+
+void Game::drawMapScreen() {
+	copySurfaceToBackRenderer(pauseGameBuffer, screenBuffer, 0, 0);
+	copySurfaceToBackRenderer(Sprite::Instance().getAnimation("map", 0), screenBuffer, 0, 0);
+}
+
+/**********************************************
+ * function to copy a surface inside an other.
+ **********************************************/
+void Game::copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y) {
+	SDL_Rect dstRect;
+	dstRect.x = x;
+	dstRect.y = y;
+	dstRect.w = src->w;
+	dstRect.h = src->h;
+	SDL_Rect srcRect;
+	srcRect.x = 0;
+	srcRect.y = 0;
+	srcRect.w = src->w;
+	srcRect.h = src->h;
+	SDL_BlitSurface(src, &srcRect, dest, &dstRect);
+}
+
+void Game::copySurfaceToBackRendererWithStartOffset(SDL_Surface * src, SDL_Surface * dest, int x, int y, int lengthX, int lengthY, int offsetX,
+		int offsetY) {
+	SDL_Rect dstRect;
+	dstRect.x = x;
+	dstRect.y = y;
+	if (lengthX == -1) {
+		dstRect.w = src->w;
 	} else {
-		copySurfaceToBackRendererWithStartOffset(changeLevelBufferAnimation, screenBuffer, 0, 0, 420, 500, 0, changeLevelAnimationPosition);
-		changeLevelAnimationPosition += 20;
+		dstRect.w = lengthX;
+	}
+	if (lengthY == -1) {
+		dstRect.h = src->h;
+	} else {
+		dstRect.h = lengthY;
+	}
+	SDL_Rect srcRect;
+	srcRect.x = offsetX;
+	srcRect.y = offsetY;
+	if (lengthX == -1) {
+		srcRect.w = src->w;
+	} else {
+		srcRect.w = lengthX;
+	}
+	if (lengthY == -1) {
+		srcRect.h = src->h;
+	} else {
+		srcRect.h = lengthY;
+	}
+	SDL_BlitSurface(src, &srcRect, dest, &dstRect);
+}
+
+/*******************************************
+ * fill surface with another surface
+ *******************************************/
+void Game::fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination) {
+	SDL_Surface * temp2 = Sprite::Instance().getAnimation(name, index);
+	int x = 0;
+	int y = 0;
+	while (y < 500) {
+		while (x < 420) {
+			copySurfaceToBackRenderer(temp2, destination, x, y);
+			x += temp2->w;
+		}
+		x = 0;
+		y += temp2->h;
 	}
 }

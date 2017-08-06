@@ -258,7 +258,7 @@
 		],
 		"teleporter":[],
 		"vortex":[
-			{"id":0,"x":0,"y":0,"zoomX":0.0,"zoomY":0.0,"enable":false,"destination":0}
+			{"id":0,"x":0,"y":0,"zoomX":0.0,"zoomY":0.0,"enable":false,"destination":0, "animationType":3}
 		],
 		"ennemies": [
 			{"id":0,"x": 9, "y": 16, "type": 0},

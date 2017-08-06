@@ -10,6 +10,7 @@
 #include "resources/sprite_level.h"
 #include "resources/sprite_light.h"
 #include "resources/sprite_map.h"
+#include "resources/sprite_message.h"
 #include "resources/sprite_objets.h"
 #include "resources/sprite_player.h"
 #include "resources/sprite_rayon_teleporter.h"
@@ -157,6 +158,8 @@ void Sprite::loadSurfaceToSprite(std::string name) {
 		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(sprite_flag_png, sprite_flag_png_len));
 	} else if (name.compare("sprite_shadow") == 0) {
 		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(sprite_shadow_png, sprite_shadow_png_len));
+	} else if (name.compare("sprite_message") == 0) {
+		surfaceToParse = IMG_LoadPNG_RW(SDL_RWFromMem(sprite_message_png, sprite_message_png_len));
 	}
 }
 

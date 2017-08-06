@@ -1,6 +1,6 @@
 #include "Vortex.h"
 
-Vortex::Vortex(int id, int x, int y, double zoomX, double zoomY, bool enable, int destination) :
+Vortex::Vortex(int id, int x, int y, double zoomX, double zoomY, bool enable, int destination, int animationType) :
 		Drawable(), Position(x, y), HitBox(), IdElement(id) {
 	this->zoomX = zoomX;
 	this->zoomY = zoomY;
@@ -10,6 +10,7 @@ Vortex::Vortex(int id, int x, int y, double zoomX, double zoomY, bool enable, in
 	this->animation = Sprite::Instance().getAnimation("vortex");
 	this->width = floor(animation[0]->w * zoomX);
 	this->height = floor(animation[0]->h * zoomY);
+	this->animationType = animationType;
 	initHitBox(x, y, width - vortexHitboxBorder, height - vortexHitboxBorder);
 }
 

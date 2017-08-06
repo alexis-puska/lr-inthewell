@@ -6,6 +6,13 @@
 		]
 	},
 	{
+		"file": "sprite_message",
+		"area": [
+			{"x": 0,   "y": 0 ,   "nx": 1, "ny": 1, "n": 1, "sx": 420, "sy": 84, "r": false, "animation": "message1"},
+			{"x": 0,   "y": 84,   "nx": 1, "ny": 1, "n": 1, "sx": 420, "sy": 520, "r": false, "animation": "message2"}
+		]
+	},
+	{
 		"file": "image_menu",
 		"area": [
 			{"x": 0,   "y": 0,   "nx": 1, "ny": 1, "n": 1, "sx": 128, "sy": 520, "r": false, "animation": "menu_background_1"},

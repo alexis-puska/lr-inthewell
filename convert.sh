@@ -38,6 +38,7 @@ xxd -i -c 64 sprite_ennemies.png ../../src/hammerfest/utils/resources/sprite_enn
 xxd -i -c 64 sprite_level.png ../../src/hammerfest/utils/resources/sprite_level.h
 xxd -i -c 64 sprite_light.png ../../src/hammerfest/utils/resources/sprite_light.h
 xxd -i -c 64 sprite_map.png ../../src/hammerfest/utils/resources/sprite_map.h
+xxd -i -c 64 sprite_message.png ../../src/hammerfest/utils/resources/sprite_message.h
 xxd -i -c 64 sprite_objets.png ../../src/hammerfest/utils/resources/sprite_objets.h
 xxd -i -c 64 sprite_player.png ../../src/hammerfest/utils/resources/sprite_player.h
 xxd -i -c 64 sprite_rayon_teleporter.png ../../src/hammerfest/utils/resources/sprite_rayon_teleporter.h

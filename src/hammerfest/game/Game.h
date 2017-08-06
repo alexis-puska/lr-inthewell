@@ -10,23 +10,26 @@
 #include <vector>
 #include <algorithm>
 
-
 #ifndef __MYCLASS_GAME
 #define __MYCLASS_GAME
 
 #include "../utils/Sound.h"
 #include "../utils/Sprite.h"
+#include "../utils/Text.h"
 #include "../utils/LevelService.h"
 #include "../level/Level.h"
 #include "Player.h"
 
 #define gameTick 25
 
-
-
 enum gameStateEnum {
 	gameStart = 0, gamePause = 1, gameEnd = 2, gameShowMap = 3, gameChangeLevel = 4
 };
+
+enum changeLevelEnum {
+	changeLevelImmediat = 0, changeLevelToRight = 1, changeLevelToLeft = 2, changeLevelNormal = 3
+};
+
 
 class Game {
 
@@ -61,31 +64,41 @@ class Game {
 
 		Level * currentLevel;
 
-
+		SDL_Surface * pauseGameBuffer;
 
 		std::vector<Player *> players;
 		std::vector<Ennemie *> ennemies;
 
+		//numero du niveau courant
 		int idx;
 
-
+		//changement de niveau
 		int changeLevelAnimationPosition;
-		SDL_Surface * changeLevelBufferAnimation;
+		int changeLevelAnimationType;
+		SDL_Surface * changeLevelBufferAnimationVertical;
+		SDL_Surface * changeLevelBufferAnimationHorizontal;
+
+		bool bossMusic;
+		bool releaseButton;
 
 
 		/************************
 		 * FUNCTION
 		 ************************/
 		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y);
-		void copySurfaceToBackRendererWithStartOffset(SDL_Surface * src, SDL_Surface * dest, int x, int y, int lengthX, int lengthY, int offsetX, int offsetY);
+		void copySurfaceToBackRendererWithStartOffset(SDL_Surface * src, SDL_Surface * dest, int x, int y, int lengthX, int lengthY, int offsetX,
+				int offsetY);
 		void fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination);
 		void mergeScoreAndBorder();
 		void generateDarkness();
 		void excludeDarkness(int posX, int posY, double zoom);
+
 		void drawChangeLevel();
 
 		void drawLevelBackground();
 		void drawLevelForeground();
+		void drawPauseScreen();
+		void drawMapScreen();
 
 };
 #endif
