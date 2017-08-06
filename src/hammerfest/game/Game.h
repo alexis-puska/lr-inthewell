@@ -69,19 +69,23 @@ class Game {
 		int idx;
 
 
-
 		int changeLevelAnimationPosition;
-		SDL_Surface * previousLevelBuffer;
+		SDL_Surface * changeLevelBufferAnimation;
 
 
 		/************************
 		 * FUNCTION
 		 ************************/
 		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y);
+		void copySurfaceToBackRendererWithStartOffset(SDL_Surface * src, SDL_Surface * dest, int x, int y, int lengthX, int lengthY, int offsetX, int offsetY);
 		void fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination);
 		void mergeScoreAndBorder();
 		void generateDarkness();
 		void excludeDarkness(int posX, int posY, double zoom);
 		void drawChangeLevel();
+
+		void drawLevelBackground();
+		void drawLevelForeground();
+
 };
 #endif

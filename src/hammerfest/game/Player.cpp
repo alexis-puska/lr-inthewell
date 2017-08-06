@@ -33,8 +33,8 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 	/***************************
 	 * --- Value correction ---
 	 ***************************/
-	if (y > 500) {
-		y = -50;
+	if (y > 561) {
+		y = 0;
 	}
 
 	/*****************************
@@ -798,6 +798,8 @@ void Player::calcPoint(bool * platformGrid) {
 	int xCalc = 0;
 	int yCalc = 0;
 
+	fprintf(stderr, "start calcul point\n");
+
 	for (int i = 0; i < 8; i++) {
 		switch (i) {
 			case 0:
@@ -839,14 +841,17 @@ void Player::calcPoint(bool * platformGrid) {
 		if (xCalc < 0) {
 			xCalc = 0;
 		}
-		if (xCalc > 400) {
-			xCalc = 400;
+		if (xCalc >19) {
+			xCalc = 19;
 		}
 		if (yCalc < 0) {
 			yCalc = 0;
-		} else if (yCalc > 500) {
-			yCalc = 500;
+		} else if (yCalc > 24) {
+			yCalc = 24;
 		}
+
+		fprintf(stderr, "case calculé : %i %i %i\n", xCalc + 20 * yCalc, x, y);
+
 		hitboxPoint[i] = platformGrid[xCalc + 20 * yCalc];
 
 	}
@@ -866,4 +871,8 @@ void Player::adjustPositionRight() {
 
 void Player::adjustPositionBottom() {
 	y = y - (y % 5);
+}
+
+void Player::changeLevel() {
+	y = -100;
 }

@@ -64,6 +64,7 @@ class Player: public Position, Drawable, HitBox {
 		Player(int x, int y, int type, unsigned short * in_keystate);
 		~Player();
 		void doSomething(SDL_Surface * dest, bool * platformGrid);
+		void changeLevel();
 	private:
 		int type; //O - igor, 1 - Sandy
 		unsigned short * in_keystate;

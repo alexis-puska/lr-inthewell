@@ -84,6 +84,14 @@ Level * LevelService::getLevel(int id) {
 					new Ennemie(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt(),
 							level["ennemies"][i]["type"].asInt()));
 		}
+
+//		std::map<int, Event*> events;
+//		std::map<int, Door *> doors;
+//		std::map<int, Vortex *> vortexs;
+//		std::vector<Position *> startPlayers;
+//		std::vector<Position *> startEffectObjets;
+//		std::vector<Position *> startPointObjets;
+//		std::vector<Ennemie *> ennemies;
 	}
 	return currentLevel;
 }

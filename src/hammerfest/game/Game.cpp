@@ -45,7 +45,7 @@ Game::Game() {
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	darknessBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
-	previousLevelBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
+	changeLevelBufferAnimation = SDL_CreateRGBSurface(0, 420, 1000, 32, rmask, gmask, bmask, amask);
 	gameState = gameStart;
 	isThreadAlive = false;
 	configured = false;
@@ -65,18 +65,20 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	bmask = 0x000000ff;
 	screenBuffer = SDL_CreateRGBSurface(0, 420, 520, 32, rmask, gmask, bmask, amask);
 	darknessBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
-	previousLevelBuffer = SDL_CreateRGBSurface(0, 420, 500, 32, rmask, gmask, bmask, amask);
+	changeLevelBufferAnimation = SDL_CreateRGBSurface(0, 420, 1000, 32, rmask, gmask, bmask, amask);
 	this->vout_buf = vout_buf;
 	this->in_keystate = in_keystate;
 	isThreadAlive = false;
 	configured = true;
 	requestStopGame = false;
+	gameState = gameStart;
+	changeLevelAnimationPosition = 0;
 	currentLevel = LevelService::Instance().getLevel(0);
 	currentLevel->generateBackGround(-1);
 	ennemies = currentLevel->getEnnemiesList();
 	players.push_back(new Player(100,100,0,&in_keystate[0]));
 	idx = 0;
-	changeLevelAnimationPosition = 0;
+
 	startGame();
 }
 
@@ -89,6 +91,7 @@ Game::~Game() {
 	vout_buf = NULL;
 	SDL_FreeSurface(screenBuffer);
 	SDL_FreeSurface(darknessBuffer);
+	SDL_FreeSurface(changeLevelBufferAnimation);
 }
 
 /**********************************************
@@ -105,6 +108,37 @@ void Game::copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int 
 	srcRect.y = 0;
 	srcRect.w = src->w;
 	srcRect.h = src->h;
+	SDL_BlitSurface(src, &srcRect, dest, &dstRect);
+}
+
+void Game::copySurfaceToBackRendererWithStartOffset(SDL_Surface * src, SDL_Surface * dest, int x, int y, int lengthX, int lengthY, int offsetX,
+		int offsetY) {
+	SDL_Rect dstRect;
+	dstRect.x = x;
+	dstRect.y = y;
+	if (lengthX == -1) {
+		dstRect.w = src->w;
+	} else {
+		dstRect.w = lengthX;
+	}
+	if (lengthY == -1) {
+		dstRect.h = src->h;
+	} else {
+		dstRect.h = lengthY;
+	}
+	SDL_Rect srcRect;
+	srcRect.x = offsetX;
+	srcRect.y = offsetY;
+	if (lengthX == -1) {
+		srcRect.w = src->w;
+	} else {
+		srcRect.w = lengthX;
+	}
+	if (lengthY == -1) {
+		srcRect.h = src->h;
+	} else {
+		srcRect.h = lengthY;
+	}
 	SDL_BlitSurface(src, &srcRect, dest, &dstRect);
 }
 
@@ -179,58 +213,116 @@ void Game::exitGame() {
  *******************************************/
 void Game::tick() {
 
-	//START TEMPORARY LINE
-	if (in_keystate[0] & keyPadSelect && !requestStopGame) {
-		requestStopGame = true;
-		//TODO pause
-	} else if (in_keystate[0] & keyPadStart && !requestStopGame) {
-		//TODO Map
-	} else if (in_keystate[0] & keyPadL1 && !requestStopGame) {
-		idx--;
-		if (idx < 0) {
-			idx = 103;
-		}
-		currentLevel = LevelService::Instance().getLevel(idx);
-		currentLevel->generateBackGround(-1);
-		ennemies = currentLevel->getEnnemiesList();
-	} else if (in_keystate[0] & keyPadR1 && !requestStopGame) {
-		idx++;
-		if (idx > 103) {
-			idx = 0;
-		}
-		currentLevel = LevelService::Instance().getLevel(idx);
-		currentLevel->generateBackGround(-1);
-		ennemies = currentLevel->getEnnemiesList();
-	}
-	//END TEMPORARY LINE
+	switch (gameState) {
 
+		case gameStart:
+			//START TEMPORARY LINE
+			if (in_keystate[0] & keyPadSelect && !requestStopGame) {
+				requestStopGame = true;
+				//TODO pause
+			} else if (in_keystate[0] & keyPadStart && !requestStopGame) {
+				//TODO Map
+			} else if (in_keystate[0] & keyPadL1 && !requestStopGame) {
+				idx--;
+				if (idx < 0) {
+					idx = 103;
+				}
+				currentLevel = LevelService::Instance().getLevel(idx);
+				currentLevel->generateBackGround(-1);
+				ennemies = currentLevel->getEnnemiesList();
+			} else if (in_keystate[0] & keyPadR1 && !requestStopGame) {
+				idx++;
+				if (idx > 103) {
+					idx = 0;
+				}
+				currentLevel = LevelService::Instance().getLevel(idx);
+				currentLevel->generateBackGround(-1);
+				ennemies = currentLevel->getEnnemiesList();
+			}
+			//END TEMPORARY LINE
+
+			drawLevelBackground();
+
+			//TODO
+			//Draw Player
+			for (unsigned int i = 0; i < players.size(); i++) {
+				players[i]->doSomething(screenBuffer, currentLevel->getPlatformGrid());
+				if (currentLevel->getId() > 15) {
+					excludeDarkness(players[i]->getX() + 10, players[i]->getY() - 10, 1.5);
+				}
+
+			}
+
+			//TODO
+			//Draw Ennemies
+			for (unsigned int i = 0; i < ennemies.size(); i++) {
+				ennemies[i]->doSomething(screenBuffer);
+			}
+
+			drawLevelForeground();
+
+			for (int i = 0; i < players.size(); i++) {
+				if ((players[i] != NULL && players[i]->getY() >= 560)) {
+					gameState = gameChangeLevel;
+				}
+			}
+
+			copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+
+			//si on change de niveau et que l'on a pas sauvegarder l'état du précédent niveau on le savegarde dans un buffer (nécessaire à l'animation)
+			if (gameState == gameChangeLevel) {
+				for (int i = 0; i < players.size(); i++) {
+					players[i]->changeLevel();
+				}
+				changeLevelAnimationPosition = 0;
+				idx++;
+				Uint32 rmask, gmask, bmask, amask;
+				amask = 0xff000000;
+				rmask = 0x00ff0000;
+				gmask = 0x0000ff00;
+				bmask = 0x000000ff;
+				copySurfaceToBackRenderer(screenBuffer, changeLevelBufferAnimation, 0, 0);
+				currentLevel = LevelService::Instance().getLevel(idx);
+				currentLevel->generateBackGround(-1);
+				ennemies = currentLevel->getEnnemiesList();
+
+				drawLevelBackground();
+				drawLevelForeground();
+				copySurfaceToBackRenderer(screenBuffer, changeLevelBufferAnimation, 0, 500);
+			}
+			break;
+		case gameChangeLevel:
+
+			//changement de niveau
+			drawChangeLevel();
+			copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
+			break;
+
+	}
+}
+
+/*******************************************
+ *	Dessine l fond du niveau + élément
+ *	en arrière plan
+ ******************************************/
+void Game::drawLevelBackground() {
 	if (currentLevel->getId() > 15) {
 		generateDarkness();
 	}
 
-	//getBackGround
+//getBackGround
 	copySurfaceToBackRenderer(currentLevel->getBackground(), screenBuffer, 0, 0);
 
-	//draw all Element of the level. (Vortex, teleporter, rayon...)
+//draw all Element of the level. (Vortex, teleporter, rayon...)
 	currentLevel->drawHimself(screenBuffer);
+}
 
-	//TODO
-	//Draw Player
-	for (unsigned int i = 0; i < players.size(); i++) {
-		players[i]->doSomething(screenBuffer, currentLevel->getPlatformGrid());
-		if (currentLevel->getId() > 15) {
-			excludeDarkness(players[i]->getX() + 10,players[i]->getY()-10,1.5);
-		}
-
-	}
-
-	//TODO
-	//Draw Ennemies
-	for (unsigned int i = 0; i < ennemies.size(); i++) {
-		ennemies[i]->doSomething(screenBuffer);
-	}
-
-	//merge score and left/right border before the foreground decor for level1
+/*******************************************
+ *	Dessine les elements au premier plan
+ *	du niveau + ombre
+ ******************************************/
+void Game::drawLevelForeground() {
+//merge score and left/right border before the foreground decor for level1
 	if (currentLevel->getId() == 1) {
 		mergeScoreAndBorder();
 		currentLevel->drawForeGroundElement(screenBuffer);
@@ -239,16 +331,16 @@ void Game::tick() {
 		mergeScoreAndBorder();
 	}
 
-	//merge darkness
+//merge darkness
 	if (currentLevel->getId() > 15) {
 		copySurfaceToBackRenderer(darknessBuffer, screenBuffer, 0, 0);
 	}
-	//Copy the generate image to the buffer to retroarch
-	copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 }
 
 /*******************************************
  *   merge score and border
+ *   Copie les bordure gauche et droite
+ *   ainsi que la barre de score
  ******************************************/
 void Game::mergeScoreAndBorder() {
 	if (currentLevel->getId() != 0) {
@@ -260,7 +352,8 @@ void Game::mergeScoreAndBorder() {
 
 /*******************************************
  *
- *   ----------DARKNESS----------
+ * 	-------------DARKNESS-------------
+ *   		Génère l'ombre du niveau
  *
  ******************************************/
 void Game::generateDarkness() {
@@ -270,6 +363,13 @@ void Game::generateDarkness() {
 	}
 	SDL_FillRect(darknessBuffer, NULL, SDL_MapRGBA(darknessBuffer->format, 0, 0, 0, darknessValue));
 }
+
+/****************************************
+ *
+ * Fonction pour supprimer un disque
+ * 		de l'ombre du niveau
+ *
+ ****************************************/
 
 void Game::excludeDarkness(int in_X, int in_Y, double zoom) {
 	if (darknessBuffer != NULL) {
@@ -334,5 +434,11 @@ void Game::excludeDarkness(int in_X, int in_Y, double zoom) {
  *
  ******************************************/
 void Game::drawChangeLevel() {
-
+	if (changeLevelAnimationPosition > 500) {
+		gameState = gameStart;
+		changeLevelAnimationPosition = 0;
+	} else {
+		copySurfaceToBackRendererWithStartOffset(changeLevelBufferAnimation, screenBuffer, 0, 0, 420, 500, 0, changeLevelAnimationPosition);
+		changeLevelAnimationPosition += 20;
+	}
 }
