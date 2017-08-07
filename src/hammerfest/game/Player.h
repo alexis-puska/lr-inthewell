@@ -76,7 +76,7 @@ class Player: public Position, Drawable, HitBox {
 		bool lockLeftDirection;
 		bool lockRightDirection;
 
-		bool hitboxPoint[8];
+		bool hitboxPoint[10];
 
 		bool shotBombe;
 		bool shotBombeUpper;

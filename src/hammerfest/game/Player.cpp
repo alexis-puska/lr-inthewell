@@ -397,6 +397,27 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 		fprintf(stderr, "je tombe par la gauche\n");
 	}
 
+	//Rattrapage pour marcher de platforme en platforme séparé par un trou d'une taille d'un bloc
+	if (hitboxPoint[8] && !hitboxPoint[3] && !hitboxPoint[0] && playerMove && y % 20 <= 12 && direction == playerGoLeft) {
+		fprintf(stderr, "je me rattrape \n");
+		lockLeftDirection = false;
+		if (state != playerJump) {
+			changeState(playerWalk);
+			playerFalling = false;
+			y = y - (y % 20);
+		}
+	}
+
+	if (hitboxPoint[9] && !hitboxPoint[3] && !hitboxPoint[6] && playerMove && y % 20 <= 12 && direction == playerGoRight) {
+		fprintf(stderr, "je me rattrape \n");
+		lockRightDirection = false;
+		if (state != playerJump) {
+			y = y - (y % 20);
+			changeState(playerWalk);
+			playerFalling = false;
+		}
+	}
+
 //on commance a tomber d'une platforme pas la droite, on ajustera pas la position du joueur par la gauche.
 	if (hitboxPoint[2] && !hitboxPoint[3] && !hitboxPoint[4] && state != playerStartFall && !playerFalling && state != playerJump) {
 		changeState(playerStartFall);
@@ -792,15 +813,13 @@ void Player::changeState(int newState) {
 
 void Player::calcPoint(bool * platformGrid) {
 //reset point table
-	memset(hitboxPoint, false, 8);
+	memset(hitboxPoint, false, 10);
 	int xx = x - playerHitboxWidth / 2;
 	int yy = y - playerHitboxHeight;
 	int xCalc = 0;
 	int yCalc = 0;
 
-	fprintf(stderr, "start calcul point\n");
-
-	for (int i = 0; i < 8; i++) {
+	for (int i = 0; i < 10; i++) {
 		switch (i) {
 			case 0:
 				xCalc = xx;
@@ -835,13 +854,21 @@ void Player::calcPoint(bool * platformGrid) {
 				xCalc = x;
 				yCalc = yy;
 				break;
+			case 8:
+				xCalc = xx;
+				yCalc = y;
+				break;
+			case 9:
+				xCalc = xx + playerHitboxWidth;
+				yCalc = y;
+				break;
 		}
 		xCalc = (xCalc - (xCalc % 20)) / 20;
 		yCalc = (yCalc - (yCalc % 20)) / 20;
 		if (xCalc < 0) {
 			xCalc = 0;
 		}
-		if (xCalc >19) {
+		if (xCalc > 19) {
 			xCalc = 19;
 		}
 		if (yCalc < 0) {
@@ -849,11 +876,7 @@ void Player::calcPoint(bool * platformGrid) {
 		} else if (yCalc > 24) {
 			yCalc = 24;
 		}
-
-		fprintf(stderr, "case calculé : %i %i %i\n", xCalc + 20 * yCalc, x, y);
-
 		hitboxPoint[i] = platformGrid[xCalc + 20 * yCalc];
-
 	}
 }
 

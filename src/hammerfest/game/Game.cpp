@@ -159,15 +159,35 @@ void Game::exitGame() {
  *           main function of game
  *******************************************/
 void Game::tick() {
-
 	if (in_keystate[0] == 0) {
-		fprintf(stderr, "relache\n");
 		releaseButton = true;
 	}
 
 	switch (gameState) {
 		case gameStart:
 			//START TEMPORARY LINE
+
+			//CHANGEMENT MUSIQUE POUR BOSS
+			if (!bossMusic && (idx == 30 || idx == 40 || idx == 50 || idx == 60 || idx == 70 || idx == 80 || idx == 90 || idx == 100)) {
+				Sound::Instance().stopMusique();
+				Sound::Instance().startMusicBoss();
+				bossMusic = true;
+			}
+
+			//Changement musique niveau normal
+			if (bossMusic) {
+				bool bossLevel = false;
+				if (idx == 30 || idx == 40 || idx == 50 || idx == 60 || idx == 70 || idx == 80 || idx == 90 || idx == 100 || idx == 101
+						|| idx == 102 || idx == 103) {
+					bossLevel = true;
+				}
+				if (!bossLevel) {
+					Sound::Instance().stopMusique();
+					Sound::Instance().startMusic();
+					bossMusic = false;
+				}
+			}
+
 			if (in_keystate[0] & keyPadSelect && !requestStopGame && releaseButton) {
 				copySurfaceToBackRenderer(screenBuffer, pauseGameBuffer, 0, 0);
 				gameState = gamePause;
@@ -233,27 +253,6 @@ void Game::tick() {
 
 				if (idx == 2) {
 					Sound::Instance().playSoundTuberculoz();
-				}
-
-				//CHANGEMENT MUSIQUE POUR BOSS
-				if (!bossMusic && (idx == 30 || idx == 40 || idx == 50 || idx == 60 || idx == 70 || idx == 80 || idx == 90 || idx == 100)) {
-					Sound::Instance().stopMusique();
-					Sound::Instance().startMusicBoss();
-					bossMusic = true;
-				}
-
-				//Changement musique niveau normal
-				if (bossMusic) {
-					bool bossLevel = false;
-					if (idx == 30 || idx == 40 || idx == 50 || idx == 60 || idx == 70 || idx == 80 || idx == 90 || idx == 100 || idx == 101
-							|| idx == 102 || idx == 103) {
-						bossLevel = true;
-					}
-					if (!bossLevel) {
-						Sound::Instance().stopMusique();
-						Sound::Instance().startMusic();
-						bossMusic = false;
-					}
 				}
 
 				currentLevel = LevelService::Instance().getLevel(idx);
@@ -496,7 +495,7 @@ void Game::drawChangeLevel() {
 void Game::drawPauseScreen() {
 	copySurfaceToBackRenderer(pauseGameBuffer, screenBuffer, 0, 0);
 	copySurfaceToBackRenderer(Sprite::Instance().getAnimation("message2", 0), screenBuffer, 0, 0);
-	Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 40, "menu.lang.title", red, true);
+	Text::Instance().drawTextTranslated(screenBuffer, "verdanaBold20", 210, 80, "menu.lang.title", white, true);
 }
 
 void Game::drawMapScreen() {
