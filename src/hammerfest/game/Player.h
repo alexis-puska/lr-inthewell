@@ -4,9 +4,9 @@
 #define playerHitboxWidth 14
 #define playerHitboxHeight 14
 #define playerSpeed 4
-#define playerSpeedRun 7
+#define playerSpeedRun 6
 #define playerFallSpeed 6
-
+#define timeBeforeBoring 400
 
 #include "../definition/Position.h"
 #include "../definition/Drawable.h"
@@ -42,8 +42,8 @@ enum playerState {
 	playerLanding = 5,
 	playerKill = 6,
 	playerDead = 7,
-	playerShot = 8,
-	playerDrop = 9,
+		playerShot = 8,
+		playerDrop = 9,
 	playerBorder = 10,
 	playerBoring = 11,
 	playerChewingGum = 12,
@@ -64,7 +64,12 @@ class Player: public Position, Drawable, HitBox {
 		Player(int x, int y, int type, unsigned short * in_keystate);
 		~Player();
 		void doSomething(SDL_Surface * dest, bool * platformGrid);
-		void changeLevel();
+		void changeLevel(bool first);
+		void playerKilled();
+		bool isDead();
+		void playerRespawnWithPosition(int x, int y);
+		void playerGoSad();
+		void playerCanRunNow();
 	private:
 		int type; //O - igor, 1 - Sandy
 		unsigned short * in_keystate;
@@ -80,6 +85,7 @@ class Player: public Position, Drawable, HitBox {
 
 		bool shotBombe;
 		bool shotBombeUpper;
+		bool playerIsSad;
 
 		int jumpCyclePosition;
 		int fallCyclePosition;
@@ -90,8 +96,7 @@ class Player: public Position, Drawable, HitBox {
 		int direction;
 		int animIdx;
 		int animIdxMax;
-
-
+		int inactivityCounter;
 
 		void changeState(int newState);
 		void drawHimself(SDL_Surface * dest);

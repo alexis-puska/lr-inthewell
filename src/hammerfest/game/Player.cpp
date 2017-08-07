@@ -13,6 +13,8 @@ Player::Player(int x, int y, int type, unsigned short * in_keystate) :
 	insidePlatform = false;
 	lockLeftDirection = false;
 	lockRightDirection = false;
+	playerIsSad = false;
+	inactivityCounter = 0;
 	animIdxMax = Sprite::Instance().getAnimationSize("igor_right_wait");
 	initHitBox(x - floor(playerHitboxWidth / 2), y - playerHitboxHeight, playerHitboxWidth, playerHitboxHeight);
 }
@@ -49,8 +51,15 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 			animIdxMax = Sprite::Instance().getAnimationSize("igor_right_wait");
 			animIdx = 0;
 		}
-	} else {
+		if (state == playerWait) {
+			inactivityCounter++;
+			if (inactivityCounter > timeBeforeBoring) {
+				changeState(playerChewingGum);
+			}
+		}
 
+	} else {
+		inactivityCounter = 0;
 		/*********************
 		 * BOUTON TEMPORAIRE
 		 ********************/
@@ -70,13 +79,13 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 			switch (state) {
 				case playerWait:
 				case playerLanding:
-				case playerKill:
+
 				case playerShot:
 				case playerDrop:
 				case playerBorder:
 				case playerBoring:
 				case playerChewingGum:
-				case playerKnockOut:
+
 				case playerRaiseUp:
 				case playerRespawn:
 				case playerCry:
@@ -99,6 +108,8 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 				case playerJump:
 					playerMove = true;
 					break;
+				case playerKill:
+				case playerKnockOut:
 				case playerDead:
 					break;
 			}
@@ -111,13 +122,13 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 			switch (state) {
 				case playerWait:
 				case playerLanding:
-				case playerKill:
+
 				case playerShot:
 				case playerDrop:
 				case playerBorder:
 				case playerBoring:
 				case playerChewingGum:
-				case playerKnockOut:
+
 				case playerRaiseUp:
 				case playerRespawn:
 				case playerCry:
@@ -140,6 +151,8 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 				case playerJump:
 					playerMove = true;
 					break;
+				case playerKill:
+				case playerKnockOut:
 				case playerDead:
 					break;
 			}
@@ -153,14 +166,13 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 				case playerWait:
 				case playerWalk:
 				case playerLanding:
-				case playerKill:
+
 				case playerDead:
 				case playerShot:
 				case playerDrop:
 				case playerBorder:
 				case playerBoring:
 				case playerChewingGum:
-				case playerKnockOut:
 				case playerRaiseUp:
 				case playerRespawn:
 				case playerRun:
@@ -170,6 +182,8 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 				case playerStartFall:
 				case playerFall:
 				case playerJump:
+				case playerKill:
+				case playerKnockOut:
 					break;
 			}
 		}
@@ -244,7 +258,6 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 				case playerJump:
 				case playerKill:
 				case playerDead:
-
 				case playerKnockOut:
 					break;
 			}
@@ -290,48 +303,81 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 			break;
 		case playerLanding:
 			if (animIdx >= animIdxMax) {
-				changeState(playerWait);
+				if (playerIsSad) {
+					changeState(playerCry);
+				} else {
+					changeState(playerWait);
+				}
 			}
 			break;
 		case playerKill:
+			if (animIdx >= animIdxMax) {
+				changeState(playerDead);
+			}
 			break;
 		case playerDead:
 			break;
 		case playerShot:
 			if (animIdx >= animIdxMax) {
-				changeState(playerWait);
+				if (playerIsSad) {
+					changeState(playerCry);
+				} else {
+					changeState(playerWait);
+				}
 			}
 			break;
 		case playerDrop:
 			if (animIdx >= animIdxMax) {
-				changeState(playerWait);
+				if (playerIsSad) {
+					changeState(playerCry);
+				} else {
+					changeState(playerWait);
+				}
 			}
 			break;
 		case playerBorder:
 			break;
 		case playerBoring:
 			if (animIdx >= animIdxMax) {
-				changeState(playerWait);
+				inactivityCounter = 0;
+				if (playerIsSad) {
+					changeState(playerCry);
+				} else {
+					changeState(playerWait);
+				}
 			}
 			break;
 		case playerChewingGum:
 			if (animIdx >= animIdxMax) {
-				changeState(playerWait);
+				inactivityCounter = 0;
+				if (playerIsSad) {
+					changeState(playerCry);
+				} else {
+					changeState(playerWait);
+				}
 			}
 			break;
 		case playerKnockOut:
 			if (animIdx >= animIdxMax) {
-				changeState(playerDead);
+				changeState(playerRaiseUp);
 			}
 			break;
 		case playerRaiseUp:
 			if (animIdx >= animIdxMax) {
-				changeState(playerWait);
+				if (playerIsSad) {
+					changeState(playerCry);
+				} else {
+					changeState(playerWait);
+				}
 			}
 			break;
 		case playerRespawn:
 			if (animIdx >= animIdxMax) {
-				changeState(playerWait);
+				if (playerIsSad) {
+					changeState(playerCry);
+				} else {
+					changeState(playerWait);
+				}
 			}
 			break;
 		case playerRun:
@@ -340,22 +386,16 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 			break;
 	}
 
-	//if (hitboxPoint[3]) {
-	//	fprintf(stderr, "x,y : %i %i %s %i\n", x, y, hitboxPoint[3] ? "true" : "false", y % 20);
-	//}
-
-	updateHitBox(x - floor(playerHitboxWidth / 2), y - playerHitboxHeight);
-
 	/***********************************************************************
 	 * Gestion des colisions avec les platformes
 	 ***********************************************************************/
-
 	calcPoint(platformGrid);
 
 	if (hitboxPoint[0] && hitboxPoint[1] && !lockLeftDirection && y > 0) {
 		adjustPositionLeft();
 		fprintf(stderr, "je cogne par la gauche\n");
 	}
+
 	if (hitboxPoint[6] && hitboxPoint[5] && !lockRightDirection && y > 0) {
 		adjustPositionRight();
 		fprintf(stderr, "je cogne par la droite\n");
@@ -377,12 +417,22 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 		lockRightDirection = false;
 	}
 
+	if (!hitboxPoint[2] && hitboxPoint[3] && hitboxPoint[4] && (state == playerWait || state == playerCry) && previousDirection == playerGoLeft) {
+		changeState(playerBorder);
+	}
+
+	if (hitboxPoint[2] && hitboxPoint[3] && !hitboxPoint[4] && (state == playerWait || state == playerCry) && previousDirection == playerGoRight) {
+		changeState(playerBorder);
+	}
+
 	if (y <= 0) {
 		lockRightDirection = false;
 		lockLeftDirection = false;
 	}
 
-//Gestion de l'attérissage
+	/****************************************
+	 * Gestion de l'attérissage
+	 ****************************************/
 	if (((hitboxPoint[2] && hitboxPoint[3]) || (hitboxPoint[3] && hitboxPoint[4])) && (y % 20 <= 5 || y % 20 == 0)
 			&& (playerFalling || state == playerStartFall)) {
 		if (!hitboxPoint[7]) {
@@ -392,17 +442,31 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 		}
 	}
 
+	/****************************************
+	 * Gestion de la chute d'une plateform
+	 ****************************************/
+	if (hitboxPoint[2] && !hitboxPoint[3] && !hitboxPoint[4] && state != playerStartFall && !playerFalling && state != playerJump) {
+		changeState(playerStartFall);
+		fprintf(stderr, "je tombe par la droite\n");
+	}
+
 	if (!hitboxPoint[2] && !hitboxPoint[3] && hitboxPoint[4] && state != playerStartFall && !playerFalling && state != playerJump) {
 		changeState(playerStartFall);
 		fprintf(stderr, "je tombe par la gauche\n");
 	}
 
-	//Rattrapage pour marcher de platforme en platforme séparé par un trou d'une taille d'un bloc
+	/****************************************
+	 * rattrapage du bord d'une plateforme
+	 ****************************************/
 	if (hitboxPoint[8] && !hitboxPoint[3] && !hitboxPoint[0] && playerMove && y % 20 <= 12 && direction == playerGoLeft) {
 		fprintf(stderr, "je me rattrape \n");
 		lockLeftDirection = false;
 		if (state != playerJump) {
-			changeState(playerWalk);
+			if (playerCanRun) {
+				changeState(playerRun);
+			} else {
+				changeState(playerWalk);
+			}
 			playerFalling = false;
 			y = y - (y % 20);
 		}
@@ -413,17 +477,18 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 		lockRightDirection = false;
 		if (state != playerJump) {
 			y = y - (y % 20);
-			changeState(playerWalk);
+			if (playerCanRun) {
+				changeState(playerRun);
+			} else {
+				changeState(playerWalk);
+			}
 			playerFalling = false;
 		}
 	}
 
-//on commance a tomber d'une platforme pas la droite, on ajustera pas la position du joueur par la gauche.
-	if (hitboxPoint[2] && !hitboxPoint[3] && !hitboxPoint[4] && state != playerStartFall && !playerFalling && state != playerJump) {
-		changeState(playerStartFall);
-		fprintf(stderr, "je tombe par la droite\n");
-	}
-
+	/****************************************
+	 * Déplacement joueur gauche ou droite
+	 ****************************************/
 	if (playerMove) {
 		if (direction == playerGoLeft && !lockLeftDirection) {
 			if (playerCanRun) {
@@ -450,17 +515,32 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 		}
 	}
 
-//chute du joueur
+	/****************************************
+	 * Chute du joueur
+	 ****************************************/
 	if (playerFalling && state != playerStartFall) {
 		y += playerFallSpeed;
 	}
 
-//increment animation
+	/****************************************
+	 * Mise à jour de la hitbox
+	 ****************************************/
+	updateHitBox(x - floor(playerHitboxWidth / 2), y - playerHitboxHeight);
+
+	/****************************************
+	 * Incrément animation
+	 ****************************************/
 	if (animIdx >= animIdxMax) {
-		animIdx = 0;
+		if (state == playerBorder) {
+			animIdx = 10;
+		} else {
+			animIdx = 0;
+		}
 	}
 
-//dessin joueur
+	/****************************************
+	 * Dessin
+	 ****************************************/
 	drawHimself(dest);
 }
 
@@ -737,10 +817,42 @@ void Player::drawHimself(SDL_Surface * dest) {
 				break;
 		}
 	}
-	if (state == playerShot) {
-		copySurfaceToBackRenderer(t, dest, (x - (t->w / 2)) + leftPadding, y - (t->h) + 17);
-	} else {
-		copySurfaceToBackRenderer(t, dest, (x - (t->w / 2)) + leftPadding, y - (t->h));
+
+	switch (state) {
+		case playerShot:
+			copySurfaceToBackRenderer(t, dest, (x - (t->w / 2)) + leftPadding, y - (t->h) + 17);
+			break;
+		case playerWait:
+		case playerWalk:
+		case playerLanding:
+		case playerBoring:
+		case playerRaiseUp:
+		case playerRespawn:
+		case playerRun:
+		case playerCry:
+		case playerStartFall:
+		case playerFall:
+		case playerDrop:
+		case playerJump:
+		case playerKill:
+		case playerDead:
+		case playerKnockOut:
+			copySurfaceToBackRenderer(t, dest, (x - (t->w / 2)) + leftPadding, y - (t->h));
+			break;
+		case playerChewingGum:
+			if (previousDirection == playerGoLeft) {
+				copySurfaceToBackRenderer(t, dest, (x - (t->w / 2) - 3) + leftPadding, y - (t->h) + 6);
+			} else {
+				copySurfaceToBackRenderer(t, dest, (x - (t->w / 2) + 3) + leftPadding, y - (t->h) + 6);
+			}
+			break;
+		case playerBorder:
+			if (previousDirection == playerGoLeft) {
+				copySurfaceToBackRenderer(t, dest, (x - (t->w / 2)) - 10 + leftPadding, y - (t->h) + 10);
+			} else {
+				copySurfaceToBackRenderer(t, dest, (x - (t->w / 2)) + 10 + leftPadding, y - (t->h) + 10);
+			}
+			break;
 	}
 
 	animIdx++;
@@ -896,6 +1008,34 @@ void Player::adjustPositionBottom() {
 	y = y - (y % 5);
 }
 
-void Player::changeLevel() {
-	y = -100;
+void Player::changeLevel(bool first) {
+	if (first) {
+		y = -100;
+	} else {
+		y = -300;
+	}
+	playerIsSad = false;
+}
+
+void Player::playerKilled() {
+	changeState(playerKill);
+}
+
+void Player::playerRespawnWithPosition(int x, int y) {
+	this->x = x;
+	this->y = y;
+	playerCanRun = false;
+	changeState(playerRespawn);
+}
+
+bool Player::isDead() {
+	return state == playerDead;
+}
+
+void Player::playerGoSad() {
+	playerIsSad = true;
+}
+
+void Player::playerCanRunNow() {
+	playerCanRun = true;
 }

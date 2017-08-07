@@ -247,7 +247,7 @@ void Game::tick() {
 			if (gameState == gameChangeLevel) {
 
 				for (int i = 0; i < players.size(); i++) {
-					players[i]->changeLevel();
+					players[i]->changeLevel(true);
 				}
 				idx++;
 
