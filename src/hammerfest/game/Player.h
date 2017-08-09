@@ -2,7 +2,7 @@
 #define __MYCLASS_PLAYER
 
 #define playerHitboxWidth 14
-#define playerHitboxHeight 14
+#define playerHitboxHeight 16
 #define playerSpeed 4
 #define playerSpeedRun 6
 #define playerFallSpeed 6
@@ -42,8 +42,8 @@ enum playerState {
 	playerLanding = 5,
 	playerKill = 6,
 	playerDead = 7,
-		playerShot = 8,
-		playerDrop = 9,
+	playerShot = 8,
+	playerDrop = 9,
 	playerBorder = 10,
 	playerBoring = 11,
 	playerChewingGum = 12,
@@ -74,7 +74,8 @@ class Player: public Position, Drawable, HitBox {
 		int type; //O - igor, 1 - Sandy
 		unsigned short * in_keystate;
 
-		int state;
+
+
 		bool playerCanRun;
 		bool playerMove;
 
@@ -86,16 +87,26 @@ class Player: public Position, Drawable, HitBox {
 		bool shotBombe;
 		bool shotBombeUpper;
 		bool playerIsSad;
+		bool dropBombeInAir;
 
 		int jumpCyclePosition;
 		int fallCyclePosition;
 		bool playerFalling;
 		bool insidePlatform;
 
-		int previousDirection;
+
+		int state;
 		int direction;
 		int animIdx;
 		int animIdxMax;
+
+
+
+		int previousState;
+		int previousDirection;
+		int prevAnimIdx;
+		int prevAnimIdxMax;
+
 		int inactivityCounter;
 
 		void changeState(int newState);
