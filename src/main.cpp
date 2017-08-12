@@ -1,8 +1,6 @@
 #include <iostream>
 #include <fstream>
 
-#include <stdio.h>
-
 #include "hammerfest/Hammerfest.h"
 
 #ifdef IS_OSX
@@ -276,7 +274,7 @@ int main(int argc, char *argv[]) {
 			SDL_GetWindowSize(window, &x, &y);
 			int nx = ceil(x / 420);
 			int ny = ceil(y / 520);
-			int mul;
+			int mul = 0;
 			if (nx == ny) {
 				mul = nx;
 			} else if (nx > ny) {

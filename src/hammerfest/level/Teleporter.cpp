@@ -31,7 +31,7 @@ Teleporter::~Teleporter() {
 }
 
 void Teleporter::drawHimself(SDL_Surface * dest) {
-	//fprintf(stderr,"start draw teleporter\n");
+	//std::cout<<"start draw teleporter\n";
 	offsetAnimation+=16;
 	if ((offsetAnimation + (length * gridSize)) > teleporterSpriteSize * bufferSize) {
 		offsetAnimation = 0;
@@ -41,7 +41,7 @@ void Teleporter::drawHimself(SDL_Surface * dest) {
 	if (vertical) {
 		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("base_teleporter", 2), dest, (x * gridSize)+leftPadding, y * gridSize);
 		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("base_teleporter", 3), dest, (x * gridSize)+leftPadding, (y + length-1) * gridSize);
-		//fprintf(stderr,"start draw teleporter vertical\nflux\n");
+        std::cout<<"start draw teleporter vertical\nflux\n";
 		copySurfaceToBackRendererWithStartOffset(buffer, dest, (x * gridSize)+leftPadding, (y * gridSize) + 6, 20, ((length * gridSize) - 10), 0, offsetAnimation);
 
 	} else {

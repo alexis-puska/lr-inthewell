@@ -42,7 +42,7 @@ int Rayon::getType() {
 }
 
 void Rayon::drawHimself(SDL_Surface * dest) {
-	//fprintf(stderr,"draw rayon\n");
+	//std::cout<<"draw rayon\n";
 	if (animation) {
 		copySurfaceToBackRenderer(buffer[0], dest, (x * gridSize)+leftPadding, y * gridSize);
 		animation = false;
@@ -50,5 +50,5 @@ void Rayon::drawHimself(SDL_Surface * dest) {
 		copySurfaceToBackRenderer(buffer[1], dest, (x * gridSize)+leftPadding, y * gridSize);
 		animation = true;
 	}
-	//fprintf(stderr,"fin draw rayon\n");
+	//std::cout<<"fin draw rayon\n";
 }

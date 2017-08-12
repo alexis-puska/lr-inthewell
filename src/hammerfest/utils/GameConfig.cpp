@@ -35,11 +35,11 @@ void GameConfig::decGameLoaded() {
 void GameConfig::incGameMode() {
 	this->gameMode++;
 	if (this->gameMode == timeAttackMode && !timeAttack) {
-		fprintf(stderr, "switch time attack\n");
+        std::cout <<"switch time attack\n";
 		this->gameMode++;
 	}
 	if (this->gameMode == multicoopMode && !multi) {
-		fprintf(stderr, "switch multi\n");
+		std::cout << "switch multi\n";
 		this->gameMode++;
 	}
 	if (this->gameMode > soccerMode) {
@@ -50,11 +50,11 @@ void GameConfig::incGameMode() {
 void GameConfig::decGameMode() {
 	this->gameMode--;
 	if (this->gameMode == multicoopMode && !isMulticoopUnlock()) {
-		fprintf(stderr, "switch multi\n");
+		std::cout << "switch multi\n";
 		this->gameMode--;
 	}
 	if (this->gameMode == timeAttackMode && !isTimeAttackUnlock()) {
-		fprintf(stderr, "switch time attack\n");
+        std::cout << "switch time attack\n";
 		this->gameMode--;
 	}
 	if (this->gameMode < soloMode) {

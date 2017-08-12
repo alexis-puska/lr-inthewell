@@ -6,7 +6,7 @@
 #include <SDL2/SDL_mixer.h>
 #endif
 
-#include <stdio.h>
+#include <iostream>
 
 #ifndef __MYCLASS_Sound
 #define __MYCLASS_Sound

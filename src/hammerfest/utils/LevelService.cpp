@@ -4,13 +4,13 @@
 LevelService LevelService::m_instance = LevelService();
 
 LevelService::LevelService() {
-	fprintf(stderr, "Init levelService system\n");
+    std::cout << "Init levelService system\n";
 	currentLevelId = -1;
 	parseJsonFile();
 }
 
 LevelService::~LevelService() {
-	fprintf(stderr, "close levelService system\n");
+    std::cout << "close levelService system\n";
 }
 
 LevelService& LevelService::Instance() {

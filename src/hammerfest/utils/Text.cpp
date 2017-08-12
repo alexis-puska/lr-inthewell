@@ -19,7 +19,7 @@ Text Text::m_instance = Text();
 
 Text::Text() {
 	TTF_Init();
-	fprintf(stderr, "Init Text system\n");
+	std::cout<< "Init text system\n";
 	fonts["satan24"] = TTF_OpenFontRW(SDL_RWFromMem(font_satans_ttf, font_satans_ttf_len), 1, 24);
 	fonts["gothic24"] = TTF_OpenFontRW(SDL_RWFromMem(font_franklin_gothic_heavy_all_ttf, font_franklin_gothic_heavy_all_ttf_len), 1, 24);
 	fonts["impact24"] = TTF_OpenFontRW(SDL_RWFromMem(font_impact_ttf, font_impact_ttf_len), 1, 24);
@@ -31,7 +31,7 @@ Text::Text() {
 }
 
 Text::~Text() {
-	fprintf(stderr, "close text system\n");
+    std::cout<< "Close text system\n";
 	TTF_Quit();
 }
 
@@ -147,7 +147,7 @@ std::string Text::getQuestTitle(int id) {
 }
 
 std::string Text::getQuestDescription(int id) {
-	fprintf(stderr,"get description %i\n", id);
+    std::cout << "get description " << id << "\n";
 	std::stringstream ss;
 	ss << "quest." << id << ".description";
 	return texts[GameConfig::Instance().getLang()][ss.str()];

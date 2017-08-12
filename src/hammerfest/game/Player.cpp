@@ -262,7 +262,7 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 		 * BOUTON POSE / POUSSE BOMBE
 		 *******************************/
 		if (keystate & keyPadA) {
-			//fprintf(stderr, "pousse pose\n");
+			//std::cout<<"pousse pose\n";
 			switch (state) {
 				case playerWait:
 				case playerWalk:
@@ -290,7 +290,7 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 				case playerJump:
 				case playerStartFall:
 				case playerFall:
-					//fprintf(stderr, "ici");
+					//std::cout<<"ici";
 					if (!dropBombeInAir) {
 						dropBombeInAir = true;
 						Sound::Instance().playSoundPutBombe();
@@ -352,7 +352,7 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 
 				}
 				//acc = round(10 * exp(-0.22 * animIdx) + 1);
-				//fprintf(stderr, "jump acc: %i\n", acc);
+				//std::cout<<"jump acc: "<<acc<<"\n";
 				y -= acc;
 			}
 			break;
@@ -397,12 +397,12 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 		case playerShot:
 			if (dropBombeInAir) {
 				if (playerFalling) {
-					//fprintf(stderr, "shot + falling ! ");
+					//std::cout<<"shot + falling ! ";
 					acc = round(10 * exp(-0.22 * (animIdx + 5)) + 1);
 					y -= acc;
 					y -= 6;
 				} else {
-					//fprintf(stderr, "shot + et non falling ! ");
+					//std::cout<<"shot + et non falling ! ";
 					y -= 2;
 				}
 				if (animIdx >= animIdxMax - 2) {
@@ -493,41 +493,41 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 
 	if (hitboxPoint[0] && hitboxPoint[1] && !lockLeftDirection && y > 0) {
 		adjustPositionLeft();
-		//fprintf(stderr, "je cogne par la gauche\n");
+		//std::cout<<"je cogne par la gauche\n";
 	}
 
 	if (hitboxPoint[6] && hitboxPoint[5] && !lockRightDirection && y > 0) {
 		adjustPositionRight();
-		//fprintf(stderr, "je cogne par la droite\n");
+		//std::cout<<"je cogne par la droite\n";
 	}
 
 	if ((hitboxPoint[0] || hitboxPoint[1]) && !lockLeftDirection) {
-		//fprintf(stderr, "Bloque gauche\n");
+		//std::cout<<"Bloque gauche\n";
 		lockLeftDirection = true;
 	}
 
 	if (!hitboxPoint[0] && !hitboxPoint[1] && lockLeftDirection) {
-		//fprintf(stderr, "Debloque gauche\n");
+		//std::cout<<"Debloque gauche\n";
 		lockLeftDirection = false;
 	}
 
 	if ((hitboxPoint[5] || hitboxPoint[6]) && !lockRightDirection) {
 		lockRightDirection = true;
-		//fprintf(stderr, "Bloque droite\n");
+		//std::cout<<"Bloque droite\n";
 	}
 
 	if (!hitboxPoint[5] && !hitboxPoint[6] && lockRightDirection) {
 		lockRightDirection = false;
-		//fprintf(stderr, "Debloque droite\n");
+		//std::cout<<"Debloque droite\n";
 	}
 
 	if (!hitboxPoint[2] && hitboxPoint[3] && hitboxPoint[4] && (state == playerWait || state == playerCry) && previousDirection == playerGoLeft) {
-		//fprintf(stderr, "Sur le bord GAUCHE\n");
+		//std::cout<<"Sur le bord GAUCHE\n";
 		changeState(playerBorder);
 	}
 
 	if (hitboxPoint[2] && hitboxPoint[3] && !hitboxPoint[4] && (state == playerWait || state == playerCry) && previousDirection == playerGoRight) {
-		//fprintf(stderr, "Sur le bord DROIT\n");
+		//std::cout<<"Sur le bord DROIT\n";
 		changeState(playerBorder);
 	}
 
@@ -537,7 +537,7 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 	if (((hitboxPoint[2] && hitboxPoint[3]) || (hitboxPoint[3] && hitboxPoint[4])) && (y % 20 <= 5 || y % 20 == 0)
 			&& (playerFalling || state == playerStartFall)) {
 		if (!hitboxPoint[7]) {
-			//fprintf(stderr, "j'atteris\n");
+			//std::cout<<"j'atteris\n";
 			y = y - (y % 20);
 			changeState(playerLanding);
 			playerFalling = false;
@@ -549,19 +549,19 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 	 ****************************************/
 	if (hitboxPoint[2] && !hitboxPoint[3] && !hitboxPoint[4] && state != playerStartFall && !playerFalling && state != playerJump) {
 		changeState(playerStartFall);
-		//fprintf(stderr, "je tombe par la droite\n");
+		//std::cout<<"je tombe par la droite\n";
 	}
 
 	if (!hitboxPoint[2] && !hitboxPoint[3] && hitboxPoint[4] && state != playerStartFall && !playerFalling && state != playerJump) {
 		changeState(playerStartFall);
-		//fprintf(stderr, "je tombe par la gauche\n");
+		//std::cout<<"je tombe par la gauche\n";
 	}
 
 	/****************************************
 	 * rattrapage du bord d'une plateforme
 	 ****************************************/
 	if (hitboxPoint[8] && !hitboxPoint[3] && !hitboxPoint[0] && playerMove && y % 20 <= 12 && direction == playerGoLeft) {
-		//fprintf(stderr, "je me rattrape \n");
+		//std::cout<<"je me rattrape \n";
 		lockLeftDirection = false;
 		if (state != playerJump) {
 			if (playerCanRun) {
@@ -575,7 +575,7 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 	}
 
 	if (hitboxPoint[9] && !hitboxPoint[3] && !hitboxPoint[6] && playerMove && y % 20 <= 12 && direction == playerGoRight) {
-		//fprintf(stderr, "je me rattrape \n");
+		//std::cout<<"je me rattrape \n";
 		lockRightDirection = false;
 		if (state != playerJump) {
 			y = y - (y % 20);
@@ -600,7 +600,7 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 			}
 			//bloquage gauche bord d'écran
 			if (x <= playerHitboxWidth / 2) {
-				//fprintf(stderr, "je touche l'écran\n");
+				//std::cout<< "je touche l'écran\n";
 				x = playerHitboxWidth / 2;
 			}
 		} else if (direction == playerGoRight && !lockRightDirection) {
@@ -611,7 +611,7 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 			}
 			//bloquage droit bord d'écran
 			if (x + (playerHitboxWidth / 2) >= 400 - playerHitboxWidth / 2) {
-				//fprintf(stderr, "je touche l'ecran\n");
+				//std::cout<<"je touche l'ecran\n";
 				x = 400 - playerHitboxWidth / 2;
 			}
 		}
@@ -967,7 +967,7 @@ void Player::changeState(int newState) {
 	prevAnimIdx = animIdx;
 	prevAnimIdxMax = animIdxMax;
 	animIdx = 0;
-	//fprintf(stderr, "change state : %i\n", newState);
+	//std::cout<<"change state : "<<newState<<"\n";
 	switch (state) {
 		case playerWait:
 			animIdxMax = Sprite::Instance().getAnimationSize("igor_right_wait");

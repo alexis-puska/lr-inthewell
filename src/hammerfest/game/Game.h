@@ -6,7 +6,7 @@
 #include <SDL2/SDL_image.h>
 #endif
 
-#include <stdio.h>
+#include <iostream>
 #include <vector>
 #include <algorithm>
 

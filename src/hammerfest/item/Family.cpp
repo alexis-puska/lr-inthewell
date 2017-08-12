@@ -18,17 +18,17 @@ std::vector<int> Family::getItems() {
 }
 
 void Family::printName() {
-	fprintf(stderr, "%i - %s\n", id, name);
+    std::cout<< id<<" - "<<name<<"\n";
 }
 
 void Family::printJson() {
-	fprintf(stderr, "{\"id\":%i,\"name\":[\n{\"fr\":\"%s\"},\n{\"en\":\"%s\"},\n{\"es\":\"%s\"}\n],\"items\":[", id, name, name, name);
+    std::cout<<"{\"id\":"<<id<<",\"name\":[\n{\"fr\":\""<<name<<"\"},\n{\"en\":\""<<name<<"\"},\n{\"es\":\""<<name<<"\"}\n],\"items\":[";
 	for(unsigned int i = 0;i < items.size();i++){
 		if(i < items.size() -1){
-			fprintf(stderr, "%i,",items[i]);
+            std::cout<<items[i]<<",";
 		}else{
-			fprintf(stderr, "%i",items[i]);
+            std::cout<<items[i];
 		}
 	}
-	fprintf(stderr, "]},\n");
+    std::cout <<"]},\n";
 }

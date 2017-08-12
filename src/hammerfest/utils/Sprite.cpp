@@ -22,12 +22,12 @@ Sprite Sprite::m_instance = Sprite();
 
 Sprite::Sprite() {
 	IMG_Init (IMG_INIT_PNG);
-	fprintf(stderr, "Init sprite system\n");
+	std::cout<< "Init sprite system\n";
 	parseJsonFile();
 }
 
 Sprite::~Sprite() {
-	fprintf(stderr, "close sprite system\n");
+	std::cout<< "Close sprite system\n";
 	IMG_Quit();
 }
 
@@ -55,17 +55,17 @@ void Sprite::parseJsonFile() {
 		if (currentFileParse.empty()) {
 			currentFileParse = root[i]["file"].asString();
 			loadSurfaceToSprite(root[i]["file"].asString());
-			//fprintf(stderr, "load surface : %s\n", currentFileParse.c_str());
+            //std::cout<<"load surface : "<<currentFileParse<<"\n";
 		} else if (currentFileParse.compare(root[i]["file"].asString()) != 0) {
-			//fprintf(stderr, "release surface : %s\n", currentFileParse.c_str());
+			//std::cout<<"release surface : "<<currentFileParse<<"\n";
 			currentFileParse = root[i]["file"].asString();
 			releaseSurfaceToParse();
-			//fprintf(stderr, "load surface : %s\n", currentFileParse.c_str());
+			//std::cout<<"load surface : "<<currentFileParse<<"\n";
 			loadSurfaceToSprite(root[i]["file"].asString());
 		}
 		for (unsigned int j = 0; j < root[i]["area"].size(); j++) {
 			element = root[i]["area"];
-			int x = element[j]["x"].asUInt();
+            int x = element[j]["x"].asUInt();
 			int y = element[j]["y"].asUInt();
 			int nx = element[j]["nx"].asUInt();
 			int ny = element[j]["ny"].asUInt();
@@ -88,8 +88,8 @@ void Sprite::parseJsonFile() {
 //			if(r){
 //				sprites[anim_flip] = new SDL_Surface *[n];
 //			}
-			//fprintf(stderr, "begin parse file : %s, area: %i %i %i %i %i %i %i %s %s \n", currentFileParse.c_str(), x, y, nx, ny, n, sx, sy, r ? "true" : "false", anim.c_str());
-			for (int l = 0; l < ny; l++) {
+            //std::cout<<"begin parse file : " << currentFileParse << ", area: " << x << " " << y << " " << nx << " " << ny << " " << n << " " << sx << " " << sy << " " << (r ? "true" : "false")<<" "<<anim<<"\n";
+            for (int l = 0; l < ny; l++) {
 				for (int k = 0; k < nx; k++) {
 					srcTextureRect.x = x + (k * sx);
 					srcTextureRect.y = y + (l * sy);
@@ -172,5 +172,5 @@ std::vector <SDL_Surface *> Sprite::getAnimation(std::string name) {
 }
 
 int Sprite::getAnimationSize(std::string name) {
-	return (long)sprites[name].size();
+	return (int)sprites[name].size();
 }

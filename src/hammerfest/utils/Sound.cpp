@@ -29,9 +29,9 @@
 Sound Sound::m_instance = Sound();
 
 Sound::Sound() {
-	fprintf(stderr, "InitSoundSystem\n");
+    std::cout << "Init sound system\n";
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024) == -1) {
-		printf("%s", Mix_GetError());
+        std::cout << Mix_GetError();
 	}
 
 	musicBoss = Mix_LoadMUSType_RW(SDL_RWFromMem(music_boss_mp3, music_boss_mp3_len), MUS_MP3, 0);
@@ -63,7 +63,7 @@ Sound::Sound() {
 }
 
 Sound::~Sound() {
-	fprintf(stderr, "close sound system\n");
+	std::cout << "Close sound system\n";
 	Mix_CloseAudio();
 	Mix_FreeMusic(musicBoss);
 	Mix_FreeMusic(musicHurryUp);

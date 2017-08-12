@@ -12,21 +12,17 @@ static int metronome(void* data) {
 		t1 = SDL_GetTicks();
 		game->tick();
 		t2 = SDL_GetTicks();
-
 		delay = gameTick - (t2 - t1);
-
-		fprintf(stderr,"take time : %i %i\n",delay, t2-t1);
-
 		if (delay > 0) {
 			if (delay < 5) {
 				warningCount++;
-				//fprintf(stderr, "%i ms %li\n", (int) delay, warningCount);
+				std::cout << "warn < 5 " << delay << " " << warningCount << "\n";
 			}
-			//fprintf(stderr, "d%li\n", delay);
+			std::cout << "take time : " << delay << " " << t2 - t1 << "\n";
 			SDL_Delay(delay);
 		} else {
 			warningCount++;
-			//fprintf(stderr, "warning %li %li\n", warningCount, delay);
+			std::cout << "warn < 0 : " << delay << " " << warningCount << "\n";
 		}
 	}
 	return 0;
@@ -36,8 +32,8 @@ static int metronome(void* data) {
  *             Default constructor
  ***********************************************/
 Game::Game() {
-	srand ((unsigned int)time(NULL));
-    Uint32 rmask, gmask, bmask, amask;
+	srand((unsigned int) time(NULL));
+	Uint32 rmask, gmask, bmask, amask;
 	amask = 0xff000000;
 	rmask = 0x00ff0000;
 	gmask = 0x0000ff00;
@@ -62,7 +58,8 @@ Game::Game() {
  *                 Constructor
  **********************************************/
 Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
-	srand ((unsigned int)time(NULL));Uint32 rmask, gmask, bmask, amask;
+	srand((unsigned int) time(NULL));
+	Uint32 rmask, gmask, bmask, amask;
 	amask = 0xff000000;
 	rmask = 0x00ff0000;
 	gmask = 0x0000ff00;
@@ -84,7 +81,7 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	currentLevel = LevelService::Instance().getLevel(0);
 	currentLevel->generateBackGround(-1);
 	ennemies = currentLevel->getEnnemiesList();
-	players.push_back(new Player(80,400,0,&in_keystate[0]));
+	players.push_back(new Player(80, 400, 0, &in_keystate[0]));
 	changeLevelAnimationType = changeLevelNormal;
 	idx = 0;
 
@@ -143,7 +140,7 @@ void Game::stopGame() {
 		requestStopGame = false;
 		int treadResult = 0;
 		SDL_WaitThread(mainThread, &treadResult);
-		//fprintf(stderr, "result stop thread %i\n", treadResult);
+		std::cout << "result stop thread" << treadResult << "\n";
 	}
 }
 

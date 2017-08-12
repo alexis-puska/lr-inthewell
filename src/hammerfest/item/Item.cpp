@@ -27,7 +27,7 @@ int Item::getValue() {
 }
 
 void Item::printName() {
-	fprintf(stderr, "%i - %s\n", id, name.c_str());
+	std::cout << id << " - " << name << "\n";
 }
 
 void Item::printJson() {

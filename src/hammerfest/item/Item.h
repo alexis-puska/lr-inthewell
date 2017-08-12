@@ -2,6 +2,7 @@
 #define __MYCLASS_ITEM
 
 #include <stdio.h>
+#include <iostream>
 #include <string>
 #include "../definition/IdElement.h"
 

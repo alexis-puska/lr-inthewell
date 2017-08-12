@@ -56,9 +56,9 @@ ItemFileSystem& ItemFileSystem::Instance() {
 void ItemFileSystem::init(std::string path, bool newSaveFile) {
 	srand ((unsigned int)time(NULL));
     saveFilePath =  path;
-	fprintf(stderr, "init item file system : ");
+    std::cout<< "init item file system : ";
 	if (newSaveFile) {
-		fprintf(stderr, "create..........");
+        std::cout<<"create..........";
 		saveFile = fopen(path.c_str(), "r+");
 		for (int i = 0; i < 4; i++) {
 			for (int i = 0; i < nbOfValueInFile; i++) {
@@ -68,7 +68,7 @@ void ItemFileSystem::init(std::string path, bool newSaveFile) {
 		fclose(saveFile);
 
 	}
-	fprintf(stderr, "end\n");
+	std::cout<<"end\n";
 	buildDatabase();
 }
 
@@ -105,43 +105,43 @@ int ItemFileSystem::loadAccount(int accountId) {
 	availableItemPoint6.clear();
 	availableItemPoint7.clear();
 
-	fprintf(stderr, "Loading data from file System, Accound : %i\n", accountId);
+	 std::cout<< "Loading data from file System, Accound : "<< accountId<<"\n";
 	saveFile = fopen(saveFilePath.c_str(), "r+");
 	rewind(saveFile);
 	fseek(saveFile, (nbOfValueInFile * 8) * accountId, SEEK_SET);
 	if (fscanf(saveFile, "%08x", &scoreMax) <= 0) {
-		fprintf(stderr, "error read file");
+		 std::cout<<"error read file";
 		return -1;
 	}
 	fseek(saveFile, (nbOfValueInFile * 8) * accountId + 8, SEEK_SET);
 	if (fscanf(saveFile, "%08x", &scoreLastGame) <= 0) {
-		fprintf(stderr, "error read file");
+		 std::cout<<"error read file";
 		return -1;
 	}
 	fseek(saveFile, (nbOfValueInFile * 8) * accountId + 16, SEEK_SET);
 	if (fscanf(saveFile, "%08x", &nbGame) <= 0) {
-		fprintf(stderr, "error read file");
+		 std::cout<<"error read file";
 		return -1;
 	}
 	fseek(saveFile, (nbOfValueInFile * 8) * accountId + 24, SEEK_SET);
 	if (fscanf(saveFile, "%08x", &levelReached) <= 0) {
-		fprintf(stderr, "error read file");
+		 std::cout<<"error read file";
 		return -1;
 	}
 	for (int i = 4; i < nbOfValueInFile; i++) {
 		fseek(saveFile, (nbOfValueInFile * 8) * accountId + i * 8, SEEK_SET);
 		if (fscanf(saveFile, "%08x", &fridge[i - 4]) <= 0) {
-			fprintf(stderr, "error read file");
+			 std::cout<<"error read file";
 			return -1;
 		}
 	}
 
-	//fprintf(stderr, "\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
+	// std::cout<<"\n\n\n\n---------- LoadAccount ----------\n\n\n\n";
 
 	//for (int i = 0; i < nbOfValueInFile - 4; i++) {
-	//	fprintf(stderr, "%i - %6i;\t", i, fridge[i]);
+	//	 std::cout<< i<<" - "<< fridge[i]<<"\t";
 	//}
-	//fprintf(stderr, "\n\n\n\n---------- LoadAccount ----------\n\n\n\n");
+	// std::cout<< "\n\n\n\n---------- LoadAccount ----------\n\n\n\n";
 
 	fclose(saveFile);
 	loadDefaultAvailableItem();
@@ -192,10 +192,10 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 
 		}
 		if (valide) {
-			//fprintf(stderr, "quest valide %i %i!!!\n", tested->getGiveFamilly().size(), tested->getRemoveFamilly());
+			//std::cout<<"quest valide "<<tested->getGiveFamilly().size()<<" "<<tested->getRemoveFamilly()<<"!!!\n";
 			std::vector<int> givedFamilly = tested->getGiveFamilly();
 			for (unsigned int j = 0; j < givedFamilly.size(); j++) {
-				//fprintf(stderr, "add family : %i !!!\n", givedFamilly.at(j));
+				//std::cout<<"add family : "<<givedFamilly.at(j)<<" !!!\n";
 				familyAvailable.push_back(givedFamilly.at(j));
 			}
 			if (tested->getRemoveFamilly() != -1) {
@@ -212,8 +212,8 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 	for (unsigned int i = 0; i < familyToRemove.size(); i++) {
 		for (unsigned int j = 0; j < familyAvailable.size(); j++) {
 			if (familyAvailable.at(j) == familyToRemove.at(i)) {
-				//fprintf(stderr, "remove family : %i !!!\n", familyToRemove.at(i));
-				//fprintf(stderr, "\n\nerase\n\n");
+				//std::cout<<"remove family : "<<familyToRemove.at(i)<<" !!!\n";
+				//std::cout<<"\n\nerase\n\n";
 				familyAvailable.erase(familyAvailable.begin() + j);
 				break;
 			}
@@ -229,13 +229,13 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 	 *  with unlocked familly
 	 **************************/
 	for (unsigned int i = 0; i < familyAvailable.size(); i++) {
-		//fprintf(stderr, "traitment of family id : %i\n", familyAvailable.at(i));
-
+        //std::cout<<"traitment of family id : "<<familyAvailable.at(i)<<"\n";
+		
 		Family * tested = familys.at(familyAvailable.at(i));
 
 		for (unsigned int j = 0; j < tested->getItems().size(); j++) {
 			int id = tested->getItems().at(j);
-			//fprintf(stderr, "treatment of item id : %i \n", id);
+			//std::cout<<"treatment of item id : "<<id<<"\n";
 			Item * item = items.at(id);
 			if (item->getValue() == -1) {
 				switch (item->getRarity()) {
@@ -292,66 +292,66 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 		}
 	}
 
-	fprintf(stderr, "base item load\n");
-	fprintf(stderr, "\nbase available point 7\n");
+	 std::cout<<"base item load\n";
+	 std::cout<< "\nbase available point 7\n";
 	for (unsigned int i = 0; i < availableItemPoint7.size(); i++) {
-		fprintf(stderr, "%i ", availableItemPoint7.at(i));
+		 std::cout<<availableItemPoint7.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available point 6\n");
+	 std::cout<< "\nbase available point 6\n";
 	for (unsigned int i = 0; i < availableItemPoint6.size(); i++) {
-		fprintf(stderr, "%i ", availableItemPoint6.at(i));
+		 std::cout<<availableItemPoint6.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available point 5\n");
+	 std::cout<<"\nbase available point 5\n";
 	for (unsigned int i = 0; i < availableItemPoint5.size(); i++) {
-		fprintf(stderr, "%i ", availableItemPoint5.at(i));
+		 std::cout<<availableItemPoint5.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available point 4\n");
+	 std::cout<<"\nbase available point 4\n";
 	for (unsigned int i = 0; i < availableItemPoint4.size(); i++) {
-		fprintf(stderr, "%i ", availableItemPoint4.at(i));
+		 std::cout<<availableItemPoint4.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available point 3\n");
+	 std::cout<<"\nbase available point 3\n";
 	for (unsigned int i = 0; i < availableItemPoint3.size(); i++) {
-		fprintf(stderr, "%i ", availableItemPoint3.at(i));
+		 std::cout<<availableItemPoint3.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available point 2\n");
+	 std::cout<<"\nbase available point 2\n";
 	for (unsigned int i = 0; i < availableItemPoint2.size(); i++) {
-		fprintf(stderr, "%i ", availableItemPoint2.at(i));
+		 std::cout<<availableItemPoint2.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available point 1\n");
+	 std::cout<<"\nbase available point 1\n";
 	for (unsigned int i = 0; i < availableItemPoint1.size(); i++) {
-		fprintf(stderr, "%i ", availableItemPoint1.at(i));
+		 std::cout<<availableItemPoint1.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available point 0\n");
+	 std::cout<<"\nbase available point 0\n";
 	for (unsigned int i = 0; i < availableItemPoint0.size(); i++) {
-		fprintf(stderr, "%i ", availableItemPoint0.at(i));
+		 std::cout<<availableItemPoint0.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available effect 6\n");
+	 std::cout<<"\nbase available effect 6\n";
 	for (unsigned int i = 0; i < availableItemEffect6.size(); i++) {
-		fprintf(stderr, "%i ", availableItemEffect6.at(i));
+		 std::cout<<availableItemEffect6.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available effect 5\n");
+	 std::cout<<"\nbase available effect 5\n";
 	for (unsigned int i = 0; i < availableItemEffect5.size(); i++) {
-		fprintf(stderr, "%i ", availableItemEffect5.at(i));
+		 std::cout<<availableItemEffect5.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available effect 4\n");
+	 std::cout<<"\nbase available effect 4\n";
 	for (unsigned int i = 0; i < availableItemEffect4.size(); i++) {
-		fprintf(stderr, "%i ", availableItemEffect4.at(i));
+		 std::cout<<availableItemEffect4.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available effect 3\n");
+	 std::cout<<"\nbase available effect 3\n";
 	for (unsigned int i = 0; i < availableItemEffect3.size(); i++) {
-		fprintf(stderr, "%i ", availableItemEffect3.at(i));
+		 std::cout<<availableItemEffect3.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available effect 2\n");
+	 std::cout<<"\nbase available effect 2\n";
 	for (unsigned int i = 0; i < availableItemEffect2.size(); i++) {
-		fprintf(stderr, "%i ", availableItemEffect2.at(i));
+		 std::cout<<availableItemEffect2.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available effect 1\n");
+	 std::cout<<"\nbase available effect 1\n";
 	for (unsigned int i = 0; i < availableItemEffect1.size(); i++) {
-		fprintf(stderr, "%i ", availableItemEffect1.at(i));
+		 std::cout<<availableItemEffect1.at(i)<<" ";
 	}
-	fprintf(stderr, "\nbase available effect 0\n");
+	 std::cout<<"\nbase available effect 0\n";
 	for (unsigned int i = 0; i < availableItemEffect0.size(); i++) {
-		fprintf(stderr, "%i ", availableItemEffect0.at(i));
+		 std::cout<<availableItemEffect0.at(i)<<" ";
 	}
 
 }
@@ -405,7 +405,7 @@ void ItemFileSystem::simulateGame() {
 
 		fridge[point] = fridge[point] + 1;
 		fridge[effect] = fridge[effect] + 1;
-		fprintf(stderr, "level %i - effect %i - point %i\n", i, effect, point);
+         std::cout<< "level "<<i<<" - effect "<<effect<<" - point "<<point<<"\n";
 	}
 }
 
