@@ -1,7 +1,9 @@
-#ifndef IS_OSX
-#include <SDL2/SDL_mixer.h>
-#else
+#ifdef IS_OSX
 #include <SDL2_mixer/SDL_mixer.h>
+#elif WIN32
+#include <SDL_mixer.h>
+#else
+#include <SDL2/SDL_mixer.h>
 #endif
 
 #include <stdio.h>

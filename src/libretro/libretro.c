@@ -14,12 +14,18 @@
 
 #include "libretro.h"
 #include "../hammerfest/MyWrapper.h"
-#include <SDL2/SDL.h>
 #include <unistd.h>
-#ifndef IS_OSX
-#include <SDL2/SDL_image.h>
-#else
+
+
+#ifdef IS_OSX
+#include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
+#elif WIN32
+#include <SDL.h>
+#include <SDL_image.h>
+#else
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #endif
 
 #define VOUT_MAX_WIDTH 420

@@ -1,11 +1,15 @@
-#ifndef IS_OSX
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL2_rotozoom.h>
-#include <SDL2/SDL2_gfxPrimitives.h>
-#else
+#ifdef IS_OSX
 #include <SDL2_image/SDL_image.h>
 #include <SDL2_gfx/SDL2_rotozoom.h>
 #include <SDL2_gfx/SDL2_gfxPrimitives.h>
+#elif WIN32
+#include <SDL_image.h>
+#include <SDL2_rotozoom.h>
+#include <SDL2_gfxPrimitives.h>
+#else
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL2_rotozoom.h>
+#include <SDL2/SDL2_gfxPrimitives.h>
 #endif
 
 #include <string>

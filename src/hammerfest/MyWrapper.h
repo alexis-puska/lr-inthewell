@@ -1,10 +1,14 @@
 #ifndef __MYWRAPPER_H
 #define __MYWRAPPER_H
+#ifdef IS_OSX
 #include <SDL2/SDL.h>
-#ifndef IS_OSX
-#include <SDL2/SDL_image.h>
-#else
 #include <SDL2_image/SDL_image.h>
+#elif WIN32
+#include <SDL.h>
+#include <SDL_image.h>
+#else
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #endif
 
 

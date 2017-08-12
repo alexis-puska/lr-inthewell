@@ -1,15 +1,20 @@
+#ifdef IS_OSX
 #include <SDL2/SDL.h>
-#ifndef IS_OSX
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL2_rotozoom.h>
-#else
 #include <SDL2_image/SDL_image.h>
 #include <SDL2_gfx/SDL2_rotozoom.h>
+#elif WIN32
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL2_rotozoom.h>
+#else
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL2_rotozoom.h>
 #endif
+
+
 #include <stdio.h>
 #include <sstream>
-
-
 
 #ifndef __MYCLASS_HAMMERFEST
 #define __MYCLASS_HAMMERFEST

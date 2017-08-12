@@ -1,10 +1,15 @@
-#ifndef IS_OSX
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-#else
+#ifdef IS_OSX
 #include <SDL2_image/SDL_image.h>
 #include <SDL2_ttf/SDL_ttf.h>
+#elif WIN32
+#include <SDL_image.h>
+#include <SDL_ttf.h>
+#else
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #endif
+
+
 
 #include <iostream>
 #include <fstream>
