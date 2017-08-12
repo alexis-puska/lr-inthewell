@@ -64,12 +64,12 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 		/*********************
 		 * BOUTON TEMPORAIRE
 		 ********************/
-		if (keystate & keyPadUp) {
+		/*if (keystate & keyPadUp) {
 			y -= 5;
 		}
 		if (keystate & keyPadDown) {
 			y += 5;
-		}
+		}*/
 		/*********************
 		 * BOUTON TEMPORAIRE
 		 ********************/
