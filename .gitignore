@@ -4,3 +4,11 @@
 *.o
 
 lr_hammerfest_libretro.so
+*.obj
+*.exe
+*.iobj
+*.ipdb
+*.log
+*.pdb
+*.tlog
+*.idb

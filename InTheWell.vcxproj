@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\hammerfest\definition\Drawable.cpp" />
+    <ClCompile Include="src\hammerfest\definition\HitBox.cpp" />
+    <ClCompile Include="src\hammerfest\definition\IdElement.cpp" />
+    <ClCompile Include="src\hammerfest\definition\Position.cpp" />
+    <ClCompile Include="src\hammerfest\game\Bombe.cpp" />
+    <ClCompile Include="src\hammerfest\game\Game.cpp" />
+    <ClCompile Include="src\hammerfest\game\Player.cpp" />
+    <ClCompile Include="src\hammerfest\Hammerfest.cpp" />
+    <ClCompile Include="src\hammerfest\item\Family.cpp" />
+    <ClCompile Include="src\hammerfest\item\Item.cpp" />
+    <ClCompile Include="src\hammerfest\item\ItemFileSystem.cpp" />
+    <ClCompile Include="src\hammerfest\item\Quest.cpp" />
+    <ClCompile Include="src\hammerfest\level\Decor.cpp" />
+    <ClCompile Include="src\hammerfest\level\Door.cpp" />
+    <ClCompile Include="src\hammerfest\level\Ennemie.cpp" />
+    <ClCompile Include="src\hammerfest\level\Event.cpp" />
+    <ClCompile Include="src\hammerfest\level\Level.cpp" />
+    <ClCompile Include="src\hammerfest\level\Lock.cpp" />
+    <ClCompile Include="src\hammerfest\level\Pick.cpp" />
+    <ClCompile Include="src\hammerfest\level\Platform.cpp" />
+    <ClCompile Include="src\hammerfest\level\Rayon.cpp" />
+    <ClCompile Include="src\hammerfest\level\Teleporter.cpp" />
+    <ClCompile Include="src\hammerfest\level\Vortex.cpp" />
+    <ClCompile Include="src\hammerfest\utils\GameConfig.cpp" />
+    <ClCompile Include="src\hammerfest\utils\Jsoncpp.cpp" />
+    <ClCompile Include="src\hammerfest\utils\LevelService.cpp" />
+    <ClCompile Include="src\hammerfest\utils\Sound.cpp" />
+    <ClCompile Include="src\hammerfest\utils\Sprite.cpp" />
+    <ClCompile Include="src\hammerfest\utils\Text.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\hammerfest\definition\Drawable.h" />
+    <ClInclude Include="src\hammerfest\definition\HitBox.h" />
+    <ClInclude Include="src\hammerfest\definition\IdElement.h" />
+    <ClInclude Include="src\hammerfest\definition\Position.h" />
+    <ClInclude Include="src\hammerfest\game\Bombe.h" />
+    <ClInclude Include="src\hammerfest\game\Game.h" />
+    <ClInclude Include="src\hammerfest\game\Player.h" />
+    <ClInclude Include="src\hammerfest\Hammerfest.h" />
+    <ClInclude Include="src\hammerfest\item\Family.h" />
+    <ClInclude Include="src\hammerfest\item\Item.h" />
+    <ClInclude Include="src\hammerfest\item\ItemFileSystem.h" />
+    <ClInclude Include="src\hammerfest\item\Quest.h" />
+    <ClInclude Include="src\hammerfest\level\Decor.h" />
+    <ClInclude Include="src\hammerfest\level\Door.h" />
+    <ClInclude Include="src\hammerfest\level\Ennemie.h" />
+    <ClInclude Include="src\hammerfest\level\Event.h" />
+    <ClInclude Include="src\hammerfest\level\Level.h" />
+    <ClInclude Include="src\hammerfest\level\Lock.h" />
+    <ClInclude Include="src\hammerfest\level\Pick.h" />
+    <ClInclude Include="src\hammerfest\level\Platform.h" />
+    <ClInclude Include="src\hammerfest\level\Rayon.h" />
+    <ClInclude Include="src\hammerfest\level\Teleporter.h" />
+    <ClInclude Include="src\hammerfest\level\Vortex.h" />
+    <ClInclude Include="src\hammerfest\utils\GameConfig.h" />
+    <ClInclude Include="src\hammerfest\utils\LevelService.h" />
+    <ClInclude Include="src\hammerfest\utils\Sound.h" />
+    <ClInclude Include="src\hammerfest\utils\Sprite.h" />
+    <ClInclude Include="src\hammerfest\utils\Text.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{D2EAE1F3-F5F4-49F1-AFB4-C2B4B88FB4D0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>InTheWell</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\dev\libs\SDL2_gfx-1.0.3;C:\dev\libs\SDL2-2.0.5\include;C:\dev\libs\SDL2_ttf-2.0.14\include;C:\dev\libs\SDL2_net-2.0.1\include;C:\dev\libs\SDL2_mixer-2.0.1\include;C:\dev\libs\SDL2_image-2.0.1\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>C:\dev\libs\SDL2_gfx-1.0.3\Win32\Release;C:\dev\libs\SDL2-2.0.5\lib\x86;C:\dev\libs\SDL2_ttf-2.0.14\lib\x86;C:\dev\libs\SDL2_net-2.0.1\lib\x86;C:\dev\libs\SDL2_mixer-2.0.1\lib\x86;C:\dev\libs\SDL2_image-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\dev\libs\SDL2_gfx-1.0.3;C:\dev\libs\SDL2-2.0.5\include;C:\dev\libs\SDL2_ttf-2.0.14\include;C:\dev\libs\SDL2_net-2.0.1\include;C:\dev\libs\SDL2_mixer-2.0.1\include;C:\dev\libs\SDL2_image-2.0.1\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>C:\dev\libs\SDL2-2.0.5\lib\x64;C:\dev\libs\SDL2_gfx-1.0.3\x64\Release;C:\dev\libs\SDL2_image-2.0.1\lib\x64;C:\dev\libs\SDL2_mixer-2.0.1\lib\x64;C:\dev\libs\SDL2_net-2.0.1\lib\x64;C:\dev\libs\SDL2_ttf-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\dev\libs\SDL2_gfx-1.0.3;C:\dev\libs\SDL2-2.0.5\include;C:\dev\libs\SDL2_ttf-2.0.14\include;C:\dev\libs\SDL2_net-2.0.1\include;C:\dev\libs\SDL2_mixer-2.0.1\include;C:\dev\libs\SDL2_image-2.0.1\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>C:\dev\libs\SDL2_gfx-1.0.3\Win32\Release;C:\dev\libs\SDL2-2.0.5\lib\x86;C:\dev\libs\SDL2_ttf-2.0.14\lib\x86;C:\dev\libs\SDL2_net-2.0.1\lib\x86;C:\dev\libs\SDL2_mixer-2.0.1\lib\x86;C:\dev\libs\SDL2_image-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\dev\libs\SDL2_gfx-1.0.3;C:\dev\libs\SDL2-2.0.5\include;C:\dev\libs\SDL2_ttf-2.0.14\include;C:\dev\libs\SDL2_net-2.0.1\include;C:\dev\libs\SDL2_mixer-2.0.1\include;C:\dev\libs\SDL2_image-2.0.1\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>C:\dev\libs\SDL2-2.0.5\lib\x64;C:\dev\libs\SDL2_gfx-1.0.3\x64\Release;C:\dev\libs\SDL2_image-2.0.1\lib\x64;C:\dev\libs\SDL2_mixer-2.0.1\lib\x64;C:\dev\libs\SDL2_net-2.0.1\lib\x64;C:\dev\libs\SDL2_ttf-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2_net.lib;SDL2_gfx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_net.lib;SDL2_ttf.lib;SDL2_gfx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2_net.lib;SDL2_gfx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_net.lib;SDL2_ttf.lib;SDL2_gfx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
