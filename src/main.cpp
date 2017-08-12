@@ -98,24 +98,27 @@ int main(int argc, char *argv[]) {
 
 	unsigned short in_keystate[16];
 
-	bool newSaveFile = false;
-
-	char saveFilePath[255];
+    bool newSaveFile = false;
+    
+    char saveFilePath[255];
     FILE * saveFile;
-
-	strcat(saveFilePath, "InTheWell.srm");
-
-    if (FILE *file = fopen(saveFilePath, "r")) {
+    
+    strcat(saveFilePath, "InTheWell.srm");
+    
+    if (saveFile = fopen(saveFilePath, "r")) {
         fclose (saveFile);
-        fprintf(stderr, "saving file found : %s\n", saveFilePath);
+        std::cerr << "saving file found";
         saveFile = fopen(saveFilePath, "r+");
         newSaveFile = false;
     } else {
-        fprintf(stderr, "saving file doesn't exist, create one\n");
+        std::cerr << "saving file doesn't exist, create one\n";
         saveFile = fopen(saveFilePath, "w");
         newSaveFile = true;
     }
     
+    
+    
+    fclose (saveFile);
     
 	
 	fclose (saveFile);
