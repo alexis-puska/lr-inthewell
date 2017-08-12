@@ -1,8 +1,10 @@
 #include "Hammerfest.h"
 
+#ifdef LIBRETRO
 int main(int argc, char** argv) {
 
 }
+#endif
 
 enum menuStep {
 	splashMenu = 0, langMenu, saveMenu, modeMenu, optionMenu, mainMenu, fridgeMenu, questMenu, gameStep

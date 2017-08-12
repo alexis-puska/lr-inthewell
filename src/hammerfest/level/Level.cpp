@@ -2,6 +2,7 @@
 
 Level::Level(int id, bool showPlatform, int backgroundId, int platformVerticalId, int platformHorizontalId, int next) :
 		IdElement(id) {
+	fprintf(stderr, "Create Level %i\n", id);
 	this->showPlatform = showPlatform;
 	this->backgroundId = backgroundId;
 	this->platformVerticalId = platformVerticalId;
@@ -19,7 +20,6 @@ Level::Level(int id, bool showPlatform, int backgroundId, int platformVerticalId
 }
 
 Level::~Level() {
-	fprintf(stderr, "\n\n\ndestroy level %i\n\n\n", id);
 	decors.clear();
 	platforms.clear();
 	events.clear();

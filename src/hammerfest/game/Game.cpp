@@ -85,7 +85,7 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
 	currentLevel = LevelService::Instance().getLevel(0);
 	currentLevel->generateBackGround(-1);
 	ennemies = currentLevel->getEnnemiesList();
-	players.push_back(new Player(100,100,0,&in_keystate[0]));
+	players.push_back(new Player(80,400,0,&in_keystate[0]));
 	changeLevelAnimationType = changeLevelNormal;
 	idx = 0;
 
