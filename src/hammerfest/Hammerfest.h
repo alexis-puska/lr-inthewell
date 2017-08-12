@@ -30,7 +30,7 @@
 class Hammerfest {
 
 	public:
-		Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool newSaveFile);
+    Hammerfest(SDL_Surface * vout_bufLibretro, std::string saveFilePath, bool newSaveFile);
 		~Hammerfest();
 		void tick(unsigned short in_keystateLibretro[16]);
 	private:

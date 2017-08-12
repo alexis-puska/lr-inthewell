@@ -99,8 +99,12 @@ int main(int argc, char *argv[]) {
 
 	unsigned short in_keystate[16];
 
+    
+    
+    std::string path = "InTheWell.srm";
+    
     bool newSaveFile = false;
-    std::ifstream my_file("InTheWell.srm");
+    std::ifstream my_file(path.c_str());
     if (my_file.good())
     {
         std::cout << "saving file found";
@@ -108,17 +112,15 @@ int main(int argc, char *argv[]) {
     }else{
         std::cout << "saving file doesn't exist, create one\n";
         std::ofstream ofs;
-        ofs.open ("InTheWell.srm", std::ofstream::out);
+        ofs.open (path.c_str(), std::ofstream::out);
         ofs.close();
         std::cerr << "created\n";
         newSaveFile = true;
     }
 
-    
-    
-    
 
-	Hammerfest hammerfest = Hammerfest(buffer, "InTheWell.srm", newSaveFile);
+    
+	Hammerfest hammerfest = Hammerfest(buffer, path, newSaveFile);
 
 	char cont = 1;
 

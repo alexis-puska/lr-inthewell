@@ -10,7 +10,7 @@ enum menuStep {
 	splashMenu = 0, langMenu, saveMenu, modeMenu, optionMenu, mainMenu, fridgeMenu, questMenu, gameStep
 };
 
-Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, char * saveFilePath, bool newSaveFile) {
+Hammerfest::Hammerfest(SDL_Surface * vout_bufLibretro, std::string saveFilePath, bool newSaveFile) {
 	rmask = 0x00ff0000;
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;

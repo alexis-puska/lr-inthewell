@@ -32,7 +32,7 @@ class ItemFileSystem {
 
 		ItemFileSystem();
 		~ItemFileSystem();
-		void init(char * saveFile, bool newSaveFile);
+		void init(std::string saveFile, bool newSaveFile);
 		int loadAccount(int accountId);
 		void save(int score, bool gamePlayed, int level);
 		Quest * getQuest(int index);
@@ -57,7 +57,7 @@ class ItemFileSystem {
 		void unlockSomething(Quest * tested);
 
 		int accountId;
-		char saveFilePath[255];
+		std::string saveFilePath;
 		FILE* saveFile;
 
 		int accountLoaded;
