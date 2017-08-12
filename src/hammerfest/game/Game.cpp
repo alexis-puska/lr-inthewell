@@ -5,20 +5,18 @@
  ***********************************************/
 static int metronome(void* data) {
 	Game *game = ((Game *) data);
-	struct timeval t1, t2;
+	int t1, t2;
 	long delay;
 	long warningCount = 0l;
 	while (game->isAlive()) {
-		gettimeofday(&t1, NULL);
+		t1 = SDL_GetTicks();
 		game->tick();
-		gettimeofday(&t2, NULL);
+		t2 = SDL_GetTicks();
 
-		long milliseconds = (t2.tv_usec - t1.tv_usec) / 1000;
-		if (milliseconds < 0) {
-			milliseconds += 1000;
-		}
+		delay = gameTick - (t2 - t1);
 
-		delay = gameTick - milliseconds;
+		fprintf(stderr,"take time : %i %i\n",delay, t2-t1);
+
 		if (delay > 0) {
 			if (delay < 5) {
 				warningCount++;
