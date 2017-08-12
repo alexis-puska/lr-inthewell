@@ -61,6 +61,14 @@ else ifeq ($(platform), linux-portable)
 	LIBDL :=
 	SHARED := -shared -Wl,--version-script=libretro/link.T
 
+else ifeq ($(platform), linuxStandAlone)
+	TARGET := InTheWell
+	fpic := -fPIC
+	LIBS = -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lSDL2_net -lSDL2_gfx -g `sdl2-config --static-libs`
+	CFLAGS += `sdl2-config --cflags`
+	SHARED := -Wl,--version-script=libretro/link.T
+
+
 
 # OS X
 else ifeq ($(platform), osx)
@@ -123,9 +131,16 @@ ifeq ($(platform),win)
 endif
 
 
-MAIN_LDFLAGS += -shared
+
 MAIN_LDLIBS += $(LIBM) $(LIBZ)
 
 
+ifeq ($(platform), linuxStandAlone)
+MAIN_LDFLAGS += 
+libretro_all: all
+include MakefileStandAlone
+else
+MAIN_LDFLAGS += -shared
 libretro_all: all
 include Makefile
+endif

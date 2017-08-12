@@ -58,7 +58,7 @@ unzip the code, open the unzipped folder, unzip xcode.zip archive inside build i
 
 
 ===============================
-**Compilation :**
+**Compilation for retroarch CORE :**
 
 Unix / mac os X : 
 ```
@@ -84,6 +84,26 @@ CONF_SWAPSIZE=800
 - add the version of your raspberry pi
 - 2 for the raspberry pi 2
 - 3 for the raspberry pi 3
+
+===============================
+**Compilation StandAlone version :**
+
+Unix : 
+```
+make clean -f Makefile.libretro
+make -f Makefile.libretro platform=linuxStandAlone
+```
+
+Windows :
+Install Visual studio 2017
+Download the SDL2, SDL2_image, SDL2_ttf, SDL2_net, SDL2_mixer and unzip in C:\dev\libs
+For SDL2_gfx you need to build it manualy.
+After this you can generate the solution and executable.
+
+
+mac os X : 
+install Xcode and build the project
+
 
 ===============================
 **Launch :**
