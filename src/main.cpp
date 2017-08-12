@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "Hammerfest.h"
+#include "hammerfest/Hammerfest.h"
 
 #include <SDL2/SDL.h>
 #ifndef IS_OSX
