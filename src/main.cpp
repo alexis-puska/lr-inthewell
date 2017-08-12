@@ -54,13 +54,13 @@ enum {
 
 static const unsigned short retro_psx_map[] = {
     1 << DKEY_CROSS,
-   1 << DKEY_SQUARE,
-     1 << DKEY_SELECT,
+    1 << DKEY_SQUARE,
+    1 << DKEY_SELECT,
     1 << DKEY_START,
     1 << DKEY_UP,
     1 << DKEY_DOWN,
     1 << DKEY_LEFT,
-   1 << DKEY_RIGHT,
+    1 << DKEY_RIGHT,
     1 << DKEY_CIRCLE,
     1 << DKEY_TRIANGLE,
     1 << DKEY_L1,
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 {
     SDL_Init(SDL_INIT_EVERYTHING);
     
-    SDL_Window *window = SDL_CreateWindow("Hello SDL World 8", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT, 0);
+    SDL_Window *window = SDL_CreateWindow("In the well", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT, 0);
     SDL_Surface * test = SDL_GetWindowSurface(window);
     
     Uint32 rmask,  gmask,  bmask,  amask;
@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
     Hammerfest hammerfest = Hammerfest(buffer, "test.sav", false);
     
     
-    int i = 0;
+
     
     char cont = 1;
     
@@ -138,11 +138,6 @@ int main(int argc, char *argv[])
             }
         }
         
-        SDL_UpdateWindowSurface(window);
-        i++;
-        if (i > 255) {
-            i = 0;
-        }
         SDL_PumpEvents(); // On demande à la SDL de mettre à jour les états sur les périphériques
         // Clavier
         {
@@ -311,6 +306,9 @@ int main(int argc, char *argv[])
             SDL_Surface * tmp = rotozoomSurfaceXY(buffer, 0, mul, mul, 0);
             SDL_BlitSurface(tmp, NULL, test, &dstRect);
             SDL_FreeSurface(tmp);
+
+            SDL_UpdateWindowSurface(window);
+
         }
         SDL_Delay(10);
     }
