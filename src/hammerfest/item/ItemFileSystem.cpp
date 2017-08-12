@@ -54,7 +54,8 @@ ItemFileSystem& ItemFileSystem::Instance() {
  * - the number of each 353 item contained in fridge
  **************************************************************/
 void ItemFileSystem::init(char * path, bool newSaveFile) {
-	srand (time(NULL));strcpy(this->saveFilePath, path);
+	srand ((unsigned int)time(NULL));
+    strcpy(this->saveFilePath, path);
 	fprintf(stderr, "init item file system : ");
 	if (newSaveFile) {
 		fprintf(stderr, "create..........");
@@ -415,27 +416,27 @@ int ItemFileSystem::getEffectItemId() {
 		randCoef = random(probaCoef7);
 		if (randCoef <= probaCoef1) {
 			if (availableItemEffect1.size() > 0) {
-				return availableItemEffect1.at(random(availableItemEffect1.size()) - 1);
+				return availableItemEffect1.at(random((int)availableItemEffect1.size()) - 1);
 			}
 		} else if (randCoef <= probaCoef2) {
 			if (availableItemEffect2.size() > 0) {
-				return availableItemEffect2.at(random(availableItemEffect2.size()) - 1);
+				return availableItemEffect2.at(random((int)availableItemEffect2.size()) - 1);
 			}
 		} else if (randCoef <= probaCoef3) {
 			if (availableItemEffect3.size() > 0) {
-				return availableItemEffect3.at(random(availableItemEffect3.size()) - 1);
+				return availableItemEffect3.at(random((int)availableItemEffect3.size()) - 1);
 			}
 		} else if (randCoef <= probaCoef4) {
 			if (availableItemEffect4.size() > 0) {
-				return availableItemEffect4.at(random(availableItemEffect4.size()) - 1);
+				return availableItemEffect4.at(random((int)availableItemEffect4.size()) - 1);
 			}
 		} else if (randCoef <= probaCoef5) {
 			if (availableItemEffect5.size() > 0) {
-				return availableItemEffect5.at(random(availableItemEffect5.size()) - 1);
+				return availableItemEffect5.at(random((int)availableItemEffect5.size()) - 1);
 			}
 		} else if (randCoef <= probaCoef6) {
 			if (availableItemEffect6.size() > 0) {
-				return availableItemEffect6.at(random(availableItemEffect6.size()) - 1);
+				return availableItemEffect6.at(random((int)availableItemEffect6.size()) - 1);
 			}
 		}
 	}
@@ -448,31 +449,32 @@ int ItemFileSystem::getPointItemId() {
 		randCoef = random(probaCoef7);
 		if (randCoef <= probaCoef1) {
 			if (availableItemPoint1.size() > 0) {
-				return availableItemPoint1.at(random(availableItemPoint1.size()) - 1);
+				return availableItemPoint1.at(random((int)
+                                                     availableItemPoint1.size()) - 1);
 			}
 		} else if (randCoef <= probaCoef2) {
 			if (availableItemPoint2.size() > 0) {
-				return availableItemPoint2.at(random(availableItemPoint2.size()) - 1);
+				return availableItemPoint2.at(random((int)availableItemPoint2.size()) - 1);
 			}
 		} else if (randCoef <= probaCoef3) {
 			if (availableItemPoint3.size() > 0) {
-				return availableItemPoint3.at(random(availableItemPoint3.size()) - 1);
+				return availableItemPoint3.at(random((int)availableItemPoint3.size()) - 1);
 			}
 		} else if (randCoef <= probaCoef4) {
 			if (availableItemPoint4.size() > 0) {
-				return availableItemPoint4.at(random(availableItemPoint4.size()) - 1);
+				return availableItemPoint4.at(random((int)availableItemPoint4.size()) - 1);
 			}
 		} else if (randCoef <= probaCoef5) {
 			if (availableItemPoint5.size() > 0) {
-				return availableItemPoint5.at(random(availableItemPoint5.size()) - 1);
+				return availableItemPoint5.at(random((int)availableItemPoint5.size()) - 1);
 			}
 		} else if (randCoef <= probaCoef6) {
 			if (availableItemPoint6.size() > 0) {
-				return availableItemPoint6.at(random(availableItemPoint6.size()) - 1);
+				return availableItemPoint6.at(random((int)availableItemPoint6.size()) - 1);
 			}
 		} else if (randCoef <= probaCoef7) {
 			if (availableItemPoint7.size() > 0) {
-				return availableItemPoint7.at(random(availableItemPoint7.size()) - 1);
+				return availableItemPoint7.at(random((int)availableItemPoint7.size()) - 1);
 			}
 		}
 	}

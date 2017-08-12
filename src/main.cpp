@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 #include <stdio.h>
 
@@ -99,31 +100,25 @@ int main(int argc, char *argv[]) {
 	unsigned short in_keystate[16];
 
     bool newSaveFile = false;
-    
-    char saveFilePath[255];
-    FILE * saveFile;
-    
-    strcat(saveFilePath, "InTheWell.srm");
-    
-    if (saveFile = fopen(saveFilePath, "r")) {
-        fclose (saveFile);
-        std::cerr << "saving file found";
-        saveFile = fopen(saveFilePath, "r+");
+    std::ifstream my_file("InTheWell.srm");
+    if (my_file.good())
+    {
+        std::cout << "saving file found";
         newSaveFile = false;
-    } else {
-        std::cerr << "saving file doesn't exist, create one\n";
-        saveFile = fopen(saveFilePath, "w");
+    }else{
+        std::cout << "saving file doesn't exist, create one\n";
+        std::ofstream ofs;
+        ofs.open ("InTheWell.srm", std::ofstream::out);
+        ofs.close();
+        std::cerr << "created\n";
         newSaveFile = true;
     }
-    
-    
-    
-    fclose (saveFile);
-    
-	
-	fclose (saveFile);
 
-	Hammerfest hammerfest = Hammerfest(buffer, saveFilePath, newSaveFile);
+    
+    
+    
+
+	Hammerfest hammerfest = Hammerfest(buffer, "InTheWell.srm", newSaveFile);
 
 	char cont = 1;
 

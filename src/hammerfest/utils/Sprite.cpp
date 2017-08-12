@@ -172,5 +172,5 @@ std::vector <SDL_Surface *> Sprite::getAnimation(std::string name) {
 }
 
 int Sprite::getAnimationSize(std::string name) {
-	return sprites[name].size();
+	return (long)sprites[name].size();
 }

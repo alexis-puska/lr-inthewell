@@ -151,5 +151,4 @@ std::string Text::getQuestDescription(int id) {
 	std::stringstream ss;
 	ss << "quest." << id << ".description";
 	return texts[GameConfig::Instance().getLang()][ss.str()];
-	fprintf(stderr,"fin get description %i\n", id);
 }

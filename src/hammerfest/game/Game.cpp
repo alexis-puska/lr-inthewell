@@ -6,7 +6,7 @@
 static int metronome(void* data) {
 	Game *game = ((Game *) data);
 	int t1, t2;
-	long delay;
+	int delay;
 	long warningCount = 0l;
 	while (game->isAlive()) {
 		t1 = SDL_GetTicks();
@@ -36,7 +36,8 @@ static int metronome(void* data) {
  *             Default constructor
  ***********************************************/
 Game::Game() {
-	srand (time(NULL));Uint32 rmask, gmask, bmask, amask;
+	srand ((unsigned int)time(NULL));
+    Uint32 rmask, gmask, bmask, amask;
 	amask = 0xff000000;
 	rmask = 0x00ff0000;
 	gmask = 0x0000ff00;
@@ -61,7 +62,7 @@ Game::Game() {
  *                 Constructor
  **********************************************/
 Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
-	srand (time(NULL));Uint32 rmask, gmask, bmask, amask;
+	srand ((unsigned int)time(NULL));Uint32 rmask, gmask, bmask, amask;
 	amask = 0xff000000;
 	rmask = 0x00ff0000;
 	gmask = 0x0000ff00;
@@ -233,7 +234,7 @@ void Game::tick() {
 
 			drawLevelForeground();
 
-			for (int i = 0; i < players.size(); i++) {
+			for (unsigned int i = 0; i < players.size(); i++) {
 				if ((players[i] != NULL && players[i]->getY() >= 560)) {
 					gameState = gameChangeLevel;
 				}
@@ -244,7 +245,7 @@ void Game::tick() {
 			//si on change de niveau et que l'on a pas sauvegarder l'état du précédent niveau on le savegarde dans un buffer (nécessaire à l'animation)
 			if (gameState == gameChangeLevel) {
 
-				for (int i = 0; i < players.size(); i++) {
+				for (unsigned int i = 0; i < players.size(); i++) {
 					players[i]->changeLevel(true);
 				}
 				idx++;

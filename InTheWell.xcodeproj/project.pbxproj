@@ -15,62 +15,34 @@
 		A2723AD81F3EF3A600B06E3D /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2723AD21F3EF3A600B06E3D /* SDL2_ttf.framework */; };
 		A2723AD91F3EF3A600B06E3D /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2723AD31F3EF3A600B06E3D /* SDL2.framework */; };
 		A2723B0A1F3EF3E400B06E3D /* Drawable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723ADA1F3EF3E400B06E3D /* Drawable.cpp */; };
-		A2723B0B1F3EF3E400B06E3D /* Drawable.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723ADB1F3EF3E400B06E3D /* Drawable.h */; };
 		A2723B0C1F3EF3E400B06E3D /* HitBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723ADC1F3EF3E400B06E3D /* HitBox.cpp */; };
-		A2723B0D1F3EF3E400B06E3D /* HitBox.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723ADD1F3EF3E400B06E3D /* HitBox.h */; };
 		A2723B0E1F3EF3E400B06E3D /* IdElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723ADE1F3EF3E400B06E3D /* IdElement.cpp */; };
-		A2723B0F1F3EF3E400B06E3D /* IdElement.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723ADF1F3EF3E400B06E3D /* IdElement.h */; };
 		A2723B101F3EF3E400B06E3D /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AE01F3EF3E400B06E3D /* Position.cpp */; };
-		A2723B111F3EF3E400B06E3D /* Position.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AE11F3EF3E400B06E3D /* Position.h */; };
 		A2723B121F3EF3E400B06E3D /* Bombe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AE21F3EF3E400B06E3D /* Bombe.cpp */; };
-		A2723B131F3EF3E400B06E3D /* Bombe.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AE31F3EF3E400B06E3D /* Bombe.h */; };
 		A2723B141F3EF3E400B06E3D /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AE41F3EF3E400B06E3D /* Game.cpp */; };
-		A2723B151F3EF3E400B06E3D /* Game.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AE51F3EF3E400B06E3D /* Game.h */; };
 		A2723B161F3EF3E400B06E3D /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AE61F3EF3E400B06E3D /* Player.cpp */; };
-		A2723B171F3EF3E400B06E3D /* Player.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AE71F3EF3E400B06E3D /* Player.h */; };
 		A2723B181F3EF3E400B06E3D /* Hammerfest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AE81F3EF3E400B06E3D /* Hammerfest.cpp */; };
-		A2723B191F3EF3E400B06E3D /* Hammerfest.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AE91F3EF3E400B06E3D /* Hammerfest.h */; };
 		A2723B1A1F3EF3E400B06E3D /* Family.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AEA1F3EF3E400B06E3D /* Family.cpp */; };
-		A2723B1B1F3EF3E400B06E3D /* Family.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AEB1F3EF3E400B06E3D /* Family.h */; };
 		A2723B1C1F3EF3E400B06E3D /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AEC1F3EF3E400B06E3D /* Item.cpp */; };
-		A2723B1D1F3EF3E400B06E3D /* Item.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AED1F3EF3E400B06E3D /* Item.h */; };
 		A2723B1E1F3EF3E400B06E3D /* ItemFileSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AEE1F3EF3E400B06E3D /* ItemFileSystem.cpp */; };
-		A2723B1F1F3EF3E400B06E3D /* ItemFileSystem.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AEF1F3EF3E400B06E3D /* ItemFileSystem.h */; };
 		A2723B201F3EF3E400B06E3D /* Quest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF01F3EF3E400B06E3D /* Quest.cpp */; };
-		A2723B211F3EF3E400B06E3D /* Quest.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF11F3EF3E400B06E3D /* Quest.h */; };
 		A2723B221F3EF3E400B06E3D /* Decor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF21F3EF3E400B06E3D /* Decor.cpp */; };
-		A2723B231F3EF3E400B06E3D /* Decor.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF31F3EF3E400B06E3D /* Decor.h */; };
 		A2723B241F3EF3E400B06E3D /* Door.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF41F3EF3E400B06E3D /* Door.cpp */; };
-		A2723B251F3EF3E400B06E3D /* Door.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF51F3EF3E400B06E3D /* Door.h */; };
 		A2723B261F3EF3E400B06E3D /* Ennemie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF61F3EF3E400B06E3D /* Ennemie.cpp */; };
-		A2723B271F3EF3E400B06E3D /* Ennemie.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF71F3EF3E400B06E3D /* Ennemie.h */; };
 		A2723B281F3EF3E400B06E3D /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF81F3EF3E400B06E3D /* Event.cpp */; };
-		A2723B291F3EF3E400B06E3D /* Event.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF91F3EF3E400B06E3D /* Event.h */; };
 		A2723B2A1F3EF3E400B06E3D /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AFA1F3EF3E400B06E3D /* Level.cpp */; };
-		A2723B2B1F3EF3E400B06E3D /* Level.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AFB1F3EF3E400B06E3D /* Level.h */; };
 		A2723B2C1F3EF3E400B06E3D /* Lock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AFC1F3EF3E400B06E3D /* Lock.cpp */; };
-		A2723B2D1F3EF3E400B06E3D /* Lock.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AFD1F3EF3E400B06E3D /* Lock.h */; };
 		A2723B2E1F3EF3E400B06E3D /* Pick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AFE1F3EF3E400B06E3D /* Pick.cpp */; };
-		A2723B2F1F3EF3E400B06E3D /* Pick.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723AFF1F3EF3E400B06E3D /* Pick.h */; };
 		A2723B301F3EF3E400B06E3D /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B001F3EF3E400B06E3D /* Platform.cpp */; };
-		A2723B311F3EF3E400B06E3D /* Platform.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723B011F3EF3E400B06E3D /* Platform.h */; };
 		A2723B321F3EF3E400B06E3D /* Rayon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B021F3EF3E400B06E3D /* Rayon.cpp */; };
-		A2723B331F3EF3E400B06E3D /* Rayon.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723B031F3EF3E400B06E3D /* Rayon.h */; };
 		A2723B341F3EF3E400B06E3D /* Teleporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B041F3EF3E400B06E3D /* Teleporter.cpp */; };
-		A2723B351F3EF3E400B06E3D /* Teleporter.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723B051F3EF3E400B06E3D /* Teleporter.h */; };
 		A2723B361F3EF3E400B06E3D /* Vortex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B061F3EF3E400B06E3D /* Vortex.cpp */; };
-		A2723B371F3EF3E400B06E3D /* Vortex.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723B071F3EF3E400B06E3D /* Vortex.h */; };
 		A2723B451F3EF47B00B06E3D /* GameConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B3A1F3EF47B00B06E3D /* GameConfig.cpp */; };
-		A2723B461F3EF47B00B06E3D /* GameConfig.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723B3B1F3EF47B00B06E3D /* GameConfig.h */; };
 		A2723B471F3EF47B00B06E3D /* Jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B3C1F3EF47B00B06E3D /* Jsoncpp.cpp */; };
 		A2723B481F3EF47B00B06E3D /* LevelService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B3D1F3EF47B00B06E3D /* LevelService.cpp */; };
-		A2723B491F3EF47B00B06E3D /* LevelService.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723B3E1F3EF47B00B06E3D /* LevelService.h */; };
 		A2723B4A1F3EF47B00B06E3D /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B3F1F3EF47B00B06E3D /* Sound.cpp */; };
-		A2723B4B1F3EF47B00B06E3D /* Sound.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723B401F3EF47B00B06E3D /* Sound.h */; };
 		A2723B4C1F3EF47B00B06E3D /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B411F3EF47B00B06E3D /* Sprite.cpp */; };
-		A2723B4D1F3EF47B00B06E3D /* Sprite.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723B421F3EF47B00B06E3D /* Sprite.h */; };
 		A2723B4E1F3EF47B00B06E3D /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B431F3EF47B00B06E3D /* Text.cpp */; };
-		A2723B4F1F3EF47B00B06E3D /* Text.h in Sources */ = {isa = PBXBuildFile; fileRef = A2723B441F3EF47B00B06E3D /* Text.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -96,64 +68,35 @@
 		A2723AD21F3EF3A600B06E3D /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
 		A2723AD31F3EF3A600B06E3D /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		A2723ADA1F3EF3E400B06E3D /* Drawable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Drawable.cpp; path = src/hammerfest/definition/Drawable.cpp; sourceTree = "<group>"; };
-		A2723ADB1F3EF3E400B06E3D /* Drawable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Drawable.h; path = src/hammerfest/definition/Drawable.h; sourceTree = "<group>"; };
 		A2723ADC1F3EF3E400B06E3D /* HitBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HitBox.cpp; path = src/hammerfest/definition/HitBox.cpp; sourceTree = "<group>"; };
-		A2723ADD1F3EF3E400B06E3D /* HitBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HitBox.h; path = src/hammerfest/definition/HitBox.h; sourceTree = "<group>"; };
 		A2723ADE1F3EF3E400B06E3D /* IdElement.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = IdElement.cpp; path = src/hammerfest/definition/IdElement.cpp; sourceTree = "<group>"; };
-		A2723ADF1F3EF3E400B06E3D /* IdElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IdElement.h; path = src/hammerfest/definition/IdElement.h; sourceTree = "<group>"; };
 		A2723AE01F3EF3E400B06E3D /* Position.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Position.cpp; path = src/hammerfest/definition/Position.cpp; sourceTree = "<group>"; };
-		A2723AE11F3EF3E400B06E3D /* Position.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Position.h; path = src/hammerfest/definition/Position.h; sourceTree = "<group>"; };
 		A2723AE21F3EF3E400B06E3D /* Bombe.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bombe.cpp; path = src/hammerfest/game/Bombe.cpp; sourceTree = "<group>"; };
-		A2723AE31F3EF3E400B06E3D /* Bombe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Bombe.h; path = src/hammerfest/game/Bombe.h; sourceTree = "<group>"; };
 		A2723AE41F3EF3E400B06E3D /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = src/hammerfest/game/Game.cpp; sourceTree = "<group>"; };
-		A2723AE51F3EF3E400B06E3D /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Game.h; path = src/hammerfest/game/Game.h; sourceTree = "<group>"; };
 		A2723AE61F3EF3E400B06E3D /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = src/hammerfest/game/Player.cpp; sourceTree = "<group>"; };
-		A2723AE71F3EF3E400B06E3D /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Player.h; path = src/hammerfest/game/Player.h; sourceTree = "<group>"; };
 		A2723AE81F3EF3E400B06E3D /* Hammerfest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Hammerfest.cpp; path = src/hammerfest/Hammerfest.cpp; sourceTree = "<group>"; };
-		A2723AE91F3EF3E400B06E3D /* Hammerfest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Hammerfest.h; path = src/hammerfest/Hammerfest.h; sourceTree = "<group>"; };
 		A2723AEA1F3EF3E400B06E3D /* Family.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Family.cpp; path = src/hammerfest/item/Family.cpp; sourceTree = "<group>"; };
-		A2723AEB1F3EF3E400B06E3D /* Family.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Family.h; path = src/hammerfest/item/Family.h; sourceTree = "<group>"; };
 		A2723AEC1F3EF3E400B06E3D /* Item.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Item.cpp; path = src/hammerfest/item/Item.cpp; sourceTree = "<group>"; };
-		A2723AED1F3EF3E400B06E3D /* Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Item.h; path = src/hammerfest/item/Item.h; sourceTree = "<group>"; };
 		A2723AEE1F3EF3E400B06E3D /* ItemFileSystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ItemFileSystem.cpp; path = src/hammerfest/item/ItemFileSystem.cpp; sourceTree = "<group>"; };
-		A2723AEF1F3EF3E400B06E3D /* ItemFileSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ItemFileSystem.h; path = src/hammerfest/item/ItemFileSystem.h; sourceTree = "<group>"; };
 		A2723AF01F3EF3E400B06E3D /* Quest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Quest.cpp; path = src/hammerfest/item/Quest.cpp; sourceTree = "<group>"; };
-		A2723AF11F3EF3E400B06E3D /* Quest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Quest.h; path = src/hammerfest/item/Quest.h; sourceTree = "<group>"; };
 		A2723AF21F3EF3E400B06E3D /* Decor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Decor.cpp; path = src/hammerfest/level/Decor.cpp; sourceTree = "<group>"; };
-		A2723AF31F3EF3E400B06E3D /* Decor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Decor.h; path = src/hammerfest/level/Decor.h; sourceTree = "<group>"; };
 		A2723AF41F3EF3E400B06E3D /* Door.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Door.cpp; path = src/hammerfest/level/Door.cpp; sourceTree = "<group>"; };
-		A2723AF51F3EF3E400B06E3D /* Door.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Door.h; path = src/hammerfest/level/Door.h; sourceTree = "<group>"; };
 		A2723AF61F3EF3E400B06E3D /* Ennemie.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Ennemie.cpp; path = src/hammerfest/level/Ennemie.cpp; sourceTree = "<group>"; };
-		A2723AF71F3EF3E400B06E3D /* Ennemie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Ennemie.h; path = src/hammerfest/level/Ennemie.h; sourceTree = "<group>"; };
 		A2723AF81F3EF3E400B06E3D /* Event.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Event.cpp; path = src/hammerfest/level/Event.cpp; sourceTree = "<group>"; };
-		A2723AF91F3EF3E400B06E3D /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Event.h; path = src/hammerfest/level/Event.h; sourceTree = "<group>"; };
 		A2723AFA1F3EF3E400B06E3D /* Level.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Level.cpp; path = src/hammerfest/level/Level.cpp; sourceTree = "<group>"; };
-		A2723AFB1F3EF3E400B06E3D /* Level.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Level.h; path = src/hammerfest/level/Level.h; sourceTree = "<group>"; };
 		A2723AFC1F3EF3E400B06E3D /* Lock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Lock.cpp; path = src/hammerfest/level/Lock.cpp; sourceTree = "<group>"; };
-		A2723AFD1F3EF3E400B06E3D /* Lock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Lock.h; path = src/hammerfest/level/Lock.h; sourceTree = "<group>"; };
 		A2723AFE1F3EF3E400B06E3D /* Pick.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Pick.cpp; path = src/hammerfest/level/Pick.cpp; sourceTree = "<group>"; };
-		A2723AFF1F3EF3E400B06E3D /* Pick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Pick.h; path = src/hammerfest/level/Pick.h; sourceTree = "<group>"; };
 		A2723B001F3EF3E400B06E3D /* Platform.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Platform.cpp; path = src/hammerfest/level/Platform.cpp; sourceTree = "<group>"; };
-		A2723B011F3EF3E400B06E3D /* Platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Platform.h; path = src/hammerfest/level/Platform.h; sourceTree = "<group>"; };
 		A2723B021F3EF3E400B06E3D /* Rayon.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Rayon.cpp; path = src/hammerfest/level/Rayon.cpp; sourceTree = "<group>"; };
-		A2723B031F3EF3E400B06E3D /* Rayon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Rayon.h; path = src/hammerfest/level/Rayon.h; sourceTree = "<group>"; };
 		A2723B041F3EF3E400B06E3D /* Teleporter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Teleporter.cpp; path = src/hammerfest/level/Teleporter.cpp; sourceTree = "<group>"; };
-		A2723B051F3EF3E400B06E3D /* Teleporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Teleporter.h; path = src/hammerfest/level/Teleporter.h; sourceTree = "<group>"; };
 		A2723B061F3EF3E400B06E3D /* Vortex.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Vortex.cpp; path = src/hammerfest/level/Vortex.cpp; sourceTree = "<group>"; };
-		A2723B071F3EF3E400B06E3D /* Vortex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Vortex.h; path = src/hammerfest/level/Vortex.h; sourceTree = "<group>"; };
 		A2723B081F3EF3E400B06E3D /* MyWrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MyWrapper.cpp; path = src/hammerfest/MyWrapper.cpp; sourceTree = "<group>"; };
-		A2723B091F3EF3E400B06E3D /* MyWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyWrapper.h; path = src/hammerfest/MyWrapper.h; sourceTree = "<group>"; };
 		A2723B3A1F3EF47B00B06E3D /* GameConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = GameConfig.cpp; path = src/hammerfest/utils/GameConfig.cpp; sourceTree = "<group>"; };
-		A2723B3B1F3EF47B00B06E3D /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameConfig.h; path = src/hammerfest/utils/GameConfig.h; sourceTree = "<group>"; };
 		A2723B3C1F3EF47B00B06E3D /* Jsoncpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Jsoncpp.cpp; path = src/hammerfest/utils/Jsoncpp.cpp; sourceTree = "<group>"; };
 		A2723B3D1F3EF47B00B06E3D /* LevelService.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = LevelService.cpp; path = src/hammerfest/utils/LevelService.cpp; sourceTree = "<group>"; };
-		A2723B3E1F3EF47B00B06E3D /* LevelService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LevelService.h; path = src/hammerfest/utils/LevelService.h; sourceTree = "<group>"; };
 		A2723B3F1F3EF47B00B06E3D /* Sound.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Sound.cpp; path = src/hammerfest/utils/Sound.cpp; sourceTree = "<group>"; };
-		A2723B401F3EF47B00B06E3D /* Sound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Sound.h; path = src/hammerfest/utils/Sound.h; sourceTree = "<group>"; };
 		A2723B411F3EF47B00B06E3D /* Sprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Sprite.cpp; path = src/hammerfest/utils/Sprite.cpp; sourceTree = "<group>"; };
-		A2723B421F3EF47B00B06E3D /* Sprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Sprite.h; path = src/hammerfest/utils/Sprite.h; sourceTree = "<group>"; };
 		A2723B431F3EF47B00B06E3D /* Text.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Text.cpp; path = src/hammerfest/utils/Text.cpp; sourceTree = "<group>"; };
-		A2723B441F3EF47B00B06E3D /* Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Text.h; path = src/hammerfest/utils/Text.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,64 +120,35 @@
 			isa = PBXGroup;
 			children = (
 				A2723B3A1F3EF47B00B06E3D /* GameConfig.cpp */,
-				A2723B3B1F3EF47B00B06E3D /* GameConfig.h */,
 				A2723B3C1F3EF47B00B06E3D /* Jsoncpp.cpp */,
 				A2723B3D1F3EF47B00B06E3D /* LevelService.cpp */,
-				A2723B3E1F3EF47B00B06E3D /* LevelService.h */,
 				A2723B3F1F3EF47B00B06E3D /* Sound.cpp */,
-				A2723B401F3EF47B00B06E3D /* Sound.h */,
 				A2723B411F3EF47B00B06E3D /* Sprite.cpp */,
-				A2723B421F3EF47B00B06E3D /* Sprite.h */,
 				A2723B431F3EF47B00B06E3D /* Text.cpp */,
-				A2723B441F3EF47B00B06E3D /* Text.h */,
 				A2723ADA1F3EF3E400B06E3D /* Drawable.cpp */,
-				A2723ADB1F3EF3E400B06E3D /* Drawable.h */,
 				A2723ADC1F3EF3E400B06E3D /* HitBox.cpp */,
-				A2723ADD1F3EF3E400B06E3D /* HitBox.h */,
 				A2723ADE1F3EF3E400B06E3D /* IdElement.cpp */,
-				A2723ADF1F3EF3E400B06E3D /* IdElement.h */,
 				A2723AE01F3EF3E400B06E3D /* Position.cpp */,
-				A2723AE11F3EF3E400B06E3D /* Position.h */,
 				A2723AE21F3EF3E400B06E3D /* Bombe.cpp */,
-				A2723AE31F3EF3E400B06E3D /* Bombe.h */,
 				A2723AE41F3EF3E400B06E3D /* Game.cpp */,
-				A2723AE51F3EF3E400B06E3D /* Game.h */,
 				A2723AE61F3EF3E400B06E3D /* Player.cpp */,
-				A2723AE71F3EF3E400B06E3D /* Player.h */,
 				A2723AE81F3EF3E400B06E3D /* Hammerfest.cpp */,
-				A2723AE91F3EF3E400B06E3D /* Hammerfest.h */,
 				A2723AEA1F3EF3E400B06E3D /* Family.cpp */,
-				A2723AEB1F3EF3E400B06E3D /* Family.h */,
 				A2723AEC1F3EF3E400B06E3D /* Item.cpp */,
-				A2723AED1F3EF3E400B06E3D /* Item.h */,
 				A2723AEE1F3EF3E400B06E3D /* ItemFileSystem.cpp */,
-				A2723AEF1F3EF3E400B06E3D /* ItemFileSystem.h */,
 				A2723AF01F3EF3E400B06E3D /* Quest.cpp */,
-				A2723AF11F3EF3E400B06E3D /* Quest.h */,
 				A2723AF21F3EF3E400B06E3D /* Decor.cpp */,
-				A2723AF31F3EF3E400B06E3D /* Decor.h */,
 				A2723AF41F3EF3E400B06E3D /* Door.cpp */,
-				A2723AF51F3EF3E400B06E3D /* Door.h */,
 				A2723AF61F3EF3E400B06E3D /* Ennemie.cpp */,
-				A2723AF71F3EF3E400B06E3D /* Ennemie.h */,
 				A2723AF81F3EF3E400B06E3D /* Event.cpp */,
-				A2723AF91F3EF3E400B06E3D /* Event.h */,
 				A2723AFA1F3EF3E400B06E3D /* Level.cpp */,
-				A2723AFB1F3EF3E400B06E3D /* Level.h */,
 				A2723AFC1F3EF3E400B06E3D /* Lock.cpp */,
-				A2723AFD1F3EF3E400B06E3D /* Lock.h */,
 				A2723AFE1F3EF3E400B06E3D /* Pick.cpp */,
-				A2723AFF1F3EF3E400B06E3D /* Pick.h */,
 				A2723B001F3EF3E400B06E3D /* Platform.cpp */,
-				A2723B011F3EF3E400B06E3D /* Platform.h */,
 				A2723B021F3EF3E400B06E3D /* Rayon.cpp */,
-				A2723B031F3EF3E400B06E3D /* Rayon.h */,
 				A2723B041F3EF3E400B06E3D /* Teleporter.cpp */,
-				A2723B051F3EF3E400B06E3D /* Teleporter.h */,
 				A2723B061F3EF3E400B06E3D /* Vortex.cpp */,
-				A2723B071F3EF3E400B06E3D /* Vortex.h */,
 				A2723B081F3EF3E400B06E3D /* MyWrapper.cpp */,
-				A2723B091F3EF3E400B06E3D /* MyWrapper.h */,
 				A2723ACE1F3EF3A600B06E3D /* SDL2_gfx.framework */,
 				A2723ACF1F3EF3A600B06E3D /* SDL2_image.framework */,
 				A2723AD01F3EF3A600B06E3D /* SDL2_mixer.framework */,
@@ -313,62 +227,34 @@
 			files = (
 				A2723ABC1F3EF25F00B06E3D /* main.cpp in Sources */,
 				A2723B0A1F3EF3E400B06E3D /* Drawable.cpp in Sources */,
-				A2723B0B1F3EF3E400B06E3D /* Drawable.h in Sources */,
 				A2723B0C1F3EF3E400B06E3D /* HitBox.cpp in Sources */,
-				A2723B0D1F3EF3E400B06E3D /* HitBox.h in Sources */,
 				A2723B0E1F3EF3E400B06E3D /* IdElement.cpp in Sources */,
-				A2723B0F1F3EF3E400B06E3D /* IdElement.h in Sources */,
 				A2723B101F3EF3E400B06E3D /* Position.cpp in Sources */,
 				A2723B451F3EF47B00B06E3D /* GameConfig.cpp in Sources */,
-				A2723B461F3EF47B00B06E3D /* GameConfig.h in Sources */,
 				A2723B471F3EF47B00B06E3D /* Jsoncpp.cpp in Sources */,
 				A2723B481F3EF47B00B06E3D /* LevelService.cpp in Sources */,
-				A2723B491F3EF47B00B06E3D /* LevelService.h in Sources */,
 				A2723B4A1F3EF47B00B06E3D /* Sound.cpp in Sources */,
-				A2723B4B1F3EF47B00B06E3D /* Sound.h in Sources */,
 				A2723B4C1F3EF47B00B06E3D /* Sprite.cpp in Sources */,
-				A2723B4D1F3EF47B00B06E3D /* Sprite.h in Sources */,
 				A2723B4E1F3EF47B00B06E3D /* Text.cpp in Sources */,
-				A2723B4F1F3EF47B00B06E3D /* Text.h in Sources */,
-				A2723B111F3EF3E400B06E3D /* Position.h in Sources */,
 				A2723B121F3EF3E400B06E3D /* Bombe.cpp in Sources */,
-				A2723B131F3EF3E400B06E3D /* Bombe.h in Sources */,
 				A2723B141F3EF3E400B06E3D /* Game.cpp in Sources */,
-				A2723B151F3EF3E400B06E3D /* Game.h in Sources */,
 				A2723B161F3EF3E400B06E3D /* Player.cpp in Sources */,
-				A2723B171F3EF3E400B06E3D /* Player.h in Sources */,
 				A2723B181F3EF3E400B06E3D /* Hammerfest.cpp in Sources */,
-				A2723B191F3EF3E400B06E3D /* Hammerfest.h in Sources */,
 				A2723B1A1F3EF3E400B06E3D /* Family.cpp in Sources */,
-				A2723B1B1F3EF3E400B06E3D /* Family.h in Sources */,
 				A2723B1C1F3EF3E400B06E3D /* Item.cpp in Sources */,
-				A2723B1D1F3EF3E400B06E3D /* Item.h in Sources */,
 				A2723B1E1F3EF3E400B06E3D /* ItemFileSystem.cpp in Sources */,
-				A2723B1F1F3EF3E400B06E3D /* ItemFileSystem.h in Sources */,
 				A2723B201F3EF3E400B06E3D /* Quest.cpp in Sources */,
-				A2723B211F3EF3E400B06E3D /* Quest.h in Sources */,
 				A2723B221F3EF3E400B06E3D /* Decor.cpp in Sources */,
-				A2723B231F3EF3E400B06E3D /* Decor.h in Sources */,
 				A2723B241F3EF3E400B06E3D /* Door.cpp in Sources */,
-				A2723B251F3EF3E400B06E3D /* Door.h in Sources */,
 				A2723B261F3EF3E400B06E3D /* Ennemie.cpp in Sources */,
-				A2723B271F3EF3E400B06E3D /* Ennemie.h in Sources */,
 				A2723B281F3EF3E400B06E3D /* Event.cpp in Sources */,
-				A2723B291F3EF3E400B06E3D /* Event.h in Sources */,
 				A2723B2A1F3EF3E400B06E3D /* Level.cpp in Sources */,
-				A2723B2B1F3EF3E400B06E3D /* Level.h in Sources */,
 				A2723B2C1F3EF3E400B06E3D /* Lock.cpp in Sources */,
-				A2723B2D1F3EF3E400B06E3D /* Lock.h in Sources */,
 				A2723B2E1F3EF3E400B06E3D /* Pick.cpp in Sources */,
-				A2723B2F1F3EF3E400B06E3D /* Pick.h in Sources */,
 				A2723B301F3EF3E400B06E3D /* Platform.cpp in Sources */,
-				A2723B311F3EF3E400B06E3D /* Platform.h in Sources */,
 				A2723B321F3EF3E400B06E3D /* Rayon.cpp in Sources */,
-				A2723B331F3EF3E400B06E3D /* Rayon.h in Sources */,
 				A2723B341F3EF3E400B06E3D /* Teleporter.cpp in Sources */,
-				A2723B351F3EF3E400B06E3D /* Teleporter.h in Sources */,
 				A2723B361F3EF3E400B06E3D /* Vortex.cpp in Sources */,
-				A2723B371F3EF3E400B06E3D /* Vortex.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
