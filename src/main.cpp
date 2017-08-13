@@ -164,11 +164,11 @@ int main(int argc, char *argv[]) {
 				in_keystate[0] |= retro_psx_map[RETRO_DEVICE_ID_JOYPAD_SELECT];
 			}
 
-			if (pKeyStates[SDL_SCANCODE_C] || pKeyStates[SDL_SCANCODE_G]) {
+			if (pKeyStates[SDL_SCANCODE_G]) {
 				in_keystate[0] |= retro_psx_map[RETRO_DEVICE_ID_JOYPAD_L];
 			}
 
-			if (pKeyStates[SDL_SCANCODE_C] || pKeyStates[SDL_SCANCODE_H]) {
+			if (pKeyStates[SDL_SCANCODE_H]) {
 				in_keystate[0] |= retro_psx_map[RETRO_DEVICE_ID_JOYPAD_R];
 			}
 
