@@ -18,7 +18,7 @@ static int metronome(void* data) {
 				warningCount++;
 				std::cout << "warn < 5 " << delay << " " << warningCount << "\n";
 			}
-			std::cout << "take time : " << delay << " " << t2 - t1 << "\n";
+			//std::cout << "take time : " << delay << " " << t2 - t1 << "\n";
 			SDL_Delay(delay);
 		} else {
 			warningCount++;

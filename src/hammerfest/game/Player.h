@@ -84,13 +84,11 @@ class Player: public Position, Drawable, HitBox {
 
 		bool hitboxPoint[10];
 
-		bool shotBombe;
+
 		bool shotBombeUpper;
 		bool playerIsSad;
 		bool dropBombeInAir;
 
-		int jumpCyclePosition;
-		int fallCyclePosition;
 		bool playerFalling;
 		bool insidePlatform;
 
