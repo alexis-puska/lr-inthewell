@@ -569,7 +569,7 @@ void Hammerfest::drawFridgeMenu() {
 		Text::Instance().drawText(screenBuffer, "verdana10pt10", 210, 480, tmp, white, true);
 		//draw cursor
 		int pos = fridgeItemPosition - fridgeFirstItemView;
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 10 + (pos % 6) * 63, 50 + (floor(pos / 6)) * 61);
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("menu_cursor", 0), screenBuffer, 10 + (pos % 6) * 63, 50 + (int)(floor(pos / 6)) * 61);
 		copySurfaceToBackRenderer(screenBuffer, vout_buf, 0, 0);
 		redrawMenu = false;
 	}

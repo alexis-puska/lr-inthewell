@@ -17,8 +17,8 @@ class Vortex: public Drawable, public Position, public HitBox, public IdElement 
 		int getDestination();
 		virtual void drawHimself(SDL_Surface * dest);
 	private:
-		float zoomX;
-		float zoomY;
+		double zoomX;
+		double zoomY;
 		bool enable;
 		int destination;
 		int animationPosition;

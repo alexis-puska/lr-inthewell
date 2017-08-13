@@ -272,8 +272,8 @@ int main(int argc, char *argv[]) {
 			int x;
 			int y;
 			SDL_GetWindowSize(window, &x, &y);
-			int nx = ceil(x / 420);
-			int ny = ceil(y / 520);
+			int nx = (int)ceil(x / 420);
+			int ny = (int)ceil(y / 520);
 			int mul = 0;
 			if (nx == ny) {
 				mul = nx;

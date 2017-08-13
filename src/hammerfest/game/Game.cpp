@@ -373,7 +373,7 @@ void Game::mergeScoreAndBorder() {
  *
  ******************************************/
 void Game::generateDarkness() {
-	int darknessValue = ceil((float) (255 / 85) * (float) (currentLevel->getId() - 15));
+	int darknessValue = (int)ceil((float) (255 / 85) * (float) (currentLevel->getId() - 15));
 	if (darknessValue >= 255) {
 		darknessValue = 255;
 	}

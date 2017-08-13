@@ -8,8 +8,8 @@ Vortex::Vortex(int id, int x, int y, double zoomX, double zoomY, bool enable, in
 	this->destination = destination;
 	this->animationPosition = 0;
 	this->animation = Sprite::Instance().getAnimation("vortex");
-	this->width = floor(animation[0]->w * zoomX);
-	this->height = floor(animation[0]->h * zoomY);
+	this->width = (int)floor(animation[0]->w * zoomX);
+	this->height = (int)floor(animation[0]->h * zoomY);
 	this->animationType = animationType;
 	initHitBox(x, y, width - vortexHitboxBorder, height - vortexHitboxBorder);
 }

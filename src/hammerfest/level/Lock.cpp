@@ -25,8 +25,8 @@ void Lock::checkToUnlock(/*PlayerPosition TODO*/) {
 
 void Lock::drawHimself(SDL_Surface * dest) {
 	if (locked) {
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("serrure", 1), dest, (x - floor(width / 2))+leftPadding, y - height);
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("serrure", 1), dest, (x - (int)floor(width / 2))+leftPadding, y - height);
 	} else {
-		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("serrure", 0), dest, (x - floor(width / 2))+leftPadding, y - height);
+		copySurfaceToBackRenderer(Sprite::Instance().getAnimation("serrure", 0), dest, (x - (int)floor(width / 2))+leftPadding, y - height);
 	}
 }

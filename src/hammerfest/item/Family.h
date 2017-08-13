@@ -2,6 +2,7 @@
 #define __MYCLASS_FAMILY
 
 #include <vector>
+#include <string>
 #include <iostream>
 #include "../definition/IdElement.h"
 

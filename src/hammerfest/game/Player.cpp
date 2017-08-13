@@ -17,7 +17,7 @@ Player::Player(int x, int y, int type, unsigned short * in_keystate) :
 	dropBombeInAir = false;
 	inactivityCounter = 0;
 	animIdxMax = Sprite::Instance().getAnimationSize("igor_right_wait");
-	initHitBox(x - floor(playerHitboxWidth / 2), y - playerHitboxHeight, playerHitboxWidth, playerHitboxHeight);
+	initHitBox(x - (int)floor(playerHitboxWidth / 2), y - playerHitboxHeight, playerHitboxWidth, playerHitboxHeight);
 }
 
 Player::~Player() {
@@ -398,7 +398,7 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 			if (dropBombeInAir) {
 				if (playerFalling) {
 					//std::cout<<"shot + falling ! ";
-					acc = round(10 * exp(-0.22 * (animIdx + 5)) + 1);
+					acc = (int)round(10 * exp(-0.22 * (animIdx + 5)) + 1);
 					y -= acc;
 					y -= 6;
 				} else {
@@ -627,7 +627,7 @@ void Player::doSomething(SDL_Surface * dest, bool * platformGrid) {
 	/****************************************
 	 * Mise à jour de la hitbox
 	 ****************************************/
-	updateHitBox(x - floor(playerHitboxWidth / 2), y - playerHitboxHeight);
+	updateHitBox(x - (int)floor(playerHitboxWidth / 2), y - playerHitboxHeight);
 
 	/****************************************
 	 * Incrément animation

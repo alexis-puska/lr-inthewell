@@ -18,7 +18,7 @@ std::vector<int> Family::getItems() {
 }
 
 void Family::printName() {
-    std::cout<< id<<" - "<<name<<"\n";
+    std::cout<< id << " - " << name<<"\n";
 }
 
 void Family::printJson() {
