@@ -2,8 +2,8 @@
 #define __MYCLASS_QUEST
 
 #include "Item.h"
-#include <stdio.h>
 #include <vector>
+#include <iostream>
 #include <map>
 #include <string>
 #include "../definition/IdElement.h"

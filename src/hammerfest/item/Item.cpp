@@ -31,7 +31,6 @@ void Item::printName() {
 }
 
 void Item::printJson() {
-	fprintf(stderr, "{\"id\":%i,\"name\":[{\"fr\":\"%s\"},{\"en\":\"%s\"},{\"es\":\"%s\"}],", id, name.c_str(), name.c_str(), name.c_str());
-	fprintf(stderr, "\"rarity\":%i,\"value\":%i,\"unlock\":%i}\n,", rarity, value, unlock);
-
+    //std::cout<<"{\"id\":"<<id<<",\"name\":[{\"fr\":\""<<name<<"\"},{\"en\":\""<<name<<"\"},{\"es\":\""<<name<<"\"}],";
+    //std::cout<<"\"rarity\":"<<rarity<<",\"value\":"<<value<<",\"unlock\":"<<unlock<<"}\n,";
 }

@@ -1,9 +1,7 @@
 #ifndef __MYCLASS_ITEM_FILE_SYSTEM
 #define __MYCLASS_ITEM_FILE_SYSTEM
 
-#include <stdio.h>
-#include <string.h>
-#include <stdint.h>
+
 #include <time.h>
 #include <map>
 

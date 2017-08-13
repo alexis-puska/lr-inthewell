@@ -4,9 +4,9 @@ Family::~Family() {
 	items.clear();
 }
 
-Family::Family(int id, const char * name) :
+Family::Family(int id, std::string name) :
 		IdElement(id) {
-	strcpy(this->name, name);
+	this->name = name;
 }
 
 void Family::addItem(int itemId) {

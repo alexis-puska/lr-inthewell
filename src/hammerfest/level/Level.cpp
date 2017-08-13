@@ -2,7 +2,7 @@
 
 Level::Level(int id, bool showPlatform, int backgroundId, int platformVerticalId, int platformHorizontalId, int next) :
 		IdElement(id) {
-	fprintf(stderr, "Create Level %i\n", id);
+    std::cout<< "Create Level "<<id<<"\n";
 	this->showPlatform = showPlatform;
 	this->backgroundId = backgroundId;
 	this->platformVerticalId = platformVerticalId;
@@ -46,9 +46,8 @@ void Level::addPlatform(Platform * platform) {
 		int stop = platform->getLength() + start;
 		for (int y = start; y < stop; y++) {
 			if (((y * 20) + x) > 499) {
-				fprintf(stderr, "\n\nerreur adresse v id:%i pos:%i x:%i y:%i start:%i stop:%i\n\n", platform->getId(), ((y * 20) + x), x, y,
-						start, stop);
-			} else {
+                std::cout<<"\n\nerreur adresse v id:"<<platform->getId()<<" pos:"<<((y * 20) + x)<<" x:"<<x<<" y:"<<y<<" start:"<<start<<" stop:"<<stop<<"\n\n";
+            } else {
 				platformGrid[y * 20 + x] = true;
 			}
 		}
@@ -58,8 +57,7 @@ void Level::addPlatform(Platform * platform) {
 		int stop = platform->getLength() + start;
 		for (int x = start; x < stop; x++) {
 			if (((y * 20) + x) > 499) {
-				fprintf(stderr, "\n\nerreur adresse h id:%i pos:%i x:%i y:%i start:%i stop:%i\n\n", platform->getId(), ((y * 20) + x), x, y,
-						start, stop);
+				std::cout<<"\n\nerreur adresse v id:"<<platform->getId()<<" pos:"<<((y * 20) + x)<<" x:"<<x<<" y:"<<y<<" start:"<<start<<" stop:"<<stop<<"\n\n";
 			} else {
 				platformGrid[y * 20 + x] = true;
 			}
@@ -116,7 +114,7 @@ void Level::removeDeco(int id) {
 }
 
 void Level::drawHimself(SDL_Surface * dest) {
-	//fprintf(stderr, "level : %i - ", id);
+    //std::cout<<"level : "<<id<<" - ";
 	for (unsigned int i = 0; i < rayons.size(); i++) {
 		rayons[i]->drawHimself(dest);
 	}
@@ -187,9 +185,9 @@ bool * Level::getPlatformGrid() {
 void Level::printPlatformGrid() {
 	for (int y = 0; y < 25; y++) {
 		for (int x = 0; x < 20; x++) {
-			fprintf(stderr, "%i ", platformGrid[y * 20 + x] ? 1 : 0);
+            std::cout<<(platformGrid[y * 20 + x] ? 1 : 0);
 		}
-		fprintf(stderr, "\n");
+        std::cout<<"\n";
 	}
-	fprintf(stderr, "\n");
+	std::cout<<"\n";
 }

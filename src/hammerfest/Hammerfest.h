@@ -12,8 +12,6 @@
 #include <SDL2/SDL2_rotozoom.h>
 #endif
 
-
-#include <stdio.h>
 #include <sstream>
 
 #ifndef __MYCLASS_HAMMERFEST

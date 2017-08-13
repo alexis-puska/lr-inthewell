@@ -175,13 +175,13 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 	questStarted.clear();
 
 	for (unsigned int i = 0; i < quests.size(); i++) {
-		//fprintf(stderr, "validate quest %i\n", i);
+		//std::cout<<"validate quest "<<i<<"\n";
 		Quest * tested = quests.at(i);
 		std::map<int, int> requiredItem = tested->getRequireItemId();
 		bool valide = true;
 		bool started = false;
 		for (std::map<int, int>::iterator it = requiredItem.begin(); it != requiredItem.end(); ++it) {
-			//fprintf(stderr, "%i %i %i\n", i, fridge[it->first], it->second);
+			//std::cout<<i <<" "<< fridge[it->first]<<" "<< it->second;
 			if (fridge[it->first] < it->second) {
 				valide = false;
 				break;
@@ -570,7 +570,7 @@ void ItemFileSystem::parseFamilys() {
 		ss.str(std::string());
 		ss << "family." << idValue.asInt() << ".name";
 		Text::Instance().addTraduction("es", ss.str(), esNameValue.asString());
-		family = new Family(idValue.asInt(), frNameValue.asString().c_str());
+		family = new Family(idValue.asInt(), frNameValue.asString());
 		for (unsigned int j = 0; j < root[i]["items"].size(); j++) {
 			family->addItem(root[i]["items"][j].asInt());
 		}

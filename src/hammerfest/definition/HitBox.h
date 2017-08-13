@@ -6,8 +6,6 @@
 #include <SDL2/SDL_image.h>
 #endif
 
-#include <stdio.h>
-
 #ifndef __MYCLASS_HITBOX
 #define __MYCLASS_HITBOX
 

@@ -8,7 +8,6 @@
 
 #include <map>
 #include <vector>
-#include <stdio.h>
 
 #ifndef __MYCLASS_LEVEL
 #define __MYCLASS_LEVEL

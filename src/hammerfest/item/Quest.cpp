@@ -72,7 +72,7 @@ void Quest::addGiveFamilly(int famillyId) {
 }
 
 void Quest::printName() {
-	fprintf(stderr, "%i - %s - %s\n", id, titre.c_str(), description.c_str());
+    std::cout<<id<<" - "<<titre<<" - "<<description<<"\n";
 }
 
 bool Quest::giveLife() {
@@ -84,46 +84,46 @@ bool Quest::turnLightOn() {
 }
 
 void Quest::printJson() {
-	fprintf(stderr, "{\"id\":%i,", id);
-	fprintf(stderr, "\"light\":%s,", light ? "true" : "false");
-	fprintf(stderr, "\"life\":%s,", life ? "true" : "false");
-	fprintf(stderr, "\"titre\":[");
-	fprintf(stderr, "{\"fr\":\"%s\"},",titre.c_str());
-	fprintf(stderr, "{\"en\":\"%s\"},",titre.c_str());
-	fprintf(stderr, "{\"es\":\"%s\"}",titre.c_str());
-	fprintf(stderr, "],");
-	fprintf(stderr, "\"description\":[");
-	fprintf(stderr, "{\"fr\":\"%s\"},",description.c_str());
-	fprintf(stderr, "{\"en\":\"%s\"},",description.c_str());
-	fprintf(stderr, "{\"es\":\"%s\"}",description.c_str());
-	fprintf(stderr, "],");
-	fprintf(stderr, "\"option\":%i,", giveOption);
-	fprintf(stderr, "\"mode\":%i,", giveMode);
-	fprintf(stderr, "\"remove\":%i,", removeFamilly);
-	fprintf(stderr, "\"bombe\":%s,", bombe ? "true" : "false");
-	fprintf(stderr, "\"bombeUp\":%s,", bombeUp ? "true" : "false");
-	fprintf(stderr, "\"disguise\":%i,", disguise);
-	fprintf(stderr, "\"key\":%i,", key);
-	fprintf(stderr, "\"family\":[");
+    std::cout<<"{\"id\":"<<id<<",";
+	std::cout<<"\"light\":"<<(light ? "true" : "false")<<",";
+	std::cout<<"\"life\":"<<(life ? "true" : "false")<<",";
+	std::cout<<"\"titre\":[";
+	std::cout<<"{\"fr\":\""<<titre<<"\"},";
+	std::cout<<"{\"en\":\""<<titre<<"\"},";
+	std::cout<<"{\"es\":\""<<titre<<"\"}";
+	std::cout<<"],";
+	std::cout<<"\"description\":[";
+	std::cout<<"{\"fr\":\""<<description<<"\"},";
+	std::cout<<"{\"en\":\""<<description<<"\"},";
+	std::cout<<"{\"es\":\""<<description<<"\"}";
+	std::cout<<"],";
+	std::cout<<"\"option\":"<<giveOption<<",";
+	std::cout<<"\"mode\":"<<giveMode<<",";
+	std::cout<<"\"remove\":"<<removeFamilly<<",";
+	std::cout<<"\"bombe\":"<<(bombe ? "true" : "false")<<",";
+	std::cout<<"\"bombeUp\":"<<(bombeUp ? "true" : "false")<<",";
+	std::cout<<"\"disguise\":"<<disguise<<",";
+	std::cout<<"\"key\":"<<key<<",";
+	std::cout<<"\"family\":[";
 	for (unsigned int i = 0; i < giveFamilly.size(); i++) {
 		if (i < giveFamilly.size() - 1) {
-			fprintf(stderr, "%i,", giveFamilly[i]);
+			std::cout<<giveFamilly[i]<<",";
 		} else {
-			fprintf(stderr, "%i", giveFamilly[i]);
+			std::cout<<giveFamilly[i];
 		}
 	}
-	fprintf(stderr, "],");
-	fprintf(stderr, "\"require\":[");
+	std::cout<<"],";
+	std::cout<<"\"require\":[";
 	std::map<int, int>::iterator last;
 	last = requireItemId.end();
 	--last;
 	for (std::map<int, int>::iterator it = requireItemId.begin(); it != requireItemId.end(); ++it) {
 		if (it != last) {
-			fprintf(stderr, "{\"id\":%i,\"val\":%i},", it->first,  it->second);
+            std::cout<<"{\"id\":"<<it->first<<",\"val\":"<<it->second<<"},";
 		} else {
-			fprintf(stderr, "{\"id\":%i,\"val\":%i}", it->first,  it->second);
+			std::cout<<"{\"id\":"<<it->first<<",\"val\":"<<it->second<<"}";
 		}
 	}
-	fprintf(stderr, "]");
-	fprintf(stderr, "},\n");
+	std::cout<<"]";
+	std::cout<<"},\n";
 }
