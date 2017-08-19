@@ -16,10 +16,10 @@ class HitBox {
 		virtual ~HitBox();
 		void updateHitBox(int x, int y);
 		bool hit(SDL_Rect other);
-		bool hitByLeftSide(SDL_Rect other);
-		bool hitByRightSide(SDL_Rect other);
-		bool hitByBottonSide(SDL_Rect other);
-		bool hitByTopSide(SDL_Rect other);
+		bool hitMeByLeftSide(SDL_Rect other);
+		bool hitMeByRightSide(SDL_Rect other);
+		bool hitMeByBottonSide(SDL_Rect other);
+		bool hitMeByTopSide(SDL_Rect other);
 		int getIntersect(SDL_Rect other, bool horizontal);
 		SDL_Rect getRect();
 	private:
