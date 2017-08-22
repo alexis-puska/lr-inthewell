@@ -229,6 +229,25 @@ void Game::tick() {
                 ennemies[i]->doSomething(screenBuffer);
             }
             
+            //Gestion des collisions
+            for (unsigned int i = 0; i < ennemies.size(); i++) {
+                for (unsigned int p = 0; p < players.size(); p++) {
+                    if(players[p]->playerIsAlive() && !players[p]->playerIsProtected()){
+                        if(ennemies[i]->hit(players[p]->getHitbox())){
+                            std::cout<<"hit\n";
+                            players[p]->playerKilled();
+                            if(ennemies[i]->hitMeByBottonOrTopSide(players[p]->getHitbox())){
+                                std::cout<<"bottom or top\n";
+                                players[p]->playerKilled();
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            
+            
             drawLevelForeground();
             
             for (unsigned int i = 0; i < players.size(); i++) {
