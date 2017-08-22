@@ -139,8 +139,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\dev\libs\SDL2_gfx-1.0.3;C:\dev\libs\SDL2-2.0.5\include;C:\dev\libs\SDL2_ttf-2.0.14\include;C:\dev\libs\SDL2_net-2.0.1\include;C:\dev\libs\SDL2_mixer-2.0.1\include;C:\dev\libs\SDL2_image-2.0.1\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <LibraryPath>C:\dev\libs\SDL2-2.0.5\lib\x64;C:\dev\libs\SDL2_gfx-1.0.3\x64\Release;C:\dev\libs\SDL2_image-2.0.1\lib\x64;C:\dev\libs\SDL2_mixer-2.0.1\lib\x64;C:\dev\libs\SDL2_net-2.0.1\lib\x64;C:\dev\libs\SDL2_ttf-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\libs\SDL2_gfx-1.0.3;..\libs\SDL2-2.0.5\include;..\libs\SDL2_ttf-2.0.14\include;..\libs\SDL2_net-2.0.1\include;..\libs\SDL2_mixer-2.0.1\include;..\libs\SDL2_image-2.0.1\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>..\libs\SDL2-2.0.5\lib\x64;..\libs\SDL2_gfx-1.0.3\x64\Release;..\libs\SDL2_image-2.0.1\lib\x64;..\libs\SDL2_mixer-2.0.1\lib\x64;..\libs\SDL2_net-2.0.1\lib\x64;..\libs\SDL2_ttf-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -149,8 +149,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\dev\libs\SDL2_gfx-1.0.3;C:\dev\libs\SDL2-2.0.5\include;C:\dev\libs\SDL2_ttf-2.0.14\include;C:\dev\libs\SDL2_net-2.0.1\include;C:\dev\libs\SDL2_mixer-2.0.1\include;C:\dev\libs\SDL2_image-2.0.1\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <LibraryPath>C:\dev\libs\SDL2-2.0.5\lib\x64;C:\dev\libs\SDL2_gfx-1.0.3\x64\Release;C:\dev\libs\SDL2_image-2.0.1\lib\x64;C:\dev\libs\SDL2_mixer-2.0.1\lib\x64;C:\dev\libs\SDL2_net-2.0.1\lib\x64;C:\dev\libs\SDL2_ttf-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\libs\SDL2_gfx-1.0.3;..\libs\SDL2-2.0.5\include;..\libs\SDL2_ttf-2.0.14\include;..\libs\SDL2_net-2.0.1\include;..\libs\SDL2_mixer-2.0.1\include;..\libs\SDL2_image-2.0.1\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>..\libs\SDL2-2.0.5\lib\x64;..\libs\SDL2_gfx-1.0.3\x64\Release;..\libs\SDL2_image-2.0.1\lib\x64;..\libs\SDL2_mixer-2.0.1\lib\x64;..\libs\SDL2_net-2.0.1\lib\x64;..\libs\SDL2_ttf-2.0.14\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

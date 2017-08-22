@@ -175,9 +175,11 @@ int main(int argc, char *argv[]) {
 			// On peut vérifier d'autres touches, si on le souhaite
 
 			SDL_Keymod mod = SDL_GetModState();
+			/*
 			if (mod != KMOD_NONE) {
 				std::cout << "Vous avez appuyé sur une touche spéciale : " << mod << "\n";
 			}
+			*/
 		}
 		// Joystick
 		{
