@@ -1,10 +1,12 @@
 #include "Ennemie.h"
 
 Ennemie::Ennemie(int id, int x, int y, int type) :
-Position((x * 20) + 10, (y * 20) + 20), Drawable(), HitBox(), IdElement(id) {
+Position((x * 20) +10 , (y * 20) + 20), Drawable(), HitBox(), IdElement(id) {
     this->type = type;
     this->id = id;
     this->animIdx = 0;
+    initHitBox(x - (int)floor(ennemieHitboxWidth / 2), y - ennemieHitboxHeight, ennemieHitboxWidth, ennemieHitboxHeight);
+    
     switch (type) {
         case cerise:
             animIdxMax = Sprite::Instance().getAnimationSize("cerise_walk");
@@ -120,5 +122,12 @@ void Ennemie::doSomething(SDL_Surface * dest) {
             break;
     }
     copySurfaceToBackRenderer(t, dest, (x - (t->w / 2)) + leftPadding, y - (t->h));
+    updateHitBox(x - (int)floor(ennemieHitboxWidth / 2), y - ennemieHitboxHeight);
+    SDL_Rect * rect = new SDL_Rect;
+    rect->h = this->getRect().h;
+    rect->w = this->getRect().w;
+    rect->x = this->getRect().x+leftPadding;
+    rect->y = this->getRect().y;
+    SDL_FillRect(dest, rect, SDL_MapRGB(dest->format, 255, 0, 0));
     animIdx++;
 }

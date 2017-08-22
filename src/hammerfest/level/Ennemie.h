@@ -6,6 +6,9 @@
 #include "../definition/IdElement.h"
 #include "../definition/HitBox.h"
 
+#define ennemieHitboxWidth 20
+#define ennemieHitboxHeight 20
+
 enum ennemieType {
     cerise	= 0,
     orange	= 1,
