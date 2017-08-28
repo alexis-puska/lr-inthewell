@@ -939,12 +939,15 @@ void Player::drawHimself(SDL_Surface * dest) {
         case playerShot:
             copySurfaceToBackRenderer(t, dest, (x - (t->w / 2)) + leftPadding, y - (t->h) + 17);
             break;
+         case playerRespawn:
+            copySurfaceToBackRenderer(t, dest, (x - (t->w / 2)) + leftPadding, y - (t->h) + 22);
+            break;
+            
         case playerWait:
         case playerWalk:
         case playerLanding:
         case playerBoring:
         case playerRaiseUp:
-        case playerRespawn:
         case playerRun:
         case playerCry:
         case playerStartFall:

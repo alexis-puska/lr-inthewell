@@ -582,3 +582,33 @@ void Game::fillScreenBufferWithSurface(std::string name, int index, SDL_Surface 
         y += temp2->h;
     }
 }
+
+
+
+
+
+/*
+ 
+ Réponse envoyée sur Twinoïd ;)
+ 
+ Au passage, EternalBot vient de faire une remarque pertinente quant à la formule d'apparition de la boule de feu : elle vient à la même vitesse de 0 à 3 vies, ce qui signifie qu'il n'y a pas besoin de suicider toutes ses vies pour le défi du Pad de la Crypte.
+ 
+ Pour les curieux, voici le pseudocode pour calculer la durée :
+ 
+ vies = max(viesIgor, viesSandy);
+ coeffMode = 1 + 0.4 * modeCauchemar;
+ coeffVies = 1 + 0.05 * max(0, vies - 3);
+ coeff = coeffMode * coeffVies;
+ 
+ secondesAvantPremierVite = 35 / coeff;
+ secondesAvantSecondVite = 25 / coeff;
+ 
+ Compressée pour le fun :D
+ 
+ secondesAvantPremierVite = 35 / ((1 + 0.4 * modeCauchemar) * (1 + 0.05 * (max(0, max(viesIgor, viesSandy) - 3))));
+ secondesAvantSecondVite = 25 / ((1 + 0.4 * modeCauchemar) * (1 + 0.05 * (max(0, max(viesIgor, viesSandy) - 3))));
+ 
+ Si j'ai pas fait de fautes :P
+ 
+ */
+ 
