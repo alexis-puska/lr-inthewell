@@ -43,17 +43,74 @@
 		A2723B4A1F3EF47B00B06E3D /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B3F1F3EF47B00B06E3D /* Sound.cpp */; };
 		A2723B4C1F3EF47B00B06E3D /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B411F3EF47B00B06E3D /* Sprite.cpp */; };
 		A2723B4E1F3EF47B00B06E3D /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B431F3EF47B00B06E3D /* Text.cpp */; };
+		A2C9664F1FC9C3AC00E07080 /* sound_black_bombe.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9663C1FC9C3AC00E07080 /* sound_black_bombe.wav */; };
+		A2C966501FC9C3AC00E07080 /* sound_blue_bombe.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9663D1FC9C3AC00E07080 /* sound_blue_bombe.wav */; };
+		A2C966511FC9C3AC00E07080 /* sound_change_type.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9663E1FC9C3AC00E07080 /* sound_change_type.wav */; };
+		A2C966521FC9C3AC00E07080 /* sound_cristal.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9663F1FC9C3AC00E07080 /* sound_cristal.wav */; };
+		A2C966531FC9C3AC00E07080 /* sound_dead.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966401FC9C3AC00E07080 /* sound_dead.wav */; };
+		A2C966541FC9C3AC00E07080 /* sound_green_bombe.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966411FC9C3AC00E07080 /* sound_green_bombe.wav */; };
+		A2C966551FC9C3AC00E07080 /* sound_hurry_up.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966421FC9C3AC00E07080 /* sound_hurry_up.wav */; };
+		A2C966561FC9C3AC00E07080 /* sound_igor_fall.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966431FC9C3AC00E07080 /* sound_igor_fall.wav */; };
+		A2C966571FC9C3AC00E07080 /* sound_igor_jump.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966441FC9C3AC00E07080 /* sound_igor_jump.wav */; };
+		A2C966581FC9C3AC00E07080 /* sound_kick_bombe.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966451FC9C3AC00E07080 /* sound_kick_bombe.wav */; };
+		A2C966591FC9C3AC00E07080 /* sound_kill_ennemis.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966461FC9C3AC00E07080 /* sound_kill_ennemis.wav */; };
+		A2C9665A1FC9C3AC00E07080 /* sound_letter_effect_object.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966471FC9C3AC00E07080 /* sound_letter_effect_object.wav */; };
+		A2C9665B1FC9C3AC00E07080 /* sound_next_level.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966481FC9C3AC00E07080 /* sound_next_level.wav */; };
+		A2C9665C1FC9C3AC00E07080 /* sound_normal_bombe.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966491FC9C3AC00E07080 /* sound_normal_bombe.wav */; };
+		A2C9665D1FC9C3AC00E07080 /* sound_pop.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9664A1FC9C3AC00E07080 /* sound_pop.wav */; };
+		A2C9665E1FC9C3AC00E07080 /* sound_put_bombe.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9664B1FC9C3AC00E07080 /* sound_put_bombe.wav */; };
+		A2C9665F1FC9C3AC00E07080 /* sound_take_object.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9664C1FC9C3AC00E07080 /* sound_take_object.wav */; };
+		A2C966601FC9C3AC00E07080 /* sound_teleporter.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9664D1FC9C3AC00E07080 /* sound_teleporter.wav */; };
+		A2C966611FC9C3AC00E07080 /* sound_tuberculoz.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9664E1FC9C3AC00E07080 /* sound_tuberculoz.wav */; };
+		A2C966681FC9C49900E07080 /* music_boss_v2.3.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966631FC9C49800E07080 /* music_boss_v2.3.mp3 */; };
+		A2C966691FC9C49900E07080 /* music_boss.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966641FC9C49900E07080 /* music_boss.mp3 */; };
+		A2C9666A1FC9C49900E07080 /* music_hurry_up.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966651FC9C49900E07080 /* music_hurry_up.mp3 */; };
+		A2C9666B1FC9C49900E07080 /* music_lost_track.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966661FC9C49900E07080 /* music_lost_track.mp3 */; };
+		A2C9666C1FC9C49900E07080 /* music_music.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C966671FC9C49900E07080 /* music_music.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A2723AAC1F3EF1CB00B06E3D /* CopyFiles */ = {
+		A2C9663B1FC9C37400E07080 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			dstPath = sound;
+			dstSubfolderSpec = 16;
 			files = (
+				A2C9664F1FC9C3AC00E07080 /* sound_black_bombe.wav in CopyFiles */,
+				A2C966501FC9C3AC00E07080 /* sound_blue_bombe.wav in CopyFiles */,
+				A2C966511FC9C3AC00E07080 /* sound_change_type.wav in CopyFiles */,
+				A2C966521FC9C3AC00E07080 /* sound_cristal.wav in CopyFiles */,
+				A2C966531FC9C3AC00E07080 /* sound_dead.wav in CopyFiles */,
+				A2C966541FC9C3AC00E07080 /* sound_green_bombe.wav in CopyFiles */,
+				A2C966551FC9C3AC00E07080 /* sound_hurry_up.wav in CopyFiles */,
+				A2C966561FC9C3AC00E07080 /* sound_igor_fall.wav in CopyFiles */,
+				A2C966571FC9C3AC00E07080 /* sound_igor_jump.wav in CopyFiles */,
+				A2C966581FC9C3AC00E07080 /* sound_kick_bombe.wav in CopyFiles */,
+				A2C966591FC9C3AC00E07080 /* sound_kill_ennemis.wav in CopyFiles */,
+				A2C9665A1FC9C3AC00E07080 /* sound_letter_effect_object.wav in CopyFiles */,
+				A2C9665B1FC9C3AC00E07080 /* sound_next_level.wav in CopyFiles */,
+				A2C9665C1FC9C3AC00E07080 /* sound_normal_bombe.wav in CopyFiles */,
+				A2C9665D1FC9C3AC00E07080 /* sound_pop.wav in CopyFiles */,
+				A2C9665E1FC9C3AC00E07080 /* sound_put_bombe.wav in CopyFiles */,
+				A2C9665F1FC9C3AC00E07080 /* sound_take_object.wav in CopyFiles */,
+				A2C966601FC9C3AC00E07080 /* sound_teleporter.wav in CopyFiles */,
+				A2C966611FC9C3AC00E07080 /* sound_tuberculoz.wav in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2C966621FC9C48700E07080 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = music;
+			dstSubfolderSpec = 16;
+			files = (
+				A2C966681FC9C49900E07080 /* music_boss_v2.3.mp3 in CopyFiles */,
+				A2C966691FC9C49900E07080 /* music_boss.mp3 in CopyFiles */,
+				A2C9666A1FC9C49900E07080 /* music_hurry_up.mp3 in CopyFiles */,
+				A2C9666B1FC9C49900E07080 /* music_lost_track.mp3 in CopyFiles */,
+				A2C9666C1FC9C49900E07080 /* music_music.mp3 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -97,6 +154,34 @@
 		A2723B3F1F3EF47B00B06E3D /* Sound.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Sound.cpp; path = src/hammerfest/utils/Sound.cpp; sourceTree = "<group>"; };
 		A2723B411F3EF47B00B06E3D /* Sprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Sprite.cpp; path = src/hammerfest/utils/Sprite.cpp; sourceTree = "<group>"; };
 		A2723B431F3EF47B00B06E3D /* Text.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Text.cpp; path = src/hammerfest/utils/Text.cpp; sourceTree = "<group>"; };
+		A2C966341FC9C14D00E07080 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
+		A2C966351FC9C18F00E07080 /* sound_black_bombe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_black_bombe.wav; path = resources/sound/sound_black_bombe.wav; sourceTree = "<group>"; };
+		A2C966371FC9C1A900E07080 /* sound_blue_bombe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_blue_bombe.wav; path = resources/sound/sound_blue_bombe.wav; sourceTree = "<group>"; };
+		A2C966391FC9C1AD00E07080 /* sound_change_type.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_change_type.wav; path = resources/sound/sound_change_type.wav; sourceTree = "<group>"; };
+		A2C9663C1FC9C3AC00E07080 /* sound_black_bombe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_black_bombe.wav; path = resources/sound/sound_black_bombe.wav; sourceTree = "<group>"; };
+		A2C9663D1FC9C3AC00E07080 /* sound_blue_bombe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_blue_bombe.wav; path = resources/sound/sound_blue_bombe.wav; sourceTree = "<group>"; };
+		A2C9663E1FC9C3AC00E07080 /* sound_change_type.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_change_type.wav; path = resources/sound/sound_change_type.wav; sourceTree = "<group>"; };
+		A2C9663F1FC9C3AC00E07080 /* sound_cristal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_cristal.wav; path = resources/sound/sound_cristal.wav; sourceTree = "<group>"; };
+		A2C966401FC9C3AC00E07080 /* sound_dead.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_dead.wav; path = resources/sound/sound_dead.wav; sourceTree = "<group>"; };
+		A2C966411FC9C3AC00E07080 /* sound_green_bombe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_green_bombe.wav; path = resources/sound/sound_green_bombe.wav; sourceTree = "<group>"; };
+		A2C966421FC9C3AC00E07080 /* sound_hurry_up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_hurry_up.wav; path = resources/sound/sound_hurry_up.wav; sourceTree = "<group>"; };
+		A2C966431FC9C3AC00E07080 /* sound_igor_fall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_igor_fall.wav; path = resources/sound/sound_igor_fall.wav; sourceTree = "<group>"; };
+		A2C966441FC9C3AC00E07080 /* sound_igor_jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_igor_jump.wav; path = resources/sound/sound_igor_jump.wav; sourceTree = "<group>"; };
+		A2C966451FC9C3AC00E07080 /* sound_kick_bombe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_kick_bombe.wav; path = resources/sound/sound_kick_bombe.wav; sourceTree = "<group>"; };
+		A2C966461FC9C3AC00E07080 /* sound_kill_ennemis.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_kill_ennemis.wav; path = resources/sound/sound_kill_ennemis.wav; sourceTree = "<group>"; };
+		A2C966471FC9C3AC00E07080 /* sound_letter_effect_object.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_letter_effect_object.wav; path = resources/sound/sound_letter_effect_object.wav; sourceTree = "<group>"; };
+		A2C966481FC9C3AC00E07080 /* sound_next_level.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_next_level.wav; path = resources/sound/sound_next_level.wav; sourceTree = "<group>"; };
+		A2C966491FC9C3AC00E07080 /* sound_normal_bombe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_normal_bombe.wav; path = resources/sound/sound_normal_bombe.wav; sourceTree = "<group>"; };
+		A2C9664A1FC9C3AC00E07080 /* sound_pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_pop.wav; path = resources/sound/sound_pop.wav; sourceTree = "<group>"; };
+		A2C9664B1FC9C3AC00E07080 /* sound_put_bombe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_put_bombe.wav; path = resources/sound/sound_put_bombe.wav; sourceTree = "<group>"; };
+		A2C9664C1FC9C3AC00E07080 /* sound_take_object.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_take_object.wav; path = resources/sound/sound_take_object.wav; sourceTree = "<group>"; };
+		A2C9664D1FC9C3AC00E07080 /* sound_teleporter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_teleporter.wav; path = resources/sound/sound_teleporter.wav; sourceTree = "<group>"; };
+		A2C9664E1FC9C3AC00E07080 /* sound_tuberculoz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound_tuberculoz.wav; path = resources/sound/sound_tuberculoz.wav; sourceTree = "<group>"; };
+		A2C966631FC9C49800E07080 /* music_boss_v2.3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music_boss_v2.3.mp3; path = resources/music/music_boss_v2.3.mp3; sourceTree = "<group>"; };
+		A2C966641FC9C49900E07080 /* music_boss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music_boss.mp3; path = resources/music/music_boss.mp3; sourceTree = "<group>"; };
+		A2C966651FC9C49900E07080 /* music_hurry_up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music_hurry_up.mp3; path = resources/music/music_hurry_up.mp3; sourceTree = "<group>"; };
+		A2C966661FC9C49900E07080 /* music_lost_track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music_lost_track.mp3; path = resources/music/music_lost_track.mp3; sourceTree = "<group>"; };
+		A2C966671FC9C49900E07080 /* music_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music_music.mp3; path = resources/music/music_music.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +204,33 @@
 		A2723AA51F3EF1CB00B06E3D = {
 			isa = PBXGroup;
 			children = (
+				A2C966631FC9C49800E07080 /* music_boss_v2.3.mp3 */,
+				A2C966641FC9C49900E07080 /* music_boss.mp3 */,
+				A2C966651FC9C49900E07080 /* music_hurry_up.mp3 */,
+				A2C966661FC9C49900E07080 /* music_lost_track.mp3 */,
+				A2C966671FC9C49900E07080 /* music_music.mp3 */,
+				A2C9663C1FC9C3AC00E07080 /* sound_black_bombe.wav */,
+				A2C9663D1FC9C3AC00E07080 /* sound_blue_bombe.wav */,
+				A2C9663E1FC9C3AC00E07080 /* sound_change_type.wav */,
+				A2C9663F1FC9C3AC00E07080 /* sound_cristal.wav */,
+				A2C966401FC9C3AC00E07080 /* sound_dead.wav */,
+				A2C966411FC9C3AC00E07080 /* sound_green_bombe.wav */,
+				A2C966421FC9C3AC00E07080 /* sound_hurry_up.wav */,
+				A2C966431FC9C3AC00E07080 /* sound_igor_fall.wav */,
+				A2C966441FC9C3AC00E07080 /* sound_igor_jump.wav */,
+				A2C966451FC9C3AC00E07080 /* sound_kick_bombe.wav */,
+				A2C966461FC9C3AC00E07080 /* sound_kill_ennemis.wav */,
+				A2C966471FC9C3AC00E07080 /* sound_letter_effect_object.wav */,
+				A2C966481FC9C3AC00E07080 /* sound_next_level.wav */,
+				A2C966491FC9C3AC00E07080 /* sound_normal_bombe.wav */,
+				A2C9664A1FC9C3AC00E07080 /* sound_pop.wav */,
+				A2C9664B1FC9C3AC00E07080 /* sound_put_bombe.wav */,
+				A2C9664C1FC9C3AC00E07080 /* sound_take_object.wav */,
+				A2C9664D1FC9C3AC00E07080 /* sound_teleporter.wav */,
+				A2C9664E1FC9C3AC00E07080 /* sound_tuberculoz.wav */,
+				A2C966391FC9C1AD00E07080 /* sound_change_type.wav */,
+				A2C966371FC9C1A900E07080 /* sound_blue_bombe.wav */,
+				A2C966351FC9C18F00E07080 /* sound_black_bombe.wav */,
 				A2723B3A1F3EF47B00B06E3D /* GameConfig.cpp */,
 				A2723B3C1F3EF47B00B06E3D /* Jsoncpp.cpp */,
 				A2723B3D1F3EF47B00B06E3D /* LevelService.cpp */,
@@ -158,6 +270,7 @@
 				A2723AAF1F3EF1CB00B06E3D /* Products */,
 				A2723ABA1F3EF25F00B06E3D /* hammerfest */,
 				A2723ABB1F3EF25F00B06E3D /* main.cpp */,
+				A2C966341FC9C14D00E07080 /* resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,7 +291,8 @@
 			buildPhases = (
 				A2723AAA1F3EF1CB00B06E3D /* Sources */,
 				A2723AAB1F3EF1CB00B06E3D /* Frameworks */,
-				A2723AAC1F3EF1CB00B06E3D /* CopyFiles */,
+				A2C9663B1FC9C37400E07080 /* CopyFiles */,
+				A2C966621FC9C48700E07080 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -345,6 +459,7 @@
 		A2723AB61F3EF1CB00B06E3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
@@ -353,12 +468,14 @@
 				OTHER_CPLUSPLUSFLAGS = "-DIS_OSX";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "$(OTHER_CFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
 			};
 			name = Debug;
 		};
 		A2723AB71F3EF1CB00B06E3D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
@@ -367,6 +484,7 @@
 				OTHER_CPLUSPLUSFLAGS = "-DIS_OSX";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-DIS_OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
 			};
 			name = Release;
 		};

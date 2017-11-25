@@ -1,7 +1,7 @@
 #include "Sound.h"
 
 //music
-#include "resources/music_boss.h"
+//#include "resources/music_boss.h"
 #include "resources/music_hurry_up.h"
 #include "resources/music_music.h"
 
@@ -34,7 +34,8 @@ Sound::Sound() {
         std::cout << Mix_GetError();
 	}
 
-	musicBoss = Mix_LoadMUSType_RW(SDL_RWFromMem(music_boss_mp3, music_boss_mp3_len), MUS_MP3, 0);
+	musicBoss = Mix_LoadMUS("music/music_boss_v2.3.mp3");
+    //musicBoss = Mix_LoadMUSType_RW(SDL_RWFromMem(music_boss_mp3, music_boss_mp3_len), MUS_MP3, 0);
 	musicHurryUp = Mix_LoadMUSType_RW(SDL_RWFromMem(music_hurry_up_mp3, music_hurry_up_mp3_len), MUS_MP3, 0);
 	music = Mix_LoadMUSType_RW(SDL_RWFromMem(music_music_mp3, music_music_mp3_len), MUS_MP3, 0);
 
