@@ -69,9 +69,15 @@ target_: $(TARGET)
 
 #LINK
 $(TARGET): $(OBJS)	
+	mkdir -p bin
+	mkdir -p bin/sound
+	cp -r resources/sound/* ./bin/sound
+	mkdir -p bin/music
+	cp -r resources/music/* ./bin/music
 	$(CXX) -o $@ $^ $(LDFLAGS) $(LDLIBS) $(LIBS) $(EXTRA_LDFLAGS)
 
 
 #CLEAN
 clean: $(PLAT_CLEAN) 
-	$(RM) $(TARGET) $(OBJS) $(TARGET).map
+	-rm -rf bin
+	$(RM) bin/$(TARGET) $(OBJS) bin/$(TARGET).map
