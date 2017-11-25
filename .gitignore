@@ -12,3 +12,7 @@ lr_hammerfest_libretro.so
 *.pdb
 *.tlog
 *.idb
+*.ipch
+bin/
+.vs/
+x64/
