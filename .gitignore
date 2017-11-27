@@ -14,5 +14,5 @@ lr_hammerfest_libretro.so
 *.idb
 *.ipch
 bin/
-.vs/
 x64/
+release/
