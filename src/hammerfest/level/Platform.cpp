@@ -26,7 +26,7 @@ int Platform::getLength() {
 }
 
 void Platform::drawHimself(SDL_Surface * dest){
-
+    
 }
 
 
@@ -42,7 +42,7 @@ void Platform::drawHimself(SDL_Surface * dest, bool drawShadow) {
 			if (drawShadow) {
 				//ajout de l'ombre
 				SDL_Surface * shadow = SDL_CreateRGBSurface(0, gridSize - 1, length * gridSize - 3, 32, rmask, gmask, bmask, amask);
-				SDL_FillRect(shadow, NULL, SDL_MapRGBA(shadow->format, 0, 0, 0, shadowPlatformValue));
+                SDL_FillRect(shadow, NULL, SDL_MapRGBA(shadow->format, 0, 0, 0, shadowPlatformValue));
 				copySurfaceToBackRenderer(shadow, dest, (x * gridSize) + leftPadding + 4, (y * gridSize) + 5);
 				SDL_FreeSurface(shadow);
 			} else {
@@ -73,7 +73,6 @@ void Platform::drawHimself(SDL_Surface * dest, bool drawShadow) {
 						(((x * gridSize) + (length * gridSize)) - 6) + leftPadding, (y * gridSize), -1, -1);
 			}
 		}
-
 	}
 }
 

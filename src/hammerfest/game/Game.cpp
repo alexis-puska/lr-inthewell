@@ -235,10 +235,10 @@ void Game::tick() {
                     if(players[p]->playerIsAlive() && !players[p]->playerIsProtected()){
                         if(ennemies[i]->hit(players[p]->getHitbox())){
                             std::cout<<"hit\n";
-                            players[p]->playerKilled();
+                            //players[p]->playerKilled();
                             if(ennemies[i]->hitMeByBottonOrTopSide(players[p]->getHitbox())){
                                 std::cout<<"bottom or top\n";
-                                players[p]->playerKilled();
+                                //players[p]->playerKilled();
                             }
                         }
                     }

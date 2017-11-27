@@ -33,7 +33,6 @@
 		A2723B2A1F3EF3E400B06E3D /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AFA1F3EF3E400B06E3D /* Level.cpp */; };
 		A2723B2C1F3EF3E400B06E3D /* Lock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AFC1F3EF3E400B06E3D /* Lock.cpp */; };
 		A2723B2E1F3EF3E400B06E3D /* Pick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AFE1F3EF3E400B06E3D /* Pick.cpp */; };
-		A2723B301F3EF3E400B06E3D /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B001F3EF3E400B06E3D /* Platform.cpp */; };
 		A2723B321F3EF3E400B06E3D /* Rayon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B021F3EF3E400B06E3D /* Rayon.cpp */; };
 		A2723B341F3EF3E400B06E3D /* Teleporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B041F3EF3E400B06E3D /* Teleporter.cpp */; };
 		A2723B361F3EF3E400B06E3D /* Vortex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B061F3EF3E400B06E3D /* Vortex.cpp */; };
@@ -43,6 +42,7 @@
 		A2723B4A1F3EF47B00B06E3D /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B3F1F3EF47B00B06E3D /* Sound.cpp */; };
 		A2723B4C1F3EF47B00B06E3D /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B411F3EF47B00B06E3D /* Sprite.cpp */; };
 		A2723B4E1F3EF47B00B06E3D /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B431F3EF47B00B06E3D /* Text.cpp */; };
+		A2C5BB351FCB71A3009940D7 /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723B001F3EF3E400B06E3D /* Platform.cpp */; };
 		A2C9664F1FC9C3AC00E07080 /* sound_black_bombe.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9663C1FC9C3AC00E07080 /* sound_black_bombe.wav */; };
 		A2C966501FC9C3AC00E07080 /* sound_blue_bombe.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9663D1FC9C3AC00E07080 /* sound_blue_bombe.wav */; };
 		A2C966511FC9C3AC00E07080 /* sound_change_type.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2C9663E1FC9C3AC00E07080 /* sound_change_type.wav */; };
@@ -343,6 +343,7 @@
 				A2723B0A1F3EF3E400B06E3D /* Drawable.cpp in Sources */,
 				A2723B0C1F3EF3E400B06E3D /* HitBox.cpp in Sources */,
 				A2723B0E1F3EF3E400B06E3D /* IdElement.cpp in Sources */,
+				A2C5BB351FCB71A3009940D7 /* Platform.cpp in Sources */,
 				A2723B101F3EF3E400B06E3D /* Position.cpp in Sources */,
 				A2723B451F3EF47B00B06E3D /* GameConfig.cpp in Sources */,
 				A2723B471F3EF47B00B06E3D /* Jsoncpp.cpp in Sources */,
@@ -365,7 +366,6 @@
 				A2723B2A1F3EF3E400B06E3D /* Level.cpp in Sources */,
 				A2723B2C1F3EF3E400B06E3D /* Lock.cpp in Sources */,
 				A2723B2E1F3EF3E400B06E3D /* Pick.cpp in Sources */,
-				A2723B301F3EF3E400B06E3D /* Platform.cpp in Sources */,
 				A2723B321F3EF3E400B06E3D /* Rayon.cpp in Sources */,
 				A2723B341F3EF3E400B06E3D /* Teleporter.cpp in Sources */,
 				A2723B361F3EF3E400B06E3D /* Vortex.cpp in Sources */,
