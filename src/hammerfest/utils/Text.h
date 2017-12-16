@@ -44,7 +44,7 @@ class Text {
 	private:
 		Text& operator=(const Text&);
 		Text(const Text&);
-		static Text m_instance;
+		
 
 		void parseJsonFile();
 

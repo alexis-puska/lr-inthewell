@@ -1,8 +1,6 @@
 #include "LevelService.h"
 #include "resources/json_level_parser.h"
 
-LevelService LevelService::m_instance = LevelService();
-
 LevelService::LevelService() {
     std::cout << "Init levelService system\n";
 	currentLevelId = -1;
@@ -14,6 +12,7 @@ LevelService::~LevelService() {
 }
 
 LevelService& LevelService::Instance() {
+    static LevelService m_instance;
 	return m_instance;
 }
 
@@ -84,14 +83,31 @@ Level * LevelService::getLevel(int id) {
 					new Ennemie(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt(),
 							level["ennemies"][i]["type"].asInt()));
 		}
-
-//		std::map<int, Event*> events;
-//		std::map<int, Door *> doors;
-//		std::map<int, Vortex *> vortexs;
-//		std::vector<Position *> startPlayers;
-//		std::vector<Position *> startEffectObjets;
-//		std::vector<Position *> startPointObjets;
-//		std::vector<Ennemie *> ennemies;
+        
+        //TODO
+        for(unsigned int i = 0; i < level["events"].size();i++){
+            currentLevel->addEvent(NULL);
+        }
+        
+        for(unsigned int i = 0; i < level["doors"].size();i++){
+            currentLevel->addDoor(NULL);
+        }
+        
+        for(unsigned int i = 0; i < level["vortexs"].size();i++){
+            currentLevel->addVortex(NULL);
+        }
+        
+        for(unsigned int i = 0; i < level["startPlayers"].size();i++){
+            currentLevel->addStartPlayer(NULL);
+        }
+        
+        for(unsigned int i = 0; i < level["startEffectObjets"].size();i++){
+            currentLevel->addStartEffectObject(NULL);
+        }
+        
+        for(unsigned int i = 0; i < level["startPointObjets"].size();i++){
+            currentLevel->addStartPointObject(NULL);
+        }
 	}
 	return currentLevel;
 }

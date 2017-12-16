@@ -1,8 +1,9 @@
 #include "GameConfig.h"
 
-GameConfig GameConfig::m_instance = GameConfig();
+
 
 GameConfig& GameConfig::Instance() {
+    static GameConfig m_instance;
 	return m_instance;
 }
 

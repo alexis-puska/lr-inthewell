@@ -28,7 +28,7 @@ class LevelService {
 	private:
 		LevelService& operator=(const LevelService&);
 		LevelService(const LevelService&);
-		static LevelService m_instance;
+		
 
 		/***********************
 		 *      VARIABLES

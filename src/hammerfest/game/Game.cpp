@@ -78,12 +78,16 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
     releaseButton = false;
     gameState = gameStart;
     changeLevelAnimationPosition = 0;
-    currentLevel = LevelService::Instance().getLevel(0);
+    
+    //StartLevel must be 0 in real game.
+    idx = 20;
+    
+    currentLevel = LevelService::Instance().getLevel(20);
     currentLevel->generateBackGround(-1);
     ennemies = currentLevel->getEnnemiesList();
     players.push_back(new Player(80, 400, 0, &in_keystate[0]));
     changeLevelAnimationType = changeLevelNormal;
-    idx = 0;
+    
     
     startGame();
 }
@@ -122,7 +126,7 @@ void Game::startGame() {
     Sound::Instance().startMusic();
     if (!isThreadAlive) {
         isThreadAlive = true;
-        idx = 0;
+        idx = 20;
         mainThread = SDL_CreateThread(metronome, "mainThread", this);
     }
     

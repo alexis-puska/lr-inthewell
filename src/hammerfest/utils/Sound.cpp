@@ -26,8 +26,6 @@
 #include "resources/sound_teleporter.h"
 #include "resources/sound_tuberculoz.h"
 
-Sound Sound::m_instance = Sound();
-
 Sound::Sound() {
     std::cout << "Init sound system\n";
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024) == -1) {
@@ -92,6 +90,7 @@ Sound::~Sound() {
 }
 
 Sound& Sound::Instance() {
+    static Sound m_instance;
 	return m_instance;
 }
 

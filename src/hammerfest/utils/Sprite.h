@@ -36,7 +36,7 @@ class Sprite {
 	private:
 		Sprite& operator=(const Sprite&);
 		Sprite(const Sprite&);
-		static Sprite m_instance;
+		
 
 		/***********************
 		 *      VARIABLES

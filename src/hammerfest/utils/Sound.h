@@ -15,9 +15,10 @@
 
 class Sound {
 	public:
-		static Sound& Instance();
-		Sound();
-		~Sound();
+        static Sound& Instance();
+        Sound();
+        ~Sound();
+
 
 		void startMusicBoss();
 		void startMusicHurryUp();
@@ -46,7 +47,6 @@ class Sound {
 	private:
 		Sound& operator=(const Sound&);
 		Sound(const Sound&);
-		static Sound m_instance;
 
 		//musique
 		Mix_Music *musicBoss;

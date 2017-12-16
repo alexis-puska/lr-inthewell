@@ -18,8 +18,6 @@
 #include "resources/image_menu.h"
 #include "resources/json_image_parser.h"
 
-Sprite Sprite::m_instance = Sprite();
-
 Sprite::Sprite() {
 	IMG_Init (IMG_INIT_PNG);
 	std::cout<< "Init sprite system\n";
@@ -32,6 +30,7 @@ Sprite::~Sprite() {
 }
 
 Sprite& Sprite::Instance() {
+    static Sprite m_instance;
 	return m_instance;
 }
 

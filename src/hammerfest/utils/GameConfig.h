@@ -90,7 +90,7 @@ class GameConfig {
 	private:
 		GameConfig& operator=(const GameConfig&);
 		GameConfig(const GameConfig&);
-		static GameConfig m_instance;
+		
 
 		int gameLoaded;
 		int gameMode;

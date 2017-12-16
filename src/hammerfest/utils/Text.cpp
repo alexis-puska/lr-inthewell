@@ -15,7 +15,7 @@ const static SDL_Color redColor = { 255, 0, 0 };
 const static SDL_Color blueColor = { 0, 140, 255 };
 const static SDL_Color goldColor = { 255, 255, 0 };
 
-Text Text::m_instance = Text();
+
 
 Text::Text() {
 	TTF_Init();
@@ -36,6 +36,7 @@ Text::~Text() {
 }
 
 Text& Text::Instance() {
+    static Text m_instance;
 	return m_instance;
 }
 
