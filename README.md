@@ -132,8 +132,8 @@ add this xml fragment to es_systems.cfg file in /etc/emulationstation/es_systems
 in a folder clone the project : 
 ```
 cd /home/pi/RetroPie/roms
-git clone https://github.com/alexis-puska/lr-hammerfest.git
-cd lr-hammerfest
+git clone https://github.com/alexis-puska/lr-inthewell.git
+cd lr-inthewell
 chmod +x Update.sh
 chmod +x Compile\ pi.sh
 chmod +x A\ Hammerfest.sh
