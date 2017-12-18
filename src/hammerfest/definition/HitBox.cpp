@@ -25,7 +25,7 @@ void HitBox::updateHitBox(int x, int y) {
 }
 
 bool HitBox::hit(SDL_Rect other) {
-    std::cout << "hit rect : "<< rect.x << " " << rect.y << " " << rect.w << " " << rect.h << " other : " << other.x << " " << other.y << " " << other.w << " " << other.h << " \n";
+   // std::cout << "hit rect : "<< rect.x << " " << rect.y << " " << rect.w << " " << rect.h << " other : " << other.x << " " << other.y << " " << other.w << " " << other.h << " \n";
     return SDL_HasIntersection(&rect, &other);
 }
 
