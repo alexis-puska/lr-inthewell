@@ -46,6 +46,7 @@ OBJS += src/hammerfest/level/Door.o
 OBJS += src/hammerfest/level/Level.o
 OBJS += src/hammerfest/level/Lock.o
 OBJS += src/hammerfest/level/ennemies/Ennemie.o
+OBJS += src/hammerfest/level/ennemies/Cerise.o
 OBJS += src/hammerfest/level/Event.o
 OBJS += src/hammerfest/level/Platform.o
 OBJS += src/hammerfest/level/Pick.o

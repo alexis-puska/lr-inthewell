@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A24F1EAD1FE82EBD00B01BD4 /* Ennemie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A24F1EA91FE82EBD00B01BD4 /* Ennemie.cpp */; };
+		A24F1EAE1FE82EBD00B01BD4 /* Ennemie.h in Sources */ = {isa = PBXBuildFile; fileRef = A24F1EAA1FE82EBD00B01BD4 /* Ennemie.h */; };
+		A24F1EAF1FE82EBD00B01BD4 /* Cerise.h in Sources */ = {isa = PBXBuildFile; fileRef = A24F1EAB1FE82EBD00B01BD4 /* Cerise.h */; };
+		A24F1EB01FE82EBD00B01BD4 /* Cerise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A24F1EAC1FE82EBD00B01BD4 /* Cerise.cpp */; };
 		A2723ABC1F3EF25F00B06E3D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723ABB1F3EF25F00B06E3D /* main.cpp */; };
 		A2723AD41F3EF3A600B06E3D /* SDL2_gfx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2723ACE1F3EF3A600B06E3D /* SDL2_gfx.framework */; };
 		A2723AD51F3EF3A600B06E3D /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2723ACF1F3EF3A600B06E3D /* SDL2_image.framework */; };
@@ -28,7 +32,6 @@
 		A2723B201F3EF3E400B06E3D /* Quest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF01F3EF3E400B06E3D /* Quest.cpp */; };
 		A2723B221F3EF3E400B06E3D /* Decor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF21F3EF3E400B06E3D /* Decor.cpp */; };
 		A2723B241F3EF3E400B06E3D /* Door.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF41F3EF3E400B06E3D /* Door.cpp */; };
-		A2723B261F3EF3E400B06E3D /* Ennemie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF61F3EF3E400B06E3D /* Ennemie.cpp */; };
 		A2723B281F3EF3E400B06E3D /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AF81F3EF3E400B06E3D /* Event.cpp */; };
 		A2723B2A1F3EF3E400B06E3D /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AFA1F3EF3E400B06E3D /* Level.cpp */; };
 		A2723B2C1F3EF3E400B06E3D /* Lock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723AFC1F3EF3E400B06E3D /* Lock.cpp */; };
@@ -115,6 +118,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A24F1EA91FE82EBD00B01BD4 /* Ennemie.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Ennemie.cpp; path = src/hammerfest/level/ennemies/Ennemie.cpp; sourceTree = "<group>"; };
+		A24F1EAA1FE82EBD00B01BD4 /* Ennemie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Ennemie.h; path = src/hammerfest/level/ennemies/Ennemie.h; sourceTree = "<group>"; };
+		A24F1EAB1FE82EBD00B01BD4 /* Cerise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Cerise.h; path = src/hammerfest/level/ennemies/Cerise.h; sourceTree = "<group>"; };
+		A24F1EAC1FE82EBD00B01BD4 /* Cerise.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Cerise.cpp; path = src/hammerfest/level/ennemies/Cerise.cpp; sourceTree = "<group>"; };
 		A2723AAE1F3EF1CB00B06E3D /* InTheWell */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = InTheWell; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2723ABA1F3EF25F00B06E3D /* hammerfest */ = {isa = PBXFileReference; lastKnownFileType = folder; name = hammerfest; path = src/hammerfest; sourceTree = "<group>"; };
 		A2723ABB1F3EF25F00B06E3D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
@@ -138,7 +145,6 @@
 		A2723AF01F3EF3E400B06E3D /* Quest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Quest.cpp; path = src/hammerfest/item/Quest.cpp; sourceTree = "<group>"; };
 		A2723AF21F3EF3E400B06E3D /* Decor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Decor.cpp; path = src/hammerfest/level/Decor.cpp; sourceTree = "<group>"; };
 		A2723AF41F3EF3E400B06E3D /* Door.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Door.cpp; path = src/hammerfest/level/Door.cpp; sourceTree = "<group>"; };
-		A2723AF61F3EF3E400B06E3D /* Ennemie.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Ennemie.cpp; path = src/hammerfest/level/Ennemie.cpp; sourceTree = "<group>"; };
 		A2723AF81F3EF3E400B06E3D /* Event.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Event.cpp; path = src/hammerfest/level/Event.cpp; sourceTree = "<group>"; };
 		A2723AFA1F3EF3E400B06E3D /* Level.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Level.cpp; path = src/hammerfest/level/Level.cpp; sourceTree = "<group>"; };
 		A2723AFC1F3EF3E400B06E3D /* Lock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Lock.cpp; path = src/hammerfest/level/Lock.cpp; sourceTree = "<group>"; };
@@ -204,6 +210,10 @@
 		A2723AA51F3EF1CB00B06E3D = {
 			isa = PBXGroup;
 			children = (
+				A24F1EA91FE82EBD00B01BD4 /* Ennemie.cpp */,
+				A24F1EAA1FE82EBD00B01BD4 /* Ennemie.h */,
+				A24F1EAB1FE82EBD00B01BD4 /* Cerise.h */,
+				A24F1EAC1FE82EBD00B01BD4 /* Cerise.cpp */,
 				A2C966631FC9C49800E07080 /* music_boss_v2.3.mp3 */,
 				A2C966641FC9C49900E07080 /* music_boss.mp3 */,
 				A2C966651FC9C49900E07080 /* music_hurry_up.mp3 */,
@@ -251,7 +261,6 @@
 				A2723AF01F3EF3E400B06E3D /* Quest.cpp */,
 				A2723AF21F3EF3E400B06E3D /* Decor.cpp */,
 				A2723AF41F3EF3E400B06E3D /* Door.cpp */,
-				A2723AF61F3EF3E400B06E3D /* Ennemie.cpp */,
 				A2723AF81F3EF3E400B06E3D /* Event.cpp */,
 				A2723AFA1F3EF3E400B06E3D /* Level.cpp */,
 				A2723AFC1F3EF3E400B06E3D /* Lock.cpp */,
@@ -339,6 +348,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A24F1EAD1FE82EBD00B01BD4 /* Ennemie.cpp in Sources */,
+				A24F1EAE1FE82EBD00B01BD4 /* Ennemie.h in Sources */,
+				A24F1EAF1FE82EBD00B01BD4 /* Cerise.h in Sources */,
+				A24F1EB01FE82EBD00B01BD4 /* Cerise.cpp in Sources */,
 				A2723ABC1F3EF25F00B06E3D /* main.cpp in Sources */,
 				A2723B0A1F3EF3E400B06E3D /* Drawable.cpp in Sources */,
 				A2723B0C1F3EF3E400B06E3D /* HitBox.cpp in Sources */,
@@ -361,7 +374,6 @@
 				A2723B201F3EF3E400B06E3D /* Quest.cpp in Sources */,
 				A2723B221F3EF3E400B06E3D /* Decor.cpp in Sources */,
 				A2723B241F3EF3E400B06E3D /* Door.cpp in Sources */,
-				A2723B261F3EF3E400B06E3D /* Ennemie.cpp in Sources */,
 				A2723B281F3EF3E400B06E3D /* Event.cpp in Sources */,
 				A2723B2A1F3EF3E400B06E3D /* Level.cpp in Sources */,
 				A2723B2C1F3EF3E400B06E3D /* Lock.cpp in Sources */,
