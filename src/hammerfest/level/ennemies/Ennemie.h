@@ -26,14 +26,15 @@ enum ennemieType {
 	blob = 13,
 	framboise = 14,
 	nainbricot = 15,
+	scie = 16
 };
 
 class Ennemie : public Position, public Drawable, public HitBox, public IdElement {
 public:
 	Ennemie(int id, int x, int y, int type);
-	~Ennemie();
-	void doSomething(SDL_Surface * dest);
-private:
+	virtual ~Ennemie();
+	virtual void doSomething(SDL_Surface * dest);
+protected:
 	int type;
 	int animIdx;
 	int animIdxMax;

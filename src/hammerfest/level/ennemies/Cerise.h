@@ -1,8 +1,9 @@
 #include "Ennemie.h"
 
-class Cerise{
+class Cerise : public Ennemie{
 public:
-	Cerise();
+	Cerise(int id, int x, int y);
 	~Cerise();
+	virtual void doSomething(SDL_Surface * dest);
 };
 

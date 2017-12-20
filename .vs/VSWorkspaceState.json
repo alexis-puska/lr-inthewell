@@ -3,8 +3,12 @@
     "",
     "\\src",
     "\\src\\hammerfest",
+    "\\src\\hammerfest\\game",
+    "\\src\\hammerfest\\level",
+    "\\src\\hammerfest\\level\\ennemies",
+    "\\src\\hammerfest\\utils",
     "\\src\\libretro"
   ],
-  "SelectedNode": "\\InTheWell.sln",
+  "SelectedNode": "\\src\\hammerfest\\level\\ennemies\\Ennemie.cpp",
   "PreviewInSolutionExplorer": false
 }
