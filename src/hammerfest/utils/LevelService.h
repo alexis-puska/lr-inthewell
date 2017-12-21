@@ -27,7 +27,7 @@
 #include "../level/ennemies/Ananas.h"
 #include "../level/ennemies/Blob.h"
 #include "../level/ennemies/Framboise.h"
-#include "../level/ennemies/Nainbricot.h"
+#include "../level/ennemies/NainBricot.h"
 #include "../level/ennemies/Scie.h"
 #include "../level/Vortex.h"
 #include "../level/Platform.h"
