@@ -29,14 +29,35 @@ enum ennemieType {
 	scie = 16
 };
 
+static const std::string ennemieTypeString[] = { "cerise", "orange", "pomme", "banane", "citron", 
+"bombinos", "poire", "abricot", "litchi", "fraise", "kiwi", "pasteque", "ananas", "blob", "framboise", "nainbricot", "scie"};
+
+enum ennemieState {
+	walk = 0,
+	angry,
+	frozed,
+	knock_out,
+	knock_out2,
+	dead,
+	look_up,
+	fall,
+	look_left_right
+};
+
+static const std::string ennemieStateString[] = { "walk", "angry", "frozed","knock_out", "knock_out2", "dead", "look_up", "fall", "look_left_right" };
+
+
 class Ennemie : public Position, public Drawable, public HitBox, public IdElement {
 public:
 	Ennemie(int id, int x, int y, int type);
 	virtual ~Ennemie();
 	virtual void doSomething(SDL_Surface * dest);
+	void drawHimself(SDL_Surface * sprite, SDL_Surface * dest);
+	std::string getStateString();
 protected:
 	int type;
 	int animIdx;
 	int animIdxMax;
+	int state;
 };
 #endif

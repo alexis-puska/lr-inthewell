@@ -11,7 +11,6 @@ Abricot::Abricot(int id, int x, int y) :
 	animIdxMax = Sprite::Instance().getAnimationSize("abricot_walk");
 }
 
-
 Abricot::~Abricot() {
 }
 
