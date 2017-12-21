@@ -13,11 +13,6 @@ addons:
         - libsdl2-net-dev 
         - libsdl2-mixer-dev 
         - libsdl2-gfx-dev 
-        - libXinerama-dev 
-        - libXi-dev 
-        - libXrandr-dev 
-        - libXss-dev 
-        - libXCursor-dev
 script:
   - make clean -f Makefile.libretro
   - make -f Makefile.libretro
