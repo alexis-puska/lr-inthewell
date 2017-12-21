@@ -7,9 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2134DFC1FEAE64F00CA6765 /* Abricot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DDC1FEAE64F00CA6765 /* Abricot.cpp */; };
+		A2134DFD1FEAE64F00CA6765 /* Ananas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DDE1FEAE64F00CA6765 /* Ananas.cpp */; };
+		A2134DFE1FEAE64F00CA6765 /* Banane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DE01FEAE64F00CA6765 /* Banane.cpp */; };
+		A2134DFF1FEAE64F00CA6765 /* Blob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DE21FEAE64F00CA6765 /* Blob.cpp */; };
+		A2134E001FEAE64F00CA6765 /* Bombinos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DE41FEAE64F00CA6765 /* Bombinos.cpp */; };
+		A2134E011FEAE64F00CA6765 /* Citron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DE61FEAE64F00CA6765 /* Citron.cpp */; };
+		A2134E021FEAE64F00CA6765 /* Fraise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DE81FEAE64F00CA6765 /* Fraise.cpp */; };
+		A2134E031FEAE64F00CA6765 /* Framboise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DEA1FEAE64F00CA6765 /* Framboise.cpp */; };
+		A2134E041FEAE64F00CA6765 /* Kiwi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DEC1FEAE64F00CA6765 /* Kiwi.cpp */; };
+		A2134E051FEAE64F00CA6765 /* Litchi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DEE1FEAE64F00CA6765 /* Litchi.cpp */; };
+		A2134E061FEAE64F00CA6765 /* NainBricot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DF01FEAE64F00CA6765 /* NainBricot.cpp */; };
+		A2134E071FEAE64F00CA6765 /* Orange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DF21FEAE64F00CA6765 /* Orange.cpp */; };
+		A2134E081FEAE64F00CA6765 /* Pasteque.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DF41FEAE64F00CA6765 /* Pasteque.cpp */; };
+		A2134E091FEAE64F00CA6765 /* Poire.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DF61FEAE64F00CA6765 /* Poire.cpp */; };
+		A2134E0A1FEAE64F00CA6765 /* Pomme.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DF81FEAE64F00CA6765 /* Pomme.cpp */; };
+		A2134E0B1FEAE64F00CA6765 /* Scie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2134DFA1FEAE64F00CA6765 /* Scie.cpp */; };
 		A24F1EAD1FE82EBD00B01BD4 /* Ennemie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A24F1EA91FE82EBD00B01BD4 /* Ennemie.cpp */; };
-		A24F1EAE1FE82EBD00B01BD4 /* Ennemie.h in Sources */ = {isa = PBXBuildFile; fileRef = A24F1EAA1FE82EBD00B01BD4 /* Ennemie.h */; };
-		A24F1EAF1FE82EBD00B01BD4 /* Cerise.h in Sources */ = {isa = PBXBuildFile; fileRef = A24F1EAB1FE82EBD00B01BD4 /* Cerise.h */; };
 		A24F1EB01FE82EBD00B01BD4 /* Cerise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A24F1EAC1FE82EBD00B01BD4 /* Cerise.cpp */; };
 		A2723ABC1F3EF25F00B06E3D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2723ABB1F3EF25F00B06E3D /* main.cpp */; };
 		A2723AD41F3EF3A600B06E3D /* SDL2_gfx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2723ACE1F3EF3A600B06E3D /* SDL2_gfx.framework */; };
@@ -118,6 +132,38 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A2134DDC1FEAE64F00CA6765 /* Abricot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Abricot.cpp; path = src/hammerfest/level/ennemies/Abricot.cpp; sourceTree = "<group>"; };
+		A2134DDD1FEAE64F00CA6765 /* Abricot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Abricot.h; path = src/hammerfest/level/ennemies/Abricot.h; sourceTree = "<group>"; };
+		A2134DDE1FEAE64F00CA6765 /* Ananas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ananas.cpp; path = src/hammerfest/level/ennemies/Ananas.cpp; sourceTree = "<group>"; };
+		A2134DDF1FEAE64F00CA6765 /* Ananas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ananas.h; path = src/hammerfest/level/ennemies/Ananas.h; sourceTree = "<group>"; };
+		A2134DE01FEAE64F00CA6765 /* Banane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Banane.cpp; path = src/hammerfest/level/ennemies/Banane.cpp; sourceTree = "<group>"; };
+		A2134DE11FEAE64F00CA6765 /* Banane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Banane.h; path = src/hammerfest/level/ennemies/Banane.h; sourceTree = "<group>"; };
+		A2134DE21FEAE64F00CA6765 /* Blob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Blob.cpp; path = src/hammerfest/level/ennemies/Blob.cpp; sourceTree = "<group>"; };
+		A2134DE31FEAE64F00CA6765 /* Blob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Blob.h; path = src/hammerfest/level/ennemies/Blob.h; sourceTree = "<group>"; };
+		A2134DE41FEAE64F00CA6765 /* Bombinos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bombinos.cpp; path = src/hammerfest/level/ennemies/Bombinos.cpp; sourceTree = "<group>"; };
+		A2134DE51FEAE64F00CA6765 /* Bombinos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bombinos.h; path = src/hammerfest/level/ennemies/Bombinos.h; sourceTree = "<group>"; };
+		A2134DE61FEAE64F00CA6765 /* Citron.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Citron.cpp; path = src/hammerfest/level/ennemies/Citron.cpp; sourceTree = "<group>"; };
+		A2134DE71FEAE64F00CA6765 /* Citron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Citron.h; path = src/hammerfest/level/ennemies/Citron.h; sourceTree = "<group>"; };
+		A2134DE81FEAE64F00CA6765 /* Fraise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Fraise.cpp; path = src/hammerfest/level/ennemies/Fraise.cpp; sourceTree = "<group>"; };
+		A2134DE91FEAE64F00CA6765 /* Fraise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fraise.h; path = src/hammerfest/level/ennemies/Fraise.h; sourceTree = "<group>"; };
+		A2134DEA1FEAE64F00CA6765 /* Framboise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Framboise.cpp; path = src/hammerfest/level/ennemies/Framboise.cpp; sourceTree = "<group>"; };
+		A2134DEB1FEAE64F00CA6765 /* Framboise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Framboise.h; path = src/hammerfest/level/ennemies/Framboise.h; sourceTree = "<group>"; };
+		A2134DEC1FEAE64F00CA6765 /* Kiwi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Kiwi.cpp; path = src/hammerfest/level/ennemies/Kiwi.cpp; sourceTree = "<group>"; };
+		A2134DED1FEAE64F00CA6765 /* Kiwi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Kiwi.h; path = src/hammerfest/level/ennemies/Kiwi.h; sourceTree = "<group>"; };
+		A2134DEE1FEAE64F00CA6765 /* Litchi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Litchi.cpp; path = src/hammerfest/level/ennemies/Litchi.cpp; sourceTree = "<group>"; };
+		A2134DEF1FEAE64F00CA6765 /* Litchi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Litchi.h; path = src/hammerfest/level/ennemies/Litchi.h; sourceTree = "<group>"; };
+		A2134DF01FEAE64F00CA6765 /* NainBricot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NainBricot.cpp; path = src/hammerfest/level/ennemies/NainBricot.cpp; sourceTree = "<group>"; };
+		A2134DF11FEAE64F00CA6765 /* NainBricot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NainBricot.h; path = src/hammerfest/level/ennemies/NainBricot.h; sourceTree = "<group>"; };
+		A2134DF21FEAE64F00CA6765 /* Orange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Orange.cpp; path = src/hammerfest/level/ennemies/Orange.cpp; sourceTree = "<group>"; };
+		A2134DF31FEAE64F00CA6765 /* Orange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Orange.h; path = src/hammerfest/level/ennemies/Orange.h; sourceTree = "<group>"; };
+		A2134DF41FEAE64F00CA6765 /* Pasteque.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Pasteque.cpp; path = src/hammerfest/level/ennemies/Pasteque.cpp; sourceTree = "<group>"; };
+		A2134DF51FEAE64F00CA6765 /* Pasteque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pasteque.h; path = src/hammerfest/level/ennemies/Pasteque.h; sourceTree = "<group>"; };
+		A2134DF61FEAE64F00CA6765 /* Poire.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Poire.cpp; path = src/hammerfest/level/ennemies/Poire.cpp; sourceTree = "<group>"; };
+		A2134DF71FEAE64F00CA6765 /* Poire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Poire.h; path = src/hammerfest/level/ennemies/Poire.h; sourceTree = "<group>"; };
+		A2134DF81FEAE64F00CA6765 /* Pomme.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Pomme.cpp; path = src/hammerfest/level/ennemies/Pomme.cpp; sourceTree = "<group>"; };
+		A2134DF91FEAE64F00CA6765 /* Pomme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pomme.h; path = src/hammerfest/level/ennemies/Pomme.h; sourceTree = "<group>"; };
+		A2134DFA1FEAE64F00CA6765 /* Scie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scie.cpp; path = src/hammerfest/level/ennemies/Scie.cpp; sourceTree = "<group>"; };
+		A2134DFB1FEAE64F00CA6765 /* Scie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scie.h; path = src/hammerfest/level/ennemies/Scie.h; sourceTree = "<group>"; };
 		A24F1EA91FE82EBD00B01BD4 /* Ennemie.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Ennemie.cpp; path = src/hammerfest/level/ennemies/Ennemie.cpp; sourceTree = "<group>"; };
 		A24F1EAA1FE82EBD00B01BD4 /* Ennemie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Ennemie.h; path = src/hammerfest/level/ennemies/Ennemie.h; sourceTree = "<group>"; };
 		A24F1EAB1FE82EBD00B01BD4 /* Cerise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Cerise.h; path = src/hammerfest/level/ennemies/Cerise.h; sourceTree = "<group>"; };
@@ -258,6 +304,38 @@
 				A2723AEA1F3EF3E400B06E3D /* Family.cpp */,
 				A2723AEC1F3EF3E400B06E3D /* Item.cpp */,
 				A2723AEE1F3EF3E400B06E3D /* ItemFileSystem.cpp */,
+				A2134DDC1FEAE64F00CA6765 /* Abricot.cpp */,
+				A2134DDD1FEAE64F00CA6765 /* Abricot.h */,
+				A2134DDE1FEAE64F00CA6765 /* Ananas.cpp */,
+				A2134DDF1FEAE64F00CA6765 /* Ananas.h */,
+				A2134DE01FEAE64F00CA6765 /* Banane.cpp */,
+				A2134DE11FEAE64F00CA6765 /* Banane.h */,
+				A2134DE21FEAE64F00CA6765 /* Blob.cpp */,
+				A2134DE31FEAE64F00CA6765 /* Blob.h */,
+				A2134DE41FEAE64F00CA6765 /* Bombinos.cpp */,
+				A2134DE51FEAE64F00CA6765 /* Bombinos.h */,
+				A2134DE61FEAE64F00CA6765 /* Citron.cpp */,
+				A2134DE71FEAE64F00CA6765 /* Citron.h */,
+				A2134DE81FEAE64F00CA6765 /* Fraise.cpp */,
+				A2134DE91FEAE64F00CA6765 /* Fraise.h */,
+				A2134DEA1FEAE64F00CA6765 /* Framboise.cpp */,
+				A2134DEB1FEAE64F00CA6765 /* Framboise.h */,
+				A2134DEC1FEAE64F00CA6765 /* Kiwi.cpp */,
+				A2134DED1FEAE64F00CA6765 /* Kiwi.h */,
+				A2134DEE1FEAE64F00CA6765 /* Litchi.cpp */,
+				A2134DEF1FEAE64F00CA6765 /* Litchi.h */,
+				A2134DF01FEAE64F00CA6765 /* NainBricot.cpp */,
+				A2134DF11FEAE64F00CA6765 /* NainBricot.h */,
+				A2134DF21FEAE64F00CA6765 /* Orange.cpp */,
+				A2134DF31FEAE64F00CA6765 /* Orange.h */,
+				A2134DF41FEAE64F00CA6765 /* Pasteque.cpp */,
+				A2134DF51FEAE64F00CA6765 /* Pasteque.h */,
+				A2134DF61FEAE64F00CA6765 /* Poire.cpp */,
+				A2134DF71FEAE64F00CA6765 /* Poire.h */,
+				A2134DF81FEAE64F00CA6765 /* Pomme.cpp */,
+				A2134DF91FEAE64F00CA6765 /* Pomme.h */,
+				A2134DFA1FEAE64F00CA6765 /* Scie.cpp */,
+				A2134DFB1FEAE64F00CA6765 /* Scie.h */,
 				A2723AF01F3EF3E400B06E3D /* Quest.cpp */,
 				A2723AF21F3EF3E400B06E3D /* Decor.cpp */,
 				A2723AF41F3EF3E400B06E3D /* Door.cpp */,
@@ -348,15 +426,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2134E031FEAE64F00CA6765 /* Framboise.cpp in Sources */,
+				A2134E0B1FEAE64F00CA6765 /* Scie.cpp in Sources */,
 				A24F1EAD1FE82EBD00B01BD4 /* Ennemie.cpp in Sources */,
-				A24F1EAE1FE82EBD00B01BD4 /* Ennemie.h in Sources */,
-				A24F1EAF1FE82EBD00B01BD4 /* Cerise.h in Sources */,
+				A2134DFD1FEAE64F00CA6765 /* Ananas.cpp in Sources */,
+				A2134E011FEAE64F00CA6765 /* Citron.cpp in Sources */,
 				A24F1EB01FE82EBD00B01BD4 /* Cerise.cpp in Sources */,
 				A2723ABC1F3EF25F00B06E3D /* main.cpp in Sources */,
 				A2723B0A1F3EF3E400B06E3D /* Drawable.cpp in Sources */,
 				A2723B0C1F3EF3E400B06E3D /* HitBox.cpp in Sources */,
+				A2134DFF1FEAE64F00CA6765 /* Blob.cpp in Sources */,
 				A2723B0E1F3EF3E400B06E3D /* IdElement.cpp in Sources */,
 				A2C5BB351FCB71A3009940D7 /* Platform.cpp in Sources */,
+				A2134E091FEAE64F00CA6765 /* Poire.cpp in Sources */,
 				A2723B101F3EF3E400B06E3D /* Position.cpp in Sources */,
 				A2723B451F3EF47B00B06E3D /* GameConfig.cpp in Sources */,
 				A2723B471F3EF47B00B06E3D /* Jsoncpp.cpp in Sources */,
@@ -364,20 +446,30 @@
 				A2723B4A1F3EF47B00B06E3D /* Sound.cpp in Sources */,
 				A2723B4C1F3EF47B00B06E3D /* Sprite.cpp in Sources */,
 				A2723B4E1F3EF47B00B06E3D /* Text.cpp in Sources */,
+				A2134E001FEAE64F00CA6765 /* Bombinos.cpp in Sources */,
 				A2723B121F3EF3E400B06E3D /* Bombe.cpp in Sources */,
 				A2723B141F3EF3E400B06E3D /* Game.cpp in Sources */,
+				A2134E0A1FEAE64F00CA6765 /* Pomme.cpp in Sources */,
 				A2723B161F3EF3E400B06E3D /* Player.cpp in Sources */,
 				A2723B181F3EF3E400B06E3D /* Hammerfest.cpp in Sources */,
 				A2723B1A1F3EF3E400B06E3D /* Family.cpp in Sources */,
+				A2134E071FEAE64F00CA6765 /* Orange.cpp in Sources */,
 				A2723B1C1F3EF3E400B06E3D /* Item.cpp in Sources */,
+				A2134DFC1FEAE64F00CA6765 /* Abricot.cpp in Sources */,
+				A2134E081FEAE64F00CA6765 /* Pasteque.cpp in Sources */,
 				A2723B1E1F3EF3E400B06E3D /* ItemFileSystem.cpp in Sources */,
 				A2723B201F3EF3E400B06E3D /* Quest.cpp in Sources */,
+				A2134E021FEAE64F00CA6765 /* Fraise.cpp in Sources */,
 				A2723B221F3EF3E400B06E3D /* Decor.cpp in Sources */,
 				A2723B241F3EF3E400B06E3D /* Door.cpp in Sources */,
+				A2134E041FEAE64F00CA6765 /* Kiwi.cpp in Sources */,
+				A2134DFE1FEAE64F00CA6765 /* Banane.cpp in Sources */,
+				A2134E051FEAE64F00CA6765 /* Litchi.cpp in Sources */,
 				A2723B281F3EF3E400B06E3D /* Event.cpp in Sources */,
 				A2723B2A1F3EF3E400B06E3D /* Level.cpp in Sources */,
 				A2723B2C1F3EF3E400B06E3D /* Lock.cpp in Sources */,
 				A2723B2E1F3EF3E400B06E3D /* Pick.cpp in Sources */,
+				A2134E061FEAE64F00CA6765 /* NainBricot.cpp in Sources */,
 				A2723B321F3EF3E400B06E3D /* Rayon.cpp in Sources */,
 				A2723B341F3EF3E400B06E3D /* Teleporter.cpp in Sources */,
 				A2723B361F3EF3E400B06E3D /* Vortex.cpp in Sources */,
