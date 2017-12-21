@@ -1,4 +1,5 @@
-**Lr-Hammerfest**
+**Lr-Hammerfest** 
+![](https://travis-ci.org/alexis-puska/lr-inthewell.svg?branch=master)
 ===============================
 
 > Hammerfest, core adaptation of hammerfest.fr game
