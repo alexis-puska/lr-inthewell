@@ -1,0 +1,29 @@
+language: cpp
+cpp:
+  - nightly
+compiler:
+  - gcc
+  - g++
+before_install:
+    - wget https://www.libsdl.org/release/SDL2-2.0.5.tar.gz -O SDL2-2.0.5.tar.gz
+    - tar -xzvf SDL2-2.0.5.tar.gz
+    - wget https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.1.tar.gz -O SDL2_mixer-2.0.1.tar.gz
+    - tar -xzvf SDL2_mixer-2.0.1.tar.gz
+    - wget https://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.2.tar.gz -O SDL2_image-2.0.2.tar.gz
+    - tar -xzvf SDL2_image-2.0.2.tar.gz
+    - wget https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.14.tar.gz -O SDL2_ttf-2.0.14.tar.gz
+    - tar -xzvf SDL2_ttf-2.0.14.tar.gz
+    - wget https://www.libsdl.org/projects/SDL_net/release/SDL2_net-2.0.1.tar.gz -O SDL2_net-2.0.1.tar.gz
+    - tar -xzvf SDL2_net-2.0.1.tar.gz
+    - wget http://www.ferzkopp.net/Software/SDL2_gfx/SDL2_gfx-1.0.3.tar.gz -O SDL2_gfx-1.0.3.tar.gz
+    - tar -xzvf SDL2_gfx-1.0.3.tar.gz
+install:
+   - (cd SDL2-2.0.5 && ./configure && make && sudo make install)
+   - (cd SDL2_mixer-2.0.1 && ./configure && make && sudo make install)
+   - (cd SDL2_image-2.0.2 && ./configure && make && sudo make install)
+   - (cd SDL2_ttf-2.0.14 && ./configure && make && sudo make install)
+   - (cd SDL2_net-2.0.1 && ./configure && make && sudo make install)
+   - (cd SDL2_gfx-1.0.3 && ./configure && make && sudo make install)
+script:
+  - make clean -f Makefile.libretro
+  - make -f Makefile.libretro
