@@ -2,7 +2,7 @@
 
 class Citron : public Ennemie{
 public:
-	Citron(int id, int x, int y);
+	Citron(int id, int x, int y, Level * level);
 	~Citron();
 	virtual void doSomething(SDL_Surface * dest);
 };

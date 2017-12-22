@@ -1,10 +1,12 @@
 #include "Ennemie.h"
+#include "../../level/Level.h"
 
-Ennemie::Ennemie(int id, int x, int y, int type) :
+Ennemie::Ennemie(int id, int x, int y, int type, Level * level) :
 Position((x * 20) +10 , (y * 20) + 20), Drawable(), HitBox(), IdElement(id) {
 	this->type = type;
 	this->animIdx = 0;
 	this->state = walk;
+    this->level = level;
 	initHitBox(x - (int)floor(ennemieHitboxWidth / 2), y - ennemieHitboxHeight, ennemieHitboxWidth, ennemieHitboxHeight);
 }
 

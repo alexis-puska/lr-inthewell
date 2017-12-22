@@ -1,7 +1,7 @@
 #include "Bombinos.h"
 
-Bombinos::Bombinos(int id, int x, int y) :
-	Ennemie(id, x, y, bombinos) {
+Bombinos::Bombinos(int id, int x, int y, Level *level) :
+	Ennemie(id, x, y, bombinos, level) {
     animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

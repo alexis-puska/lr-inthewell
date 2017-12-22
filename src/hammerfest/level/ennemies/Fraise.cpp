@@ -1,8 +1,7 @@
 #include "Fraise.h"
 
-Fraise::Fraise(int id, int x, int y) :
-Ennemie(id, x, y, fraise) {
-    this->state = frozed;
+Fraise::Fraise(int id, int x, int y, Level *level) :
+Ennemie(id, x, y, fraise, level) {
     animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

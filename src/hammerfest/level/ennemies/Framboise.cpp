@@ -1,8 +1,7 @@
 #include "Framboise.h"
 
-Framboise::Framboise(int id, int x, int y) :
-Ennemie(id, x, y, framboise) {
-    this->state = frozed;
+Framboise::Framboise(int id, int x, int y, Level * level) :
+Ennemie(id, x, y, framboise, level) {
     animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

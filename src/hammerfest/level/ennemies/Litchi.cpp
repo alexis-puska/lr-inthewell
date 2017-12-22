@@ -1,8 +1,7 @@
 #include "Litchi.h"
 
-Litchi::Litchi(int id, int x, int y) :
-Ennemie(id, x, y, litchi) {
-    this->state = frozed;
+Litchi::Litchi(int id, int x, int y, Level *level) :
+Ennemie(id, x, y, litchi, level) {
     animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

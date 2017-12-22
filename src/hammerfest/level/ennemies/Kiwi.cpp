@@ -1,8 +1,7 @@
 #include "Kiwi.h"
 
-Kiwi::Kiwi(int id, int x, int y) :
-Ennemie(id, x, y, kiwi) {
-    this->state = frozed;
+Kiwi::Kiwi(int id, int x, int y, Level *level) :
+Ennemie(id, x, y, kiwi, level) {
     animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

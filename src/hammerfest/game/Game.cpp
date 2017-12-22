@@ -588,9 +588,6 @@ void Game::fillScreenBufferWithSurface(std::string name, int index, SDL_Surface 
 }
 
 
-
-
-
 /*
  
  Réponse envoyée sur Twinoïd ;)

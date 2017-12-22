@@ -1,8 +1,7 @@
 #include "Ananas.h"
 
-Ananas::Ananas(int id, int x, int y) :
-Ennemie(id, x, y, ananas) {
-    this->state = frozed;
+Ananas::Ananas(int id, int x, int y, Level * level) :
+Ennemie(id, x, y, ananas, level) {
     animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

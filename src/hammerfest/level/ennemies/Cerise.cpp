@@ -1,8 +1,7 @@
 #include "Cerise.h"
 
-Cerise::Cerise(int id, int x, int y) :
-	Ennemie(id, x, y, cerise) {
-	this->state = frozed;
+Cerise::Cerise(int id, int x, int y, Level * level) :
+	Ennemie(id, x, y, cerise, level) {
 	animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

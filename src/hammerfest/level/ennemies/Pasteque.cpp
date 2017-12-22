@@ -1,8 +1,7 @@
 #include "Pasteque.h"
 
-Pasteque::Pasteque(int id, int x, int y) :
-Ennemie(id, x, y, pasteque) {
-    this->state = frozed;
+Pasteque::Pasteque(int id, int x, int y, Level *level) :
+Ennemie(id, x, y, pasteque, level) {
     animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

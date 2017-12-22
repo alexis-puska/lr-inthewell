@@ -1,8 +1,7 @@
 #include "Abricot.h"
 
-Abricot::Abricot(int id, int x, int y) :
-Ennemie(id, x, y, abricot) {
-    this->state = frozed;
+Abricot::Abricot(int id, int x, int y, Level *level) :
+Ennemie(id, x, y, abricot, level) {
     animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

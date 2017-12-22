@@ -79,73 +79,62 @@ Level * LevelService::getLevel(int id) {
 		}
 
 		for (unsigned int i = 0; i < level["ennemies"].size(); i++) {
-			switch (level["ennemies"][i]["type"].asInt()) {
-			case cerise:
-				currentLevel->addEnnemie(
-					new Cerise(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case orange:
-				currentLevel->addEnnemie(
-					new Orange(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case pomme:
-				currentLevel->addEnnemie(
-					new Pomme(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case banane:
-				currentLevel->addEnnemie(
-					new Banane(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case bombinos:
-				currentLevel->addEnnemie(
-					new Bombinos(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case poire:
-				currentLevel->addEnnemie(
-					new Poire(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case abricot:
-				currentLevel->addEnnemie(
-					new Abricot(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case litchi:
-				currentLevel->addEnnemie(
-					new Litchi(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case fraise:
-				currentLevel->addEnnemie(
-					new Fraise(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case kiwi:
-				currentLevel->addEnnemie(
-					new Kiwi(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case pasteque:
-				currentLevel->addEnnemie(
-					new Pasteque(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case ananas:
-				currentLevel->addEnnemie(
-					new Ananas(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case blob:
-				currentLevel->addEnnemie(
-					new Blob(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case framboise:
-				currentLevel->addEnnemie(
-					new Framboise(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case nainbricot:
-				currentLevel->addEnnemie(
-					new NainBricot(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			case scie:
-				currentLevel->addEnnemie(
-					new Scie(level["ennemies"][i]["id"].asInt(), level["ennemies"][i]["x"].asInt(), level["ennemies"][i]["y"].asInt()));
-				break;
-			}
-
+            int id = level["ennemies"][i]["id"].asInt();
+            int x = level["ennemies"][i]["x"].asInt();
+            int y = level["ennemies"][i]["y"].asInt();
+            
+            
+            
+            switch (level["ennemies"][i]["type"].asInt()) {
+                case cerise:
+                    currentLevel->addEnnemie(new Cerise(id,x,y,currentLevel));
+                    break;
+                case orange:
+                    currentLevel->addEnnemie(new Orange(id,x,y,currentLevel));
+                    break;
+                case pomme:
+                    currentLevel->addEnnemie(new Pomme(id,x,y,currentLevel));
+                    break;
+                case banane:
+                    currentLevel->addEnnemie(new Banane(id,x,y,currentLevel));
+                    break;
+                case bombinos:
+                    currentLevel->addEnnemie(new Bombinos(id,x,y,currentLevel));
+                    break;
+                case poire:
+                    currentLevel->addEnnemie(new Poire(id,x,y,currentLevel));
+                    break;
+                case abricot:
+                    currentLevel->addEnnemie(new Abricot(id,x,y,currentLevel));
+                    break;
+                case litchi:
+                    currentLevel->addEnnemie(new Litchi(id,x,y,currentLevel));
+                    break;
+                case fraise:
+                    currentLevel->addEnnemie(new Fraise(id,x,y,currentLevel));
+                    break;
+                case kiwi:
+                    currentLevel->addEnnemie(new Kiwi(id,x,y,currentLevel));
+                    break;
+                case pasteque:
+                    currentLevel->addEnnemie(new Pasteque(id,x,y,currentLevel));
+                    break;
+                case ananas:
+                    currentLevel->addEnnemie(new Ananas(id,x,y,currentLevel));
+                    break;
+                case blob:
+                    currentLevel->addEnnemie(new Blob(id,x,y,currentLevel));
+                    break;
+                case framboise:
+                    currentLevel->addEnnemie(new Framboise(id,x,y,currentLevel));
+                    break;
+                case nainbricot:
+                    currentLevel->addEnnemie(new NainBricot(id,x,y,currentLevel));
+                    break;
+                case scie:
+                    currentLevel->addEnnemie(new Scie(id,x,y,currentLevel));
+                    break;
+            }
 		}
 
 		//TODO

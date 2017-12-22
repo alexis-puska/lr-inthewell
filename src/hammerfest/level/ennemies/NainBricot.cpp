@@ -1,8 +1,7 @@
 #include "NainBricot.h"
 
-NainBricot::NainBricot(int id, int x, int y) :
-Ennemie(id, x, y, nainbricot) {
-    this->state = frozed;
+NainBricot::NainBricot(int id, int x, int y, Level *level) :
+Ennemie(id, x, y, nainbricot, level) {
     animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

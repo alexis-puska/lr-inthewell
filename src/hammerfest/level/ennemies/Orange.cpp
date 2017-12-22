@@ -1,8 +1,7 @@
 #include "Orange.h"
 
-Orange::Orange(int id, int x, int y) :
-Ennemie(id, x, y, orange) {
-    this->state = frozed;
+Orange::Orange(int id, int x, int y, Level * level) :
+Ennemie(id, x, y, orange, level) {
     animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

@@ -2,7 +2,7 @@
 
 class Bombinos : public Ennemie{
 public:
-	Bombinos(int id, int x, int y);
+	Bombinos(int id, int x, int y, Level * level);
 	~Bombinos();
 	virtual void doSomething(SDL_Surface * dest);
 };

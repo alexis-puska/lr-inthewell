@@ -6,6 +6,7 @@
 #include "../../definition/IdElement.h"
 #include "../../definition/HitBox.h"
 
+
 #define ennemieHitboxWidth 20
 #define ennemieHitboxHeight 20
 
@@ -46,10 +47,10 @@ enum ennemieState {
 
 static const std::string ennemieStateString[] = { "walk", "angry", "frozed","knock_out", "knock_out2", "dead", "look_up", "fall", "look_left_right" };
 
-
+class Level;
 class Ennemie : public Position, public Drawable, public HitBox, public IdElement {
 public:
-	Ennemie(int id, int x, int y, int type);
+	Ennemie(int id, int x, int y, int type, Level * level);
 	virtual ~Ennemie();
 	virtual void doSomething(SDL_Surface * dest);
 	void drawHimself(SDL_Surface * sprite, SDL_Surface * dest);
@@ -59,5 +60,6 @@ protected:
 	int animIdx;
 	int animIdxMax;
 	int state;
+    Level *level;
 };
 #endif
