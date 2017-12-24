@@ -21,6 +21,7 @@
 #include "Player.h"
 
 #define gameTick 25
+#define startLevelIndex 4
 
 enum gameStateEnum {
 	gameStart = 0, gamePause = 1, gameEnd = 2, gameShowMap = 3, gameChangeLevel = 4

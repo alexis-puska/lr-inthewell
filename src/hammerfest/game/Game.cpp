@@ -80,9 +80,9 @@ Game::Game(SDL_Surface * vout_buf, unsigned short * in_keystate) {
     changeLevelAnimationPosition = 0;
     
     //StartLevel must be 0 in real game.
-    idx = 20;
+    idx = startLevelIndex;
     
-    currentLevel = LevelService::Instance().getLevel(20);
+    currentLevel = LevelService::Instance().getLevel(startLevelIndex);
     currentLevel->generateBackGround(-1);
     ennemies = currentLevel->getEnnemiesList();
     players.push_back(new Player(80, 400, 0, &in_keystate[0]));
@@ -126,7 +126,7 @@ void Game::startGame() {
     Sound::Instance().startMusic();
     if (!isThreadAlive) {
         isThreadAlive = true;
-        idx = 20;
+        idx = startLevelIndex;
         mainThread = SDL_CreateThread(metronome, "mainThread", this);
     }
     
@@ -230,7 +230,7 @@ void Game::tick() {
             //TODO
             //Draw Ennemies
             for (unsigned int i = 0; i < ennemies.size(); i++) {
-                ennemies[i]->doSomething(screenBuffer);
+                ennemies[i]->doSomething(screenBuffer, players);
             }
             
             //Gestion des collisions

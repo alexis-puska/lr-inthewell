@@ -8,7 +8,7 @@ Ennemie(id, x, y, pasteque, level) {
 Pasteque::~Pasteque() {
 }
 
-void Pasteque::doSomething(SDL_Surface * dest) {
+void Pasteque::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     SDL_Surface * sprite = NULL;
     if (animIdx >= animIdxMax) {
         animIdx = 0;

@@ -974,14 +974,14 @@ void Player::drawHimself(SDL_Surface * dest) {
             }
             break;
     }
-    
+    /*
     SDL_Rect * rectt = new SDL_Rect;
     rectt->h = this->getRect().h;
     rectt->w = this->getRect().w;
     rectt->x = this->getRect().x+leftPadding;
     rectt->y = this->getRect().y;
     SDL_FillRect(dest, rectt, SDL_MapRGB(dest->format, 255, 0, 0));
-    
+    */
     animIdx++;
 }
 

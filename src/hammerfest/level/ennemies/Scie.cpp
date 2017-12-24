@@ -8,7 +8,7 @@ Ennemie(id, x, y, scie, level) {
 Scie::~Scie() {
 }
 
-void Scie::doSomething(SDL_Surface * dest) {
+void Scie::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     SDL_Surface * sprite = NULL;
     if (animIdx >= animIdxMax) {
         animIdx = 0;

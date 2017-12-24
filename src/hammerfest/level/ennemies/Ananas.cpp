@@ -8,7 +8,7 @@ Ennemie(id, x, y, ananas, level) {
 Ananas::~Ananas() {
 }
 
-void Ananas::doSomething(SDL_Surface * dest) {
+void Ananas::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     SDL_Surface * sprite = NULL;
     if (animIdx >= animIdxMax) {
         animIdx = 0;

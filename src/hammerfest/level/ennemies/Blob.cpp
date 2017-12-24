@@ -8,7 +8,7 @@ Ennemie(id, x, y, blob, level) {
 Blob::~Blob() {
 }
 
-void Blob::doSomething(SDL_Surface * dest) {
+void Blob::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     SDL_Surface * sprite = NULL;
     if (animIdx >= animIdxMax) {
         animIdx = 0;

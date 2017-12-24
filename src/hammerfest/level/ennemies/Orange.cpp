@@ -8,11 +8,22 @@ Ennemie(id, x, y, orange, level) {
 Orange::~Orange() {
 }
 
-void Orange::doSomething(SDL_Surface * dest) {
+void Orange::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     SDL_Surface * sprite = NULL;
     if (animIdx >= animIdxMax) {
         animIdx = 0;
     }
+    
+    if(touchWall() || isOnEdge()){
+        if(direction == left){
+            direction = right;
+        }else{
+            direction = left;
+        }
+    }
+    move();
+    
     sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
     drawHimself(sprite, dest);
+    //std::cout << "id : "<<id<<" direction : " <<(direction == left ?"left":"right ")<< getX()<<"\n";
 }

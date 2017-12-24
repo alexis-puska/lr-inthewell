@@ -5,10 +5,12 @@
 #include "../../definition/Drawable.h"
 #include "../../definition/IdElement.h"
 #include "../../definition/HitBox.h"
+#include "../../game/Player.h"
 
 
 #define ennemieHitboxWidth 20
 #define ennemieHitboxHeight 20
+#define ennemieSpeed 2
 
 enum ennemieType {
 	cerise = 0,
@@ -47,19 +49,44 @@ enum ennemieState {
 
 static const std::string ennemieStateString[] = { "walk", "angry", "frozed","knock_out", "knock_out2", "dead", "look_up", "fall", "look_left_right" };
 
+enum ennemieDirection{
+    left = 0,
+    right,
+    up,
+    down
+};
+
 class Level;
 class Ennemie : public Position, public Drawable, public HitBox, public IdElement {
 public:
 	Ennemie(int id, int x, int y, int type, Level * level);
 	virtual ~Ennemie();
-	virtual void doSomething(SDL_Surface * dest);
+	virtual void doSomething(SDL_Surface * dest, std::vector<Player *> players);
 	void drawHimself(SDL_Surface * sprite, SDL_Surface * dest);
-	std::string getStateString();
+    void move();
+    bool isOnEdge();
+    bool touchWall();
+    
+    bool plateformFrontMe();
+    bool onEdgePlateformBelowMe();
+    
+    bool plateformAboveMe();
+    
+    bool playerFrontOfMe(std::vector<Player *> players);
+    bool playerBelowMe(std::vector<Player *> players);
+    bool playerAboveMe(std::vector<Player *> players);
+    
+    void makeShot();
+    void rumbleLevel();
+    int getGidPosition(int offset);
 protected:
+    std::string getStateString();
 	int type;
 	int animIdx;
 	int animIdxMax;
 	int state;
     Level *level;
+    
+    int direction; //0: left, 1:right
 };
 #endif

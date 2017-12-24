@@ -8,11 +8,20 @@ Ennemie(id, x, y, poire, level) {
 Poire::~Poire() {
 }
 
-void Poire::doSomething(SDL_Surface * dest) {
+void Poire::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     SDL_Surface * sprite = NULL;
     if (animIdx >= animIdxMax) {
         animIdx = 0;
     }
+    if(touchWall() || isOnEdge()){
+        if(direction == left){
+            direction = right;
+        }else{
+            direction = left;
+        }
+    }
+    move();
+    
     sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
     drawHimself(sprite, dest);
 }
