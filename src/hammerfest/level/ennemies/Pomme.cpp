@@ -13,14 +13,25 @@ void Pomme::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     if (animIdx >= animIdxMax) {
         animIdx = 0;
     }
-    if(touchWall() || isOnEdge()){
-        if(direction == left){
-            direction = right;
-        }else{
-            direction = left;
-        }
-    }
-    move();
+	switch (whatITouch()) {
+	case nothing:
+		move();
+		break;
+	case bottomStairs:
+		setY(getY() - 20);
+		move(); 
+		break;
+	case topStaires:
+		setY(getY() + 20);
+		move(); 
+		break;
+	case wall:
+	case edge:
+	case edgeCanJump:
+		changeDirection();
+		move();
+		break;
+	}
     sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
     drawHimself(sprite, dest);
 }

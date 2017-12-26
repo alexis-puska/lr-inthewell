@@ -67,20 +67,20 @@ void Ennemie::move() {
 bool Ennemie::isOnEdge() {
 	bool * grid = level->getPlatformGrid();
 	if (direction == left) {
-		return !grid[getGidPosition(-1) + 20];
+		return !getGridValue(getGidPosition(-1) + 20);
 	}
 	else {
-		return !grid[getGidPosition(1) + 20];
+		return !getGridValue(getGidPosition(1) + 20);
 	}
 }
 
 bool Ennemie::isOnStairStep() {
 	bool * grid = level->getPlatformGrid();
 	if (direction == left) {
-		return !grid[getGidPosition(-1) + 20] && grid[getGidPosition(-1) + 40];
+		return !getGridValue(getGidPosition(-1) + 20) && getGridValue(getGidPosition(-1) + 40);
 	}
 	else {
-		return !grid[getGidPosition(1) + 20] && grid[getGidPosition(1) + 40];
+		return !getGridValue(getGidPosition(1) + 20) && getGridValue(getGidPosition(1) + 40);
 	}
 }
 
@@ -93,10 +93,10 @@ bool Ennemie::touchWall() {
 		return true;
 	}
 	if (direction == left) {
-		return grid[getGidPosition(-10)];
+		return getGridValue(getGidPosition(-10));
 	}
 	else {
-		return grid[getGidPosition(10)];
+		return getGridValue(getGidPosition(10));
 	}
 }
 
@@ -112,10 +112,10 @@ bool Ennemie::touchStairStep() {
 	}
 
 	if (direction == left) {
-		return grid[getGidPosition(-10)] && !grid[getGidPosition(-10) - 20];
+		return getGridValue(getGidPosition(-10)) && !getGridValue(getGidPosition(-10) - 20);
 	}
 	else {
-		return grid[getGidPosition(10)] && !grid[getGidPosition(10) + 20];
+		return getGridValue(getGidPosition(10)) && !getGridValue(getGidPosition(10) + 20);
 	}
 }
 
@@ -123,10 +123,10 @@ bool Ennemie::touchStairStep() {
 bool Ennemie::plateformFrontMe() {
 	bool * grid = level->getPlatformGrid();
 	if (direction == left) {
-		return grid[getGidPosition(0) + 17];
+		return getGridValue(getGidPosition(0) + 17);
 	}
 	else {
-		return grid[getGidPosition(0) + 23];
+		return getGridValue(getGidPosition(0) + 23);
 	}
 }
 
@@ -137,6 +137,83 @@ bool Ennemie::onEdgePlateformBelowMe() {
 bool Ennemie::plateformAboveMe() {
 	return false;
 }
+
+
+
+
+
+int Ennemie::whatITouch() {
+	//touch borderof screen
+	bool * grid = level->getPlatformGrid();
+	if (getX() - 10 < 0) {
+		return wall;
+	}
+	else if (getX() + 10 > 400) {
+		return wall;
+	}
+
+
+	if (direction == left) {
+		if (!getGridValue(getGidPosition(-5))) {
+			if (!getGridValue(getGidPosition(-5) + 20) && !getGridValue(getGidPosition(-5) + 40)) {
+				if (searchPlatformBelow(getGidPosition(-5))) {
+					return edgeCanJump;
+				}
+				else {
+					return edge;
+				}
+			}
+			else if (!getGridValue(getGidPosition(-5) + 20) && getGridValue(getGidPosition(-5) + 40)) {
+				return topStaires;
+			}
+			return nothing;
+		}
+
+		//touch wall 
+		else if (getGridValue(getGidPosition(-5)) && getGridValue(getGidPosition(-5) - 20)) {
+			return wall;
+		}
+		else if (getGridValue(getGidPosition(-5)) && !getGridValue(getGidPosition(-5) - 20)) {
+			return bottomStairs;
+		}
+
+	}
+	else {
+		if (!getGridValue(getGidPosition(5))) {
+			if (!getGridValue(getGidPosition(5) + 20) && !getGridValue(getGidPosition(5) + 40)) {
+				if (searchPlatformBelow(getGidPosition(5) + 40)) {
+					return edgeCanJump;
+				}
+				else {
+					return edge;
+				}
+			}
+			else if (!getGridValue(getGidPosition(5) + 20) && getGridValue(getGidPosition(5) + 40))
+			{
+				return topStaires;
+			}
+			return nothing;
+		}
+
+		//touch wall 
+		else if (getGridValue(getGidPosition(5)) && getGridValue(getGidPosition(10) - 20)) {
+			return wall;
+		}
+		else if (getGridValue(getGidPosition(5)) && !getGridValue(getGidPosition(10) - 20)) {
+			return bottomStairs;
+		}
+	}
+	/*
+	nothing = 0,
+	bottomStairs,
+	wall,
+	topStaires,
+	edge,
+	edgeCanJump
+	*/
+}
+
+
 
 bool Ennemie::playerFrontOfMe(std::vector<Player *> players) {
 	int yMax = getY();
@@ -196,4 +273,42 @@ int Ennemie::getGidPosition(int offset) {
 		line -= 1;
 	}
 	return (line * 20) + column;
+}
+
+void Ennemie::changeDirection() {
+	if (direction == left) {
+		direction = right;
+	}
+	else {
+		direction = left;
+	}
+}
+
+bool Ennemie::getGridValue(int cell) {
+	if (cell < 0) {
+		//ahut de l'écran donc mur, evite que l'énemie se barre de l'écran
+		return true;
+	}
+	else if (cell >= 500) {
+		//bas de l'écran donc vide, evite que l'ennemie ne saute et ce suicide
+		return false;
+	}
+	else {
+		return level->getPlatformGrid()[cell];
+	}
+}
+
+bool Ennemie::searchPlatformBelow(int cell) {
+	std::cout << "search platform : " << cell << "\n";
+	int y = cell;
+	while (y < 500) {
+		if (level->getPlatformGrid()[y]) {
+			std::cout << "platform trouvé\n";
+			return true;
+
+		}
+		y += 20;
+	}
+	std::cout << "platform non trouvé\n";
+	return false;
 }

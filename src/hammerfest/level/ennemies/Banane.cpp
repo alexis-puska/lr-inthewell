@@ -13,14 +13,35 @@ void Banane::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     if (animIdx >= animIdxMax) {
         animIdx = 0;
     }
-    if(touchWall() || isOnEdge()){
-        if(direction == left){
-            direction = right;
-        }else{
-            direction = left;
-        }
-    }
-    move();
+	int r = whatITouch();
+	switch (r) {
+	case nothing:
+		move();
+		break;
+	case bottomStairs:
+		setY(getY()-20);
+		move(); move(); move();
+		break;
+	case topStaires:
+		setY(getY()+20);
+		move(); move(); move();
+		break;
+	case wall:
+
+		changeDirection();
+		move();
+		break;
+	case edge:
+		std::cout << id <<" : edge\n";
+		changeDirection();
+		move();
+		break;
+	case edgeCanJump:
+		std::cout << id <<" : edge can jump\n";
+		changeDirection();
+		move();
+		break;
+	}
     sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
     drawHimself(sprite, dest);
 }

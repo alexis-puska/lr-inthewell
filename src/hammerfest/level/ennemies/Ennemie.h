@@ -57,6 +57,15 @@ enum ennemieDirection{
     down
 };
 
+enum ennemieSituation {
+	nothing = 0,
+	bottomStairs,
+	wall,
+	topStaires,
+	edge,
+	edgeCanJump
+};
+
 class Level;
 class Ennemie : public Position, public Drawable, public HitBox, public IdElement {
 public:
@@ -74,14 +83,18 @@ public:
     bool onEdgePlateformBelowMe();
     
     bool plateformAboveMe();
+	int whatITouch();
+	bool getGridValue(int cell);
     
     bool playerFrontOfMe(std::vector<Player *> players);
     bool playerBelowMe(std::vector<Player *> players);
     bool playerAboveMe(std::vector<Player *> players);
     
+	void changeDirection();
     void makeShot();
     void rumbleLevel();
     int getGidPosition(int offset);
+	bool searchPlatformBelow(int cell);
 protected:
     std::string getStateString();
 	int type;
