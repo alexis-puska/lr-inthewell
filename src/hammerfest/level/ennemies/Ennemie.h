@@ -11,6 +11,7 @@
 #define ennemieHitboxWidth 20
 #define ennemieHitboxHeight 20
 #define ennemieSpeed 2
+#define ennemieAngrySpeed 3
 
 enum ennemieType {
 	cerise = 0,
@@ -66,6 +67,8 @@ public:
     void move();
     bool isOnEdge();
     bool touchWall();
+	bool touchStairStep();
+	bool isOnStairStep();
     
     bool plateformFrontMe();
     bool onEdgePlateformBelowMe();
@@ -85,6 +88,7 @@ protected:
 	int animIdx;
 	int animIdxMax;
 	int state;
+	int previousState;
     Level *level;
     
     int direction; //0: left, 1:right
