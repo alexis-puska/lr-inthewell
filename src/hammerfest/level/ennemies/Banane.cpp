@@ -13,8 +13,7 @@ void Banane::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     if (animIdx >= animIdxMax) {
         animIdx = 0;
     }
-	int r = whatITouch();
-	switch (r) {
+	switch (whatITouch()) {
 	case nothing:
 		move();
 		break;
@@ -27,21 +26,21 @@ void Banane::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 		move(); move(); move();
 		break;
 	case wall:
-
 		changeDirection();
 		move();
 		break;
 	case edge:
-		std::cout << id <<" : edge\n";
 		changeDirection();
 		move();
 		break;
 	case edgeCanJump:
-		std::cout << id <<" : edge can jump\n";
 		changeDirection();
 		move();
 		break;
 	}
     sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
     drawHimself(sprite, dest);
+}
+
+void Banane::iMove(){
 }

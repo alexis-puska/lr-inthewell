@@ -13,14 +13,22 @@ void Kiwi::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     if (animIdx >= animIdxMax) {
         animIdx = 0;
     }
-    if(touchWall() || isOnEdge()){
-        if(direction == left){
-            direction = right;
-        }else{
-            direction = left;
-        }
+    switch (whatITouch()) {
+        case nothing:
+            move();
+            break;
+        case wall:
+        case edge:
+        case bottomStairs:
+        case topStaires:
+        case edgeCanJump:
+            changeDirection();
+            move();
+            break;
     }
-    move();
     sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
     drawHimself(sprite, dest);
+}
+
+void Kiwi::iMove(){
 }

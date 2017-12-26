@@ -41,14 +41,13 @@ enum ennemieState {
 	angry,
 	frozed,
 	knock_out,
-	knock_out2,
 	dead,
-	look_up,
-	fall,
-	look_left_right
+    jump,
+	look,
+    shot
 };
 
-static const std::string ennemieStateString[] = { "walk", "angry", "frozed","knock_out", "knock_out2", "dead", "look_up", "fall", "look_left_right" };
+static const std::string ennemieStateString[] = { "walk", "angry", "frozed","knock_out", "dead", "look", "jump", "shot" };
 
 enum ennemieDirection{
     left = 0,
@@ -72,38 +71,37 @@ public:
 	Ennemie(int id, int x, int y, int type, Level * level);
 	virtual ~Ennemie();
 	virtual void doSomething(SDL_Surface * dest, std::vector<Player *> players);
-	void drawHimself(SDL_Surface * sprite, SDL_Surface * dest);
-    void move();
-    bool isOnEdge();
-    bool touchWall();
-	bool touchStairStep();
-	bool isOnStairStep();
-    
-    bool plateformFrontMe();
-    bool onEdgePlateformBelowMe();
-    
-    bool plateformAboveMe();
-	int whatITouch();
-	bool getGridValue(int cell);
-    
-    bool playerFrontOfMe(std::vector<Player *> players);
-    bool playerBelowMe(std::vector<Player *> players);
-    bool playerAboveMe(std::vector<Player *> players);
-    
-	void changeDirection();
-    void makeShot();
-    void rumbleLevel();
-    int getGidPosition(int offset);
-	bool searchPlatformBelow(int cell);
 protected:
-    std::string getStateString();
-	int type;
+    int type;
 	int animIdx;
 	int animIdxMax;
 	int state;
 	int previousState;
     Level *level;
-    
     int direction; //0: left, 1:right
+    
+    //fonction de déplacement
+    virtual void iMove();
+    void changeDirection();
+    void move();
+    
+    //detection joueur/environnement
+    bool plateformFrontMe();
+    int whatITouch();
+    bool playerFrontOfMe(std::vector<Player *> players);
+    bool playerBelowMe(std::vector<Player *> players);
+    bool playerAboveMe(std::vector<Player *> players);
+    
+    //recupère le sprite courant
+    std::string getStateString();
+    
+    //dessine toi
+    void drawHimself(SDL_Surface * sprite, SDL_Surface * dest);
+private:
+    
+    bool getGridValue(int cell);
+    int getGidPosition(int offset);
+    bool searchPlatformBelow(int cell);
+    
 };
 #endif

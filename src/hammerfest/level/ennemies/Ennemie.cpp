@@ -5,7 +5,7 @@ Ennemie::Ennemie(int id, int x, int y, int type, Level * level) :
 	Position((x * 20) + 10, (y * 20) + 20), Drawable(), HitBox(), IdElement(id) {
 	this->type = type;
 	this->animIdx = 0;
-	this->state = walk;
+	this->state = angry;
 	if (type == scie && state == angry) {
 		this->state = walk;
 	}
@@ -17,25 +17,29 @@ Ennemie::Ennemie(int id, int x, int y, int type, Level * level) :
 	initHitBox(x - (int)floor(ennemieHitboxWidth / 2), y - ennemieHitboxHeight, ennemieHitboxWidth, ennemieHitboxHeight);
 }
 
-Ennemie::~Ennemie() {
-}
+Ennemie::~Ennemie() {}
+void Ennemie::doSomething(SDL_Surface * dest, std::vector<Player *> players) {}
+void Ennemie::iMove(){}
 
-void Ennemie::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
-}
-
+/*
+ * Dessine l'ennemie
+ */
 void Ennemie::drawHimself(SDL_Surface * sprite, SDL_Surface * dest) {
 	copySurfaceToBackRenderer(sprite, dest, (x - (sprite->w / 2)) + leftPadding, y - (sprite->h));
 	updateHitBox(x - (int)floor(ennemieHitboxWidth / 2), y - ennemieHitboxHeight);
-	/*SDL_Rect * rect = new SDL_Rect;
+	SDL_Rect * rect = new SDL_Rect;
 	rect->h = this->getRect().h;
 	rect->w = this->getRect().w;
 	rect->x = this->getRect().x + leftPadding;
 	rect->y = this->getRect().y;
 	SDL_FillRect(dest, rect, SDL_MapRGB(dest->format, 255, 0, 0));
-	*/
+	
 	animIdx++;
 }
 
+/*
+ * retourne le sprite correspondant au type d'ennemie et de son état.
+ */
 std::string Ennemie::getStateString() {
 	std::stringstream ss;
 	ss << ennemieTypeString[this->type] << "_" << ennemieStateString[this->state];
@@ -45,6 +49,9 @@ std::string Ennemie::getStateString() {
 	return ss.str();
 }
 
+/*
+ * effectue un déplacement de l'ennemie
+ */
 void Ennemie::move() {
 	if (state == angry) {
 		if (direction == left) {
@@ -64,64 +71,10 @@ void Ennemie::move() {
 	}
 }
 
-bool Ennemie::isOnEdge() {
-	bool * grid = level->getPlatformGrid();
-	if (direction == left) {
-		return !getGridValue(getGidPosition(-1) + 20);
-	}
-	else {
-		return !getGridValue(getGidPosition(1) + 20);
-	}
-}
-
-bool Ennemie::isOnStairStep() {
-	bool * grid = level->getPlatformGrid();
-	if (direction == left) {
-		return !getGridValue(getGidPosition(-1) + 20) && getGridValue(getGidPosition(-1) + 40);
-	}
-	else {
-		return !getGridValue(getGidPosition(1) + 20) && getGridValue(getGidPosition(1) + 40);
-	}
-}
-
-bool Ennemie::touchWall() {
-	bool * grid = level->getPlatformGrid();
-	if (getX() - 10 < 0) {
-		return true;
-	}
-	else if (getX() + 10 > 400) {
-		return true;
-	}
-	if (direction == left) {
-		return getGridValue(getGidPosition(-10));
-	}
-	else {
-		return getGridValue(getGidPosition(10));
-	}
-}
-
-
-bool Ennemie::touchStairStep() {
-	bool * grid = level->getPlatformGrid();
-	//bord de l'Ècran
-	if (getX() - 10 < 0) {
-		return false;
-	}
-	else if (getX() + 10 > 400) {
-		return false;
-	}
-
-	if (direction == left) {
-		return getGridValue(getGidPosition(-10)) && !getGridValue(getGidPosition(-10) - 20);
-	}
-	else {
-		return getGridValue(getGidPosition(10)) && !getGridValue(getGidPosition(10) + 20);
-	}
-}
-
-
+/*
+ * ennemis au bord d'une plateforme, fonction qui renseigne si l'ennemis à une plateforme devant lui et peut sauter de 2 cases.
+ */
 bool Ennemie::plateformFrontMe() {
-	bool * grid = level->getPlatformGrid();
 	if (direction == left) {
 		return getGridValue(getGidPosition(0) + 17);
 	}
@@ -130,28 +83,23 @@ bool Ennemie::plateformFrontMe() {
 	}
 }
 
-bool Ennemie::onEdgePlateformBelowMe() {
-	return false;
-}
-
-bool Ennemie::plateformAboveMe() {
-	return false;
-}
-
-
-
-
-
+/*
+ * Détermine si l'ennemis touche : 
+ * - un mur
+ * - devant un escalier
+ * - en haut d'un escalier
+ * - au bord d'une plateform
+ * - peut sauter de la plateforme
+ * - si il n'y a rien de spécifique devant l'ennemis
+ */
 int Ennemie::whatITouch() {
-	//touch borderof screen
-	bool * grid = level->getPlatformGrid();
+	//Bordure de l'écran
 	if (getX() - 10 < 0) {
 		return wall;
 	}
 	else if (getX() + 10 > 400) {
 		return wall;
 	}
-
 
 	if (direction == left) {
 		if (!getGridValue(getGidPosition(-5))) {
@@ -168,15 +116,12 @@ int Ennemie::whatITouch() {
 			}
 			return nothing;
 		}
-
-		//touch wall 
-		else if (getGridValue(getGidPosition(-5)) && getGridValue(getGidPosition(-5) - 20)) {
+		else if (getGridValue(getGidPosition(-5)) && getGridValue(getGidPosition(-10) - 20)) {
 			return wall;
 		}
-		else if (getGridValue(getGidPosition(-5)) && !getGridValue(getGidPosition(-5) - 20)) {
+		else if (getGridValue(getGidPosition(-5)) && !getGridValue(getGidPosition(-10) - 20)) {
 			return bottomStairs;
 		}
-
 	}
 	else {
 		if (!getGridValue(getGidPosition(5))) {
@@ -194,8 +139,6 @@ int Ennemie::whatITouch() {
 			}
 			return nothing;
 		}
-
-		//touch wall 
 		else if (getGridValue(getGidPosition(5)) && getGridValue(getGidPosition(10) - 20)) {
 			return wall;
 		}
@@ -203,18 +146,12 @@ int Ennemie::whatITouch() {
 			return bottomStairs;
 		}
 	}
-	/*
-	nothing = 0,
-	bottomStairs,
-	wall,
-	topStaires,
-	edge,
-	edgeCanJump
-	*/
+    return wall;
 }
 
-
-
+/*
+ * joueur devant ennemie
+ */
 bool Ennemie::playerFrontOfMe(std::vector<Player *> players) {
 	int yMax = getY();
 	int yMin = yMax - 20;
@@ -232,8 +169,9 @@ bool Ennemie::playerFrontOfMe(std::vector<Player *> players) {
 	}
 	return false;
 }
-
-//dessous
+/*
+ * joueur au dessus
+ */
 bool Ennemie::playerBelowMe(std::vector<Player *> players) {
 	int xMin = getX() - 10;
 	int xMax = getX() + 10;
@@ -247,6 +185,9 @@ bool Ennemie::playerBelowMe(std::vector<Player *> players) {
 	return false;
 }
 
+/*
+ * joueur en dessous
+ */
 bool Ennemie::playerAboveMe(std::vector<Player *> players) {
 	int xMin = getX() - 10;
 	int xMax = getX() + 10;
@@ -260,12 +201,9 @@ bool Ennemie::playerAboveMe(std::vector<Player *> players) {
 	return false;
 }
 
-void Ennemie::makeShot() {
-}
-
-void Ennemie::rumbleLevel() {
-}
-
+/*
+ * calcule la case de la grille par rapport à la position de l'enemie en pixel. inclus un décalage sur l'axe X
+ */
 int Ennemie::getGidPosition(int offset) {
 	int column = floor((getX() + offset) / 20);
 	int line = floor(getY() / 20);
@@ -275,6 +213,9 @@ int Ennemie::getGidPosition(int offset) {
 	return (line * 20) + column;
 }
 
+/*
+ * Changement de direction de l'ennemie
+ */
 void Ennemie::changeDirection() {
 	if (direction == left) {
 		direction = right;
@@ -284,6 +225,9 @@ void Ennemie::changeDirection() {
 	}
 }
 
+/*
+ * retourne l'état d'une plateforme
+ */
 bool Ennemie::getGridValue(int cell) {
 	if (cell < 0) {
 		//ahut de l'Ècran donc mur, evite que l'Ènemie se barre de l'Ècran
@@ -298,17 +242,18 @@ bool Ennemie::getGridValue(int cell) {
 	}
 }
 
+/*
+ * recherche une plateforme en dessous de l'enemie
+ */
 bool Ennemie::searchPlatformBelow(int cell) {
-	std::cout << "search platform : " << cell << "\n";
 	int y = cell;
 	while (y < 500) {
 		if (level->getPlatformGrid()[y]) {
-			std::cout << "platform trouvÈ\n";
 			return true;
 
 		}
 		y += 20;
 	}
-	std::cout << "platform non trouvÈ\n";
 	return false;
 }
+

@@ -27,8 +27,9 @@ void Orange::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 		move();
 		break;
 	}
-
 	sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
 	drawHimself(sprite, dest);
-	//std::cout << "id : "<<id<<" direction : " <<(direction == left ?"left":"right ")<< getX()<<"\n";
+}
+
+void Orange::iMove(){
 }

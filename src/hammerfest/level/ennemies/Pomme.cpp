@@ -35,3 +35,6 @@ void Pomme::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
     drawHimself(sprite, dest);
 }
+
+void Pomme::iMove(){
+}
