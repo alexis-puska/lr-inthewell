@@ -1,7 +1,7 @@
 #include "Citron.h"
 
 Citron::Citron(int id, int x, int y, Level * level) :
-Ennemie(id, x, y, citron, level) {
+    Ennemie(id, x, y, citron, level) {
     animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 

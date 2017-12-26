@@ -95,6 +95,9 @@ Level * LevelService::getLevel(int id) {
                 case pomme:
                     currentLevel->addEnnemie(new Pomme(id,x,y,currentLevel));
                     break;
+                case citron:
+                    currentLevel->addEnnemie(new Citron(id,x,y,currentLevel));
+                    break;
                 case banane:
                     currentLevel->addEnnemie(new Banane(id,x,y,currentLevel));
                     break;
