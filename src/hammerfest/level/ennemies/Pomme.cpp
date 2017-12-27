@@ -14,7 +14,6 @@ void Pomme::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 	}
 
 	int distPlateformAbove = plateformAbove();
-	int distPlateformBelong = plateformBelong();
 
 	SDL_Surface * sprite = NULL;
 
