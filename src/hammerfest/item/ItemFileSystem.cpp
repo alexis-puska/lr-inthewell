@@ -59,7 +59,7 @@ void ItemFileSystem::init(std::string path, bool newSaveFile) {
     std::cout<< "init item file system : ";
 	if (newSaveFile) {
         std::cout<<"create..........";
-		saveFile = fopen(path.c_str(), "r+");
+        saveFile = std::fopen(path.c_str(), "r+");
 		for (int i = 0; i < 4; i++) {
 			for (int i = 0; i < nbOfValueInFile; i++) {
 				fprintf(saveFile, "%08x", 0);
@@ -106,30 +106,30 @@ int ItemFileSystem::loadAccount(int accountId) {
 	availableItemPoint7.clear();
 
 	 std::cout<< "Loading data from file System, Accound : "<< accountId<<"\n";
-	saveFile = fopen(saveFilePath.c_str(), "r+");
+    saveFile = std::fopen(saveFilePath.c_str(), "r+");
 	rewind(saveFile);
-	fseek(saveFile, (nbOfValueInFile * 8) * accountId, SEEK_SET);
+	std::fseek(saveFile, (nbOfValueInFile * 8) * accountId, SEEK_SET);
 	if (fscanf(saveFile, "%08x", &scoreMax) <= 0) {
 		 std::cout<<"error read file";
 		return -1;
 	}
-	fseek(saveFile, (nbOfValueInFile * 8) * accountId + 8, SEEK_SET);
+	std::fseek(saveFile, (nbOfValueInFile * 8) * accountId + 8, SEEK_SET);
 	if (fscanf(saveFile, "%08x", &scoreLastGame) <= 0) {
 		 std::cout<<"error read file";
 		return -1;
 	}
-	fseek(saveFile, (nbOfValueInFile * 8) * accountId + 16, SEEK_SET);
+	std::fseek(saveFile, (nbOfValueInFile * 8) * accountId + 16, SEEK_SET);
 	if (fscanf(saveFile, "%08x", &nbGame) <= 0) {
 		 std::cout<<"error read file";
 		return -1;
 	}
-	fseek(saveFile, (nbOfValueInFile * 8) * accountId + 24, SEEK_SET);
+	std::fseek(saveFile, (nbOfValueInFile * 8) * accountId + 24, SEEK_SET);
 	if (fscanf(saveFile, "%08x", &levelReached) <= 0) {
 		 std::cout<<"error read file";
 		return -1;
 	}
 	for (int i = 4; i < nbOfValueInFile; i++) {
-		fseek(saveFile, (nbOfValueInFile * 8) * accountId + i * 8, SEEK_SET);
+		std::fseek(saveFile, (nbOfValueInFile * 8) * accountId + i * 8, SEEK_SET);
 		if (fscanf(saveFile, "%08x", &fridge[i - 4]) <= 0) {
 			 std::cout<<"error read file";
 			return -1;
@@ -363,12 +363,12 @@ void ItemFileSystem::loadDefaultAvailableItem() {
  * - level reached in the last game
  **************************************************************/
 void ItemFileSystem::save(int score, bool gamePlayed, int level) {
-	saveFile = fopen(saveFilePath.c_str(), "r+");
-	fseek(saveFile, (nbOfValueInFile * 8) * accountLoaded, SEEK_SET);
+    saveFile = std::fopen(saveFilePath.c_str(), "r+");
+	std::fseek(saveFile, (nbOfValueInFile * 8) * accountLoaded, SEEK_SET);
 	if (score > scoreMax) {
 		fprintf(saveFile, "%08x", score);
 	} else {
-		fseek(saveFile, (nbOfValueInFile * 8) * accountLoaded + 8, SEEK_SET);
+		std::fseek(saveFile, (nbOfValueInFile * 8) * accountLoaded + 8, SEEK_SET);
 	}
 	fprintf(saveFile, "%08x", score);
 	if (gamePlayed) {

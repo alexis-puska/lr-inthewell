@@ -456,10 +456,6 @@ void Ennemie::ennemieJump() {
 			}
 		}
 	}
-
-	if (id == 0) {
-		std::cout << "id : " << id << ", gety : " << getY() << ", cycle : " << jumpCycle << "\n";
-	}
 	jumpCycle++;
 }
 
