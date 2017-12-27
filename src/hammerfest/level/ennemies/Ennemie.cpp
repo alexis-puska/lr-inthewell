@@ -1,9 +1,12 @@
 #include "Ennemie.h"
 #include "../../level/Level.h"
 
+static const int decelerate[tableSize] = { 10, 5, 3, 2 };
+static const int accelerate[tableSize] = { 2, 3, 5, 10 };
+
 Ennemie::Ennemie(int id, int x, int y, int type, Level * level) :
 	Position((x * 20) + 10, (y * 20) + 20), Drawable(), HitBox(), IdElement(id) {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(NULL));
 	this->type = type;
 	isAngry = false;
 	changeState(walk);

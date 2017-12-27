@@ -17,56 +17,58 @@
 #define ennemieSpeed 2
 #define ennemieAngrySpeed 3
 
+#define tableSize 4
+
 enum ennemieType {
-    cerise = 0,
-    orange = 1,
-    pomme = 2,
-    banane = 3,
-    citron = 4,
-    bombinos = 5,
-    poire = 6,
-    abricot = 7,
-    litchi = 8,
-    fraise = 9,
-    kiwi = 10,
-    pasteque = 11,
-    ananas = 12,
-    blob = 13,
-    framboise = 14,
-    nainbricot = 15,
-    scie = 16
+	cerise = 0,
+	orange = 1,
+	pomme = 2,
+	banane = 3,
+	citron = 4,
+	bombinos = 5,
+	poire = 6,
+	abricot = 7,
+	litchi = 8,
+	fraise = 9,
+	kiwi = 10,
+	pasteque = 11,
+	ananas = 12,
+	blob = 13,
+	framboise = 14,
+	nainbricot = 15,
+	scie = 16
 };
 
 static const std::string ennemieTypeString[] = { "cerise", "orange", "pomme", "banane", "citron",
-    "bombinos", "poire", "abricot", "litchi", "fraise", "kiwi", "pasteque", "ananas", "blob", "framboise", "nainbricot", "scie"};
+	"bombinos", "poire", "abricot", "litchi", "fraise", "kiwi", "pasteque", "ananas", "blob", "framboise", "nainbricot", "scie" };
 
 enum ennemieState {
-    walk = 0,
-    angry,
-    frozed,
-    knock_out,
-    dead,
-    jump,
-    look,
-    shot
+	walk = 0,
+	angry,
+	frozed,
+	knock_out,
+	dead,
+	jump,
+	look,
+	shot
 };
 
 static const std::string ennemieStateString[] = { "walk", "angry", "frozed","knock_out", "dead", "jump", "look", "shot" };
 
-enum ennemieDirection{
-    left = 0,
-    right,
-    up,
-    down
+enum ennemieDirection {
+	left = 0,
+	right,
+	up,
+	down
 };
 
 enum ennemieSituation {
-    nothing = 0,
-    bottomStairs,
-    wall,
-    topStaires,
-    edge,
-    edgeCanJump
+	nothing = 0,
+	bottomStairs,
+	wall,
+	topStaires,
+	edge,
+	edgeCanJump
 };
 
 class Level;
@@ -87,9 +89,6 @@ protected:
 	int jumpDirection;
 	int jumpDistance;
 	int jumpCycle;
-	int decelerate[4] = { 10, 5, 3, 2 };
-	int accelerate[4] = { 2, 3, 5, 10 };
-
 
 	//fonction de déplacement
 	virtual void iMove();
