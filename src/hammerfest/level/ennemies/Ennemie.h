@@ -1,6 +1,10 @@
 #ifndef __MYCLASS_ENNEMIE
 #define __MYCLASS_ENNEMIE
 
+#include <cstdlib>
+#include <iostream>
+#include <ctime>
+
 #include "../../definition/Position.h"
 #include "../../definition/Drawable.h"
 #include "../../definition/IdElement.h"
@@ -68,59 +72,61 @@ enum ennemieSituation {
 class Level;
 class Ennemie : public Position, public Drawable, public HitBox, public IdElement {
 public:
-    Ennemie(int id, int x, int y, int type, Level * level);
-    virtual ~Ennemie();
-    virtual void doSomething(SDL_Surface * dest, std::vector<Player *> players);
+	Ennemie(int id, int x, int y, int type, Level * level);
+	virtual ~Ennemie();
+	virtual void doSomething(SDL_Surface * dest, std::vector<Player *> players);
 protected:
-    int type;
-    int animIdx;
-    int animIdxMax;
-    int state;
-    bool isAngry;
-    Level *level;
-    
-    int direction; //0: left, 1:right, 2:up, 3:down
-    int jumpDirection;
-    int jumpDistance;
-    int jumpCycle;
-    int jumpTable1[4]={10, 5, 3, 2};
-    int jumpTable2[6]={20, 10, 5, 3, 2};
-    int jumpTable3[8]={20, 15, 10, 5, 3, 2};
-    
-    //fonction de déplacement
-    virtual void iMove();
-    void changeDirection();
-    void move();
-    
-    //effectue un saut
-    void initJump(int direction, int distance);
-    void ennemieJump();
-    
-    //detection joueur/environnement
-    int whatITouch();
-    //plateform
-    bool plateformFrontMe();
-    int plateformAbove();
-    int plateformBelong();
-    //joueur
-    bool playerFrontOfMe(std::vector<Player *> players);
-    bool playerBelowMe(std::vector<Player *> players);
-    bool playerAboveMe(std::vector<Player *> players);
-    
-    //recupère le sprite courant
-    std::string getStateString();
-    
-    //dessine toi
-    void drawHimself(SDL_Surface * sprite, SDL_Surface * dest);
-    
-    //changement etat
-    void changeState(int newState);
+	int type;
+	int animIdx;
+	int animIdxMax;
+	int state;
+	bool isAngry;
+	Level *level;
+
+	int direction; //0: left, 1:right, 2:up, 3:down
+	int jumpDirection;
+	int jumpDistance;
+	int jumpCycle;
+	int decelerate[4] = { 10, 5, 3, 2 };
+	int accelerate[4] = { 2, 3, 5, 10 };
+
+
+	//fonction de déplacement
+	virtual void iMove();
+	void changeDirection();
+	void move();
+
+	//effectue un saut
+	void initJump(int direction, int distance);
+	void ennemieJump();
+
+	//detection joueur/environnement
+	int whatITouch();
+	//plateform
+	bool plateformFrontMe();
+	int plateformAbove();
+	int plateformBelong();
+	//joueur
+	bool playerFrontOfMe(std::vector<Player *> players);
+	bool playerBelowMe(std::vector<Player *> players);
+	bool playerAboveMe(std::vector<Player *> players);
+
+	//recupère le sprite courant
+	std::string getStateString();
+
+	//dessine toi
+	void drawHimself(SDL_Surface * sprite, SDL_Surface * dest);
+
+	//changement etat
+	void changeState(int newState);
+
+	//choix en fonction du modulo
+	bool choice(int mod);
 private:
-    //fonction utilitaire
-    bool getGridValue(int cell);
-    int getGridPositionX(int offset);
-    int getGridPositionY(int offset);
-    bool searchPlatformBelow(int cell);
-    
+	//fonction utilitaire
+	bool getGridValue(int cell);
+	int getGridPositionX(int offset);
+	int getGridPositionY(int offset);
+	bool searchPlatformBelow(int cell);
 };
 #endif

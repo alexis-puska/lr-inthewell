@@ -20,6 +20,7 @@ void Orange::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
             iMove();
             break;
         case jump:
+			ennemieJump();
             break;
     }
     
@@ -35,12 +36,16 @@ void Orange::iMove(){
             break;
         case wall:
         case edgeCanJump:
-            std::cout<<(plateformFrontMe()?"canjump platform found\n":"");
-            changeDirection();
-            move();
-            break;
         case edge:
-            std::cout<<(plateformFrontMe()?"platform found\n":"");
+			if (plateformFrontMe()) {
+				changeState(jump);
+				initJump(direction, 0);
+			}
+			else {
+				changeDirection();
+				move();
+			}
+			break;
         case bottomStairs:
         case topStaires:
             changeDirection();
