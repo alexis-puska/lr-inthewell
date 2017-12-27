@@ -2,7 +2,6 @@
 
 Litchi::Litchi(int id, int x, int y, Level *level) :
 Ennemie(id, x, y, litchi, level) {
-    animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 
 Litchi::~Litchi() {

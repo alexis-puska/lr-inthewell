@@ -2,7 +2,6 @@
 
 Abricot::Abricot(int id, int x, int y, Level *level) :
 Ennemie(id, x, y, abricot, level) {
-    animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 
 Abricot::~Abricot() {

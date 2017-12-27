@@ -2,7 +2,6 @@
 
 Scie::Scie(int id, int x, int y, Level *level) :
 Ennemie(id, x, y, scie, level) {
-    animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 
 Scie::~Scie() {

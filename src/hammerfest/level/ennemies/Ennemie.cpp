@@ -4,14 +4,8 @@
 Ennemie::Ennemie(int id, int x, int y, int type, Level * level) :
 	Position((x * 20) + 10, (y * 20) + 20), Drawable(), HitBox(), IdElement(id) {
 	this->type = type;
-	this->animIdx = 0;
-	this->state = angry;
-	if (type == scie && state == angry) {
-		this->state = walk;
-	}
-	else if (type == bombinos && state == angry) {
-		this->state = walk;
-	}
+    isAngry = false;
+    changeState(walk);
 	this->level = level;
 	direction = left;
 	initHitBox(x - (int)floor(ennemieHitboxWidth / 2), y - ennemieHitboxHeight, ennemieHitboxWidth, ennemieHitboxHeight);
@@ -27,14 +21,24 @@ void Ennemie::iMove(){}
 void Ennemie::drawHimself(SDL_Surface * sprite, SDL_Surface * dest) {
 	copySurfaceToBackRenderer(sprite, dest, (x - (sprite->w / 2)) + leftPadding, y - (sprite->h));
 	updateHitBox(x - (int)floor(ennemieHitboxWidth / 2), y - ennemieHitboxHeight);
-	SDL_Rect * rect = new SDL_Rect;
-	rect->h = this->getRect().h;
-	rect->w = this->getRect().w;
-	rect->x = this->getRect().x + leftPadding;
-	rect->y = this->getRect().y;
-	SDL_FillRect(dest, rect, SDL_MapRGB(dest->format, 255, 0, 0));
-	
+	/*
+    SDL_Rect * rect = new SDL_Rect;
+    rect->h = this->getRect().h;
+    rect->w = this->getRect().w;
+    rect->x = this->getRect().x + leftPadding;
+    rect->y = this->getRect().y;
+    SDL_FillRect(dest, rect, SDL_MapRGB(dest->format, 255, 0, 0));
+	*/
 	animIdx++;
+}
+
+/*
+ * change Žtat de l'ennemie
+ */
+void Ennemie::changeState(int newState){
+    this->state = newState;
+    this->animIdx = 0;
+    this->animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 
 /*
@@ -76,11 +80,31 @@ void Ennemie::move() {
  */
 bool Ennemie::plateformFrontMe() {
 	if (direction == left) {
-		return getGridValue(getGidPosition(0) + 17);
+		return getGridValue(getGridPositionX(0) + 17);
 	}
 	else {
-		return getGridValue(getGidPosition(0) + 23);
+		return getGridValue(getGridPositionX(0) + 23);
 	}
+}
+
+int Ennemie::plateformAbove() {
+    if(getY()>=440 && getGridValue(getGridPositionX(0) +40)){
+        return 2;
+    } else if(getY()>=420 && getGridValue(getGridPositionX(0) +60)){
+        return 3;
+    }else{
+        return -1;
+    }
+}
+
+int Ennemie::plateformBelong() {
+    if(getY()>=60 && getGridValue(getGridPositionX(0) -40)){
+        return 2;
+    } else if(getY()>=80 && getGridValue(getGridPositionX(0) -60)){
+        return 3;
+    }else{
+        return -1;
+    }
 }
 
 /*
@@ -102,47 +126,47 @@ int Ennemie::whatITouch() {
 	}
 
 	if (direction == left) {
-		if (!getGridValue(getGidPosition(-5))) {
-			if (!getGridValue(getGidPosition(-5) + 20) && !getGridValue(getGidPosition(-5) + 40)) {
-				if (searchPlatformBelow(getGidPosition(-5))) {
+		if (!getGridValue(getGridPositionX(-5))) {
+			if (!getGridValue(getGridPositionX(-5) + 20) && !getGridValue(getGridPositionX(-5) + 40)) {
+				if (searchPlatformBelow(getGridPositionX(-5))) {
 					return edgeCanJump;
 				}
 				else {
 					return edge;
 				}
 			}
-			else if (!getGridValue(getGidPosition(-5) + 20) && getGridValue(getGidPosition(-5) + 40)) {
+			else if (!getGridValue(getGridPositionX(-5) + 20) && getGridValue(getGridPositionX(-5) + 40)) {
 				return topStaires;
 			}
 			return nothing;
 		}
-		else if (getGridValue(getGidPosition(-5)) && getGridValue(getGidPosition(-10) - 20)) {
+		else if (getGridValue(getGridPositionX(-5)) && getGridValue(getGridPositionX(-10) - 20)) {
 			return wall;
 		}
-		else if (getGridValue(getGidPosition(-5)) && !getGridValue(getGidPosition(-10) - 20)) {
+		else if (getGridValue(getGridPositionX(-5)) && !getGridValue(getGridPositionX(-10) - 20)) {
 			return bottomStairs;
 		}
 	}
 	else {
-		if (!getGridValue(getGidPosition(5))) {
-			if (!getGridValue(getGidPosition(5) + 20) && !getGridValue(getGidPosition(5) + 40)) {
-				if (searchPlatformBelow(getGidPosition(5) + 40)) {
+		if (!getGridValue(getGridPositionX(5))) {
+			if (!getGridValue(getGridPositionX(5) + 20) && !getGridValue(getGridPositionX(5) + 40)) {
+				if (searchPlatformBelow(getGridPositionX(5) + 40)) {
 					return edgeCanJump;
 				}
 				else {
 					return edge;
 				}
 			}
-			else if (!getGridValue(getGidPosition(5) + 20) && getGridValue(getGidPosition(5) + 40))
+			else if (!getGridValue(getGridPositionX(5) + 20) && getGridValue(getGridPositionX(5) + 40))
 			{
 				return topStaires;
 			}
 			return nothing;
 		}
-		else if (getGridValue(getGidPosition(5)) && getGridValue(getGidPosition(10) - 20)) {
+		else if (getGridValue(getGridPositionX(5)) && getGridValue(getGridPositionX(10) - 20)) {
 			return wall;
 		}
-		else if (getGridValue(getGidPosition(5)) && !getGridValue(getGidPosition(10) - 20)) {
+		else if (getGridValue(getGridPositionX(5)) && !getGridValue(getGridPositionX(10) - 20)) {
 			return bottomStairs;
 		}
 	}
@@ -204,13 +228,22 @@ bool Ennemie::playerAboveMe(std::vector<Player *> players) {
 /*
  * calcule la case de la grille par rapport ˆ la position de l'enemie en pixel. inclus un dŽcalage sur l'axe X
  */
-int Ennemie::getGidPosition(int offset) {
-	int column = floor((getX() + offset) / 20);
-	int line = floor(getY() / 20);
-	if (line >= 1) {
-		line -= 1;
-	}
-	return (line * 20) + column;
+int Ennemie::getGridPositionX(int offset) {
+    int column = floor((getX() + offset) / 20);
+    int line = floor(getY() / 20);
+    if (line >= 1) {
+        line -= 1;
+    }
+    return (line * 20) + column;
+}
+
+int Ennemie::getGridPositionY(int offset) {
+    int column = floor((getX()) / 20);
+    int line = floor((getY()+offset) / 20);
+    if (line >= 1) {
+        line -= 1;
+    }
+    return (line * 20) + column;
 }
 
 /*
@@ -255,5 +288,57 @@ bool Ennemie::searchPlatformBelow(int cell) {
 		y += 20;
 	}
 	return false;
+}
+
+/*
+ *initialise un saut
+ */
+void Ennemie::initJump(int direction, int distance){
+    this->jumpDistance = distance;
+    this->jumpDirection = direction;
+    this->jumpCycle = 0;
+}
+
+/*
+ * effectue un saut
+ */
+void Ennemie::ennemieJump(){
+    if(jumpDirection == up){
+        if(jumpDistance == 1){
+            setY(getY()-jumpTable1[jumpCycle]);
+            if(jumpCycle>=3){
+                move();
+                changeState(isAngry ? angry : walk);
+            }
+        }else if(jumpDistance == 2){
+            if(jumpCycle>10){
+                jumpCycle = 3;
+            }
+        }else if(jumpDistance == 3){
+            setY(getY()+jumpTable1[jumpCycle]);
+        }
+    }else if(jumpDirection == down){
+        if(jumpCycle<5){
+            if(jumpCycle <=2){
+                move();
+            }
+            setY(getY()+jumpCycle);
+        }else{
+            setY(getY()+5);
+            if(getGridValue(getGridPositionY(1)+20)){
+                changeState(isAngry ? angry : walk);
+            }
+        }
+        
+    }else if(jumpDirection == left){
+        if(jumpCycle>10){
+            jumpCycle = 3;
+        }
+    }else if(jumpDirection == left){
+        if(jumpCycle>10){
+            jumpCycle = 3;
+        }
+    }
+    jumpCycle++;
 }
 

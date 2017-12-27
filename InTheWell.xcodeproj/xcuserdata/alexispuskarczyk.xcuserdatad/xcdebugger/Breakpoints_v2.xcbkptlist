@@ -10,28 +10,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/hammerfest/level/ennemies/Citron.cpp"
-            timestampString = "536019568.700257"
+            timestampString = "536023745.891414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "Cerise::iMove()"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "Citron::iMove()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/hammerfest/level/ennemies/Pomme.cpp"
-            timestampString = "536019568.700257"
+            timestampString = "536024790.256616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "Cerise::iMove()"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "Pomme::iMove()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/hammerfest/level/ennemies/Ennemie.cpp"
+            timestampString = "536031295.00932"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "Ennemie::plateformBelong()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

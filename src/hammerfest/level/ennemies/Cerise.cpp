@@ -2,7 +2,6 @@
 
 Cerise::Cerise(int id, int x, int y, Level * level) :
 Ennemie(id, x, y, cerise, level) {
-    animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 
 Cerise::~Cerise() {

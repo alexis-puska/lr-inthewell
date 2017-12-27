@@ -327,6 +327,7 @@
 			{"x": 0, "y": 3957, "nx": 22   ,"ny":1, "n": 22,"sx":   73, "sy":   31, "r": true, "animation": "pomme_shot2"},
 			{"x": 0, "y": 3988, "nx":  3   ,"ny":1, "n":  3,"sx":   28, "sy":   27, "r": true, "animation": "pomme_look_up"},
 			{"x": 0, "y": 4015, "nx":  4   ,"ny":1, "n":  4,"sx":   28, "sy":   26, "r": true, "animation": "pomme_fall"},
+            {"x": 0, "y": 4015, "nx":  4   ,"ny":1, "n":  4,"sx":   28, "sy":   26, "r": true, "animation": "pomme_jump"},
 			{"x": 0, "y": 4041, "nx":  8   ,"ny":1, "n":  8,"sx":   34, "sy":   34, "r": true, "animation": "pomme_shot3"},
 			{"x": 0, "y": 4075, "nx":  1   ,"ny":1, "n":  1,"sx":   47, "sy":   47, "r": true, "animation": "scie"}
 			              

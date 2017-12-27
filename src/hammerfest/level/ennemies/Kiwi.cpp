@@ -2,7 +2,6 @@
 
 Kiwi::Kiwi(int id, int x, int y, Level *level) :
 Ennemie(id, x, y, kiwi, level) {
-    animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 
 Kiwi::~Kiwi() {

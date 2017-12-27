@@ -2,7 +2,6 @@
 
 NainBricot::NainBricot(int id, int x, int y, Level *level) :
 Ennemie(id, x, y, nainbricot, level) {
-    animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 
 NainBricot::~NainBricot() {
