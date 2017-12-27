@@ -71,7 +71,7 @@ void Ennemie::move() {
 	}
 	else {
 		if (getY() % 20 != 0 && state == walk) {
-			std::cout << "warn alignement ennemie"<< getY() % 20 <<"\n";
+			std::cout << "warn alignement ennemie" << getY() % 20 << "\n";
 		}
 		if (direction == left) {
 			this->setX(getX() - ennemieSpeed);
@@ -86,19 +86,40 @@ void Ennemie::move() {
  * ennemis au bord d'une plateforme, fonction qui renseigne si l'ennemis ˆ une plateforme devant lui et peut sauter de 2 cases.
  */
 bool Ennemie::plateformFrontMe() {
-	if (direction == left) {
+	if (direction == left && getGridPositionX(0) % 20 > 3) {
 		return getGridValue(getGridPositionX(0) + 17) && !getGridValue(getGridPositionX(0) - 3);
 	}
-	else {
+	else if (direction == right && getGridPositionX(0) % 20 < 17){
 		return getGridValue(getGridPositionX(0) + 23) && !getGridValue(getGridPositionX(0) + 3);
 	}
+	return false;
 }
+
+int Ennemie::getStepSize() {
+	if (direction == left) {
+		if (getGridValue(getGridPositionX(-5)) && getGridValue(getGridPositionX(-10) - 20) && getGridValue(getGridPositionX(-10) - 40) && getGridValue(getGridPositionX(-10) - 60)) {
+			return 3;
+		}
+		else {
+			return 2;
+		}
+	}
+	else {
+		if (getGridValue(getGridPositionX(5)) && getGridValue(getGridPositionX(10) - 20) && getGridValue(getGridPositionX(10) - 40) && getGridValue(getGridPositionX(10) - 60)) {
+			return 3;
+		}
+		else {
+			return 2;
+		}
+	}
+}
+
 
 int Ennemie::plateformAbove() {
 	if (getY() <= 440 && getY() >= 60 && getGridValue(getGridPositionX(0) - 20) && !getGridValue(getGridPositionX(0) - 40)) {
 		return 2;
 	}
-	else if (getY() <= 420 && getY() >= 80&& getGridValue(getGridPositionX(0) - 40) && !getGridValue(getGridPositionX(0) - 60)) {
+	else if (getY() <= 420 && getY() >= 80 && getGridValue(getGridPositionX(0) - 40) && !getGridValue(getGridPositionX(0) - 60)) {
 		return 3;
 	}
 	else {
@@ -107,10 +128,10 @@ int Ennemie::plateformAbove() {
 }
 
 int Ennemie::plateformBelong() {
-	if (getY() >= 60 && getY() <= 440&& getGridValue(getGridPositionX(0) + 60) && !getGridValue(getGridPositionX(0) +40)) {
+	if (getY() >= 60 && getY() <= 440 && getGridValue(getGridPositionX(0) + 60) && !getGridValue(getGridPositionX(0) + 40)) {
 		return 2;
 	}
-	else if (getY() >= 80 && getY() <= 420 &&  getGridValue(getGridPositionX(0) + 80) && !getGridValue(getGridPositionX(0) + 60) && !getGridValue(getGridPositionX(0) + 40)) {
+	else if (getY() >= 80 && getY() <= 420 && getGridValue(getGridPositionX(0) + 80) && !getGridValue(getGridPositionX(0) + 60) && !getGridValue(getGridPositionX(0) + 40)) {
 		return 3;
 	}
 	else {
@@ -151,8 +172,12 @@ int Ennemie::whatITouch() {
 			}
 			return nothing;
 		}
-		else if (getGridValue(getGridPositionX(-5)) && getGridValue(getGridPositionX(-10) - 20)) {
+		else if (getGridValue(getGridPositionX(-5)) && getGridValue(getGridPositionX(-10) - 20) && getGridValue(getGridPositionX(-10) - 40) && getGridValue(getGridPositionX(-10) - 60)) {
 			return wall;
+		}
+		else if ((getGridValue(getGridPositionX(-5)) && getGridValue(getGridPositionX(-10) - 20) && !getGridValue(getGridPositionX(-10) - 40) && !getGridValue(getGridPositionX(-10) - 60))
+			|| (getGridValue(getGridPositionX(-5)) && getGridValue(getGridPositionX(-10) - 20) && getGridValue(getGridPositionX(-10) - 40) && !getGridValue(getGridPositionX(-10) - 60))) {
+			return bottomHighStairs;
 		}
 		else if (getGridValue(getGridPositionX(-5)) && !getGridValue(getGridPositionX(-10) - 20)) {
 			return bottomStairs;
@@ -174,8 +199,12 @@ int Ennemie::whatITouch() {
 			}
 			return nothing;
 		}
-		else if (getGridValue(getGridPositionX(5)) && getGridValue(getGridPositionX(10) - 20)) {
+		else if (getGridValue(getGridPositionX(5)) && getGridValue(getGridPositionX(10) - 20) && getGridValue(getGridPositionX(10) - 40) && getGridValue(getGridPositionX(10) - 60)) {
 			return wall;
+		}
+		else if ((getGridValue(getGridPositionX(5)) && getGridValue(getGridPositionX(10) - 20) && !getGridValue(getGridPositionX(10) - 40) && !getGridValue(getGridPositionX(10) - 60))
+			|| (getGridValue(getGridPositionX(5)) && getGridValue(getGridPositionX(10) - 20) && getGridValue(getGridPositionX(10) - 40) && !getGridValue(getGridPositionX(10) - 60))) {
+			return bottomHighStairs;
 		}
 		else if (getGridValue(getGridPositionX(5)) && !getGridValue(getGridPositionX(10) - 20)) {
 			return bottomStairs;
@@ -353,7 +382,7 @@ void Ennemie::ennemieJump() {
 	}
 	else if (jumpDirection == down) {
 		//saut vers plateform en dessous ou tombe d'une plateform
-		
+
 		if (jumpDistance == 2) {
 			//saute sur une palteforme
 			if (jumpCycle < 5) {

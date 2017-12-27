@@ -68,7 +68,8 @@ enum ennemieSituation {
 	wall,
 	topStaires,
 	edge,
-	edgeCanJump
+	edgeCanJump,
+	bottomHighStairs
 };
 
 class Level;
@@ -101,6 +102,7 @@ protected:
 
 	//detection joueur/environnement
 	int whatITouch();
+	int getStepSize();
 	//plateform
 	bool plateformFrontMe();
 	int plateformAbove();

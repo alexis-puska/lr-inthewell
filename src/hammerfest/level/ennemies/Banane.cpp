@@ -87,5 +87,11 @@ void Banane::iMove() {
 			move();
 		}
 		break;
+	case bottomHighStairs:
+		if (choice(10)) {
+			changeState(jump);
+			initJump(up, getStepSize());
+			break;
+		}
 	}
 }

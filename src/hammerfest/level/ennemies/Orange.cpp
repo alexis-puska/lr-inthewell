@@ -13,7 +13,6 @@ void Orange::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 	if (animIdx >= animIdxMax) {
 		animIdx = 0;
 	}
-
     switch(state){
         case walk:
         case angry:
@@ -23,8 +22,6 @@ void Orange::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 			ennemieJump();
             break;
     }
-    
-    
 	sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
 	drawHimself(sprite, dest);
 }
@@ -34,7 +31,6 @@ void Orange::iMove(){
         case nothing:
             move();
             break;
-        case wall:
         case edgeCanJump:
         case edge:
 			if (plateformFrontMe()) {
@@ -46,6 +42,8 @@ void Orange::iMove(){
 				move();
 			}
 			break;
+		case wall:
+		case bottomHighStairs:
         case bottomStairs:
         case topStaires:
             changeDirection();
