@@ -127,7 +127,7 @@ int Ennemie::plateformAbove() {
 	}
 }
 
-int Ennemie::plateformBelong() {
+int Ennemie::plateformBelow() {
 	if (getY() >= 60 && getY() <= 440 && getGridValue(getGridPositionX(0) + 60) && !getGridValue(getGridPositionX(0) + 40)) {
 		return 2;
 	}

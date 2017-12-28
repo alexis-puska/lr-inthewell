@@ -14,7 +14,7 @@ void Banane::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 	}
 
 	int distPlateformAbove = plateformAbove();
-	int distPlateformBelong = plateformBelong();
+	int distPlateformBelong = plateformBelow();
 
 	SDL_Surface * sprite = NULL;
 

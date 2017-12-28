@@ -53,7 +53,7 @@ enum ennemieState {
 	shot
 };
 
-static const std::string ennemieStateString[] = { "walk", "angry", "frozed","knock_out", "dead", "jump", "look", "shot" };
+static std::string ennemieStateString[] = { "walk", "angry", "frozed","knock_out", "dead", "jump", "look", "shot" };
 
 enum ennemieDirection {
 	left = 0,
@@ -106,7 +106,7 @@ protected:
 	//plateform
 	bool plateformFrontMe();
 	int plateformAbove();
-	int plateformBelong();
+	int plateformBelow();
 	//joueur
 	bool playerFrontOfMe(std::vector<Player *> players);
 	bool playerBelowMe(std::vector<Player *> players);

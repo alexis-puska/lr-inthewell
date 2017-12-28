@@ -24,6 +24,7 @@ void Cerise::iMove(){
             break;
         case wall:
         case edge:
+		case bottomHighStairs:
         case bottomStairs:
         case topStaires:
         case edgeCanJump:

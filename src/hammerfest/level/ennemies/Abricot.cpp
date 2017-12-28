@@ -19,6 +19,7 @@ void Abricot::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
         case wall:
         case edge:
         case bottomStairs:
+		case bottomHighStairs:
         case topStaires:
         case edgeCanJump:
             changeDirection();
