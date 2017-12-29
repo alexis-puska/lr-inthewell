@@ -27,7 +27,7 @@ void Pomme::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 		ennemieJump();
 		break;
 	case walk:
-		if (choice(80) && distPlateformAbove > 0) {
+		if (choice(160) && distPlateformAbove > 0) {
 			changeState(look);
 			initJump(up, distPlateformAbove);
 			break;

@@ -12,26 +12,42 @@ void Citron::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     if (animIdx >= animIdxMax) {
         animIdx = 0;
     }
-    
-    
-    switch (whatITouch()) {
-        case nothing:
-            move();
+    switch(state){
+        case walk:
+        case angry:
+            iMove();
             break;
-        case wall:
-        case edge:
-        case bottomStairs:
-		case bottomHighStairs:
-        case topStaires:
-        case edgeCanJump:
-            changeDirection();
-            move();
+        case jump:
+            ennemieJump();
             break;
-        }
-    
+    }
     sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
     drawHimself(sprite, dest);
 }
 
 void Citron::iMove(){
+    switch (whatITouch()) {
+        case nothing:
+            move();
+            break;
+        case edgeCanJump:
+        case edge:
+            if (plateformFrontMe()) {
+                changeState(jump);
+                initJump(direction, 0);
+            }
+            else {
+                changeDirection();
+                move();
+            }
+            break;
+        case wall:
+        case bottomHighStairs:
+        case bottomStairs:
+        case topStaires:
+            changeDirection();
+            move();
+            break;
+    }
+
 }
