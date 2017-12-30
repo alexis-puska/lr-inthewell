@@ -123,9 +123,11 @@ protected:
 
 	//choix en fonction du modulo
 	bool choice(int mod);
+    
+    //fonction utilitaire
+    bool getGridValue(int cell);
 private:
 	//fonction utilitaire
-	bool getGridValue(int cell);
 	int getGridPositionX(int offset);
 	int getGridPositionY(int offset);
 	bool searchPlatformBelow(int cell);

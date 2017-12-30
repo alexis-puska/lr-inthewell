@@ -309,7 +309,7 @@
 			{"x": 0, "y": 3220, "nx": 14   ,"ny":1, "n": 14,"sx":   29, "sy":   27, "r": true, "animation": "orange_jump"},
 			{"x": 0, "y": 3247, "nx":  8   ,"ny":1, "n":  8,"sx":   25, "sy":   25, "r": true, "animation": "pasteque_walk"},
 			{"x": 0, "y": 3272, "nx":  1   ,"ny":1, "n":  1,"sx":   29, "sy":   31, "r": true, "animation": "pasteque_frozed"},
-			{"x": 0, "y": 3303, "nx":  1   ,"ny":1, "n":  1,"sx":   27, "sy":   26, "r": true, "animation": "pasteque_"},
+			{"x": 0, "y": 3303, "nx":  1   ,"ny":1, "n":  1,"sx":   27, "sy":   26, "r": true, "animation": "pasteque_knock_out"},
 			{"x": 0, "y": 3329, "nx":  4   ,"ny":1, "n":  4,"sx":   33, "sy":   25, "r": true, "animation": "poire_bombe"},
 			{"x": 0, "y": 3354, "nx": 14   ,"ny":1, "n": 14,"sx":   25, "sy":   39, "r": true, "animation": "poire_walk"},
 			{"x": 0, "y": 3393, "nx": 14   ,"ny":1, "n": 14,"sx":   28, "sy":   41, "r": true, "animation": "poire_angry"},

@@ -6,5 +6,13 @@ public:
 	~Pasteque();
 	virtual void doSomething(SDL_Surface * dest, std::vector<Player *> players);
     virtual void iMove();
+    int getGridPosition(int posX, int posY);
+    void movePasteque();
+    void inverseDirectionX();
+    void inverseDirectionY();
+    bool toRight;
+    bool toBottom;
+    int lastInvX;
+    int lastInvY;
 };
 
