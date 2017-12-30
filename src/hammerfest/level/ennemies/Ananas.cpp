@@ -2,6 +2,7 @@
 
 Ananas::Ananas(int id, int x, int y, Level * level) :
 Ennemie(id, x, y, ananas, level) {
+    animIdxMax = Sprite::Instance().getAnimationSize(getStateString());
 }
 
 Ananas::~Ananas() {
@@ -12,18 +13,13 @@ void Ananas::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
     if (animIdx >= animIdxMax) {
         animIdx = 0;
     }
-    switch (whatITouch()) {
-        case nothing:
-            move();
+    switch(state){
+        case walk:
+        case angry:
+            iMove();
             break;
-        case wall:
-        case edge:
-        case bottomStairs:
-		case bottomHighStairs:
-        case topStaires:
-        case edgeCanJump:
-            changeDirection();
-            move();
+        case jump:
+            ennemieJump();
             break;
     }
     sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
@@ -31,4 +27,27 @@ void Ananas::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 }
 
 void Ananas::iMove(){
+    switch (whatITouch()) {
+        case nothing:
+            move();
+            break;
+        case edgeCanJump:
+        case edge:
+            if (plateformFrontMe()) {
+                changeState(jump);
+                initJump(direction, 0);
+            }
+            else {
+                changeDirection();
+                move();
+            }
+            break;
+        case wall:
+        case bottomHighStairs:
+        case bottomStairs:
+        case topStaires:
+            changeDirection();
+            move();
+            break;
+    }
 }
