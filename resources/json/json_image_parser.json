@@ -334,8 +334,8 @@
 			{"x": 0, "y": 4015, "nx":  4   ,"ny":1, "n":  4,"sx":   28, "sy":   26, "r": true, "animation": "pomme_fall"},
             {"x": 0, "y": 4015, "nx":  4   ,"ny":1, "n":  4,"sx":   28, "sy":   26, "r": true, "animation": "pomme_jump"},
 			{"x": 0, "y": 4041, "nx":  8   ,"ny":1, "n":  8,"sx":   34, "sy":   34, "r": true, "animation": "pomme_shot3"},
-			{"x": 0, "y": 4075, "nx":  1   ,"ny":1, "n":  1,"sx":   47, "sy":   47, "r": true, "animation": "scie"}
-			              
+			{"x": 0, "y": 4075, "nx":  1   ,"ny":1, "n":  1,"sx":   32, "sy":   32, "r": true, "animation": "scie_walk"},
+			{"x": 0, "y": 4075, "nx":  1   ,"ny":1, "n":  1,"sx":   32, "sy":   32, "r": true, "animation": "scie_angry"}
 		]	
 	}
 ]

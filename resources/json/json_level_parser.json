@@ -103,7 +103,7 @@
 		"teleporter":[],
 		"vortex":[],
 		"ennemies": [
-			{"id":0,"x": 5, "y": 14, "type": 11}
+			{"id":0,"x": 5, "y": 14, "type": 1}
 		],
 		"startPlayers":[],
 		"startEffectObjets":[],
@@ -570,7 +570,7 @@
 		"vortex":[],
 		"ennemies": [
 			{"id":0,"x":9 ,"y":19,"type": 1},
-			{"id":1,"x":3 ,"y":3 ,"type": 0},
+			{"id":1,"x":3 ,"y":3 ,"type": 13},
 			{"id":2,"x":17,"y":4 ,"type": 0},
 			{"id":3,"x":13,"y":11,"type": 2}
 		],

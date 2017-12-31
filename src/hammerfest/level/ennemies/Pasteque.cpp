@@ -78,21 +78,15 @@ void Pasteque::inverseDirectionY(){
     }
 }
 
-int Pasteque::getGridPosition(int posX, int posY) {
-    int column = (int)floor(posX / 20);
-    int line = (int)floor(posY / 20);
-    return (line * 20) + column;
-}
-
 void Pasteque::movePasteque(){
     if(toRight){
-        setX(getX()+(isAngry ? 6 : 4));
+        setX(getX()+(isAngry ? 4 : 3));
     }else{
-        setX(getX()-(isAngry ? 6 : 4));
+        setX(getX()-(isAngry ? 4 : 3));
     }
     if(toBottom){
-        setY(getY()+(isAngry ? 6 : 4));
+        setY(getY()+(isAngry ? 4 : 3));
     }else{
-        setY(getY()-(isAngry ? 6 : 4));
+        setY(getY()-(isAngry ? 4 : 3));
     }
 }

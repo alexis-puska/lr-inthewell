@@ -126,6 +126,7 @@ protected:
     
     //fonction utilitaire
     bool getGridValue(int cell);
+    int getGridPosition(int posX, int posY);
 private:
 	//fonction utilitaire
 	int getGridPositionX(int offset);

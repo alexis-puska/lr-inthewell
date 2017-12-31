@@ -462,3 +462,9 @@ void Ennemie::ennemieJump() {
 bool Ennemie::choice(int mod) {
 	return std::rand() % mod == 0;
 }
+
+int Ennemie::getGridPosition(int posX, int posY) {
+    int column = (int)floor(posX / 20);
+    int line = (int)floor(posY / 20);
+    return (line * 20) + column;
+}
