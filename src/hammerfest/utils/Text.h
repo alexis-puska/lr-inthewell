@@ -56,6 +56,6 @@ class Text
 	*        FONT
 	***********************/
 	std::map<std::string, TTF_Font *> fonts;
-	std::map<std::string, std::map<std::string, std::string>> texts;
+	std::map<std::string, std::map<std::string, std::string> > texts;
 };
 #endif

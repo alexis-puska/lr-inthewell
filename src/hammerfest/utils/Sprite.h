@@ -42,7 +42,7 @@ class Sprite
 		 *      VARIABLES
 		 ***********************/
 	SDL_Surface *surfaceToParse;
-	std::map<std::string, std::vector<SDL_Surface *>> sprites;
+	std::map<std::string, std::vector<SDL_Surface *> > sprites;
 	/***********************
 		 *      FUNCTIONS
 		 ***********************/
