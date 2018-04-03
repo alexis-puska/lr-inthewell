@@ -1,7 +1,7 @@
 #include "Vortex.h"
 
-Vortex::Vortex(int id, int x, int y, double zoomX, double zoomY, bool enable, int destination, int animationType) :
-		Drawable(), Position(x, y), HitBox(), IdElement(id) {
+Vortex::Vortex(int id, int x, int y, double zoomX, double zoomY, bool enable, int destination, int animationType) : Drawable(), Position(x, y), HitBox(), IdElement(id)
+{
 	this->zoomX = zoomX;
 	this->zoomY = zoomY;
 	this->enable = enable;
@@ -14,29 +14,35 @@ Vortex::Vortex(int id, int x, int y, double zoomX, double zoomY, bool enable, in
 	initHitBox(x, y, width - vortexHitboxBorder, height - vortexHitboxBorder);
 }
 
-Vortex::~Vortex() {
-
+Vortex::~Vortex()
+{
 }
 
-void Vortex::enableVortex() {
+void Vortex::enableVortex()
+{
 	this->enable = true;
 }
 
-bool Vortex::isEnable() {
+bool Vortex::isEnable()
+{
 	return this->enable;
 }
 
-int Vortex::getDestination() {
+int Vortex::getDestination()
+{
 	return this->destination;
 }
 
-void Vortex::drawHimself(SDL_Surface * dest) {
-	if (this->enable) {
-		SDL_Surface * temp = rotozoomSurfaceXY(animation[animationPosition], 0, zoomX, zoomY, 0);
-		copySurfaceToBackRenderer(temp, dest, (x - (width / 2))+leftPadding, y - height);
+void Vortex::drawHimself(SDL_Surface *dest)
+{
+	if (this->enable)
+	{
+		SDL_Surface *temp = rotozoomSurfaceXY(animation[animationPosition], 0, zoomX, zoomY, 0);
+		copySurfaceToBackRenderer(temp, dest, (x - (width / 2)) + leftPadding, y - height);
 		SDL_FreeSurface(temp);
 		this->animationPosition++;
-		if ((unsigned) this->animationPosition > animation.size() - 1) {
+		if ((unsigned)this->animationPosition > animation.size() - 1)
+		{
 			this->animationPosition = 0;
 		}
 	}

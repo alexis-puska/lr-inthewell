@@ -1,10 +1,10 @@
 #include "Ennemie.h"
 
-class Fraise : public Ennemie{
-public:
-	Fraise(int id, int x, int y, Level * level);
+class Fraise : public Ennemie
+{
+  public:
+	Fraise(int id, int x, int y, Level *level);
 	~Fraise();
-	virtual void doSomething(SDL_Surface * dest, std::vector<Player *> players);
-    virtual void iMove();
+	virtual void doSomething(SDL_Surface *dest, std::vector<Player *> players);
+	virtual void iMove();
 };
-

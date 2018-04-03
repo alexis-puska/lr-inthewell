@@ -9,18 +9,20 @@
 #define gridSize 20
 #define shadowPlatformValue 70
 
-class Platform : public Drawable, public Position, public IdElement, public HitBox{
-	public:
-		Platform(int id, int x, int y, bool vertical, bool visible, int length, int surfaceId);
-		~Platform();
-		void drawHimself(SDL_Surface * surface);
-		void drawHimself(SDL_Surface * surface, bool drawShadow);
-		bool isVertical();
-		int getLength();
-	private:
-		bool vertical;
-		bool visible;
-		int length;
-		int surfaceId;
+class Platform : public Drawable, public Position, public IdElement, public HitBox
+{
+  public:
+	Platform(int id, int x, int y, bool vertical, bool visible, int length, int surfaceId);
+	~Platform();
+	void drawHimself(SDL_Surface *surface);
+	void drawHimself(SDL_Surface *surface, bool drawShadow);
+	bool isVertical();
+	int getLength();
+
+  private:
+	bool vertical;
+	bool visible;
+	int length;
+	int surfaceId;
 };
 #endif

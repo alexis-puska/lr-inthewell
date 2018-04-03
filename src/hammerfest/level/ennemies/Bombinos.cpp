@@ -1,26 +1,31 @@
 #include "Bombinos.h"
 
-Bombinos::Bombinos(int id, int x, int y, Level *level) :
-	Ennemie(id, x, y, bombinos, level) {
+Bombinos::Bombinos(int id, int x, int y, Level *level) : Ennemie(id, x, y, bombinos, level)
+{
 }
 
-Bombinos::~Bombinos() {
+Bombinos::~Bombinos()
+{
 }
 
-void Bombinos::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
+void Bombinos::doSomething(SDL_Surface *dest, std::vector<Player *> players)
+{
 	bool endAnimationReach = false;
-	if (animIdx >= animIdxMax) {
+	if (animIdx >= animIdxMax)
+	{
 		endAnimationReach = true;
 	}
 
 	int distPlateformAbove = plateformAbove();
 	int distPlateformBelow = plateformBelow();
 
-	SDL_Surface * sprite = NULL;
+	SDL_Surface *sprite = NULL;
 
-	switch (state) {
+	switch (state)
+	{
 	case look:
-		if (endAnimationReach) {
+		if (endAnimationReach)
+		{
 			changeState(jump);
 		}
 		break;
@@ -28,15 +33,19 @@ void Bombinos::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 		ennemieJump();
 		break;
 	case walk:
-		if (choice(2)) {
-			if (choice(80) && distPlateformAbove > 0) {
+		if (choice(2))
+		{
+			if (choice(80) && distPlateformAbove > 0)
+			{
 				changeState(look);
 				initJump(up, distPlateformAbove);
 				break;
 			}
 		}
-		else {
-			if (choice(80) && distPlateformBelow > 0) {
+		else
+		{
+			if (choice(80) && distPlateformBelow > 0)
+			{
 				changeState(look);
 				initJump(down, distPlateformBelow);
 				break;
@@ -45,15 +54,18 @@ void Bombinos::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 		iMove();
 		break;
 	}
-	if (endAnimationReach) {
+	if (endAnimationReach)
+	{
 		animIdx = 0;
 	}
 	sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
 	drawHimself(sprite, dest);
 }
 
-void Bombinos::iMove() {
-	switch (whatITouch()) {
+void Bombinos::iMove()
+{
+	switch (whatITouch())
+	{
 	case nothing:
 		move();
 		break;
@@ -70,23 +82,27 @@ void Bombinos::iMove() {
 		move();
 		break;
 	case edgeCanJump:
-		if (choice(10)) {
+		if (choice(10))
+		{
 			changeState(jump);
 			initJump(down, 0);
 			break;
 		}
 	case edge:
-		if (plateformFrontMe()) {
+		if (plateformFrontMe())
+		{
 			changeState(jump);
 			initJump(direction, 0);
 		}
-		else {
+		else
+		{
 			changeDirection();
 			move();
 		}
 		break;
 	case bottomHighStairs:
-		if (choice(10)) {
+		if (choice(10))
+		{
 			changeState(jump);
 			initJump(up, getStepSize());
 			break;

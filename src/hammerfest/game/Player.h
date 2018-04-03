@@ -14,7 +14,8 @@
 #include "../utils/Sound.h"
 #include "../level/Platform.h"
 
-enum keyPad {
+enum keyPad
+{
     keyPadSelect = 1,
     keyPadL3 = 2,
     keyPadR3 = 4,
@@ -33,7 +34,8 @@ enum keyPad {
     keyPadY = 32768
 };
 
-enum playerState {
+enum playerState
+{
     playerWait = 0,
     playerWalk = 1,
     playerJump = 2,
@@ -52,18 +54,22 @@ enum playerState {
     playerRespawn = 15,
     playerRun = 16,
     playerCry = 17
-    
+
 };
 
-enum playerDirection {
-    playerDontMove = 0, playerGoLeft = 1, playerGoRight = 2
+enum playerDirection
+{
+    playerDontMove = 0,
+    playerGoLeft = 1,
+    playerGoRight = 2
 };
 
-class Player: public Position, Drawable, HitBox {
-public:
-    Player(int x, int y, int type, unsigned short * in_keystate);
+class Player : public Position, Drawable, HitBox
+{
+  public:
+    Player(int x, int y, int type, unsigned short *in_keystate);
     ~Player();
-    void doSomething(SDL_Surface * dest, bool * platformGrid);
+    void doSomething(SDL_Surface *dest, bool *platformGrid);
     void changeLevel(bool first);
     void playerKilled();
     bool isDead();
@@ -73,49 +79,44 @@ public:
     bool playerIsAlive();
     bool playerIsProtected();
     SDL_Rect getHitbox();
-private:
+
+  private:
     int type; //O - igor, 1 - Sandy
-    unsigned short * in_keystate;
-    
-    
+    unsigned short *in_keystate;
+
     bool protection;
     bool playerCanRun;
     bool playerMove;
-    
+
     bool lockLeftDirection;
     bool lockRightDirection;
-    
+
     bool hitboxPoint[10];
-    
-    
+
     bool shotBombeUpper;
     bool playerIsSad;
     bool dropBombeInAir;
-    
+
     bool playerFalling;
     bool insidePlatform;
-    
-    
+
     int state;
     int direction;
     int animIdx;
     int animIdxMax;
-    
-    
-    
+
     int previousState;
     int previousDirection;
     int prevAnimIdx;
     int prevAnimIdxMax;
-    
+
     int inactivityCounter;
-    
+
     void changeState(int newState);
-    void drawHimself(SDL_Surface * dest);
-    void calcPoint(bool * platformGrid);
+    void drawHimself(SDL_Surface *dest);
+    void calcPoint(bool *platformGrid);
     void adjustPositionLeft();
     void adjustPositionRight();
     void adjustPositionBottom();
-    
 };
 #endif

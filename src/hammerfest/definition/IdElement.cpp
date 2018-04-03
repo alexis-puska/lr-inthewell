@@ -1,13 +1,15 @@
 #include "IdElement.h"
 
-IdElement::IdElement(int id) {
+IdElement::IdElement(int id)
+{
 	this->id = id;
 }
 
-IdElement::~IdElement() {
-
+IdElement::~IdElement()
+{
 }
 
-int IdElement::getId() {
+int IdElement::getId()
+{
 	return id;
 }

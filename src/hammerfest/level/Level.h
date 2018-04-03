@@ -23,8 +23,9 @@
 #include "../definition/IdElement.h"
 #include "../definition/Drawable.h"
 
-class Level : public IdElement, Drawable {
-public:
+class Level : public IdElement, Drawable
+{
+  public:
 	Level(int id, bool showPlatform, int backgroundId, int platformVerticalId, int platformHorizontalId, int next);
 	~Level();
 
@@ -32,17 +33,17 @@ public:
 	 * 		BUILD FUNCTION
 	 *********************************/
 
-	void addDecor(Decor * decor);
-	void addPlatform(Platform * platform);
-	void addDoor(Door * door);
-	void addEvent(Event * event);
-	void addVortex(Vortex * vortex);
-	void AddTeleporter(Teleporter * teleporter);
-	void addRayons(Rayon * rayon);
-	void addStartPlayer(Position * startPlayer);
-	void addStartEffectObject(Position * startEffectObjet);
-	void addStartPointObject(Position * startPointObjet);
-	void addEnnemie(Ennemie * ennemie);
+	void addDecor(Decor *decor);
+	void addPlatform(Platform *platform);
+	void addDoor(Door *door);
+	void addEvent(Event *event);
+	void addVortex(Vortex *vortex);
+	void AddTeleporter(Teleporter *teleporter);
+	void addRayons(Rayon *rayon);
+	void addStartPlayer(Position *startPlayer);
+	void addStartEffectObject(Position *startEffectObjet);
+	void addStartPointObject(Position *startPointObjet);
+	void addEnnemie(Ennemie *ennemie);
 
 	/*********************************
 	 * 		UTIL FUNCTION
@@ -50,23 +51,23 @@ public:
 	void removePlatform(int id);
 	void removeDeco(int id);
 
-	void deleteAreaInDarkness(SDL_Surface * darkness);
-	void drawForeGroundElement(SDL_Surface * dest);
+	void deleteAreaInDarkness(SDL_Surface *darkness);
+	void drawForeGroundElement(SDL_Surface *dest);
 
 	void generateBackGround(int backgroundEffect);
-	SDL_Surface * getBackground();
+	SDL_Surface *getBackground();
 
-	void drawHimself(SDL_Surface * dest);
+	void drawHimself(SDL_Surface *dest);
 
 	std::vector<Ennemie *> getEnnemiesList();
 
 	bool isPlatform(int x, int y);
 	void printPlatformGrid();
-	bool * getPlatformGrid();
+	bool *getPlatformGrid();
 
-private:
+  private:
 	Uint32 rmask, gmask, bmask, amask;
-	SDL_Surface * backgroundBuffer;
+	SDL_Surface *backgroundBuffer;
 
 	bool showPlatform;
 	bool platformGrid[500];
@@ -75,8 +76,8 @@ private:
 	int platformHorizontalId;
 	int next;
 	std::map<int, Decor *> decors;
-	std::map<int, Platform*> platforms;
-	std::map<int, Event*> events;
+	std::map<int, Platform *> platforms;
+	std::map<int, Event *> events;
 	std::map<int, Door *> doors;
 	std::map<int, Vortex *> vortexs;
 	std::map<int, Teleporter *> teleporters;

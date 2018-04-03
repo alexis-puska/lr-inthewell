@@ -16,7 +16,6 @@
 #include "../hammerfest/MyWrapper.h"
 #include <unistd.h>
 
-
 #ifdef IS_OSX
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
@@ -33,8 +32,24 @@
 #define VOUT_WIDTH 420
 #define VOUT_HEIGHT 520
 
-enum {
-	DKEY_SELECT = 0, DKEY_L3, DKEY_R3, DKEY_START, DKEY_UP, DKEY_RIGHT, DKEY_DOWN, DKEY_LEFT, DKEY_L2, DKEY_R2, DKEY_L1, DKEY_R1, DKEY_TRIANGLE, DKEY_CIRCLE, DKEY_CROSS, DKEY_SQUARE,
+enum
+{
+	DKEY_SELECT = 0,
+	DKEY_L3,
+	DKEY_R3,
+	DKEY_START,
+	DKEY_UP,
+	DKEY_RIGHT,
+	DKEY_DOWN,
+	DKEY_LEFT,
+	DKEY_L2,
+	DKEY_R2,
+	DKEY_L1,
+	DKEY_R1,
+	DKEY_TRIANGLE,
+	DKEY_CIRCLE,
+	DKEY_CROSS,
+	DKEY_SQUARE,
 };
 
 static retro_video_refresh_t video_cb;
@@ -46,67 +61,76 @@ static retro_input_state_t input_state_cb;
 static struct retro_rumble_interface rumble;
 static bool support_no_game = true;
 
-static struct Hammerfest* hammerfest;
+static struct Hammerfest *hammerfest;
 static unsigned short in_keystate[2];
-static SDL_Surface * vout_buf;
+static SDL_Surface *vout_buf;
 
-char * savePath;
+char *savePath;
 char saveFilePath[255];
-FILE* saveFile;
+FILE *saveFile;
 bool writeInFile = false;
 
 static const unsigned short retro_psx_map[] = {
-		[RETRO_DEVICE_ID_JOYPAD_B] = 1 << DKEY_CROSS,
-		[RETRO_DEVICE_ID_JOYPAD_Y] = 1 << DKEY_SQUARE,
-		[RETRO_DEVICE_ID_JOYPAD_SELECT] = 1 << DKEY_SELECT,
-		[RETRO_DEVICE_ID_JOYPAD_START] = 1 << DKEY_START,
-		[RETRO_DEVICE_ID_JOYPAD_UP] = 1 << DKEY_UP,
-		[RETRO_DEVICE_ID_JOYPAD_DOWN] = 1 << DKEY_DOWN,
-		[RETRO_DEVICE_ID_JOYPAD_LEFT] = 1 << DKEY_LEFT,
-		[RETRO_DEVICE_ID_JOYPAD_RIGHT] = 1 << DKEY_RIGHT,
-		[RETRO_DEVICE_ID_JOYPAD_A] = 1 << DKEY_CIRCLE,
-		[RETRO_DEVICE_ID_JOYPAD_X] = 1 << DKEY_TRIANGLE,
-		[RETRO_DEVICE_ID_JOYPAD_L] = 1 << DKEY_L1,
-		[RETRO_DEVICE_ID_JOYPAD_R] = 1 << DKEY_R1,
-		[RETRO_DEVICE_ID_JOYPAD_L2] = 1 << DKEY_L2,
-		[RETRO_DEVICE_ID_JOYPAD_R2] = 1 << DKEY_R2,
+	[RETRO_DEVICE_ID_JOYPAD_B] = 1 << DKEY_CROSS,
+	[RETRO_DEVICE_ID_JOYPAD_Y] = 1 << DKEY_SQUARE,
+	[RETRO_DEVICE_ID_JOYPAD_SELECT] = 1 << DKEY_SELECT,
+	[RETRO_DEVICE_ID_JOYPAD_START] = 1 << DKEY_START,
+	[RETRO_DEVICE_ID_JOYPAD_UP] = 1 << DKEY_UP,
+	[RETRO_DEVICE_ID_JOYPAD_DOWN] = 1 << DKEY_DOWN,
+	[RETRO_DEVICE_ID_JOYPAD_LEFT] = 1 << DKEY_LEFT,
+	[RETRO_DEVICE_ID_JOYPAD_RIGHT] = 1 << DKEY_RIGHT,
+	[RETRO_DEVICE_ID_JOYPAD_A] = 1 << DKEY_CIRCLE,
+	[RETRO_DEVICE_ID_JOYPAD_X] = 1 << DKEY_TRIANGLE,
+	[RETRO_DEVICE_ID_JOYPAD_L] = 1 << DKEY_L1,
+	[RETRO_DEVICE_ID_JOYPAD_R] = 1 << DKEY_R1,
+	[RETRO_DEVICE_ID_JOYPAD_L2] = 1 << DKEY_L2,
+	[RETRO_DEVICE_ID_JOYPAD_R2] = 1 << DKEY_R2,
 };
 
 #define RETRO_PSX_MAP_LEN (sizeof(retro_psx_map) / sizeof(retro_psx_map[0]))
 
 /* libretro */
-void retro_set_environment(retro_environment_t cb) {
+void retro_set_environment(retro_environment_t cb)
+{
 	environ_cb = cb;
 }
 
-void retro_set_audio_sample(retro_audio_sample_t cb) {
+void retro_set_audio_sample(retro_audio_sample_t cb)
+{
 	audio_cb = cb;
 }
 
-void retro_set_audio_sample_batch(retro_audio_sample_batch_t cb) {
+void retro_set_audio_sample_batch(retro_audio_sample_batch_t cb)
+{
 	audio_batch_cb = cb;
 }
 
-void retro_set_input_poll(retro_input_poll_t cb) {
+void retro_set_input_poll(retro_input_poll_t cb)
+{
 	input_poll_cb = cb;
 }
 
-void retro_set_input_state(retro_input_state_t cb) {
+void retro_set_input_state(retro_input_state_t cb)
+{
 	input_state_cb = cb;
 }
 
-void retro_set_video_refresh(retro_video_refresh_t cb) {
+void retro_set_video_refresh(retro_video_refresh_t cb)
+{
 	video_cb = cb;
 }
 
-unsigned retro_api_version(void) {
+unsigned retro_api_version(void)
+{
 	return RETRO_API_VERSION;
 }
 
-void retro_set_controller_port_device(unsigned port, unsigned device) {
+void retro_set_controller_port_device(unsigned port, unsigned device)
+{
 }
 
-void retro_get_system_info(struct retro_system_info *info) {
+void retro_get_system_info(struct retro_system_info *info)
+{
 	memset(info, 0, sizeof(*info));
 	info->library_name = "lr_hammerfest_libretro";
 	info->library_version = "r1";
@@ -114,7 +138,8 @@ void retro_get_system_info(struct retro_system_info *info) {
 	info->need_fullpath = false;
 }
 
-void retro_get_system_av_info(struct retro_system_av_info *info) {
+void retro_get_system_av_info(struct retro_system_av_info *info)
+{
 	memset(info, 0, sizeof(*info));
 	info->timing.fps = 60;
 	info->timing.sample_rate = 44100;
@@ -125,94 +150,109 @@ void retro_get_system_av_info(struct retro_system_av_info *info) {
 }
 
 /* savestates */
-size_t retro_serialize_size(void) {
+size_t retro_serialize_size(void)
+{
 	return 0x440000;
 }
 
-bool retro_serialize(void *data, size_t size) {
+bool retro_serialize(void *data, size_t size)
+{
 	return false;
 }
 
-bool retro_unserialize(const void *data, size_t size) {
+bool retro_unserialize(const void *data, size_t size)
+{
 	return false;
 }
 
 /* cheats */
-void retro_cheat_reset(void) {
+void retro_cheat_reset(void)
+{
 }
 
-void retro_cheat_set(unsigned index, bool enabled, const char *code) {
+void retro_cheat_set(unsigned index, bool enabled, const char *code)
+{
 }
 
-bool retro_load_game(const struct retro_game_info *info) {
+bool retro_load_game(const struct retro_game_info *info)
+{
 	struct retro_input_descriptor desc[] = {
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT, "D-Pad Left" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP, "D-Pad Up" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN, "D-Pad Down" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "D-Pad Right" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_B, "Cross" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A, "Circle" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X, "Triangle" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y, "Square" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L, "L1" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2, "L2" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R, "R1" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2, "R2" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT, "Select" },
-	{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START, "Start" },
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT, "D-Pad Left"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP, "D-Pad Up"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN, "D-Pad Down"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "D-Pad Right"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_B, "Cross"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A, "Circle"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X, "Triangle"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y, "Square"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L, "L1"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2, "L2"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R, "R1"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2, "R2"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT, "Select"},
+		{0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START, "Start"},
 
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT, "D-Pad Left" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP, "D-Pad Up" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN, "D-Pad Down" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "D-Pad Right" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_B, "Cross" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A, "Circle" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X, "Triangle" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y, "Square" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L, "L1" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2, "L2" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R, "R1" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2, "R2" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT, "Select" },
-	{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START, "Start" },
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT, "D-Pad Left"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP, "D-Pad Up"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN, "D-Pad Down"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "D-Pad Right"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_B, "Cross"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A, "Circle"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X, "Triangle"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y, "Square"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L, "L1"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2, "L2"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R, "R1"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2, "R2"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT, "Select"},
+		{1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START, "Start"},
 
-	{ 0 }, };
+		{0},
+	};
 
 	environ_cb(RETRO_ENVIRONMENT_SET_INPUT_DESCRIPTORS, desc);
 
 	enum retro_pixel_format fmt = RETRO_PIXEL_FORMAT_XRGB8888;
-	if (!environ_cb(RETRO_ENVIRONMENT_SET_PIXEL_FORMAT, &fmt)) {
+	if (!environ_cb(RETRO_ENVIRONMENT_SET_PIXEL_FORMAT, &fmt))
+	{
 		fprintf(stderr, "XRGB8888 is not supported.\n");
 		return false;
 	}
 	return true;
 }
 
-bool retro_load_game_special(unsigned game_type, const struct retro_game_info *info, size_t num_info) {
+bool retro_load_game_special(unsigned game_type, const struct retro_game_info *info, size_t num_info)
+{
 	return false;
 }
 
-void retro_unload_game(void) {
+void retro_unload_game(void)
+{
 }
 
-unsigned retro_get_region(void) {
+unsigned retro_get_region(void)
+{
 	return RETRO_REGION_PAL;
 }
 
-void *retro_get_memory_data(unsigned id) {
+void *retro_get_memory_data(unsigned id)
+{
 	return NULL;
 }
 
-size_t retro_get_memory_size(unsigned id) {
+size_t retro_get_memory_size(unsigned id)
+{
 	return 0;
 }
 
-void retro_reset(void) {
+void retro_reset(void)
+{
 	deleteHammerfest(hammerfest);
 	hammerfest = newHammerfest(vout_buf, saveFilePath, false);
 }
 
-void retro_init(void) {
+void retro_init(void)
+{
 
 	environ_cb(RETRO_ENVIRONMENT_GET_RUMBLE_INTERFACE, &rumble);
 	unsigned level = 0;
@@ -223,8 +263,10 @@ void retro_init(void) {
 	 * CREATE SAVE FILE *
 	 ********************/
 	bool newSaveFile = false;
-	if (environ_cb(RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY, &savePath) && savePath) {
-		if (strcmp(savePath, "") == 0) {
+	if (environ_cb(RETRO_ENVIRONMENT_GET_SAVE_DIRECTORY, &savePath) && savePath)
+	{
+		if (strcmp(savePath, "") == 0)
+		{
 			fprintf(stderr, "Save directory not set in retroarch.cfg so use content directory !\n");
 			environ_cb(RETRO_ENVIRONMENT_GET_CONTENT_DIRECTORY, &savePath);
 		}
@@ -232,11 +274,14 @@ void retro_init(void) {
 		strcat(saveFilePath, "/lr_hammerfest_libretro.srm");
 		fprintf(stderr, "save dir : %s\n", saveFilePath);
 
-		if (access(saveFilePath, F_OK) != -1) {
+		if (access(saveFilePath, F_OK) != -1)
+		{
 			fprintf(stderr, "saving file found : %s\n", saveFilePath);
 			saveFile = fopen(saveFilePath, "r+");
 			newSaveFile = false;
-		} else {
+		}
+		else
+		{
 			fprintf(stderr, "saving file doesn't exist, create one\n");
 			saveFile = fopen(saveFilePath, "w");
 			newSaveFile = true;
@@ -258,21 +303,26 @@ void retro_init(void) {
 	fprintf(stderr, "Loaded game!\n");
 }
 
-void retro_deinit(void) {
+void retro_deinit(void)
+{
 	deleteHammerfest(hammerfest);
 	SDL_FreeSurface(vout_buf);
 }
 
-void retro_run(void) {
+void retro_run(void)
+{
 	/*******************
 	*   GET KEYSTATE   *
 	********************/
 	int i;
 	int j;
-	for (i = 0; i < 2; i++) {
+	for (i = 0; i < 2; i++)
+	{
 		in_keystate[i] = 0;
-		for (j = 0; j < RETRO_PSX_MAP_LEN; j++) {
-			if (input_state_cb(i, RETRO_DEVICE_JOYPAD, 0, j)) {
+		for (j = 0; j < RETRO_PSX_MAP_LEN; j++)
+		{
+			if (input_state_cb(i, RETRO_DEVICE_JOYPAD, 0, j))
+			{
 				in_keystate[i] |= retro_psx_map[j];
 			}
 		}

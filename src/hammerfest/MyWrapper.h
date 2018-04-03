@@ -11,19 +11,18 @@
 #include <SDL2/SDL_image.h>
 #endif
 
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 typedef struct Hammerfest Hammerfest;
 
-Hammerfest* newHammerfest(SDL_Surface * vout_buf, char * saveFilePath, bool newSaveFile);
+Hammerfest *newHammerfest(SDL_Surface *vout_buf, char *saveFilePath, bool newSaveFile);
 void hammerfest_tick(Hammerfest *v, unsigned short in_keystate[16]);
 
 //SDL_Surface * hammerfest_getScreen(Hammerfest* v);
-void hammerfest_swapBuffer(Hammerfest* v);
-void deleteHammerfest(Hammerfest* v);
+void hammerfest_swapBuffer(Hammerfest *v);
+void deleteHammerfest(Hammerfest *v);
 
 #ifdef __cplusplus
 }

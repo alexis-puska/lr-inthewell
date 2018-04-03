@@ -1,25 +1,30 @@
 #include "Pomme.h"
 
-Pomme::Pomme(int id, int x, int y, Level *level) :
-	Ennemie(id, x, y, pomme, level) {
+Pomme::Pomme(int id, int x, int y, Level *level) : Ennemie(id, x, y, pomme, level)
+{
 }
 
-Pomme::~Pomme() {
+Pomme::~Pomme()
+{
 }
 
-void Pomme::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
+void Pomme::doSomething(SDL_Surface *dest, std::vector<Player *> players)
+{
 	bool endAnimationReach = false;
-	if (animIdx >= animIdxMax) {
+	if (animIdx >= animIdxMax)
+	{
 		endAnimationReach = true;
 	}
 
 	int distPlateformAbove = plateformAbove();
 
-	SDL_Surface * sprite = NULL;
+	SDL_Surface *sprite = NULL;
 
-	switch (state) {
+	switch (state)
+	{
 	case look:
-		if (endAnimationReach) {
+		if (endAnimationReach)
+		{
 			changeState(jump);
 		}
 		break;
@@ -27,7 +32,8 @@ void Pomme::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 		ennemieJump();
 		break;
 	case walk:
-		if (choice(160) && distPlateformAbove > 0) {
+		if (choice(160) && distPlateformAbove > 0)
+		{
 			changeState(look);
 			initJump(up, distPlateformAbove);
 			break;
@@ -35,15 +41,18 @@ void Pomme::doSomething(SDL_Surface * dest, std::vector<Player *> players) {
 		iMove();
 		break;
 	}
-	if (endAnimationReach) {
+	if (endAnimationReach)
+	{
 		animIdx = 0;
 	}
 	sprite = Sprite::Instance().getAnimation(getStateString(), animIdx);
 	drawHimself(sprite, dest);
 }
 
-void Pomme::iMove() {
-	switch (whatITouch()) {
+void Pomme::iMove()
+{
+	switch (whatITouch())
+	{
 	case nothing:
 		move();
 		break;
@@ -60,23 +69,27 @@ void Pomme::iMove() {
 		move();
 		break;
 	case edgeCanJump:
-		if (choice(10)) {
+		if (choice(10))
+		{
 			changeState(jump);
 			initJump(down, 0);
 			break;
 		}
 	case edge:
-		if (plateformFrontMe()) {
+		if (plateformFrontMe())
+		{
 			changeState(jump);
 			initJump(direction, 0);
 		}
-		else {
+		else
+		{
 			changeDirection();
 			move();
 		}
 		break;
 	case bottomHighStairs:
-		if (choice(10)) {
+		if (choice(10))
+		{
 			changeState(jump);
 			initJump(up, getStepSize());
 			break;

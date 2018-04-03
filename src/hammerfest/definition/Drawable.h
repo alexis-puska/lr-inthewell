@@ -21,18 +21,21 @@
 
 #define leftPadding 10
 
-class Drawable{
-	public:
-		Drawable();
-		virtual ~Drawable();
-		virtual void drawHimself(SDL_Surface * dest);
-	protected:
-		int width;
-		int height;
-		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y, int lengthX, int lengthY);
-		void copySurfaceToBackRenderer(SDL_Surface * src, SDL_Surface * dest, int x, int y);
-		void copySurfaceToBackRendererWithStartOffset(SDL_Surface * src, SDL_Surface * dest, int x, int y, int lengthX, int lengthY, int offsetX, int offsetY);
-		void fillScreenBufferWithSurface(std::string name, int index, SDL_Surface * destination);
-	private:
+class Drawable
+{
+  public:
+	Drawable();
+	virtual ~Drawable();
+	virtual void drawHimself(SDL_Surface *dest);
+
+  protected:
+	int width;
+	int height;
+	void copySurfaceToBackRenderer(SDL_Surface *src, SDL_Surface *dest, int x, int y, int lengthX, int lengthY);
+	void copySurfaceToBackRenderer(SDL_Surface *src, SDL_Surface *dest, int x, int y);
+	void copySurfaceToBackRendererWithStartOffset(SDL_Surface *src, SDL_Surface *dest, int x, int y, int lengthX, int lengthY, int offsetX, int offsetY);
+	void fillScreenBufferWithSurface(std::string name, int index, SDL_Surface *destination);
+
+  private:
 };
 #endif

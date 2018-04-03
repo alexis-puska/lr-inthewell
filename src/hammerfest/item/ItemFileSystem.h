@@ -1,10 +1,8 @@
 #ifndef __MYCLASS_ITEM_FILE_SYSTEM
 #define __MYCLASS_ITEM_FILE_SYSTEM
 
-
 #include <time.h>
 #include <map>
-
 
 #include "Family.h"
 #include "Quest.h"
@@ -24,71 +22,72 @@
 #define probaCoef6 3411
 #define probaCoef7 3471
 
-class ItemFileSystem {
-	public:
-		static ItemFileSystem& Instance();
+class ItemFileSystem
+{
+  public:
+	static ItemFileSystem &Instance();
 
-		ItemFileSystem();
-		~ItemFileSystem();
-		void init(std::string saveFile, bool newSaveFile);
-		int loadAccount(int accountId);
-		void save(int score, bool gamePlayed, int level);
-		Quest * getQuest(int index);
-		std::map<int, Quest *> getQuestStarted();
-		std::map<int, Quest *> getQuestCompleted();
-		Item * getItem(int index);
-		int getQuantity(int index);
-		int getEffectItemId();
-		int getPointItemId();
-		void simulateGame();
-	private:
-		ItemFileSystem& operator=(const ItemFileSystem&);
-		ItemFileSystem(const ItemFileSystem&);
-		static ItemFileSystem m_instance;
+	ItemFileSystem();
+	~ItemFileSystem();
+	void init(std::string saveFile, bool newSaveFile);
+	int loadAccount(int accountId);
+	void save(int score, bool gamePlayed, int level);
+	Quest *getQuest(int index);
+	std::map<int, Quest *> getQuestStarted();
+	std::map<int, Quest *> getQuestCompleted();
+	Item *getItem(int index);
+	int getQuantity(int index);
+	int getEffectItemId();
+	int getPointItemId();
+	void simulateGame();
 
-		void buildDatabase();
-		void parseFamilys();
-		void parseItems();
-		void parseQuests();
-		void loadDefaultAvailableItem();
-		int random(int max);
-		void unlockSomething(Quest * tested);
+  private:
+	ItemFileSystem &operator=(const ItemFileSystem &);
+	ItemFileSystem(const ItemFileSystem &);
+	static ItemFileSystem m_instance;
 
-		int accountId;
-		std::string saveFilePath;
-		FILE* saveFile;
+	void buildDatabase();
+	void parseFamilys();
+	void parseItems();
+	void parseQuests();
+	void loadDefaultAvailableItem();
+	int random(int max);
+	void unlockSomething(Quest *tested);
 
-		int accountLoaded;
-		int scoreMax;
-		int scoreLastGame;
-		int nbGame;
-		int levelReached;
-		std::map<int, int> fridge;
+	int accountId;
+	std::string saveFilePath;
+	FILE *saveFile;
 
-		std::vector<Family *> familys;
-		std::vector<Quest *> quests;
-		std::vector<Item *> items;
+	int accountLoaded;
+	int scoreMax;
+	int scoreLastGame;
+	int nbGame;
+	int levelReached;
+	std::map<int, int> fridge;
 
-		std::map<int, Quest *> questStarted;
-		std::map<int, Quest *> questCompleted;
+	std::vector<Family *> familys;
+	std::vector<Quest *> quests;
+	std::vector<Item *> items;
 
-		std::vector<int> availableItemEffect0;
-		std::vector<int> availableItemEffect1;
-		std::vector<int> availableItemEffect2;
-		std::vector<int> availableItemEffect3;
-		std::vector<int> availableItemEffect4;
-		std::vector<int> availableItemEffect5;
-		std::vector<int> availableItemEffect6;
+	std::map<int, Quest *> questStarted;
+	std::map<int, Quest *> questCompleted;
 
-		std::vector<int> availableItemPoint0;
-		std::vector<int> availableItemPoint1;
-		std::vector<int> availableItemPoint2;
-		std::vector<int> availableItemPoint3;
-		std::vector<int> availableItemPoint4;
-		std::vector<int> availableItemPoint5;
-		std::vector<int> availableItemPoint6;
-		std::vector<int> availableItemPoint7;
+	std::vector<int> availableItemEffect0;
+	std::vector<int> availableItemEffect1;
+	std::vector<int> availableItemEffect2;
+	std::vector<int> availableItemEffect3;
+	std::vector<int> availableItemEffect4;
+	std::vector<int> availableItemEffect5;
+	std::vector<int> availableItemEffect6;
 
+	std::vector<int> availableItemPoint0;
+	std::vector<int> availableItemPoint1;
+	std::vector<int> availableItemPoint2;
+	std::vector<int> availableItemPoint3;
+	std::vector<int> availableItemPoint4;
+	std::vector<int> availableItemPoint5;
+	std::vector<int> availableItemPoint6;
+	std::vector<int> availableItemPoint7;
 };
 #endif
 

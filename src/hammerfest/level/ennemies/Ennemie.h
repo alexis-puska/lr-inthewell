@@ -11,7 +11,6 @@
 #include "../../definition/HitBox.h"
 #include "../../game/Player.h"
 
-
 #define ennemieHitboxWidth 20
 #define ennemieHitboxHeight 20
 #define ennemieSpeed 2
@@ -19,7 +18,8 @@
 
 #define tableSize 4
 
-enum ennemieType {
+enum ennemieType
+{
 	cerise = 0,
 	orange = 1,
 	pomme = 2,
@@ -39,10 +39,11 @@ enum ennemieType {
 	scie = 16
 };
 
-static const std::string ennemieTypeString[] = { "cerise", "orange", "pomme", "banane", "citron",
-	"bombinos", "poire", "abricot", "litchi", "fraise", "kiwi", "pasteque", "ananas", "blob", "framboise", "nainbricot", "scie" };
+static const std::string ennemieTypeString[] = {"cerise", "orange", "pomme", "banane", "citron",
+												"bombinos", "poire", "abricot", "litchi", "fraise", "kiwi", "pasteque", "ananas", "blob", "framboise", "nainbricot", "scie"};
 
-enum ennemieState {
+enum ennemieState
+{
 	walk = 0,
 	angry,
 	frozed,
@@ -53,16 +54,18 @@ enum ennemieState {
 	shot
 };
 
-static std::string ennemieStateString[] = { "walk", "angry", "frozed","knock_out", "dead", "jump", "look", "shot" };
+static std::string ennemieStateString[] = {"walk", "angry", "frozed", "knock_out", "dead", "jump", "look", "shot"};
 
-enum ennemieDirection {
+enum ennemieDirection
+{
 	left = 0,
 	right,
 	up,
 	down
 };
 
-enum ennemieSituation {
+enum ennemieSituation
+{
 	nothing = 0,
 	bottomStairs,
 	wall,
@@ -73,12 +76,14 @@ enum ennemieSituation {
 };
 
 class Level;
-class Ennemie : public Position, public Drawable, public HitBox, public IdElement {
-public:
-	Ennemie(int id, int x, int y, int type, Level * level);
+class Ennemie : public Position, public Drawable, public HitBox, public IdElement
+{
+  public:
+	Ennemie(int id, int x, int y, int type, Level *level);
 	virtual ~Ennemie();
-	virtual void doSomething(SDL_Surface * dest, std::vector<Player *> players);
-protected:
+	virtual void doSomething(SDL_Surface *dest, std::vector<Player *> players);
+
+  protected:
 	int type;
 	int animIdx;
 	int animIdxMax;
@@ -116,18 +121,19 @@ protected:
 	std::string getStateString();
 
 	//dessine toi
-	void drawHimself(SDL_Surface * sprite, SDL_Surface * dest);
+	void drawHimself(SDL_Surface *sprite, SDL_Surface *dest);
 
 	//changement etat
 	void changeState(int newState);
 
 	//choix en fonction du modulo
 	bool choice(int mod);
-    
-    //fonction utilitaire
-    bool getGridValue(int cell);
-    int getGridPosition(int posX, int posY);
-private:
+
+	//fonction utilitaire
+	bool getGridValue(int cell);
+	int getGridPosition(int posX, int posY);
+
+  private:
 	//fonction utilitaire
 	int getGridPositionX(int offset);
 	int getGridPositionY(int offset);

@@ -22,32 +22,32 @@
 
 #include "json/json.h"
 
-class Sprite {
+class Sprite
+{
 
-	public:
-		static Sprite& Instance();
-		Sprite();
-		~Sprite();
-		SDL_Surface * getAnimation(std::string name, int index);
-		std::vector <SDL_Surface *> getAnimation(std::string name);
-		int getAnimationSize(std::string name);
-		SDL_Color getSDL_Color(int color);
+  public:
+	static Sprite &Instance();
+	Sprite();
+	~Sprite();
+	SDL_Surface *getAnimation(std::string name, int index);
+	std::vector<SDL_Surface *> getAnimation(std::string name);
+	int getAnimationSize(std::string name);
+	SDL_Color getSDL_Color(int color);
 
-	private:
-		Sprite& operator=(const Sprite&);
-		Sprite(const Sprite&);
-		
+  private:
+	Sprite &operator=(const Sprite &);
+	Sprite(const Sprite &);
 
-		/***********************
+	/***********************
 		 *      VARIABLES
 		 ***********************/
-		SDL_Surface * surfaceToParse;
-		std::map<std::string, std::vector<SDL_Surface *> > sprites;
-		/***********************
+	SDL_Surface *surfaceToParse;
+	std::map<std::string, std::vector<SDL_Surface *>> sprites;
+	/***********************
 		 *      FUNCTIONS
 		 ***********************/
-		void parseJsonFile();
-		void releaseSurfaceToParse();
-		void loadSurfaceToSprite(std::string name);
+	void parseJsonFile();
+	void releaseSurfaceToParse();
+	void loadSurfaceToSprite(std::string name);
 };
 #endif

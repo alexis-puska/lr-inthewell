@@ -4,7 +4,8 @@
 #include "../definition/Position.h"
 #include "../definition/Drawable.h"
 
-enum bombeTypeEnum{
+enum bombeTypeEnum
+{
 	whiteBombe = 0,
 	blueBombe,
 	greenBombe,
@@ -13,11 +14,13 @@ enum bombeTypeEnum{
 	kiwiBombe
 };
 
-class Bombe: public Position, public Drawable {
-	public:
-		Bombe(int x, int y, int type);
-		~Bombe();
-	private:
-		int type;
+class Bombe : public Position, public Drawable
+{
+  public:
+	Bombe(int x, int y, int type);
+	~Bombe();
+
+  private:
+	int type;
 };
 #endif

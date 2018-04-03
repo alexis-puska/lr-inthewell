@@ -4,7 +4,8 @@
 #include "../utils/resources/json_item_parser.h"
 #include "../utils/resources/json_quest_parser.h"
 
-enum key {
+enum key
+{
 	gordon = 0,
 	passepartout = 1,
 	rigordangerous = 2,
@@ -20,27 +21,48 @@ enum key {
 	passpyramide = 12
 };
 
-enum mode {
-	timeattack = 0, multicoop = 1
+enum mode
+{
+	timeattack = 0,
+	multicoop = 1
 };
 
-enum disguise {
-	carotte = 0, chapeaux = 1, poney = 2, pioupiou = 3, champignon = 4, cape = 5
+enum disguise
+{
+	carotte = 0,
+	chapeaux = 1,
+	poney = 2,
+	pioupiou = 3,
+	champignon = 4,
+	cape = 5
 };
 
-enum option {
-	boost = 0, mirror = 1, nightmare = 2, kickcontrol = 3, mirrormulti = 4, nightmaremulti = 5, lifesharing = 6, ninja = 7, bombexpert = 8, set_ta_0 = 9
+enum option
+{
+	boost = 0,
+	mirror = 1,
+	nightmare = 2,
+	kickcontrol = 3,
+	mirrormulti = 4,
+	nightmaremulti = 5,
+	lifesharing = 6,
+	ninja = 7,
+	bombexpert = 8,
+	set_ta_0 = 9
 };
 
-ItemFileSystem::ItemFileSystem() {
+ItemFileSystem::ItemFileSystem()
+{
 }
 
-ItemFileSystem::~ItemFileSystem() {
+ItemFileSystem::~ItemFileSystem()
+{
 }
 
 ItemFileSystem ItemFileSystem::m_instance = ItemFileSystem();
 
-ItemFileSystem& ItemFileSystem::Instance() {
+ItemFileSystem &ItemFileSystem::Instance()
+{
 	return m_instance;
 }
 
@@ -53,22 +75,25 @@ ItemFileSystem& ItemFileSystem::Instance() {
  * - level maximum reached
  * - the number of each 353 item contained in fridge
  **************************************************************/
-void ItemFileSystem::init(std::string path, bool newSaveFile) {
-	srand ((unsigned int)time(NULL));
-    saveFilePath =  path;
-    std::cout<< "init item file system : ";
-	if (newSaveFile) {
-        std::cout<<"create..........";
-        saveFile = std::fopen(path.c_str(), "r+");
-		for (int i = 0; i < 4; i++) {
-			for (int i = 0; i < nbOfValueInFile; i++) {
+void ItemFileSystem::init(std::string path, bool newSaveFile)
+{
+	srand((unsigned int)time(NULL));
+	saveFilePath = path;
+	std::cout << "init item file system : ";
+	if (newSaveFile)
+	{
+		std::cout << "create..........";
+		saveFile = std::fopen(path.c_str(), "r+");
+		for (int i = 0; i < 4; i++)
+		{
+			for (int i = 0; i < nbOfValueInFile; i++)
+			{
 				fprintf(saveFile, "%08x", 0);
 			}
 		}
 		fclose(saveFile);
-
 	}
-	std::cout<<"end\n";
+	std::cout << "end\n";
 	buildDatabase();
 }
 
@@ -82,8 +107,9 @@ void ItemFileSystem::init(std::string path, bool newSaveFile) {
  * - level maximum reached
  * - the number of each 353 item contained in fridge
  **************************************************************/
-int ItemFileSystem::loadAccount(int accountId) {
-//read some value
+int ItemFileSystem::loadAccount(int accountId)
+{
+	//read some value
 	this->accountLoaded = accountId;
 
 	GameConfig::Instance().InitConfiguration();
@@ -105,33 +131,39 @@ int ItemFileSystem::loadAccount(int accountId) {
 	availableItemPoint6.clear();
 	availableItemPoint7.clear();
 
-	 std::cout<< "Loading data from file System, Accound : "<< accountId<<"\n";
-    saveFile = std::fopen(saveFilePath.c_str(), "r+");
+	std::cout << "Loading data from file System, Accound : " << accountId << "\n";
+	saveFile = std::fopen(saveFilePath.c_str(), "r+");
 	rewind(saveFile);
 	std::fseek(saveFile, (nbOfValueInFile * 8) * accountId, SEEK_SET);
-	if (fscanf(saveFile, "%08x", &scoreMax) <= 0) {
-		 std::cout<<"error read file";
+	if (fscanf(saveFile, "%08x", &scoreMax) <= 0)
+	{
+		std::cout << "error read file";
 		return -1;
 	}
 	std::fseek(saveFile, (nbOfValueInFile * 8) * accountId + 8, SEEK_SET);
-	if (fscanf(saveFile, "%08x", &scoreLastGame) <= 0) {
-		 std::cout<<"error read file";
+	if (fscanf(saveFile, "%08x", &scoreLastGame) <= 0)
+	{
+		std::cout << "error read file";
 		return -1;
 	}
 	std::fseek(saveFile, (nbOfValueInFile * 8) * accountId + 16, SEEK_SET);
-	if (fscanf(saveFile, "%08x", &nbGame) <= 0) {
-		 std::cout<<"error read file";
+	if (fscanf(saveFile, "%08x", &nbGame) <= 0)
+	{
+		std::cout << "error read file";
 		return -1;
 	}
 	std::fseek(saveFile, (nbOfValueInFile * 8) * accountId + 24, SEEK_SET);
-	if (fscanf(saveFile, "%08x", &levelReached) <= 0) {
-		 std::cout<<"error read file";
+	if (fscanf(saveFile, "%08x", &levelReached) <= 0)
+	{
+		std::cout << "error read file";
 		return -1;
 	}
-	for (int i = 4; i < nbOfValueInFile; i++) {
+	for (int i = 4; i < nbOfValueInFile; i++)
+	{
 		std::fseek(saveFile, (nbOfValueInFile * 8) * accountId + i * 8, SEEK_SET);
-		if (fscanf(saveFile, "%08x", &fridge[i - 4]) <= 0) {
-			 std::cout<<"error read file";
+		if (fscanf(saveFile, "%08x", &fridge[i - 4]) <= 0)
+		{
+			std::cout << "error read file";
 			return -1;
 		}
 	}
@@ -148,7 +180,8 @@ int ItemFileSystem::loadAccount(int accountId) {
 	return 0;
 }
 
-void ItemFileSystem::loadDefaultAvailableItem() {
+void ItemFileSystem::loadDefaultAvailableItem()
+{
 
 	std::vector<int> familyAvailable;
 	std::vector<int> familyToRemove;
@@ -174,44 +207,53 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 	questCompleted.clear();
 	questStarted.clear();
 
-	for (unsigned int i = 0; i < quests.size(); i++) {
+	for (unsigned int i = 0; i < quests.size(); i++)
+	{
 		//std::cout<<"validate quest "<<i<<"\n";
-		Quest * tested = quests.at(i);
+		Quest *tested = quests.at(i);
 		std::map<int, int> requiredItem = tested->getRequireItemId();
 		bool valide = true;
 		bool started = false;
-		for (std::map<int, int>::iterator it = requiredItem.begin(); it != requiredItem.end(); ++it) {
+		for (std::map<int, int>::iterator it = requiredItem.begin(); it != requiredItem.end(); ++it)
+		{
 			//std::cout<<i <<" "<< fridge[it->first]<<" "<< it->second;
-			if (fridge[it->first] < it->second) {
+			if (fridge[it->first] < it->second)
+			{
 				valide = false;
 				break;
 			}
-			if (fridge[it->first] > 0) {
+			if (fridge[it->first] > 0)
+			{
 				started = true;
 			}
-
 		}
-		if (valide) {
+		if (valide)
+		{
 			//std::cout<<"quest valide "<<tested->getGiveFamilly().size()<<" "<<tested->getRemoveFamilly()<<"!!!\n";
 			std::vector<int> givedFamilly = tested->getGiveFamilly();
-			for (unsigned int j = 0; j < givedFamilly.size(); j++) {
+			for (unsigned int j = 0; j < givedFamilly.size(); j++)
+			{
 				//std::cout<<"add family : "<<givedFamilly.at(j)<<" !!!\n";
 				familyAvailable.push_back(givedFamilly.at(j));
 			}
-			if (tested->getRemoveFamilly() != -1) {
+			if (tested->getRemoveFamilly() != -1)
+			{
 				familyToRemove.push_back(tested->getRemoveFamilly());
 			}
 			questCompleted[tested->getId()] = tested;
 			unlockSomething(tested);
 		}
-		if (started && !valide) {
+		if (started && !valide)
+		{
 			questStarted[tested->getId()] = tested;
 		}
-
 	}
-	for (unsigned int i = 0; i < familyToRemove.size(); i++) {
-		for (unsigned int j = 0; j < familyAvailable.size(); j++) {
-			if (familyAvailable.at(j) == familyToRemove.at(i)) {
+	for (unsigned int i = 0; i < familyToRemove.size(); i++)
+	{
+		for (unsigned int j = 0; j < familyAvailable.size(); j++)
+		{
+			if (familyAvailable.at(j) == familyToRemove.at(i))
+			{
 				//std::cout<<"remove family : "<<familyToRemove.at(i)<<" !!!\n";
 				//std::cout<<"\n\nerase\n\n";
 				familyAvailable.erase(familyAvailable.begin() + j);
@@ -220,7 +262,8 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 		}
 	}
 
-	for (unsigned int i = 0; i < familyAvailable.size(); i++) {
+	for (unsigned int i = 0; i < familyAvailable.size(); i++)
+	{
 		familys.at(familyAvailable.at(i))->printName();
 	}
 
@@ -228,132 +271,153 @@ void ItemFileSystem::loadDefaultAvailableItem() {
 	 *  fill available object
 	 *  with unlocked familly
 	 **************************/
-	for (unsigned int i = 0; i < familyAvailable.size(); i++) {
-        //std::cout<<"traitment of family id : "<<familyAvailable.at(i)<<"\n";
-		
-		Family * tested = familys.at(familyAvailable.at(i));
+	for (unsigned int i = 0; i < familyAvailable.size(); i++)
+	{
+		//std::cout<<"traitment of family id : "<<familyAvailable.at(i)<<"\n";
 
-		for (unsigned int j = 0; j < tested->getItems().size(); j++) {
+		Family *tested = familys.at(familyAvailable.at(i));
+
+		for (unsigned int j = 0; j < tested->getItems().size(); j++)
+		{
 			int id = tested->getItems().at(j);
 			//std::cout<<"treatment of item id : "<<id<<"\n";
-			Item * item = items.at(id);
-			if (item->getValue() == -1) {
-				switch (item->getRarity()) {
-					case 0:
-						availableItemEffect0.push_back(item->getId());
-						break;
-					case 1:
-						availableItemEffect1.push_back(item->getId());
-						break;
-					case 2:
-						availableItemEffect2.push_back(item->getId());
-						break;
-					case 3:
-						availableItemEffect3.push_back(item->getId());
-						break;
-					case 4:
-						availableItemEffect4.push_back(item->getId());
-						break;
-					case 5:
-						availableItemEffect5.push_back(item->getId());
-						break;
-					case 6:
-						availableItemEffect6.push_back(item->getId());
-						break;
+			Item *item = items.at(id);
+			if (item->getValue() == -1)
+			{
+				switch (item->getRarity())
+				{
+				case 0:
+					availableItemEffect0.push_back(item->getId());
+					break;
+				case 1:
+					availableItemEffect1.push_back(item->getId());
+					break;
+				case 2:
+					availableItemEffect2.push_back(item->getId());
+					break;
+				case 3:
+					availableItemEffect3.push_back(item->getId());
+					break;
+				case 4:
+					availableItemEffect4.push_back(item->getId());
+					break;
+				case 5:
+					availableItemEffect5.push_back(item->getId());
+					break;
+				case 6:
+					availableItemEffect6.push_back(item->getId());
+					break;
 				}
-			} else {
-				switch (item->getRarity()) {
-					case 0:
-						availableItemPoint0.push_back(item->getId());
-						break;
-					case 1:
-						availableItemPoint1.push_back(item->getId());
-						break;
-					case 2:
-						availableItemPoint2.push_back(item->getId());
-						break;
-					case 3:
-						availableItemPoint3.push_back(item->getId());
-						break;
-					case 4:
-						availableItemPoint4.push_back(item->getId());
-						break;
-					case 5:
-						availableItemPoint5.push_back(item->getId());
-						break;
-					case 6:
-						availableItemPoint6.push_back(item->getId());
-						break;
-					case 7:
-						availableItemPoint7.push_back(item->getId());
-						break;
+			}
+			else
+			{
+				switch (item->getRarity())
+				{
+				case 0:
+					availableItemPoint0.push_back(item->getId());
+					break;
+				case 1:
+					availableItemPoint1.push_back(item->getId());
+					break;
+				case 2:
+					availableItemPoint2.push_back(item->getId());
+					break;
+				case 3:
+					availableItemPoint3.push_back(item->getId());
+					break;
+				case 4:
+					availableItemPoint4.push_back(item->getId());
+					break;
+				case 5:
+					availableItemPoint5.push_back(item->getId());
+					break;
+				case 6:
+					availableItemPoint6.push_back(item->getId());
+					break;
+				case 7:
+					availableItemPoint7.push_back(item->getId());
+					break;
 				}
 			}
 		}
 	}
 
-	 std::cout<<"base item load\n";
-	 std::cout<< "\nbase available point 7\n";
-	for (unsigned int i = 0; i < availableItemPoint7.size(); i++) {
-		 std::cout<<availableItemPoint7.at(i)<<" ";
+	std::cout << "base item load\n";
+	std::cout << "\nbase available point 7\n";
+	for (unsigned int i = 0; i < availableItemPoint7.size(); i++)
+	{
+		std::cout << availableItemPoint7.at(i) << " ";
 	}
-	 std::cout<< "\nbase available point 6\n";
-	for (unsigned int i = 0; i < availableItemPoint6.size(); i++) {
-		 std::cout<<availableItemPoint6.at(i)<<" ";
+	std::cout << "\nbase available point 6\n";
+	for (unsigned int i = 0; i < availableItemPoint6.size(); i++)
+	{
+		std::cout << availableItemPoint6.at(i) << " ";
 	}
-	 std::cout<<"\nbase available point 5\n";
-	for (unsigned int i = 0; i < availableItemPoint5.size(); i++) {
-		 std::cout<<availableItemPoint5.at(i)<<" ";
+	std::cout << "\nbase available point 5\n";
+	for (unsigned int i = 0; i < availableItemPoint5.size(); i++)
+	{
+		std::cout << availableItemPoint5.at(i) << " ";
 	}
-	 std::cout<<"\nbase available point 4\n";
-	for (unsigned int i = 0; i < availableItemPoint4.size(); i++) {
-		 std::cout<<availableItemPoint4.at(i)<<" ";
+	std::cout << "\nbase available point 4\n";
+	for (unsigned int i = 0; i < availableItemPoint4.size(); i++)
+	{
+		std::cout << availableItemPoint4.at(i) << " ";
 	}
-	 std::cout<<"\nbase available point 3\n";
-	for (unsigned int i = 0; i < availableItemPoint3.size(); i++) {
-		 std::cout<<availableItemPoint3.at(i)<<" ";
+	std::cout << "\nbase available point 3\n";
+	for (unsigned int i = 0; i < availableItemPoint3.size(); i++)
+	{
+		std::cout << availableItemPoint3.at(i) << " ";
 	}
-	 std::cout<<"\nbase available point 2\n";
-	for (unsigned int i = 0; i < availableItemPoint2.size(); i++) {
-		 std::cout<<availableItemPoint2.at(i)<<" ";
+	std::cout << "\nbase available point 2\n";
+	for (unsigned int i = 0; i < availableItemPoint2.size(); i++)
+	{
+		std::cout << availableItemPoint2.at(i) << " ";
 	}
-	 std::cout<<"\nbase available point 1\n";
-	for (unsigned int i = 0; i < availableItemPoint1.size(); i++) {
-		 std::cout<<availableItemPoint1.at(i)<<" ";
+	std::cout << "\nbase available point 1\n";
+	for (unsigned int i = 0; i < availableItemPoint1.size(); i++)
+	{
+		std::cout << availableItemPoint1.at(i) << " ";
 	}
-	 std::cout<<"\nbase available point 0\n";
-	for (unsigned int i = 0; i < availableItemPoint0.size(); i++) {
-		 std::cout<<availableItemPoint0.at(i)<<" ";
+	std::cout << "\nbase available point 0\n";
+	for (unsigned int i = 0; i < availableItemPoint0.size(); i++)
+	{
+		std::cout << availableItemPoint0.at(i) << " ";
 	}
-	 std::cout<<"\nbase available effect 6\n";
-	for (unsigned int i = 0; i < availableItemEffect6.size(); i++) {
-		 std::cout<<availableItemEffect6.at(i)<<" ";
+	std::cout << "\nbase available effect 6\n";
+	for (unsigned int i = 0; i < availableItemEffect6.size(); i++)
+	{
+		std::cout << availableItemEffect6.at(i) << " ";
 	}
-	 std::cout<<"\nbase available effect 5\n";
-	for (unsigned int i = 0; i < availableItemEffect5.size(); i++) {
-		 std::cout<<availableItemEffect5.at(i)<<" ";
+	std::cout << "\nbase available effect 5\n";
+	for (unsigned int i = 0; i < availableItemEffect5.size(); i++)
+	{
+		std::cout << availableItemEffect5.at(i) << " ";
 	}
-	 std::cout<<"\nbase available effect 4\n";
-	for (unsigned int i = 0; i < availableItemEffect4.size(); i++) {
-		 std::cout<<availableItemEffect4.at(i)<<" ";
+	std::cout << "\nbase available effect 4\n";
+	for (unsigned int i = 0; i < availableItemEffect4.size(); i++)
+	{
+		std::cout << availableItemEffect4.at(i) << " ";
 	}
-	 std::cout<<"\nbase available effect 3\n";
-	for (unsigned int i = 0; i < availableItemEffect3.size(); i++) {
-		 std::cout<<availableItemEffect3.at(i)<<" ";
+	std::cout << "\nbase available effect 3\n";
+	for (unsigned int i = 0; i < availableItemEffect3.size(); i++)
+	{
+		std::cout << availableItemEffect3.at(i) << " ";
 	}
-	 std::cout<<"\nbase available effect 2\n";
-	for (unsigned int i = 0; i < availableItemEffect2.size(); i++) {
-		 std::cout<<availableItemEffect2.at(i)<<" ";
+	std::cout << "\nbase available effect 2\n";
+	for (unsigned int i = 0; i < availableItemEffect2.size(); i++)
+	{
+		std::cout << availableItemEffect2.at(i) << " ";
 	}
-	 std::cout<<"\nbase available effect 1\n";
-	for (unsigned int i = 0; i < availableItemEffect1.size(); i++) {
-		 std::cout<<availableItemEffect1.at(i)<<" ";
+	std::cout << "\nbase available effect 1\n";
+	for (unsigned int i = 0; i < availableItemEffect1.size(); i++)
+	{
+		std::cout << availableItemEffect1.at(i) << " ";
 	}
-	 std::cout<<"\nbase available effect 0\n";
-	for (unsigned int i = 0; i < availableItemEffect0.size(); i++) {
-		 std::cout<<availableItemEffect0.at(i)<<" ";
+	std::cout << "\nbase available effect 0\n";
+	for (unsigned int i = 0; i < availableItemEffect0.size(); i++)
+	{
+		std::cout << availableItemEffect0.at(i) << " ";
 	}
-
 }
 
 /***************************************************************
@@ -362,24 +426,31 @@ void ItemFileSystem::loadDefaultAvailableItem() {
  * - boolean if a game was played to incremente the game counter
  * - level reached in the last game
  **************************************************************/
-void ItemFileSystem::save(int score, bool gamePlayed, int level) {
-    saveFile = std::fopen(saveFilePath.c_str(), "r+");
+void ItemFileSystem::save(int score, bool gamePlayed, int level)
+{
+	saveFile = std::fopen(saveFilePath.c_str(), "r+");
 	std::fseek(saveFile, (nbOfValueInFile * 8) * accountLoaded, SEEK_SET);
-	if (score > scoreMax) {
+	if (score > scoreMax)
+	{
 		fprintf(saveFile, "%08x", score);
-	} else {
+	}
+	else
+	{
 		std::fseek(saveFile, (nbOfValueInFile * 8) * accountLoaded + 8, SEEK_SET);
 	}
 	fprintf(saveFile, "%08x", score);
-	if (gamePlayed) {
+	if (gamePlayed)
+	{
 		nbGame++;
 	}
 	fprintf(saveFile, "%08x", nbGame);
-	if (levelReached < level) {
+	if (levelReached < level)
+	{
 		levelReached = level;
 	}
 	fprintf(saveFile, "%08x", levelReached);
-	for (int i = 4; i < nbOfValueInFile; i++) {
+	for (int i = 4; i < nbOfValueInFile; i++)
+	{
 		fprintf(saveFile, "%08x", fridge[i - 4]);
 	}
 	fclose(saveFile);
@@ -391,89 +462,134 @@ void ItemFileSystem::save(int score, bool gamePlayed, int level) {
  * -item
  * -quest
  **************************************************************/
-void ItemFileSystem::buildDatabase() {
+void ItemFileSystem::buildDatabase()
+{
 	parseFamilys();
 	parseItems();
 	parseQuests();
 }
 
-void ItemFileSystem::simulateGame() {
+void ItemFileSystem::simulateGame()
+{
 
-	for (int i = 0; i < 103; i++) {
+	for (int i = 0; i < 103; i++)
+	{
 		int point = getEffectItemId();
 		int effect = getPointItemId();
 
 		fridge[point] = fridge[point] + 1;
 		fridge[effect] = fridge[effect] + 1;
-         std::cout<< "level "<<i<<" - effect "<<effect<<" - point "<<point<<"\n";
+		std::cout << "level " << i << " - effect " << effect << " - point " << point << "\n";
 	}
 }
 
-int ItemFileSystem::getEffectItemId() {
+int ItemFileSystem::getEffectItemId()
+{
 	int itemId = -1;
 	int randCoef = 0;
-	while (itemId == -1) {
+	while (itemId == -1)
+	{
 		randCoef = random(probaCoef7);
-		if (randCoef <= probaCoef1) {
-			if (availableItemEffect1.size() > 0) {
+		if (randCoef <= probaCoef1)
+		{
+			if (availableItemEffect1.size() > 0)
+			{
 				return availableItemEffect1.at(random((int)availableItemEffect1.size()) - 1);
 			}
-		} else if (randCoef <= probaCoef2) {
-			if (availableItemEffect2.size() > 0) {
+		}
+		else if (randCoef <= probaCoef2)
+		{
+			if (availableItemEffect2.size() > 0)
+			{
 				return availableItemEffect2.at(random((int)availableItemEffect2.size()) - 1);
 			}
-		} else if (randCoef <= probaCoef3) {
-			if (availableItemEffect3.size() > 0) {
+		}
+		else if (randCoef <= probaCoef3)
+		{
+			if (availableItemEffect3.size() > 0)
+			{
 				return availableItemEffect3.at(random((int)availableItemEffect3.size()) - 1);
 			}
-		} else if (randCoef <= probaCoef4) {
-			if (availableItemEffect4.size() > 0) {
+		}
+		else if (randCoef <= probaCoef4)
+		{
+			if (availableItemEffect4.size() > 0)
+			{
 				return availableItemEffect4.at(random((int)availableItemEffect4.size()) - 1);
 			}
-		} else if (randCoef <= probaCoef5) {
-			if (availableItemEffect5.size() > 0) {
+		}
+		else if (randCoef <= probaCoef5)
+		{
+			if (availableItemEffect5.size() > 0)
+			{
 				return availableItemEffect5.at(random((int)availableItemEffect5.size()) - 1);
 			}
-		} else if (randCoef <= probaCoef6) {
-			if (availableItemEffect6.size() > 0) {
+		}
+		else if (randCoef <= probaCoef6)
+		{
+			if (availableItemEffect6.size() > 0)
+			{
 				return availableItemEffect6.at(random((int)availableItemEffect6.size()) - 1);
 			}
 		}
 	}
 	return itemId;
 }
-int ItemFileSystem::getPointItemId() {
+int ItemFileSystem::getPointItemId()
+{
 	int itemId = -1;
 	int randCoef = 0;
-	while (itemId == -1) {
+	while (itemId == -1)
+	{
 		randCoef = random(probaCoef7);
-		if (randCoef <= probaCoef1) {
-			if (availableItemPoint1.size() > 0) {
+		if (randCoef <= probaCoef1)
+		{
+			if (availableItemPoint1.size() > 0)
+			{
 				return availableItemPoint1.at(random((int)
-                                                     availableItemPoint1.size()) - 1);
+														 availableItemPoint1.size()) -
+											  1);
 			}
-		} else if (randCoef <= probaCoef2) {
-			if (availableItemPoint2.size() > 0) {
+		}
+		else if (randCoef <= probaCoef2)
+		{
+			if (availableItemPoint2.size() > 0)
+			{
 				return availableItemPoint2.at(random((int)availableItemPoint2.size()) - 1);
 			}
-		} else if (randCoef <= probaCoef3) {
-			if (availableItemPoint3.size() > 0) {
+		}
+		else if (randCoef <= probaCoef3)
+		{
+			if (availableItemPoint3.size() > 0)
+			{
 				return availableItemPoint3.at(random((int)availableItemPoint3.size()) - 1);
 			}
-		} else if (randCoef <= probaCoef4) {
-			if (availableItemPoint4.size() > 0) {
+		}
+		else if (randCoef <= probaCoef4)
+		{
+			if (availableItemPoint4.size() > 0)
+			{
 				return availableItemPoint4.at(random((int)availableItemPoint4.size()) - 1);
 			}
-		} else if (randCoef <= probaCoef5) {
-			if (availableItemPoint5.size() > 0) {
+		}
+		else if (randCoef <= probaCoef5)
+		{
+			if (availableItemPoint5.size() > 0)
+			{
 				return availableItemPoint5.at(random((int)availableItemPoint5.size()) - 1);
 			}
-		} else if (randCoef <= probaCoef6) {
-			if (availableItemPoint6.size() > 0) {
+		}
+		else if (randCoef <= probaCoef6)
+		{
+			if (availableItemPoint6.size() > 0)
+			{
 				return availableItemPoint6.at(random((int)availableItemPoint6.size()) - 1);
 			}
-		} else if (randCoef <= probaCoef7) {
-			if (availableItemPoint7.size() > 0) {
+		}
+		else if (randCoef <= probaCoef7)
+		{
+			if (availableItemPoint7.size() > 0)
+			{
 				return availableItemPoint7.at(random((int)availableItemPoint7.size()) - 1);
 			}
 		}
@@ -481,81 +597,93 @@ int ItemFileSystem::getPointItemId() {
 	return itemId;
 }
 
-int ItemFileSystem::random(int max) {
+int ItemFileSystem::random(int max)
+{
 	return (rand() % (max) + 1);
 }
 
-Item * ItemFileSystem::getItem(int index) {
+Item *ItemFileSystem::getItem(int index)
+{
 	return items.at(index);
 }
-int ItemFileSystem::getQuantity(int index) {
+int ItemFileSystem::getQuantity(int index)
+{
 	return fridge[index];
 }
-Quest * ItemFileSystem::getQuest(int index) {
+Quest *ItemFileSystem::getQuest(int index)
+{
 	return quests.at(index);
 }
 
-std::map<int, Quest *> ItemFileSystem::getQuestStarted() {
+std::map<int, Quest *> ItemFileSystem::getQuestStarted()
+{
 	return questStarted;
 }
-std::map<int, Quest *> ItemFileSystem::getQuestCompleted() {
+std::map<int, Quest *> ItemFileSystem::getQuestCompleted()
+{
 	return questCompleted;
 }
 
-void ItemFileSystem::unlockSomething(Quest * tested) {
-	switch (tested->getGiveMode()) {
-		case timeattack:
-			GameConfig::Instance().unlockTimeAttackMode();
-			break;
-		case multicoop:
-			GameConfig::Instance().unlockMulticoopMode();
-			break;
+void ItemFileSystem::unlockSomething(Quest *tested)
+{
+	switch (tested->getGiveMode())
+	{
+	case timeattack:
+		GameConfig::Instance().unlockTimeAttackMode();
+		break;
+	case multicoop:
+		GameConfig::Instance().unlockMulticoopMode();
+		break;
 	}
-	switch (tested->getGiveOption()) {
-		case mirror:
-			GameConfig::Instance().unlockSoloOption(0);
-			break;
-		case nightmare:
-			GameConfig::Instance().unlockSoloOption(1);
-			break;
-		case ninja:
-			GameConfig::Instance().unlockSoloOption(2);
-			break;
-		case bombexpert:
-			GameConfig::Instance().unlockSoloOption(3);
-			break;
-		case boost:
-			GameConfig::Instance().unlockSoloOption(4);
-			break;
-		case mirrormulti:
-			GameConfig::Instance().unlockMultiOption(0);
-			break;
-		case nightmaremulti:
-			GameConfig::Instance().unlockMultiOption(1);
-			break;
-		case lifesharing:
-			GameConfig::Instance().unlockMultiOption(2);
-			break;
-		case kickcontrol:
-			GameConfig::Instance().unlockKickcontrol();
+	switch (tested->getGiveOption())
+	{
+	case mirror:
+		GameConfig::Instance().unlockSoloOption(0);
+		break;
+	case nightmare:
+		GameConfig::Instance().unlockSoloOption(1);
+		break;
+	case ninja:
+		GameConfig::Instance().unlockSoloOption(2);
+		break;
+	case bombexpert:
+		GameConfig::Instance().unlockSoloOption(3);
+		break;
+	case boost:
+		GameConfig::Instance().unlockSoloOption(4);
+		break;
+	case mirrormulti:
+		GameConfig::Instance().unlockMultiOption(0);
+		break;
+	case nightmaremulti:
+		GameConfig::Instance().unlockMultiOption(1);
+		break;
+	case lifesharing:
+		GameConfig::Instance().unlockMultiOption(2);
+		break;
+	case kickcontrol:
+		GameConfig::Instance().unlockKickcontrol();
 	}
-	if (tested->giveLife()) {
+	if (tested->giveLife())
+	{
 		GameConfig::Instance().incLife();
 	}
-	if (tested->turnLightOn()) {
+	if (tested->turnLightOn())
+	{
 		GameConfig::Instance().setLightOn();
 	}
-
 }
 
-void ItemFileSystem::parseFamilys() {
+void ItemFileSystem::parseFamilys()
+{
 	Json::Reader reader;
 	Json::Value root;
-	Family * family;
+	Family *family;
 	std::string jsonString(json_family_parser_json, json_family_parser_json + sizeof json_family_parser_json / sizeof json_family_parser_json[0]);
 	reader.parse(jsonString, root);
 	std::stringstream ss;
-	for (unsigned int i = 0; i < root.size(); i++) {
+	for (unsigned int i = 0; i < root.size(); i++)
+	{
 		Json::Value idValue = root[i]["id"];
 		Json::Value nameValue = root[i]["name"];
 		Json::Value frNameValue = nameValue["fr"];
@@ -571,22 +699,24 @@ void ItemFileSystem::parseFamilys() {
 		ss << "family." << idValue.asInt() << ".name";
 		Text::Instance().addTraduction("es", ss.str(), esNameValue.asString());
 		family = new Family(idValue.asInt(), frNameValue.asString());
-		for (unsigned int j = 0; j < root[i]["items"].size(); j++) {
+		for (unsigned int j = 0; j < root[i]["items"].size(); j++)
+		{
 			family->addItem(root[i]["items"][j].asInt());
 		}
 		familys.push_back(family);
 	}
-
 }
 
-void ItemFileSystem::parseItems() {
+void ItemFileSystem::parseItems()
+{
 	Json::Reader reader;
 	Json::Value root;
-	Item * item;
+	Item *item;
 	std::string jsonString(json_item_parser_json, json_item_parser_json + sizeof json_item_parser_json / sizeof json_item_parser_json[0]);
 	reader.parse(jsonString, root);
 	std::stringstream ss;
-	for (unsigned int i = 0; i < root.size(); i++) {
+	for (unsigned int i = 0; i < root.size(); i++)
+	{
 		Json::Value idValue = root[i]["id"];
 		Json::Value nameValue = root[i]["name"];
 		Json::Value frNameValue = nameValue["fr"];
@@ -609,14 +739,16 @@ void ItemFileSystem::parseItems() {
 	}
 }
 
-void ItemFileSystem::parseQuests() {
+void ItemFileSystem::parseQuests()
+{
 	Json::Reader reader;
 	Json::Value root;
-	Quest * quest;
+	Quest *quest;
 	std::string jsonString(json_quest_parser_json, json_quest_parser_json + sizeof json_quest_parser_json / sizeof json_quest_parser_json[0]);
 	reader.parse(jsonString, root);
 	std::stringstream ss;
-	for (unsigned int i = 0; i < root.size(); i++) {
+	for (unsigned int i = 0; i < root.size(); i++)
+	{
 		Json::Value idValue = root[i]["id"];
 		Json::Value lightValue = root[i]["light"];
 		Json::Value lifeValue = root[i]["life"];
@@ -658,13 +790,15 @@ void ItemFileSystem::parseQuests() {
 		Json::Value keyValue = root[i]["key"];
 		Json::Value removeValue = root[i]["remove"];
 		quest = new Quest(idValue.asInt(), bombeValue.asBool(), bombeUpValue.asBool(), lifeValue.asBool(), lightValue.asBool(), disguiseValue.asInt(), keyValue.asInt(), optionValue.asInt(),
-				modeValue.asInt(), removeValue.asInt(), frTitreValue.asString(), frDescriptionValue.asString());
+						  modeValue.asInt(), removeValue.asInt(), frTitreValue.asString(), frDescriptionValue.asString());
 		Json::Value familyValue = root[i]["family"];
-		for (unsigned int j = 0; j < familyValue.size(); j++) {
+		for (unsigned int j = 0; j < familyValue.size(); j++)
+		{
 			quest->addGiveFamilly(familyValue[j].asInt());
 		}
 		Json::Value requireValue = root[i]["require"];
-		for (unsigned int k = 0; k < requireValue.size(); k++) {
+		for (unsigned int k = 0; k < requireValue.size(); k++)
+		{
 			quest->addRequireItemId(requireValue[k]["id"].asInt(), requireValue[k]["val"].asInt());
 		}
 		quests.push_back(quest);

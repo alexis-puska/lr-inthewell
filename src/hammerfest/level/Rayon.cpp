@@ -1,7 +1,7 @@
 #include "Rayon.h"
 
-Rayon::Rayon(int x, int y, int length, int type, bool vertical) :
-		Drawable(), Position(x, y), HitBox() {
+Rayon::Rayon(int x, int y, int length, int type, bool vertical) : Drawable(), Position(x, y), HitBox()
+{
 	this->length = length;
 	this->type = type;
 	this->vertical = vertical;
@@ -10,19 +10,26 @@ Rayon::Rayon(int x, int y, int length, int type, bool vertical) :
 	gmask = 0x0000ff00;
 	bmask = 0x000000ff;
 	amask = 0xff000000;
-	buffer = new SDL_Surface*[2];
-	if (vertical) {
-		for (int i = 0; i < 2; i++) {
+	buffer = new SDL_Surface *[2];
+	if (vertical)
+	{
+		for (int i = 0; i < 2; i++)
+		{
 			buffer[i] = SDL_CreateRGBSurface(0, 20, 20 * length, 32, rmask, gmask, bmask, amask);
-			for (int j = 0; j < length; j++) {
+			for (int j = 0; j < length; j++)
+			{
 				copySurfaceToBackRenderer(Sprite::Instance().getAnimation("rayon", i == 0 ? type * 2 : type * 2 + 1), buffer[i], 0, gridSize * j, gridSize, gridSize);
 			}
 		}
-	} else {
-		for (int i = 0; i < 2; i++) {
+	}
+	else
+	{
+		for (int i = 0; i < 2; i++)
+		{
 			buffer[i] = SDL_CreateRGBSurface(0, 20 * length, 20, 32, rmask, gmask, bmask, amask);
-			for (int j = 0; j < length; j++) {
-				SDL_Surface * temp = rotozoomSurface(Sprite::Instance().getAnimation("rayon", i == 0 ? type * 2 : type * 2 + 1), 90, 1, 0);
+			for (int j = 0; j < length; j++)
+			{
+				SDL_Surface *temp = rotozoomSurface(Sprite::Instance().getAnimation("rayon", i == 0 ? type * 2 : type * 2 + 1), 90, 1, 0);
 				copySurfaceToBackRenderer(temp, buffer[i], 20 * j, 0, gridSize, gridSize);
 				SDL_FreeSurface(temp);
 			}
@@ -30,24 +37,31 @@ Rayon::Rayon(int x, int y, int length, int type, bool vertical) :
 	}
 }
 
-Rayon::~Rayon() {
-	for (int i = 0; i < 2; i++) {
+Rayon::~Rayon()
+{
+	for (int i = 0; i < 2; i++)
+	{
 		SDL_FreeSurface(buffer[i]);
 	}
 	delete buffer;
 }
 
-int Rayon::getType() {
+int Rayon::getType()
+{
 	return this->type;
 }
 
-void Rayon::drawHimself(SDL_Surface * dest) {
+void Rayon::drawHimself(SDL_Surface *dest)
+{
 	//std::cout<<"draw rayon\n";
-	if (animation) {
-		copySurfaceToBackRenderer(buffer[0], dest, (x * gridSize)+leftPadding, y * gridSize);
+	if (animation)
+	{
+		copySurfaceToBackRenderer(buffer[0], dest, (x * gridSize) + leftPadding, y * gridSize);
 		animation = false;
-	} else {
-		copySurfaceToBackRenderer(buffer[1], dest, (x * gridSize)+leftPadding, y * gridSize);
+	}
+	else
+	{
+		copySurfaceToBackRenderer(buffer[1], dest, (x * gridSize) + leftPadding, y * gridSize);
 		animation = true;
 	}
 	//std::cout<<"fin draw rayon\n";

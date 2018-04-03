@@ -10,8 +10,9 @@
 #ifndef __MYCLASS_HITBOX
 #define __MYCLASS_HITBOX
 
-class HitBox {
-public:
+class HitBox
+{
+  public:
     HitBox();
     void initHitBox(int x, int y, int width, int height);
     virtual ~HitBox();
@@ -20,7 +21,8 @@ public:
     bool hitMeByBottonOrTopSide(SDL_Rect other);
     int getIntersect(SDL_Rect other, bool horizontal);
     SDL_Rect getRect();
-private:
+
+  private:
     SDL_Rect rect;
     int hitBoxWidth;
     int hitBoxHeight;

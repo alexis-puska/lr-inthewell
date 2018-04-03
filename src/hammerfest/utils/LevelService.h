@@ -35,28 +35,28 @@
 #include "../level/Teleporter.h"
 #include "../definition/Position.h"
 
-class LevelService {
+class LevelService
+{
 
-public:
-	static LevelService& Instance();
+  public:
+	static LevelService &Instance();
 	LevelService();
 	~LevelService();
-	Level * getLevel(int id);
-private:
-	LevelService& operator=(const LevelService&);
-	LevelService(const LevelService&);
+	Level *getLevel(int id);
 
+  private:
+	LevelService &operator=(const LevelService &);
+	LevelService(const LevelService &);
 
 	/***********************
 	 *      VARIABLES
 	 ***********************/
 	std::map<int, Json::Value> levelJson;
-	Level * currentLevel;
+	Level *currentLevel;
 	int currentLevelId;
 	/***********************
 	 *      FUNCTIONS
 	 ***********************/
 	void parseJsonFile();
-
 };
 #endif
