@@ -202,7 +202,7 @@
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2_net.lib;SDL2_gfx.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>XCOPY /E /Y $(SolutionDir)resources\sound $(TargetDir)sound\ &amp;&amp; XCOPY /E /Y $(SolutionDir)resources\music $(TargetDir)music\  &amp;&amp; XCOPY /E /Y $(SolutionDir)resources\lib\x86 $(TargetDir)</Command>
+      <Command>XCOPY /E /Y $(SolutionDir)resources\sound $(TargetDir)sound\ &amp;&amp; XCOPY /E /Y $(SolutionDir)resources\music $(TargetDir)music\  &amp;&amp; XCOPY /E /Y $(SolutionDir)resources\lib\Win32 $(TargetDir)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -219,7 +219,7 @@
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_net.lib;SDL2_ttf.lib;SDL2_gfx.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>XCOPY /E /Y $(SolutionDir)resources\sound $(TargetDir)sound\ &amp;&amp; XCOPY /E /Y $(SolutionDir)resources\music $(TargetDir)music\  &amp;&amp; XCOPY /E /Y $(SolutionDir)resources\lib\x64 $(TargetDir)</Command>
+      <Command>XCOPY /E /Y $(SolutionDir)resources\sound $(TargetDir)sound\ &amp;&amp; XCOPY /E /Y $(SolutionDir)resources\music $(TargetDir)music\  &amp;&amp; XCOPY /E /Y $(SolutionDir)resources\lib\Win64 $(TargetDir)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
