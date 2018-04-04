@@ -9,8 +9,9 @@
     "\\src\\hammerfest\\game",
     "\\src\\hammerfest\\level",
     "\\src\\hammerfest\\level\\ennemies",
-    "\\src\\hammerfest\\utils"
+    "\\src\\hammerfest\\utils",
+    "\\src\\hammerfest\\utils\\resources"
   ],
-  "SelectedNode": "\\src\\hammerfest\\level\\ennemies\\Ennemie.cpp",
+  "SelectedNode": "\\src\\hammerfest\\level\\ennemies\\Banane.cpp",
   "PreviewInSolutionExplorer": false
 }

@@ -10,7 +10,9 @@
                 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
                 "/usr/include"
             ],
-            "defines": ["IS_OSX"],
+            "defines": [
+                "IS_OSX"
+            ],
             "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
@@ -52,7 +54,7 @@
             }
         },
         {
-            "name": "Win32",
+            "name": "WIN32",
             "includePath": [
                 "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include",
                 "${workspaceFolder}"
@@ -70,7 +72,9 @@
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
-            }
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17"
         }
     ],
     "version": 3
