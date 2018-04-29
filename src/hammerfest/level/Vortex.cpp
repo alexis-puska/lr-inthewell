@@ -29,6 +29,7 @@ bool Vortex::isEnable()
 }
 
 int Vortex::getDestination()
+
 {
     return this->destination;
 }
