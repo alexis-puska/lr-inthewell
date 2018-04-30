@@ -30,34 +30,30 @@ void LevelService::parseJsonFile()
     Json::Value root;
     std::string jsonString(json_level_parser_json, json_level_parser_json + sizeof json_level_parser_json / sizeof json_level_parser_json[0]);
     reader.parse(jsonString, root);
-    Json::Value type = root["type"][0];
-    std::cout<< "start parse level json : " << type.size()<<"\n";
     
-    std::cout<< "nb level aventure : " <<type["level"].size()<<"\n";
+    Json::Value type = root["type"][0];
     for (unsigned int i = 0; i < type["level"].size(); i++)
     {
         adventureLevelJson[type["level"][i]["id"].asInt()] = type["level"][i];
     }
+    
     type = root["type"][1];
-    std::cout<< "nb level Tutorial : " <<type["level"].size()<<"\n";
     for (unsigned int i = 0; i < type["level"].size(); i++)
     {
         tutorialLevelJson[type["level"][i]["id"].asInt()] = type["level"][i];
     }
+    
     type = root["type"][2];
-    std::cout<< "nb level timeAttack : " <<type["level"].size()<<"\n";
-    for (unsigned int i = 0; i < type["level"].size(); i++)
-    {
-        timeAttackLevelJson[type["level"][i]["id"].asInt()] = type["level"][i];
-    }
-    type = root["type"][3];
-    std::cout<< "nb level soccerFest : " <<type["level"].size()<<"\n";
     for (unsigned int i = 0; i < type["level"].size(); i++)
     {
         soccerFestLevelJson[type["level"][i]["id"].asInt()] = type["level"][i];
     }
-    std::cout<< "end parse level json\n";
-
+    
+    type = root["type"][3];
+    for (unsigned int i = 0; i < type["level"].size(); i++)
+    {
+        timeAttackLevelJson[type["level"][i]["id"].asInt()] = type["level"][i];
+    }
 }
 
 /*********************************************
@@ -73,7 +69,6 @@ Level *LevelService::getLevel(int type, int id)
 		{
 			delete currentLevel;
 		}
-        std::cout<< "get level " << type << " " << id <<"\n";
 		currentLevelId = id;
 		Json::Value level = adventureLevelJson[id];
 		currentLevel = new Level(level["id"].asInt(), level["showPlatform"].asBool(), level["background"].asInt(),
@@ -89,7 +84,6 @@ Level *LevelService::getLevel(int type, int id)
 							 platform["vertical"].asBool(), platform["displayed"].asBool(), platform["length"].asInt(),
                              platform["vertical"].asBool() ? level["verticalPlateform"].asInt() : level["horizontalPlateform"].asInt(), platform["enable"].asBool()));
 		}
-        std::cout<< "Nb platform " << level["platform"].size() <<"\n";
 
 		for (unsigned int i = 0; i < level["rayon"].size(); i++)
 		{
@@ -103,27 +97,30 @@ Level *LevelService::getLevel(int type, int id)
 
 		for (unsigned int i = 0; i < level["teleporter"].size(); i++)
 		{
+            Json::Value teleporter = level["teleporter"][i];
 			currentLevel->AddTeleporter(
-				new Teleporter(level["teleporter"][i]["id"].asInt(), level["teleporter"][i]["x"].asInt(),
-							   level["teleporter"][i]["y"].asInt(), level["teleporter"][i]["length"].asInt(),
-							   level["teleporter"][i]["vertical"].asBool(), level["teleporter"][i]["toId"].asInt()));
+				new Teleporter(teleporter["id"].asInt(), teleporter["x"].asInt(),
+							   teleporter["y"].asInt(), teleporter["length"].asInt(),
+							   teleporter["vertical"].asBool(), teleporter["toId"].asInt()));
 		}
 
 		for (unsigned int i = 0; i < level["decor"].size(); i++)
 		{
+            Json::Value decor = level["decor"][i];
 			currentLevel->addDecor(
-				new Decor(level["decor"][i]["id"].asInt(), level["decor"][i]["x"].asInt(), level["decor"][i]["y"].asInt(),
-						  level["decor"][i]["display"].asBool(), level["decor"][i]["back"].asBool(),
-						  level["decor"][i]["anim"].asString(), level["decor"][i]["toId"].asInt()));
+				new Decor(decor["id"].asInt(), decor["x"].asInt(), decor["y"].asInt(),
+						  decor["display"].asBool(), decor["back"].asBool(),
+						  decor["anim"].asString(), decor["toId"].asInt()));
 		}
 
 		for (unsigned int i = 0; i < level["ennemies"].size(); i++)
 		{
-			int id = level["ennemies"][i]["id"].asInt();
-			int x = level["ennemies"][i]["x"].asInt();
-			int y = level["ennemies"][i]["y"].asInt();
+            Json::Value ennemies = level["ennemies"][i];
+			int id = ennemies["id"].asInt();
+			int x = ennemies["x"].asInt();
+			int y = ennemies["y"].asInt();
 
-			switch (level["ennemies"][i]["type"].asInt())
+			switch (ennemies["type"].asInt())
 			{
 			case cerise:
 				currentLevel->addEnnemie(new Cerise(id, x, y, currentLevel));
