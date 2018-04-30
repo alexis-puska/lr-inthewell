@@ -26,30 +26,56 @@ LevelService &LevelService::Instance()
  *********************************************/
 void LevelService::parseJsonFile()
 {
-	Json::Reader reader;
-	Json::Value root;
-	std::string jsonString(json_level_parser_json, json_level_parser_json + sizeof json_level_parser_json / sizeof json_level_parser_json[0]);
-	reader.parse(jsonString, root);
-	for (unsigned int i = 0; i < root.size(); i++)
-	{
-		levelJson[root[i]["id"].asInt()] = root[i];
-	}
+    Json::Reader reader;
+    Json::Value root;
+    std::string jsonString(json_level_parser_json, json_level_parser_json + sizeof json_level_parser_json / sizeof json_level_parser_json[0]);
+    reader.parse(jsonString, root);
+    Json::Value type = root["type"][0];
+    std::cout<< "start parse level json : " << type.size()<<"\n";
+    
+    std::cout<< "nb level aventure : " <<type["level"].size()<<"\n";
+    for (unsigned int i = 0; i < type["level"].size(); i++)
+    {
+        adventureLevelJson[type["level"][i]["id"].asInt()] = type["level"][i];
+    }
+    type = root["type"][1];
+    std::cout<< "nb level Tutorial : " <<type["level"].size()<<"\n";
+    for (unsigned int i = 0; i < type["level"].size(); i++)
+    {
+        tutorialLevelJson[type["level"][i]["id"].asInt()] = type["level"][i];
+    }
+    type = root["type"][2];
+    std::cout<< "nb level timeAttack : " <<type["level"].size()<<"\n";
+    for (unsigned int i = 0; i < type["level"].size(); i++)
+    {
+        timeAttackLevelJson[type["level"][i]["id"].asInt()] = type["level"][i];
+    }
+    type = root["type"][3];
+    std::cout<< "nb level soccerFest : " <<type["level"].size()<<"\n";
+    for (unsigned int i = 0; i < type["level"].size(); i++)
+    {
+        soccerFestLevelJson[type["level"][i]["id"].asInt()] = type["level"][i];
+    }
+    std::cout<< "end parse level json\n";
+
 }
 
 /*********************************************
  * Get Level function
  * Parse the JSON Element and build level
  *********************************************/
-Level *LevelService::getLevel(int id)
+Level *LevelService::getLevel(int type, int id)
 {
+    
 	if (currentLevel == NULL || currentLevel->getId() != id)
 	{
 		if (currentLevel != NULL)
 		{
 			delete currentLevel;
 		}
+        std::cout<< "get level " << type << " " << id <<"\n";
 		currentLevelId = id;
-		Json::Value level = levelJson[id];
+		Json::Value level = adventureLevelJson[id];
 		currentLevel = new Level(level["id"].asInt(), level["showPlatform"].asBool(), level["background"].asInt(),
 								 level["verticalPlateform"].asInt(), level["horizontalPlateform"].asInt(), level["next"].asInt());
 
@@ -57,20 +83,22 @@ Level *LevelService::getLevel(int id)
 
 		for (unsigned int i = 0; i < level["platform"].size(); i++)
 		{
+            Json::Value platform =level["platform"][i];
 			currentLevel->addPlatform(
-				new Platform(level["platform"][i]["id"].asInt(), level["platform"][i]["x"].asInt(), level["platform"][i]["y"].asInt(),
-							 level["platform"][i]["vertical"].asBool(), level["showPlatform"].asBool(),
-							 level["platform"][i]["length"].asInt(),
-							 level["platform"][i]["vertical"].asBool() ? level["verticalPlateform"].asInt() : level["horizontalPlateform"].asInt()));
+				new Platform(platform["id"].asInt(), platform["x"].asInt(), platform["y"].asInt(),
+							 platform["vertical"].asBool(), platform["displayed"].asBool(), platform["length"].asInt(),
+                             platform["vertical"].asBool() ? level["verticalPlateform"].asInt() : level["horizontalPlateform"].asInt(), platform["enable"].asBool()));
 		}
+        std::cout<< "Nb platform " << level["platform"].size() <<"\n";
 
 		for (unsigned int i = 0; i < level["rayon"].size(); i++)
 		{
+            Json::Value rayon = level["rayon"][i];
 			currentLevel->addRayons(
-				new Rayon(level["rayon"][i]["x"].asInt(), level["rayon"][i]["y"].asInt(), level["rayon"][i]["length"].asInt(),
-						  level["rayon"][i]["type"].asInt(),
+				new Rayon(rayon["x"].asInt(), rayon["y"].asInt(), rayon["length"].asInt(),
+						  rayon["type"].asInt(),
 
-						  level["rayon"][i]["vertical"].asBool()));
+						  rayon["vertical"].asBool()));
 		}
 
 		for (unsigned int i = 0; i < level["teleporter"].size(); i++)
@@ -181,6 +209,8 @@ Level *LevelService::getLevel(int id)
 		{
 			currentLevel->addStartPointObject(NULL);
 		}
+ 
+        std::cout<< "get level end " << type << " " << id <<"\n";
 	}
 	return currentLevel;
 }

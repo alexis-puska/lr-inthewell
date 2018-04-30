@@ -37,12 +37,11 @@
 
 class LevelService
 {
-
   public:
 	static LevelService &Instance();
 	LevelService();
 	~LevelService();
-	Level *getLevel(int id);
+	Level *getLevel(int type, int id);
 
   private:
 	LevelService &operator=(const LevelService &);
@@ -51,8 +50,13 @@ class LevelService
 	/***********************
 	 *      VARIABLES
 	 ***********************/
-	std::map<int, Json::Value> levelJson;
+	std::map<int, Json::Value> adventureLevelJson;
+    std::map<int, Json::Value> tutorialLevelJson;
+    std::map<int, Json::Value> timeAttackLevelJson;
+    std::map<int, Json::Value> soccerFestLevelJson;
+    
 	Level *currentLevel;
+    int currentLevelType;
 	int currentLevelId;
 	/***********************
 	 *      FUNCTIONS

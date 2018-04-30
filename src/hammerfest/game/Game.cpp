@@ -90,7 +90,7 @@ Game::Game(SDL_Surface *vout_buf, unsigned short *in_keystate)
     //StartLevel must be 0 in real game.
     idx = startLevelIndex;
 
-    currentLevel = LevelService::Instance().getLevel(startLevelIndex);
+    currentLevel = LevelService::Instance().getLevel(0,startLevelIndex);
     currentLevel->generateBackGround(-1);
     ennemies = currentLevel->getEnnemiesList();
     players.push_back(new Player(80, 400, 0, &in_keystate[0]));
@@ -228,7 +228,7 @@ void Game::tick()
             {
                 idx = 103;
             }
-            currentLevel = LevelService::Instance().getLevel(idx);
+            currentLevel = LevelService::Instance().getLevel(0,idx);
             currentLevel->generateBackGround(-1);
             ennemies = currentLevel->getEnnemiesList();
         }
@@ -239,7 +239,7 @@ void Game::tick()
             {
                 idx = 0;
             }
-            currentLevel = LevelService::Instance().getLevel(idx);
+            currentLevel = LevelService::Instance().getLevel(0,idx);
             currentLevel->generateBackGround(-1);
             ennemies = currentLevel->getEnnemiesList();
         }
@@ -313,7 +313,7 @@ void Game::tick()
                 Sound::Instance().playSoundTuberculoz();
             }
 
-            currentLevel = LevelService::Instance().getLevel(idx);
+            currentLevel = LevelService::Instance().getLevel(0,idx);
             currentLevel->generateBackGround(-1);
             ennemies = currentLevel->getEnnemiesList();
 

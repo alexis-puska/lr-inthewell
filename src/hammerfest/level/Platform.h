@@ -12,7 +12,7 @@
 class Platform : public Drawable, public Position, public IdElement, public HitBox
 {
   public:
-	Platform(int id, int x, int y, bool vertical, bool visible, int length, int surfaceId);
+    Platform(int id, int x, int y, bool vertical, bool visible, int length, int surfaceId, bool enable);
 	~Platform();
 	void drawHimself(SDL_Surface *surface);
 	void drawHimself(SDL_Surface *surface, bool drawShadow);
@@ -20,9 +20,10 @@ class Platform : public Drawable, public Position, public IdElement, public HitB
 	int getLength();
 
   private:
+    bool enable;
 	bool vertical;
 	bool visible;
+    int surfaceId;
 	int length;
-	int surfaceId;
 };
 #endif

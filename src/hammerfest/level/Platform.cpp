@@ -1,6 +1,6 @@
 #include "Platform.h"
 
-Platform::Platform(int id, int x, int y, bool vertical, bool visible, int length, int surfaceId) : Drawable(), Position(x, y), IdElement(id), HitBox()
+Platform::Platform(int id, int x, int y, bool vertical, bool visible, int length, int surfaceId, bool enable) : Drawable(), Position(x, y), IdElement(id), HitBox()
 {
 	this->vertical = vertical;
 	this->visible = visible;
